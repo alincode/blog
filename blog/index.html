@@ -228,7 +228,7 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/blog/2016/03/02/npm-bin/">
-                            npm bin
+                            NPM bin 執行順序
                         </a>
                     
                 </h1>
@@ -246,7 +246,9 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
 <p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write &#34;build&#34;: &#34;node_modules/.bin/webpack&#34;, we can do just &#34;build&#34;: &#34;webpack&#34;. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write “build”: “node_modules/.bin/webpack”, we can do just “build”: “webpack”. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</p>
+</blockquote>
 <p><a href="http://survivejs.com/webpack_react/developing_with_webpack/" target="_blank" rel="external">http://survivejs.com/webpack_react/developing_with_webpack/</a></p>
 
                     
