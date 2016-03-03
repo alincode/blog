@@ -6,27 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT (2) - 進化的 Token - alincode</title>
+    <title>JWT 常見實作方式 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
+    <meta name="description" content="那接下來，我們就來談談這進化的 Token。
+JWT 全名是 JSON Web Tokens，它提供了 Signature 和 Encryption 等功能，可將資料做加密解密，加密後的資料是一個長字串。就如它的名字所示，解碼後的資料是以JSON作為資料讀取。
+官網上 JWT 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT (2) - 進化的 Token">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/02/jwt-2/index.html">
+<meta property="og:title" content="JWT 常見實作方式">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/02/jwt-3/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
-<meta property="og:updated_time" content="2016-03-02T07:35:49.000Z">
+<meta property="og:description" content="那接下來，我們就來談談這進化的 Token。
+JWT 全名是 JSON Web Tokens，它提供了 Signature 和 Encryption 等功能，可將資料做加密解密，加密後的資料是一個長字串。就如它的名字所示，解碼後的資料是以JSON作為資料讀取。
+官網上 JWT 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以">
+<meta property="og:updated_time" content="2016-03-03T14:19:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT (2) - 進化的 Token">
-<meta name="twitter:description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
+<meta name="twitter:title" content="JWT 常見實作方式">
+<meta name="twitter:description" content="那接下來，我們就來談談這進化的 Token。
+JWT 全名是 JSON Web Tokens，它提供了 Signature 和 Encryption 等功能，可將資料做加密解密，加密後的資料是一個長字串。就如它的名字所示，解碼後的資料是以JSON作為資料讀取。
+官網上 JWT 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以">
     
     
         
@@ -231,11 +231,11 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT (2) - 進化的 Token
+            JWT 常見實作方式
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Mar 02 2016 12:17:14 GMT+0800">
+    <time itemprop="datePublished" content="Wed Mar 02 2016 15:37:02 GMT+0800">
 	
 		    3月 02, 2016
     	
@@ -246,18 +246,12 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。</p>
-<h3 id="建立-Token"><a href="#建立-Token" class="headerlink" title="建立 Token"></a>建立 Token</h3><p>基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。</p>
-<h3 id="一般加密規則"><a href="#一般加密規則" class="headerlink" title="一般加密規則"></a>一般加密規則</h3><p>主要是需要這三個參數 algorithm、mode、padding 去運算，看起來大家都講好規則了，應該溝通沒問題了吧？</p>
-<p>沒想到是災難的開始，因為並沒有一個審核機制，各家 Open source 就開始照著自己詮釋去做，結果無法正常解密的問題，尤其發生跨語言之間，例如 PHP 用的 library 跟 Java 用的 library 肯定不一樣，PHP 對於實作 Padding 差異上，幾乎是所有開發者必踩的雷。<br><a href="http://php.net/manual/en/ref.mcrypt.php" target="_blank" rel="external">http://php.net/manual/en/ref.mcrypt.php</a></p>
-<h3 id="進化的-Token"><a href="#進化的-Token" class="headerlink" title="進化的 Token"></a>進化的 Token</h3><p>時代的進化，這麼漸漸單純的 Token 已經不符使用，我們有更多的需求：</p>
-<ul>
-<li>要有期限</li>
-<li>要可以被驗證</li>
-<li>要傳遞附加公開資訊</li>
-<li>我們要說共同的語言</li>
-<li>略…</li>
-</ul>
+            <p>那接下來，我們就來談談這進化的 Token。</p>
+<p>JWT 全名是 JSON Web Tokens，它提供了 Signature 和 Encryption 等功能，可將資料做加密解密，加密後的資料是一個長字串。就如它的名字所示，解碼後的資料是以JSON作為資料讀取。</p>
+<p>官網上 <a href="https://jwt.io/" target="_blank" rel="external">JWT</a> 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以看出他們對於 JWT 的重視。</p>
+<h3 id="常見實作方式"><a href="#常見實作方式" class="headerlink" title="常見實作方式"></a>常見實作方式</h3><p>使用者輸入帳號密碼，然後傳給 Server，對賬戶密碼驗證無誤後，Server 通常會把 UserId，塞在 Claims (Payload) 裡作為識別，然後用使用一組私密碼，產出一個 JWT 格式的 Token 回傳給前台，此時前台需要把這組 Token 記起來，可能用 Web Storage 或 cookie，但一般是 Web Storage，下次要跟 Server 要資料的時候，將 Token 取出，透過 HTTP Authorization header 或 URL 參數傳遞。</p>
+<p>Server 因為有私密碼，可以直接呼叫有實作 JWT 的 library，可得知 Token 是否過期，或 Token 真偽的資訊。</p>
+<p><a href="https://tools.ietf.org/html/rfc7519" target="_blank" rel="external">JWT - RTC 7519</a></p>
 
             
                 
@@ -267,19 +261,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/"  data-tooltip="JWT 常見實作方式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/npm-bin/"  data-tooltip="npm bin">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -287,7 +274,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/01/jwt-1/" data-tooltip="JWT (1) - 為什麼我們要用 Access Token ?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-2/" data-tooltip="JWT (2) - 進化的 Token">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -302,17 +289,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -350,7 +337,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/"  data-tooltip="JWT 常見實作方式">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/npm-bin/"  data-tooltip="npm bin">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -358,7 +345,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/01/jwt-1/" data-tooltip="JWT (1) - 為什麼我們要用 Access Token ?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-2/" data-tooltip="JWT (2) - 進化的 Token">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -373,17 +360,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -403,17 +390,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-3/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

@@ -6,27 +6,24 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT (2) - 進化的 Token - alincode</title>
+    <title>npm bin - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
+    <meta name="description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT (2) - 進化的 Token">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/02/jwt-2/index.html">
+<meta property="og:title" content="npm bin">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/02/npm-bin/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
-<meta property="og:updated_time" content="2016-03-02T07:35:49.000Z">
+<meta property="og:description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
+<meta property="og:updated_time" content="2016-03-02T14:19:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT (2) - 進化的 Token">
-<meta name="twitter:description" content="上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。
-建立 Token基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。
-一般加密規則主要是需要這三個參數 algorithm、mode、padding">
+<meta name="twitter:title" content="npm bin">
+<meta name="twitter:description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
     
     
         
@@ -231,11 +228,11 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT (2) - 進化的 Token
+            npm bin
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Mar 02 2016 12:17:14 GMT+0800">
+    <time itemprop="datePublished" content="Wed Mar 02 2016 22:00:12 GMT+0800">
 	
 		    3月 02, 2016
     	
@@ -246,18 +243,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。</p>
-<h3 id="建立-Token"><a href="#建立-Token" class="headerlink" title="建立 Token"></a>建立 Token</h3><p>基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。</p>
-<h3 id="一般加密規則"><a href="#一般加密規則" class="headerlink" title="一般加密規則"></a>一般加密規則</h3><p>主要是需要這三個參數 algorithm、mode、padding 去運算，看起來大家都講好規則了，應該溝通沒問題了吧？</p>
-<p>沒想到是災難的開始，因為並沒有一個審核機制，各家 Open source 就開始照著自己詮釋去做，結果無法正常解密的問題，尤其發生跨語言之間，例如 PHP 用的 library 跟 Java 用的 library 肯定不一樣，PHP 對於實作 Padding 差異上，幾乎是所有開發者必踩的雷。<br><a href="http://php.net/manual/en/ref.mcrypt.php" target="_blank" rel="external">http://php.net/manual/en/ref.mcrypt.php</a></p>
-<h3 id="進化的-Token"><a href="#進化的-Token" class="headerlink" title="進化的 Token"></a>進化的 Token</h3><p>時代的進化，這麼漸漸單純的 Token 已經不符使用，我們有更多的需求：</p>
-<ul>
-<li>要有期限</li>
-<li>要可以被驗證</li>
-<li>要傳遞附加公開資訊</li>
-<li>我們要說共同的語言</li>
-<li>略…</li>
-</ul>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write &#34;build&#34;: &#34;node_modules/.bin/webpack&#34;, we can do just &#34;build&#34;: &#34;webpack&#34;. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</span><br></pre></td></tr></table></figure>
+<p><a href="http://survivejs.com/webpack_react/developing_with_webpack/" target="_blank" rel="external">http://survivejs.com/webpack_react/developing_with_webpack/</a></p>
 
             
                 
@@ -267,19 +256,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/"  data-tooltip="JWT 常見實作方式">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -287,7 +269,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/01/jwt-1/" data-tooltip="JWT (1) - 為什麼我們要用 Access Token ?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/" data-tooltip="JWT 常見實作方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -302,17 +284,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -350,7 +332,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/"  data-tooltip="JWT 常見實作方式">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -358,7 +340,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/01/jwt-1/" data-tooltip="JWT (1) - 為什麼我們要用 Access Token ?">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/02/jwt-3/" data-tooltip="JWT 常見實作方式">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -373,17 +355,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -403,17 +385,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/jwt-2/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/02/npm-bin/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
