@@ -6,39 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT(4) Server Side 實作範例 - alincode</title>
+    <title>將 hexo 部署到 github page - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
+    <meta name="description" content="常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。
+例如你開一個 yourname.github.io 的 repo，裡面所有東西都可以對應到 https://yourname.github.io/ 。
+但如果你想要放在 blog 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT(4) Server Side 實作範例">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/03/jwt-4/index.html">
+<meta property="og:title" content="將 hexo 部署到 github page">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/05/hexo-deploy/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
-<meta property="og:updated_time" content="2016-03-03T15:51:37.000Z">
+<meta property="og:description" content="常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。
+例如你開一個 yourname.github.io 的 repo，裡面所有東西都可以對應到 https://yourname.github.io/ 。
+但如果你想要放在 blog 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令">
+<meta property="og:image" content="http://alincode.github.io/blog/'/hexo-deploy.png'">
+<meta property="og:updated_time" content="2016-03-05T07:54:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT(4) Server Side 實作範例">
-<meta name="twitter:description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
+<meta name="twitter:title" content="將 hexo 部署到 github page">
+<meta name="twitter:description" content="常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。
+例如你開一個 yourname.github.io 的 repo，裡面所有東西都可以對應到 https://yourname.github.io/ 。
+但如果你想要放在 blog 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令">
     
     
         
@@ -243,13 +232,13 @@ Server Side 需要做的事第一步
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT(4) Server Side 實作範例
+            將 hexo 部署到 github page
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Mar 03 2016 22:48:35 GMT+0800">
+    <time itemprop="datePublished" content="Sat Mar 05 2016 15:00:46 GMT+0800">
 	
-		    3月 03, 2016
+		    3月 05, 2016
     	
     </time>
     
@@ -258,28 +247,15 @@ Server Side 需要做的事第一步
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Server Side 使用架構 Sails</p>
-<h3 id="Server-Side-需要做的事"><a href="#Server-Side-需要做的事" class="headerlink" title="Server Side 需要做的事"></a>Server Side 需要做的事</h3><p><strong>第一步</strong></p>
-<p>安裝支援 JWT 的 library</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jsonwebtoken -save</span><br></pre></td></tr></table></figure>
-<p><strong>第二步</strong></p>
-<p>新增一個 JWT 的 Service，例如 api/services/JWTService.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt = require(&#39;jsonwebtoken&#39;);&#10;&#10;// &#24314;&#31435; Token&#10;module.exports.issueToken = function(payload, options) &#123;&#10;  if(!options)&#123;&#10;    options = &#123;&#125;;&#10;    options.expiresIn = &#39;3h&#39;;&#10;  &#125;&#10;  try &#123;&#10;    var token = jwt.sign(payload, sails.config.jwt.token_secret, options);&#10;    return token;&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;&#10;&#10;// &#39511;&#35657; Token&#10;module.exports.verifyToken = function(token, callback) &#123;&#10;  try &#123;&#10;    return jwt.verify(token, sails.config.jwt.token_secret, &#123;&#125;, callback);&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第三步</strong></p>
-<p>在回傳登入成功 responses 的地方，多新增回傳 Token 這個值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// payload &#26377;&#24456;&#22810;&#35722;&#25976;&#65292;sub &#21482;&#26159;&#20854;&#20013;&#19968;&#20491;&#65292;&#35443;&#24773;&#35531;&#30475; JWT &#23448;&#26041;&#25991;&#20214;&#12290;&#10;var token = JWTService.issueToken(&#123;&#10;  sub: user.id&#10;&#125;);&#10;&#10;res.ok(&#123;&#10;  nikename: user.nickname, // &#21487;&#26377;&#21487;&#28961;&#65292;&#20294;&#30331;&#20837;&#25104;&#21151;&#65292;&#36890;&#24120;&#26371;&#39023;&#31034;&#26289;&#31281;&#65292;&#23565;&#21543;&#12290;&#10;  token: token&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>第四步</strong></p>
-<p>在 api/responses 目錄下，新增一個 unauthorized.js，status code 為 401。</p>
-<p><strong>第五步</strong></p>
-<p>新增一個 policies，api/policies/authToken.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(req, res, next) &#123;&#10;  var token;&#10;&#10;  //  &#39511;&#35657;  Header &#26684;&#24335;&#10;  if (req.headers &#38;&#38; req.headers.authorization) &#123;&#10;    var parts = req.headers.authorization.split(&#39; &#39;);&#10;    if (parts.length == 2) &#123;&#10;      var scheme = parts[0],&#10;        credentials = parts[1];&#10;&#10;      if (/^Bearer$/i.test(scheme)) &#123;&#10;        token = credentials;&#10;      &#125;&#10;    &#125; else &#123;&#10;      return res.unauthorized(&#39;wrongFormat&#39;);&#10;    &#125;&#10;  &#125; else if (req.param(&#39;token&#39;)) &#123;&#10;    token = req.param(&#39;token&#39;);&#10;    // We delete the token from param to not mess with blueprints&#10;    delete req.query.token;&#10;  &#125; else &#123;&#10;    return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;  &#125;&#10;&#10;  // &#39511;&#35657; Token &#30495;&#20605;&#21450;&#25928;&#26399;&#10;  JWTService.verifyToken(token, function(err, decodedToken) &#123;&#10;    if (err) return res.unauthorized(&#39;invalidToken&#39;);&#10;    sails.log.verbose(&#39;decodedToken.sub:&#39;, decodedToken.sub);&#10;&#10;    // decodedToken&#65292;&#23601;&#26159; payload &#36039;&#26009;&#12290;&#10;    db.User.findById(decodedToken.sub).then(function(user)&#123;&#10;      if(user)&#123;&#10;        req.user = user;&#10;        next();&#10;      &#125;else&#123;&#10;        return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;      &#125;&#10;    &#125;);&#10;  &#125;);&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第六步</strong></p>
-<p>config/policies.js 依照 Controller method 需要權限驗證的地方，加入設定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.policies = &#123;&#10;&#10;  UserController: &#123;&#10;    apiGetMe: [&#39;authToken&#39;]&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第七步</strong></p>
-<p>api/controllers/UserController.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apiGetMe: async(req, res) =&#62; &#123;&#10;  // &#22240;&#28858; policies &#24050;&#32147;&#20570;&#36942;&#27402;&#38480;&#27298;&#26597;&#65292;&#20006;&#25226; user &#36039;&#26009;&#22622;&#22909;&#20102;&#65292;&#36889;&#37002;&#23601;&#30452;&#25509;&#25343;&#20358;&#29992;&#22217;&#65292;&#38283;&#24515; ^_^&#12290;&#10;  var user = req.user;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p>打完收工，下集為 client side 要做的事。</p>
+            <p>常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。</p>
+<p>例如你開一個 <code>yourname.github.io</code> 的 repo，裡面所有東西都可以對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 。</p>
+<p>但如果你想要放在 <strong>blog</strong> 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令 <code>hexo generate</code>，它只會幫你所有檔案產在根目錄下。</p>
+<p>那該怎麼做？</p>
+<p><img src="&#39;/hexo-deploy.png&#39;" alt="hexo deploy"></p>
+<p>原來 github page 還有其他用法，就是可以自由命名 repo 名稱，然後，branch 名字取 <strong>gh-pages</strong>，然後他就會對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 子目錄下。</p>
+<h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
+<p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/blog&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -292,7 +268,7 @@ Server Side 需要做的事第一步
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/hexo-deploy/">hexo deploy</a>
 
             </div>
         
@@ -301,7 +277,7 @@ Server Side 需要做的事第一步
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/05/hexo-deploy/"  data-tooltip="將 hexo 部署到 github page">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -309,7 +285,7 @@ Server Side 需要做的事第一步
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/npm-bin/" data-tooltip="NPM bin 執行順序">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/jwt-4/" data-tooltip="JWT(4) Server Side 實作範例">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -324,17 +300,17 @@ Server Side 需要做的事第一步
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -372,7 +348,7 @@ Server Side 需要做的事第一步
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/05/hexo-deploy/"  data-tooltip="將 hexo 部署到 github page">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -380,7 +356,7 @@ Server Side 需要做的事第一步
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/npm-bin/" data-tooltip="NPM bin 執行順序">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/jwt-4/" data-tooltip="JWT(4) Server Side 實作範例">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -395,17 +371,17 @@ Server Side 需要做的事第一步
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -425,17 +401,17 @@ Server Side 需要做的事第一步
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/05/hexo-deploy/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
