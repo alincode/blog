@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>所有文章: 2016/2 - alincode</title>
+    <title>標籤: git - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -14,7 +14,7 @@
     <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="alincode">
-<meta property="og:url" content="http://alincode.github.io/blog/archives/2016/02/index.html">
+<meta property="og:url" content="http://alincode.github.io/blog/tags/git/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
@@ -228,15 +228,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/2016/02/27/set-hexo-tranquilpeak-theme/">
-                            安裝 hexo tranquilpeak 佈景
+                        <a class="link-unstyled" href="/blog/2016/03/06/git-stash/">
+                            使用 git stash
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Feb 27 2016 19:40:19 GMT+0800">
+    <time itemprop="datePublished" content="Sun Mar 06 2016 00:09:30 GMT+0800">
 	
-		    2月 27, 2016
+		    3月 06, 2016
     	
     </time>
     
@@ -245,23 +245,40 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>因為一直找不到滿意的佈景，所以建 blog 的進度一直延宕，今天終於把它弄起來了。</p>
-<p>這個佈景有分兩種版本，跟對一般使用者或開發者。</p>
-<p><strong>使用者模式</strong></p>
-<p>下載文件中 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak#quick-start" target="_blank" rel="external">Quick Start</a> 章節的 hexo-theme-tranquilpeak-prod 連結，然後解壓縮，將目錄重新命名為 tranquilpeak 複製到 theme 資料夾下即可。</p>
-<p><strong>開發者模式</strong></p>
-<p>需先 clone 一份到本機</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git themes/tranquilpeak</span><br></pre></td></tr></table></figure>
-<p>在做一些 <strong>build</strong> 的動作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd theme/tranquilpeak&#10;npm install&#10;bower install&#10;grunt build</span><br></pre></td></tr></table></figure>
-<p>然後就完成了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p><strong>其他相關資源</strong></p>
-<ul>
-<li><a href="http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/" target="_blank" rel="external">安裝Hexo (DMoon blog)</a></li>
-<li><a href="https://hexo.io/themes/" target="_blank" rel="external">其他佈景</a></li>
-<li><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git" target="_blank" rel="external">hexo-theme-tranquilpeak</a></li>
+                    <p>當從 SVN 轉換使用到 GIT 後，最大的改變是什麼？除了沒網路還可以看到 log history 之外，我想就是不斷切來切去的 Branch。</p>
+<p>我必須要坦誠的說，雖然我用 GIT 有好幾年了，但只有當初為了在公司導入 GIT，有認真的把一本 GIT 的原文翻譯書看完，有基本觀念後，就沒有在繼續摸下去了。</p>
+<p>其實 git stash 也是不很難的東西，但就一直沒有需要用到這個指令，因為我還是會稍微把 code 整理一下，然後 commit 進去，大不了 push 前，在做一次合併 commit，或許也是我對於 stash 的概念，沒有很有把握，總覺得先 comment 會比較保險。</p>
+<p>最近為了找 <code>git submodule</code> 的資料，偶然再次遇見它，這次就實際 try 了一下用法。</p>
+<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>主要是使用在一個很尷尬的狀態，就是你已經改了一些東西，還不能 comment 進去，你又想切去其他分支，但切去其他分支前提是 <code>git status</code> 已經沒有東西。</p>
+<p>這時你就可以 <code>git stash</code> 把改過的東西先丟進 stash 中，等你處理完其他事情，再切回你剛剛中斷的分支，把放進 stash 的東西再拿出來。</p>
+<h3 id="需要用到的指令"><a href="#需要用到的指令" class="headerlink" title="需要用到的指令"></a>需要用到的指令</h3><p><strong>將改到一半的 code ，放到stash</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .&#10;git stash</span><br></pre></td></tr></table></figure>
+<p><strong>查看有多少 stash</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p><strong>取出最後一個 stash 的 code</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+<h2 id="GIT-觀念"><a href="#GIT-觀念" class="headerlink" title="GIT 觀念"></a>GIT 觀念</h2><h2 id="基本觀念"><a href="#基本觀念" class="headerlink" title="基本觀念"></a>基本觀念</h2><ul>
+<li>log</li>
+<li>add / rm</li>
+<li>stash</li>
+<li>commit / reset</li>
+<li>push / pull / fetch</li>
+<li>remote repo / local repo</li>
+<li>branch / merge</li>
+<li>初階 rebase</li>
+<li>Git Flow</li>
+<li>衝突排解</li>
 </ul>
+<h3 id="進階觀念"><a href="#進階觀念" class="headerlink" title="進階觀念"></a>進階觀念</h3><ul>
+<li>合併 comment</li>
+<li>分離 comment</li>
+<li>delete 掉的 branch 救回</li>
+<li>cherry-pick</li>
+<li>format-patch</li>
+<li>pull-request</li>
+<li>略…</li>
+</ul>
+<p>我覺得 GIT 其實是入門簡單，真正在用到熟練，還是有難度在的。</p>
 
                     
                         
@@ -269,7 +286,7 @@
                     
                     
                         <p>
-                            <a href="/blog/2016/02/27/set-hexo-tranquilpeak-theme/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/blog/2016/03/06/git-stash/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -289,7 +306,6 @@
 </div>
 
 </section>
-
 
 
                 <footer id="footer" class="main-content-wrap">
