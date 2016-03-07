@@ -23,7 +23,7 @@
 官網上 JWT 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以看出他們對">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/03/03/jwt-3/jwt_module.png">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/03/03/jwt-3/jwt_request_flow.png">
-<meta property="og:updated_time" content="2016-03-07T14:12:18.000Z">
+<meta property="og:updated_time" content="2016-03-07T15:10:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JWT (3) 什麼是 JWT">
 <meta name="twitter:description" content="那接下來，我們就來談談這進化的 Token。
@@ -263,7 +263,6 @@
 <h3 id="常見實作方式"><a href="#常見實作方式" class="headerlink" title="常見實作方式"></a>常見實作方式</h3><img src="/blog/2016/03/03/jwt-3/jwt_request_flow.png" alt="jwt_request_flow.png" title="">
 <p>使用者輸入帳號密碼，然後傳給 Server，對賬戶密碼驗證無誤後，Server 通常會把 UserId，塞在 Claims (Payload) 裡作為識別，然後用使用一組私密碼，產出一個 JWT 格式的 Token 回傳給前台，此時前台需要把這組 Token 記起來，可能用 Web Storage 或 cookie，但一般是 Web Storage。</p>
 <p>下次要跟 Server 要資料的時候，將 Token 取出，透過 HTTP Authorization header 或 URL 參數傳遞給 Server。Server 因為有私密碼，可以直接呼叫有實作 JWT 的 library，可得知 Token 是否過期，或 Token 真偽的資訊。</p>
-<p>｀``<br>Authorization: Bearer <token><br>```</token></p>
 <p><a href="https://tools.ietf.org/html/rfc7519" target="_blank" rel="external">JWT - RTC 7519</a></p>
 
             
