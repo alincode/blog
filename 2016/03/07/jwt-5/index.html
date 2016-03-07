@@ -12,24 +12,21 @@
     
     
     <meta name="description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
-在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。
-1var req = new XMLHttpRequest();&amp;#10;req.open(">
+1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
+在需要權限驗證才能使用的 API，改用有帶">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="JWT (5) Client Side 實作範例">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/03/07/jwt-5/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
-在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。
-1var req = new XMLHttpRequest();&amp;#10;req.open(">
-<meta property="og:updated_time" content="2016-03-07T14:33:28.000Z">
+1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
+在需要權限驗證才能使用的 API，改用有帶">
+<meta property="og:updated_time" content="2016-03-07T14:42:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JWT (5) Client Side 實作範例">
 <meta name="twitter:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
-在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。
-1var req = new XMLHttpRequest();&amp;#10;req.open(">
+1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
+在需要權限驗證才能使用的 API，改用有帶">
     
     
         
@@ -250,10 +247,13 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&#39;accessToken&#39;, payload.token);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20358;&#22312; request response&#10;var token = &#39;xxxxxxx&#39;;&#10;localStorage.setItem(&#39;accessToken&#39;, token);</span><br></pre></td></tr></table></figure>
 <p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
-<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure></p>
+<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure>
+<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt_decode = require(&#39;jwt-decode&#39;);&#10;&#10;var decoded = jwt_decode(_token)&#10;&#10;if ((decoded.exp * 1000) &#60; new Date().getTime()) &#123;&#10;  // token &#36942;&#26399;&#10;&#125; else &#123;&#10;  // token &#26377;&#25928;&#10;&#125;</span><br></pre></td></tr></table></figure>
 
             
                 
