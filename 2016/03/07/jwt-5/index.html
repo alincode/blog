@@ -6,39 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT (4) Server Side 實作範例 - alincode</title>
+    <title>JWT (5) Client Side 實作範例 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
+    <meta name="description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
+1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
+在需要權限驗證才能使用的 API，需使用有 Token 的 HTTP Header。
+1var req = new XMLHttpRequest();&amp;#10;req.open(">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT (4) Server Side 實作範例">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/03/jwt-4/index.html">
+<meta property="og:title" content="JWT (5) Client Side 實作範例">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/07/jwt-5/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
-<meta property="og:updated_time" content="2016-03-07T14:17:07.000Z">
+<meta property="og:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
+1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
+在需要權限驗證才能使用的 API，需使用有 Token 的 HTTP Header。
+1var req = new XMLHttpRequest();&amp;#10;req.open(">
+<meta property="og:updated_time" content="2016-03-07T14:28:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT (4) Server Side 實作範例">
-<meta name="twitter:description" content="Server Side 使用架構 Sails
-Server Side 需要做的事第一步
-安裝支援 JWT 的 library
-1npm install jsonwebtoken -save
-第二步
-新增一個 JWT 的 Service，例如 api/services/JWTService.js
-1var jwt = require(&amp;#39;jsonwebtoken&amp;#39;);&amp;#10;&amp;#10">
+<meta name="twitter:title" content="JWT (5) Client Side 實作範例">
+<meta name="twitter:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
+1localStorage.setItem(&amp;#39;accessToken&amp;#39;, payload.token);
+在需要權限驗證才能使用的 API，需使用有 Token 的 HTTP Header。
+1var req = new XMLHttpRequest();&amp;#10;req.open(">
     
     
         
@@ -243,13 +234,13 @@ Server Side 需要做的事第一步
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT (4) Server Side 實作範例
+            JWT (5) Client Side 實作範例
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Mar 03 2016 22:48:35 GMT+0800">
+    <time itemprop="datePublished" content="Mon Mar 07 2016 22:16:09 GMT+0800">
 	
-		    3月 03, 2016
+		    3月 07, 2016
     	
     </time>
     
@@ -258,27 +249,11 @@ Server Side 需要做的事第一步
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Server Side 使用架構 Sails</p>
-<h3 id="Server-Side-需要做的事"><a href="#Server-Side-需要做的事" class="headerlink" title="Server Side 需要做的事"></a>Server Side 需要做的事</h3><p><strong>第一步</strong></p>
-<p>安裝支援 JWT 的 library</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jsonwebtoken -save</span><br></pre></td></tr></table></figure>
-<p><strong>第二步</strong></p>
-<p>新增一個 JWT 的 Service，例如 api/services/JWTService.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt = require(&#39;jsonwebtoken&#39;);&#10;&#10;// &#24314;&#31435; Token&#10;module.exports.issueToken = function(payload, options) &#123;&#10;  if(!options)&#123;&#10;    options = &#123;&#125;;&#10;    options.expiresIn = &#39;3h&#39;;&#10;  &#125;&#10;  try &#123;&#10;    var token = jwt.sign(payload, sails.config.jwt.token_secret, options);&#10;    return token;&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;&#10;&#10;// &#39511;&#35657; Token&#10;module.exports.verifyToken = function(token, callback) &#123;&#10;  try &#123;&#10;    return jwt.verify(token, sails.config.jwt.token_secret, &#123;&#125;, callback);&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第三步</strong></p>
-<p>在回傳登入成功 responses 的地方，多新增回傳 Token 這個值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// payload &#26377;&#24456;&#22810;&#35722;&#25976;&#65292;sub &#21482;&#26159;&#20854;&#20013;&#19968;&#20491;&#65292;&#35443;&#24773;&#35531;&#30475; JWT &#23448;&#26041;&#25991;&#20214;&#12290;&#10;var token = JWTService.issueToken(&#123;&#10;  sub: user.id&#10;&#125;);&#10;&#10;res.ok(&#123;&#10;  nikename: user.nickname, // &#21487;&#26377;&#21487;&#28961;&#65292;&#20294;&#30331;&#20837;&#25104;&#21151;&#65292;&#36890;&#24120;&#26371;&#39023;&#31034;&#26289;&#31281;&#65292;&#23565;&#21543;&#12290;&#10;  token: token&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>第四步</strong></p>
-<p>在 api/responses 目錄下，新增一個 unauthorized.js，status code 為 401。</p>
-<p><strong>第五步</strong></p>
-<p>新增一個 policies，api/policies/authToken.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(req, res, next) &#123;&#10;  var token;&#10;&#10;  //  &#39511;&#35657;  Header &#26684;&#24335;&#10;  if (req.headers &#38;&#38; req.headers.authorization) &#123;&#10;    var parts = req.headers.authorization.split(&#39; &#39;);&#10;    if (parts.length == 2) &#123;&#10;      var scheme = parts[0],&#10;        credentials = parts[1];&#10;&#10;      if (/^Bearer$/i.test(scheme)) &#123;&#10;        token = credentials;&#10;      &#125;&#10;    &#125; else &#123;&#10;      return res.unauthorized(&#39;wrongFormat&#39;);&#10;    &#125;&#10;  &#125; else if (req.param(&#39;token&#39;)) &#123;&#10;    token = req.param(&#39;token&#39;);&#10;    // We delete the token from param to not mess with blueprints&#10;    delete req.query.token;&#10;  &#125; else &#123;&#10;    return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;  &#125;&#10;&#10;  // &#39511;&#35657; Token &#30495;&#20605;&#21450;&#25928;&#26399;&#10;  JWTService.verifyToken(token, function(err, decodedToken) &#123;&#10;    if (err) return res.unauthorized(&#39;invalidToken&#39;);&#10;    sails.log.verbose(&#39;decodedToken.sub:&#39;, decodedToken.sub);&#10;&#10;    // decodedToken&#65292;&#23601;&#26159; payload &#36039;&#26009;&#12290;&#10;    db.User.findById(decodedToken.sub).then(function(user)&#123;&#10;      if(user)&#123;&#10;        req.user = user;&#10;        next();&#10;      &#125;else&#123;&#10;        return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;      &#125;&#10;    &#125;);&#10;  &#125;);&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第六步</strong></p>
-<p>config/policies.js 依照 Controller method 需要權限驗證的地方，加入設定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.policies = &#123;&#10;&#10;  UserController: &#123;&#10;    apiGetMe: [&#39;authToken&#39;]&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第七步</strong></p>
-<p>api/controllers/UserController.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apiGetMe: async(req, res) =&#62; &#123;&#10;  // &#22240;&#28858; policies &#24050;&#32147;&#20570;&#36942;&#27402;&#38480;&#27298;&#26597;&#65292;&#20006;&#25226; user &#36039;&#26009;&#22622;&#22909;&#20102;&#65292;&#36889;&#37002;&#23601;&#30452;&#25509;&#25343;&#20358;&#29992;&#22217;&#65292;&#38283;&#24515; ^_^&#12290;&#10;  var user = req.user;&#10;&#125;</span><br></pre></td></tr></table></figure>
+            <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setItem(&#39;accessToken&#39;, payload.token);</span><br></pre></td></tr></table></figure>
+<p><strong>在需要權限驗證才能使用的 API，需使用有 Token 的 HTTP Header。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
+<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token &#20006;&#30331;&#20986;&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure></p>
 
             
                 
@@ -291,7 +266,7 @@ Server Side 需要做的事第一步
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jsonwebtoken/">jsonwebtoken</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/sails/">sails</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a>
 
             </div>
         
@@ -300,7 +275,7 @@ Server Side 需要做的事第一步
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/05/hexo-deploy/"  data-tooltip="將 hexo 部署到 github page">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -308,7 +283,7 @@ Server Side 需要做的事第一步
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/npm-bin/" data-tooltip="NPM bin 執行順序">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/06/git-stash/" data-tooltip="使用 git stash">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -323,17 +298,17 @@ Server Side 需要做的事第一步
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -371,7 +346,7 @@ Server Side 需要做的事第一步
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/05/hexo-deploy/"  data-tooltip="將 hexo 部署到 github page">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -379,7 +354,7 @@ Server Side 需要做的事第一步
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/03/npm-bin/" data-tooltip="NPM bin 執行順序">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/06/git-stash/" data-tooltip="使用 git stash">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -394,17 +369,17 @@ Server Side 需要做的事第一步
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -424,17 +399,17 @@ Server Side 需要做的事第一步
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/03/jwt-4/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
