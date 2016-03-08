@@ -6,27 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT (5) Client Side 實作範例 - alincode</title>
+    <title>fb share - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
-在需要權限驗證才能使用的 API，改用有帶">
+    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT (5) Client Side 實作範例">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/07/jwt-5/index.html">
+<meta property="og:title" content="fb share">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/08/fb-share/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
-在需要權限驗證才能使用的 API，改用有帶">
-<meta property="og:updated_time" content="2016-03-07T14:42:33.000Z">
+<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta property="og:updated_time" content="2016-03-08T15:47:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT (5) Client Side 實作範例">
-<meta name="twitter:description" content="Client Side 基本只需要做三件事把 Server Side 傳過來的 Token 存下來
-1// &amp;#20358;&amp;#22312; request response&amp;#10;var token = &amp;#39;xxxxxxx&amp;#39;;&amp;#10;localStorage.setItem(&amp;#39;accessToken&amp;#39;, token);
-在需要權限驗證才能使用的 API，改用有帶">
+<meta name="twitter:title" content="fb share">
+<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
     
     
         
@@ -231,13 +225,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT (5) Client Side 實作範例
+            fb share
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Mar 07 2016 22:16:09 GMT+0800">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 23:47:35 GMT+0800">
 	
-		    3月 07, 2016
+		    3月 08, 2016
     	
     </time>
     
@@ -246,15 +240,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20358;&#22312; request response&#10;var token = &#39;xxxxxxx&#39;;&#10;localStorage.setItem(&#39;accessToken&#39;, token);</span><br></pre></td></tr></table></figure>
-<p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
-<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure>
-<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt_decode = require(&#39;jwt-decode&#39;);&#10;&#10;var decoded = jwt_decode(_token)&#10;&#10;if ((decoded.exp * 1000) &#60; new Date().getTime()) &#123;&#10;  // token &#36942;&#26399;&#10;&#125; else &#123;&#10;  // token &#26377;&#25928;&#10;&#125;</span><br></pre></td></tr></table></figure>
-
+            
             
                 
 
@@ -263,19 +249,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/jwt/">jwt</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/fb-share/"  data-tooltip="fb share">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -283,7 +262,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/06/git-stash/" data-tooltip="使用 git stash">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/07/jwt-5/" data-tooltip="JWT (5) Client Side 實作範例">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -298,17 +277,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -346,7 +325,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/fb-share/"  data-tooltip="fb share">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -354,7 +333,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/06/git-stash/" data-tooltip="使用 git stash">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/07/jwt-5/" data-tooltip="JWT (5) Client Side 實作範例">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -369,17 +348,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -399,17 +378,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/07/jwt-5/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
