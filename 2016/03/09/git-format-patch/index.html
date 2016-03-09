@@ -6,26 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Facebook Share vs Feed - alincode</title>
+    <title>git format-patch - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="Share Dialog
-The Share dialog gives people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger. This does not require Faceb">
+    <meta name="description" content="之前在公司都是做產品，只有一個 repo，不過現在不只維護一個專案。已經不是 git merge，就可以搞定了。
+前陣子為了要同步共用的 code 做 sync，研究了一下，有兩個指令可以做到這件事。
+一個是 git cherry-pick，另一個則是 git format-patch。
+我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 form">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Facebook Share vs Feed">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/08/fb-share/index.html">
+<meta property="og:title" content="git format-patch">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/09/git-format-patch/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Share Dialog
-The Share dialog gives people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger. This does not require Faceb">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/03/08/fb-share/share.png">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/03/08/fb-share/feed.png">
-<meta property="og:updated_time" content="2016-03-09T04:06:29.000Z">
+<meta property="og:description" content="之前在公司都是做產品，只有一個 repo，不過現在不只維護一個專案。已經不是 git merge，就可以搞定了。
+前陣子為了要同步共用的 code 做 sync，研究了一下，有兩個指令可以做到這件事。
+一個是 git cherry-pick，另一個則是 git format-patch。
+我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 form">
+<meta property="og:updated_time" content="2016-03-09T16:09:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Facebook Share vs Feed">
-<meta name="twitter:description" content="Share Dialog
-The Share dialog gives people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger. This does not require Faceb">
+<meta name="twitter:title" content="git format-patch">
+<meta name="twitter:description" content="之前在公司都是做產品，只有一個 repo，不過現在不只維護一個專案。已經不是 git merge，就可以搞定了。
+前陣子為了要同步共用的 code 做 sync，研究了一下，有兩個指令可以做到這件事。
+一個是 git cherry-pick，另一個則是 git format-patch。
+我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 form">
     
     
         
@@ -230,13 +234,13 @@ The Share dialog gives people the ability to publish an individual story to thei
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Facebook Share vs Feed
+            git format-patch
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Mar 08 2016 23:47:35 GMT+0800">
+    <time itemprop="datePublished" content="Wed Mar 09 2016 23:31:33 GMT+0800">
 	
-		    3月 08, 2016
+		    3月 09, 2016
     	
     </time>
     
@@ -245,14 +249,24 @@ The Share dialog gives people the ability to publish an individual story to thei
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="Share-Dialog"><a href="#Share-Dialog" class="headerlink" title="Share Dialog"></a>Share Dialog</h3><img src="/blog/2016/03/08/fb-share/share.png" alt="share.png" title="">
-<p>The Share dialog gives <strong>people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger.</strong> This does not require Facebook Login or any extended permissions, so it is the easiest way to enable sharing on the web.</p>
-<p>不需取得額外授權，並可選擇分佈在自己或朋友或群組的 Timeline，或將信息私訊給朋友。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;share&#39;,&#10;  href: &#39;https://developers.facebook.com/docs/&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="Feed-Dialog"><a href="#Feed-Dialog" class="headerlink" title="Feed Dialog"></a>Feed Dialog</h2><img src="/blog/2016/03/08/fb-share/feed.png" alt="feed.png" title="">
-<p>You can add the feed dialog to your app so <strong>people can publish individual stories to their timeline.</strong> This includes captions that your app manages and a personal comment from the person sharing the content.</p>
-<p>只能發佈在在自己的 Timeline，並可以指定附加訊息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;feed&#39;,&#10;  link: &#39;https://developers.facebook.com/docs/&#39;,&#10;  caption: &#39;An example caption&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+            <p>之前在公司都是做產品，只有一個 repo，不過現在不只維護一個專案。已經不是 <code>git merge</code>，就可以搞定了。</p>
+<p>前陣子為了要同步共用的 code 做 sync，研究了一下，有兩個指令可以做到這件事。</p>
+<p>一個是 <code>git cherry-pick</code>，另一個則是 <code>git format-patch</code>。</p>
+<p>我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 format-patch 的用法。</p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p><strong>產最後一個 commit 的 patch 出來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git format-patch -1</span><br></pre></td></tr></table></figure>
+<p>0001-hide-some-menu-for-admin.patch</p>
+<p><strong>產最後三個 commit 的 patch 出來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git format-patch -3</span><br></pre></td></tr></table></figure>
+<p>0001-fixed-reset-password.patch<br>0002-update-src-from-https.patch<br>0003-hide-some-menu-for-admin.patch</p>
+<p>要記得這部分跟我們平常看 <code>git log --oneline</code> 順序不一樣，0001 是最舊的，0003 是最後一筆 commit。</p>
+<p>接下來只有把 xxx.patch 檔，複製到你另一個 repo 的資料夾下。</p>
+<p><strong>一次匯入一個patch</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git am 0001-fixed-reset-password.patch</span><br></pre></td></tr></table></figure>
+<p><strong>一次匯入所有patch</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git am *.patch</span><br></pre></td></tr></table></figure></p>
+<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>由於自動產的 patch 檔名會帶 commit 內容，所以不像用 cherry-pick 用 sha 編號難以辨別，一個不專心就撿錯包了，我通常直接用 <code>format-patch</code> 幾筆一次拉出來，然後再看檔名，把不需要的 patch 砍掉方便又快速。</p>
+<p>不過這時候就會對於那種 log 內只寫 0001_fix_bug.patch 的情況，非常感冒…</p>
+<h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>如果想嘗試 git cherry-pick 的話，要先把另一個 repo 加進去，然後做 git fetch other_repo，然後另一個repo東西，就會變成分支，然後你就可以用 cherry-pick 指令去撿了。</p>
 
             
                 
@@ -265,7 +279,7 @@ The Share dialog gives people the ability to publish an individual story to thei
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/facebook/">facebook</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/git-format-patch/">git format-patch</a>
 
             </div>
         
@@ -274,7 +288,7 @@ The Share dialog gives people the ability to publish an individual story to thei
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/09/git-format-patch/"  data-tooltip="git format-patch">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -282,7 +296,7 @@ The Share dialog gives people the ability to publish an individual story to thei
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/07/jwt-5/" data-tooltip="JWT (5) Client Side 實作範例">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/fb-share/" data-tooltip="Facebook Share vs Feed">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -297,17 +311,17 @@ The Share dialog gives people the ability to publish an individual story to thei
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -345,7 +359,7 @@ The Share dialog gives people the ability to publish an individual story to thei
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/09/git-format-patch/"  data-tooltip="git format-patch">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -353,7 +367,7 @@ The Share dialog gives people the ability to publish an individual story to thei
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/07/jwt-5/" data-tooltip="JWT (5) Client Side 實作範例">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/fb-share/" data-tooltip="Facebook Share vs Feed">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -368,17 +382,17 @@ The Share dialog gives people the ability to publish an individual story to thei
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -398,17 +412,17 @@ The Share dialog gives people the ability to publish an individual story to thei
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/08/fb-share/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/09/git-format-patch/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
