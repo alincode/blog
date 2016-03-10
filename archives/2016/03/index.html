@@ -245,7 +245,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近開始看 <a href="http://www.books.com.tw/products/0010538538" target="_blank" rel="external">JavaScript 設計模式</a> 這本書，發現一個 javascript 真的跟其他語言不太一樣的地方，它竟然只有函式作用域跟全域變數，沒有我們平常認知的區域變數。</p>
+                    <p>最近開始看 <a href="http://www.books.com.tw/products/0010538538" target="_blank" rel="external">JavaScript 設計模式</a> 這本書，裡面有一段說到，JS 只有函式變數跟全域變數，沒有我們平常認知的區域變數，JS 真的跟其他語言不太一樣。</p>
 <p>以下面這面這個例子，在 Java 的話，name 應該是區域變數，後面的 function 呼叫 name 應該會有 error，但在 javascript 而言，它卻是全域變數。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;&#10;  var name = &#39;alincode&#39;;&#10;&#125;&#10;console.log(name);&#10;&#10;function test() &#123;&#10;  console.log(&#39;=== function start ===&#39;);&#10;  var othername = &#39;ali&#39;;&#10;  console.log(&#39;global var:&#39;, name);&#10;  console.log(&#39;function var:&#39;, othername);&#10;  console.log(&#39;=== function end ===&#39;);&#10;&#125;&#10;test();&#10;&#10;// console.log(&#39;othername:&#39;, othername);&#10;// output: ReferenceError: othername is not defined</span><br></pre></td></tr></table></figure>
 <p><strong>output</strong></p>
