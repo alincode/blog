@@ -250,10 +250,12 @@
 <p>一個是 <code>git cherry-pick</code>，另一個則是 <code>git format-patch</code>。</p>
 <p>我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 format-patch 的用法。</p>
 <h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p><strong>產最後一個 commit 的 patch 出來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git format-patch -1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -1</span><br></pre></td></tr></table></figure>
 <p>0001-hide-some-menu-for-admin.patch</p>
+<p><strong>產指定的patch出來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -1 &#60;sha&#62;</span><br></pre></td></tr></table></figure>
 <p><strong>產最後三個 commit 的 patch 出來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git format-patch -3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -3</span><br></pre></td></tr></table></figure>
 <p>0001-fixed-reset-password.patch<br>0002-update-src-from-https.patch<br>0003-hide-some-menu-for-admin.patch</p>
 <p>要記得這部分跟我們平常看 <code>git log --oneline</code> 順序不一樣，0001 是最舊的，0003 是最後一筆 commit。</p>
 <p>接下來只有把 xxx.patch 檔，複製到你另一個 repo 的資料夾下。</p>
