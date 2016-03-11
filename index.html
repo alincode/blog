@@ -260,7 +260,7 @@
 <h3 id="略…"><a href="#略…" class="headerlink" title="略…"></a>略…</h3><h2 id="這樣做的好處是什麼？"><a href="#這樣做的好處是什麼？" class="headerlink" title="這樣做的好處是什麼？"></a>這樣做的好處是什麼？</h2><h3 id="職責分明，減少重複的code"><a href="#職責分明，減少重複的code" class="headerlink" title="職責分明，減少重複的code"></a>職責分明，減少重複的code</h3><p>如果 controller 跟 service 都要做值的檢查，那不是重工？如果有時候把檢查放在 controller，有時候放在 service，那有沒有哪一天，根本忘了做值的檢查，所以遊戲規則要先講好。</p>
 <p>減少重工的部分，可以看看 <a href="http://www.books.com.tw/products/0010579897" target="_blank" rel="external">Clean Code</a> 這本書，如果沒看過 Clean code，可以先看看 <a href="http://www.books.com.tw/products/0010611737" target="_blank" rel="external">Kent Beck的實作模式</a>，比較薄，而且談的東西，好像都可以馬上運用在工作中，Clean Code 有些例子真的有點太極端，即使了解了，也很難完全實行，而且看完後，你會覺得兩本書提到的理論，有會相衝突的地方很有趣。</p>
 <h3 id="易於測試"><a href="#易於測試" class="headerlink" title="易於測試"></a>易於測試</h3><p>如果 controller 把 request 當參數傳給 service，那你 service 的測試 code，不就要寫得跟 controller 一樣？(重工) 所以只傳 Object data 跟 簡單型別值，你的測試會比較好寫。在者，並不是只有HTTP一種協定，如果現在變成接 Socket，那 service 不就不能共用。</p>
-<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>每個 Pattern 都是為了解決一些前輩的問題，而演變而成的，多多讀讀 Pattern 就可以少踩一些雷，多希望我能更早理解這個領悟。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>每個 Pattern 都是為了解決一些前輩的問題，而演變而成的，多多讀讀 Pattern 就可以少踩一些雷，多希望我能更早領悟這個道理。</p>
 
                     
                         
