@@ -6,33 +6,60 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>SPA SEO (1) - alincode</title>
+    <title>SPA SEO (2) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="SPA ( Single Page Apps ) 兩大隱憂不友善的SEO
-由於程式只跑在 client-side，所以 server 並沒有提供爬蟲需要的 HTML 資料。
-效率(Performance)
-由於要等整包 client-side 的 js 內下載完之後，才會在瀏覽器 render html，所以第一次的開啟速度會很慢。
-目前各框架提供的解決方案就是做 Server Side Rend">
+    <meta name="description" content="有實作 Isomorphic 的框架這裡只列出背後有知名組織支援的框架，
+
+redux by reactjs
+
+fluxible by yahoohttp://fluxible.io/
+
+relay by facebook
+
+
+幫助你快速開始的工具
+React Starter
+generator-fluxible
+
+1npm install -g yo generator-fluxible">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="SPA SEO (1)">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/12/spa-seo/index.html">
+<meta property="og:title" content="SPA SEO (2)">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/13/spa-seo-2/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="SPA ( Single Page Apps ) 兩大隱憂不友善的SEO
-由於程式只跑在 client-side，所以 server 並沒有提供爬蟲需要的 HTML 資料。
-效率(Performance)
-由於要等整包 client-side 的 js 內下載完之後，才會在瀏覽器 render html，所以第一次的開啟速度會很慢。
-目前各框架提供的解決方案就是做 Server Side Rend">
-<meta property="og:updated_time" content="2016-03-12T16:42:27.000Z">
+<meta property="og:description" content="有實作 Isomorphic 的框架這裡只列出背後有知名組織支援的框架，
+
+redux by reactjs
+
+fluxible by yahoohttp://fluxible.io/
+
+relay by facebook
+
+
+幫助你快速開始的工具
+React Starter
+generator-fluxible
+
+1npm install -g yo generator-fluxible">
+<meta property="og:updated_time" content="2016-03-13T14:55:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SPA SEO (1)">
-<meta name="twitter:description" content="SPA ( Single Page Apps ) 兩大隱憂不友善的SEO
-由於程式只跑在 client-side，所以 server 並沒有提供爬蟲需要的 HTML 資料。
-效率(Performance)
-由於要等整包 client-side 的 js 內下載完之後，才會在瀏覽器 render html，所以第一次的開啟速度會很慢。
-目前各框架提供的解決方案就是做 Server Side Rend">
+<meta name="twitter:title" content="SPA SEO (2)">
+<meta name="twitter:description" content="有實作 Isomorphic 的框架這裡只列出背後有知名組織支援的框架，
+
+redux by reactjs
+
+fluxible by yahoohttp://fluxible.io/
+
+relay by facebook
+
+
+幫助你快速開始的工具
+React Starter
+generator-fluxible
+
+1npm install -g yo generator-fluxible">
     
     
         
@@ -237,13 +264,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            SPA SEO (1)
+            SPA SEO (2)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Mar 12 2016 22:38:24 GMT+0800">
+    <time itemprop="datePublished" content="Sun Mar 13 2016 22:55:08 GMT+0800">
 	
-		    3月 12, 2016
+		    3月 13, 2016
     	
     </time>
     
@@ -252,22 +279,20 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="SPA-Single-Page-Apps-兩大隱憂"><a href="#SPA-Single-Page-Apps-兩大隱憂" class="headerlink" title="SPA ( Single Page Apps ) 兩大隱憂"></a>SPA ( Single Page Apps ) 兩大隱憂</h3><p><strong>不友善的SEO</strong></p>
-<p>由於程式只跑在 client-side，所以 server 並沒有提供爬蟲需要的 HTML 資料。</p>
-<p><strong>效率(Performance)</strong></p>
-<p>由於要等整包 client-side 的 js 內下載完之後，才會在瀏覽器 render html，所以第一次的開啟速度會很慢。</p>
-<p>目前各框架提供的解決方案就是做 <code>Server Side Rendering</code>，那現在不只有 client-side，多了一個 Server Side，它們要做的事基本是一樣的，所以共用的地方會很多，所以就提出了 <code>universal web application</code> 的概念。</p>
-<h3 id="Isomorphic-universal-JavaScript"><a href="#Isomorphic-universal-JavaScript" class="headerlink" title="Isomorphic ( universal ) JavaScript"></a>Isomorphic ( universal ) JavaScript</h3><p>一開始看到這個字的時候(之後又更名為 universal)，很容易以為這是一個新的框架，但其實它是只一個概念，而有很多框架去實踐了這個概念，例如<code>fluxible</code>，可以在新舊文章穿插看到這兩個字眼，其實是在講同件事。</p>
-<p>我們來看看 <a href="http://isomorphic.net/javascript" target="_blank" rel="external">http://isomorphic.net/javascript</a> 上對於這個字的定義</p>
-<blockquote>
-<p>JavaScript applications which run both client-side and server-side. Isomorphic JavaScript frameworks are the next step in the evolution of JavaScript frameworks. These new libraries and frameworks are solving the problems associated with traditional JavaScript frameworks.</p>
-</blockquote>
-<p>一個 JavaScript 的應用程式，可以同時跑在 client-side 和 server-side，Isomorphic JavaScript frameworks 是 JavaScript frameworks 下一階段的演化，這些新的 libraries 和 框架解決了傳統 JavaScript frameworks 的問題。</p>
-<p><strong>tips</strong></p>
+            <h3 id="有實作-Isomorphic-的框架"><a href="#有實作-Isomorphic-的框架" class="headerlink" title="有實作 Isomorphic 的框架"></a>有實作 Isomorphic 的框架</h3><p>這裡只列出背後有知名組織支援的框架，</p>
 <ul>
-<li>isomorphic : 同構</li>
-<li>universal : 通用</li>
+<li><p><a href="https://github.com/reactjs/redux" target="_blank" rel="external">redux by reactjs</a></p>
+</li>
+<li><p><a href="https://github.com/yahoo/fluxible" target="_blank" rel="external">fluxible by yahoo</a><br><a href="http://fluxible.io/" target="_blank" rel="external">http://fluxible.io/</a></p>
+</li>
+<li><p><a href="https://github.com/facebook/relay/" target="_blank" rel="external">relay by facebook</a></p>
+</li>
 </ul>
+<h3 id="幫助你快速開始的工具"><a href="#幫助你快速開始的工具" class="headerlink" title="幫助你快速開始的工具"></a>幫助你快速開始的工具</h3><ul>
+<li><a href="https://github.com/webpack/react-starter" target="_blank" rel="external">React Starter</a></li>
+<li>generator-fluxible</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-fluxible</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -289,7 +314,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/13/spa-seo-2/"  data-tooltip="SPA SEO (2)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -297,7 +322,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/11/controller-vs-service/" data-tooltip="controller vs service">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/12/spa-seo/" data-tooltip="SPA SEO (1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -312,17 +337,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -360,7 +385,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/13/spa-seo-2/"  data-tooltip="SPA SEO (2)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -368,7 +393,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/11/controller-vs-service/" data-tooltip="controller vs service">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/12/spa-seo/" data-tooltip="SPA SEO (1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -383,17 +408,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -413,17 +438,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/12/spa-seo/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/13/spa-seo-2/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
