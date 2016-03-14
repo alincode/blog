@@ -253,7 +253,7 @@
 <h4 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h4><p>Flux 架構的出現，是為了解決 MVC 架構所遇到的困難，Model 與 View 的互相關聯，太過複雜。</p>
 <p>初步的構想為 Action -&gt; Store -&gt; View，最後 Flux 架構為 <code>Action -&gt; Dispatcher -&gt; Store -&gt; View -&gt; Action</code></p>
 <h3 id="case-study-12-38"><a href="#case-study-12-38" class="headerlink" title="case study (12:38)"></a>case study (12:38)</h3><p>聊天功能所遇到的問題，兩個區塊的狀態，同時都有 Chat 的 stat 需要同步。</p>
-<h3 id="implement-render-22-30"><a href="#implement-render-22-30" class="headerlink" title="implement render (22:30)"></a>implement render (22:30)</h3><p>實作 render 所遇到的困難，傳統做法是用 append 增加新的元素，但這樣要維護 stat，所以改變為區塊一次性 render。</p>
+<h3 id="implement-render-22-30"><a href="#implement-render-22-30" class="headerlink" title="implement render (22:30)"></a>implement render (22:30)</h3><p>實作 render 所遇到的困難，傳統做法是用 append 增加新的元素，但這樣要維護 stat 很困難，所以改為 Model 一次 render。</p>
 <h3 id="Virtual-DOM-29-40"><a href="#Virtual-DOM-29-40" class="headerlink" title="Virtual DOM (29:40)"></a>Virtual DOM (29:40)</h3><p>為了做到區塊 render 又不損失效率，所以有一個虛擬(Virtual) DOM，可只 render 變動的部分。</p>
 <h3 id="Flux-vs-JQuery-41-45"><a href="#Flux-vs-JQuery-41-45" class="headerlink" title="Flux vs JQuery (41:45)"></a>Flux vs JQuery (41:45)</h3><p>Flux 幫你維護了 Stat，在 Flux 只需要考慮 Current Stat，而 JQuery 你需要自己維護每個 Stat。</p>
 <p><strong>JQuery render</strong></p>
