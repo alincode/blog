@@ -227,6 +227,66 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/15/Dan-Abramov-Live-React-Hot-Reloading/">
+                            Dan Abramov - Live React Hot Reloading 重點整理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 15 2016 23:59:11 GMT+0800">
+	
+		    3月 15, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>frustration : 挫折</p>
+<p>React-hot-loader: Tweak React Component in real time<br>Redux: Atomic Flux with hot reloading</p>
+<p>1:20 說明 Dan 試著去解決他 work flow 遇到的麻煩</p>
+<p>鼓勵花費多一點時間，了解你的開發工具，然後你可以更專注於你的開發。</p>
+<h3 id="我們可以解決什麼？"><a href="#我們可以解決什麼？" class="headerlink" title="我們可以解決什麼？"></a>我們可以解決什麼？</h3><p>Most changes aren’t drstic.<br>Preserve the state<br>Recover from errors</p>
+<h3 id="支援-Hot-loading-的-Tool"><a href="#支援-Hot-loading-的-Tool" class="headerlink" title="支援 Hot loading 的 Tool"></a>支援 Hot loading 的 Tool</h3><ul>
+<li>Amok</li>
+<li>Figwheel</li>
+<li>LiveReactLoad</li>
+<li>React Hot Loader</li>
+<li>Webpack</li>
+</ul>
+<h3 id="什麼是-Hot-Reloading？-4-45"><a href="#什麼是-Hot-Reloading？-4-45" class="headerlink" title="什麼是 Hot Reloading？ (4:45)"></a>什麼是 Hot Reloading？ (4:45)</h3><p>講者用了一個 Time Travel 的 Demo 做解說。</p>
+<h3 id="每次存檔的時候，都會更新三個-method-7-48"><a href="#每次存檔的時候，都會更新三個-method-7-48" class="headerlink" title="每次存檔的時候，都會更新三個 method (7:48)"></a>每次存檔的時候，都會更新三個 method (7:48)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Render&#10;ComponentDidUpdate&#10;handleClick</span><br></pre></td></tr></table></figure>
+<h3 id="My-React-WorkFlow"><a href="#My-React-WorkFlow" class="headerlink" title="My React WorkFlow"></a>My React WorkFlow</h3><ul>
+<li>React Hot loader</li>
+<li>Style Loader</li>
+<li>Webpack</li>
+</ul>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3>
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/15/Dan-Abramov-Live-React-Hot-Reloading/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/14/Rethinking-Web-App-Development/">
                             Rethinking Web App Development 重點整理
                         </a>
@@ -722,57 +782,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/06/git-stash/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/05/hexo-deploy/">
-                            將 hexo 部署到 github page
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Mar 05 2016 15:00:46 GMT+0800">
-	
-		    3月 05, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。</p>
-<p>例如你開一個 <code>yourname.github.io</code> 的 repo，裡面所有東西都可以對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 。</p>
-<p>但如果你想要放在 <strong>blog</strong> 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令 <code>hexo generate</code>，它只會幫你所有檔案產在根目錄下。</p>
-<p>那該怎麼做？</p>
-<img src="/blog/2016/03/05/hexo-deploy/github_page.png" alt="github_page.png" title="">
-<p><a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages/</a></p>
-<p>原來 github page 還有其他用法，就是可以自由命名 repo 名稱，然後，branch 名字取 <strong>gh-pages</strong>，然後他就會對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 子目錄下。</p>
-<h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
-<p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/blog&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/05/hexo-deploy/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
