@@ -6,24 +6,36 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>git flow request pull - alincode</title>
+    <title>Speed up Server Side Rendering 重點整理 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。
-github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實">
+    <meta name="description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
+renderToString 有單執行緒、同步、CPU 的限制
+server side 和 client side code 混在一起
+Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+
+技巧一：production mode (5:3">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="git flow request pull">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/index.html">
+<meta property="og:title" content="Speed up Server Side Rendering 重點整理">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。
-github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實">
-<meta property="og:updated_time" content="2016-03-16T17:51:11.000Z">
+<meta property="og:description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
+renderToString 有單執行緒、同步、CPU 的限制
+server side 和 client side code 混在一起
+Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+
+技巧一：production mode (5:3">
+<meta property="og:updated_time" content="2016-03-17T15:57:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git flow request pull">
-<meta name="twitter:description" content="因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。
-github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實">
+<meta name="twitter:title" content="Speed up Server Side Rendering 重點整理">
+<meta name="twitter:description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
+renderToString 有單執行緒、同步、CPU 的限制
+server side 和 client side code 混在一起
+Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+
+技巧一：production mode (5:3">
     
     
         
@@ -228,13 +240,13 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            git flow request pull
+            Speed up Server Side Rendering 重點整理
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Mar 17 2016 00:26:31 GMT+0800">
+    <time itemprop="datePublished" content="Fri Mar 18 2016 00:00:01 GMT+0800">
 	
-		    3月 17, 2016
+		    3月 18, 2016
     	
     </time>
     
@@ -243,16 +255,58 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。</p>
-<p>github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實務上是不可行的。</p>
-<p>git flow 基本上是每個人都可以直接 merge 進 develop，不需發 pr，等 release date，才從 develop 一次 merge 到 master。</p>
-<p>不過因為 team 的成員都是 remote 工作者，我想 pull request 這個流程還是有必要的，所以我採用一個混搭模式。</p>
-<h2 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h2><p>開一個新的分支，開始修 bug</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hotfix/issue-1 master&#10;git add .&#10;git commit -m &#39;fixed bug&#39;</span><br></pre></td></tr></table></figure>
-<h3 id="merge-master"><a href="#merge-master" class="headerlink" title="merge master"></a>merge master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
-<h3 id="merge-develop"><a href="#merge-develop" class="headerlink" title="merge develop"></a>merge develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
-<h3 id="第一個-pull-request"><a href="#第一個-pull-request" class="headerlink" title="第一個 pull request"></a>第一個 pull request</h3><p>base fork: company-repo at master<br>head fork: your-repo at master</p>
-<h3 id="第二個-pull-request"><a href="#第二個-pull-request" class="headerlink" title="第二個 pull request"></a>第二個 pull request</h3><p>base fork: company-repo at develop<br>head fork: your-repo at develop</p>
+            <h3 id="為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00"><a href="#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00" class="headerlink" title="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)"></a>為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)</h3><ul>
+<li>renderToString 有單執行緒、同步、CPU 的限制</li>
+<li>server side 和 client side code 混在一起</li>
+<li>Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。</li>
+</ul>
+<h3 id="技巧一：production-mode-5-30"><a href="#技巧一：production-mode-5-30" class="headerlink" title="技巧一：production mode (5:30)"></a>技巧一：production mode (5:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_ENV=production</span><br></pre></td></tr></table></figure>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>dev mode 有開啟 error checking，使得速度變慢(幾乎三倍)。</p>
+<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><p>無</p>
+<h3 id="技巧二：使用-React-mini版本-6-55"><a href="#技巧二：使用-React-mini版本-6-55" class="headerlink" title="技巧二：使用 React mini版本 (6:55)"></a>技巧二：使用 React mini版本 (6:55)</h3><p>從</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;</span><br></pre></td></tr></table></figure>
+<p>改為</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react/dist/react.min&#34;</span><br></pre></td></tr></table></figure>
+<h4 id="原因-8-15"><a href="#原因-8-15" class="headerlink" title="原因 (8:15)"></a>原因 (8:15)</h4><p>減少 NODE_ENV 檢查步驟</p>
+<h4 id="缺點-1"><a href="#缺點-1" class="headerlink" title="缺點"></a>缺點</h4><p>很難 debug</p>
+<h3 id="技巧三：babel-Transforms-9-05"><a href="#技巧三：babel-Transforms-9-05" class="headerlink" title="技巧三：babel Transforms (9:05)"></a>技巧三：babel Transforms (9:05)</h3><p>添加兩個 babel runtime plugin</p>
+<ul>
+<li><a href="https://babeljs.io/docs/plugins/transform-react-constant-elements/" target="_blank" rel="external">transforms-react-constant-elements</a></li>
+</ul>
+<blockquote>
+<p>Hoists element creation to the top level for subtrees that are fully static, which reduces call to React.createElement and the resulting allocations. More importantly, it tells React that the subtree hasn’t changed so React can completely skip it when reconciling.</p>
+</blockquote>
+<ul>
+<li><a href="https://babeljs.io/docs/plugins/transform-react-inline-elements/" target="_blank" rel="external">transform-react-inline-elements</a></li>
+</ul>
+<blockquote>
+<p>Converts JSX elements to object literals like {type: ‘div’, props: …} instead of calls to React.createElement.</p>
+</blockquote>
+<h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>減少執行期的計算</p>
+<h4 id="缺點-2"><a href="#缺點-2" class="headerlink" title="缺點"></a>缺點</h4><p>必須增加 babel build 的步驟</p>
+<h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p>significantly</p>
+<p>stateless components</p>
+<p>demo 把 ES5 換成 ES6 寫法 (12:40)</p>
+<h4 id="原因是什麼？"><a href="#原因是什麼？" class="headerlink" title="原因是什麼？"></a>原因是什麼？</h4><p>也許跟 auto binding 有關，但不確定。</p>
+<h4 id="缺點：需要把-ES5-轉換成-ES6-增加工作量，與不知道為什麼有人特別恨-ES6"><a href="#缺點：需要把-ES5-轉換成-ES6-增加工作量，與不知道為什麼有人特別恨-ES6" class="headerlink" title="缺點：需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6"></a>缺點：需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6</h4><p><a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u" target="_blank" rel="external">stateless components</a></p>
+<blockquote>
+<p>if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.</p>
+</blockquote>
+<h3 id="技巧五：Streaming"><a href="#技巧五：Streaming" class="headerlink" title="技巧五：Streaming"></a>技巧五：Streaming</h3><p>使用講者開發的框架，不產html，直接換成串流下載。</p>
+<p>Chunked Encoding HTTP 1.1</p>
+<p>從</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;;&#10;&#10;res.send(ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;));</span><br></pre></td></tr></table></figure>
+<p>改為</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom-stream/server&#34;;&#10;&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;).pipe(res);</span><br></pre></td></tr></table></figure>
+<h4 id="缺點-3"><a href="#缺點-3" class="headerlink" title="缺點"></a>缺點</h4><p>還在 beta，需要小心 CDN 跟 Proxy 方面</p>
+<h3 id="技巧六：針對-component-做-cache-22-35"><a href="#技巧六：針對-component-做-cache-22-35" class="headerlink" title="技巧六：針對 component 做 cache (22:35)"></a>技巧六：針對 component 做 cache (22:35)</h3><p>使用講者開發的框架</p>
+<h4 id="Demo-Cache-Components-25-17"><a href="#Demo-Cache-Components-25-17" class="headerlink" title="Demo Cache Components (25:17)"></a>Demo Cache Components (25:17)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cache = new LRURenderCache();&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;, &#123;cache: cache&#125;).pipe(res);</span><br></pre></td></tr></table></figure>
+<p>增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentCacheKey() &#123;&#10;  return JSON.st....&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="缺點：-27-30"><a href="#缺點：-27-30" class="headerlink" title="缺點：(27:30)"></a>缺點：(27:30)</h4><p>如果你的 cache key 有誤，可能會把資料傳送給錯的人。</p>
+<h3 id="總結-28-30"><a href="#總結-28-30" class="headerlink" title="總結 (28:30)"></a>總結 (28:30)</h3><p>你應該開始使用哪些技巧<br>技巧一：Yes<br>技巧二：Yes<br>技巧三：Yes<br>技巧四：Maybe<br>技巧五：Maybe<br>技巧六：Not yet</p>
+<p><a href="https://www.youtube.com/watch?v=PnpfGy7q96U" target="_blank" rel="external">Reactjs - Speed up Server Side Rendering - Sasha Aickin</a></p>
+<p><strong>Vocabulary</strong><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/downside" target="_blank" rel="external">downside</a>: 缺點<br><a href="http://dictionary.cambridge.org/dictionary/english/suspect" target="_blank" rel="external">suspect</a>: 懷疑<br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/trick_1?q=tricks" target="_blank" rel="external">tricks</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/recap?q=Recap" target="_blank" rel="external">recap</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/coarse_1" target="_blank" rel="external">coarse</a><br><a href="http://dictionary.cambridge.org/dictionary/english/culprit" target="_blank" rel="external">culprit</a></p>
 
             
                 
@@ -265,7 +319,7 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/git/">git</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Server-Side-Rendering/">Server Side Rendering</a>
 
             </div>
         
@@ -274,7 +328,7 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/"  data-tooltip="Speed up Server Side Rendering 重點整理">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -282,7 +336,7 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/16/Request-Entity-Too-Large/" data-tooltip="Request Entity Too Large">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/17/git-flow-request-pull/" data-tooltip="git flow request pull">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -297,17 +351,17 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -345,7 +399,7 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/"  data-tooltip="Speed up Server Side Rendering 重點整理">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -353,7 +407,7 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/16/Request-Entity-Too-Large/" data-tooltip="Request Entity Too Large">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/17/git-flow-request-pull/" data-tooltip="git flow request pull">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -368,17 +422,17 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -398,17 +452,17 @@ github flow 只有一個 master，每個人都發 pull request，由具有 merge
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
