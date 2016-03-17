@@ -265,21 +265,19 @@
 </ul>
 <h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>減少執行期的計算</p>
 <h4 id="缺點-2"><a href="#缺點-2" class="headerlink" title="缺點"></a>缺點</h4><p>必須增加 babel build 的步驟</p>
-<h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p>significantly</p>
-<p>stateless components</p>
-<p>demo 把 ES5 換成 ES6 寫法 (12:40)</p>
-<h4 id="原因是什麼？"><a href="#原因是什麼？" class="headerlink" title="原因是什麼？"></a>原因是什麼？</h4><p>也許跟 auto binding 有關，但不確定。</p>
-<h4 id="缺點：需要把-ES5-轉換成-ES6-增加工作量，與不知道為什麼有人特別恨-ES6"><a href="#缺點：需要把-ES5-轉換成-ES6-增加工作量，與不知道為什麼有人特別恨-ES6" class="headerlink" title="缺點：需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6"></a>缺點：需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6</h4><p><a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u" target="_blank" rel="external">stateless components</a></p>
+<h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p><a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u" target="_blank" rel="external">stateless components</a></p>
 <blockquote>
 <p>if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.</p>
 </blockquote>
+<h4 id="demo-把-ES5-換成-ES6-寫法-12-40"><a href="#demo-把-ES5-換成-ES6-寫法-12-40" class="headerlink" title="demo 把 ES5 換成 ES6 寫法 (12:40)"></a>demo 把 ES5 換成 ES6 寫法 (12:40)</h4><h4 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h4><p>也許跟 auto binding 有關，但不確定。</p>
+<h4 id="缺點-3"><a href="#缺點-3" class="headerlink" title="缺點"></a>缺點</h4><p>需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6</p>
 <h3 id="技巧五：Streaming"><a href="#技巧五：Streaming" class="headerlink" title="技巧五：Streaming"></a>技巧五：Streaming</h3><p>使用講者開發的框架，不產html，直接換成串流下載。</p>
 <p>Chunked Encoding HTTP 1.1</p>
 <p>從</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;;&#10;&#10;res.send(ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;));</span><br></pre></td></tr></table></figure>
 <p>改為</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom-stream/server&#34;;&#10;&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;).pipe(res);</span><br></pre></td></tr></table></figure>
-<h4 id="缺點-3"><a href="#缺點-3" class="headerlink" title="缺點"></a>缺點</h4><p>還在 beta，需要小心 CDN 跟 Proxy 方面</p>
+<h4 id="缺點-4"><a href="#缺點-4" class="headerlink" title="缺點"></a>缺點</h4><p>還在 beta，需要小心 CDN 跟 Proxy 方面</p>
 <h3 id="技巧六：針對-component-做-cache-22-35"><a href="#技巧六：針對-component-做-cache-22-35" class="headerlink" title="技巧六：針對 component 做 cache (22:35)"></a>技巧六：針對 component 做 cache (22:35)</h3><p>使用講者開發的框架</p>
 <h4 id="Demo-Cache-Components-25-17"><a href="#Demo-Cache-Components-25-17" class="headerlink" title="Demo Cache Components (25:17)"></a>Demo Cache Components (25:17)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cache = new LRURenderCache();&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;, &#123;cache: cache&#125;).pipe(res);</span><br></pre></td></tr></table></figure>
 <p>增加</p>
