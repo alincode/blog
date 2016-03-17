@@ -261,16 +261,8 @@
 <h3 id="技巧三：babel-Transforms-9-05"><a href="#技巧三：babel-Transforms-9-05" class="headerlink" title="技巧三：babel Transforms (9:05)"></a>技巧三：babel Transforms (9:05)</h3><p>添加兩個 babel runtime plugin</p>
 <ul>
 <li><a href="https://babeljs.io/docs/plugins/transform-react-constant-elements/" target="_blank" rel="external">transforms-react-constant-elements</a></li>
-</ul>
-<blockquote>
-<p>Hoists element creation to the top level for subtrees that are fully static, which reduces call to React.createElement and the resulting allocations. More importantly, it tells React that the subtree hasn’t changed so React can completely skip it when reconciling.</p>
-</blockquote>
-<ul>
 <li><a href="https://babeljs.io/docs/plugins/transform-react-inline-elements/" target="_blank" rel="external">transform-react-inline-elements</a></li>
 </ul>
-<blockquote>
-<p>Converts JSX elements to object literals like {type: ‘div’, props: …} instead of calls to React.createElement.</p>
-</blockquote>
 <h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>減少執行期的計算</p>
 <h4 id="缺點-2"><a href="#缺點-2" class="headerlink" title="缺點"></a>缺點</h4><p>必須增加 babel build 的步驟</p>
 <h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p>significantly</p>
