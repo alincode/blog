@@ -6,36 +6,30 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Speed up Server Side Rendering 重點整理 - alincode</title>
+    <title>建立自己的 ATOM snippet - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
-renderToString 有單執行緒、同步、CPU 的限制
-server side 和 client side code 混在一起
-Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+    <meta name="description" content="再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 Open Your Snippet。
 
-技巧一：production mode (5:3">
+它會幫你開啟一個 snippet.cson 的文字檔
+Snippet 格式簡單範例1&amp;#39;.source.js&amp;#39;:&amp;#10;  &amp;#39;print request body&amp;#39;">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Speed up Server Side Rendering 重點整理">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/index.html">
+<meta property="og:title" content="建立自己的 ATOM snippet">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
-renderToString 有單執行緒、同步、CPU 的限制
-server side 和 client side code 混在一起
-Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+<meta property="og:description" content="再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 Open Your Snippet。
 
-技巧一：production mode (5:3">
-<meta property="og:updated_time" content="2016-03-17T16:08:54.000Z">
+它會幫你開啟一個 snippet.cson 的文字檔
+Snippet 格式簡單範例1&amp;#39;.source.js&amp;#39;:&amp;#10;  &amp;#39;print request body&amp;#39;">
+<meta property="og:updated_time" content="2016-03-19T13:22:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Speed up Server Side Rendering 重點整理">
-<meta name="twitter:description" content="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)
-renderToString 有單執行緒、同步、CPU 的限制
-server side 和 client side code 混在一起
-Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。
+<meta name="twitter:title" content="建立自己的 ATOM snippet">
+<meta name="twitter:description" content="再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 Open Your Snippet。
 
-技巧一：production mode (5:3">
+它會幫你開啟一個 snippet.cson 的文字檔
+Snippet 格式簡單範例1&amp;#39;.source.js&amp;#39;:&amp;#10;  &amp;#39;print request body&amp;#39;">
     
     
         
@@ -240,13 +234,13 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Speed up Server Side Rendering 重點整理
+            建立自己的 ATOM snippet
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Mar 18 2016 00:00:01 GMT+0800">
+    <time itemprop="datePublished" content="Sat Mar 19 2016 20:59:46 GMT+0800">
 	
-		    3月 18, 2016
+		    3月 19, 2016
     	
     </time>
     
@@ -255,48 +249,24 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00"><a href="#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00" class="headerlink" title="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)"></a>為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)</h3><ul>
-<li>renderToString 有單執行緒、同步、CPU 的限制</li>
-<li>server side 和 client side code 混在一起</li>
-<li>Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。</li>
-</ul>
-<h3 id="技巧一：production-mode-5-30"><a href="#技巧一：production-mode-5-30" class="headerlink" title="技巧一：production mode (5:30)"></a>技巧一：production mode (5:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_ENV=production</span><br></pre></td></tr></table></figure>
-<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>dev mode 有開啟 error checking，使得速度變慢(幾乎三倍)。</p>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><p>無</p>
-<h3 id="技巧二：使用-React-mini版本-6-55"><a href="#技巧二：使用-React-mini版本-6-55" class="headerlink" title="技巧二：使用 React mini版本 (6:55)"></a>技巧二：使用 React mini版本 (6:55)</h3><p>從</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;</span><br></pre></td></tr></table></figure>
-<p>改為</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react/dist/react.min&#34;</span><br></pre></td></tr></table></figure>
-<h4 id="原因-8-15"><a href="#原因-8-15" class="headerlink" title="原因 (8:15)"></a>原因 (8:15)</h4><p>減少 NODE_ENV 檢查步驟</p>
-<h4 id="缺點-1"><a href="#缺點-1" class="headerlink" title="缺點"></a>缺點</h4><p>很難 debug</p>
-<h3 id="技巧三：babel-Transforms-9-05"><a href="#技巧三：babel-Transforms-9-05" class="headerlink" title="技巧三：babel Transforms (9:05)"></a>技巧三：babel Transforms (9:05)</h3><p>添加兩個 babel runtime plugin</p>
+            <p>再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 <code>Open Your Snippet</code>。</p>
+
+<p>它會幫你開啟一個 <code>snippet.cson</code> 的文字檔</p>
+<h3 id="Snippet-格式"><a href="#Snippet-格式" class="headerlink" title="Snippet 格式"></a>Snippet 格式</h3><h4 id="簡單範例"><a href="#簡單範例" class="headerlink" title="簡單範例"></a>簡單範例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;.source.js&#39;:&#10;  &#39;print request body&#39;:&#10;    &#39;prefix&#39;: &#39;tb&#39;&#10;    &#39;body&#39;: &#39;console.log(&#34;=== res.body ==&#62;&#34;, res.body);$1&#39;&#10;  &#39;print arrow&#39;:&#10;    &#39;prefix&#39;: &#39;t&#39;&#10;    &#39;body&#39;: &#39;console.log(&#34;==========&#62; &#34;, $1);&#39;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><a href="https://babeljs.io/docs/plugins/transform-react-constant-elements/" target="_blank" rel="external">transforms-react-constant-elements</a></li>
-<li><a href="https://babeljs.io/docs/plugins/transform-react-inline-elements/" target="_blank" rel="external">transform-react-inline-elements</a></li>
+<li>source.js 指的是哪種支援哪種副黨名的檔案</li>
+<li>prefix 是指快速鍵</li>
+<li>body 則是你自己指定的自動產生內容</li>
+<li>$1 則是內容產生後，你指標停留的位址，除了 $1 之外，你也可以取 $2，可用 tab 鍵依序切換。</li>
 </ul>
-<h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>減少執行期的計算</p>
-<h4 id="缺點-2"><a href="#缺點-2" class="headerlink" title="缺點"></a>缺點</h4><p>必須增加 babel build 的步驟</p>
-<h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p><a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u" target="_blank" rel="external">stateless components</a></p>
-<blockquote>
-<p>if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.</p>
-</blockquote>
-<h4 id="demo-把-ES5-換成-ES6-寫法-12-40"><a href="#demo-把-ES5-換成-ES6-寫法-12-40" class="headerlink" title="demo 把 ES5 換成 ES6 寫法 (12:40)"></a>demo 把 ES5 換成 ES6 寫法 (12:40)</h4><h4 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h4><p>也許跟 auto binding 有關，但不確定。</p>
-<h4 id="缺點-3"><a href="#缺點-3" class="headerlink" title="缺點"></a>缺點</h4><p>需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6</p>
-<h3 id="技巧五：Streaming"><a href="#技巧五：Streaming" class="headerlink" title="技巧五：Streaming"></a>技巧五：Streaming</h3><p>使用講者開發的框架，不產html，直接換成串流下載。</p>
-<p>Chunked Encoding HTTP 1.1</p>
-<p>從</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;;&#10;&#10;res.send(ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;));</span><br></pre></td></tr></table></figure>
-<p>改為</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom-stream/server&#34;;&#10;&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;).pipe(res);</span><br></pre></td></tr></table></figure>
-<h4 id="缺點-4"><a href="#缺點-4" class="headerlink" title="缺點"></a>缺點</h4><p>還在 beta，需要小心 CDN 跟 Proxy 方面</p>
-<h3 id="技巧六：針對-component-做-cache-22-35"><a href="#技巧六：針對-component-做-cache-22-35" class="headerlink" title="技巧六：針對 component 做 cache (22:35)"></a>技巧六：針對 component 做 cache (22:35)</h3><p>使用講者開發的框架</p>
-<h4 id="Demo-Cache-Components-25-17"><a href="#Demo-Cache-Components-25-17" class="headerlink" title="Demo Cache Components (25:17)"></a>Demo Cache Components (25:17)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cache = new LRURenderCache();&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;, &#123;cache: cache&#125;).pipe(res);</span><br></pre></td></tr></table></figure>
-<p>增加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentCacheKey() &#123;&#10;  return JSON.st....&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="缺點：-27-30"><a href="#缺點：-27-30" class="headerlink" title="缺點：(27:30)"></a>缺點：(27:30)</h4><p>如果你的 cache key 有誤，可能會把資料傳送給錯的人。</p>
-<h3 id="總結-28-30"><a href="#總結-28-30" class="headerlink" title="總結 (28:30)"></a>總結 (28:30)</h3><p>你應該開始使用哪些技巧<br>技巧一：Yes<br>技巧二：Yes<br>技巧三：Yes<br>技巧四：Maybe<br>技巧五：Maybe<br>技巧六：Not yet</p>
-<p>影片：<a href="https://www.youtube.com/watch?v=PnpfGy7q96U" target="_blank" rel="external">Reactjs - Speed up Server Side Rendering - Sasha Aickin</a></p>
-<p><strong>Vocabulary</strong><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/downside" target="_blank" rel="external">downside</a>: 缺點<br><a href="http://dictionary.cambridge.org/dictionary/english/suspect" target="_blank" rel="external">suspect</a>: 懷疑<br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/trick_1?q=tricks" target="_blank" rel="external">tricks</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/recap?q=Recap" target="_blank" rel="external">recap</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/coarse_1" target="_blank" rel="external">coarse</a><br><a href="http://dictionary.cambridge.org/dictionary/english/culprit" target="_blank" rel="external">culprit</a></p>
+<h4 id="更多範例"><a href="#更多範例" class="headerlink" title="更多範例"></a>更多範例</h4><ul>
+<li><a href="https://github.com/atom/language-html/blob/master/snippets/language-html.cson" target="_blank" rel="external">language-html.cson</a></li>
+<li><a href="https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson" target="_blank" rel="external">language-javascript.cson</a></li>
+</ul>
+<h3 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h3><ul>
+<li><a href="https://atom.io/docs/latest/using-atom-snippets" target="_blank" rel="external">using-atom-snippets</a></li>
+<li><a href="https://atom.io/docs/latest/using-atom-basic-customization#cson" target="_blank" rel="external">Basic Customization</a></li>
+</ul>
 
             
                 
@@ -309,7 +279,7 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Server-Side-Rendering/">Server Side Rendering</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/ATOM/">ATOM</a>
 
             </div>
         
@@ -318,7 +288,7 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/19/create-your-own-snippet/"  data-tooltip="建立自己的 ATOM snippet">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -326,7 +296,7 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/17/git-flow-request-pull/" data-tooltip="git flow request pull">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/" data-tooltip="Speed up Server Side Rendering 重點整理">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -341,17 +311,17 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -389,7 +359,7 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/19/create-your-own-snippet/"  data-tooltip="建立自己的 ATOM snippet">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -397,7 +367,7 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/17/git-flow-request-pull/" data-tooltip="git flow request pull">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/" data-tooltip="Speed up Server Side Rendering 重點整理">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -412,17 +382,17 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -442,17 +412,17 @@ Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心�
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
