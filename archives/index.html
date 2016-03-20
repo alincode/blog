@@ -229,7 +229,7 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/">
-                            JWT Authentication with AngularJS Forward 4 Web Summit 2
+                            JWT Authentication with AngularJS Forward 4 Web Summit (1)
                         </a>
                     
                 </h1>
@@ -245,36 +245,56 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
-<li>給 client access token 和 refresh token</li>
-<li>access token 的效期要比 refresh token 短</li>
-<li>refresh token 用來取得 access token</li>
-<li>access token 來自於可靠的簽證機制</li>
-<li>refresh token check for revocations</li>
-<li>解除驗證的方式為否決 refresh token</li>
+                    <h3 id="一般-Session-的產生流程-3-10"><a href="#一般-Session-的產生流程-3-10" class="headerlink" title="一般 Session 的產生流程 (3:10)"></a>一般 Session 的產生流程 (3:10)</h3><ul>
+<li>瀏覽器發送一個 request 到 server，內含帳號跟密碼</li>
+<li>server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。</li>
+<li>將存有 Session ID 的 cookie，回傳給瀏覽器。</li>
+<li>瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server</li>
 </ul>
-<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
-<li>維護 refresh token 與 access token 的關聯</li>
-<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
-<li>blacklists TTL is the expiration of the access token</li>
+<h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
+<li>難以理解，而且不含意義</li>
+<li>增加資料庫的負擔</li>
+<li>Perception that cooleies are inherently insecure</li>
 </ul>
-<p>e.g. redis (21:30)</p>
-<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
-<li>Local Storage is not secure (XSS vulnerable)</li>
-<li>在 HTTPS 下使用 Cookie 是安全的</li>
+<h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
+<li>Authentication (n.) 驗證</li>
+<li>Authorization (n.) 認證、許可</li>
+<li>Token</li>
+<li>JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。</li>
 </ul>
-<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
-<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
-<li>同步 token</li>
-<li>送兩個 cookie</li>
-<li>檢查 header origin</li>
+<h3 id="JWT-結構-6-55"><a href="#JWT-結構-6-55" class="headerlink" title="JWT 結構 (6:55)"></a>JWT 結構 (6:55)</h3><p>是一個經過 Base64-URL encoded 的字串</p>
+<p><strong>結構分三個部分</strong></p>
+<ul>
+<li>Header</li>
+<li>Body(Claims)</li>
+<li>Cryptographic Signature 加密簽證</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
-<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
-<li>opaque (adj.)</li>
-<li>revoke (v.) / revocation (n.)</li>
-<li>blacklists</li>
+<h4 id="解開後的內容"><a href="#解開後的內容" class="headerlink" title="解開後的內容"></a>解開後的內容</h4><p><strong>範例</strong></p>
+<ul>
+<li>iss: <a href="http://yourdomain.com" target="_blank" rel="external">http://yourdomain.com</a></li>
+<li>exp: 60000</li>
+<li>sub: userId</li>
+<li>scope: api/buy</li>
 </ul>
+<p><strong>意義</strong></p>
+<ul>
+<li>iss:</li>
+<li>exp: 效期(毫秒)</li>
+<li>sub:</li>
+<li>scope: 作用域</li>
+</ul>
+<h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
+<li>使用者經過驗證後，取得 Token</li>
+<li>由你的 server 來製造 Token</li>
+<li>client 儲存 token，並在需要驗證的 request 使用它。</li>
+</ul>
+<h3 id="概述-JWT-12-15"><a href="#概述-JWT-12-15" class="headerlink" title="概述 JWT (12:15)"></a>概述 JWT (12:15)</h3><ul>
+<li>無狀態認證機制</li>
+<li>Token 具有作用域的概念</li>
+<li>產生許可證</li>
+<li>決定區域性</li>
+</ul>
+<p>因為影片實在太長，分兩篇</p>
 
                     
                         
