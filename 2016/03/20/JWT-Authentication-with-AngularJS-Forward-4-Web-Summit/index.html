@@ -31,7 +31,7 @@ server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。
 
 Session 識別的問題(3:50)
 難以理">
-<meta property="og:updated_time" content="2016-03-20T11:40:56.000Z">
+<meta property="og:updated_time" content="2016-03-20T11:58:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JWT Authentication with AngularJS 重點整理 (1)">
 <meta name="twitter:description" content="一般 Session 的產生流程 (3:10)
@@ -270,7 +270,7 @@ Session 識別的問題(3:50)
 <h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
 <li>難以理解，而且不含意義</li>
 <li>增加資料庫的負擔</li>
-<li>Perception that cooleies are inherently insecure</li>
+<li>Perception that cookies are inherently insecure</li>
 </ul>
 <h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
 <li>Authentication (n.) 驗證</li>
@@ -294,11 +294,12 @@ Session 識別的問題(3:50)
 </ul>
 <p><strong>意義</strong></p>
 <ul>
-<li>iss:</li>
-<li>exp: 效期(毫秒)</li>
-<li>sub:</li>
+<li>iss: 發佈者 (Issuer)</li>
+<li>exp: 效期，單位是毫秒 (Expiration Time)</li>
+<li>sub: 用戶 (Subject)</li>
 <li>scope: 作用域</li>
 </ul>
+<p>4.1.1. “iss” (Issuer) Claim<br>4.1.2. “sub” (Subject) Claim<br>4.1.3. “aud” (Audience) Claim<br>4.1.4. “exp” (Expiration Time) Claim</p>
 <h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
 <li>使用者經過驗證後，取得 Token</li>
 <li>由你的 server 來製造 Token</li>
@@ -310,7 +311,7 @@ Session 識別的問題(3:50)
 <li>產生許可證</li>
 <li>決定區域性</li>
 </ul>
-<p>因為影片實在太長，分兩篇</p>
+<p>因為影片實在太長，後面有點不太好理解，分兩篇慢慢看</p>
 
             
                 
