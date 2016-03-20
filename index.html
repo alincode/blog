@@ -227,6 +227,77 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/">
+                            JWT Authentication with AngularJS Forward 4 Web Summit 2
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Mar 20 2016 19:35:42 GMT+0800">
+	
+		    3月 20, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
+<li>給 client access token 和 refresh token</li>
+<li>access token 的效期要比 refresh token 短</li>
+<li>refresh token 用來取得 access token</li>
+<li>access token 來自於可靠的簽證機制</li>
+<li>refresh token check for revocations</li>
+<li>解除驗證的方式為否決 refresh token</li>
+</ul>
+<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
+<li>維護 refresh token 與 access token 的關聯</li>
+<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
+<li>blacklists TTL is the expiration of the access token</li>
+</ul>
+<p>e.g. redis (21:30)</p>
+<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
+<li>Local Storage is not secure (XSS vulnerable)</li>
+<li>在 HTTPS 下使用 Cookie 是安全的</li>
+</ul>
+<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
+<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
+<li>同步 token</li>
+<li>送兩個 cookie</li>
+<li>檢查 header origin</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
+<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
+<li>opaque (adj.)</li>
+<li>revoke (v.) / revocation (n.)</li>
+<li>blacklists</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/19/create-your-own-snippet/">
                             建立自己的 ATOM snippet
                         </a>
@@ -766,52 +837,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/11/controller-vs-service/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/10/js-var/">
-                            javascript var 作用域
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 10 2016 23:12:10 GMT+0800">
-	
-		    3月 10, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近開始看 <a href="http://www.books.com.tw/products/0010538538" target="_blank" rel="external">JavaScript 設計模式</a> 這本書，裡面有一段說到，JS 只有函式變數跟全域變數，沒有我們平常認知的區域變數，JS 真的跟其他語言不太一樣。</p>
-<p>以下面這面這個例子，在 Java 的話，name 應該是區域變數，後面的 function 呼叫 name 應該會有 error，但在 javascript 而言，它卻是全域變數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;&#10;  var name = &#39;alincode&#39;;&#10;&#125;&#10;console.log(name);&#10;&#10;function test() &#123;&#10;  console.log(&#39;=== function start ===&#39;);&#10;  var othername = &#39;ali&#39;;&#10;  console.log(&#39;global var:&#39;, name);&#10;  console.log(&#39;function var:&#39;, othername);&#10;  console.log(&#39;=== function end ===&#39;);&#10;&#125;&#10;test();&#10;&#10;// console.log(&#39;othername:&#39;, othername);&#10;// output: ReferenceError: othername is not defined</span><br></pre></td></tr></table></figure>
-<p><strong>output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alincode&#10;=== function start ===&#10;global var: alincode&#10;function var: ali&#10;=== function end ===</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/10/js-var/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
