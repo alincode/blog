@@ -6,39 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JWT Authentication with AngularJS Forward 4 Web Summit (2) - alincode</title>
+    <title>ckeditor - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="Access and Refresh Token (14:00)
-給 client access token 和 refresh token
-access token 的效期要比 refresh token 短
-refresh token 用來取得 access token
-access token 來自於可靠的簽證機制
-refresh token check for revocations
-解除">
+    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/index.html">
+<meta property="og:title" content="ckeditor">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/23/ckeditor-p/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Access and Refresh Token (14:00)
-給 client access token 和 refresh token
-access token 的效期要比 refresh token 短
-refresh token 用來取得 access token
-access token 來自於可靠的簽證機制
-refresh token check for revocations
-解除">
-<meta property="og:updated_time" content="2016-03-22T12:58:52.000Z">
+<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta property="og:updated_time" content="2016-03-23T14:25:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
-<meta name="twitter:description" content="Access and Refresh Token (14:00)
-給 client access token 和 refresh token
-access token 的效期要比 refresh token 短
-refresh token 用來取得 access token
-access token 來自於可靠的簽證機制
-refresh token check for revocations
-解除">
+<meta name="twitter:title" content="ckeditor">
+<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
     
     
         
@@ -243,13 +225,13 @@ refresh token check for revocations
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JWT Authentication with AngularJS Forward 4 Web Summit (2)
+            ckeditor
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Mar 22 2016 22:16:09 GMT+0800">
+    <time itemprop="datePublished" content="Wed Mar 23 2016 22:24:43 GMT+0800">
 	
-		    3月 22, 2016
+		    3月 23, 2016
     	
     </time>
     
@@ -258,37 +240,7 @@ refresh token check for revocations
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
-<li>給 client access token 和 refresh token</li>
-<li>access token 的效期要比 refresh token 短</li>
-<li>refresh token 用來取得 access token</li>
-<li>access token 來自於可靠的簽證機制</li>
-<li>refresh token check for revocations</li>
-<li>解除驗證的方式為否決 refresh token</li>
-</ul>
-<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
-<li>維護 refresh token 與 access token 的關聯</li>
-<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
-<li>blacklists TTL is the expiration of the access token</li>
-</ul>
-<p>e.g. redis (21:30)</p>
-<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
-<li>Local Storage is not secure (XSS vulnerable)</li>
-<li>在 HTTPS 下使用 Cookie 是安全的<br>HttpOnly</li>
-</ul>
-<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
-<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
-<li>同步 token</li>
-<li>送兩個 cookie</li>
-<li>檢查 header origin</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
-<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
-<li>opaque (adj.)</li>
-<li>revoke (v.) / revocation (n.)</li>
-<li>blacklists</li>
-</ul>
-
+            
             
                 
 
@@ -297,19 +249,12 @@ refresh token check for revocations
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/JWT/">JWT</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/"  data-tooltip="ckeditor">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -317,7 +262,7 @@ refresh token check for revocations
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/21/chrome-debug-rendering/" data-tooltip="chrome debug rendering">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/" data-tooltip="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -332,17 +277,17 @@ refresh token check for revocations
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -380,7 +325,7 @@ refresh token check for revocations
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/"  data-tooltip="ckeditor">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -388,7 +333,7 @@ refresh token check for revocations
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/21/chrome-debug-rendering/" data-tooltip="chrome debug rendering">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/" data-tooltip="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -403,17 +348,17 @@ refresh token check for revocations
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -433,17 +378,17 @@ refresh token check for revocations
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
