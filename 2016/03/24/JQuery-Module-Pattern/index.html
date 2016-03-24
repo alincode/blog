@@ -6,24 +6,21 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>ckeditor 換行語法調整 - alincode</title>
+    <title>JQuery Module Pattern - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="第一步你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。
-特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地">
+    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="ckeditor 換行語法調整">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/23/ckeditor-p/index.html">
+<meta property="og:title" content="JQuery Module Pattern">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="第一步你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。
-特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地">
-<meta property="og:updated_time" content="2016-03-23T19:22:53.000Z">
+<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta property="og:updated_time" content="2016-03-24T13:36:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ckeditor 換行語法調整">
-<meta name="twitter:description" content="第一步你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。
-特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地">
+<meta name="twitter:title" content="JQuery Module Pattern">
+<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
     
     
         
@@ -228,13 +225,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            ckeditor 換行語法調整
+            JQuery Module Pattern
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Mar 23 2016 22:24:43 GMT+0800">
+    <time itemprop="datePublished" content="Thu Mar 24 2016 21:36:33 GMT+0800">
 	
-		    3月 23, 2016
+		    3月 24, 2016
     	
     </time>
     
@@ -243,21 +240,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。</p>
-<p>特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地方，也會變成去抓 url，不是本機的位置。</p>
-<p><code>&lt;script src=&quot;./ckeditor.js&quot;&gt;&lt;/script&gt;</code></p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>在 html 檔案內，須有對應的 html 元素跟 JS</p>
-<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea name=&#34;editor1&#34; id=&#34;editor1&#34; rows=&#34;10&#34; cols=&#34;80&#34;&#62;&#10;    This is my textarea to be replaced with CKEditor.&#10;&#60;/textarea&#62;</span><br></pre></td></tr></table></figure>
-<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CKEDITOR.replace( &#39;editor1&#39;);</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<p>不使用預設的 config，另外獨立一個設定擋。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CKEDITOR.replace( &#39;editor1&#39;, &#123;&#10;  customConfig: &#39;./custom/ckeditor_config.js&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>改 config 設定內容，預設值是<code>P 元素</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.enterMode = CKEDITOR.ENTER_P;</span><br></pre></td></tr></table></figure>
-<p>但還有其他選項，例如 <code>DIV 元素</code> 或 <code>BR 元素</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.enterMode = CKEDITOR.ENTER_DIV;&#10;// or&#10;config.enterMode = CKEDITOR.ENTER_BR;</span><br></pre></td></tr></table></figure>
-<h3 id="完整範例"><a href="#完整範例" class="headerlink" title="完整範例"></a>完整範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;    &#60;head&#62;&#10;        &#60;meta charset=&#34;utf-8&#34;&#62;&#10;        &#60;title&#62;A Simple Page with CKEditor&#60;/title&#62;&#10;        &#60;!-- Make sure the path to CKEditor is correct. --&#62;&#10;        &#60;script src=&#34;./ckeditor.js&#34;&#62;&#60;/script&#62;&#10;    &#60;/head&#62;&#10;    &#60;body&#62;&#10;        &#60;form&#62;&#10;            &#60;textarea name=&#34;editor1&#34; id=&#34;editor1&#34; rows=&#34;10&#34; cols=&#34;80&#34;&#62;&#10;                This is my textarea to be replaced with CKEditor.&#10;            &#60;/textarea&#62;&#10;            &#60;script&#62;&#10;&#10;                CKEDITOR.replace( &#39;editor1&#39;);&#10;&#10;&#10;                // CKEDITOR.replace( &#39;editor1&#39;, &#123;&#10;                //     customConfig: &#39;./custom/ckeditor_config.js&#39;&#10;                // &#125;);&#10;            &#60;/script&#62;&#10;        &#60;/form&#62;&#10;    &#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config.js &#25110; ./custom/ckeditor_config.js&#10;CKEDITOR.editorConfig = function( config ) &#123;&#10;  config.enterMode = CKEDITOR.ENTER_DIV;&#10;  // config.enterMode = CKEDITOR.ENTER_BR;&#10;  // config.enterMode = CKEDITOR.ENTER_P;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-
+            
             
                 
 
@@ -266,19 +249,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/ckeditor/">ckeditor</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/24/JQuery-Module-Pattern/"  data-tooltip="JQuery Module Pattern">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -286,7 +262,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/" data-tooltip="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/" data-tooltip="ckeditor 換行語法調整">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -301,17 +277,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -349,7 +325,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/24/JQuery-Module-Pattern/"  data-tooltip="JQuery Module Pattern">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -357,7 +333,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/" data-tooltip="JWT Authentication with AngularJS Forward 4 Web Summit (2)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/" data-tooltip="ckeditor 換行語法調整">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -372,17 +348,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -402,17 +378,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/23/ckeditor-p/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
