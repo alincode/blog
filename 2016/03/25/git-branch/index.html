@@ -6,24 +6,37 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>JQuery Module Pattern - alincode</title>
+    <title>取得其他 git remote branch - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。
-範例1(function($) &amp;#123;&amp;#10;&amp;#10;  // link The Module Pattern&amp;#10;  // https://learn.jquery.com/code-organization/concepts/&amp;#10;  var member =">
+    <meta name="description" content="如果 remote 上面有很分支，你在下 git clone 的時候，會發現它只有幫你建一個預設的分支。
+查看 local 分支git branch
+checkout origin 上其他分支如果你也需要 origin 上其他分支，你可以下 git branch --all 找到你要 checkout 的分支名稱。
+
+然後把分支 checkout 出來，如下：
+1git checkout -b m">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="JQuery Module Pattern">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/index.html">
+<meta property="og:title" content="取得其他 git remote branch">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/25/git-branch/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。
-範例1(function($) &amp;#123;&amp;#10;&amp;#10;  // link The Module Pattern&amp;#10;  // https://learn.jquery.com/code-organization/concepts/&amp;#10;  var member =">
-<meta property="og:updated_time" content="2016-03-24T18:11:31.000Z">
+<meta property="og:description" content="如果 remote 上面有很分支，你在下 git clone 的時候，會發現它只有幫你建一個預設的分支。
+查看 local 分支git branch
+checkout origin 上其他分支如果你也需要 origin 上其他分支，你可以下 git branch --all 找到你要 checkout 的分支名稱。
+
+然後把分支 checkout 出來，如下：
+1git checkout -b m">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/03/25/git-branch/git-branch.png">
+<meta property="og:updated_time" content="2016-03-25T15:33:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JQuery Module Pattern">
-<meta name="twitter:description" content="這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。
-範例1(function($) &amp;#123;&amp;#10;&amp;#10;  // link The Module Pattern&amp;#10;  // https://learn.jquery.com/code-organization/concepts/&amp;#10;  var member =">
+<meta name="twitter:title" content="取得其他 git remote branch">
+<meta name="twitter:description" content="如果 remote 上面有很分支，你在下 git clone 的時候，會發現它只有幫你建一個預設的分支。
+查看 local 分支git branch
+checkout origin 上其他分支如果你也需要 origin 上其他分支，你可以下 git branch --all 找到你要 checkout 的分支名稱。
+
+然後把分支 checkout 出來，如下：
+1git checkout -b m">
     
     
         
@@ -228,13 +241,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            JQuery Module Pattern
+            取得其他 git remote branch
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Mar 24 2016 21:36:33 GMT+0800">
+    <time itemprop="datePublished" content="Fri Mar 25 2016 23:18:45 GMT+0800">
 	
-		    3月 24, 2016
+		    3月 25, 2016
     	
     </time>
     
@@ -243,11 +256,12 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function($) &#123;&#10;&#10;  // link The Module Pattern&#10;  // https://learn.jquery.com/code-organization/concepts/&#10;  var member = (function() &#123;&#10;&#10;    // &#31169;&#26377;&#35722;&#25976;&#10;    var deleteMemberElement = &#39;#deleteMember&#39;;&#10;    var memberNoElement = &#39;input[name=memberNo]&#39;;&#10;    var memberTypeElement = &#39;#memberDetail select[name=memberType]&#39;;&#10;    var memberTypeSelectedElement = memberTypeElement + &#39; :selected&#39;;&#10;&#10;    // &#31169;&#26377;&#20989;&#24335;&#10;    var deleteMember = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var checkMemberID = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var hello = function() &#123;&#10;      alert(&#39;hello&#39;);&#10;    &#125;&#10;&#10;    // &#20844;&#38283;&#30340; API&#10;    return &#123;&#10;      init: function() &#123;&#10;        $(deleteMemberElement).on(&#39;click&#39;, deleteMember);&#10;        $(memberNoElement).on(&#39;change&#39;, checkMemberID);&#10;      &#125;,&#10;      otherAPI: function() &#123;&#10;        hello();&#10;      &#125;&#10;    &#125;;&#10;  &#125;)();&#10;&#10;  member.init();&#10;  member.otherAPI();&#10;&#10;&#125;(jQuery));</span><br></pre></td></tr></table></figure>
-<h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
-<li><a href="https://learn.jquery.com/code-organization/concepts/" target="_blank" rel="external">Code Organization Concepts</a></li>
-</ul>
+            <p>如果 remote 上面有很分支，你在下 <code>git clone</code> 的時候，會發現它只有幫你建一個預設的分支。</p>
+<h3 id="查看-local-分支"><a href="#查看-local-分支" class="headerlink" title="查看 local 分支"></a>查看 local 分支</h3><p><code>git branch</code></p>
+<h3 id="checkout-origin-上其他分支"><a href="#checkout-origin-上其他分支" class="headerlink" title="checkout origin 上其他分支"></a>checkout origin 上其他分支</h3><p>如果你也需要 origin 上其他分支，你可以下 <code>git branch --all</code> 找到你要 checkout 的分支名稱。</p>
+<img src="/blog/2016/03/25/git-branch/git-branch.png" alt="git-branch.png" title="">
+<p>然後把分支 checkout 出來，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b master origin/master</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -260,7 +274,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/JQuery/">JQuery</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/git-branch/">git branch</a>
 
             </div>
         
@@ -269,7 +283,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/25/git-branch/"  data-tooltip="取得其他 git remote branch">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -277,7 +291,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/" data-tooltip="ckeditor 換行語法調整">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/24/JQuery-Module-Pattern/" data-tooltip="JQuery Module Pattern">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -292,17 +306,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -340,7 +354,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/25/git-branch/"  data-tooltip="取得其他 git remote branch">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -348,7 +362,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ckeditor-p/" data-tooltip="ckeditor 換行語法調整">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/24/JQuery-Module-Pattern/" data-tooltip="JQuery Module Pattern">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -363,17 +377,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -393,17 +407,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/25/git-branch/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
