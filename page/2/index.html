@@ -227,6 +227,49 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/16/Request-Entity-Too-Large/">
+                            Request Entity Too Large
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Mar 16 2016 23:18:23 GMT+0800">
+	
+		    3月 16, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>今天在工作的時候遇到，Nginx <code>413 Request Entity Too Large</code> 這個 Error，Google 了一下，解決方式是加大 body size，預設是 1M，所以暫時加到 2M，不過一般這個問題是出現在上傳的情況，但我遇到的情況應該不需要，目前還找不到實際背後的原因，所以先用 work around 的解法，等我找到原因了，再更新這篇文。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_max_body_size 2M;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/16/Request-Entity-Too-Large/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/15/Dan-Abramov-Live-React-Hot-Reloading/">
                             Dan Abramov - Live React Hot Reloading 重點整理
                         </a>
@@ -735,81 +778,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/07/jwt-5/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/06/git-stash/">
-                            使用 git stash
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Mar 06 2016 00:09:30 GMT+0800">
-	
-		    3月 06, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>當從 SVN 轉換使用到 GIT 後，最大的改變是什麼？除了沒網路還可以看到 log history 之外，我想就是不斷切來切去的 Branch。</p>
-<p>我必須要坦誠的說，雖然我用 GIT 有好幾年了，但只有當初為了在公司導入 GIT，有認真的把一本 GIT 的原文翻譯書看完，有基本觀念後，就沒有在繼續摸下去了。</p>
-<p>其實 git stash 也是不很難的東西，但就一直沒有需要用到這個指令，因為我還是會稍微把 code 整理一下，然後 commit 進去，大不了 push 前，在做一次合併 commit，或許也是我對於 stash 的概念，沒有很有把握，總覺得先 comment 會比較保險。</p>
-<p>最近為了找 <code>git submodule</code> 的資料，偶然再次遇見它，這次就實際 try 了一下用法。</p>
-<h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>主要是使用在一個很尷尬的狀態，就是你已經改了一些東西，還不能 comment 進去，你又想切去其他分支，但切去其他分支前提是 <code>git status</code> 已經沒有東西。</p>
-<p>這時你就可以 <code>git stash</code> 把改過的東西先丟進 stash 中，等你處理完其他事情，再切回你剛剛中斷的分支，把放進 stash 的東西再拿出來。</p>
-<h3 id="需要用到的指令"><a href="#需要用到的指令" class="headerlink" title="需要用到的指令"></a>需要用到的指令</h3><p><strong>將改到一半的 code ，放到stash</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .&#10;git stash</span><br></pre></td></tr></table></figure>
-<p><strong>查看有多少 stash</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
-<p><strong>取出最後一個 stash 的 code</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
-<h2 id="GIT-觀念"><a href="#GIT-觀念" class="headerlink" title="GIT 觀念"></a>GIT 觀念</h2><h2 id="基本觀念"><a href="#基本觀念" class="headerlink" title="基本觀念"></a>基本觀念</h2><ul>
-<li>log</li>
-<li>add / rm</li>
-<li>stash</li>
-<li>commit / reset</li>
-<li>push / pull / fetch</li>
-<li>remote repo / local repo</li>
-<li>branch / merge</li>
-<li>初階 rebase</li>
-<li>Git Flow</li>
-<li>衝突排解</li>
-</ul>
-<h3 id="進階觀念"><a href="#進階觀念" class="headerlink" title="進階觀念"></a>進階觀念</h3><ul>
-<li>合併 comment</li>
-<li>分離 comment</li>
-<li>delete 掉的 branch 救回</li>
-<li>cherry-pick</li>
-<li>format-patch</li>
-<li>pull-request</li>
-<li>略…</li>
-</ul>
-<p>我覺得 GIT 其實是入門簡單，真正在用到熟練，還是有難度在的。</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/06/git-stash/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
