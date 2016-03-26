@@ -228,6 +228,57 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/17/git-flow-request-pull/">
+                            git flow request pull
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Mar 17 2016 00:26:31 GMT+0800">
+	
+		    3月 17, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。</p>
+<p>github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實務上是不可行的。</p>
+<p>git flow 基本上是每個人都可以直接 merge 進 develop，不需發 pr，等 release date，才從 develop 一次 merge 到 master。</p>
+<p>不過因為 team 的成員都是 remote 工作者，我想 pull request 這個流程還是有必要的，所以我採用一個混搭模式。</p>
+<h2 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h2><p>開一個新的分支，開始修 bug</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hotfix/issue-1 master&#10;git add .&#10;git commit -m &#39;fixed bug&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="merge-master"><a href="#merge-master" class="headerlink" title="merge master"></a>merge master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
+<h3 id="merge-develop"><a href="#merge-develop" class="headerlink" title="merge develop"></a>merge develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
+<h3 id="第一個-pull-request"><a href="#第一個-pull-request" class="headerlink" title="第一個 pull request"></a>第一個 pull request</h3><p>base fork: company-repo at master<br>head fork: your-repo at master</p>
+<h3 id="第二個-pull-request"><a href="#第二個-pull-request" class="headerlink" title="第二個 pull request"></a>第二個 pull request</h3><p>base fork: company-repo at develop<br>head fork: your-repo at develop</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/17/git-flow-request-pull/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/16/Request-Entity-Too-Large/">
                             Request Entity Too Large
                         </a>
@@ -730,55 +781,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/08/fb-share/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/07/jwt-5/">
-                            JWT (5) Client Side 實作範例
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Mar 07 2016 22:16:09 GMT+0800">
-	
-		    3月 07, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20358;&#22312; request response&#10;var token = &#39;xxxxxxx&#39;;&#10;localStorage.setItem(&#39;accessToken&#39;, token);</span><br></pre></td></tr></table></figure>
-<p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
-<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure>
-<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt_decode = require(&#39;jwt-decode&#39;);&#10;&#10;var decoded = jwt_decode(_token)&#10;&#10;if ((decoded.exp * 1000) &#60; new Date().getTime()) &#123;&#10;  // token &#36942;&#26399;&#10;&#125; else &#123;&#10;  // token &#26377;&#25928;&#10;&#125;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/07/jwt-5/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
