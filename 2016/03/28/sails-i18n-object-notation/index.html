@@ -6,27 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>sequelize delete - alincode</title>
+    <title>物件宣告 Sails 多國語系 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 deletedAt，並把刪除時間更新上去，sequelize 有提供這個功能，真的蠻實用的。
-
-don’t delete database entries but set the newly added attribute deletedAt to the current date (when deletion was done). pa">
+    <meta name="description" content="Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用i18n-node，所以基本 i18n-node 有提供的功能都可以使用。
+範例修改多國語系設定檔
+1// config/i18n.js&amp;#10;&amp;#10;module.exports.i18n = &amp;#123;&amp;#10;  updateFiles: true,&amp;#10;">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="sequelize delete">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/27/sequelize-delete/index.html">
+<meta property="og:title" content="物件宣告 Sails 多國語系">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 deletedAt，並把刪除時間更新上去，sequelize 有提供這個功能，真的蠻實用的。
-
-don’t delete database entries but set the newly added attribute deletedAt to the current date (when deletion was done). pa">
-<meta property="og:updated_time" content="2016-03-27T13:47:14.000Z">
+<meta property="og:description" content="Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用i18n-node，所以基本 i18n-node 有提供的功能都可以使用。
+範例修改多國語系設定檔
+1// config/i18n.js&amp;#10;&amp;#10;module.exports.i18n = &amp;#123;&amp;#10;  updateFiles: true,&amp;#10;">
+<meta property="og:updated_time" content="2016-03-28T09:43:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sequelize delete">
-<meta name="twitter:description" content="當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 deletedAt，並把刪除時間更新上去，sequelize 有提供這個功能，真的蠻實用的。
-
-don’t delete database entries but set the newly added attribute deletedAt to the current date (when deletion was done). pa">
+<meta name="twitter:title" content="物件宣告 Sails 多國語系">
+<meta name="twitter:description" content="Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用i18n-node，所以基本 i18n-node 有提供的功能都可以使用。
+範例修改多國語系設定檔
+1// config/i18n.js&amp;#10;&amp;#10;module.exports.i18n = &amp;#123;&amp;#10;  updateFiles: true,&amp;#10;">
     
     
         
@@ -231,13 +231,13 @@ don’t delete database entries but set the newly added attribute deletedAt to t
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            sequelize delete
+            物件宣告 Sails 多國語系
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Mar 27 2016 21:30:16 GMT+0800">
+    <time itemprop="datePublished" content="Mon Mar 28 2016 17:12:56 GMT+0800">
 	
-		    3月 27, 2016
+		    3月 28, 2016
     	
     </time>
     
@@ -246,12 +246,18 @@ don’t delete database entries but set the newly added attribute deletedAt to t
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 <code>deletedAt</code>，並把刪除時間更新上去，<code>sequelize</code> 有提供這個功能，真的蠻實用的。</p>
-<blockquote>
-<p>don’t delete database entries but set the newly added attribute deletedAt<br> to the current date (when deletion was done). paranoid will only work if<br> timestamps are enabled</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ContactUs = sequelize.define(&#39;ContactUs&#39;, &#123;&#10;  name: DataTypes.STRING,&#10;  email: DataTypes.STRING,&#10;  phone: DataTypes.STRING,&#10;  content: DataTypes.TEXT,&#10;&#125;,&#123;&#10;  // &#21152;&#36889;&#34892;&#10;  paranoid: true,&#10;  classMethods: &#123;&#10;    associate: function(models)&#123;&#10;    &#125;&#10;  &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>資料來源</strong><br><a href="http://docs.sequelizejs.com/en/latest/docs/models-definition/" target="_blank" rel="external">http://docs.sequelizejs.com/en/latest/docs/models-definition/</a></p>
+            <p>Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用<a href="https://github.com/mashpie/i18n-node" target="_blank" rel="external">i18n-node</a>，所以基本 i18n-node 有提供的功能都可以使用。</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p><strong>修改多國語系設定檔</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/i18n.js&#10;&#10;module.exports.i18n = &#123;&#10;  updateFiles: true,&#10;  localesDirectory: &#39;/config/locales&#39;,&#10;  locales: [&#39;zh&#39;],&#10;  // &#21152;&#36889;&#34892;&#10;  objectNotation: true&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>支援物件式的寫法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/locales/zh.json&#10;&#123;&#10;  &#34;admin&#34;: &#123;&#10;    &#34;common&#34;: &#123;&#10;      &#34;createdAt&#34;: &#34;&#24314;&#31435;&#26085;&#26399;&#34;,&#10;      &#34;publishAt&#34;: &#34;&#30332;&#20296;&#26085;&#26399;&#34;,&#10;      &#34;title&#34;: &#34;&#27161;&#38988;&#34;,&#10;      &#34;content&#34;: &#34;&#20839;&#23481;&#34;,&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>修改 view 檔</strong></p>
+<p>此範例是針對 <code>Jade</code> 的寫法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;i18n(&#39;admin.common.createdAt&#39;)&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h3><ul>
+<li><a href="https://github.com/balderdashy/sails/issues/1878" target="_blank" rel="external">i18n does not support the objectNotation config option </a></li>
+<li><a href="http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n" target="_blank" rel="external">sails i18n</a></li>
+</ul>
 
             
                 
@@ -264,7 +270,7 @@ don’t delete database entries but set the newly added attribute deletedAt to t
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/sequelize/">sequelize</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Sails/">Sails</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/i18n/">i18n</a>
 
             </div>
         
@@ -273,7 +279,7 @@ don’t delete database entries but set the newly added attribute deletedAt to t
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/28/sails-i18n-object-notation/"  data-tooltip="物件宣告 Sails 多國語系">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -281,7 +287,7 @@ don’t delete database entries but set the newly added attribute deletedAt to t
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/26/react-debug-tip/" data-tooltip="React Debug 小技巧">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/27/sequelize-delete/" data-tooltip="sequelize delete">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -296,17 +302,17 @@ don’t delete database entries but set the newly added attribute deletedAt to t
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -344,7 +350,7 @@ don’t delete database entries but set the newly added attribute deletedAt to t
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/28/sails-i18n-object-notation/"  data-tooltip="物件宣告 Sails 多國語系">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -352,7 +358,7 @@ don’t delete database entries but set the newly added attribute deletedAt to t
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/26/react-debug-tip/" data-tooltip="React Debug 小技巧">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/27/sequelize-delete/" data-tooltip="sequelize delete">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -367,17 +373,17 @@ don’t delete database entries but set the newly added attribute deletedAt to t
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -397,17 +403,17 @@ don’t delete database entries but set the newly added attribute deletedAt to t
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/27/sequelize-delete/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
