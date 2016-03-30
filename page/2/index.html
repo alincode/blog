@@ -227,6 +227,97 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/">
+                            JWT Authentication with AngularJS 重點整理 (1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Mar 20 2016 19:35:42 GMT+0800">
+	
+		    3月 20, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="一般-Session-的產生流程-3-10"><a href="#一般-Session-的產生流程-3-10" class="headerlink" title="一般 Session 的產生流程 (3:10)"></a>一般 Session 的產生流程 (3:10)</h3><ul>
+<li>瀏覽器發送一個 request 到 server，內含帳號跟密碼</li>
+<li>server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。</li>
+<li>將存有 Session ID 的 cookie，回傳給瀏覽器。</li>
+<li>瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server</li>
+</ul>
+<h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
+<li>難以理解，而且不含意義</li>
+<li>增加資料庫的負擔</li>
+<li>Perception that cookies are inherently insecure</li>
+</ul>
+<h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
+<li>Authentication (n.) 驗證</li>
+<li>Authorization (n.) 授權</li>
+<li>Token</li>
+<li>JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。</li>
+</ul>
+<h3 id="JWT-結構-6-55"><a href="#JWT-結構-6-55" class="headerlink" title="JWT 結構 (6:55)"></a>JWT 結構 (6:55)</h3><p>是一個經過 Base64-URL encoded 的字串</p>
+<p><strong>結構分三個部分</strong></p>
+<ul>
+<li>Header</li>
+<li>Body(Claims)</li>
+<li>Cryptographic Signature 加密簽證</li>
+</ul>
+<h4 id="解開後的內容"><a href="#解開後的內容" class="headerlink" title="解開後的內容"></a>解開後的內容</h4><p><strong>範例</strong></p>
+<ul>
+<li>iss: <a href="http://yourdomain.com" target="_blank" rel="external">http://yourdomain.com</a></li>
+<li>exp: 60000</li>
+<li>sub: userId</li>
+<li>scope: api/buy</li>
+</ul>
+<p><strong>意義</strong></p>
+<ul>
+<li>iss: 發佈者 (Issuer)</li>
+<li>exp: 效期，單位是毫秒 (Expiration Time)</li>
+<li>sub: 用戶 (Subject)</li>
+<li>scope: 作用域</li>
+</ul>
+<h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
+<li>使用者經過驗證後，取得 Token</li>
+<li>由你的 server 來製造 Token</li>
+<li>client 儲存 token，並在需要驗證的 request 使用它。</li>
+</ul>
+<h3 id="概述-JWT-12-15"><a href="#概述-JWT-12-15" class="headerlink" title="概述 JWT (12:15)"></a>概述 JWT (12:15)</h3><ul>
+<li>無狀態認證機制</li>
+<li>Token 具有作用域的概念</li>
+<li>產生授權</li>
+<li>決定區域性</li>
+</ul>
+<p>因為影片實在太長，後面有點不太好理解，分兩篇慢慢看</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/19/create-your-own-snippet/">
                             建立自己的 ATOM snippet
                         </a>
@@ -766,52 +857,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/11/controller-vs-service/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/10/js-var/">
-                            javascript var 作用域
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 10 2016 23:12:10 GMT+0800">
-	
-		    3月 10, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近開始看 <a href="http://www.books.com.tw/products/0010538538" target="_blank" rel="external">JavaScript 設計模式</a> 這本書，裡面有一段說到，JS 只有函式變數跟全域變數，沒有我們平常認知的區域變數，JS 真的跟其他語言不太一樣。</p>
-<p>以下面這面這個例子，在 Java 的話，name 應該是區域變數，後面的 function 呼叫 name 應該會有 error，但在 javascript 而言，它卻是全域變數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;&#10;  var name = &#39;alincode&#39;;&#10;&#125;&#10;console.log(name);&#10;&#10;function test() &#123;&#10;  console.log(&#39;=== function start ===&#39;);&#10;  var othername = &#39;ali&#39;;&#10;  console.log(&#39;global var:&#39;, name);&#10;  console.log(&#39;function var:&#39;, othername);&#10;  console.log(&#39;=== function end ===&#39;);&#10;&#125;&#10;test();&#10;&#10;// console.log(&#39;othername:&#39;, othername);&#10;// output: ReferenceError: othername is not defined</span><br></pre></td></tr></table></figure>
-<p><strong>output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alincode&#10;=== function start ===&#10;global var: alincode&#10;function var: ali&#10;=== function end ===</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/10/js-var/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
