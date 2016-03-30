@@ -6,36 +6,20 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>React 防止連點 - alincode</title>
+    <title>標籤: React - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
+    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="React 防止連點">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/30/react-disable-button/index.html">
+<meta property="og:title" content="alincode">
+<meta property="og:url" content="http://alincode.github.io/blog/tags/React/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
-<meta property="og:updated_time" content="2016-03-30T17:21:42.000Z">
+<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React 防止連點">
-<meta name="twitter:description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
+<meta name="twitter:title" content="alincode">
+<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
     
     
         
@@ -234,16 +218,22 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
                         hasCoverMetaIn
                         ">
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+
+<section class="postShorten-group main-content-wrap">
     
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            React 防止連點
-        </h1>
-    
-    <div class="post-meta">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/30/react-disable-button/">
+                            React 防止連點
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
     <time itemprop="datePublished" content="Wed Mar 30 2016 23:09:36 GMT+0800">
 	
 		    3月 30, 2016
@@ -251,11 +241,11 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
     </time>
     
 </div>
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            <h2 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h2><ul>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h2><ul>
 <li>有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。</li>
 <li>加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT</li>
 <li>在 Store 的地方要更新 isSending 狀態</li>
@@ -264,81 +254,32 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
 <h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.login = function(email, password) &#123;&#10;&#10;  AppDispatcher.dispatch(&#123;&#10;    action: AuthConstants.AUTH_SENDING,&#10;  &#125;);&#10;&#10;  var req = new XMLHttpRequest();&#10;  ...&#30053;...&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState !== 4) return;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_LOGINED,&#10;          ...&#30053;...&#10;        &#125;);&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_SENT,&#10;        &#125;);&#10;    &#125;&#10;  &#125;;&#10;  ...&#30053;...&#10;&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case AuthConstants.AUTH_SENDING:&#10;  _isSending = true;&#10;  AuthStore.emitChange();&#10;  break;&#10;&#10;case AuthConstants.AUTH_SENT:&#10;  _isSending = false;&#10;  AuthStore.emitChange();&#10;  break;</span><br></pre></td></tr></table></figure>
 
-            
-                
+                    
+                        
 
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/30/react-disable-button/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
             
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/React/">React</a>
-
-            </div>
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/29/jade-mixins/" data-tooltip="Jade Mixins">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
     </ul>
 </div>
 
-
-        
-            
-        
-    </div>
-</article>
-
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -348,83 +289,6 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
 </footer>
 
             </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/29/jade-mixins/" data-tooltip="Jade Mixins">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -474,8 +338,6 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
 <script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
 <script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
-
-    
 
 
 
