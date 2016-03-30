@@ -228,6 +228,51 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/31/flux-life-cycle-demo/">
+                            Flux 生命週期範例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Mar 31 2016 03:52:49 GMT+0800">
+	
+		    3月 31, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75" target="_blank" rel="external">完成範例</a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js       === component getInitialState ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component render ===&#10;Test.js       === component DidMount ===&#10;TestStore.js: === store addChangeListener ===</span><br></pre></td></tr></table></figure>
+<h4 id="shouldComponentUpdate-return-false"><a href="#shouldComponentUpdate-return-false" class="headerlink" title="shouldComponentUpdate return false"></a>shouldComponentUpdate return false</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js:      === component _onChange ===&#10;TestAction.js === action updateText ===&#10;TestStore.js  === store dispatcherIndex ===  UPDATE_TEXT&#10;TestStore.js  === store emitChange ===&#10;Test.js       === component storeCallback ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component shouldComponentUpdate ===</span><br></pre></td></tr></table></figure>
+<h4 id="shouldComponentUpdate-return-true"><a href="#shouldComponentUpdate-return-true" class="headerlink" title="shouldComponentUpdate return true"></a>shouldComponentUpdate return true</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js       === component _onChange ===&#10;TestAction.js === action updateText ===&#10;TestStore.js  === store dispatcherIndex ===  UPDATE_TEXT&#10;TestStore.js  === store emitChange ===&#10;Test.js       === component storeCallback ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component shouldComponentUpdate ===&#10;Test.js       === component WillUpdate ===&#10;Test.js       === component render ===</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/31/flux-life-cycle-demo/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/30/react-disable-button/">
                             React 防止連點
                         </a>
@@ -693,49 +738,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/21/chrome-debug-rendering/">
-                            chrome debug rendering
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Mar 21 2016 21:53:18 GMT+0800">
-	
-		    3月 21, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>現在的網站，似乎都開始走背景 rendering，前陣子看到一個 react 的教學影片，看到影片作者用到這個小技巧，在 Chrome 的開發者工具，有一個 enable paint flashing，可以從畫面就可以得知，哪些區塊在背景有更新。</p>
-<img src="/blog/2016/03/21/chrome-debug-rendering/rendering.png" alt="rendering.png" title="">
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/21/chrome-debug-rendering/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

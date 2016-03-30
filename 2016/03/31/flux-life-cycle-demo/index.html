@@ -6,36 +6,24 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>React 防止連點 - alincode</title>
+    <title>Flux 生命週期範例 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
+    <meta name="description" content="完成範例
+初始化1Test.js       === component getInitialState ===&amp;#10;TestStore.js  === store getData ===&amp;#10;Test.js       === component render ===&amp;#10;Test.js       === component DidMount ===&amp;#10;TestStore.j">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="React 防止連點">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/30/react-disable-button/index.html">
+<meta property="og:title" content="Flux 生命週期範例">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
-<meta property="og:updated_time" content="2016-03-30T17:23:05.000Z">
+<meta property="og:description" content="完成範例
+初始化1Test.js       === component getInitialState ===&amp;#10;TestStore.js  === store getData ===&amp;#10;Test.js       === component render ===&amp;#10;Test.js       === component DidMount ===&amp;#10;TestStore.j">
+<meta property="og:updated_time" content="2016-03-30T20:18:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React 防止連點">
-<meta name="twitter:description" content="實作流程
-有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。
-加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT
-在 Store 的地方要更新 isSending 狀態
-
-Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;">
+<meta name="twitter:title" content="Flux 生命週期範例">
+<meta name="twitter:description" content="完成範例
+初始化1Test.js       === component getInitialState ===&amp;#10;TestStore.js  === store getData ===&amp;#10;Test.js       === component render ===&amp;#10;Test.js       === component DidMount ===&amp;#10;TestStore.j">
     
     
         
@@ -240,13 +228,13 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            React 防止連點
+            Flux 生命週期範例
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Mar 30 2016 23:09:36 GMT+0800">
+    <time itemprop="datePublished" content="Thu Mar 31 2016 03:52:49 GMT+0800">
 	
-		    3月 30, 2016
+		    3月 31, 2016
     	
     </time>
     
@@ -255,14 +243,10 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h2 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h2><ul>
-<li>有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。</li>
-<li>加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT</li>
-<li>在 Store 的地方要更新 isSending 狀態</li>
-</ul>
-<h3 id="Component-要做的事"><a href="#Component-要做的事" class="headerlink" title="Component 要做的事"></a>Component 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">submit() &#123;&#10;  var email = this.state.email&#10;  var password =  this.state.password&#10;&#10;  if (email &#38;&#38; password &#38;&#38; !this.state.isSending) &#123;&#10;    AuthActions.login(email, password);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.login = function(email, password) &#123;&#10;&#10;  AppDispatcher.dispatch(&#123;&#10;    action: AuthConstants.AUTH_SENDING,&#10;  &#125;);&#10;&#10;  var req = new XMLHttpRequest();&#10;  ...&#30053;...&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState !== 4) return;&#10;&#10;    AppDispatcher.dispatch(&#123;&#10;      action: AuthConstants.AUTH_SENT,&#10;    &#125;);&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_LOGINED,&#10;          ...&#30053;...&#10;        &#125;);&#10;    &#125;&#10;  &#125;;&#10;  ...&#30053;...&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case AuthConstants.AUTH_SENDING:&#10;  _isSending = true;&#10;  AuthStore.emitChange();&#10;  break;&#10;&#10;case AuthConstants.AUTH_SENT:&#10;  _isSending = false;&#10;  AuthStore.emitChange();&#10;  break;</span><br></pre></td></tr></table></figure>
+            <p><a href="https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75" target="_blank" rel="external">完成範例</a></p>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js       === component getInitialState ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component render ===&#10;Test.js       === component DidMount ===&#10;TestStore.js: === store addChangeListener ===</span><br></pre></td></tr></table></figure>
+<h4 id="shouldComponentUpdate-return-false"><a href="#shouldComponentUpdate-return-false" class="headerlink" title="shouldComponentUpdate return false"></a>shouldComponentUpdate return false</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js:      === component _onChange ===&#10;TestAction.js === action updateText ===&#10;TestStore.js  === store dispatcherIndex ===  UPDATE_TEXT&#10;TestStore.js  === store emitChange ===&#10;Test.js       === component storeCallback ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component shouldComponentUpdate ===</span><br></pre></td></tr></table></figure>
+<h4 id="shouldComponentUpdate-return-true"><a href="#shouldComponentUpdate-return-true" class="headerlink" title="shouldComponentUpdate return true"></a>shouldComponentUpdate return true</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Test.js       === component _onChange ===&#10;TestAction.js === action updateText ===&#10;TestStore.js  === store dispatcherIndex ===  UPDATE_TEXT&#10;TestStore.js  === store emitChange ===&#10;Test.js       === component storeCallback ===&#10;TestStore.js  === store getData ===&#10;Test.js       === component shouldComponentUpdate ===&#10;Test.js       === component WillUpdate ===&#10;Test.js       === component render ===</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -275,7 +259,7 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/React/">React</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Flux/">Flux</a>
 
             </div>
         
@@ -284,7 +268,7 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/31/flux-life-cycle-demo/"  data-tooltip="Flux 生命週期範例">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -292,7 +276,7 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/29/jade-mixins/" data-tooltip="Jade Mixins">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/30/react-disable-button/" data-tooltip="React 防止連點">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -307,17 +291,17 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -355,7 +339,7 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/31/flux-life-cycle-demo/"  data-tooltip="Flux 生命週期範例">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -363,7 +347,7 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/29/jade-mixins/" data-tooltip="Jade Mixins">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/30/react-disable-button/" data-tooltip="React 防止連點">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -378,17 +362,17 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -408,17 +392,17 @@ Component 要做的事1submit() &amp;#123;&amp;#10;  var email = this.state.emai
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/30/react-disable-button/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

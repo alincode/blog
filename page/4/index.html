@@ -227,6 +227,59 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/02/jwt-2/">
+                            JWT (2) - 進化的 Token
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Mar 02 2016 12:17:14 GMT+0800">
+	
+		    3月 02, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。</p>
+<h3 id="建立-Token"><a href="#建立-Token" class="headerlink" title="建立 Token"></a>建立 Token</h3><p>基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。</p>
+<h3 id="一般加密規則"><a href="#一般加密規則" class="headerlink" title="一般加密規則"></a>一般加密規則</h3><p>主要是需要這三個參數 algorithm、mode、padding 去運算，看起來大家都講好規則了，應該溝通沒問題了吧？</p>
+<p>沒想到是災難的開始，因為並沒有一個審核機制，各家 Open source 就開始照著自己詮釋去做，結果無法正常解密的問題，尤其發生跨語言之間，例如 PHP 用的 library 跟 Java 用的 library 肯定不一樣，PHP 對於實作 Padding 差異上，幾乎是所有開發者必踩的雷。<br><a href="http://php.net/manual/en/ref.mcrypt.php" target="_blank" rel="external">http://php.net/manual/en/ref.mcrypt.php</a></p>
+<h3 id="進化的-Token"><a href="#進化的-Token" class="headerlink" title="進化的 Token"></a>進化的 Token</h3><p>時代的進化，這麼漸漸單純的 Token 已經不符使用，我們有更多的需求：</p>
+<ul>
+<li>要有期限</li>
+<li>要可以被驗證</li>
+<li>要傳遞附加公開資訊</li>
+<li>我們要說共同的語言</li>
+<li>略…</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/02/jwt-2/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/01/jwt-1/">
                             JWT (1) - 為什麼我們要用 Access Token ?
                         </a>
