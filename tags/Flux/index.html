@@ -264,7 +264,7 @@
 <p><strong>emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storeCallback: function() &#123;&#10;  this.setState(getStateStores());&#10;&#125;,</span><br></pre></td></tr></table></figure>
 <p><strong>callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。</strong></p>
-<p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳直是 true</strong></p>
+<p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true</strong></p>
 <p><strong>會接著執行 componentWillUpdate</strong></p>
 <p><strong>然後會重新 render component</strong></p>
 <p><strong>render 完後會，會執行 componentDidUpdate</strong></p>
