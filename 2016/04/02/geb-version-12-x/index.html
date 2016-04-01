@@ -6,45 +6,42 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Flux 生命週期範例 - alincode</title>
+    <title>Geb 0.10.x ~ 0.12.x 更新重點 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
-    <meta name="description" content="完整範例
-初始化第一次 Component 被載入時，會做哪些事？
+    <meta name="description" content="0.12.2
+改善對 Null 的驗證 #398
 
-執行 getInitialState
-getInitialState 去 Store 拿 state 第一次初始化需要載入的資料
-執行 componentWillMount
-執行 Component render
-執行 componentDidMount
-componentDidMount 會加入 store 的 addChan">
+0.12.1
+針對 Intellij 的抱怨修改 waitFor() 使得 waitFor() 可在 Intellij 被辨識 #391
+修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 390
+
+寫法一1static content = &amp;#123;&amp;#10;  userMenuButton &amp;#12">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Flux 生命週期範例">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/index.html">
+<meta property="og:title" content="Geb 0.10.x ~ 0.12.x 更新重點">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/02/geb-version-12-x/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="完整範例
-初始化第一次 Component 被載入時，會做哪些事？
+<meta property="og:description" content="0.12.2
+改善對 Null 的驗證 #398
 
-執行 getInitialState
-getInitialState 去 Store 拿 state 第一次初始化需要載入的資料
-執行 componentWillMount
-執行 Component render
-執行 componentDidMount
-componentDidMount 會加入 store 的 addChan">
-<meta property="og:updated_time" content="2016-03-31T18:40:53.000Z">
+0.12.1
+針對 Intellij 的抱怨修改 waitFor() 使得 waitFor() 可在 Intellij 被辨識 #391
+修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 390
+
+寫法一1static content = &amp;#123;&amp;#10;  userMenuButton &amp;#12">
+<meta property="og:updated_time" content="2016-04-01T23:47:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flux 生命週期範例">
-<meta name="twitter:description" content="完整範例
-初始化第一次 Component 被載入時，會做哪些事？
+<meta name="twitter:title" content="Geb 0.10.x ~ 0.12.x 更新重點">
+<meta name="twitter:description" content="0.12.2
+改善對 Null 的驗證 #398
 
-執行 getInitialState
-getInitialState 去 Store 拿 state 第一次初始化需要載入的資料
-執行 componentWillMount
-執行 Component render
-執行 componentDidMount
-componentDidMount 會加入 store 的 addChan">
+0.12.1
+針對 Intellij 的抱怨修改 waitFor() 使得 waitFor() 可在 Intellij 被辨識 #391
+修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 390
+
+寫法一1static content = &amp;#123;&amp;#10;  userMenuButton &amp;#12">
     
     
         
@@ -249,13 +246,13 @@ componentDidMount 會加入 store 的 addChan">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Flux 生命週期範例
+            Geb 0.10.x ~ 0.12.x 更新重點
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Mar 31 2016 03:52:49 GMT+0800">
+    <time itemprop="datePublished" content="Sat Apr 02 2016 07:46:19 GMT+0800">
 	
-		    3月 31, 2016
+		    4月 02, 2016
     	
     </time>
     
@@ -264,31 +261,53 @@ componentDidMount 會加入 store 的 addChan">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75" target="_blank" rel="external">完整範例</a></p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><strong>第一次 Component 被載入時，會做哪些事？</strong></p>
-<ul>
-<li>執行 getInitialState</li>
-<li>getInitialState 去 Store 拿 state 第一次初始化需要載入的資料</li>
-<li>執行 componentWillMount</li>
-<li>執行 Component render</li>
-<li>執行 componentDidMount</li>
-<li>componentDidMount 會加入 store 的 addChangeListener</li>
+            <h3 id="0-12-2"><a href="#0-12-2" class="headerlink" title="0.12.2"></a>0.12.2</h3><ul>
+<li>改善對 Null 的驗證 <a href="https://github.com/geb/issues/issues/398" target="_blank" rel="external">#398</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TestStore.addChangeListener(this.storeCallback);</span><br></pre></td></tr></table></figure>
-<h3 id="有值更動時"><a href="#有值更動時" class="headerlink" title="有值更動時"></a>有值更動時</h3><p><strong>執行被 bind 的 onChange</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea rows=&#34;4&#34; cols=&#34;50&#34; onChange=&#123;this._onChange&#125; value=&#123;this.state.text&#125;/&#62;</span><br></pre></td></tr></table></figure>
-<p><strong>onChange 取得值後傳給 action</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_onChange: function(event) &#123;&#10;   TestAction.updateText(event.target.value);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  updateText: function(text) &#123;&#10;    console.log(&#39;=== action updateText ===&#39;);&#10;    AppDispatcher.dispatch(&#123;&#10;      type: ActionTypes.UPDATE_TEXT,&#10;      text: text&#10;    &#125;);&#10;  &#125;,&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>接著 Store 的 dispatcherIndex 被觸發</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatcherIndex: AppDispatcher.register(function(payload) &#123;&#10;    var action = payload.type;&#10;    switch(action) &#123;&#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&#10;        _text = payload.text;&#10;        TestStore.emitChange();&#10;        break;&#10;      default:&#10;        console.log(&#39;=== store dispatcherIndex default ===&#39;);&#10;    &#125;&#10;    return true; // No errors. Needed by promise in Dispatcher.&#10;  &#125;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storeCallback: function() &#123;&#10;  this.setState(getStateStores());&#10;&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。</strong></p>
-<p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true</strong></p>
-<p><strong>會接著執行 componentWillUpdate</strong></p>
-<p><strong>然後會重新 render component</strong></p>
-<p><strong>render 完後會，會執行 componentDidUpdate</strong></p>
-<h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
-<li><a href="https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods" target="_blank" rel="external">Component Lifecycle</a></li>
+<h3 id="0-12-1"><a href="#0-12-1" class="headerlink" title="0.12.1"></a>0.12.1</h3><ul>
+<li>針對 Intellij 的抱怨修改 <code>waitFor()</code> 使得 <code>waitFor()</code> 可在 Intellij 被辨識 <a href="https://github.com/geb/issues/issues/391" target="_blank" rel="external">#391</a></li>
+<li>修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 <a href="https://github.com/geb/issues/issues/390" target="_blank" rel="external">390</a></li>
+</ul>
+<p><strong>寫法一</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;  userMenuButton &#123; $(&#39;a.user-menu-button&#39;) &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>寫法二</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;  userMenuButton &#123; $(&#39;a&#39;, class: &#39;user-menu-button&#39;) &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="0-12-0"><a href="#0-12-0" class="headerlink" title="0.12.0"></a>0.12.0</h3><ul>
+<li>特別對 Page 和 module，有多項改善</li>
+<li>改善錯誤訊息，讓開發者更容易除錯</li>
+</ul>
+<h4 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h4><ul>
+<li>支援 page 的 title 可以帶變數，變成可動態的。<a href="https://github.com/geb/issues/issues/310" target="_blank" rel="external">#310</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class ProductPage extends Page &#123;&#10;  String productId&#10;&#10;  ProductPage(String productId) &#123;&#10;    this.productId = productId&#10;  &#125;&#10;&#10;  static at = &#123; title == &#34;Product &#39;$productId&#39;&#34; &#125;&#10;&#125;&#10;&#10;to new ProductPage(&#34;myId&#34;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>支援在 Page 內，也可以使用 click 方法，做頁面切換<a href="https://github.com/geb/issues/issues/183" target="_blank" rel="external">#183</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class ListPage extends Page &#123;&#10;  static content = &#123;&#10;    movie(to: MoviePage) &#123; $(&#34;a.movie&#34;, text: contains(it) &#125;&#10;  &#125;&#10;&#125;&#10;&#10;class MoviePage extends Page &#123;&#10;  static at = &#123; title == movieTitle &#125;&#10;  String movieTitle&#10;&#10;&#125;&#10;&#10;at ListPage&#10;movie.click &#123; movieTitle = &#34;Jaws&#34; &#125;&#10;at MoviePage</span><br></pre></td></tr></table></figure>
+<ul>
+<li>改善 WaitTimeoutException 的錯誤訊息 <a href="https://github.com/geb/issues/issues/386" target="_blank" rel="external">#386</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def &#34;waitFor block exception message contains cause&#34;() &#123;&#10;  given:&#10;  def wait = new Wait(0.5)&#10;&#10;  when:&#10;  wait.waitFor &#123; &#39;not empty&#39;.empty &#125;&#10;&#10;  then:&#10;  WaitTimeoutException exception = thrown()&#10;  exception.message.contains(&#34;&#39;not empty&#39;.empty&#34;)&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d" target="_blank" rel="external">test case</a></p>
+<ul>
+<li><a href="https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d" target="_blank" rel="external">改善 UnexpectedPageException 的錯誤訊息</a></li>
+</ul>
+<h4 id="Deprecations"><a href="#Deprecations" class="headerlink" title="Deprecations"></a>Deprecations</h4><ul>
+<li>module(Class&lt;? extends Module&gt;, Map args) 被 Navigator.module(Module) 取代<a href="https://github.com/geb/issues/issues/311" target="_blank" rel="external">311</a></li>
+<li>module(Class&lt;? extends Module&gt;, Navigator base, Map args) 被 Navigable.module(Module) 取代</li>
+</ul>
+<h4 id="重大改變"><a href="#重大改變" class="headerlink" title="重大改變"></a>重大改變</h4><ul>
+<li>Page.toString() now returns full page class name instead of its simple name.</li>
+<li>MissingPropertyException is thrown instead of UnresolvablePropertyException when content with a given name is not found on page or module.</li>
+<li>建構在 Groovy 2.3.10 and Spock 1.0-groovy-2.3</li>
+</ul>
+<h3 id="0-10-0"><a href="#0-10-0" class="headerlink" title="0.10.0"></a>0.10.0</h3><p>增加對 cloud browsers 的支援度</p>
+<h4 id="新功能-1"><a href="#新功能-1" class="headerlink" title="新功能"></a>新功能</h4><ul>
+<li>Navigator 新增了一個 <code>css()</code> <a href="https://github.com/geb/issues/issues/141#event-279283375" target="_blank" rel="external">#141</a></li>
+<li>在 content 定義的區塊，多了一個 <code>atWait</code> 的屬性，以增加對 ajax 動態新增元素的支援度 <a href="https://github.com/geb/issues/issues/134" target="_blank" rel="external">#134</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;  submitButton(to: SuccessPage, toWait: true) &#123; send() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="bugs-修復"><a href="#bugs-修復" class="headerlink" title="bugs 修復"></a>bugs 修復</h4><ul>
+<li>修復 manipulating checkboxes 取值時的問題 <a href="https://github.com/geb/issues/issues/268" target="_blank" rel="external">#268</a></li>
+<li>修復 withNewWindow() 和 withWindow() 再切換頁面時的一個小問題 <a href="https://github.com/geb/issues/issues/279" target="_blank" rel="external">#279</a></li>
 </ul>
 
             
@@ -299,19 +318,12 @@ componentDidMount 會加入 store 的 addChan">
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Flux/">Flux</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/01/geb-version-13-x/"  data-tooltip="Geb 0.13.x 更新重點">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -319,7 +331,7 @@ componentDidMount 會加入 store 的 addChan">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/30/react-disable-button/" data-tooltip="React 防止連點">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/01/geb-version-13-x/" data-tooltip="Geb 0.13.x 更新重點">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -334,17 +346,17 @@ componentDidMount 會加入 store 的 addChan">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -382,7 +394,7 @@ componentDidMount 會加入 store 的 addChan">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/01/geb-version-13-x/"  data-tooltip="Geb 0.13.x 更新重點">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -390,7 +402,7 @@ componentDidMount 會加入 store 的 addChan">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/30/react-disable-button/" data-tooltip="React 防止連點">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/01/geb-version-13-x/" data-tooltip="Geb 0.13.x 更新重點">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -405,17 +417,17 @@ componentDidMount 會加入 store 的 addChan">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -435,17 +447,17 @@ componentDidMount 會加入 store 的 addChan">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/02/geb-version-12-x/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
