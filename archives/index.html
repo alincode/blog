@@ -259,11 +259,11 @@
 <li>改善錯誤訊息，讓開發者更容易除錯</li>
 </ul>
 <h4 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h4><ul>
-<li>支援 page 的 title 可以帶變數，變成可動態的。<a href="https://github.com/geb/issues/issues/310" target="_blank" rel="external">#310</a></li>
-</ul>
+<li><p>支援 page 的 title 可以帶變數，變成可動態的。<a href="https://github.com/geb/issues/issues/310" target="_blank" rel="external">#310</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class ProductPage extends Page &#123;&#10;  String productId&#10;&#10;  ProductPage(String productId) &#123;&#10;    this.productId = productId&#10;  &#125;&#10;&#10;  static at = &#123; title == &#34;Product &#39;$productId&#39;&#34; &#125;&#10;&#125;&#10;&#10;to new ProductPage(&#34;myId&#34;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>支援在 Page 內，也可以使用 click 方法，做頁面切換<a href="https://github.com/geb/issues/issues/183" target="_blank" rel="external">#183</a></li>
+</li>
+<li><p>支援在 Page 內，也可以使用 click 方法，做頁面切換<a href="https://github.com/geb/issues/issues/183" target="_blank" rel="external">#183</a></p>
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class ListPage extends Page &#123;&#10;  static content = &#123;&#10;    movie(to: MoviePage) &#123; $(&#34;a.movie&#34;, text: contains(it) &#125;&#10;  &#125;&#10;&#125;&#10;&#10;class MoviePage extends Page &#123;&#10;  static at = &#123; title == movieTitle &#125;&#10;  String movieTitle&#10;&#10;&#125;&#10;&#10;at ListPage&#10;movie.click &#123; movieTitle = &#34;Jaws&#34; &#125;&#10;at MoviePage</span><br></pre></td></tr></table></figure>
 <ul>
