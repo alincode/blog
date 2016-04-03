@@ -227,6 +227,79 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/03/PM2/">
+                            PM2 管理工具
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Apr 03 2016 02:30:15 GMT+0800">
+	
+		    4月 03, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>它主要的功能是保證你的 process 永遠活著，如果有意外關閉，它會自動幫你重開，簡易管理多個程序。</p>
+<p><strong>安裝</strong></p>
+<p><code>npm install pm2@latest -g</code></p>
+<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p><strong>啟動程序</strong></p>
+<p><code>pm2 start app.js</code></p>
+<p><strong>啟動程序並指定名稱</strong></p>
+<p><code>pm2 start app.js --name my-api</code></p>
+<p><strong>啟動程序並帶變數</strong></p>
+<p><code>NODE_ENV=local pm2 start app.js --name my-api</code></p>
+<p><strong>查看所有註冊的程序</strong></p>
+<p><code>pm2 list</code></p>
+<img src="/blog/2016/04/03/PM2/pm2.png" alt="pm2.png" title="">
+<p><strong>查看程序內容</strong></p>
+<p><code>pm2 show 0</code></p>
+<p><strong>監看程序</strong></p>
+<p><code>pm2 monit</code></p>
+<img src="/blog/2016/04/03/PM2/monit.png" alt="monit.png" title="">
+<p><strong>查看log集合</strong></p>
+<p><code>pm2 logs</code></p>
+<img src="/blog/2016/04/03/PM2/logs.png" alt="logs.png" title="">
+<p><strong>清空log</strong></p>
+<p><code>pm2 flush</code></p>
+<h1 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h1><p><strong>停止所有程序</strong></p>
+<p><code>pm2 stop all</code></p>
+<p><strong>停止單一程序</strong></p>
+<p><code>pm2 stop 0</code></p>
+<p>pm2 stop [pid]</p>
+<p><strong>重啟所有程序</strong></p>
+<p><code>pm2 restart all</code></p>
+<p><strong>刪除單一程序</strong></p>
+<p><code>pm2 delete 0</code></p>
+<p>pm2 delete [pid]</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/03/PM2/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/02/geb-version-12-x/">
                             Geb 0.10.x ~ 0.12.x 更新重點
                         </a>
@@ -735,52 +808,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/25/git-branch/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/24/JQuery-Module-Pattern/">
-                            JQuery Module Pattern
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 24 2016 21:36:33 GMT+0800">
-	
-		    3月 24, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function($) &#123;&#10;&#10;  // link The Module Pattern&#10;  // https://learn.jquery.com/code-organization/concepts/&#10;  var member = (function() &#123;&#10;&#10;    // &#31169;&#26377;&#35722;&#25976;&#10;    var deleteMemberElement = &#39;#deleteMember&#39;;&#10;    var memberNoElement = &#39;input[name=memberNo]&#39;;&#10;    var memberTypeElement = &#39;#memberDetail select[name=memberType]&#39;;&#10;    var memberTypeSelectedElement = memberTypeElement + &#39; :selected&#39;;&#10;&#10;    // &#31169;&#26377;&#20989;&#24335;&#10;    var deleteMember = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var checkMemberID = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var hello = function() &#123;&#10;      alert(&#39;hello&#39;);&#10;    &#125;&#10;&#10;    // &#20844;&#38283;&#30340; API&#10;    return &#123;&#10;      init: function() &#123;&#10;        $(deleteMemberElement).on(&#39;click&#39;, deleteMember);&#10;        $(memberNoElement).on(&#39;change&#39;, checkMemberID);&#10;      &#125;,&#10;      otherAPI: function() &#123;&#10;        hello();&#10;      &#125;&#10;    &#125;;&#10;  &#125;)();&#10;&#10;  member.init();&#10;  member.otherAPI();&#10;&#10;&#125;(jQuery));</span><br></pre></td></tr></table></figure>
-<h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
-<li><a href="https://learn.jquery.com/code-organization/concepts/" target="_blank" rel="external">Code Organization Concepts</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/24/JQuery-Module-Pattern/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

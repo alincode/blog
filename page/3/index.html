@@ -227,6 +227,65 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/14/Rethinking-Web-App-Development/">
+                            Rethinking Web App Development 重點整理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Mar 14 2016 22:00:46 GMT+0800">
+	
+		    3月 14, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>這個影片解釋的非常清楚，為什麼要用 Flux 架構。</p>
+<p>另提，我一直誤會 Flux 跟 Redux 是兩個派流，但其實 Flux 是在講一個架構(雖然它也真的有一個框架叫 Flux)，又被騙到了，囧</p>
+<p>React : Declarative Views</p>
+<p>Flux : 單向資料流(Single directional data flow)</p>
+<p>Redux : 有實作 Flux 架構的框架，並增加了 Flux 不足的部分。</p>
+<h3 id="MVC-gt-Flux-10-32"><a href="#MVC-gt-Flux-10-32" class="headerlink" title="MVC -&gt; Flux (10:32)"></a>MVC -&gt; Flux (10:32)</h3><h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><p><code>Action -&gt; Controller -&gt; Model &lt;-&gt; View</code></p>
+<h4 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h4><p>Flux 架構的出現，是為了解決 MVC 架構所遇到的困難，Model 與 View 的互相關聯，太過複雜。</p>
+<p>初步的構想為 Action -&gt; Store -&gt; View，最後 Flux 架構為 <code>Action -&gt; Dispatcher -&gt; Store -&gt; View -&gt; Action</code></p>
+<h3 id="case-study-12-38"><a href="#case-study-12-38" class="headerlink" title="case study (12:38)"></a>case study (12:38)</h3><p>聊天功能所遇到的問題，兩個區塊的狀態，同時都有 Chat 的 stat 需要同步。</p>
+<h3 id="implement-render-22-30"><a href="#implement-render-22-30" class="headerlink" title="implement render (22:30)"></a>implement render (22:30)</h3><p>實作 render 所遇到的困難，傳統做法是用 append 增加新的元素，但這樣要維護 stat 很困難，所以改為 Model 一次 render。</p>
+<h3 id="Virtual-DOM-29-40"><a href="#Virtual-DOM-29-40" class="headerlink" title="Virtual DOM (29:40)"></a>Virtual DOM (29:40)</h3><p>為了做到區塊 render 又不損失效率，所以有一個虛擬(Virtual) DOM，可只 render 變動的部分。</p>
+<h3 id="Flux-vs-JQuery-41-45"><a href="#Flux-vs-JQuery-41-45" class="headerlink" title="Flux vs JQuery (41:45)"></a>Flux vs JQuery (41:45)</h3><p>Flux 幫你維護了 Stat，在 Flux 只需要考慮 Current Stat，而 JQuery 你需要自己維護每個 Stat。</p>
+<p><strong>JQuery render</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;model&#34;&#62;&#10;  &#60;div&#62;1&#60;/div&#62;&#10;  &#60;div&#62;2&#60;/div&#62;&#10;  &#60;div&#62;3&#60;/div&#62;&#10;&#60;/div&#62;&#10;&#10;$(&#39;.model&#39;).append(&#39;&#60;div&#62;4&#60;/div&#62;&#39;);</span><br></pre></td></tr></table></figure>
+<p><strong>Flux render</strong></p>
+<p>Flux 的做法是更新 stat，然後 render 整個 model，但有 Virtual DOM，所以實際還是只 render 變動的部分，但我們實作可以更新 Model，其他麻煩事 Flux 會處理好。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div class=&#34;model&#34;&#62;&#10;  &#60;div&#62;1&#60;/div&#62;&#10;  &#60;div&#62;2&#60;/div&#62;&#10;  &#60;div&#62;3&#60;/div&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<p>來源：<a href="https://www.youtube.com/watch?v=nYkdrAPrdcw" target="_blank" rel="external">Hacker Way: Rethinking Web App Development at Facebook</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/14/Rethinking-Web-App-Development/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/13/spa-seo-2/">
                             SPA SEO (2)
                         </a>
@@ -714,68 +773,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/05/hexo-deploy/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/03/jwt-4/">
-                            JWT (4) Server Side 實作範例
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 03 2016 22:48:35 GMT+0800">
-	
-		    3月 03, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Server Side 使用架構 Sails</p>
-<h3 id="Server-Side-需要做的事"><a href="#Server-Side-需要做的事" class="headerlink" title="Server Side 需要做的事"></a>Server Side 需要做的事</h3><p><strong>第一步</strong></p>
-<p>安裝支援 JWT 的 library</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jsonwebtoken -save</span><br></pre></td></tr></table></figure>
-<p><strong>第二步</strong></p>
-<p>新增一個 JWT 的 Service，例如 api/services/JWTService.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt = require(&#39;jsonwebtoken&#39;);&#10;&#10;// &#24314;&#31435; Token&#10;module.exports.issueToken = function(payload, options) &#123;&#10;  if(!options)&#123;&#10;    options = &#123;&#125;;&#10;    options.expiresIn = &#39;3h&#39;;&#10;  &#125;&#10;  try &#123;&#10;    var token = jwt.sign(payload, sails.config.jwt.token_secret, options);&#10;    return token;&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;&#10;&#10;// &#39511;&#35657; Token&#10;module.exports.verifyToken = function(token, callback) &#123;&#10;  try &#123;&#10;    return jwt.verify(token, sails.config.jwt.token_secret, &#123;&#125;, callback);&#10;  &#125; catch (e) &#123;&#10;    throw e;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第三步</strong></p>
-<p>在回傳登入成功 responses 的地方，多新增回傳 Token 這個值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// payload &#26377;&#24456;&#22810;&#35722;&#25976;&#65292;sub &#21482;&#26159;&#20854;&#20013;&#19968;&#20491;&#65292;&#35443;&#24773;&#35531;&#30475; JWT &#23448;&#26041;&#25991;&#20214;&#12290;&#10;var token = JWTService.issueToken(&#123;&#10;  sub: user.id&#10;&#125;);&#10;&#10;res.ok(&#123;&#10;  nikename: user.nickname, // &#21487;&#26377;&#21487;&#28961;&#65292;&#20294;&#30331;&#20837;&#25104;&#21151;&#65292;&#36890;&#24120;&#26371;&#39023;&#31034;&#26289;&#31281;&#65292;&#23565;&#21543;&#12290;&#10;  token: token&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>第四步</strong></p>
-<p>在 api/responses 目錄下，新增一個 unauthorized.js，status code 為 401。</p>
-<p><strong>第五步</strong></p>
-<p>新增一個 policies，api/policies/authToken.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(req, res, next) &#123;&#10;  var token;&#10;&#10;  //  &#39511;&#35657;  Header &#26684;&#24335;&#10;  if (req.headers &#38;&#38; req.headers.authorization) &#123;&#10;    var parts = req.headers.authorization.split(&#39; &#39;);&#10;    if (parts.length == 2) &#123;&#10;      var scheme = parts[0],&#10;        credentials = parts[1];&#10;&#10;      if (/^Bearer$/i.test(scheme)) &#123;&#10;        token = credentials;&#10;      &#125;&#10;    &#125; else &#123;&#10;      return res.unauthorized(&#39;wrongFormat&#39;);&#10;    &#125;&#10;  &#125; else if (req.param(&#39;token&#39;)) &#123;&#10;    token = req.param(&#39;token&#39;);&#10;    // We delete the token from param to not mess with blueprints&#10;    delete req.query.token;&#10;  &#125; else &#123;&#10;    return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;  &#125;&#10;&#10;  // &#39511;&#35657; Token &#30495;&#20605;&#21450;&#25928;&#26399;&#10;  JWTService.verifyToken(token, function(err, decodedToken) &#123;&#10;    if (err) return res.unauthorized(&#39;invalidToken&#39;);&#10;    sails.log.verbose(&#39;decodedToken.sub:&#39;, decodedToken.sub);&#10;&#10;    // decodedToken&#65292;&#23601;&#26159; payload &#36039;&#26009;&#12290;&#10;    db.User.findById(decodedToken.sub).then(function(user)&#123;&#10;      if(user)&#123;&#10;        req.user = user;&#10;        next();&#10;      &#125;else&#123;&#10;        return res.unauthorized(&#39;noAuthorizationHeaderFound&#39;);&#10;      &#125;&#10;    &#125;);&#10;  &#125;);&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第六步</strong></p>
-<p>config/policies.js 依照 Controller method 需要權限驗證的地方，加入設定。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.policies = &#123;&#10;&#10;  UserController: &#123;&#10;    apiGetMe: [&#39;authToken&#39;]&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>第七步</strong></p>
-<p>api/controllers/UserController.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apiGetMe: async(req, res) =&#62; &#123;&#10;  // &#22240;&#28858; policies &#24050;&#32147;&#20570;&#36942;&#27402;&#38480;&#27298;&#26597;&#65292;&#20006;&#25226; user &#36039;&#26009;&#22622;&#22909;&#20102;&#65292;&#36889;&#37002;&#23601;&#30452;&#25509;&#25343;&#20358;&#29992;&#22217;&#65292;&#38283;&#24515; ^_^&#12290;&#10;  var user = req.user;&#10;&#125;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/03/jwt-4/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
