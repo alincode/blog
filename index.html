@@ -244,16 +244,28 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>它主要的功能是保證你的 process 永遠活著，如果有意外關閉，它會自動幫你重開，簡易管理多個程序。</p>
+                    <p><code>PM2</code> 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。</p>
+<h2 id="提供的功能"><a href="#提供的功能" class="headerlink" title="提供的功能"></a>提供的功能</h2><ul>
+<li>內建簡易監控功能</li>
+<li>群組 (Cluster) 管理</li>
+<li>記憶體管理，重新 reload</li>
+<li>Hot reload</li>
+<li>啟動參數設定檔化</li>
+<li>Log 管理</li>
+<li>支援啟動 Scripts</li>
+<li>Keymetrics 監控</li>
+<li>提供 API，你可以運用它，實做一些你自定的需求。</li>
+<li>Deployment workflow</li>
+</ul>
 <p><strong>安裝</strong></p>
 <p><code>npm install pm2@latest -g</code></p>
-<h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p><strong>啟動程序</strong></p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="啟動程序"><a href="#啟動程序" class="headerlink" title="啟動程序"></a>啟動程序</h3><p><strong>簡易啟動程序</strong></p>
 <p><code>pm2 start app.js</code></p>
 <p><strong>啟動程序並指定名稱</strong></p>
 <p><code>pm2 start app.js --name my-api</code></p>
 <p><strong>啟動程序並帶變數</strong></p>
 <p><code>NODE_ENV=local pm2 start app.js --name my-api</code></p>
-<p><strong>查看所有註冊的程序</strong></p>
+<h3 id="查看程序"><a href="#查看程序" class="headerlink" title="查看程序"></a>查看程序</h3><p><strong>查看所有註冊的程序</strong></p>
 <p><code>pm2 list</code></p>
 <img src="/blog/2016/04/03/PM2/pm2.png" alt="pm2.png" title="">
 <p><strong>查看程序內容</strong></p>
@@ -261,12 +273,12 @@
 <p><strong>監看程序</strong></p>
 <p><code>pm2 monit</code></p>
 <img src="/blog/2016/04/03/PM2/monit.png" alt="monit.png" title="">
-<p><strong>查看log集合</strong></p>
+<h3 id="log-相關指令"><a href="#log-相關指令" class="headerlink" title="log 相關指令"></a>log 相關指令</h3><p><strong>查看log集合</strong></p>
 <p><code>pm2 logs</code></p>
 <img src="/blog/2016/04/03/PM2/logs.png" alt="logs.png" title="">
 <p><strong>清空log</strong></p>
 <p><code>pm2 flush</code></p>
-<h1 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h1><p><strong>停止所有程序</strong></p>
+<h3 id="基本程序操作"><a href="#基本程序操作" class="headerlink" title="基本程序操作"></a>基本程序操作</h3><p><strong>停止所有程序</strong></p>
 <p><code>pm2 stop all</code></p>
 <p><strong>停止單一程序</strong></p>
 <p><code>pm2 stop 0</code></p>
