@@ -13,41 +13,44 @@
     
     <meta name="description" content="PM2 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。
 提供的功能
+
 內建簡易監控功能
 Cluster Mode
 記憶體管理，重新 reload
 Hot reload
 啟動參數設定檔化
 Log 管理
-支援">
+支">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="PM2 管理工具">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/04/03/PM2/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="PM2 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。
 提供的功能
+
 內建簡易監控功能
 Cluster Mode
 記憶體管理，重新 reload
 Hot reload
 啟動參數設定檔化
 Log 管理
-支援">
+支">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/03/PM2/pm2.png">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/03/PM2/monit.png">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/03/PM2/logs.png">
-<meta property="og:updated_time" content="2016-04-03T15:26:44.000Z">
+<meta property="og:updated_time" content="2016-04-03T15:39:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PM2 管理工具">
 <meta name="twitter:description" content="PM2 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。
 提供的功能
+
 內建簡易監控功能
 Cluster Mode
 記憶體管理，重新 reload
 Hot reload
 啟動參數設定檔化
 Log 管理
-支援">
+支">
     
     
         
@@ -268,7 +271,8 @@ Log 管理
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p><code>PM2</code> 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。</p>
-<h2 id="提供的功能"><a href="#提供的功能" class="headerlink" title="提供的功能"></a>提供的功能</h2><ul>
+<p><strong>提供的功能</strong></p>
+<ul>
 <li>內建簡易監控功能</li>
 <li>Cluster Mode</li>
 <li>記憶體管理，重新 reload</li>
@@ -282,9 +286,42 @@ Log 管理
 </ul>
 <p><strong>安裝</strong></p>
 <p><code>npm install pm2@latest -g</code></p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="啟動程序"><a href="#啟動程序" class="headerlink" title="啟動程序"></a>啟動程序</h3><p><strong>簡易啟動程序</strong></p>
-<p><code>pm2 start app.js</code></p>
-<p><strong>啟動程序並指定名稱</strong></p>
+<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="基本程序操作"><a href="#基本程序操作" class="headerlink" title="基本程序操作"></a>基本程序操作</h3><table>
+<thead>
+<tr>
+<th>指令</th>
+<th style="text-align:center">說明</th>
+<th style="text-align:right">備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pm2 start app.js</td>
+<td style="text-align:center">啟動程序</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>pm2 stop all</td>
+<td style="text-align:center">停止所有程序</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>pm2 stop 0</td>
+<td style="text-align:center">停止單一程序</td>
+<td style="text-align:right">pm2 stop [pid]</td>
+</tr>
+<tr>
+<td>pm2 restart all</td>
+<td style="text-align:center">重啟所有程序</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>pm2 delete 0</td>
+<td style="text-align:center">刪除單一程序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="進階啟動程序"><a href="#進階啟動程序" class="headerlink" title="進階啟動程序"></a>進階啟動程序</h3><p><strong>啟動程序並指定名稱</strong></p>
 <p><code>pm2 start app.js --name my-api</code></p>
 <p><strong>啟動程序並帶變數</strong></p>
 <p><code>NODE_ENV=local pm2 start app.js --name my-api</code></p>
@@ -301,16 +338,6 @@ Log 管理
 <img src="/blog/2016/04/03/PM2/logs.png" alt="logs.png" title="">
 <p><strong>清空log</strong></p>
 <p><code>pm2 flush</code></p>
-<h3 id="基本程序操作"><a href="#基本程序操作" class="headerlink" title="基本程序操作"></a>基本程序操作</h3><p><strong>停止所有程序</strong></p>
-<p><code>pm2 stop all</code></p>
-<p><strong>停止單一程序</strong></p>
-<p><code>pm2 stop 0</code></p>
-<p>pm2 stop [pid]</p>
-<p><strong>重啟所有程序</strong></p>
-<p><code>pm2 restart all</code></p>
-<p><strong>刪除單一程序</strong></p>
-<p><code>pm2 delete 0</code></p>
-<p>pm2 delete [pid]</p>
 
             
                 
