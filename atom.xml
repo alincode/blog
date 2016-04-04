@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>alincode</title>
+  <subtitle>學無止境</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="http://alincode.github.io/blog/"/>
+  <updated>2016-04-04T13:03:01.000Z</updated>
+  <id>http://alincode.github.io/blog/</id>
+  
+  <author>
+    <name>alincode</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>view model vs model</title>
+    <link href="http://alincode.github.io/blog/2016/04/04/view-model-vs-model/"/>
+    <id>http://alincode.github.io/blog/2016/04/04/view-model-vs-model/</id>
+    <published>2016-04-04T08:43:14.000Z</published>
+    <updated>2016-04-04T13:03:01.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;View-Model&quot;&gt;&lt;a href=&quot;#View-Model&quot; class=&quot;headerlink&quot; title=&quot;View Model&quot;&gt;&lt;/a&gt;View Model&lt;/h3&gt;&lt;p&gt;但後來 Microsoft 又提出一個 &lt;code&gt;model-view-view model (MVVM)&lt;/code&gt;，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。&lt;/p&gt;
+&lt;h3 id=&quot;Model&quot;&gt;&lt;a href=&quot;#Model&quot; class=&quot;headerlink&quot; title=&quot;Model&quot;&gt;&lt;/a&gt;Model&lt;/h3&gt;&lt;p&gt;不太嚴謹的說法，可以直接對照到資料庫的 table&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;h4 id=&quot;改變前&quot;&gt;&lt;a href=&quot;#改變前&quot; class=&quot;headerlink&quot; title=&quot;改變前&quot;&gt;&lt;/a&gt;改變前&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;User.js&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  attributes: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    firstName: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    lastName: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nickname: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    email: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    password: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    address: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    phone: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Profile.js&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  attributes: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: &lt;span class=&quot;built_in&quot;&gt;String&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// ...略...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;UserController.js&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apiMe: &lt;span class=&quot;keyword&quot;&gt;async&lt;/span&gt;(req, res) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!req.userId)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;userId is null&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; user = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; UserService.findById(req.userId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; profile = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; ProfileService.findByUesrId(req.userId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      user.toJSON();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      profile.toJSON();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      res.view(&lt;span class=&quot;string&quot;&gt;&#39;profile&#39;&lt;/span&gt;, &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          email: user.email,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          nickname: user.nickname,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          image: profile.image,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          &lt;span class=&quot;comment&quot;&gt;//...略...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; res.serverError(e);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;改變後&quot;&gt;&lt;a href=&quot;#改變後&quot; class=&quot;headerlink&quot; title=&quot;改變後&quot;&gt;&lt;/a&gt;改變後&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;UserController.js&lt;/strong&gt;&lt;br&gt;var userViewModel = require(‘../viewModels/UserViewModel.js’)&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apiMe: &lt;span class=&quot;keyword&quot;&gt;async&lt;/span&gt;(req, res) =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(!req.userId)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;userId is null&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      res.view(&lt;span class=&quot;string&quot;&gt;&#39;profile&#39;&lt;/span&gt;, userViewModel(req.userId));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; res.serverError(e);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UserViewModel.js&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;userId&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; user = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; UserService.findById(userId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; profile = &lt;span class=&quot;keyword&quot;&gt;await&lt;/span&gt; ProfileService.findByUesrId(userId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  user.toJSON();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  profile.toJSON();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    email: user.email,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    nickname: user.nickname,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    image: profile.image,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//...略...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;結論&quot;&gt;&lt;a href=&quot;#結論&quot; class=&quot;headerlink&quot; title=&quot;結論&quot;&gt;&lt;/a&gt;結論&lt;/h3&gt;&lt;p&gt;主要是好處是把 ViewModel 封裝起來，在其他地方也可以被重複使用。&lt;/p&gt;
+&lt;h3 id=&quot;補充&quot;&gt;&lt;a href=&quot;#補充&quot; class=&quot;headerlink&quot; title=&quot;補充&quot;&gt;&lt;/a&gt;補充&lt;/h3&gt;&lt;p&gt;View：主要是將 model 重現給使用者&lt;br&gt;Controller：會接收使用者輸入的資料，並決定要顯示哪個 view。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;View-Model&quot;&gt;&lt;a href=&quot;#View-Model&quot; class=&quot;headerlink&quot; title=&quot;View Model&quot;&gt;&lt;/a&gt;View Model&lt;/h3&gt;&lt;p&gt;但後來 Microsoft 又提出一個 &lt;code&gt;model-view-v
+    
+    </summary>
+    
+    
+      <category term="view model" scheme="http://alincode.github.io/blog/tags/view-model/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PM2 管理工具</title>
+    <link href="http://alincode.github.io/blog/2016/04/03/PM2/"/>
+    <id>http://alincode.github.io/blog/2016/04/03/PM2/</id>
+    <published>2016-04-02T18:30:15.000Z</published>
+    <updated>2016-04-03T15:39:20.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;code&gt;PM2&lt;/code&gt; 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;提供的功能&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;內建簡易監控功能&lt;/li&gt;
+&lt;li&gt;Cluster Mode&lt;/li&gt;
+&lt;li&gt;記憶體管理，重新 reload&lt;/li&gt;
+&lt;li&gt;Hot reload&lt;/li&gt;
+&lt;li&gt;啟動參數設定檔化&lt;/li&gt;
+&lt;li&gt;Log 管理&lt;/li&gt;
+&lt;li&gt;支援啟動 Scripts&lt;/li&gt;
+&lt;li&gt;Keymetrics 監控&lt;/li&gt;
+&lt;li&gt;提供 API，你可以運用它，實做一些你自定的需求。&lt;/li&gt;
+&lt;li&gt;Deployment workflow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;安裝&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install pm2@latest -g&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;常用指令&quot;&gt;&lt;a href=&quot;#常用指令&quot; class=&quot;headerlink&quot; title=&quot;常用指令&quot;&gt;&lt;/a&gt;常用指令&lt;/h2&gt;&lt;h3 id=&quot;基本程序操作&quot;&gt;&lt;a href=&quot;#基本程序操作&quot; class=&quot;headerlink&quot; title=&quot;基本程序操作&quot;&gt;&lt;/a&gt;基本程序操作&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;指令&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;說明&lt;/th&gt;
+&lt;th style=&quot;text-align:right&quot;&gt;備註&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;pm2 start app.js&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;啟動程序&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pm2 stop all&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;停止所有程序&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pm2 stop 0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;停止單一程序&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;pm2 stop [pid]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pm2 restart all&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;重啟所有程序&lt;/td&gt;
+&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pm2 delete 0&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;刪除單一程序&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&quot;進階啟動程序&quot;&gt;&lt;a href=&quot;#進階啟動程序&quot; class=&quot;headerlink&quot; title=&quot;進階啟動程序&quot;&gt;&lt;/a&gt;進階啟動程序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;啟動程序並指定名稱&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 start app.js --name my-api&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;啟動程序並帶變數&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;NODE_ENV=local pm2 start app.js --name my-api&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;查看程序&quot;&gt;&lt;a href=&quot;#查看程序&quot; class=&quot;headerlink&quot; title=&quot;查看程序&quot;&gt;&lt;/a&gt;查看程序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;查看所有註冊的程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 list&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/03/PM2/pm2.png&quot; alt=&quot;pm2.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;查看程序內容&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 show 0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;監看程序&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 monit&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/03/PM2/monit.png&quot; alt=&quot;monit.png&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;log-相關指令&quot;&gt;&lt;a href=&quot;#log-相關指令&quot; class=&quot;headerlink&quot; title=&quot;log 相關指令&quot;&gt;&lt;/a&gt;log 相關指令&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;查看log集合&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 logs&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/03/PM2/logs.png&quot; alt=&quot;logs.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;清空log&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pm2 flush&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;PM2&lt;/code&gt; 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開
+    
+    </summary>
+    
+    
+      <category term="PM2" scheme="http://alincode.github.io/blog/tags/PM2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Geb 0.10.x ~ 0.12.x 更新重點</title>
+    <link href="http://alincode.github.io/blog/2016/04/02/geb-version-12-x/"/>
+    <id>http://alincode.github.io/blog/2016/04/02/geb-version-12-x/</id>
+    <published>2016-04-01T23:46:19.000Z</published>
+    <updated>2016-04-02T05:44:31.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;0-12-2&quot;&gt;&lt;a href=&quot;#0-12-2&quot; class=&quot;headerlink&quot; title=&quot;0.12.2&quot;&gt;&lt;/a&gt;0.12.2&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;改善對 Null 的驗證 &lt;a href=&quot;https://github.com/geb/issues/issues/398&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#398&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;0-12-1&quot;&gt;&lt;a href=&quot;#0-12-1&quot; class=&quot;headerlink&quot; title=&quot;0.12.1&quot;&gt;&lt;/a&gt;0.12.1&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;針對 Intellij 的抱怨修改 &lt;code&gt;waitFor()&lt;/code&gt; 使得 &lt;code&gt;waitFor()&lt;/code&gt; 可在 Intellij 被辨識 &lt;a href=&quot;https://github.com/geb/issues/issues/391&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#391&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 &lt;a href=&quot;https://github.com/geb/issues/issues/390&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;390&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;寫法一&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  userMenuButton &amp;#123; $(&amp;#39;a.user-menu-button&amp;#39;) &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;寫法二&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  userMenuButton &amp;#123; $(&amp;#39;a&amp;#39;, class: &amp;#39;user-menu-button&amp;#39;) &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;0-12-0&quot;&gt;&lt;a href=&quot;#0-12-0&quot; class=&quot;headerlink&quot; title=&quot;0.12.0&quot;&gt;&lt;/a&gt;0.12.0&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;特別對 Page 和 module，有多項改善&lt;/li&gt;
+&lt;li&gt;改善錯誤訊息，讓開發者更容易除錯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;新功能&quot;&gt;&lt;a href=&quot;#新功能&quot; class=&quot;headerlink&quot; title=&quot;新功能&quot;&gt;&lt;/a&gt;新功能&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;支援 page 的 title 可以帶變數，變成可動態的。&lt;a href=&quot;https://github.com/geb/issues/issues/310&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#310&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ProductPage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  String productId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ProductPage(String productId) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.productId = productId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; at = &amp;#123; title == &lt;span class=&quot;string&quot;&gt;&quot;Product &#39;$productId&#39;&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;to &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ProductPage(&lt;span class=&quot;string&quot;&gt;&quot;myId&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;支援在 Page 內，也可以使用 click 方法，做頁面切換&lt;a href=&quot;https://github.com/geb/issues/issues/183&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#183&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ListPage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; content = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    movie(&lt;span class=&quot;string&quot;&gt;to:&lt;/span&gt; MoviePage) &amp;#123; $(&lt;span class=&quot;string&quot;&gt;&quot;a.movie&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;text:&lt;/span&gt; contains(it) &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MoviePage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; at = &amp;#123; title == movieTitle &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  String movieTitle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;at ListPage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;movie.click &amp;#123; movieTitle = &lt;span class=&quot;string&quot;&gt;&quot;Jaws&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;at MoviePage&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;改善 WaitTimeoutException 的錯誤訊息 &lt;a href=&quot;https://github.com/geb/issues/issues/386&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#386&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;waitFor block exception message contains cause&quot;&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;  given:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; wait = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Wait(&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  when:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  wait.waitFor &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;not empty&#39;&lt;/span&gt;.empty &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  then:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  WaitTimeoutException exception = thrown()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  exception.message.contains(&lt;span class=&quot;string&quot;&gt;&quot;&#39;not empty&#39;.empty&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;test case&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;改善 UnexpectedPageException 的錯誤訊息&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Deprecations&quot;&gt;&lt;a href=&quot;#Deprecations&quot; class=&quot;headerlink&quot; title=&quot;Deprecations&quot;&gt;&lt;/a&gt;Deprecations&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;module(Class&amp;lt;? extends Module&amp;gt;, Map args) 被 Navigator.module(Module) 取代&lt;a href=&quot;https://github.com/geb/issues/issues/311&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#311&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;module(Class&amp;lt;? extends Module&amp;gt;, Navigator base, Map args) 被 Navigable.module(Module) 取代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;重大改變&quot;&gt;&lt;a href=&quot;#重大改變&quot; class=&quot;headerlink&quot; title=&quot;重大改變&quot;&gt;&lt;/a&gt;重大改變&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Page.toString() now returns full page class name instead of its simple name.&lt;/li&gt;
+&lt;li&gt;MissingPropertyException is thrown instead of UnresolvablePropertyException when content with a given name is not found on page or module.&lt;/li&gt;
+&lt;li&gt;建構在 Groovy 2.3.10 and Spock 1.0-groovy-2.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;0-10-0&quot;&gt;&lt;a href=&quot;#0-10-0&quot; class=&quot;headerlink&quot; title=&quot;0.10.0&quot;&gt;&lt;/a&gt;0.10.0&lt;/h3&gt;&lt;p&gt;增加對 cloud browsers 的支援度&lt;/p&gt;
+&lt;h4 id=&quot;新功能-1&quot;&gt;&lt;a href=&quot;#新功能-1&quot; class=&quot;headerlink&quot; title=&quot;新功能&quot;&gt;&lt;/a&gt;新功能&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Navigator 新增了一個 &lt;code&gt;css()&lt;/code&gt; &lt;a href=&quot;https://github.com/geb/issues/issues/141#event-279283375&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#141&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在 content 定義的區塊，多了一個 &lt;code&gt;atWait&lt;/code&gt; 的屬性，以增加對 ajax 動態新增元素的支援度 &lt;a href=&quot;https://github.com/geb/issues/issues/134&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#134&lt;/a&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  submitButton(to: SuccessPage, toWait: true) &amp;#123; send() &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;bugs-修復&quot;&gt;&lt;a href=&quot;#bugs-修復&quot; class=&quot;headerlink&quot; title=&quot;bugs 修復&quot;&gt;&lt;/a&gt;bugs 修復&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;修復 manipulating checkboxes 取值時的問題 &lt;a href=&quot;https://github.com/geb/issues/issues/268&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#268&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;修復 withNewWindow() 和 withWindow() 再切換頁面時的一個小問題 &lt;a href=&quot;https://github.com/geb/issues/issues/279&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#279&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;0-12-2&quot;&gt;&lt;a href=&quot;#0-12-2&quot; class=&quot;headerlink&quot; title=&quot;0.12.2&quot;&gt;&lt;/a&gt;0.12.2&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;改善對 Null 的驗證 &lt;a href=&quot;https://github.com/geb/iss
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Geb 0.13.x 更新重點</title>
+    <link href="http://alincode.github.io/blog/2016/04/01/geb-version-13-x/"/>
+    <id>http://alincode.github.io/blog/2016/04/01/geb-version-13-x/</id>
+    <published>2016-04-01T13:28:33.000Z</published>
+    <updated>2016-04-01T23:51:02.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;0-13-0&quot;&gt;&lt;a href=&quot;#0-13-0&quot; class=&quot;headerlink&quot; title=&quot;0.13.0&quot;&gt;&lt;/a&gt;0.13.0&lt;/h3&gt;&lt;h4 id=&quot;新功能&quot;&gt;&lt;a href=&quot;#新功能&quot; class=&quot;headerlink&quot; title=&quot;新功能&quot;&gt;&lt;/a&gt;新功能&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;對 Spock 和 Junit4 支援 config.reportOnTestFailureOnly&lt;a href=&quot;https://github.com/geb/issues/issues/92&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#92&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新增 navigator 的 isFocused 方法&lt;a href=&quot;https://github.com/geb/issues/issues/208&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#208&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;提供更多的 InvalidPageContent exception，易於 debug &lt;a href=&quot;https://github.com/geb/issues/issues/109&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#109&lt;/a&gt; &lt;a href=&quot;https://github.com/geb/issues/issues/122&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#122&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;bugs-修復&quot;&gt;&lt;a href=&quot;#bugs-修復&quot; class=&quot;headerlink&quot; title=&quot;bugs 修復&quot;&gt;&lt;/a&gt;bugs 修復&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;修正與 TestNG 整合時，報表的 bug&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;…(待補)…&lt;/p&gt;
+&lt;h4 id=&quot;Deprecations&quot;&gt;&lt;a href=&quot;#Deprecations&quot; class=&quot;headerlink&quot; title=&quot;Deprecations&quot;&gt;&lt;/a&gt;Deprecations&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;geb.testng.GebTest 被 geb.testng.GebTestTrait 取代&lt;/li&gt;
+&lt;li&gt;geb.testng.GebReportingTest 被 geb.testng.GebReportingTestTrait 取代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;重大改變&quot;&gt;&lt;a href=&quot;#重大改變&quot; class=&quot;headerlink&quot; title=&quot;重大改變&quot;&gt;&lt;/a&gt;重大改變&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Geb 0.13.0 相依在 Groovy 2.4.5 和 Spock 1.0-groovy-2.4&lt;/li&gt;
+&lt;li&gt;在操作 Navigator 時，若選取多個元素，卻又呼叫只支援單元素 method 的時候，會拋出 SingleElementNavigatorOnlyMethodException &lt;a href=&quot;https://github.com/geb/issues/issues/284&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#284&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hasClass(java.lang.String),&amp;#10;is(java.lang.String),&amp;#10;isDisplayed(),&amp;#10;isDisabled(),&amp;#10;isEnabled(),&amp;#10;isReadOnly(),&amp;#10;isEditable(),&amp;#10;tag(),&amp;#10;text(),&amp;#10;getAttribute(java.lang.String),&amp;#10;attr(java.lang.String),&amp;#10;classes(),&amp;#10;value(),&amp;#10;click(),&amp;#10;getHeight(),&amp;#10;getWidth(),&amp;#10;getX(),&amp;#10;getY(),&amp;#10;css(java.lang.String),&amp;#10;isFocused().&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;0-13-0&quot;&gt;&lt;a href=&quot;#0-13-0&quot; class=&quot;headerlink&quot; title=&quot;0.13.0&quot;&gt;&lt;/a&gt;0.13.0&lt;/h3&gt;&lt;h4 id=&quot;新功能&quot;&gt;&lt;a href=&quot;#新功能&quot; class=&quot;headerlink&quot; title=&quot;新功能
+    
+    </summary>
+    
+    
+      <category term="Geb" scheme="http://alincode.github.io/blog/tags/Geb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flux 生命週期範例</title>
+    <link href="http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/"/>
+    <id>http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/</id>
+    <published>2016-03-30T19:52:49.000Z</published>
+    <updated>2016-03-31T18:40:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整範例&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;第一次 Component 被載入時，會做哪些事？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;執行 getInitialState&lt;/li&gt;
+&lt;li&gt;getInitialState 去 Store 拿 state 第一次初始化需要載入的資料&lt;/li&gt;
+&lt;li&gt;執行 componentWillMount&lt;/li&gt;
+&lt;li&gt;執行 Component render&lt;/li&gt;
+&lt;li&gt;執行 componentDidMount&lt;/li&gt;
+&lt;li&gt;componentDidMount 會加入 store 的 addChangeListener&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;TestStore.addChangeListener(this.storeCallback);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;有值更動時&quot;&gt;&lt;a href=&quot;#有值更動時&quot; class=&quot;headerlink&quot; title=&quot;有值更動時&quot;&gt;&lt;/a&gt;有值更動時&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;執行被 bind 的 onChange&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;textarea rows=&amp;#34;4&amp;#34; cols=&amp;#34;50&amp;#34; onChange=&amp;#123;this._onChange&amp;#125; value=&amp;#123;this.state.text&amp;#125;/&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;onChange 取得值後傳給 action&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;_onChange: function(event) &amp;#123;&amp;#10;   TestAction.updateText(event.target.value);&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  updateText: function(text) &amp;#123;&amp;#10;    console.log(&amp;#39;=== action updateText ===&amp;#39;);&amp;#10;    AppDispatcher.dispatch(&amp;#123;&amp;#10;      type: ActionTypes.UPDATE_TEXT,&amp;#10;      text: text&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125;,&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;接著 Store 的 dispatcherIndex 被觸發&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dispatcherIndex: AppDispatcher.register(function(payload) &amp;#123;&amp;#10;    var action = payload.type;&amp;#10;    switch(action) &amp;#123;&amp;#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&amp;#10;        _text = payload.text;&amp;#10;        TestStore.emitChange();&amp;#10;        break;&amp;#10;      default:&amp;#10;        console.log(&amp;#39;=== store dispatcherIndex default ===&amp;#39;);&amp;#10;    &amp;#125;&amp;#10;    return true; // No errors. Needed by promise in Dispatcher.&amp;#10;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storeCallback: function() &amp;#123;&amp;#10;  this.setState(getStateStores());&amp;#10;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;會接著執行 componentWillUpdate&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;然後會重新 render component&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;render 完後會，會執行 componentDidUpdate&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;資料來源&quot;&gt;&lt;a href=&quot;#資料來源&quot; class=&quot;headerlink&quot; title=&quot;資料來源&quot;&gt;&lt;/a&gt;資料來源&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Component Lifecycle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整範例&lt;/a
+    
+    </summary>
+    
+    
+      <category term="Flux" scheme="http://alincode.github.io/blog/tags/Flux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 防止連點</title>
+    <link href="http://alincode.github.io/blog/2016/03/30/react-disable-button/"/>
+    <id>http://alincode.github.io/blog/2016/03/30/react-disable-button/</id>
+    <published>2016-03-30T15:09:36.000Z</published>
+    <updated>2016-03-30T17:23:05.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;實作流程&quot;&gt;&lt;a href=&quot;#實作流程&quot; class=&quot;headerlink&quot; title=&quot;實作流程&quot;&gt;&lt;/a&gt;實作流程&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。&lt;/li&gt;
+&lt;li&gt;加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT&lt;/li&gt;
+&lt;li&gt;在 Store 的地方要更新 isSending 狀態&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Component-要做的事&quot;&gt;&lt;a href=&quot;#Component-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Component 要做的事&quot;&gt;&lt;/a&gt;Component 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;  var password =  this.state.password&amp;#10;&amp;#10;  if (email &amp;#38;&amp;#38; password &amp;#38;&amp;#38; !this.state.isSending) &amp;#123;&amp;#10;    AuthActions.login(email, password);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Action-要做的事&quot;&gt;&lt;a href=&quot;#Action-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Action 要做的事&quot;&gt;&lt;/a&gt;Action 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports.login = function(email, password) &amp;#123;&amp;#10;&amp;#10;  AppDispatcher.dispatch(&amp;#123;&amp;#10;    action: AuthConstants.AUTH_SENDING,&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  var req = new XMLHttpRequest();&amp;#10;  ...&amp;#30053;...&amp;#10;  req.onreadystatechange = function() &amp;#123;&amp;#10;    if (req.readyState !== 4) return;&amp;#10;&amp;#10;    AppDispatcher.dispatch(&amp;#123;&amp;#10;      action: AuthConstants.AUTH_SENT,&amp;#10;    &amp;#125;);&amp;#10;&amp;#10;    switch (req.status) &amp;#123;&amp;#10;      case 200:&amp;#10;        AppDispatcher.dispatch(&amp;#123;&amp;#10;          action: AuthConstants.AUTH_LOGINED,&amp;#10;          ...&amp;#30053;...&amp;#10;        &amp;#125;);&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;;&amp;#10;  ...&amp;#30053;...&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Store-要做的事&quot;&gt;&lt;a href=&quot;#Store-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Store 要做的事&quot;&gt;&lt;/a&gt;Store 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;case AuthConstants.AUTH_SENDING:&amp;#10;  _isSending = true;&amp;#10;  AuthStore.emitChange();&amp;#10;  break;&amp;#10;&amp;#10;case AuthConstants.AUTH_SENT:&amp;#10;  _isSending = false;&amp;#10;  AuthStore.emitChange();&amp;#10;  break;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;實作流程&quot;&gt;&lt;a href=&quot;#實作流程&quot; class=&quot;headerlink&quot; title=&quot;實作流程&quot;&gt;&lt;/a&gt;實作流程&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。&lt;/l
+    
+    </summary>
+    
+    
+      <category term="React" scheme="http://alincode.github.io/blog/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jade Mixins</title>
+    <link href="http://alincode.github.io/blog/2016/03/29/jade-mixins/"/>
+    <id>http://alincode.github.io/blog/2016/03/29/jade-mixins/</id>
+    <published>2016-03-29T14:31:36.000Z</published>
+    <updated>2016-03-29T17:13:40.000Z</updated>
+    
+    <content type="html">&lt;p&gt;一般在 &lt;code&gt;view engine&lt;/code&gt; 中，要如何有效的控制重複的 code，就是把重複的 code 封裝到另一個檔案，需要的時候直接寫 include，&lt;code&gt;Jade&lt;/code&gt; 也有提供這樣的功能。&lt;/p&gt;
+&lt;h3 id=&quot;安裝測試環境&quot;&gt;&lt;a href=&quot;#安裝測試環境&quot; class=&quot;headerlink&quot; title=&quot;安裝測試環境&quot;&gt;&lt;/a&gt;安裝測試環境&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sails new jade-sandbox --template=jade&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/jade-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整範例&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;單純無變化的-template&quot;&gt;&lt;a href=&quot;#單純無變化的-template&quot; class=&quot;headerlink&quot; title=&quot;單純無變化的 template&quot;&gt;&lt;/a&gt;單純無變化的 template&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;static-list-page.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;include ./mixins/static-list&amp;#10;&amp;#10;block body&amp;#10;  +static-list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;mixin/static-list.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mixin static-list&amp;#10;  ul&amp;#10;    li AAA&amp;#10;    li BBB&amp;#10;    li CCC&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;輸出格式&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;ul&amp;#62;&amp;#10;  &amp;#60;li&amp;#62;AAA&amp;#60;/li&amp;#62;&amp;#10;  &amp;#60;li&amp;#62;BBB&amp;#60;/li&amp;#62;&amp;#10;  &amp;#60;li&amp;#62;CCC&amp;#60;/li&amp;#62;&amp;#10;&amp;#60;/ul&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;有帶參數的-template&quot;&gt;&lt;a href=&quot;#有帶參數的-template&quot; class=&quot;headerlink&quot; title=&quot;有帶參數的 template&quot;&gt;&lt;/a&gt;有帶參數的 template&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;color-page.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;include ./mixins/color&amp;#10;&amp;#10;block body&amp;#10;  ul&amp;#10;    +color(&amp;#39;yellow&amp;#39;)&amp;#10;    +color(&amp;#39;red&amp;#39;)&amp;#10;    +color(&amp;#39;blue&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;mixins/color.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mixin color(colorName)&amp;#10;  li.color= colorName&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;輸出格式&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;ul&amp;#62;&amp;#10;  &amp;#60;li class=&amp;#34;color&amp;#34;&amp;#62;yellow&amp;#60;/li&amp;#62;&amp;#10;  &amp;#60;li class=&amp;#34;color&amp;#34;&amp;#62;red&amp;#60;/li&amp;#62;&amp;#10;  &amp;#60;li class=&amp;#34;color&amp;#34;&amp;#62;blue&amp;#60;/li&amp;#62;&amp;#10;&amp;#60;/ul&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;有帶屬性的-template&quot;&gt;&lt;a href=&quot;#有帶屬性的-template&quot; class=&quot;headerlink&quot; title=&quot;有帶屬性的 template&quot;&gt;&lt;/a&gt;有帶屬性的 template&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;person-page.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;include ./mixins/person&amp;#10;&amp;#10;block body&amp;#10;  ul&amp;#10;    +person(&amp;#34;Alin&amp;#34;)#first&amp;#10;    +person(&amp;#34;John&amp;#34;)(title=&amp;#34;&amp;#19968;&amp;#20491;&amp;#22909;&amp;#20154;&amp;#34;)&amp;#10;    +person(&amp;#34;Bill&amp;#34;).last&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;mixins/person.jade&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mixin person(name)&amp;#10;  div&amp;#38;attributes(attributes)= name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;輸出格式&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;ul&amp;#62;&amp;#10;  &amp;#60;div id=&amp;#34;first&amp;#34;&amp;#62;Alin&amp;#60;/div&amp;#62;&amp;#10;  &amp;#60;div title=&amp;#34;&amp;#19968;&amp;#20491;&amp;#22909;&amp;#20154;&amp;#34;&amp;#62;John&amp;#60;/div&amp;#62;&amp;#10;  &amp;#60;div class=&amp;#34;last&amp;#34;&amp;#62;Bill&amp;#60;/div&amp;#62;&amp;#10;&amp;#60;/ul&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般在 &lt;code&gt;view engine&lt;/code&gt; 中，要如何有效的控制重複的 code，就是把重複的 code 封裝到另一個檔案，需要的時候直接寫 include，&lt;code&gt;Jade&lt;/code&gt; 也有提供這樣的功能。&lt;/p&gt;
+&lt;h3 id=&quot;安裝測試環境&quot;&gt;&lt;a
+    
+    </summary>
+    
+    
+      <category term="Jade" scheme="http://alincode.github.io/blog/tags/Jade/"/>
+    
+      <category term="Mixins" scheme="http://alincode.github.io/blog/tags/Mixins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>物件宣告 Sails 多國語系</title>
+    <link href="http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/"/>
+    <id>http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/</id>
+    <published>2016-03-28T09:12:56.000Z</published>
+    <updated>2016-03-28T10:41:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用&lt;a href=&quot;https://github.com/mashpie/i18n-node&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;i18n-node&lt;/a&gt;，所以基本 i18n-node 有提供的功能都可以使用。&lt;/p&gt;
+&lt;p&gt;objectNotation 這個功能預設是 false，所以必須得先設定。&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;修改多國語系設定檔&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config/i18n.js&amp;#10;&amp;#10;module.exports.i18n = &amp;#123;&amp;#10;  updateFiles: true,&amp;#10;  localesDirectory: &amp;#39;/config/locales&amp;#39;,&amp;#10;  locales: [&amp;#39;en&amp;#39;, &amp;#39;zh&amp;#39;],&amp;#10;  // &amp;#21152;&amp;#36889;&amp;#34892;&amp;#10;  objectNotation: true&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;支援物件式的寫法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config/locales/zh.json&amp;#10;&amp;#123;&amp;#10;  &amp;#34;admin&amp;#34;: &amp;#123;&amp;#10;    &amp;#34;common&amp;#34;: &amp;#123;&amp;#10;      &amp;#34;createdAt&amp;#34;: &amp;#34;&amp;#24314;&amp;#31435;&amp;#26085;&amp;#26399;&amp;#34;,&amp;#10;      &amp;#34;publishAt&amp;#34;: &amp;#34;&amp;#30332;&amp;#20296;&amp;#26085;&amp;#26399;&amp;#34;,&amp;#10;      &amp;#34;title&amp;#34;: &amp;#34;&amp;#27161;&amp;#38988;&amp;#34;,&amp;#10;      &amp;#34;content&amp;#34;: &amp;#34;&amp;#20839;&amp;#23481;&amp;#34;,&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;修改 view 檔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;此範例是針對 &lt;code&gt;Jade&lt;/code&gt; 的寫法&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#&amp;#123;i18n(&amp;#39;admin.common.createdAt&amp;#39;)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;相關連結&quot;&gt;&lt;a href=&quot;#相關連結&quot; class=&quot;headerlink&quot; title=&quot;相關連結&quot;&gt;&lt;/a&gt;相關連結&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/balderdashy/sails/issues/1878&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;i18n does not support the objectNotation config option &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sails i18n&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用&lt;a href=&quot;https://github.com/mashpie/i18n-node&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+    
+      <category term="Sails" scheme="http://alincode.github.io/blog/tags/Sails/"/>
+    
+      <category term="i18n" scheme="http://alincode.github.io/blog/tags/i18n/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sequelize delete</title>
+    <link href="http://alincode.github.io/blog/2016/03/27/sequelize-delete/"/>
+    <id>http://alincode.github.io/blog/2016/03/27/sequelize-delete/</id>
+    <published>2016-03-27T13:30:16.000Z</published>
+    <updated>2016-03-27T13:47:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 &lt;code&gt;deletedAt&lt;/code&gt;，並把刪除時間更新上去，&lt;code&gt;sequelize&lt;/code&gt; 有提供這個功能，真的蠻實用的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;don’t delete database entries but set the newly added attribute deletedAt&lt;br&gt; to the current date (when deletion was done). paranoid will only work if&lt;br&gt; timestamps are enabled&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var ContactUs = sequelize.define(&amp;#39;ContactUs&amp;#39;, &amp;#123;&amp;#10;  name: DataTypes.STRING,&amp;#10;  email: DataTypes.STRING,&amp;#10;  phone: DataTypes.STRING,&amp;#10;  content: DataTypes.TEXT,&amp;#10;&amp;#125;,&amp;#123;&amp;#10;  // &amp;#21152;&amp;#36889;&amp;#34892;&amp;#10;  paranoid: true,&amp;#10;  classMethods: &amp;#123;&amp;#10;    associate: function(models)&amp;#123;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;資料來源&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://docs.sequelizejs.com/en/latest/docs/models-definition/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://docs.sequelizejs.com/en/latest/docs/models-definition/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 &lt;code&gt;deletedAt&lt;/code&gt;，並把刪除時間更新上去，&lt;code&gt;sequelize&lt;/code&gt; 有提供這個功能，真的蠻實用的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;don’t delete d
+    
+    </summary>
+    
+    
+      <category term="sequelize" scheme="http://alincode.github.io/blog/tags/sequelize/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React Debug 小技巧</title>
+    <link href="http://alincode.github.io/blog/2016/03/26/react-debug-tip/"/>
+    <id>http://alincode.github.io/blog/2016/03/26/react-debug-tip/</id>
+    <published>2016-03-25T18:00:19.000Z</published>
+    <updated>2016-03-26T18:13:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;其實也沒有高深的理論，但我從來沒想過可以這樣用，將 Store / Action / Dispatcher 暫時變成全域變數。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// TodoStore.js&amp;#10;window.todoStore = todoStore;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然後就可以在 Chrome Console 直接下，直接執行 function。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;todoStore.your-function-name();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/bvEC6i7CUyE?t=2m57s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://youtu.be/bvEC6i7CUyE?t=2m57s&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;資料來源&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bvEC6i7CUyE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flux Store Events&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其實也沒有高深的理論，但我從來沒想過可以這樣用，將 Store / Action / Dispatcher 暫時變成全域變數。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s
+    
+    </summary>
+    
+    
+      <category term="debug" scheme="http://alincode.github.io/blog/tags/debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>取得其他 git remote branch</title>
+    <link href="http://alincode.github.io/blog/2016/03/25/git-branch/"/>
+    <id>http://alincode.github.io/blog/2016/03/25/git-branch/</id>
+    <published>2016-03-25T15:18:45.000Z</published>
+    <updated>2016-03-25T15:34:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;如果 remote 上面有很分支，你在下 &lt;code&gt;git clone&lt;/code&gt; 的時候，會發現它只有幫你建一個預設的分支。&lt;/p&gt;
+&lt;h3 id=&quot;查看-local-分支&quot;&gt;&lt;a href=&quot;#查看-local-分支&quot; class=&quot;headerlink&quot; title=&quot;查看 local 分支&quot;&gt;&lt;/a&gt;查看 local 分支&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;checkout-origin-上其他分支&quot;&gt;&lt;a href=&quot;#checkout-origin-上其他分支&quot; class=&quot;headerlink&quot; title=&quot;checkout origin 上其他分支&quot;&gt;&lt;/a&gt;checkout origin 上其他分支&lt;/h3&gt;&lt;p&gt;如果你也需要 origin 上其他分支，你可以下 &lt;code&gt;git branch --all&lt;/code&gt; 找到你要 checkout 的分支名稱。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/03/25/git-branch/git-branch.png&quot; alt=&quot;git-branch.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;然後把分支 checkout 出來，如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout -b master origin/master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果 remote 上面有很分支，你在下 &lt;code&gt;git clone&lt;/code&gt; 的時候，會發現它只有幫你建一個預設的分支。&lt;/p&gt;
+&lt;h3 id=&quot;查看-local-分支&quot;&gt;&lt;a href=&quot;#查看-local-分支&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+    
+      <category term="git branch" scheme="http://alincode.github.io/blog/tags/git-branch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JQuery Module Pattern</title>
+    <link href="http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/"/>
+    <id>http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/</id>
+    <published>2016-03-24T13:36:33.000Z</published>
+    <updated>2016-03-24T18:11:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(function($) &amp;#123;&amp;#10;&amp;#10;  // link The Module Pattern&amp;#10;  // https://learn.jquery.com/code-organization/concepts/&amp;#10;  var member = (function() &amp;#123;&amp;#10;&amp;#10;    // &amp;#31169;&amp;#26377;&amp;#35722;&amp;#25976;&amp;#10;    var deleteMemberElement = &amp;#39;#deleteMember&amp;#39;;&amp;#10;    var memberNoElement = &amp;#39;input[name=memberNo]&amp;#39;;&amp;#10;    var memberTypeElement = &amp;#39;#memberDetail select[name=memberType]&amp;#39;;&amp;#10;    var memberTypeSelectedElement = memberTypeElement + &amp;#39; :selected&amp;#39;;&amp;#10;&amp;#10;    // &amp;#31169;&amp;#26377;&amp;#20989;&amp;#24335;&amp;#10;    var deleteMember = function(e) &amp;#123;&amp;#10;      e.preventDefault();&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    var checkMemberID = function(e) &amp;#123;&amp;#10;      e.preventDefault();&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    var hello = function() &amp;#123;&amp;#10;      alert(&amp;#39;hello&amp;#39;);&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    // &amp;#20844;&amp;#38283;&amp;#30340; API&amp;#10;    return &amp;#123;&amp;#10;      init: function() &amp;#123;&amp;#10;        $(deleteMemberElement).on(&amp;#39;click&amp;#39;, deleteMember);&amp;#10;        $(memberNoElement).on(&amp;#39;change&amp;#39;, checkMemberID);&amp;#10;      &amp;#125;,&amp;#10;      otherAPI: function() &amp;#123;&amp;#10;        hello();&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;;&amp;#10;  &amp;#125;)();&amp;#10;&amp;#10;  member.init();&amp;#10;  member.otherAPI();&amp;#10;&amp;#10;&amp;#125;(jQuery));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;資料來源&quot;&gt;&lt;a href=&quot;#資料來源&quot; class=&quot;headerlink&quot; title=&quot;資料來源&quot;&gt;&lt;/a&gt;資料來源&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://learn.jquery.com/code-organization/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Code Organization Concepts&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;figure
+    
+    </summary>
+    
+    
+      <category term="JQuery" scheme="http://alincode.github.io/blog/tags/JQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ckeditor 換行語法調整</title>
+    <link href="http://alincode.github.io/blog/2016/03/23/ckeditor-p/"/>
+    <id>http://alincode.github.io/blog/2016/03/23/ckeditor-p/</id>
+    <published>2016-03-23T14:24:43.000Z</published>
+    <updated>2016-03-23T19:22:53.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h3&gt;&lt;p&gt;你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。&lt;/p&gt;
+&lt;p&gt;特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地方，也會變成去抓 url，不是本機的位置。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;./ckeditor.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;第二步&quot;&gt;&lt;a href=&quot;#第二步&quot; class=&quot;headerlink&quot; title=&quot;第二步&quot;&gt;&lt;/a&gt;第二步&lt;/h3&gt;&lt;p&gt;在 html 檔案內，須有對應的 html 元素跟 JS&lt;/p&gt;
+&lt;h4 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;textarea name=&amp;#34;editor1&amp;#34; id=&amp;#34;editor1&amp;#34; rows=&amp;#34;10&amp;#34; cols=&amp;#34;80&amp;#34;&amp;#62;&amp;#10;    This is my textarea to be replaced with CKEditor.&amp;#10;&amp;#60;/textarea&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;js&quot;&gt;&lt;a href=&quot;#js&quot; class=&quot;headerlink&quot; title=&quot;js&quot;&gt;&lt;/a&gt;js&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;CKEDITOR.replace( &amp;#39;editor1&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;p&gt;不使用預設的 config，另外獨立一個設定擋。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;CKEDITOR.replace( &amp;#39;editor1&amp;#39;, &amp;#123;&amp;#10;  customConfig: &amp;#39;./custom/ckeditor_config.js&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;第三步&quot;&gt;&lt;a href=&quot;#第三步&quot; class=&quot;headerlink&quot; title=&quot;第三步&quot;&gt;&lt;/a&gt;第三步&lt;/h3&gt;&lt;p&gt;改 config 設定內容，預設值是&lt;code&gt;P 元素&lt;/code&gt;。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.enterMode = CKEDITOR.ENTER_P;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但還有其他選項，例如 &lt;code&gt;DIV 元素&lt;/code&gt; 或 &lt;code&gt;BR 元素&lt;/code&gt;：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.enterMode = CKEDITOR.ENTER_DIV;&amp;#10;// or&amp;#10;config.enterMode = CKEDITOR.ENTER_BR;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;完整範例&quot;&gt;&lt;a href=&quot;#完整範例&quot; class=&quot;headerlink&quot; title=&quot;完整範例&quot;&gt;&lt;/a&gt;完整範例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;!DOCTYPE html&amp;#62;&amp;#10;&amp;#60;html&amp;#62;&amp;#10;    &amp;#60;head&amp;#62;&amp;#10;        &amp;#60;meta charset=&amp;#34;utf-8&amp;#34;&amp;#62;&amp;#10;        &amp;#60;title&amp;#62;A Simple Page with CKEditor&amp;#60;/title&amp;#62;&amp;#10;        &amp;#60;!-- Make sure the path to CKEditor is correct. --&amp;#62;&amp;#10;        &amp;#60;script src=&amp;#34;./ckeditor.js&amp;#34;&amp;#62;&amp;#60;/script&amp;#62;&amp;#10;    &amp;#60;/head&amp;#62;&amp;#10;    &amp;#60;body&amp;#62;&amp;#10;        &amp;#60;form&amp;#62;&amp;#10;            &amp;#60;textarea name=&amp;#34;editor1&amp;#34; id=&amp;#34;editor1&amp;#34; rows=&amp;#34;10&amp;#34; cols=&amp;#34;80&amp;#34;&amp;#62;&amp;#10;                This is my textarea to be replaced with CKEditor.&amp;#10;            &amp;#60;/textarea&amp;#62;&amp;#10;            &amp;#60;script&amp;#62;&amp;#10;&amp;#10;                CKEDITOR.replace( &amp;#39;editor1&amp;#39;);&amp;#10;&amp;#10;&amp;#10;                // CKEDITOR.replace( &amp;#39;editor1&amp;#39;, &amp;#123;&amp;#10;                //     customConfig: &amp;#39;./custom/ckeditor_config.js&amp;#39;&amp;#10;                // &amp;#125;);&amp;#10;            &amp;#60;/script&amp;#62;&amp;#10;        &amp;#60;/form&amp;#62;&amp;#10;    &amp;#60;/body&amp;#62;&amp;#10;&amp;#60;/html&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config.js &amp;#25110; ./custom/ckeditor_config.js&amp;#10;CKEDITOR.editorConfig = function( config ) &amp;#123;&amp;#10;  config.enterMode = CKEDITOR.ENTER_DIV;&amp;#10;  // config.enterMode = CKEDITOR.ENTER_BR;&amp;#10;  // config.enterMode = CKEDITOR.ENTER_P;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h3&gt;&lt;p&gt;你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。&lt;/p&gt;
+&lt;p&gt;特別注意 
+    
+    </summary>
+    
+    
+      <category term="ckeditor" scheme="http://alincode.github.io/blog/tags/ckeditor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JWT Authentication with AngularJS Forward 4 Web Summit (2)</title>
+    <link href="http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/"/>
+    <id>http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/</id>
+    <published>2016-03-22T14:16:09.000Z</published>
+    <updated>2016-03-22T12:58:52.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Access-and-Refresh-Token-14-00&quot;&gt;&lt;a href=&quot;#Access-and-Refresh-Token-14-00&quot; class=&quot;headerlink&quot; title=&quot;Access and Refresh Token (14:00)&quot;&gt;&lt;/a&gt;Access and Refresh Token (14:00)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;給 client access token 和 refresh token&lt;/li&gt;
+&lt;li&gt;access token 的效期要比 refresh token 短&lt;/li&gt;
+&lt;li&gt;refresh token 用來取得 access token&lt;/li&gt;
+&lt;li&gt;access token 來自於可靠的簽證機制&lt;/li&gt;
+&lt;li&gt;refresh token check for revocations&lt;/li&gt;
+&lt;li&gt;解除驗證的方式為否決 refresh token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Access-Token-黑名單-18-00&quot;&gt;&lt;a href=&quot;#Access-Token-黑名單-18-00&quot; class=&quot;headerlink&quot; title=&quot;Access Token 黑名單 (18:00)&quot;&gt;&lt;/a&gt;Access Token 黑名單 (18:00)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;維護 refresh token 與 access token 的關聯&lt;/li&gt;
+&lt;li&gt;當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單&lt;/li&gt;
+&lt;li&gt;blacklists TTL is the expiration of the access token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;e.g. redis (21:30)&lt;/p&gt;
+&lt;h3 id=&quot;Storing-and-Transmitting-JWTs-22-20&quot;&gt;&lt;a href=&quot;#Storing-and-Transmitting-JWTs-22-20&quot; class=&quot;headerlink&quot; title=&quot;Storing and Transmitting JWTs (22:20)&quot;&gt;&lt;/a&gt;Storing and Transmitting JWTs (22:20)&lt;/h3&gt;&lt;h4 id=&quot;Tradeoffs-and-Concerns&quot;&gt;&lt;a href=&quot;#Tradeoffs-and-Concerns&quot; class=&quot;headerlink&quot; title=&quot;Tradeoffs and Concerns&quot;&gt;&lt;/a&gt;Tradeoffs and Concerns&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Local Storage is not secure (XSS vulnerable)&lt;/li&gt;
+&lt;li&gt;在 HTTPS 下使用 Cookie 是安全的&lt;br&gt;HttpOnly&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20&quot;&gt;&lt;a href=&quot;#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20&quot; class=&quot;headerlink&quot; title=&quot;Secure and Painless Tradeoffs (IMO, YMMV) (27:20)&quot;&gt;&lt;/a&gt;Secure and Painless Tradeoffs (IMO, YMMV) (27:20)&lt;/h4&gt;&lt;h3 id=&quot;使用-Cookie-的登入驗證-28-20&quot;&gt;&lt;a href=&quot;#使用-Cookie-的登入驗證-28-20&quot; class=&quot;headerlink&quot; title=&quot;使用 Cookie 的登入驗證 (28:20)&quot;&gt;&lt;/a&gt;使用 Cookie 的登入驗證 (28:20)&lt;/h3&gt;&lt;h3 id=&quot;CSRF-38-00&quot;&gt;&lt;a href=&quot;#CSRF-38-00&quot; class=&quot;headerlink&quot; title=&quot;CSRF (38:00)&quot;&gt;&lt;/a&gt;CSRF (38:00)&lt;/h3&gt;&lt;p&gt;Cross Site Request Forgery&lt;/p&gt;
+&lt;h4 id=&quot;解決方案-39-10&quot;&gt;&lt;a href=&quot;#解決方案-39-10&quot; class=&quot;headerlink&quot; title=&quot;解決方案 (39:10)&quot;&gt;&lt;/a&gt;解決方案 (39:10)&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;同步 token&lt;/li&gt;
+&lt;li&gt;送兩個 cookie&lt;/li&gt;
+&lt;li&gt;檢查 header origin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=WzfJgCOMIsU&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=WzfJgCOMIsU&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;vocabulary&quot;&gt;&lt;a href=&quot;#vocabulary&quot; class=&quot;headerlink&quot; title=&quot;vocabulary&quot;&gt;&lt;/a&gt;vocabulary&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;opaque (adj.)&lt;/li&gt;
+&lt;li&gt;revoke (v.) / revocation (n.)&lt;/li&gt;
+&lt;li&gt;blacklists&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Access-and-Refresh-Token-14-00&quot;&gt;&lt;a href=&quot;#Access-and-Refresh-Token-14-00&quot; class=&quot;headerlink&quot; title=&quot;Access and Refresh Token (14:00)
+    
+    </summary>
+    
+    
+      <category term="JWT" scheme="http://alincode.github.io/blog/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>chrome debug rendering</title>
+    <link href="http://alincode.github.io/blog/2016/03/21/chrome-debug-rendering/"/>
+    <id>http://alincode.github.io/blog/2016/03/21/chrome-debug-rendering/</id>
+    <published>2016-03-21T13:53:18.000Z</published>
+    <updated>2016-03-21T15:35:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;現在的網站，似乎都開始走背景 rendering，前陣子看到一個 react 的教學影片，看到影片作者用到這個小技巧，在 Chrome 的開發者工具，有一個 enable paint flashing，可以從畫面就可以得知，哪些區塊在背景有更新。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/03/21/chrome-debug-rendering/rendering.png&quot; alt=&quot;rendering.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;現在的網站，似乎都開始走背景 rendering，前陣子看到一個 react 的教學影片，看到影片作者用到這個小技巧，在 Chrome 的開發者工具，有一個 enable paint flashing，可以從畫面就可以得知，哪些區塊在背景有更新。&lt;/p&gt;
+&lt;img src=
+    
+    </summary>
+    
+    
+      <category term="chrome" scheme="http://alincode.github.io/blog/tags/chrome/"/>
+    
+      <category term="debug" scheme="http://alincode.github.io/blog/tags/debug/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JWT Authentication with AngularJS 重點整理 (1)</title>
+    <link href="http://alincode.github.io/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/"/>
+    <id>http://alincode.github.io/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/</id>
+    <published>2016-03-20T11:35:42.000Z</published>
+    <updated>2016-03-20T12:07:45.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;一般-Session-的產生流程-3-10&quot;&gt;&lt;a href=&quot;#一般-Session-的產生流程-3-10&quot; class=&quot;headerlink&quot; title=&quot;一般 Session 的產生流程 (3:10)&quot;&gt;&lt;/a&gt;一般 Session 的產生流程 (3:10)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;瀏覽器發送一個 request 到 server，內含帳號跟密碼&lt;/li&gt;
+&lt;li&gt;server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。&lt;/li&gt;
+&lt;li&gt;將存有 Session ID 的 cookie，回傳給瀏覽器。&lt;/li&gt;
+&lt;li&gt;瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Session-識別的問題-3-50&quot;&gt;&lt;a href=&quot;#Session-識別的問題-3-50&quot; class=&quot;headerlink&quot; title=&quot;Session 識別的問題(3:50)&quot;&gt;&lt;/a&gt;Session 識別的問題(3:50)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;難以理解，而且不含意義&lt;/li&gt;
+&lt;li&gt;增加資料庫的負擔&lt;/li&gt;
+&lt;li&gt;Perception that cookies are inherently insecure&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;專有名詞介紹-5-10&quot;&gt;&lt;a href=&quot;#專有名詞介紹-5-10&quot; class=&quot;headerlink&quot; title=&quot;專有名詞介紹 (5:10)&quot;&gt;&lt;/a&gt;專有名詞介紹 (5:10)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Authentication (n.) 驗證&lt;/li&gt;
+&lt;li&gt;Authorization (n.) 授權&lt;/li&gt;
+&lt;li&gt;Token&lt;/li&gt;
+&lt;li&gt;JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;JWT-結構-6-55&quot;&gt;&lt;a href=&quot;#JWT-結構-6-55&quot; class=&quot;headerlink&quot; title=&quot;JWT 結構 (6:55)&quot;&gt;&lt;/a&gt;JWT 結構 (6:55)&lt;/h3&gt;&lt;p&gt;是一個經過 Base64-URL encoded 的字串&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;結構分三個部分&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Header&lt;/li&gt;
+&lt;li&gt;Body(Claims)&lt;/li&gt;
+&lt;li&gt;Cryptographic Signature 加密簽證&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;解開後的內容&quot;&gt;&lt;a href=&quot;#解開後的內容&quot; class=&quot;headerlink&quot; title=&quot;解開後的內容&quot;&gt;&lt;/a&gt;解開後的內容&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iss: &lt;a href=&quot;http://yourdomain.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://yourdomain.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;exp: 60000&lt;/li&gt;
+&lt;li&gt;sub: userId&lt;/li&gt;
+&lt;li&gt;scope: api/buy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;意義&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iss: 發佈者 (Issuer)&lt;/li&gt;
+&lt;li&gt;exp: 效期，單位是毫秒 (Expiration Time)&lt;/li&gt;
+&lt;li&gt;sub: 用戶 (Subject)&lt;/li&gt;
+&lt;li&gt;scope: 作用域&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;發佈-JWT-流程-11-05&quot;&gt;&lt;a href=&quot;#發佈-JWT-流程-11-05&quot; class=&quot;headerlink&quot; title=&quot;發佈 JWT 流程 (11:05)&quot;&gt;&lt;/a&gt;發佈 JWT 流程 (11:05)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;使用者經過驗證後，取得 Token&lt;/li&gt;
+&lt;li&gt;由你的 server 來製造 Token&lt;/li&gt;
+&lt;li&gt;client 儲存 token，並在需要驗證的 request 使用它。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;概述-JWT-12-15&quot;&gt;&lt;a href=&quot;#概述-JWT-12-15&quot; class=&quot;headerlink&quot; title=&quot;概述 JWT (12:15)&quot;&gt;&lt;/a&gt;概述 JWT (12:15)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;無狀態認證機制&lt;/li&gt;
+&lt;li&gt;Token 具有作用域的概念&lt;/li&gt;
+&lt;li&gt;產生授權&lt;/li&gt;
+&lt;li&gt;決定區域性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因為影片實在太長，後面有點不太好理解，分兩篇慢慢看&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一般-Session-的產生流程-3-10&quot;&gt;&lt;a href=&quot;#一般-Session-的產生流程-3-10&quot; class=&quot;headerlink&quot; title=&quot;一般 Session 的產生流程 (3:10)&quot;&gt;&lt;/a&gt;一般 Session 的產生流程 (3:1
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>建立自己的 ATOM snippet</title>
+    <link href="http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/"/>
+    <id>http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/</id>
+    <published>2016-03-19T12:59:46.000Z</published>
+    <updated>2016-03-21T15:10:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 &lt;code&gt;Open Your Snippet&lt;/code&gt;。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/03/19/create-your-own-snippet/tooltip.png&quot; alt=&quot;tooltip.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;它會幫你開啟一個 &lt;code&gt;snippet.cson&lt;/code&gt; 的文字檔&lt;/p&gt;
+&lt;h3 id=&quot;Snippet-格式&quot;&gt;&lt;a href=&quot;#Snippet-格式&quot; class=&quot;headerlink&quot; title=&quot;Snippet 格式&quot;&gt;&lt;/a&gt;Snippet 格式&lt;/h3&gt;&lt;h4 id=&quot;簡單範例&quot;&gt;&lt;a href=&quot;#簡單範例&quot; class=&quot;headerlink&quot; title=&quot;簡單範例&quot;&gt;&lt;/a&gt;簡單範例&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#39;.source.js&amp;#39;:&amp;#10;  &amp;#39;print request body&amp;#39;:&amp;#10;    &amp;#39;prefix&amp;#39;: &amp;#39;tb&amp;#39;&amp;#10;    &amp;#39;body&amp;#39;: &amp;#39;console.log(&amp;#34;=== res.body ==&amp;#62;&amp;#34;, res.body);$1&amp;#39;&amp;#10;  &amp;#39;print arrow&amp;#39;:&amp;#10;    &amp;#39;prefix&amp;#39;: &amp;#39;t&amp;#39;&amp;#10;    &amp;#39;body&amp;#39;: &amp;#39;console.log(&amp;#34;==========&amp;#62; &amp;#34;, $1);&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;source.js 指的是哪種支援哪種副黨名的檔案&lt;/li&gt;
+&lt;li&gt;prefix 是指快速鍵&lt;/li&gt;
+&lt;li&gt;body 則是你自己指定的自動產生內容&lt;/li&gt;
+&lt;li&gt;$1 則是內容產生後，你指標停留的位址，除了 $1 之外，你也可以取 $2，可用 tab 鍵依序切換。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;更多範例&quot;&gt;&lt;a href=&quot;#更多範例&quot; class=&quot;headerlink&quot; title=&quot;更多範例&quot;&gt;&lt;/a&gt;更多範例&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/atom/language-html/blob/master/snippets/language-html.cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;language-html.cson&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;language-javascript.cson&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;參考來源&quot;&gt;&lt;a href=&quot;#參考來源&quot; class=&quot;headerlink&quot; title=&quot;參考來源&quot;&gt;&lt;/a&gt;參考來源&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://atom.io/docs/latest/using-atom-snippets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;using-atom-snippets&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://atom.io/docs/latest/using-atom-basic-customization#cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Basic Customization&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 &lt;code&gt;Open Your Snippet&lt;/code&gt;。&lt;/p&gt;
+&lt;img src=&quot;/blog/201
+    
+    </summary>
+    
+    
+      <category term="ATOM" scheme="http://alincode.github.io/blog/tags/ATOM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Speed up Server Side Rendering 重點整理</title>
+    <link href="http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/"/>
+    <id>http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/</id>
+    <published>2016-03-17T16:00:01.000Z</published>
+    <updated>2016-03-17T16:08:54.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot;&gt;&lt;a href=&quot;#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot; class=&quot;headerlink&quot; title=&quot;為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)&quot;&gt;&lt;/a&gt;為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;renderToString 有單執行緒、同步、CPU 的限制&lt;/li&gt;
+&lt;li&gt;server side 和 client side code 混在一起&lt;/li&gt;
+&lt;li&gt;Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;技巧一：production-mode-5-30&quot;&gt;&lt;a href=&quot;#技巧一：production-mode-5-30&quot; class=&quot;headerlink&quot; title=&quot;技巧一：production mode (5:30)&quot;&gt;&lt;/a&gt;技巧一：production mode (5:30)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;NODE_ENV=production&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;dev mode 有開啟 error checking，使得速度變慢(幾乎三倍)。&lt;/p&gt;
+&lt;h4 id=&quot;缺點&quot;&gt;&lt;a href=&quot;#缺點&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;無&lt;/p&gt;
+&lt;h3 id=&quot;技巧二：使用-React-mini版本-6-55&quot;&gt;&lt;a href=&quot;#技巧二：使用-React-mini版本-6-55&quot; class=&quot;headerlink&quot; title=&quot;技巧二：使用 React mini版本 (6:55)&quot;&gt;&lt;/a&gt;技巧二：使用 React mini版本 (6:55)&lt;/h3&gt;&lt;p&gt;從&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom/server&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;改為&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react/dist/react.min&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;原因-8-15&quot;&gt;&lt;a href=&quot;#原因-8-15&quot; class=&quot;headerlink&quot; title=&quot;原因 (8:15)&quot;&gt;&lt;/a&gt;原因 (8:15)&lt;/h4&gt;&lt;p&gt;減少 NODE_ENV 檢查步驟&lt;/p&gt;
+&lt;h4 id=&quot;缺點-1&quot;&gt;&lt;a href=&quot;#缺點-1&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;很難 debug&lt;/p&gt;
+&lt;h3 id=&quot;技巧三：babel-Transforms-9-05&quot;&gt;&lt;a href=&quot;#技巧三：babel-Transforms-9-05&quot; class=&quot;headerlink&quot; title=&quot;技巧三：babel Transforms (9:05)&quot;&gt;&lt;/a&gt;技巧三：babel Transforms (9:05)&lt;/h3&gt;&lt;p&gt;添加兩個 babel runtime plugin&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/plugins/transform-react-constant-elements/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;transforms-react-constant-elements&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/plugins/transform-react-inline-elements/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;transform-react-inline-elements&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;原因-1&quot;&gt;&lt;a href=&quot;#原因-1&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;減少執行期的計算&lt;/p&gt;
+&lt;h4 id=&quot;缺點-2&quot;&gt;&lt;a href=&quot;#缺點-2&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;必須增加 babel build 的步驟&lt;/p&gt;
+&lt;h3 id=&quot;技巧四：不使用-createClass-12-30&quot;&gt;&lt;a href=&quot;#技巧四：不使用-createClass-12-30&quot; class=&quot;headerlink&quot; title=&quot;技巧四：不使用 createClass (12:30)&quot;&gt;&lt;/a&gt;技巧四：不使用 createClass (12:30)&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stateless components&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&quot;demo-把-ES5-換成-ES6-寫法-12-40&quot;&gt;&lt;a href=&quot;#demo-把-ES5-換成-ES6-寫法-12-40&quot; class=&quot;headerlink&quot; title=&quot;demo 把 ES5 換成 ES6 寫法 (12:40)&quot;&gt;&lt;/a&gt;demo 把 ES5 換成 ES6 寫法 (12:40)&lt;/h4&gt;&lt;h4 id=&quot;原因-2&quot;&gt;&lt;a href=&quot;#原因-2&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;也許跟 auto binding 有關，但不確定。&lt;/p&gt;
+&lt;h4 id=&quot;缺點-3&quot;&gt;&lt;a href=&quot;#缺點-3&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6&lt;/p&gt;
+&lt;h3 id=&quot;技巧五：Streaming&quot;&gt;&lt;a href=&quot;#技巧五：Streaming&quot; class=&quot;headerlink&quot; title=&quot;技巧五：Streaming&quot;&gt;&lt;/a&gt;技巧五：Streaming&lt;/h3&gt;&lt;p&gt;使用講者開發的框架，不產html，直接換成串流下載。&lt;/p&gt;
+&lt;p&gt;Chunked Encoding HTTP 1.1&lt;/p&gt;
+&lt;p&gt;從&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom/server&amp;#34;;&amp;#10;&amp;#10;res.send(ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;改為&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom-stream/server&amp;#34;;&amp;#10;&amp;#10;ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;).pipe(res);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;缺點-4&quot;&gt;&lt;a href=&quot;#缺點-4&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;還在 beta，需要小心 CDN 跟 Proxy 方面&lt;/p&gt;
+&lt;h3 id=&quot;技巧六：針對-component-做-cache-22-35&quot;&gt;&lt;a href=&quot;#技巧六：針對-component-做-cache-22-35&quot; class=&quot;headerlink&quot; title=&quot;技巧六：針對 component 做 cache (22:35)&quot;&gt;&lt;/a&gt;技巧六：針對 component 做 cache (22:35)&lt;/h3&gt;&lt;p&gt;使用講者開發的框架&lt;/p&gt;
+&lt;h4 id=&quot;Demo-Cache-Components-25-17&quot;&gt;&lt;a href=&quot;#Demo-Cache-Components-25-17&quot; class=&quot;headerlink&quot; title=&quot;Demo Cache Components (25:17)&quot;&gt;&lt;/a&gt;Demo Cache Components (25:17)&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;const cache = new LRURenderCache();&amp;#10;ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;, &amp;#123;cache: cache&amp;#125;).pipe(res);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;增加&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentCacheKey() &amp;#123;&amp;#10;  return JSON.st....&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;缺點：-27-30&quot;&gt;&lt;a href=&quot;#缺點：-27-30&quot; class=&quot;headerlink&quot; title=&quot;缺點：(27:30)&quot;&gt;&lt;/a&gt;缺點：(27:30)&lt;/h4&gt;&lt;p&gt;如果你的 cache key 有誤，可能會把資料傳送給錯的人。&lt;/p&gt;
+&lt;h3 id=&quot;總結-28-30&quot;&gt;&lt;a href=&quot;#總結-28-30&quot; class=&quot;headerlink&quot; title=&quot;總結 (28:30)&quot;&gt;&lt;/a&gt;總結 (28:30)&lt;/h3&gt;&lt;p&gt;你應該開始使用哪些技巧&lt;br&gt;技巧一：Yes&lt;br&gt;技巧二：Yes&lt;br&gt;技巧三：Yes&lt;br&gt;技巧四：Maybe&lt;br&gt;技巧五：Maybe&lt;br&gt;技巧六：Not yet&lt;/p&gt;
+&lt;p&gt;影片：&lt;a href=&quot;https://www.youtube.com/watch?v=PnpfGy7q96U&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactjs - Speed up Server Side Rendering - Sasha Aickin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Vocabulary&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/downside&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;downside&lt;/a&gt;: 缺點&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english/suspect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;suspect&lt;/a&gt;: 懷疑&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/trick_1?q=tricks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tricks&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/recap?q=Recap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;recap&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/coarse_1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;coarse&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english/culprit&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;culprit&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot;&gt;&lt;a href=&quot;#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot; class=&quot;headerlink&quot; title=&quot;為什麼提升 Server
+    
+    </summary>
+    
+    
+      <category term="Server Side Rendering" scheme="http://alincode.github.io/blog/tags/Server-Side-Rendering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git flow request pull</title>
+    <link href="http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/"/>
+    <id>http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/</id>
+    <published>2016-03-16T16:26:31.000Z</published>
+    <updated>2016-03-16T17:51:11.000Z</updated>
+    
+    <content type="html">&lt;p&gt;因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。&lt;/p&gt;
+&lt;p&gt;github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實務上是不可行的。&lt;/p&gt;
+&lt;p&gt;git flow 基本上是每個人都可以直接 merge 進 develop，不需發 pr，等 release date，才從 develop 一次 merge 到 master。&lt;/p&gt;
+&lt;p&gt;不過因為 team 的成員都是 remote 工作者，我想 pull request 這個流程還是有必要的，所以我採用一個混搭模式。&lt;/p&gt;
+&lt;h2 id=&quot;hotfix&quot;&gt;&lt;a href=&quot;#hotfix&quot; class=&quot;headerlink&quot; title=&quot;hotfix&quot;&gt;&lt;/a&gt;hotfix&lt;/h2&gt;&lt;p&gt;開一個新的分支，開始修 bug&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout -b hotfix/issue-1 master&amp;#10;git add .&amp;#10;git commit -m &amp;#39;fixed bug&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;merge-master&quot;&gt;&lt;a href=&quot;#merge-master&quot; class=&quot;headerlink&quot; title=&quot;merge master&quot;&gt;&lt;/a&gt;merge master&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout master&amp;#10;git merge hotfix/issue-1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;merge-develop&quot;&gt;&lt;a href=&quot;#merge-develop&quot; class=&quot;headerlink&quot; title=&quot;merge develop&quot;&gt;&lt;/a&gt;merge develop&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout develop&amp;#10;git merge hotfix/issue-1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;第一個-pull-request&quot;&gt;&lt;a href=&quot;#第一個-pull-request&quot; class=&quot;headerlink&quot; title=&quot;第一個 pull request&quot;&gt;&lt;/a&gt;第一個 pull request&lt;/h3&gt;&lt;p&gt;base fork: company-repo at master&lt;br&gt;head fork: your-repo at master&lt;/p&gt;
+&lt;h3 id=&quot;第二個-pull-request&quot;&gt;&lt;a href=&quot;#第二個-pull-request&quot; class=&quot;headerlink&quot; title=&quot;第二個 pull request&quot;&gt;&lt;/a&gt;第二個 pull request&lt;/h3&gt;&lt;p&gt;base fork: company-repo at develop&lt;br&gt;head fork: your-repo at develop&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。&lt;/p&gt;
+&lt;p&gt;github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code re
+    
+    </summary>
+    
+    
+      <category term="git" scheme="http://alincode.github.io/blog/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Request Entity Too Large</title>
+    <link href="http://alincode.github.io/blog/2016/03/16/Request-Entity-Too-Large/"/>
+    <id>http://alincode.github.io/blog/2016/03/16/Request-Entity-Too-Large/</id>
+    <published>2016-03-16T15:18:23.000Z</published>
+    <updated>2016-03-16T15:42:54.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天在工作的時候遇到，Nginx &lt;code&gt;413 Request Entity Too Large&lt;/code&gt; 這個 Error，Google 了一下，解決方式是加大 body size，預設是 1M，所以暫時加到 2M，不過一般這個問題是出現在上傳的情況，但我遇到的情況應該不需要，目前還找不到實際背後的原因，所以先用 work around 的解法，等我找到原因了，再更新這篇文。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;client_max_body_size 2M;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在工作的時候遇到，Nginx &lt;code&gt;413 Request Entity Too Large&lt;/code&gt; 這個 Error，Google 了一下，解決方式是加大 body size，預設是 1M，所以暫時加到 2M，不過一般這個問題是出現在上傳的情況，但我遇到的
+    
+    </summary>
+    
+    
+      <category term="nginx" scheme="http://alincode.github.io/blog/tags/nginx/"/>
+    
+  </entry>
+  
+</feed>
