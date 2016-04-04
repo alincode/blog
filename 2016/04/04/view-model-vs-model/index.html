@@ -11,19 +11,19 @@
     
     
     
-    <meta name="description" content="View Model vs ModelView Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
-Mode">
+    <meta name="description" content="View Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
+Model不太嚴謹的說法，可以直接對照到資料庫">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="view model vs model">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/04/04/view-model-vs-model/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="View Model vs ModelView Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
-Mode">
-<meta property="og:updated_time" content="2016-04-04T12:56:42.000Z">
+<meta property="og:description" content="View Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
+Model不太嚴謹的說法，可以直接對照到資料庫">
+<meta property="og:updated_time" content="2016-04-04T13:01:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="view model vs model">
-<meta name="twitter:description" content="View Model vs ModelView Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
-Mode">
+<meta name="twitter:description" content="View Model但後來 Microsoft 又提出一個 model-view-view model (MVVM)，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。
+Model不太嚴謹的說法，可以直接對照到資料庫">
     
     
         
@@ -243,8 +243,8 @@ Mode">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="View-Model-vs-Model"><a href="#View-Model-vs-Model" class="headerlink" title="View Model vs Model"></a>View Model vs Model</h3><h4 id="View-Model"><a href="#View-Model" class="headerlink" title="View Model"></a>View Model</h4><p>但後來 Microsoft 又提出一個 <code>model-view-view model (MVVM)</code>，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。</p>
-<h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><p>不太嚴謹的說法，可以直接對照到資料庫的 table</p>
+            <h3 id="View-Model"><a href="#View-Model" class="headerlink" title="View Model"></a>View Model</h3><p>但後來 Microsoft 又提出一個 <code>model-view-view model (MVVM)</code>，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>不太嚴謹的說法，可以直接對照到資料庫的 table</p>
 <h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><p><strong>User.js</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    firstName: <span class="built_in">String</span>,</span><br><span class="line">    lastName: <span class="built_in">String</span>,</span><br><span class="line">    nickname: <span class="built_in">String</span>,</span><br><span class="line">    email: <span class="built_in">String</span>,</span><br><span class="line">    password: <span class="built_in">String</span>,</span><br><span class="line">    address: <span class="built_in">String</span>,</span><br><span class="line">    phone: <span class="built_in">String</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>Profile.js</strong></p>
