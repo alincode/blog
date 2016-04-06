@@ -230,6 +230,53 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/27/sequelize-delete/">
+                            sequelize delete
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Mar 27 2016 21:30:16 GMT+0800">
+	
+		    3月 27, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 <code>deletedAt</code>，並把刪除時間更新上去，<code>sequelize</code> 有提供這個功能，真的蠻實用的。</p>
+<blockquote>
+<p>don’t delete database entries but set the newly added attribute deletedAt<br> to the current date (when deletion was done). paranoid will only work if<br> timestamps are enabled</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ContactUs = sequelize.define(&#39;ContactUs&#39;, &#123;&#10;  name: DataTypes.STRING,&#10;  email: DataTypes.STRING,&#10;  phone: DataTypes.STRING,&#10;  content: DataTypes.TEXT,&#10;&#125;,&#123;&#10;  // &#21152;&#36889;&#34892;&#10;  paranoid: true,&#10;  classMethods: &#123;&#10;    associate: function(models)&#123;&#10;    &#125;&#10;  &#125;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>資料來源</strong><br><a href="http://docs.sequelizejs.com/en/latest/docs/models-definition/" target="_blank" rel="external">http://docs.sequelizejs.com/en/latest/docs/models-definition/</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/27/sequelize-delete/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/26/react-debug-tip/">
                             React Debug 小技巧
                         </a>
@@ -759,57 +806,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/17/git-flow-request-pull/">
-                            git flow request pull
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 17 2016 00:26:31 GMT+0800">
-	
-		    3月 17, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。</p>
-<p>github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實務上是不可行的。</p>
-<p>git flow 基本上是每個人都可以直接 merge 進 develop，不需發 pr，等 release date，才從 develop 一次 merge 到 master。</p>
-<p>不過因為 team 的成員都是 remote 工作者，我想 pull request 這個流程還是有必要的，所以我採用一個混搭模式。</p>
-<h2 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h2><p>開一個新的分支，開始修 bug</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hotfix/issue-1 master&#10;git add .&#10;git commit -m &#39;fixed bug&#39;</span><br></pre></td></tr></table></figure>
-<h3 id="merge-master"><a href="#merge-master" class="headerlink" title="merge master"></a>merge master</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
-<h3 id="merge-develop"><a href="#merge-develop" class="headerlink" title="merge develop"></a>merge develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop&#10;git merge hotfix/issue-1</span><br></pre></td></tr></table></figure>
-<h3 id="第一個-pull-request"><a href="#第一個-pull-request" class="headerlink" title="第一個 pull request"></a>第一個 pull request</h3><p>base fork: company-repo at master<br>head fork: your-repo at master</p>
-<h3 id="第二個-pull-request"><a href="#第二個-pull-request" class="headerlink" title="第二個 pull request"></a>第二個 pull request</h3><p>base fork: company-repo at develop<br>head fork: your-repo at develop</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/17/git-flow-request-pull/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

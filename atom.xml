@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-05T14:45:40.000Z</updated>
+  <updated>2016-04-06T15:14:15.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Building-Isomorphic-Web-Applications-with-React</title>
+    <link href="http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/"/>
+    <id>http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/</id>
+    <published>2016-04-06T15:12:46.000Z</published>
+    <updated>2016-04-06T15:14:15.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;為什麼我們要用-Isomorphic-1-50&quot;&gt;&lt;a href=&quot;#為什麼我們要用-Isomorphic-1-50&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用 Isomorphic (1:50)&quot;&gt;&lt;/a&gt;為什麼我們要用 Isomorphic (1:50)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;SEO 爬蟲&lt;/li&gt;
+&lt;li&gt;效能&lt;br&gt;server side 已經 build 好了 html，client 只需要 render html 的部分。&lt;/li&gt;
+&lt;li&gt;dev 的好處&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;支援-React-Isomorphic-的框架-7-30&quot;&gt;&lt;a href=&quot;#支援-React-Isomorphic-的框架-7-30&quot; class=&quot;headerlink&quot; title=&quot;支援 React Isomorphic 的框架 (7:30)&quot;&gt;&lt;/a&gt;支援 React Isomorphic 的框架 (7:30)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Pellet (Vevo)&lt;/li&gt;
+&lt;li&gt;React Nexus&lt;/li&gt;
+&lt;li&gt;Relay (Facebook)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;React-讓-Isomorphic-架構變成可能-8-00&quot;&gt;&lt;a href=&quot;#React-讓-Isomorphic-架構變成可能-8-00&quot; class=&quot;headerlink&quot; title=&quot;React 讓 Isomorphic 架構變成可能 (8:00)&quot;&gt;&lt;/a&gt;React 讓 Isomorphic 架構變成可能 (8:00)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Virtual DOM&lt;br&gt;Virtual DOM vs xxx DOM&lt;br&gt;Virtual DOM is small update&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;In-the-Browser&quot;&gt;&lt;a href=&quot;#In-the-Browser&quot; class=&quot;headerlink&quot; title=&quot;In the Browser&quot;&gt;&lt;/a&gt;In the Browser&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;SPA&lt;/li&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;li&gt;React Router&lt;/li&gt;
+&lt;li&gt;Browser Sync to serve / update the file&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Webpack-讓你做到了哪些事&quot;&gt;&lt;a href=&quot;#Webpack-讓你做到了哪些事&quot; class=&quot;headerlink&quot; title=&quot;Webpack 讓你做到了哪些事&quot;&gt;&lt;/a&gt;Webpack 讓你做到了哪些事&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;不同的環境產生不同的 build&lt;/li&gt;
+&lt;li&gt;specific code&lt;/li&gt;
+&lt;li&gt;Chunk code into smaller downloadable files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(….未完成…)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional View&lt;/li&gt;
+&lt;li&gt;renderToString&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/elyseko/iso-react-demo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/elyseko/iso-react-demo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=QPXNb6bl7hc&amp;amp;t=1302s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Building Isomorphic Web Applications with React&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;為什麼我們要用-Isomorphic-1-50&quot;&gt;&lt;a href=&quot;#為什麼我們要用-Isomorphic-1-50&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用 Isomorphic (1:50)&quot;&gt;&lt;/a&gt;為什麼我們要用 Isomorp
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>github 快速鍵</title>
@@ -843,37 +892,6 @@
     
     
       <category term="Server Side Rendering" scheme="http://alincode.github.io/blog/tags/Server-Side-Rendering/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git flow request pull</title>
-    <link href="http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/"/>
-    <id>http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/</id>
-    <published>2016-03-16T16:26:31.000Z</published>
-    <updated>2016-03-16T17:51:11.000Z</updated>
-    
-    <content type="html">&lt;p&gt;因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。&lt;/p&gt;
-&lt;p&gt;github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code review 後，然後才會 merge 進 master，適合一天多次 release 的專案，不過這總做法，對已上線的系統，只有一個主分支，實務上是不可行的。&lt;/p&gt;
-&lt;p&gt;git flow 基本上是每個人都可以直接 merge 進 develop，不需發 pr，等 release date，才從 develop 一次 merge 到 master。&lt;/p&gt;
-&lt;p&gt;不過因為 team 的成員都是 remote 工作者，我想 pull request 這個流程還是有必要的，所以我採用一個混搭模式。&lt;/p&gt;
-&lt;h2 id=&quot;hotfix&quot;&gt;&lt;a href=&quot;#hotfix&quot; class=&quot;headerlink&quot; title=&quot;hotfix&quot;&gt;&lt;/a&gt;hotfix&lt;/h2&gt;&lt;p&gt;開一個新的分支，開始修 bug&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout -b hotfix/issue-1 master&amp;#10;git add .&amp;#10;git commit -m &amp;#39;fixed bug&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;merge-master&quot;&gt;&lt;a href=&quot;#merge-master&quot; class=&quot;headerlink&quot; title=&quot;merge master&quot;&gt;&lt;/a&gt;merge master&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout master&amp;#10;git merge hotfix/issue-1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;merge-develop&quot;&gt;&lt;a href=&quot;#merge-develop&quot; class=&quot;headerlink&quot; title=&quot;merge develop&quot;&gt;&lt;/a&gt;merge develop&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout develop&amp;#10;git merge hotfix/issue-1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;第一個-pull-request&quot;&gt;&lt;a href=&quot;#第一個-pull-request&quot; class=&quot;headerlink&quot; title=&quot;第一個 pull request&quot;&gt;&lt;/a&gt;第一個 pull request&lt;/h3&gt;&lt;p&gt;base fork: company-repo at master&lt;br&gt;head fork: your-repo at master&lt;/p&gt;
-&lt;h3 id=&quot;第二個-pull-request&quot;&gt;&lt;a href=&quot;#第二個-pull-request&quot; class=&quot;headerlink&quot; title=&quot;第二個 pull request&quot;&gt;&lt;/a&gt;第二個 pull request&lt;/h3&gt;&lt;p&gt;base fork: company-repo at develop&lt;br&gt;head fork: your-repo at develop&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;因為專案已經上線了，從原本的 github flow，改用 git flow，這樣才能同時 hotfix 跟調比較大幅度的變動。&lt;/p&gt;
-&lt;p&gt;github flow 只有一個 master，每個人都發 pull request，由具有 merge 權限的人 code re
-    
-    </summary>
-    
-    
-      <category term="git" scheme="http://alincode.github.io/blog/tags/git/"/>
     
   </entry>
   
