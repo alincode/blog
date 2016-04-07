@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-06T15:20:59.000Z</updated>
+  <updated>2016-04-07T15:14:39.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>buddy ci</title>
+    <link href="http://alincode.github.io/blog/2016/04/07/buddy-ci/"/>
+    <id>http://alincode.github.io/blog/2016/04/07/buddy-ci/</id>
+    <published>2016-04-07T15:14:39.000Z</published>
+    <updated>2016-04-07T15:14:39.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Building Isomorphic Web Applications with React 重點整理</title>
@@ -830,68 +846,6 @@
     
     
       <category term="ATOM" scheme="http://alincode.github.io/blog/tags/ATOM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Speed up Server Side Rendering 重點整理</title>
-    <link href="http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/"/>
-    <id>http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/</id>
-    <published>2016-03-17T16:00:01.000Z</published>
-    <updated>2016-03-17T16:08:54.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot;&gt;&lt;a href=&quot;#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot; class=&quot;headerlink&quot; title=&quot;為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)&quot;&gt;&lt;/a&gt;為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;renderToString 有單執行緒、同步、CPU 的限制&lt;/li&gt;
-&lt;li&gt;server side 和 client side code 混在一起&lt;/li&gt;
-&lt;li&gt;Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;技巧一：production-mode-5-30&quot;&gt;&lt;a href=&quot;#技巧一：production-mode-5-30&quot; class=&quot;headerlink&quot; title=&quot;技巧一：production mode (5:30)&quot;&gt;&lt;/a&gt;技巧一：production mode (5:30)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;NODE_ENV=production&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;dev mode 有開啟 error checking，使得速度變慢(幾乎三倍)。&lt;/p&gt;
-&lt;h4 id=&quot;缺點&quot;&gt;&lt;a href=&quot;#缺點&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;無&lt;/p&gt;
-&lt;h3 id=&quot;技巧二：使用-React-mini版本-6-55&quot;&gt;&lt;a href=&quot;#技巧二：使用-React-mini版本-6-55&quot; class=&quot;headerlink&quot; title=&quot;技巧二：使用 React mini版本 (6:55)&quot;&gt;&lt;/a&gt;技巧二：使用 React mini版本 (6:55)&lt;/h3&gt;&lt;p&gt;從&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom/server&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;改為&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react/dist/react.min&amp;#34;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;原因-8-15&quot;&gt;&lt;a href=&quot;#原因-8-15&quot; class=&quot;headerlink&quot; title=&quot;原因 (8:15)&quot;&gt;&lt;/a&gt;原因 (8:15)&lt;/h4&gt;&lt;p&gt;減少 NODE_ENV 檢查步驟&lt;/p&gt;
-&lt;h4 id=&quot;缺點-1&quot;&gt;&lt;a href=&quot;#缺點-1&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;很難 debug&lt;/p&gt;
-&lt;h3 id=&quot;技巧三：babel-Transforms-9-05&quot;&gt;&lt;a href=&quot;#技巧三：babel-Transforms-9-05&quot; class=&quot;headerlink&quot; title=&quot;技巧三：babel Transforms (9:05)&quot;&gt;&lt;/a&gt;技巧三：babel Transforms (9:05)&lt;/h3&gt;&lt;p&gt;添加兩個 babel runtime plugin&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/plugins/transform-react-constant-elements/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;transforms-react-constant-elements&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://babeljs.io/docs/plugins/transform-react-inline-elements/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;transform-react-inline-elements&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;原因-1&quot;&gt;&lt;a href=&quot;#原因-1&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;減少執行期的計算&lt;/p&gt;
-&lt;h4 id=&quot;缺點-2&quot;&gt;&lt;a href=&quot;#缺點-2&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;必須增加 babel build 的步驟&lt;/p&gt;
-&lt;h3 id=&quot;技巧四：不使用-createClass-12-30&quot;&gt;&lt;a href=&quot;#技巧四：不使用-createClass-12-30&quot; class=&quot;headerlink&quot; title=&quot;技巧四：不使用 createClass (12:30)&quot;&gt;&lt;/a&gt;技巧四：不使用 createClass (12:30)&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stateless components&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id=&quot;demo-把-ES5-換成-ES6-寫法-12-40&quot;&gt;&lt;a href=&quot;#demo-把-ES5-換成-ES6-寫法-12-40&quot; class=&quot;headerlink&quot; title=&quot;demo 把 ES5 換成 ES6 寫法 (12:40)&quot;&gt;&lt;/a&gt;demo 把 ES5 換成 ES6 寫法 (12:40)&lt;/h4&gt;&lt;h4 id=&quot;原因-2&quot;&gt;&lt;a href=&quot;#原因-2&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h4&gt;&lt;p&gt;也許跟 auto binding 有關，但不確定。&lt;/p&gt;
-&lt;h4 id=&quot;缺點-3&quot;&gt;&lt;a href=&quot;#缺點-3&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6&lt;/p&gt;
-&lt;h3 id=&quot;技巧五：Streaming&quot;&gt;&lt;a href=&quot;#技巧五：Streaming&quot; class=&quot;headerlink&quot; title=&quot;技巧五：Streaming&quot;&gt;&lt;/a&gt;技巧五：Streaming&lt;/h3&gt;&lt;p&gt;使用講者開發的框架，不產html，直接換成串流下載。&lt;/p&gt;
-&lt;p&gt;Chunked Encoding HTTP 1.1&lt;/p&gt;
-&lt;p&gt;從&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom/server&amp;#34;;&amp;#10;&amp;#10;res.send(ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;改為&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import ReactDOMSerer from &amp;#34;react-dom-stream/server&amp;#34;;&amp;#10;&amp;#10;ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;).pipe(res);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;缺點-4&quot;&gt;&lt;a href=&quot;#缺點-4&quot; class=&quot;headerlink&quot; title=&quot;缺點&quot;&gt;&lt;/a&gt;缺點&lt;/h4&gt;&lt;p&gt;還在 beta，需要小心 CDN 跟 Proxy 方面&lt;/p&gt;
-&lt;h3 id=&quot;技巧六：針對-component-做-cache-22-35&quot;&gt;&lt;a href=&quot;#技巧六：針對-component-做-cache-22-35&quot; class=&quot;headerlink&quot; title=&quot;技巧六：針對 component 做 cache (22:35)&quot;&gt;&lt;/a&gt;技巧六：針對 component 做 cache (22:35)&lt;/h3&gt;&lt;p&gt;使用講者開發的框架&lt;/p&gt;
-&lt;h4 id=&quot;Demo-Cache-Components-25-17&quot;&gt;&lt;a href=&quot;#Demo-Cache-Components-25-17&quot; class=&quot;headerlink&quot; title=&quot;Demo Cache Components (25:17)&quot;&gt;&lt;/a&gt;Demo Cache Components (25:17)&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;const cache = new LRURenderCache();&amp;#10;ReactDOMSerer.renderToString(&amp;#39;&amp;#60;Root/&amp;#62;&amp;#39;, &amp;#123;cache: cache&amp;#125;).pipe(res);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;增加&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;componentCacheKey() &amp;#123;&amp;#10;  return JSON.st....&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;缺點：-27-30&quot;&gt;&lt;a href=&quot;#缺點：-27-30&quot; class=&quot;headerlink&quot; title=&quot;缺點：(27:30)&quot;&gt;&lt;/a&gt;缺點：(27:30)&lt;/h4&gt;&lt;p&gt;如果你的 cache key 有誤，可能會把資料傳送給錯的人。&lt;/p&gt;
-&lt;h3 id=&quot;總結-28-30&quot;&gt;&lt;a href=&quot;#總結-28-30&quot; class=&quot;headerlink&quot; title=&quot;總結 (28:30)&quot;&gt;&lt;/a&gt;總結 (28:30)&lt;/h3&gt;&lt;p&gt;你應該開始使用哪些技巧&lt;br&gt;技巧一：Yes&lt;br&gt;技巧二：Yes&lt;br&gt;技巧三：Yes&lt;br&gt;技巧四：Maybe&lt;br&gt;技巧五：Maybe&lt;br&gt;技巧六：Not yet&lt;/p&gt;
-&lt;p&gt;影片：&lt;a href=&quot;https://www.youtube.com/watch?v=PnpfGy7q96U&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Reactjs - Speed up Server Side Rendering - Sasha Aickin&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Vocabulary&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/downside&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;downside&lt;/a&gt;: 缺點&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english/suspect&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;suspect&lt;/a&gt;: 懷疑&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/trick_1?q=tricks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tricks&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/recap?q=Recap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;recap&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english-chinese-traditional/coarse_1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;coarse&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://dictionary.cambridge.org/dictionary/english/culprit&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;culprit&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot;&gt;&lt;a href=&quot;#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00&quot; class=&quot;headerlink&quot; title=&quot;為什麼提升 Server
-    
-    </summary>
-    
-    
-      <category term="Server Side Rendering" scheme="http://alincode.github.io/blog/tags/Server-Side-Rendering/"/>
     
   </entry>
   

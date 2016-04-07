@@ -229,6 +229,47 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/07/buddy-ci/">
+                            buddy ci
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 07 2016 23:14:39 GMT+0800">
+	
+		    4月 07, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/07/buddy-ci/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/">
                             Building Isomorphic Web Applications with React 重點整理
                         </a>
@@ -849,60 +890,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/29/jade-mixins/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/28/sails-i18n-object-notation/">
-                            物件宣告 Sails 多國語系
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Mar 28 2016 17:12:56 GMT+0800">
-	
-		    3月 28, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用<a href="https://github.com/mashpie/i18n-node" target="_blank" rel="external">i18n-node</a>，所以基本 i18n-node 有提供的功能都可以使用。</p>
-<p>objectNotation 這個功能預設是 false，所以必須得先設定。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p><strong>修改多國語系設定檔</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/i18n.js&#10;&#10;module.exports.i18n = &#123;&#10;  updateFiles: true,&#10;  localesDirectory: &#39;/config/locales&#39;,&#10;  locales: [&#39;en&#39;, &#39;zh&#39;],&#10;  // &#21152;&#36889;&#34892;&#10;  objectNotation: true&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>支援物件式的寫法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/locales/zh.json&#10;&#123;&#10;  &#34;admin&#34;: &#123;&#10;    &#34;common&#34;: &#123;&#10;      &#34;createdAt&#34;: &#34;&#24314;&#31435;&#26085;&#26399;&#34;,&#10;      &#34;publishAt&#34;: &#34;&#30332;&#20296;&#26085;&#26399;&#34;,&#10;      &#34;title&#34;: &#34;&#27161;&#38988;&#34;,&#10;      &#34;content&#34;: &#34;&#20839;&#23481;&#34;,&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>修改 view 檔</strong></p>
-<p>此範例是針對 <code>Jade</code> 的寫法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;i18n(&#39;admin.common.createdAt&#39;)&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h3><ul>
-<li><a href="https://github.com/balderdashy/sails/issues/1878" target="_blank" rel="external">i18n does not support the objectNotation config option </a></li>
-<li><a href="http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n" target="_blank" rel="external">sails i18n</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/28/sails-i18n-object-notation/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
