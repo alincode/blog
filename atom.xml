@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-08T15:49:02.000Z</updated>
+  <updated>2016-04-08T15:53:41.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,11 +20,19 @@
     <link href="http://alincode.github.io/blog/2016/04/08/buddy-ci-2/"/>
     <id>http://alincode.github.io/blog/2016/04/08/buddy-ci-2/</id>
     <published>2016-04-08T15:48:35.000Z</published>
-    <updated>2016-04-08T15:49:02.000Z</updated>
+    <updated>2016-04-08T15:53:41.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;h3 id=&quot;誰適合使用？&quot;&gt;&lt;a href=&quot;#誰適合使用？&quot; class=&quot;headerlink&quot; title=&quot;誰適合使用？&quot;&gt;&lt;/a&gt;誰適合使用？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;你的專案託管在github 或 bitbucket&lt;/li&gt;
+&lt;/ul&gt;
+</content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;誰適合使用？&quot;&gt;&lt;a href=&quot;#誰適合使用？&quot; class=&quot;headerlink&quot; title=&quot;誰適合使用？&quot;&gt;&lt;/a&gt;誰適合使用？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;你的專案託管在github 或 bitbucket&lt;/li&gt;
+&lt;/ul&gt;
+
     
     </summary>
     
