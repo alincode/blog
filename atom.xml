@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-08T05:02:02.000Z</updated>
+  <updated>2016-04-08T15:49:02.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Buddy CI (2)</title>
+    <link href="http://alincode.github.io/blog/2016/04/08/buddy-ci-2/"/>
+    <id>http://alincode.github.io/blog/2016/04/08/buddy-ci-2/</id>
+    <published>2016-04-08T15:48:35.000Z</published>
+    <updated>2016-04-08T15:49:02.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Buddy CI (1)</title>
@@ -869,45 +885,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>建立自己的 ATOM snippet</title>
-    <link href="http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/"/>
-    <id>http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/</id>
-    <published>2016-03-19T12:59:46.000Z</published>
-    <updated>2016-03-21T15:10:39.000Z</updated>
-    
-    <content type="html">&lt;p&gt;再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 &lt;code&gt;Open Your Snippet&lt;/code&gt;。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/03/19/create-your-own-snippet/tooltip.png&quot; alt=&quot;tooltip.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;它會幫你開啟一個 &lt;code&gt;snippet.cson&lt;/code&gt; 的文字檔&lt;/p&gt;
-&lt;h3 id=&quot;Snippet-格式&quot;&gt;&lt;a href=&quot;#Snippet-格式&quot; class=&quot;headerlink&quot; title=&quot;Snippet 格式&quot;&gt;&lt;/a&gt;Snippet 格式&lt;/h3&gt;&lt;h4 id=&quot;簡單範例&quot;&gt;&lt;a href=&quot;#簡單範例&quot; class=&quot;headerlink&quot; title=&quot;簡單範例&quot;&gt;&lt;/a&gt;簡單範例&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#39;.source.js&amp;#39;:&amp;#10;  &amp;#39;print request body&amp;#39;:&amp;#10;    &amp;#39;prefix&amp;#39;: &amp;#39;tb&amp;#39;&amp;#10;    &amp;#39;body&amp;#39;: &amp;#39;console.log(&amp;#34;=== res.body ==&amp;#62;&amp;#34;, res.body);$1&amp;#39;&amp;#10;  &amp;#39;print arrow&amp;#39;:&amp;#10;    &amp;#39;prefix&amp;#39;: &amp;#39;t&amp;#39;&amp;#10;    &amp;#39;body&amp;#39;: &amp;#39;console.log(&amp;#34;==========&amp;#62; &amp;#34;, $1);&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;source.js 指的是哪種支援哪種副黨名的檔案&lt;/li&gt;
-&lt;li&gt;prefix 是指快速鍵&lt;/li&gt;
-&lt;li&gt;body 則是你自己指定的自動產生內容&lt;/li&gt;
-&lt;li&gt;$1 則是內容產生後，你指標停留的位址，除了 $1 之外，你也可以取 $2，可用 tab 鍵依序切換。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;更多範例&quot;&gt;&lt;a href=&quot;#更多範例&quot; class=&quot;headerlink&quot; title=&quot;更多範例&quot;&gt;&lt;/a&gt;更多範例&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/atom/language-html/blob/master/snippets/language-html.cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;language-html.cson&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;language-javascript.cson&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;參考來源&quot;&gt;&lt;a href=&quot;#參考來源&quot; class=&quot;headerlink&quot; title=&quot;參考來源&quot;&gt;&lt;/a&gt;參考來源&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://atom.io/docs/latest/using-atom-snippets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;using-atom-snippets&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://atom.io/docs/latest/using-atom-basic-customization#cson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Basic Customization&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 &lt;code&gt;Open Your Snippet&lt;/code&gt;。&lt;/p&gt;
-&lt;img src=&quot;/blog/201
-    
-    </summary>
-    
-    
-      <category term="ATOM" scheme="http://alincode.github.io/blog/tags/ATOM/"/>
     
   </entry>
   
