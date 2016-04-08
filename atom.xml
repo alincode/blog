@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-07T15:14:39.000Z</updated>
+  <updated>2016-04-08T04:49:04.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -16,18 +16,79 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>buddy ci</title>
+    <title>Buddy CI (1)</title>
     <link href="http://alincode.github.io/blog/2016/04/07/buddy-ci/"/>
     <id>http://alincode.github.io/blog/2016/04/07/buddy-ci/</id>
     <published>2016-04-07T15:14:39.000Z</published>
-    <updated>2016-04-07T15:14:39.000Z</updated>
+    <updated>2016-04-08T04:49:04.000Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;p&gt;它是一個挺新的 CI 雲端服務方案，推出於2015年中旬。&lt;/p&gt;
+&lt;h3 id=&quot;收費方案&quot;&gt;&lt;a href=&quot;#收費方案&quot; class=&quot;headerlink&quot; title=&quot;收費方案&quot;&gt;&lt;/a&gt;收費方案&lt;/h3&gt;&lt;p&gt;只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。&lt;/p&gt;
+&lt;h3 id=&quot;支援的語言&quot;&gt;&lt;a href=&quot;#支援的語言&quot; class=&quot;headerlink&quot; title=&quot;支援的語言&quot;&gt;&lt;/a&gt;支援的語言&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ruby&lt;/li&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;li&gt;C++&lt;/li&gt;
+&lt;li&gt;Scala&lt;/li&gt;
+&lt;li&gt;PHP&lt;/li&gt;
+&lt;li&gt;Go&lt;/li&gt;
+&lt;li&gt;Erlang&lt;/li&gt;
+&lt;li&gt;Java&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;整合的的功能有&quot;&gt;&lt;a href=&quot;#整合的的功能有&quot; class=&quot;headerlink&quot; title=&quot;整合的的功能有&quot;&gt;&lt;/a&gt;整合的的功能有&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;執行在 build 與 docker&lt;/li&gt;
+&lt;li&gt;傳送檔案&lt;ul&gt;
+&lt;li&gt;FTP&lt;/li&gt;
+&lt;li&gt;FTPS&lt;/li&gt;
+&lt;li&gt;SFTP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;支援部署到 IAAS&lt;ul&gt;
+&lt;li&gt;AMAZON S3&lt;/li&gt;
+&lt;li&gt;HEROKU&lt;/li&gt;
+&lt;li&gt;DIGITAL OCEAN&lt;/li&gt;
+&lt;li&gt;MODULUS&lt;/li&gt;
+&lt;li&gt;ELASTIC BEANSTALK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;版本控制&lt;ul&gt;
+&lt;li&gt;WebDav&lt;/li&gt;
+&lt;li&gt;Git push&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;DEVOPS&lt;ul&gt;
+&lt;li&gt;執行 SSH 命令指令&lt;/li&gt;
+&lt;li&gt;在 HEROKU 上執行命令指令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;訊息通知&lt;ul&gt;
+&lt;li&gt;傳送 HTTP POST&lt;/li&gt;
+&lt;li&gt;Slack&lt;/li&gt;
+&lt;li&gt;簡訊&lt;/li&gt;
+&lt;li&gt;Email&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;監控的方式&lt;ul&gt;
+&lt;li&gt;Web&lt;/li&gt;
+&lt;li&gt;Ping&lt;/li&gt;
+&lt;li&gt;TCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;核心架構&quot;&gt;&lt;a href=&quot;#核心架構&quot; class=&quot;headerlink&quot; title=&quot;核心架構&quot;&gt;&lt;/a&gt;核心架構&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;What are pipelines?&lt;br&gt;A pipeline is a sequence of Continuous Delivery actions. For example, you can configure Buddy to upload files to the server and update assets on AWS on every push to branch, or create a pipeline that will build, test and deploy your mobile app.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所有服務都圍繞在一個 pipeline 的觀念身上，由一連串有順序的 Continuous Delivery 動作，例如你可以透過預先的設定，透過 Buddy 服務提供的自動化整合服務，當每次你的 source code repo 有更動時，可上傳檔案到你的 server 端，或建立一系列建構、測試、部署你的應用程式。&lt;/p&gt;
+</content>
     
     <summary type="html">
     
+      &lt;p&gt;它是一個挺新的 CI 雲端服務方案，推出於2015年中旬。&lt;/p&gt;
+&lt;h3 id=&quot;收費方案&quot;&gt;&lt;a href=&quot;#收費方案&quot; class=&quot;headerlink&quot; title=&quot;收費方案&quot;&gt;&lt;/a&gt;收費方案&lt;/h3&gt;&lt;p&gt;只使用一個專案的情況下免費，之後新增的每個專案每月
+    
     </summary>
     
+    
+      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
     
   </entry>
   
