@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-09T18:08:08.000Z</updated>
+  <updated>2016-04-09T18:14:07.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,18 +20,21 @@
     <link href="http://alincode.github.io/blog/2016/04/10/buddy-ci-4/"/>
     <id>http://alincode.github.io/blog/2016/04/10/buddy-ci-4/</id>
     <published>2016-04-09T18:03:56.000Z</published>
-    <updated>2016-04-09T18:08:08.000Z</updated>
+    <updated>2016-04-09T18:14:07.000Z</updated>
     
-    <content type="html">&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/on-failure.png&quot; alt=&quot;on-failure.png&quot; title=&quot;&quot;&gt;
-
+    <content type="html">&lt;p&gt;&lt;strong&gt;將 Slack 的訊息通知 Action 設上去&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/on-failure.png&quot; alt=&quot;on-failure.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Action 內可以自訂要傳送的文字&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/send-message-setting.png&quot; alt=&quot;send-message-setting.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;最後 Buddy 傳到 Slack Channel 的結果&lt;/strong&gt;&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/slack.png&quot; alt=&quot;slack.png&quot; title=&quot;&quot;&gt;
 </content>
     
     <summary type="html">
     
-      &lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/on-failure.png&quot; alt=&quot;on-failure.png&quot; title=&quot;&quot;&gt;
-
-&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/slack.png&quot; alt=&quot;
+      &lt;p&gt;&lt;strong&gt;將 Slack 的訊息通知 Action 設上去&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/on-failure.png&quot; alt=&quot;on-failure.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;st
     
     </summary>
     
