@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-09T17:34:22.000Z</updated>
+  <updated>2016-04-09T17:46:03.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,10 +20,20 @@
     <link href="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/"/>
     <id>http://alincode.github.io/blog/2016/04/09/buddy-ci-3/</id>
     <published>2016-04-09T15:29:02.000Z</published>
-    <updated>2016-04-09T17:34:22.000Z</updated>
+    <updated>2016-04-09T17:46:03.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;script-內的指令，要指定指令路徑。&quot;&gt;&lt;a href=&quot;#script-內的指令，要指定指令路徑。&quot; class=&quot;headerlink&quot; title=&quot;script 內的指令，要指定指令路徑。&quot;&gt;&lt;/a&gt;script 內的指令，要指定指令路徑。&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;grunt build (X)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node_modules/.bin/grunt build (O)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    <content type="html">&lt;h3 id=&quot;script-內的指令，要指定指令路徑。&quot;&gt;&lt;a href=&quot;#script-內的指令，要指定指令路徑。&quot; class=&quot;headerlink&quot; title=&quot;script 內的指令，要指定指令路徑。&quot;&gt;&lt;/a&gt;script 內的指令，要指定指令路徑。&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;錯&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;grunt build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;對&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node_modules/.bin/grunt build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What you need to know about SSH commands:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each line is executed in the context of the working directory (default: user’s home dir) Lines are executed from top to bottom&lt;/li&gt;
+&lt;li&gt;Each command should be one separate line&lt;/li&gt;
+&lt;li&gt;If a command fails, the next line will not be executed and the action will fail (unless you check ignore errors)&lt;/li&gt;
+&lt;li&gt;Use absolute paths: the cd command will not be carried to the next line You can use Buddy specific variables in commands and URL’s Environmental variables between lines are not shared&lt;/li&gt;
+&lt;li&gt;If you want to use a more complex script, it its advised to call it from the server side (make sure the exit code it returns is correct).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&quot;免輸入github帳密&quot;&gt;&lt;a href=&quot;#免輸入github帳密&quot; class=&quot;headerlink&quot; title=&quot;免輸入github帳密&quot;&gt;&lt;/a&gt;免輸入github帳密&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/09/buddy-ci-3/git_pull_error.png&quot; alt=&quot;git_pull_error.png&quot; title=&quot;&quot;&gt;
 &lt;p&gt;因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://help.github.com/articles/generating-an-ssh-key/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github - Generating an SSH key&lt;/a&gt;&lt;/p&gt;
@@ -48,18 +58,20 @@
     <link href="http://alincode.github.io/blog/2016/04/08/buddy-ci-2/"/>
     <id>http://alincode.github.io/blog/2016/04/08/buddy-ci-2/</id>
     <published>2016-04-08T15:48:35.000Z</published>
-    <updated>2016-04-09T17:33:11.000Z</updated>
+    <updated>2016-04-09T17:41:42.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; class=&quot;headerlink&quot; title=&quot;Pipelines 的四個流程&quot;&gt;&lt;/a&gt;Pipelines 的四個流程&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/08/buddy-ci-2/4-step.png&quot; alt=&quot;4-step.png&quot; title=&quot;&quot;&gt;
+    <content type="html">&lt;p&gt;每個帳號一開始進去，它就已經建好一個 sample Pipelines，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。&lt;/p&gt;
+&lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; class=&quot;headerlink&quot; title=&quot;Pipelines 的四個流程&quot;&gt;&lt;/a&gt;Pipelines 的四個流程&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/08/buddy-ci-2/4-step.png&quot; alt=&quot;4-step.png&quot; title=&quot;&quot;&gt;
 &lt;h4 id=&quot;On-Manual-Every-push-Recurrently-Run&quot;&gt;&lt;a href=&quot;#On-Manual-Every-push-Recurrently-Run&quot; class=&quot;headerlink&quot; title=&quot;On ( Manual / Every push / Recurrently ) Run&quot;&gt;&lt;/a&gt;On ( Manual / Every push / Recurrently ) Run&lt;/h4&gt;&lt;p&gt;觸發 build 的條件，對應到之前指定的 &lt;code&gt;Trigger Mode&lt;/code&gt;&lt;/p&gt;
 &lt;h4 id=&quot;On-Success&quot;&gt;&lt;a href=&quot;#On-Success&quot; class=&quot;headerlink&quot; title=&quot;On Success&quot;&gt;&lt;/a&gt;On Success&lt;/h4&gt;&lt;p&gt;指定 build 成功後，所觸發的一連串 Action&lt;/p&gt;
 &lt;h4 id=&quot;On-Failure&quot;&gt;&lt;a href=&quot;#On-Failure&quot; class=&quot;headerlink&quot; title=&quot;On Failure&quot;&gt;&lt;/a&gt;On Failure&lt;/h4&gt;&lt;p&gt;指定 build 失敗後，所觸發的一連串 Action&lt;/p&gt;
 &lt;h4 id=&quot;On-Back-To-Success&quot;&gt;&lt;a href=&quot;#On-Back-To-Success&quot; class=&quot;headerlink&quot; title=&quot;On Back To Success&quot;&gt;&lt;/a&gt;On Back To Success&lt;/h4&gt;&lt;p&gt;指定從 build 失敗恢復後，所觸發的一連串 Action&lt;/p&gt;
-</content>
+&lt;h3 id=&quot;多個-Action&quot;&gt;&lt;a href=&quot;#多個-Action&quot; class=&quot;headerlink&quot; title=&quot;多個 Action&quot;&gt;&lt;/a&gt;多個 Action&lt;/h3&gt;</content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; class=&quot;headerlink&quot; title=&quot;Pipelines 的四個流程&quot;&gt;&lt;/a&gt;Pipelines 的四個流程&lt;/h3&gt;&lt;img src=&quot;/blog/2016/
+      &lt;p&gt;每個帳號一開始進去，它就已經建好一個 sample Pipelines，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。&lt;/p&gt;
+&lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; cl
     
     </summary>
     

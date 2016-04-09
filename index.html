@@ -246,8 +246,18 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="script-內的指令，要指定指令路徑。"><a href="#script-內的指令，要指定指令路徑。" class="headerlink" title="script 內的指令，要指定指令路徑。"></a>script 內的指令，要指定指令路徑。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build (X)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build (O)</span><br></pre></td></tr></table></figure>
+                    <h3 id="script-內的指令，要指定指令路徑。"><a href="#script-內的指令，要指定指令路徑。" class="headerlink" title="script 內的指令，要指定指令路徑。"></a>script 內的指令，要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
+<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>What you need to know about SSH commands:</p>
+<ul>
+<li>Each line is executed in the context of the working directory (default: user’s home dir) Lines are executed from top to bottom</li>
+<li>Each command should be one separate line</li>
+<li>If a command fails, the next line will not be executed and the action will fail (unless you check ignore errors)</li>
+<li>Use absolute paths: the cd command will not be carried to the next line You can use Buddy specific variables in commands and URL’s Environmental variables between lines are not shared</li>
+<li>If you want to use a more complex script, it its advised to call it from the server side (make sure the exit code it returns is correct).</li>
+</ul>
+</blockquote>
 <h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
 <p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
 <p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
@@ -295,12 +305,13 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Pipelines-的四個流程"><a href="#Pipelines-的四個流程" class="headerlink" title="Pipelines 的四個流程"></a>Pipelines 的四個流程</h3><img src="/blog/2016/04/08/buddy-ci-2/4-step.png" alt="4-step.png" title="">
+                    <p>每個帳號一開始進去，它就已經建好一個 sample Pipelines，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。</p>
+<h3 id="Pipelines-的四個流程"><a href="#Pipelines-的四個流程" class="headerlink" title="Pipelines 的四個流程"></a>Pipelines 的四個流程</h3><img src="/blog/2016/04/08/buddy-ci-2/4-step.png" alt="4-step.png" title="">
 <h4 id="On-Manual-Every-push-Recurrently-Run"><a href="#On-Manual-Every-push-Recurrently-Run" class="headerlink" title="On ( Manual / Every push / Recurrently ) Run"></a>On ( Manual / Every push / Recurrently ) Run</h4><p>觸發 build 的條件，對應到之前指定的 <code>Trigger Mode</code></p>
 <h4 id="On-Success"><a href="#On-Success" class="headerlink" title="On Success"></a>On Success</h4><p>指定 build 成功後，所觸發的一連串 Action</p>
 <h4 id="On-Failure"><a href="#On-Failure" class="headerlink" title="On Failure"></a>On Failure</h4><p>指定 build 失敗後，所觸發的一連串 Action</p>
 <h4 id="On-Back-To-Success"><a href="#On-Back-To-Success" class="headerlink" title="On Back To Success"></a>On Back To Success</h4><p>指定從 build 失敗恢復後，所觸發的一連串 Action</p>
-
+<h3 id="多個-Action"><a href="#多個-Action" class="headerlink" title="多個 Action"></a>多個 Action</h3>
                     
                         
 
