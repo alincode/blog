@@ -13,32 +13,32 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="script 內的指令，要指定指令路徑。錯1grunt build
+    <meta name="description" content="script 內的指令，一定要指定指令路徑。錯1grunt build
 對1node_modules/.bin/grunt build
 
 What you need to know about SSH commands:
 
-Each line is executed in the context of the working directory (default: user’s home dir) L">
+Each line is executed in the context of the working directory (default: user’s home dir)">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Buddy CI 踩雷心得">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="script 內的指令，要指定指令路徑。錯1grunt build
+<meta property="og:description" content="script 內的指令，一定要指定指令路徑。錯1grunt build
 對1node_modules/.bin/grunt build
 
 What you need to know about SSH commands:
 
-Each line is executed in the context of the working directory (default: user’s home dir) L">
+Each line is executed in the context of the working directory (default: user’s home dir)">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/09/buddy-ci-3/git_pull_error.png">
-<meta property="og:updated_time" content="2016-04-09T17:46:03.000Z">
+<meta property="og:updated_time" content="2016-04-09T17:50:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Buddy CI 踩雷心得">
-<meta name="twitter:description" content="script 內的指令，要指定指令路徑。錯1grunt build
+<meta name="twitter:description" content="script 內的指令，一定要指定指令路徑。錯1grunt build
 對1node_modules/.bin/grunt build
 
 What you need to know about SSH commands:
 
-Each line is executed in the context of the working directory (default: user’s home dir) L">
+Each line is executed in the context of the working directory (default: user’s home dir)">
     
     
         
@@ -258,7 +258,7 @@ Each line is executed in the context of the working directory (default: user’s
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="script-內的指令，要指定指令路徑。"><a href="#script-內的指令，要指定指令路徑。" class="headerlink" title="script 內的指令，要指定指令路徑。"></a>script 內的指令，要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
+            <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
 <p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>What you need to know about SSH commands:</p>
@@ -273,7 +273,8 @@ Each line is executed in the context of the working directory (default: user’s
 <h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
 <p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
 <p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
-<h4 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h4><p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
+<p><strong>小提醒</strong></p>
+<p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
 <h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
 <h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
 
@@ -297,7 +298,7 @@ Each line is executed in the context of the working directory (default: user’s
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/10/buddy-ci-4/"  data-tooltip="Buddy CI 與 Slack 整合">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -305,7 +306,7 @@ Each line is executed in the context of the working directory (default: user’s
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/" data-tooltip="Buddy CI (2)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/" data-tooltip="Buddy CI Pipelines 流程">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -368,7 +369,7 @@ Each line is executed in the context of the working directory (default: user’s
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/10/buddy-ci-4/"  data-tooltip="Buddy CI 與 Slack 整合">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -376,7 +377,7 @@ Each line is executed in the context of the working directory (default: user’s
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/" data-tooltip="Buddy CI (2)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/" data-tooltip="Buddy CI Pipelines 流程">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>

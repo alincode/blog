@@ -6,75 +6,25 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Buddy CI (1) - alincode</title>
+    <title>Buddy CI 與 Slack 整合 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="Buddy CI / CD 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。
-
-收費方案只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。
-支援的語言
-Ruby
-Node.js
-C++
-Scala
-PHP
-Go
-Erlang
-Java
-
-整合的的功能有
-執行在 build 與 docker
-傳送檔案
-FTP
-FTPS">
+    <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Buddy CI (1)">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/07/buddy-ci/index.html">
+<meta property="og:title" content="Buddy CI 與 Slack 整合">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/10/buddy-ci-4/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="Buddy CI / CD 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。
-
-收費方案只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。
-支援的語言
-Ruby
-Node.js
-C++
-Scala
-PHP
-Go
-Erlang
-Java
-
-整合的的功能有
-執行在 build 與 docker
-傳送檔案
-FTP
-FTPS">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/07/buddy-ci/pipelines.png">
-<meta property="og:updated_time" content="2016-04-08T05:02:02.000Z">
+<meta property="og:description">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/10/buddy-ci-4/on-failure.png">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/10/buddy-ci-4/slack.png">
+<meta property="og:updated_time" content="2016-04-09T18:08:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Buddy CI (1)">
-<meta name="twitter:description" content="Buddy CI / CD 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。
-
-收費方案只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。
-支援的語言
-Ruby
-Node.js
-C++
-Scala
-PHP
-Go
-Erlang
-Java
-
-整合的的功能有
-執行在 build 與 docker
-傳送檔案
-FTP
-FTPS">
+<meta name="twitter:title" content="Buddy CI 與 Slack 整合">
+<meta name="twitter:description">
     
     
         
@@ -279,13 +229,13 @@ FTPS">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Buddy CI (1)
+            Buddy CI 與 Slack 整合
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Apr 07 2016 23:14:39 GMT+0800">
+    <time itemprop="datePublished" content="Sun Apr 10 2016 02:03:56 GMT+0800">
 	
-		    4月 07, 2016
+		    4月 10, 2016
     	
     </time>
     
@@ -294,63 +244,9 @@ FTPS">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><a href="https://buddy.works" target="_blank" rel="external">Buddy CI / CD</a> 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。</p>
-<img src="/blog/2016/04/07/buddy-ci/pipelines.png" alt="pipelines.png" title="">
-<h3 id="收費方案"><a href="#收費方案" class="headerlink" title="收費方案"></a>收費方案</h3><p>只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。</p>
-<h3 id="支援的語言"><a href="#支援的語言" class="headerlink" title="支援的語言"></a>支援的語言</h3><ul>
-<li>Ruby</li>
-<li>Node.js</li>
-<li>C++</li>
-<li>Scala</li>
-<li>PHP</li>
-<li>Go</li>
-<li>Erlang</li>
-<li>Java</li>
-</ul>
-<h3 id="整合的的功能有"><a href="#整合的的功能有" class="headerlink" title="整合的的功能有"></a>整合的的功能有</h3><ul>
-<li>執行在 build 與 docker</li>
-<li>傳送檔案<ul>
-<li>FTP</li>
-<li>FTPS</li>
-<li>SFTP</li>
-</ul>
-</li>
-<li>支援部署到 IAAS<ul>
-<li>AMAZON S3</li>
-<li>HEROKU</li>
-<li>DIGITAL OCEAN</li>
-<li>MODULUS</li>
-<li>ELASTIC BEANSTALK</li>
-</ul>
-</li>
-<li>版本控制<ul>
-<li>WebDav</li>
-<li>Git push</li>
-</ul>
-</li>
-<li>DEVOPS<ul>
-<li>執行 SSH 命令指令</li>
-<li>在 HEROKU 上執行命令指令</li>
-</ul>
-</li>
-<li>訊息通知<ul>
-<li>傳送 HTTP POST</li>
-<li>Slack</li>
-<li>簡訊</li>
-<li>Email</li>
-</ul>
-</li>
-<li>監控的方式<ul>
-<li>Web</li>
-<li>Ping</li>
-<li>TCP</li>
-</ul>
-</li>
-</ul>
-<h3 id="核心架構"><a href="#核心架構" class="headerlink" title="核心架構"></a>核心架構</h3><blockquote>
-<p>What are pipelines?<br>A pipeline is a sequence of Continuous Delivery actions. For example, you can configure Buddy to upload files to the server and update assets on AWS on every push to branch, or create a pipeline that will build, test and deploy your mobile app.</p>
-</blockquote>
-<p>所有服務都圍繞在一個 pipeline 的觀念身上，這裡的 pipeline 是指一連串有順序的 Continuous Delivery 動作，例如你可以透過預先的設定，透過 Buddy 提供的自動化整合服務，當每次你的 source code repo 有更動時，可上傳檔案到你的 server 端，或建立一系列建構、測試、部署你的應用程式。</p>
+            <img src="/blog/2016/04/10/buddy-ci-4/on-failure.png" alt="on-failure.png" title="">
+
+<img src="/blog/2016/04/10/buddy-ci-4/slack.png" alt="slack.png" title="">
 
             
                 
@@ -372,7 +268,7 @@ FTPS">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/"  data-tooltip="Buddy CI Pipelines 流程">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -380,7 +276,7 @@ FTPS">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/" data-tooltip="Building Isomorphic Web Applications with React 重點整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/09/buddy-ci-3/" data-tooltip="Buddy CI 踩雷心得">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -395,17 +291,17 @@ FTPS">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -443,7 +339,7 @@ FTPS">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/08/buddy-ci-2/"  data-tooltip="Buddy CI Pipelines 流程">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -451,7 +347,7 @@ FTPS">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/" data-tooltip="Building Isomorphic Web Applications with React 重點整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/09/buddy-ci-3/" data-tooltip="Buddy CI 踩雷心得">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -466,17 +362,17 @@ FTPS">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -496,17 +392,17 @@ FTPS">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/07/buddy-ci/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/10/buddy-ci-4/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
