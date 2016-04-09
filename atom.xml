@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-08T15:53:41.000Z</updated>
+  <updated>2016-04-09T15:29:02.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>buddy-ci-3</title>
+    <link href="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/"/>
+    <id>http://alincode.github.io/blog/2016/04/09/buddy-ci-3/</id>
+    <published>2016-04-09T15:29:02.000Z</published>
+    <updated>2016-04-09T15:29:02.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Buddy CI (2)</title>
@@ -825,74 +841,6 @@
       <category term="chrome" scheme="http://alincode.github.io/blog/tags/chrome/"/>
     
       <category term="debug" scheme="http://alincode.github.io/blog/tags/debug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JWT Authentication with AngularJS 重點整理 (1)</title>
-    <link href="http://alincode.github.io/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/"/>
-    <id>http://alincode.github.io/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/</id>
-    <published>2016-03-20T11:35:42.000Z</published>
-    <updated>2016-03-20T12:07:45.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;一般-Session-的產生流程-3-10&quot;&gt;&lt;a href=&quot;#一般-Session-的產生流程-3-10&quot; class=&quot;headerlink&quot; title=&quot;一般 Session 的產生流程 (3:10)&quot;&gt;&lt;/a&gt;一般 Session 的產生流程 (3:10)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;瀏覽器發送一個 request 到 server，內含帳號跟密碼&lt;/li&gt;
-&lt;li&gt;server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。&lt;/li&gt;
-&lt;li&gt;將存有 Session ID 的 cookie，回傳給瀏覽器。&lt;/li&gt;
-&lt;li&gt;瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Session-識別的問題-3-50&quot;&gt;&lt;a href=&quot;#Session-識別的問題-3-50&quot; class=&quot;headerlink&quot; title=&quot;Session 識別的問題(3:50)&quot;&gt;&lt;/a&gt;Session 識別的問題(3:50)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;難以理解，而且不含意義&lt;/li&gt;
-&lt;li&gt;增加資料庫的負擔&lt;/li&gt;
-&lt;li&gt;Perception that cookies are inherently insecure&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;專有名詞介紹-5-10&quot;&gt;&lt;a href=&quot;#專有名詞介紹-5-10&quot; class=&quot;headerlink&quot; title=&quot;專有名詞介紹 (5:10)&quot;&gt;&lt;/a&gt;專有名詞介紹 (5:10)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Authentication (n.) 驗證&lt;/li&gt;
-&lt;li&gt;Authorization (n.) 授權&lt;/li&gt;
-&lt;li&gt;Token&lt;/li&gt;
-&lt;li&gt;JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;JWT-結構-6-55&quot;&gt;&lt;a href=&quot;#JWT-結構-6-55&quot; class=&quot;headerlink&quot; title=&quot;JWT 結構 (6:55)&quot;&gt;&lt;/a&gt;JWT 結構 (6:55)&lt;/h3&gt;&lt;p&gt;是一個經過 Base64-URL encoded 的字串&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;結構分三個部分&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Header&lt;/li&gt;
-&lt;li&gt;Body(Claims)&lt;/li&gt;
-&lt;li&gt;Cryptographic Signature 加密簽證&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;解開後的內容&quot;&gt;&lt;a href=&quot;#解開後的內容&quot; class=&quot;headerlink&quot; title=&quot;解開後的內容&quot;&gt;&lt;/a&gt;解開後的內容&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;iss: &lt;a href=&quot;http://yourdomain.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://yourdomain.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;exp: 60000&lt;/li&gt;
-&lt;li&gt;sub: userId&lt;/li&gt;
-&lt;li&gt;scope: api/buy&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;意義&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;iss: 發佈者 (Issuer)&lt;/li&gt;
-&lt;li&gt;exp: 效期，單位是毫秒 (Expiration Time)&lt;/li&gt;
-&lt;li&gt;sub: 用戶 (Subject)&lt;/li&gt;
-&lt;li&gt;scope: 作用域&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;發佈-JWT-流程-11-05&quot;&gt;&lt;a href=&quot;#發佈-JWT-流程-11-05&quot; class=&quot;headerlink&quot; title=&quot;發佈 JWT 流程 (11:05)&quot;&gt;&lt;/a&gt;發佈 JWT 流程 (11:05)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用者經過驗證後，取得 Token&lt;/li&gt;
-&lt;li&gt;由你的 server 來製造 Token&lt;/li&gt;
-&lt;li&gt;client 儲存 token，並在需要驗證的 request 使用它。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;概述-JWT-12-15&quot;&gt;&lt;a href=&quot;#概述-JWT-12-15&quot; class=&quot;headerlink&quot; title=&quot;概述 JWT (12:15)&quot;&gt;&lt;/a&gt;概述 JWT (12:15)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;無狀態認證機制&lt;/li&gt;
-&lt;li&gt;Token 具有作用域的概念&lt;/li&gt;
-&lt;li&gt;產生授權&lt;/li&gt;
-&lt;li&gt;決定區域性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;因為影片實在太長，後面有點不太好理解，分兩篇慢慢看&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;一般-Session-的產生流程-3-10&quot;&gt;&lt;a href=&quot;#一般-Session-的產生流程-3-10&quot; class=&quot;headerlink&quot; title=&quot;一般 Session 的產生流程 (3:10)&quot;&gt;&lt;/a&gt;一般 Session 的產生流程 (3:1
-    
-    </summary>
-    
     
   </entry>
   
