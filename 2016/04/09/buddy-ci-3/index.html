@@ -6,23 +6,39 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>buddy-ci-3 - alincode</title>
+    <title>Buddy CI 踩雷心得 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+    <meta name="description" content="script 內的指令，要指定指令路徑。1grunt build (X)
+1node_modules/.bin/grunt build (O)
+免輸入github帳密
+因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。
+Github - Generating an SSH key
+小提醒設定完">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="buddy-ci-3">
+<meta property="og:title" content="Buddy CI 踩雷心得">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
-<meta property="og:updated_time" content="2016-04-09T15:29:02.000Z">
+<meta property="og:description" content="script 內的指令，要指定指令路徑。1grunt build (X)
+1node_modules/.bin/grunt build (O)
+免輸入github帳密
+因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。
+Github - Generating an SSH key
+小提醒設定完">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/09/buddy-ci-3/git_pull_error.png">
+<meta property="og:updated_time" content="2016-04-09T17:34:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="buddy-ci-3">
-<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta name="twitter:title" content="Buddy CI 踩雷心得">
+<meta name="twitter:description" content="script 內的指令，要指定指令路徑。1grunt build (X)
+1node_modules/.bin/grunt build (O)
+免輸入github帳密
+因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。
+Github - Generating an SSH key
+小提醒設定完">
     
     
         
@@ -227,7 +243,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            buddy-ci-3
+            Buddy CI 踩雷心得
         </h1>
     
     <div class="post-meta">
@@ -242,7 +258,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <h3 id="script-內的指令，要指定指令路徑。"><a href="#script-內的指令，要指定指令路徑。" class="headerlink" title="script 內的指令，要指定指令路徑。"></a>script 內的指令，要指定指令路徑。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build (X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build (O)</span><br></pre></td></tr></table></figure>
+<h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
+<p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
+<p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
+<h4 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h4><p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
+<h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
+
             
                 
 
@@ -250,6 +274,13 @@
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Buddy-CI/">Buddy CI</a>
+
+            </div>
         
         <div class="post-actions-wrap">
     <nav>

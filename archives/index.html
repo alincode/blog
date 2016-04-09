@@ -231,7 +231,7 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
-                            buddy-ci-3
+                            Buddy CI 踩雷心得
                         </a>
                     
                 </h1>
@@ -247,7 +247,15 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    
+                    <h3 id="script-內的指令，要指定指令路徑。"><a href="#script-內的指令，要指定指令路徑。" class="headerlink" title="script 內的指令，要指定指令路徑。"></a>script 內的指令，要指定指令路徑。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build (X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build (O)</span><br></pre></td></tr></table></figure>
+<h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
+<p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
+<p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
+<h4 id="小提醒"><a href="#小提醒" class="headerlink" title="小提醒"></a>小提醒</h4><p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
+<h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
+
                     
                         
 
@@ -288,9 +296,11 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="誰適合使用？"><a href="#誰適合使用？" class="headerlink" title="誰適合使用？"></a>誰適合使用？</h3><ul>
-<li>你的專案託管在github 或 bitbucket</li>
-</ul>
+                    <h3 id="Pipelines-的四個流程"><a href="#Pipelines-的四個流程" class="headerlink" title="Pipelines 的四個流程"></a>Pipelines 的四個流程</h3><img src="/blog/2016/04/08/buddy-ci-2/4-step.png" alt="4-step.png" title="">
+<h4 id="On-Manual-Every-push-Recurrently-Run"><a href="#On-Manual-Every-push-Recurrently-Run" class="headerlink" title="On ( Manual / Every push / Recurrently ) Run"></a>On ( Manual / Every push / Recurrently ) Run</h4><p>觸發 build 的條件，對應到之前指定的 <code>Trigger Mode</code></p>
+<h4 id="On-Success"><a href="#On-Success" class="headerlink" title="On Success"></a>On Success</h4><p>指定 build 成功後，所觸發的一連串 Action</p>
+<h4 id="On-Failure"><a href="#On-Failure" class="headerlink" title="On Failure"></a>On Failure</h4><p>指定 build 失敗後，所觸發的一連串 Action</p>
+<h4 id="On-Back-To-Success"><a href="#On-Back-To-Success" class="headerlink" title="On Back To Success"></a>On Back To Success</h4><p>指定從 build 失敗恢復後，所觸發的一連串 Action</p>
 
                     
                         
