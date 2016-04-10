@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-09T18:20:20.000Z</updated>
+  <updated>2016-04-10T19:08:30.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Geb for functional testing of Grails app 重點整理</title>
+    <link href="http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/"/>
+    <id>http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/</id>
+    <published>2016-04-10T19:03:14.000Z</published>
+    <updated>2016-04-10T19:08:30.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HkJQYapam_s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016 影片&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;為什麼我們要用Geb-06-04&quot;&gt;&lt;a href=&quot;#為什麼我們要用Geb-06-04&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用Geb (06:04)&quot;&gt;&lt;/a&gt;為什麼我們要用Geb (06:04)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;類似於 JQuery 的語法&lt;/li&gt;
+&lt;li&gt;非常強大的 WebDriver，卻是非常使用非常簡單的 API&lt;/li&gt;
+&lt;li&gt;Robustness of Page Object Modeling&lt;/li&gt;
+&lt;li&gt;使用 Groovy 描述性語言&lt;/li&gt;
+&lt;li&gt;跟其他 build framework 整合得很好 (Gradle、Maven)&lt;/li&gt;
+&lt;li&gt;可做為傑出的使用者文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Geb-selectors-09-52&quot;&gt;&lt;a href=&quot;#Geb-selectors-09-52&quot; class=&quot;headerlink&quot; title=&quot;Geb selectors (09:52)&quot;&gt;&lt;/a&gt;Geb selectors (09:52)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;相似於 JQuery 的語法&lt;/li&gt;
+&lt;li&gt;支援 regex&lt;/li&gt;
+&lt;li&gt;選取後，會回傳一個 Navigator 物件&lt;/li&gt;
+&lt;li&gt;支援 CSS3 語法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;取得資訊-12-30&quot;&gt;&lt;a href=&quot;#取得資訊-12-30&quot; class=&quot;headerlink&quot; title=&quot;取得資訊 (12:30)&quot;&gt;&lt;/a&gt;取得資訊 (12:30)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#8216;p&amp;#8217;).text() == &amp;#8220;a&amp;#34;&amp;#10;$(&amp;#8216;p&amp;#8217;).tag() == &amp;#8220;p&amp;#34;&amp;#10;$(&amp;#8216;p&amp;#8217;).@title == &amp;#8220;a&amp;#34;&amp;#10;$(&amp;#8216;p&amp;#8217;).classes == [&amp;#8220;a&amp;#8221;, &amp;#8220;para&amp;#34;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;與內容相互作用-12-47&quot;&gt;&lt;a href=&quot;#與內容相互作用-12-47&quot; class=&quot;headerlink&quot; title=&quot;與內容相互作用 (12:47)&quot;&gt;&lt;/a&gt;與內容相互作用 (12:47)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#8216;a&amp;#8217;).click()&amp;#10;$(&amp;#8216;div&amp;#8217;).isDisplayed()&amp;#10;withConfirm &amp;#123;&amp;#10;  $(&amp;#8216;button.delete&amp;#8217;).click();&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;傳入-input-13-50&quot;&gt;&lt;a href=&quot;#傳入-input-13-50&quot; class=&quot;headerlink&quot; title=&quot;傳入 input (13:50)&quot;&gt;&lt;/a&gt;傳入 input (13:50)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#8216;div&amp;#8217;) &amp;#60;&amp;#60; &amp;#8216;abc&amp;#39;&amp;#10;$(&amp;#8216;input&amp;#8217;, name: &amp;#8216;foo&amp;#8217;) &amp;#60;&amp;#60; Keys.chord(Keys.CONTROL, &amp;#8216;c&amp;#8217;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Interaction-14-25&quot;&gt;&lt;a href=&quot;#Interaction-14-25&quot; class=&quot;headerlink&quot; title=&quot;Interaction (14:25)&quot;&gt;&lt;/a&gt;Interaction (14:25)&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Using actions API from WebDriver is possible. But Geb provides the interact closure.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import org.openga.selenium.Keys&amp;#10;&amp;#10;interact &amp;#123;&amp;#10;     KeyDown Keys.CTRL&amp;#10;     click $(&amp;#8216;a.myLink&amp;#8217;)&amp;#10;     keyUp Keys.CTRL&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;可使用的變數-16-15&quot;&gt;&lt;a href=&quot;#可使用的變數-16-15&quot; class=&quot;headerlink&quot; title=&quot;可使用的變數 (16:15)&quot;&gt;&lt;/a&gt;可使用的變數 (16:15)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;title&lt;/li&gt;
+&lt;li&gt;browser&lt;/li&gt;
+&lt;li&gt;currentUrl&lt;/li&gt;
+&lt;li&gt;currentWindow&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;更多的可能-16-50&quot;&gt;&lt;a href=&quot;#更多的可能-16-50&quot; class=&quot;headerlink&quot; title=&quot;更多的可能 (16:50)&quot;&gt;&lt;/a&gt;更多的可能 (16:50)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;上傳檔案&lt;/li&gt;
+&lt;li&gt;下載檔案&lt;/li&gt;
+&lt;li&gt;與 js 互動&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;獨立的-Geb-script-17-10&quot;&gt;&lt;a href=&quot;#獨立的-Geb-script-17-10&quot; class=&quot;headerlink&quot; title=&quot;獨立的 Geb script (17:10)&quot;&gt;&lt;/a&gt;獨立的 Geb script (17:10)&lt;/h3&gt;&lt;h3 id=&quot;Geb-Spec-Basic-23-00&quot;&gt;&lt;a href=&quot;#Geb-Spec-Basic-23-00&quot; class=&quot;headerlink&quot; title=&quot;Geb Spec Basic (23:00)&quot;&gt;&lt;/a&gt;Geb Spec Basic (23:00)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.spock.GebSpec&amp;#10;&amp;#10;@Stepwise&amp;#10;class XXXFunctionalSpec extends GebSpec &amp;#123;&amp;#10;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Page-物件-描述一個頁面-23-50&quot;&gt;&lt;a href=&quot;#Page-物件-描述一個頁面-23-50&quot; class=&quot;headerlink&quot; title=&quot;Page 物件 - 描述一個頁面 (23:50)&quot;&gt;&lt;/a&gt;Page 物件 - 描述一個頁面 (23:50)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Url&lt;/li&gt;
+&lt;li&gt;如何檢查是否在對的地方&lt;/li&gt;
+&lt;li&gt;內容是否是我們要的跟如何找到它&lt;/li&gt;
+&lt;li&gt;Helper method&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;content-closure-25-35&quot;&gt;&lt;a href=&quot;#content-closure-25-35&quot; class=&quot;headerlink&quot; title=&quot;content closure (25:35)&quot;&gt;&lt;/a&gt;content closure (25:35)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;     info(required: false) &amp;#123;$(&amp;#8216;div.info&amp;#8217;)&amp;#125;&amp;#10;     message(wait: false) &amp;#123;$(&amp;#8216;div.message&amp;#8217;)&amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Modules-描述重複的內容-26-10&quot;&gt;&lt;a href=&quot;#Modules-描述重複的內容-26-10&quot; class=&quot;headerlink&quot; title=&quot;Modules - 描述重複的內容 (26:10)&quot;&gt;&lt;/a&gt;Modules - 描述重複的內容 (26:10)&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;跨頁面&lt;/li&gt;
+&lt;li&gt;Within the same page&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Modules-for-repeated-content-in-a-page-27-00&quot;&gt;&lt;a href=&quot;#Modules-for-repeated-content-in-a-page-27-00&quot; class=&quot;headerlink&quot; title=&quot;Modules for repeated content in a page (27:00)&quot;&gt;&lt;/a&gt;Modules for repeated content in a page (27:00)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Module&amp;#10;&amp;#10;class XXXListItemModules extends Module &amp;#123;&amp;#10;     data &amp;#123; $(&amp;#8220;td&amp;#8221;, it) &amp;#125;&amp;#10;     name &amp;#123; data(0).text() &amp;#125;&amp;#10;     email &amp;#123; data(1).text() &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Waiting-36-00&quot;&gt;&lt;a href=&quot;#Waiting-36-00&quot; class=&quot;headerlink&quot; title=&quot;Waiting (36:00)&quot;&gt;&lt;/a&gt;Waiting (36:00)&lt;/h3&gt;&lt;p&gt;自定預設的 Waiting 設定值&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// GebConfig.groovy&amp;#10;waiting &amp;#123;&amp;#10;     timeout: 10&amp;#10;     retryInterval: 0.5&amp;#10;&amp;#125;&amp;#10;&amp;#10;baseNavigatorWaiting = true&amp;#10;atCheckWaiting = true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Pausing-Geb-36-55&quot;&gt;&lt;a href=&quot;#Pausing-Geb-36-55&quot; class=&quot;headerlink&quot; title=&quot;Pausing Geb (36:55)&quot;&gt;&lt;/a&gt;Pausing Geb (36:55)&lt;/h3&gt;&lt;p&gt;可做為 debug 用途&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;when:&amp;#10;pause() // for Pause Geb until button pressed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HkJQYapam_s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb for functional testing of Grails app | Jacob Aae
+    
+    </summary>
+    
+    
+      <category term="Geb" scheme="http://alincode.github.io/blog/tags/Geb/"/>
+    
+  </entry>
   
   <entry>
     <title>Buddy CI 與 Slack 整合</title>
@@ -815,56 +886,6 @@
     
     
       <category term="ckeditor" scheme="http://alincode.github.io/blog/tags/ckeditor/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JWT Authentication with AngularJS Forward 4 Web Summit (2)</title>
-    <link href="http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/"/>
-    <id>http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/</id>
-    <published>2016-03-22T14:16:09.000Z</published>
-    <updated>2016-03-22T12:58:52.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;Access-and-Refresh-Token-14-00&quot;&gt;&lt;a href=&quot;#Access-and-Refresh-Token-14-00&quot; class=&quot;headerlink&quot; title=&quot;Access and Refresh Token (14:00)&quot;&gt;&lt;/a&gt;Access and Refresh Token (14:00)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;給 client access token 和 refresh token&lt;/li&gt;
-&lt;li&gt;access token 的效期要比 refresh token 短&lt;/li&gt;
-&lt;li&gt;refresh token 用來取得 access token&lt;/li&gt;
-&lt;li&gt;access token 來自於可靠的簽證機制&lt;/li&gt;
-&lt;li&gt;refresh token check for revocations&lt;/li&gt;
-&lt;li&gt;解除驗證的方式為否決 refresh token&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Access-Token-黑名單-18-00&quot;&gt;&lt;a href=&quot;#Access-Token-黑名單-18-00&quot; class=&quot;headerlink&quot; title=&quot;Access Token 黑名單 (18:00)&quot;&gt;&lt;/a&gt;Access Token 黑名單 (18:00)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;維護 refresh token 與 access token 的關聯&lt;/li&gt;
-&lt;li&gt;當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單&lt;/li&gt;
-&lt;li&gt;blacklists TTL is the expiration of the access token&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;e.g. redis (21:30)&lt;/p&gt;
-&lt;h3 id=&quot;Storing-and-Transmitting-JWTs-22-20&quot;&gt;&lt;a href=&quot;#Storing-and-Transmitting-JWTs-22-20&quot; class=&quot;headerlink&quot; title=&quot;Storing and Transmitting JWTs (22:20)&quot;&gt;&lt;/a&gt;Storing and Transmitting JWTs (22:20)&lt;/h3&gt;&lt;h4 id=&quot;Tradeoffs-and-Concerns&quot;&gt;&lt;a href=&quot;#Tradeoffs-and-Concerns&quot; class=&quot;headerlink&quot; title=&quot;Tradeoffs and Concerns&quot;&gt;&lt;/a&gt;Tradeoffs and Concerns&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Local Storage is not secure (XSS vulnerable)&lt;/li&gt;
-&lt;li&gt;在 HTTPS 下使用 Cookie 是安全的&lt;br&gt;HttpOnly&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20&quot;&gt;&lt;a href=&quot;#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20&quot; class=&quot;headerlink&quot; title=&quot;Secure and Painless Tradeoffs (IMO, YMMV) (27:20)&quot;&gt;&lt;/a&gt;Secure and Painless Tradeoffs (IMO, YMMV) (27:20)&lt;/h4&gt;&lt;h3 id=&quot;使用-Cookie-的登入驗證-28-20&quot;&gt;&lt;a href=&quot;#使用-Cookie-的登入驗證-28-20&quot; class=&quot;headerlink&quot; title=&quot;使用 Cookie 的登入驗證 (28:20)&quot;&gt;&lt;/a&gt;使用 Cookie 的登入驗證 (28:20)&lt;/h3&gt;&lt;h3 id=&quot;CSRF-38-00&quot;&gt;&lt;a href=&quot;#CSRF-38-00&quot; class=&quot;headerlink&quot; title=&quot;CSRF (38:00)&quot;&gt;&lt;/a&gt;CSRF (38:00)&lt;/h3&gt;&lt;p&gt;Cross Site Request Forgery&lt;/p&gt;
-&lt;h4 id=&quot;解決方案-39-10&quot;&gt;&lt;a href=&quot;#解決方案-39-10&quot; class=&quot;headerlink&quot; title=&quot;解決方案 (39:10)&quot;&gt;&lt;/a&gt;解決方案 (39:10)&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;同步 token&lt;/li&gt;
-&lt;li&gt;送兩個 cookie&lt;/li&gt;
-&lt;li&gt;檢查 header origin&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=WzfJgCOMIsU&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=WzfJgCOMIsU&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;vocabulary&quot;&gt;&lt;a href=&quot;#vocabulary&quot; class=&quot;headerlink&quot; title=&quot;vocabulary&quot;&gt;&lt;/a&gt;vocabulary&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;opaque (adj.)&lt;/li&gt;
-&lt;li&gt;revoke (v.) / revocation (n.)&lt;/li&gt;
-&lt;li&gt;blacklists&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Access-and-Refresh-Token-14-00&quot;&gt;&lt;a href=&quot;#Access-and-Refresh-Token-14-00&quot; class=&quot;headerlink&quot; title=&quot;Access and Refresh Token (14:00)
-    
-    </summary>
-    
-    
-      <category term="JWT" scheme="http://alincode.github.io/blog/tags/JWT/"/>
     
   </entry>
   

@@ -230,6 +230,77 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
+                            JWT Authentication with AngularJS Forward 4 Web Summit (2)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 22 2016 22:16:09 GMT+0800">
+	
+		    3月 22, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
+<li>給 client access token 和 refresh token</li>
+<li>access token 的效期要比 refresh token 短</li>
+<li>refresh token 用來取得 access token</li>
+<li>access token 來自於可靠的簽證機制</li>
+<li>refresh token check for revocations</li>
+<li>解除驗證的方式為否決 refresh token</li>
+</ul>
+<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
+<li>維護 refresh token 與 access token 的關聯</li>
+<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
+<li>blacklists TTL is the expiration of the access token</li>
+</ul>
+<p>e.g. redis (21:30)</p>
+<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
+<li>Local Storage is not secure (XSS vulnerable)</li>
+<li>在 HTTPS 下使用 Cookie 是安全的<br>HttpOnly</li>
+</ul>
+<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
+<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
+<li>同步 token</li>
+<li>送兩個 cookie</li>
+<li>檢查 header origin</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
+<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
+<li>opaque (adj.)</li>
+<li>revoke (v.) / revocation (n.)</li>
+<li>blacklists</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/21/chrome-debug-rendering/">
                             chrome debug rendering
                         </a>
@@ -788,63 +859,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/13/spa-seo-2/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/12/spa-seo/">
-                            SPA SEO (1)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Mar 12 2016 22:38:24 GMT+0800">
-	
-		    3月 12, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="SPA-Single-Page-Apps-兩大隱憂"><a href="#SPA-Single-Page-Apps-兩大隱憂" class="headerlink" title="SPA ( Single Page Apps ) 兩大隱憂"></a>SPA ( Single Page Apps ) 兩大隱憂</h3><p><strong>不友善的SEO</strong></p>
-<p>由於程式只跑在 client-side，所以 server 並沒有提供爬蟲需要的 HTML 資料。</p>
-<p><strong>效率(Performance)</strong></p>
-<p>由於要等整包 client-side 的 js 內下載完之後，才會在瀏覽器 render html，所以第一次的開啟速度會很慢。</p>
-<p>目前各框架提供的解決方案就是做 <code>Server Side Rendering</code>，那現在不只有 client-side，多了一個 Server Side，它們要做的事基本是一樣的，所以共用的地方會很多，所以就提出了 <code>universal web application</code> 的概念。</p>
-<h3 id="Isomorphic-universal-JavaScript"><a href="#Isomorphic-universal-JavaScript" class="headerlink" title="Isomorphic ( universal ) JavaScript"></a>Isomorphic ( universal ) JavaScript</h3><p>一開始看到這個字的時候(之後又更名為 universal)，很容易以為這是一個新的框架，但其實它是只一個概念，而有很多框架去實踐了這個概念，例如<code>fluxible</code>，可以在新舊文章穿插看到這兩個字眼，其實是在講同件事。</p>
-<p>我們來看看 <a href="http://isomorphic.net/javascript" target="_blank" rel="external">http://isomorphic.net/javascript</a> 上對於這個字的定義</p>
-<blockquote>
-<p>JavaScript applications which run both client-side and server-side. Isomorphic JavaScript frameworks are the next step in the evolution of JavaScript frameworks. These new libraries and frameworks are solving the problems associated with traditional JavaScript frameworks.</p>
-</blockquote>
-<p>一個 JavaScript 的應用程式，可以同時跑在 client-side 和 server-side，Isomorphic JavaScript frameworks 是 JavaScript frameworks 下一階段的演化，這些新的 libraries 和 框架解決了傳統 JavaScript frameworks 的問題。</p>
-<p><strong>tips</strong></p>
-<ul>
-<li>isomorphic : 同構</li>
-<li>universal : 通用</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/12/spa-seo/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

@@ -230,6 +230,98 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+                            Geb for functional testing of Grails app 重點整理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Apr 11 2016 03:03:14 GMT+0800">
+	
+		    4月 11, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="https://www.youtube.com/watch?v=HkJQYapam_s" target="_blank" rel="external">Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016 影片</a></p>
+<h3 id="為什麼我們要用Geb-06-04"><a href="#為什麼我們要用Geb-06-04" class="headerlink" title="為什麼我們要用Geb (06:04)"></a>為什麼我們要用Geb (06:04)</h3><ul>
+<li>類似於 JQuery 的語法</li>
+<li>非常強大的 WebDriver，卻是非常使用非常簡單的 API</li>
+<li>Robustness of Page Object Modeling</li>
+<li>使用 Groovy 描述性語言</li>
+<li>跟其他 build framework 整合得很好 (Gradle、Maven)</li>
+<li>可做為傑出的使用者文件</li>
+</ul>
+<h3 id="Geb-selectors-09-52"><a href="#Geb-selectors-09-52" class="headerlink" title="Geb selectors (09:52)"></a>Geb selectors (09:52)</h3><ul>
+<li>相似於 JQuery 的語法</li>
+<li>支援 regex</li>
+<li>選取後，會回傳一個 Navigator 物件</li>
+<li>支援 CSS3 語法</li>
+</ul>
+<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#8216;p&#8217;).text() == &#8220;a&#34;&#10;$(&#8216;p&#8217;).tag() == &#8220;p&#34;&#10;$(&#8216;p&#8217;).@title == &#8220;a&#34;&#10;$(&#8216;p&#8217;).classes == [&#8220;a&#8221;, &#8220;para&#34;]</span><br></pre></td></tr></table></figure>
+<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#8216;a&#8217;).click()&#10;$(&#8216;div&#8217;).isDisplayed()&#10;withConfirm &#123;&#10;  $(&#8216;button.delete&#8217;).click();&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#8216;div&#8217;) &#60;&#60; &#8216;abc&#39;&#10;$(&#8216;input&#8217;, name: &#8216;foo&#8217;) &#60;&#60; Keys.chord(Keys.CONTROL, &#8216;c&#8217;)</span><br></pre></td></tr></table></figure>
+<h3 id="Interaction-14-25"><a href="#Interaction-14-25" class="headerlink" title="Interaction (14:25)"></a>Interaction (14:25)</h3><blockquote>
+<p>Using actions API from WebDriver is possible. But Geb provides the interact closure.</p>
+</blockquote>
+<p>你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.openga.selenium.Keys&#10;&#10;interact &#123;&#10;     KeyDown Keys.CTRL&#10;     click $(&#8216;a.myLink&#8217;)&#10;     keyUp Keys.CTRL&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="可使用的變數-16-15"><a href="#可使用的變數-16-15" class="headerlink" title="可使用的變數 (16:15)"></a>可使用的變數 (16:15)</h3><ul>
+<li>title</li>
+<li>browser</li>
+<li>currentUrl</li>
+<li>currentWindow</li>
+</ul>
+<h3 id="更多的可能-16-50"><a href="#更多的可能-16-50" class="headerlink" title="更多的可能 (16:50)"></a>更多的可能 (16:50)</h3><ul>
+<li>上傳檔案</li>
+<li>下載檔案</li>
+<li>與 js 互動</li>
+</ul>
+<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.spock.GebSpec&#10;&#10;@Stepwise&#10;class XXXFunctionalSpec extends GebSpec &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Page-物件-描述一個頁面-23-50"><a href="#Page-物件-描述一個頁面-23-50" class="headerlink" title="Page 物件 - 描述一個頁面 (23:50)"></a>Page 物件 - 描述一個頁面 (23:50)</h3><ul>
+<li>Url</li>
+<li>如何檢查是否在對的地方</li>
+<li>內容是否是我們要的跟如何找到它</li>
+<li>Helper method</li>
+</ul>
+<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;     info(required: false) &#123;$(&#8216;div.info&#8217;)&#125;&#10;     message(wait: false) &#123;$(&#8216;div.message&#8217;)&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Modules-描述重複的內容-26-10"><a href="#Modules-描述重複的內容-26-10" class="headerlink" title="Modules - 描述重複的內容 (26:10)"></a>Modules - 描述重複的內容 (26:10)</h3><ul>
+<li>跨頁面</li>
+<li>Within the same page</li>
+</ul>
+<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Module&#10;&#10;class XXXListItemModules extends Module &#123;&#10;     data &#123; $(&#8220;td&#8221;, it) &#125;&#10;     name &#123; data(0).text() &#125;&#10;     email &#123; data(1).text() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Waiting-36-00"><a href="#Waiting-36-00" class="headerlink" title="Waiting (36:00)"></a>Waiting (36:00)</h3><p>自定預設的 Waiting 設定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// GebConfig.groovy&#10;waiting &#123;&#10;     timeout: 10&#10;     retryInterval: 0.5&#10;&#125;&#10;&#10;baseNavigatorWaiting = true&#10;atCheckWaiting = true</span><br></pre></td></tr></table></figure>
+<h3 id="Pausing-Geb-36-55"><a href="#Pausing-Geb-36-55" class="headerlink" title="Pausing Geb (36:55)"></a>Pausing Geb (36:55)</h3><p>可做為 debug 用途</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">when:&#10;pause() // for Pause Geb until button pressed</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/10/buddy-ci-4/">
                             Buddy CI 與 Slack 整合
                         </a>
@@ -872,70 +964,18 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/01/geb-version-13-x/">
-                            Geb 0.13.x 更新重點
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 01 2016 21:28:33 GMT+0800">
-	
-		    4月 01, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="0-13-0"><a href="#0-13-0" class="headerlink" title="0.13.0"></a>0.13.0</h3><h4 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h4><ul>
-<li>對 Spock 和 Junit4 支援 config.reportOnTestFailureOnly<a href="https://github.com/geb/issues/issues/92" target="_blank" rel="external">#92</a></li>
-<li>新增 navigator 的 isFocused 方法<a href="https://github.com/geb/issues/issues/208" target="_blank" rel="external">#208</a></li>
-<li>提供更多的 InvalidPageContent exception，易於 debug <a href="https://github.com/geb/issues/issues/109" target="_blank" rel="external">#109</a> <a href="https://github.com/geb/issues/issues/122" target="_blank" rel="external">#122</a></li>
-</ul>
-<h4 id="bugs-修復"><a href="#bugs-修復" class="headerlink" title="bugs 修復"></a>bugs 修復</h4><ul>
-<li>修正與 TestNG 整合時，報表的 bug</li>
-</ul>
-<p>…(待補)…</p>
-<h4 id="Deprecations"><a href="#Deprecations" class="headerlink" title="Deprecations"></a>Deprecations</h4><ul>
-<li>geb.testng.GebTest 被 geb.testng.GebTestTrait 取代</li>
-<li>geb.testng.GebReportingTest 被 geb.testng.GebReportingTestTrait 取代</li>
-</ul>
-<h4 id="重大改變"><a href="#重大改變" class="headerlink" title="重大改變"></a>重大改變</h4><ul>
-<li>Geb 0.13.0 相依在 Groovy 2.4.5 和 Spock 1.0-groovy-2.4</li>
-<li>在操作 Navigator 時，若選取多個元素，卻又呼叫只支援單元素 method 的時候，會拋出 SingleElementNavigatorOnlyMethodException <a href="https://github.com/geb/issues/issues/284" target="_blank" rel="external">#284</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hasClass(java.lang.String),&#10;is(java.lang.String),&#10;isDisplayed(),&#10;isDisabled(),&#10;isEnabled(),&#10;isReadOnly(),&#10;isEditable(),&#10;tag(),&#10;text(),&#10;getAttribute(java.lang.String),&#10;attr(java.lang.String),&#10;classes(),&#10;value(),&#10;click(),&#10;getHeight(),&#10;getWidth(),&#10;getX(),&#10;getY(),&#10;css(java.lang.String),&#10;isFocused().</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/01/geb-version-13-x/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
         
-        <li class="pagination-number">第 1 頁 共 1 頁</li>
+        <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="/blog/archives/2016/04/page/2/">
+                    <span>下一頁</span>
+                <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+        </li>
+        
+        <li class="pagination-number">第 1 頁 共 2 頁</li>
     </ul>
 </div>
 

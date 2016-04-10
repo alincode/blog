@@ -229,6 +229,65 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/01/geb-version-13-x/">
+                            Geb 0.13.x 更新重點
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Apr 01 2016 21:28:33 GMT+0800">
+	
+		    4月 01, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="0-13-0"><a href="#0-13-0" class="headerlink" title="0.13.0"></a>0.13.0</h3><h4 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h4><ul>
+<li>對 Spock 和 Junit4 支援 config.reportOnTestFailureOnly<a href="https://github.com/geb/issues/issues/92" target="_blank" rel="external">#92</a></li>
+<li>新增 navigator 的 isFocused 方法<a href="https://github.com/geb/issues/issues/208" target="_blank" rel="external">#208</a></li>
+<li>提供更多的 InvalidPageContent exception，易於 debug <a href="https://github.com/geb/issues/issues/109" target="_blank" rel="external">#109</a> <a href="https://github.com/geb/issues/issues/122" target="_blank" rel="external">#122</a></li>
+</ul>
+<h4 id="bugs-修復"><a href="#bugs-修復" class="headerlink" title="bugs 修復"></a>bugs 修復</h4><ul>
+<li>修正與 TestNG 整合時，報表的 bug</li>
+</ul>
+<p>…(待補)…</p>
+<h4 id="Deprecations"><a href="#Deprecations" class="headerlink" title="Deprecations"></a>Deprecations</h4><ul>
+<li>geb.testng.GebTest 被 geb.testng.GebTestTrait 取代</li>
+<li>geb.testng.GebReportingTest 被 geb.testng.GebReportingTestTrait 取代</li>
+</ul>
+<h4 id="重大改變"><a href="#重大改變" class="headerlink" title="重大改變"></a>重大改變</h4><ul>
+<li>Geb 0.13.0 相依在 Groovy 2.4.5 和 Spock 1.0-groovy-2.4</li>
+<li>在操作 Navigator 時，若選取多個元素，卻又呼叫只支援單元素 method 的時候，會拋出 SingleElementNavigatorOnlyMethodException <a href="https://github.com/geb/issues/issues/284" target="_blank" rel="external">#284</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hasClass(java.lang.String),&#10;is(java.lang.String),&#10;isDisplayed(),&#10;isDisabled(),&#10;isEnabled(),&#10;isReadOnly(),&#10;isEditable(),&#10;tag(),&#10;text(),&#10;getAttribute(java.lang.String),&#10;attr(java.lang.String),&#10;classes(),&#10;value(),&#10;click(),&#10;getHeight(),&#10;getWidth(),&#10;getX(),&#10;getY(),&#10;css(java.lang.String),&#10;isFocused().</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/01/geb-version-13-x/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/31/flux-life-cycle-demo/">
                             Flux 生命週期範例
                         </a>
@@ -690,77 +749,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/23/ckeditor-p/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
-                            JWT Authentication with AngularJS Forward 4 Web Summit (2)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Mar 22 2016 22:16:09 GMT+0800">
-	
-		    3月 22, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
-<li>給 client access token 和 refresh token</li>
-<li>access token 的效期要比 refresh token 短</li>
-<li>refresh token 用來取得 access token</li>
-<li>access token 來自於可靠的簽證機制</li>
-<li>refresh token check for revocations</li>
-<li>解除驗證的方式為否決 refresh token</li>
-</ul>
-<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
-<li>維護 refresh token 與 access token 的關聯</li>
-<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
-<li>blacklists TTL is the expiration of the access token</li>
-</ul>
-<p>e.g. redis (21:30)</p>
-<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
-<li>Local Storage is not secure (XSS vulnerable)</li>
-<li>在 HTTPS 下使用 Cookie 是安全的<br>HttpOnly</li>
-</ul>
-<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
-<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
-<li>同步 token</li>
-<li>送兩個 cookie</li>
-<li>檢查 header origin</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
-<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
-<li>opaque (adj.)</li>
-<li>revoke (v.) / revocation (n.)</li>
-<li>blacklists</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
