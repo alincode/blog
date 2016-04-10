@@ -260,9 +260,10 @@
     <link href="http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/"/>
     <id>http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/</id>
     <published>2016-04-06T15:12:46.000Z</published>
-    <updated>2016-04-06T15:20:59.000Z</updated>
+    <updated>2016-04-10T19:21:35.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;為什麼我們要用-Isomorphic-1-50&quot;&gt;&lt;a href=&quot;#為什麼我們要用-Isomorphic-1-50&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用 Isomorphic (1:50)&quot;&gt;&lt;/a&gt;為什麼我們要用 Isomorphic (1:50)&lt;/h3&gt;&lt;ul&gt;
+    <content type="html">&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/QPXNb6bl7hc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h3 id=&quot;為什麼我們要用-Isomorphic-1-50&quot;&gt;&lt;a href=&quot;#為什麼我們要用-Isomorphic-1-50&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用 Isomorphic (1:50)&quot;&gt;&lt;/a&gt;為什麼我們要用 Isomorphic (1:50)&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;SEO 爬蟲&lt;/li&gt;
 &lt;li&gt;效能&lt;br&gt;server side 已經 build 好了 html，client 只需要 render html 的部分。&lt;/li&gt;
 &lt;li&gt;dev 的好處&lt;/li&gt;
@@ -292,12 +293,12 @@
 &lt;li&gt;renderToString&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/elyseko/iso-react-demo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/elyseko/iso-react-demo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=QPXNb6bl7hc&amp;amp;t=1302s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Building Isomorphic Web Applications with React&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;為什麼我們要用-Isomorphic-1-50&quot;&gt;&lt;a href=&quot;#為什麼我們要用-Isomorphic-1-50&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用 Isomorphic (1:50)&quot;&gt;&lt;/a&gt;為什麼我們要用 Isomorp
+      &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/QPXNb6bl7hc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
+&lt;h3 id=&quot;為什麼我們
     
     </summary>
     
