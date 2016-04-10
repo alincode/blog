@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-10T19:08:30.000Z</updated>
+  <updated>2016-04-10T19:10:39.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/"/>
     <id>http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/</id>
     <published>2016-04-10T19:03:14.000Z</published>
-    <updated>2016-04-10T19:08:30.000Z</updated>
+    <updated>2016-04-10T19:10:39.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=HkJQYapam_s&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016 影片&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;為什麼我們要用Geb-06-04&quot;&gt;&lt;a href=&quot;#為什麼我們要用Geb-06-04&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用Geb (06:04)&quot;&gt;&lt;/a&gt;為什麼我們要用Geb (06:04)&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;類似於 JQuery 的語法&lt;/li&gt;
-&lt;li&gt;非常強大的 WebDriver，卻是非常使用非常簡單的 API&lt;/li&gt;
+&lt;li&gt;具有非常強大的 WebDriver，卻是使用非常簡單的 API&lt;/li&gt;
 &lt;li&gt;Robustness of Page Object Modeling&lt;/li&gt;
 &lt;li&gt;使用 Groovy 描述性語言&lt;/li&gt;
 &lt;li&gt;跟其他 build framework 整合得很好 (Gradle、Maven)&lt;/li&gt;
