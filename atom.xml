@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-10T19:17:13.000Z</updated>
+  <updated>2016-04-12T13:21:51.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vultr VPS</title>
+    <link href="http://alincode.github.io/blog/2016/04/12/vultr/"/>
+    <id>http://alincode.github.io/blog/2016/04/12/vultr/</id>
+    <published>2016-04-12T12:37:03.000Z</published>
+    <updated>2016-04-12T13:21:51.000Z</updated>
+    
+    <content type="html">&lt;p&gt;從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。&lt;/p&gt;
+&lt;h3 id=&quot;價格方案&quot;&gt;&lt;a href=&quot;#價格方案&quot; class=&quot;headerlink&quot; title=&quot;價格方案&quot;&gt;&lt;/a&gt;價格方案&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/12/vultr/price.png&quot; alt=&quot;price.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;如果你要弄一個自己用的測試機，或找到地方放 blog，可以開一個每月 5 USD 的虛擬主機，就已足夠。&lt;/p&gt;
+&lt;h3 id=&quot;支援地區&quot;&gt;&lt;a href=&quot;#支援地區&quot; class=&quot;headerlink&quot; title=&quot;支援地區&quot;&gt;&lt;/a&gt;支援地區&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/12/vultr/area.png&quot; alt=&quot;area.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;日本是最靠近我們的點，自己試用起來，速度不會太慢還可以接受。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。&lt;/p&gt;
+&lt;h3 id=&quot;價格方案&quot;&gt;&lt;a href=&quot;#價格方案&quot; 
+    
+    </summary>
+    
+    
+      <category term="VPS" scheme="http://alincode.github.io/blog/tags/VPS/"/>
+    
+      <category term="Vultr" scheme="http://alincode.github.io/blog/tags/Vultr/"/>
+    
+  </entry>
   
   <entry>
     <title>Geb for functional testing of Grails app 重點整理</title>
@@ -852,41 +880,6 @@
     
     
       <category term="JQuery" scheme="http://alincode.github.io/blog/tags/JQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ckeditor 換行語法調整</title>
-    <link href="http://alincode.github.io/blog/2016/03/23/ckeditor-p/"/>
-    <id>http://alincode.github.io/blog/2016/03/23/ckeditor-p/</id>
-    <published>2016-03-23T14:24:43.000Z</published>
-    <updated>2016-03-23T19:22:53.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h3&gt;&lt;p&gt;你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。&lt;/p&gt;
-&lt;p&gt;特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地方，也會變成去抓 url，不是本機的位置。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;./ckeditor.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;第二步&quot;&gt;&lt;a href=&quot;#第二步&quot; class=&quot;headerlink&quot; title=&quot;第二步&quot;&gt;&lt;/a&gt;第二步&lt;/h3&gt;&lt;p&gt;在 html 檔案內，須有對應的 html 元素跟 JS&lt;/p&gt;
-&lt;h4 id=&quot;html&quot;&gt;&lt;a href=&quot;#html&quot; class=&quot;headerlink&quot; title=&quot;html&quot;&gt;&lt;/a&gt;html&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;textarea name=&amp;#34;editor1&amp;#34; id=&amp;#34;editor1&amp;#34; rows=&amp;#34;10&amp;#34; cols=&amp;#34;80&amp;#34;&amp;#62;&amp;#10;    This is my textarea to be replaced with CKEditor.&amp;#10;&amp;#60;/textarea&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;js&quot;&gt;&lt;a href=&quot;#js&quot; class=&quot;headerlink&quot; title=&quot;js&quot;&gt;&lt;/a&gt;js&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;CKEDITOR.replace( &amp;#39;editor1&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;或&lt;/p&gt;
-&lt;p&gt;不使用預設的 config，另外獨立一個設定擋。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;CKEDITOR.replace( &amp;#39;editor1&amp;#39;, &amp;#123;&amp;#10;  customConfig: &amp;#39;./custom/ckeditor_config.js&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;第三步&quot;&gt;&lt;a href=&quot;#第三步&quot; class=&quot;headerlink&quot; title=&quot;第三步&quot;&gt;&lt;/a&gt;第三步&lt;/h3&gt;&lt;p&gt;改 config 設定內容，預設值是&lt;code&gt;P 元素&lt;/code&gt;。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.enterMode = CKEDITOR.ENTER_P;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;但還有其他選項，例如 &lt;code&gt;DIV 元素&lt;/code&gt; 或 &lt;code&gt;BR 元素&lt;/code&gt;：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;config.enterMode = CKEDITOR.ENTER_DIV;&amp;#10;// or&amp;#10;config.enterMode = CKEDITOR.ENTER_BR;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;完整範例&quot;&gt;&lt;a href=&quot;#完整範例&quot; class=&quot;headerlink&quot; title=&quot;完整範例&quot;&gt;&lt;/a&gt;完整範例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;!DOCTYPE html&amp;#62;&amp;#10;&amp;#60;html&amp;#62;&amp;#10;    &amp;#60;head&amp;#62;&amp;#10;        &amp;#60;meta charset=&amp;#34;utf-8&amp;#34;&amp;#62;&amp;#10;        &amp;#60;title&amp;#62;A Simple Page with CKEditor&amp;#60;/title&amp;#62;&amp;#10;        &amp;#60;!-- Make sure the path to CKEditor is correct. --&amp;#62;&amp;#10;        &amp;#60;script src=&amp;#34;./ckeditor.js&amp;#34;&amp;#62;&amp;#60;/script&amp;#62;&amp;#10;    &amp;#60;/head&amp;#62;&amp;#10;    &amp;#60;body&amp;#62;&amp;#10;        &amp;#60;form&amp;#62;&amp;#10;            &amp;#60;textarea name=&amp;#34;editor1&amp;#34; id=&amp;#34;editor1&amp;#34; rows=&amp;#34;10&amp;#34; cols=&amp;#34;80&amp;#34;&amp;#62;&amp;#10;                This is my textarea to be replaced with CKEditor.&amp;#10;            &amp;#60;/textarea&amp;#62;&amp;#10;            &amp;#60;script&amp;#62;&amp;#10;&amp;#10;                CKEDITOR.replace( &amp;#39;editor1&amp;#39;);&amp;#10;&amp;#10;&amp;#10;                // CKEDITOR.replace( &amp;#39;editor1&amp;#39;, &amp;#123;&amp;#10;                //     customConfig: &amp;#39;./custom/ckeditor_config.js&amp;#39;&amp;#10;                // &amp;#125;);&amp;#10;            &amp;#60;/script&amp;#62;&amp;#10;        &amp;#60;/form&amp;#62;&amp;#10;    &amp;#60;/body&amp;#62;&amp;#10;&amp;#60;/html&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config.js &amp;#25110; ./custom/ckeditor_config.js&amp;#10;CKEDITOR.editorConfig = function( config ) &amp;#123;&amp;#10;  config.enterMode = CKEDITOR.ENTER_DIV;&amp;#10;  // config.enterMode = CKEDITOR.ENTER_BR;&amp;#10;  // config.enterMode = CKEDITOR.ENTER_P;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;第一步&quot;&gt;&lt;a href=&quot;#第一步&quot; class=&quot;headerlink&quot; title=&quot;第一步&quot;&gt;&lt;/a&gt;第一步&lt;/h3&gt;&lt;p&gt;你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。&lt;/p&gt;
-&lt;p&gt;特別注意 
-    
-    </summary>
-    
-    
-      <category term="ckeditor" scheme="http://alincode.github.io/blog/tags/ckeditor/"/>
     
   </entry>
   
