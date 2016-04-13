@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-13T05:34:43.000Z</updated>
+  <updated>2016-04-13T05:35:51.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/"/>
     <id>http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/</id>
     <published>2016-04-13T05:10:14.000Z</published>
-    <updated>2016-04-13T05:34:43.000Z</updated>
+    <updated>2016-04-13T05:35:51.000Z</updated>
     
     <content type="html">&lt;p&gt;lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;必要值檢查&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例下載&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;:javascript&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;!--&amp;#65532;0--&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;:javascript&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var should = require(&amp;#39;chai&amp;#39;).should();&amp;#10;var _ = require(&amp;#39;lodash&amp;#39;);&amp;#10;&amp;#10;describe(&amp;#39;require keys&amp;#39;, function () &amp;#123;&amp;#10;  it(&amp;#39;case 1:&amp;#39;, function (done) &amp;#123;&amp;#10;    var requiredKeys = [&amp;#39;firstname&amp;#39;, &amp;#39;lastname&amp;#39;, &amp;#39;email&amp;#39;],&amp;#10;    params = &amp;#123;&amp;#10;      &amp;#34;firstname&amp;#34;: &amp;#34;ailin&amp;#34;,&amp;#10;      &amp;#34;lastname&amp;#34;: &amp;#34;liou&amp;#34;,&amp;#10;      &amp;#34;email&amp;#34;: &amp;#34;NONE&amp;#34;&amp;#10;    &amp;#125;;&amp;#10;    var result = _.every(requiredKeys, _.partial(_.has, params));&amp;#10;    result.should.be.equal(true);&amp;#10;    done();&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  it(&amp;#39;case 2:&amp;#39;, function (done) &amp;#123;&amp;#10;    var requiredKeys = [&amp;#39;firstname&amp;#39;, &amp;#39;lastname&amp;#39;, &amp;#39;email&amp;#39;, &amp;#39;phone&amp;#39;],&amp;#10;    params = &amp;#123;&amp;#10;      &amp;#34;firstname&amp;#34;: &amp;#34;ailin&amp;#34;,&amp;#10;      &amp;#34;lastname&amp;#34;: &amp;#34;liou&amp;#34;,&amp;#10;      &amp;#34;email&amp;#34;: &amp;#34;NONE&amp;#34;&amp;#10;    &amp;#125;;&amp;#10;    var result = _.every(requiredKeys, _.partial(_.has, params));&amp;#10;    result.should.be.equal(false);&amp;#10;    done();&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  it(&amp;#39;case 3:&amp;#39;, function (done) &amp;#123;&amp;#10;    var requiredKeys = [&amp;#39;firstname&amp;#39;, &amp;#39;email&amp;#39;],&amp;#10;    params = &amp;#123;&amp;#10;      &amp;#34;firstname&amp;#34;: &amp;#34;thefourtheye&amp;#34;,&amp;#10;      &amp;#34;lastname&amp;#34;: &amp;#34;thefourtheye&amp;#34;,&amp;#10;      &amp;#34;email&amp;#34;: &amp;#34;NONE&amp;#34;&amp;#10;    &amp;#125;;&amp;#10;    var result = _.every(requiredKeys, _.partial(_.has, params));&amp;#10;    result.should.be.equal(true);&amp;#10;    done();&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
