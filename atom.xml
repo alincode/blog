@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-13T12:49:16.000Z</updated>
+  <updated>2016-04-13T13:03:50.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/"/>
     <id>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</id>
     <published>2016-04-14T12:18:37.000Z</published>
-    <updated>2016-04-13T12:49:16.000Z</updated>
+    <updated>2016-04-13T13:03:50.000Z</updated>
     
-    <content type="html">&lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/issue.png&quot; alt=&quot;issue.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
+    <content type="html">&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;undefined symbol: node_module_register&lt;/li&gt;
 &lt;li&gt;bcrypt bindings problem&lt;/li&gt;
 &lt;/ul&gt;
@@ -39,12 +38,16 @@
 &lt;p&gt;&lt;a href=&quot;https://buddy.works/knowledge/deployments/how-use-ssh-scripts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to use SSH scripts?&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/execute_script.png&quot; alt=&quot;execute_script.png&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;參考資料&quot;&gt;&lt;a href=&quot;#參考資料&quot; class=&quot;headerlink&quot; title=&quot;參考資料&quot;&gt;&lt;/a&gt;參考資料&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/pm2/issues/1477&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;undefined symbol: node_module_register&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </content>
     
     <summary type="html">
     
-      &lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/issue.png&quot; alt=&quot;issue.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h
+      &lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;undefined symbol: node_module_register&lt;/li&gt;
+&lt;li&gt;bcrypt bindings 
     
     </summary>
     
