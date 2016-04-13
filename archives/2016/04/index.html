@@ -230,6 +230,51 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/13/lodash-require-key-check/">
+                            lodash - 必要值檢查
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Apr 13 2016 13:10:14 GMT+0800">
+	
+		    4月 13, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。</p>
+<p><strong>必要值檢查</strong></p>
+<p><a href="https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js" target="_blank" rel="external">範例下載</a></p>
+<figure class="highlight"><figcaption><span>:javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!--&#65532;0--&#62;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/13/lodash-require-key-check/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/12/vultr/">
                             Vultr VPS
                         </a>
@@ -810,115 +855,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/04/view-model-vs-model/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/03/PM2/">
-                            PM2 管理工具
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Apr 03 2016 02:30:15 GMT+0800">
-	
-		    4月 03, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><code>PM2</code> 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。</p>
-<p><strong>提供的功能</strong></p>
-<ul>
-<li>內建簡易監控功能</li>
-<li>Cluster Mode</li>
-<li>記憶體管理，重新 reload</li>
-<li>Hot reload</li>
-<li>啟動參數設定檔化</li>
-<li>Log 管理</li>
-<li>支援啟動 Scripts</li>
-<li>Keymetrics 監控</li>
-<li>提供 API，你可以運用它，實做一些你自定的需求。</li>
-<li>Deployment workflow</li>
-</ul>
-<p><strong>安裝</strong></p>
-<p><code>npm install pm2@latest -g</code></p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="基本程序操作"><a href="#基本程序操作" class="headerlink" title="基本程序操作"></a>基本程序操作</h3><table>
-<thead>
-<tr>
-<th>指令</th>
-<th style="text-align:center">說明</th>
-<th style="text-align:right">備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pm2 start app.js</td>
-<td style="text-align:center">啟動程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 stop all</td>
-<td style="text-align:center">停止所有程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 stop 0</td>
-<td style="text-align:center">停止單一程序</td>
-<td style="text-align:right">pm2 stop [pid]</td>
-</tr>
-<tr>
-<td>pm2 restart all</td>
-<td style="text-align:center">重啟所有程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 delete 0</td>
-<td style="text-align:center">刪除單一程序</td>
-</tr>
-</tbody>
-</table>
-<h3 id="進階啟動程序"><a href="#進階啟動程序" class="headerlink" title="進階啟動程序"></a>進階啟動程序</h3><p><strong>啟動程序並指定名稱</strong></p>
-<p><code>pm2 start app.js --name my-api</code></p>
-<p><strong>啟動程序並帶變數</strong></p>
-<p><code>NODE_ENV=local pm2 start app.js --name my-api</code></p>
-<h3 id="查看程序"><a href="#查看程序" class="headerlink" title="查看程序"></a>查看程序</h3><p><strong>查看所有註冊的程序</strong></p>
-<p><code>pm2 list</code></p>
-<img src="/blog/2016/04/03/PM2/pm2.png" alt="pm2.png" title="">
-<p><strong>查看程序內容</strong></p>
-<p><code>pm2 show 0</code></p>
-<p><strong>監看程序</strong></p>
-<p><code>pm2 monit</code></p>
-<img src="/blog/2016/04/03/PM2/monit.png" alt="monit.png" title="">
-<h3 id="log-相關指令"><a href="#log-相關指令" class="headerlink" title="log 相關指令"></a>log 相關指令</h3><p><strong>查看log集合</strong></p>
-<p><code>pm2 logs</code></p>
-<img src="/blog/2016/04/03/PM2/logs.png" alt="logs.png" title="">
-<p><strong>清空log</strong></p>
-<p><code>pm2 flush</code></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/03/PM2/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

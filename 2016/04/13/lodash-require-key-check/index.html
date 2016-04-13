@@ -6,33 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Vultr VPS - alincode</title>
+    <title>lodash - 必要值檢查 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。
-什麼是 VULTR
-VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualiz">
+    <meta name="description" content="lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。
+必要值檢查
+範例下載
+:javascript1&amp;#60;!--&amp;#65532;0--&amp;#62;">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Vultr VPS">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/12/vultr/index.html">
+<meta property="og:title" content="lodash - 必要值檢查">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。
-什麼是 VULTR
-VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualiz">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/12/vultr/area.png">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/12/vultr/price.png">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/12/vultr/linode.png">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/12/vultr/digitalocean.png">
-<meta property="og:updated_time" content="2016-04-12T13:46:43.000Z">
+<meta property="og:description" content="lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。
+必要值檢查
+範例下載
+:javascript1&amp;#60;!--&amp;#65532;0--&amp;#62;">
+<meta property="og:updated_time" content="2016-04-13T05:34:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vultr VPS">
-<meta name="twitter:description" content="從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。
-什麼是 VULTR
-VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualiz">
+<meta name="twitter:title" content="lodash - 必要值檢查">
+<meta name="twitter:description" content="lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。
+必要值檢查
+範例下載
+:javascript1&amp;#60;!--&amp;#65532;0--&amp;#62;">
     
     
         
@@ -237,13 +236,13 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Vultr VPS
+            lodash - 必要值檢查
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Apr 12 2016 20:37:03 GMT+0800">
+    <time itemprop="datePublished" content="Wed Apr 13 2016 13:10:14 GMT+0800">
 	
-		    4月 12, 2016
+		    4月 13, 2016
     	
     </time>
     
@@ -252,18 +251,10 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>從 Java 改寫 NodeJS 的最大好處是，似乎什麼東西都變輕量級了。以前 Run 一個普通的 Java 專案，記憶體至少要 1G 以上，如果 NodeJS 的專案，1G 記憶體已經可以跑兩個專案了。</p>
-<h3 id="什麼是-VULTR"><a href="#什麼是-VULTR" class="headerlink" title="什麼是 VULTR"></a>什麼是 VULTR</h3><blockquote>
-<p>VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Virtualization.</p>
-</blockquote>
-<h3 id="支援地區"><a href="#支援地區" class="headerlink" title="支援地區"></a>支援地區</h3><img src="/blog/2016/04/12/vultr/area.png" alt="area.png" title="">
-<p>日本是最靠近我們的點，自己試用起來速度不會太慢，還可以接受。</p>
-<h3 id="價格方案"><a href="#價格方案" class="headerlink" title="價格方案"></a>價格方案</h3><img src="/blog/2016/04/12/vultr/price.png" alt="price.png" title="">
-<p>如果你要弄一個自己用的測試機，或找到地方放 blog，可以在 <a href="https://www.vultr.com/" target="_blank" rel="external">Vultr</a> 開一個每月 5 USD 的虛擬主機，就已足夠。</p>
-<h3 id="其他選擇"><a href="#其他選擇" class="headerlink" title="其他選擇"></a>其他選擇</h3><p><a href="https://www.linode.com/" target="_blank" rel="external">Linode</a> - SSD Cloud Hosting &amp; Linux Servers</p>
-<img src="/blog/2016/04/12/vultr/linode.png" alt="linode.png" title="">
-<p><a href="https://www.digitalocean.com/" target="_blank" rel="external">DigitalOcean</a> - Simple Cloud Computing, Built for Developers</p>
-<img src="/blog/2016/04/12/vultr/digitalocean.png" alt="digitalocean.png" title="">
+            <p>lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。</p>
+<p><strong>必要值檢查</strong></p>
+<p><a href="https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js" target="_blank" rel="external">範例下載</a></p>
+<figure class="highlight"><figcaption><span>:javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!--&#65532;0--&#62;</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -276,7 +267,7 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/VPS/">VPS</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Vultr/">Vultr</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/lodash/">lodash</a>
 
             </div>
         
@@ -285,7 +276,7 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/13/lodash-require-key-check/"  data-tooltip="lodash - 必要值檢查">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -293,7 +284,7 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/" data-tooltip="Geb for functional testing of Grails app 重點整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/12/vultr/" data-tooltip="Vultr VPS">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -308,17 +299,17 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -356,7 +347,7 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/13/lodash-require-key-check/"  data-tooltip="lodash - 必要值檢查">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -364,7 +355,7 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/" data-tooltip="Geb for functional testing of Grails app 重點整理">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/12/vultr/" data-tooltip="Vultr VPS">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -379,17 +370,17 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -409,17 +400,17 @@ VULTR Global Cloud Hosting - Brilliantly Fast SSD VPS Cloud Servers. 100% KVM Vi
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/12/vultr/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-12T13:46:43.000Z</updated>
+  <updated>2016-04-13T05:34:43.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lodash - 必要值檢查</title>
+    <link href="http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/"/>
+    <id>http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/</id>
+    <published>2016-04-13T05:10:14.000Z</published>
+    <updated>2016-04-13T05:34:43.000Z</updated>
+    
+    <content type="html">&lt;p&gt;lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;必要值檢查&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;範例下載&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;figcaption&gt;&lt;span&gt;:javascript&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;!--&amp;#65532;0--&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;lodash 是一個值得好好細細品嘗的模組，內含許多擴充的物件、字串、陣列處理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;必要值檢查&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/nodejs-sandbox/blob/ma
+    
+    </summary>
+    
+    
+      <category term="lodash" scheme="http://alincode.github.io/blog/tags/lodash/"/>
+    
+  </entry>
   
   <entry>
     <title>Vultr VPS</title>
@@ -861,32 +887,6 @@
     
     
       <category term="git branch" scheme="http://alincode.github.io/blog/tags/git-branch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JQuery Module Pattern</title>
-    <link href="http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/"/>
-    <id>http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/</id>
-    <published>2016-03-24T13:36:33.000Z</published>
-    <updated>2016-03-24T18:11:31.000Z</updated>
-    
-    <content type="html">&lt;p&gt;這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。&lt;/p&gt;
-&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;(function($) &amp;#123;&amp;#10;&amp;#10;  // link The Module Pattern&amp;#10;  // https://learn.jquery.com/code-organization/concepts/&amp;#10;  var member = (function() &amp;#123;&amp;#10;&amp;#10;    // &amp;#31169;&amp;#26377;&amp;#35722;&amp;#25976;&amp;#10;    var deleteMemberElement = &amp;#39;#deleteMember&amp;#39;;&amp;#10;    var memberNoElement = &amp;#39;input[name=memberNo]&amp;#39;;&amp;#10;    var memberTypeElement = &amp;#39;#memberDetail select[name=memberType]&amp;#39;;&amp;#10;    var memberTypeSelectedElement = memberTypeElement + &amp;#39; :selected&amp;#39;;&amp;#10;&amp;#10;    // &amp;#31169;&amp;#26377;&amp;#20989;&amp;#24335;&amp;#10;    var deleteMember = function(e) &amp;#123;&amp;#10;      e.preventDefault();&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    var checkMemberID = function(e) &amp;#123;&amp;#10;      e.preventDefault();&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    var hello = function() &amp;#123;&amp;#10;      alert(&amp;#39;hello&amp;#39;);&amp;#10;    &amp;#125;&amp;#10;&amp;#10;    // &amp;#20844;&amp;#38283;&amp;#30340; API&amp;#10;    return &amp;#123;&amp;#10;      init: function() &amp;#123;&amp;#10;        $(deleteMemberElement).on(&amp;#39;click&amp;#39;, deleteMember);&amp;#10;        $(memberNoElement).on(&amp;#39;change&amp;#39;, checkMemberID);&amp;#10;      &amp;#125;,&amp;#10;      otherAPI: function() &amp;#123;&amp;#10;        hello();&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;;&amp;#10;  &amp;#125;)();&amp;#10;&amp;#10;  member.init();&amp;#10;  member.otherAPI();&amp;#10;&amp;#10;&amp;#125;(jQuery));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;資料來源&quot;&gt;&lt;a href=&quot;#資料來源&quot; class=&quot;headerlink&quot; title=&quot;資料來源&quot;&gt;&lt;/a&gt;資料來源&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://learn.jquery.com/code-organization/concepts/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Code Organization Concepts&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。&lt;/p&gt;
-&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;figure
-    
-    </summary>
-    
-    
-      <category term="JQuery" scheme="http://alincode.github.io/blog/tags/JQuery/"/>
     
   </entry>
   
