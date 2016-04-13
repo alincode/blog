@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-13T12:48:25.000Z</updated>
+  <updated>2016-04-13T12:49:16.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Buddy CI 與 PM2 的結合(踩雷)</title>
+    <title>Buddy CI 與 PM2 的整合(踩雷)</title>
     <link href="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/"/>
     <id>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</id>
     <published>2016-04-14T12:18:37.000Z</published>
-    <updated>2016-04-13T12:48:25.000Z</updated>
+    <updated>2016-04-13T12:49:16.000Z</updated>
     
     <content type="html">&lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/issue.png&quot; alt=&quot;issue.png&quot; title=&quot;&quot;&gt;
 &lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
