@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-13T06:20:21.000Z</updated>
+  <updated>2016-04-13T12:46:02.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Buddy CI 踩雷(2)</title>
+    <link href="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/"/>
+    <id>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</id>
+    <published>2016-04-14T12:18:37.000Z</published>
+    <updated>2016-04-13T12:46:02.000Z</updated>
+    
+    <content type="html">&lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/issue.png&quot; alt=&quot;issue.png&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;undefined symbol: node_module_register&lt;/li&gt;
+&lt;li&gt;bcrypt bindings problem&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;解法&quot;&gt;&lt;a href=&quot;#解法&quot; class=&quot;headerlink&quot; title=&quot;解法&quot;&gt;&lt;/a&gt;解法&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;實作-SSH-命令注意事項&quot;&gt;&lt;a href=&quot;#實作-SSH-命令注意事項&quot; class=&quot;headerlink&quot; title=&quot;實作 SSH 命令注意事項&quot;&gt;&lt;/a&gt;實作 SSH 命令注意事項&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。&lt;/li&gt;
+&lt;li&gt;每行指令需獨立一行&lt;/li&gt;
+&lt;li&gt;指令執行失敗，將會停止執行後面的指令。(除非你有設忽略 error)&lt;/li&gt;
+&lt;li&gt;如果使用抽象路徑(cd /xxx/yyy)，命令將不會帶到下一行指令。&lt;/li&gt;
+&lt;li&gt;如果你需要執行複雜的 script，建議將 script 檔放在 server side，再去呼叫它執行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://buddy.works/knowledge/deployments/how-use-ssh-scripts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to use SSH scripts?&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/execute_script.png&quot; alt=&quot;execute_script.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/issue.png&quot; alt=&quot;issue.png&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h
+    
+    </summary>
+    
+    
+      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+    
+  </entry>
   
   <entry>
     <title>lodash - 必要值檢查</title>
@@ -176,20 +214,10 @@
     <link href="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/"/>
     <id>http://alincode.github.io/blog/2016/04/09/buddy-ci-3/</id>
     <published>2016-04-09T15:29:02.000Z</published>
-    <updated>2016-04-09T17:50:27.000Z</updated>
+    <updated>2016-04-13T12:21:53.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;script-內的指令，一定要指定指令路徑。&quot;&gt;&lt;a href=&quot;#script-內的指令，一定要指定指令路徑。&quot; class=&quot;headerlink&quot; title=&quot;script 內的指令，一定要指定指令路徑。&quot;&gt;&lt;/a&gt;script 內的指令，一定要指定指令路徑。&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;錯&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;grunt build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;對&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node_modules/.bin/grunt build&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What you need to know about SSH commands:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Each line is executed in the context of the working directory (default: user’s home dir) Lines are executed from top to bottom&lt;/li&gt;
-&lt;li&gt;Each command should be one separate line&lt;/li&gt;
-&lt;li&gt;If a command fails, the next line will not be executed and the action will fail (unless you check ignore errors)&lt;/li&gt;
-&lt;li&gt;Use absolute paths: the cd command will not be carried to the next line You can use Buddy specific variables in commands and URL’s Environmental variables between lines are not shared&lt;/li&gt;
-&lt;li&gt;If you want to use a more complex script, it its advised to call it from the server side (make sure the exit code it returns is correct).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
 &lt;h3 id=&quot;免輸入github帳密&quot;&gt;&lt;a href=&quot;#免輸入github帳密&quot; class=&quot;headerlink&quot; title=&quot;免輸入github帳密&quot;&gt;&lt;/a&gt;免輸入github帳密&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/09/buddy-ci-3/git_pull_error.png&quot; alt=&quot;git_pull_error.png&quot; title=&quot;&quot;&gt;
 &lt;p&gt;因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://help.github.com/articles/generating-an-ssh-key/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Github - Generating an SSH key&lt;/a&gt;&lt;/p&gt;
@@ -859,33 +887,6 @@
     
     
       <category term="debug" scheme="http://alincode.github.io/blog/tags/debug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>取得其他 git remote branch</title>
-    <link href="http://alincode.github.io/blog/2016/03/25/git-branch/"/>
-    <id>http://alincode.github.io/blog/2016/03/25/git-branch/</id>
-    <published>2016-03-25T15:18:45.000Z</published>
-    <updated>2016-03-25T15:34:21.000Z</updated>
-    
-    <content type="html">&lt;p&gt;如果 remote 上面有很分支，你在下 &lt;code&gt;git clone&lt;/code&gt; 的時候，會發現它只有幫你建一個預設的分支。&lt;/p&gt;
-&lt;h3 id=&quot;查看-local-分支&quot;&gt;&lt;a href=&quot;#查看-local-分支&quot; class=&quot;headerlink&quot; title=&quot;查看 local 分支&quot;&gt;&lt;/a&gt;查看 local 分支&lt;/h3&gt;&lt;p&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;checkout-origin-上其他分支&quot;&gt;&lt;a href=&quot;#checkout-origin-上其他分支&quot; class=&quot;headerlink&quot; title=&quot;checkout origin 上其他分支&quot;&gt;&lt;/a&gt;checkout origin 上其他分支&lt;/h3&gt;&lt;p&gt;如果你也需要 origin 上其他分支，你可以下 &lt;code&gt;git branch --all&lt;/code&gt; 找到你要 checkout 的分支名稱。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/03/25/git-branch/git-branch.png&quot; alt=&quot;git-branch.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;然後把分支 checkout 出來，如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git checkout -b master origin/master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如果 remote 上面有很分支，你在下 &lt;code&gt;git clone&lt;/code&gt; 的時候，會發現它只有幫你建一個預設的分支。&lt;/p&gt;
-&lt;h3 id=&quot;查看-local-分支&quot;&gt;&lt;a href=&quot;#查看-local-分支&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-    
-      <category term="git branch" scheme="http://alincode.github.io/blog/tags/git-branch/"/>
     
   </entry>
   
