@@ -6,48 +6,23 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Buddy CI 與 PM2 的整合(踩雷) - alincode</title>
+    <title>state-design-pattern - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="問題
-undefined symbol: node_module_register
-bcrypt bindings problem
-
-解法ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node
-實作 SSH 命令注意事項
-每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。
-每行指令需獨立一行
-指令">
+    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Buddy CI 與 PM2 的整合(踩雷)">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/index.html">
+<meta property="og:title" content="state-design-pattern">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/15/state-design-pattern/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="問題
-undefined symbol: node_module_register
-bcrypt bindings problem
-
-解法ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node
-實作 SSH 命令注意事項
-每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。
-每行指令需獨立一行
-指令">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/14/buddy-ci-5/execute_script.png">
-<meta property="og:updated_time" content="2016-04-13T13:07:47.000Z">
+<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta property="og:updated_time" content="2016-04-15T15:35:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Buddy CI 與 PM2 的整合(踩雷)">
-<meta name="twitter:description" content="問題
-undefined symbol: node_module_register
-bcrypt bindings problem
-
-解法ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node
-實作 SSH 命令注意事項
-每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。
-每行指令需獨立一行
-指令">
+<meta name="twitter:title" content="state-design-pattern">
+<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
     
     
         
@@ -252,47 +227,22 @@ bcrypt bindings problem
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Buddy CI 與 PM2 的整合(踩雷)
+            state-design-pattern
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Apr 14 2016 20:18:37 GMT+0800">
+    <time itemprop="datePublished" content="Fri Apr 15 2016 23:35:14 GMT+0800">
 	
-		    4月 14, 2016
+		    4月 15, 2016
     	
     </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
-
-
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h3><ul>
-<li>undefined symbol: node_module_register</li>
-<li>bcrypt bindings problem</li>
-</ul>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p><code>ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node</code></p>
-<h3 id="實作-SSH-命令注意事項"><a href="#實作-SSH-命令注意事項" class="headerlink" title="實作 SSH 命令注意事項"></a>實作 SSH 命令注意事項</h3><ul>
-<li>每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。</li>
-<li>每行指令需獨立一行</li>
-<li>指令執行失敗，將會停止執行後面的指令。(除非你有設忽略 error)</li>
-<li>如果使用抽象路徑(cd /xxx/yyy)，命令將不會帶到下一行指令。</li>
-<li>如果你需要執行複雜的 script，建議將 script 檔放在 server side，再去呼叫它執行。</li>
-</ul>
-<blockquote>
-<p><a href="https://buddy.works/knowledge/deployments/how-use-ssh-scripts" target="_blank" rel="external">How to use SSH scripts?</a></p>
-</blockquote>
-<img src="/blog/2016/04/14/buddy-ci-5/execute_script.png" alt="execute_script.png" title="">
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="https://github.com/Unitech/pm2/issues/1477" target="_blank" rel="external">undefined symbol: node_module_register</a></li>
-</ul>
-
+            
             
                 
 
@@ -301,19 +251,12 @@ bcrypt bindings problem
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Buddy-CI/">Buddy CI</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/15/state-design-pattern/"  data-tooltip="state-design-pattern">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -321,7 +264,7 @@ bcrypt bindings problem
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/13/lodash-require-key-check/" data-tooltip="lodash - 必要值檢查">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/14/buddy-ci-5/" data-tooltip="Buddy CI 與 PM2 的整合(踩雷)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -336,17 +279,17 @@ bcrypt bindings problem
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -384,7 +327,7 @@ bcrypt bindings problem
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/15/state-design-pattern/"  data-tooltip="state-design-pattern">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -392,7 +335,7 @@ bcrypt bindings problem
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/13/lodash-require-key-check/" data-tooltip="lodash - 必要值檢查">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/14/buddy-ci-5/" data-tooltip="Buddy CI 與 PM2 的整合(踩雷)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -407,17 +350,17 @@ bcrypt bindings problem
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -437,17 +380,17 @@ bcrypt bindings problem
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/14/buddy-ci-5/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/state-design-pattern/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
