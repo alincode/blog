@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-15T15:35:14.000Z</updated>
+  <updated>2016-04-15T15:59:01.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chain-of-responsibility</title>
+    <link href="http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/"/>
+    <id>http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/</id>
+    <published>2016-04-15T15:59:01.000Z</published>
+    <updated>2016-04-15T15:59:01.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>state-design-pattern</title>
@@ -860,34 +876,6 @@
       <category term="Sails" scheme="http://alincode.github.io/blog/tags/Sails/"/>
     
       <category term="i18n" scheme="http://alincode.github.io/blog/tags/i18n/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sequelize delete</title>
-    <link href="http://alincode.github.io/blog/2016/03/27/sequelize-delete/"/>
-    <id>http://alincode.github.io/blog/2016/03/27/sequelize-delete/</id>
-    <published>2016-03-27T13:30:16.000Z</published>
-    <updated>2016-03-27T13:47:14.000Z</updated>
-    
-    <content type="html">&lt;p&gt;當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 &lt;code&gt;deletedAt&lt;/code&gt;，並把刪除時間更新上去，&lt;code&gt;sequelize&lt;/code&gt; 有提供這個功能，真的蠻實用的。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;don’t delete database entries but set the newly added attribute deletedAt&lt;br&gt; to the current date (when deletion was done). paranoid will only work if&lt;br&gt; timestamps are enabled&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var ContactUs = sequelize.define(&amp;#39;ContactUs&amp;#39;, &amp;#123;&amp;#10;  name: DataTypes.STRING,&amp;#10;  email: DataTypes.STRING,&amp;#10;  phone: DataTypes.STRING,&amp;#10;  content: DataTypes.TEXT,&amp;#10;&amp;#125;,&amp;#123;&amp;#10;  // &amp;#21152;&amp;#36889;&amp;#34892;&amp;#10;  paranoid: true,&amp;#10;  classMethods: &amp;#123;&amp;#10;    associate: function(models)&amp;#123;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;資料來源&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;http://docs.sequelizejs.com/en/latest/docs/models-definition/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://docs.sequelizejs.com/en/latest/docs/models-definition/&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;當你需要刪除一筆資料，但不要實際刪除資料，只想多一個欄位叫 &lt;code&gt;deletedAt&lt;/code&gt;，並把刪除時間更新上去，&lt;code&gt;sequelize&lt;/code&gt; 有提供這個功能，真的蠻實用的。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;don’t delete d
-    
-    </summary>
-    
-    
-      <category term="sequelize" scheme="http://alincode.github.io/blog/tags/sequelize/"/>
     
   </entry>
   
