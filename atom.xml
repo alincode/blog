@@ -48,22 +48,6 @@
   </entry>
   
   <entry>
-    <title>state-design-pattern</title>
-    <link href="http://alincode.github.io/blog/2016/04/15/state-design-pattern/"/>
-    <id>http://alincode.github.io/blog/2016/04/15/state-design-pattern/</id>
-    <published>2016-04-15T15:35:14.000Z</published>
-    <updated>2016-04-15T15:35:14.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Buddy CI 與 PM2 的整合(踩雷)</title>
     <link href="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/"/>
     <id>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</id>
@@ -857,6 +841,41 @@
       <category term="Jade" scheme="http://alincode.github.io/blog/tags/Jade/"/>
     
       <category term="Mixins" scheme="http://alincode.github.io/blog/tags/Mixins/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>物件宣告 Sails 多國語系</title>
+    <link href="http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/"/>
+    <id>http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/</id>
+    <published>2016-03-28T09:12:56.000Z</published>
+    <updated>2016-03-28T10:41:10.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用&lt;a href=&quot;https://github.com/mashpie/i18n-node&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;i18n-node&lt;/a&gt;，所以基本 i18n-node 有提供的功能都可以使用。&lt;/p&gt;
+&lt;p&gt;objectNotation 這個功能預設是 false，所以必須得先設定。&lt;/p&gt;
+&lt;h3 id=&quot;範例&quot;&gt;&lt;a href=&quot;#範例&quot; class=&quot;headerlink&quot; title=&quot;範例&quot;&gt;&lt;/a&gt;範例&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;修改多國語系設定檔&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config/i18n.js&amp;#10;&amp;#10;module.exports.i18n = &amp;#123;&amp;#10;  updateFiles: true,&amp;#10;  localesDirectory: &amp;#39;/config/locales&amp;#39;,&amp;#10;  locales: [&amp;#39;en&amp;#39;, &amp;#39;zh&amp;#39;],&amp;#10;  // &amp;#21152;&amp;#36889;&amp;#34892;&amp;#10;  objectNotation: true&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;支援物件式的寫法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// config/locales/zh.json&amp;#10;&amp;#123;&amp;#10;  &amp;#34;admin&amp;#34;: &amp;#123;&amp;#10;    &amp;#34;common&amp;#34;: &amp;#123;&amp;#10;      &amp;#34;createdAt&amp;#34;: &amp;#34;&amp;#24314;&amp;#31435;&amp;#26085;&amp;#26399;&amp;#34;,&amp;#10;      &amp;#34;publishAt&amp;#34;: &amp;#34;&amp;#30332;&amp;#20296;&amp;#26085;&amp;#26399;&amp;#34;,&amp;#10;      &amp;#34;title&amp;#34;: &amp;#34;&amp;#27161;&amp;#38988;&amp;#34;,&amp;#10;      &amp;#34;content&amp;#34;: &amp;#34;&amp;#20839;&amp;#23481;&amp;#34;,&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;修改 view 檔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;此範例是針對 &lt;code&gt;Jade&lt;/code&gt; 的寫法&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;#&amp;#123;i18n(&amp;#39;admin.common.createdAt&amp;#39;)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;相關連結&quot;&gt;&lt;a href=&quot;#相關連結&quot; class=&quot;headerlink&quot; title=&quot;相關連結&quot;&gt;&lt;/a&gt;相關連結&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/balderdashy/sails/issues/1878&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;i18n does not support the objectNotation config option &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sails i18n&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用&lt;a href=&quot;https://github.com/mashpie/i18n-node&quot; target=&quot;_blank&quot; rel=&quot;externa
+    
+    </summary>
+    
+    
+      <category term="Sails" scheme="http://alincode.github.io/blog/tags/Sails/"/>
+    
+      <category term="i18n" scheme="http://alincode.github.io/blog/tags/i18n/"/>
     
   </entry>
   
