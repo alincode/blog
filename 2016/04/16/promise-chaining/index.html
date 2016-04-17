@@ -14,18 +14,21 @@
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
     <meta name="description" content="Promise 似乎可以更簡單做到 Chain Of Responsibility
-範例線上demo%20%7B%0A%20%20let%20orderPrice%20%3D%201000%3B%0A%20%20resolve(orderPrice)%3B%0A%7D)%3B%0A%0Avar%20dptDiscount%20%3D%20function(orderPrice)%7B%0A%20%">
+範例線上sandbox 你可以把 code 複製貼到這裡執行
+1var discountService = new Promise(function(resolve, reject) &amp;#123;&amp;#10;  let orderPrice = 1000;&amp;#10;  resolve(orderPrice);&amp;#10">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Promise Chaining">
 <meta property="og:url" content="http://alincode.github.io/blog/2016/04/16/promise-chaining/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="Promise 似乎可以更簡單做到 Chain Of Responsibility
-範例線上demo%20%7B%0A%20%20let%20orderPrice%20%3D%201000%3B%0A%20%20resolve(orderPrice)%3B%0A%7D)%3B%0A%0Avar%20dptDiscount%20%3D%20function(orderPrice)%7B%0A%20%">
-<meta property="og:updated_time" content="2016-04-17T16:11:55.000Z">
+範例線上sandbox 你可以把 code 複製貼到這裡執行
+1var discountService = new Promise(function(resolve, reject) &amp;#123;&amp;#10;  let orderPrice = 1000;&amp;#10;  resolve(orderPrice);&amp;#10">
+<meta property="og:updated_time" content="2016-04-17T16:14:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise Chaining">
 <meta name="twitter:description" content="Promise 似乎可以更簡單做到 Chain Of Responsibility
-範例線上demo%20%7B%0A%20%20let%20orderPrice%20%3D%201000%3B%0A%20%20resolve(orderPrice)%3B%0A%7D)%3B%0A%0Avar%20dptDiscount%20%3D%20function(orderPrice)%7B%0A%20%">
+範例線上sandbox 你可以把 code 複製貼到這裡執行
+1var discountService = new Promise(function(resolve, reject) &amp;#123;&amp;#10;  let orderPrice = 1000;&amp;#10;  resolve(orderPrice);&amp;#10">
     
     
         
@@ -246,7 +249,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>Promise 似乎可以更簡單做到 Chain Of Responsibility</p>
-<p><strong>範例</strong><br><a href="https://babeljs.io/repl/#?evaluate=true&amp;presets=es2015%2Creact%2Cstage-2&amp;experimental=false&amp;loose=true&amp;spec=false&amp;code=var%20discountService%20%3D%20new%20Promise(function(resolve%2C%20reject" target="_blank" rel="external">線上demo</a>%20%7B%0A%20%20let%20orderPrice%20%3D%201000%3B%0A%20%20resolve(orderPrice)%3B%0A%7D)%3B%0A%0Avar%20dptDiscount%20%3D%20function(orderPrice)%7B%0A%20%20orderPrice%20<em>%3D%200.9%3B%0A%20%20return%20orderPrice%3B%0A%7D%3B%0A%0Avar%20bigOrderDiscount%20%3D%20function(orderPrice)%7B%0A%20%20orderPrice%20</em>%3D%200.95%3B%0A%20%20return%20orderPrice%3B%0A%7D%3B%0A%0Avar%20vipDiscount%20%3D%20function(orderPrice)%7B%0A%20%20orderPrice%20-%3D%20100%3B%0A%20%20return%20orderPrice%3B%0A%7D%3B%0A%0Alet%20result%20%3D%20discountService.then(function(orderPrice)%20%7B%0A%20%20return%20dptDiscount(orderPrice)%3B%0A%7D).then(function(orderPrice)%20%7B%0A%20%20return%20bigOrderDiscount(orderPrice)%3B%0A%7D).then(function(orderPrice)%20%7B%0A%20%20console.log(vipDiscount(orderPrice))%3B%0A%7D)%3B%0A%0Alet%20result2%20%3D%20discountService.then(function(orderPrice)%20%7B%0A%20%20return%20vipDiscount(orderPrice)%3B%0A%7D).then(function(orderPrice)%20%7B%0A%20%20return%20dptDiscount(orderPrice)%3B%0A%7D).then(function(orderPrice)%20%7B%0A%20%20console.log(bigOrderDiscount(orderPrice))%3B%0A%7D)%3B%0A%0A)</p>
+<p><strong>範例</strong><br><a href="https://babeljs.io/repl/" target="_blank" rel="external">線上sandbox</a> 你可以把 code 複製貼到這裡執行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var discountService = new Promise(function(resolve, reject) &#123;&#10;  let orderPrice = 1000;&#10;  resolve(orderPrice);&#10;&#125;);&#10;&#10;var dptDiscount = function(orderPrice)&#123;&#10;  orderPrice *= 0.9;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;var bigOrderDiscount = function(orderPrice)&#123;&#10;  orderPrice *= 0.95;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;var vipDiscount = function(orderPrice)&#123;&#10;  orderPrice -= 100;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;let result = discountService.then(function(orderPrice) &#123;&#10;  return dptDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  return bigOrderDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  console.log(vipDiscount(orderPrice));&#10;&#125;);&#10;&#10;let result2 = discountService.then(function(orderPrice) &#123;&#10;  return vipDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  return dptDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  console.log(bigOrderDiscount(orderPrice));&#10;&#125;);</span><br></pre></td></tr></table></figure>
 <p><strong>output</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">755&#10;769.5</span><br></pre></td></tr></table></figure></p>
 
