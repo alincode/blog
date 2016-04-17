@@ -6,23 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>strategy-design-pattern - alincode</title>
+    <title>Sequelize 一對多更新 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+    <meta name="description" content="記錄一下自己犯的錯，因為 promotion.setProducts 已經算是另一個更新程序，所以需要另外加 await。
+更新 1:M 片段PromotionService.js12345678let productIds = [1, 2];let products = await db.Product.findAll(&amp;#123;  where: &amp;#123;      id: product">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="strategy-design-pattern">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/index.html">
+<meta property="og:title" content="Sequelize 一對多更新">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
-<meta property="og:updated_time" content="2016-04-16T15:02:38.000Z">
+<meta property="og:description" content="記錄一下自己犯的錯，因為 promotion.setProducts 已經算是另一個更新程序，所以需要另外加 await。
+更新 1:M 片段PromotionService.js12345678let productIds = [1, 2];let products = await db.Product.findAll(&amp;#123;  where: &amp;#123;      id: product">
+<meta property="og:updated_time" content="2016-04-17T06:27:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="strategy-design-pattern">
-<meta name="twitter:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
+<meta name="twitter:title" content="Sequelize 一對多更新">
+<meta name="twitter:description" content="記錄一下自己犯的錯，因為 promotion.setProducts 已經算是另一個更新程序，所以需要另外加 await。
+更新 1:M 片段PromotionService.js12345678let productIds = [1, 2];let products = await db.Product.findAll(&amp;#123;  where: &amp;#123;      id: product">
     
     
         
@@ -227,13 +230,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            strategy-design-pattern
+            Sequelize 一對多更新
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Apr 16 2016 23:02:38 GMT+0800">
+    <time itemprop="datePublished" content="Sun Apr 17 2016 14:03:02 GMT+0800">
 	
-		    4月 16, 2016
+		    4月 17, 2016
     	
     </time>
     
@@ -242,7 +245,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            
+            <p>記錄一下自己犯的錯，因為 <code>promotion.setProducts</code> 已經算是另一個更新程序，所以需要另外加 await。</p>
+<h3 id="更新-1-M-片段"><a href="#更新-1-M-片段" class="headerlink" title="更新 1:M 片段"></a>更新 1:M 片段</h3><figure class="highlight javascript"><figcaption><span>PromotionService.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> productIds = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> products = <span class="keyword">await</span> db.Product.findAll(&#123;</span><br><span class="line">  where: &#123;</span><br><span class="line">      id: productIds</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">await</span> promotion.setProducts(products); <span class="comment">// 很重要</span></span><br><span class="line">promotion.save();</span><br></pre></td></tr></table></figure>
+<h3 id="db-schema-片段"><a href="#db-schema-片段" class="headerlink" title="db schema 片段"></a>db schema 片段</h3><figure class="highlight javascript"><figcaption><span>PromotionService.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">associate: <span class="function"><span class="keyword">function</span>(<span class="params">models</span>) </span>&#123;</span><br><span class="line">  Promotion.belongsToMany(models.Product, &#123;</span><br><span class="line">    through: <span class="string">'PromotionProduct'</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
             
                 
 
@@ -251,12 +257,19 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/One-to-Many/">One to Many</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Sequelize/">Sequelize</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/17/sequelize-one-to-many-update/"  data-tooltip="Sequelize 一對多更新">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -264,7 +277,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/15/chain-of-responsibility/" data-tooltip="Chain Of Responsibility Design Pattern (javascript)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/16/strategy-design-pattern/" data-tooltip="strategy-design-pattern">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -279,17 +292,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -327,7 +340,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/17/sequelize-one-to-many-update/"  data-tooltip="Sequelize 一對多更新">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -335,7 +348,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/15/chain-of-responsibility/" data-tooltip="Chain Of Responsibility Design Pattern (javascript)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/16/strategy-design-pattern/" data-tooltip="strategy-design-pattern">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -350,17 +363,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -380,17 +393,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/16/strategy-design-pattern/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
