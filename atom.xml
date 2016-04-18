@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-18T14:48:39.000Z</updated>
+  <updated>2016-04-18T14:53:23.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/"/>
     <id>http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/</id>
     <published>2016-04-18T13:50:13.000Z</published>
-    <updated>2016-04-18T14:48:39.000Z</updated>
+    <updated>2016-04-18T14:53:23.000Z</updated>
     
-    <content type="html">&lt;img src=&quot;/blog/2016/04/18/how-to-read-a-book/book.jpg&quot; alt=&quot;book.jpg&quot; title=&quot;&quot;&gt;
-&lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
+    <content type="html">&lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
 &lt;p&gt;本書的第一章即提到&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒性的氾濫資訊阻礙了我們的理解。&lt;/p&gt;
@@ -39,6 +38,7 @@
 &lt;li&gt;如何精準的找到主旨跟重點&lt;/li&gt;
 &lt;li&gt;針對不同類型的讀物，提供一些閱讀的技巧&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/blog/2016/04/18/how-to-read-a-book/book.jpg&quot; alt=&quot;book.jpg&quot; title=&quot;&quot;&gt;
 &lt;h2 id=&quot;閱讀的層次&quot;&gt;&lt;a href=&quot;#閱讀的層次&quot; class=&quot;headerlink&quot; title=&quot;閱讀的層次&quot;&gt;&lt;/a&gt;閱讀的層次&lt;/h2&gt;&lt;h3 id=&quot;基礎閱讀&quot;&gt;&lt;a href=&quot;#基礎閱讀&quot; class=&quot;headerlink&quot; title=&quot;基礎閱讀&quot;&gt;&lt;/a&gt;基礎閱讀&lt;/h3&gt;&lt;h3 id=&quot;檢視閱讀&quot;&gt;&lt;a href=&quot;#檢視閱讀&quot; class=&quot;headerlink&quot; title=&quot;檢視閱讀&quot;&gt;&lt;/a&gt;檢視閱讀&lt;/h3&gt;&lt;h3 id=&quot;分析閱讀&quot;&gt;&lt;a href=&quot;#分析閱讀&quot; class=&quot;headerlink&quot; title=&quot;分析閱讀&quot;&gt;&lt;/a&gt;分析閱讀&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;第六章　一本書的分類&lt;/li&gt;
 &lt;li&gt;第七章　透視一本書&lt;/li&gt;
@@ -52,9 +52,10 @@
     
     <summary type="html">
     
-      &lt;img src=&quot;/blog/2016/04/18/how-to-read-a-book/book.jpg&quot; alt=&quot;book.jpg&quot; title=&quot;&quot;&gt;
-&lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
-&lt;p&gt;本書的第一章即提到&lt;/p
+      &lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
+&lt;p&gt;本書的第一章即提到&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決
     
     </summary>
     
