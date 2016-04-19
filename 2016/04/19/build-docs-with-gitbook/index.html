@@ -22,7 +22,7 @@
 <meta property="og:description" content="我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。
 現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔">
 <meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/19/build-docs-with-gitbook/gitbook.png">
-<meta property="og:updated_time" content="2016-04-19T07:24:04.000Z">
+<meta property="og:updated_time" content="2016-04-19T07:25:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="建構一個漂亮的文件 with gitbook">
 <meta name="twitter:description" content="我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。
@@ -258,8 +258,8 @@
 <p>範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。</p>
 <img src="/blog/2016/04/19/build-docs-with-gitbook/gitbook.png" alt="gitbook.png" title="">
 <h2 id="與-Gitbook-相關"><a href="#與-Gitbook-相關" class="headerlink" title="與 Gitbook 相關"></a>與 Gitbook 相關</h2><h3 id="安裝-Gitbook"><a href="#安裝-Gitbook" class="headerlink" title="安裝 Gitbook"></a>安裝 Gitbook</h3><p><code>npm install gitbook -g</code></p>
-<h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
 <h3 id="編譯-gitbook-html-檔"><a href="#編譯-gitbook-html-檔" class="headerlink" title="編譯 gitbook html 檔"></a>編譯 gitbook html 檔</h3><p><code>gitbook build your-document-folder</code></p>
+<h2 id="與-Nginx-相關"><a href="#與-Nginx-相關" class="headerlink" title="與 Nginx 相關"></a>與 Nginx 相關</h2><h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
 <h3 id="複製到指定的資料夾"><a href="#複製到指定的資料夾" class="headerlink" title="複製到指定的資料夾"></a>複製到指定的資料夾</h3><p><code>cp -R your-document-folder/_book /srv/docs</code></p>
 <h3 id="更改資料夾權限"><a href="#更改資料夾權限" class="headerlink" title="更改資料夾權限"></a>更改資料夾權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /srv/docs/&#10;sudo chown -R www-data:www-data /srv/docs/</span><br></pre></td></tr></table></figure>
 <h3 id="產生加密密碼"><a href="#產生加密密碼" class="headerlink" title="產生加密密碼"></a>產生加密密碼</h3><p><code>openssl passwd</code></p>
