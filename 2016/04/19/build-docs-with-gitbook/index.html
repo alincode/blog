@@ -6,33 +6,36 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>好書推薦 - 如何閱讀一本書 - alincode</title>
+    <title>建構一個漂亮的文件(gitbook) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。
-本書的第一章即提到
+    <meta name="description" content="範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。
 
-或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒">
+與 Gitbook 相關安裝 Gitbooknpm install gitbook -g
+安裝 Nginxbrew install nginxoryum install nginxor請依照你的作業系統調整
+編譯 gitbook html 檔gitbook build yo">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="好書推薦 - 如何閱讀一本書">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/index.html">
+<meta property="og:title" content="建構一個漂亮的文件(gitbook)">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。
-本書的第一章即提到
+<meta property="og:description" content="範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。
 
-或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/18/how-to-read-a-book/book.jpg">
-<meta property="og:updated_time" content="2016-04-18T15:18:16.000Z">
+與 Gitbook 相關安裝 Gitbooknpm install gitbook -g
+安裝 Nginxbrew install nginxoryum install nginxor請依照你的作業系統調整
+編譯 gitbook html 檔gitbook build yo">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/19/build-docs-with-gitbook/gitbook.png">
+<meta property="og:updated_time" content="2016-04-19T07:00:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="好書推薦 - 如何閱讀一本書">
-<meta name="twitter:description" content="在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。
-本書的第一章即提到
+<meta name="twitter:title" content="建構一個漂亮的文件(gitbook)">
+<meta name="twitter:description" content="範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。
 
-或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒">
+與 Gitbook 相關安裝 Gitbooknpm install gitbook -g
+安裝 Nginxbrew install nginxoryum install nginxor請依照你的作業系統調整
+編譯 gitbook html 檔gitbook build yo">
     
     
         
@@ -237,13 +240,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            好書推薦 - 如何閱讀一本書
+            建構一個漂亮的文件(gitbook)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Apr 18 2016 21:50:13 GMT+0800">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 14:30:41 GMT+0800">
 	
-		    4月 18, 2016
+		    4月 19, 2016
     	
     </time>
     
@@ -252,39 +255,21 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。</p>
-<p>本書的第一章即提到</p>
-<blockquote>
-<p>或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒性的氾濫資訊阻礙了我們的理解。</p>
-</blockquote>
-<p>因為這本書歷史悠久，所以他只提到傳統傳播媒體，但是我想大家也可以漸漸的發現到，網路文章也上充斥的懶人包，7天快速上手、15分鐘讀懂xxx，不用花很多時間就知道很多事，但卻容易忽略掉 <code>知道 != 懂</code>，然後新的技術又出來了，然後大家又一窩蜂沖上去，完全忘記有這回事。</p>
-<blockquote>
-<p>這些媒體，經過太精心的設計，使得思想形同沒有需要了(雖然只是表相如此)。…(略)…目的都在讓人不需要面對困難或努力，很容易就整理出自己的思緒，但這些精美包裝的資訊效率實在太高了，讓觀眾、聽眾、讀者根本用不著自己做結論。相反的，他們直接將包裝過後的觀點裝進自己的腦海中，就像錄影機願意接受錄影帶一樣自然。他只要按一個倒帶的鈕，就能找到他所需要的適當言論。他根本不用思考就能表現得宜。</p>
-</blockquote>
-<p>每個人都致力於 hacker way，不斷的挑戰如何讓自己更接近自己的理想，對我來說我知道我閱讀的速度很慢，這也是為什麼想讀這本書，就是想改善這部分。</p>
-<p>有些人提倡不讀書，因為他們覺得會寫在書上的資訊都很舊，先不論這部分的爭議，但即使是如此，此本書對你也有很大的幫助，因為即使不是實體的書，網路的文章也是可以運用到這些技巧。再說這本書，刷了這本多版，又被翻成各國語言，認真的讀完它，我想利多於弊。</p>
-<p>另一個會讀書的原因在於，身為 IT 工作者，我們用眼看螢幕的時間，比其他行業的人多很多，所以除了 coding、寫文章、搜尋資料之外，必須儘量的減少對眼睛的負擔，如果有長篇有價值的文章會乾脆印下來看。</p>
-<p><a href="http://www.storm.mg/lifestyle/38645" target="_blank" rel="external">雅虎百萬年薪新貴，29歲後失明之路</a></p>
-<h3 id="針對這本書吸引我的部分"><a href="#針對這本書吸引我的部分" class="headerlink" title="針對這本書吸引我的部分"></a>針對這本書吸引我的部分</h3><ul>
-<li>教你怎麼讀懂一本超過你知識程度的書</li>
-<li>如何精準的找到主旨跟重點</li>
-<li>針對不同類型的讀物，提供一些閱讀的技巧</li>
-</ul>
-<img src="/blog/2016/04/18/how-to-read-a-book/book.jpg" alt="book.jpg" title="">
-<h3 id="閱讀的層次"><a href="#閱讀的層次" class="headerlink" title="閱讀的層次"></a>閱讀的層次</h3><ul>
-<li>基礎閱讀</li>
-<li>檢視閱讀</li>
-<li>分析閱讀<ul>
-<li>第六章　一本書的分類</li>
-<li>第七章　透視一本書</li>
-<li>第八章　與作者找出共通的詞義</li>
-<li>第九章　判斷作者的主旨</li>
-<li>第十章　公正地評斷一本書</li>
-<li>第十一章　贊同或反對作者</li>
-<li>第十二章　輔助閱讀</li>
-</ul>
-</li>
-</ul>
+            <p>範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。</p>
+<img src="/blog/2016/04/19/build-docs-with-gitbook/gitbook.png" alt="gitbook.png" title="">
+<h2 id="與-Gitbook-相關"><a href="#與-Gitbook-相關" class="headerlink" title="與 Gitbook 相關"></a>與 Gitbook 相關</h2><h3 id="安裝-Gitbook"><a href="#安裝-Gitbook" class="headerlink" title="安裝 Gitbook"></a>安裝 Gitbook</h3><p><code>npm install gitbook -g</code></p>
+<h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
+<h3 id="編譯-gitbook-html-檔"><a href="#編譯-gitbook-html-檔" class="headerlink" title="編譯 gitbook html 檔"></a>編譯 gitbook html 檔</h3><p><code>gitbook build your-document-folder</code></p>
+<h3 id="複製到指定的資料夾"><a href="#複製到指定的資料夾" class="headerlink" title="複製到指定的資料夾"></a>複製到指定的資料夾</h3><p><code>cp -R your-document-folder/_book /srv/docs</code></p>
+<h3 id="更改資料夾權限"><a href="#更改資料夾權限" class="headerlink" title="更改資料夾權限"></a>更改資料夾權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /srv/docs/&#10;sudo chown -R www-data:www-data /srv/docs/</span><br></pre></td></tr></table></figure>
+<h3 id="產生加密密碼"><a href="#產生加密密碼" class="headerlink" title="產生加密密碼"></a>產生加密密碼</h3><p><code>openssl passwd</code></p>
+<p>請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。</p>
+<h3 id="建立密碼檔"><a href="#建立密碼檔" class="headerlink" title="建立密碼檔"></a>建立密碼檔</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/conf.d/your-passwd</span><br></pre></td></tr></table></figure>
+<p><strong>your-passwd</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">your-login-account:your-encode-password</span><br></pre></td></tr></table></figure></p>
+<h3 id="編輯-nginx-設定檔"><a href="#編輯-nginx-設定檔" class="headerlink" title="編輯 nginx 設定檔"></a>編輯 nginx 設定檔</h3><p><code>vi /etc/nginx/sites-available/default</code></p>
+<p><strong>default</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;&#10;  listen 80;&#10;  server_name your.domain.name.com;&#10;  auth_basic &#34;docs website&#34;;&#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&#10;&#10;  location / &#123;&#10;    root /srv/docs;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重啟-nginx"><a href="#重啟-nginx" class="headerlink" title="重啟 nginx"></a>重啟 nginx</h3><p><code>nginx -s reload</code></p>
 
             
                 
@@ -294,12 +279,19 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/gitbook/">gitbook</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/build-docs-with-gitbook/"  data-tooltip="建構一個漂亮的文件(gitbook)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -307,7 +299,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/17/sequelize-one-to-many-update/" data-tooltip="Sequelize 一對多更新">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/18/how-to-read-a-book/" data-tooltip="好書推薦 - 如何閱讀一本書">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -322,17 +314,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -370,7 +362,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/build-docs-with-gitbook/"  data-tooltip="建構一個漂亮的文件(gitbook)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -378,7 +370,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/17/sequelize-one-to-many-update/" data-tooltip="Sequelize 一對多更新">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/18/how-to-read-a-book/" data-tooltip="好書推薦 - 如何閱讀一本書">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -393,17 +385,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -423,17 +415,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

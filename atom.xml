@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-18T15:18:16.000Z</updated>
+  <updated>2016-04-19T07:00:20.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>建構一個漂亮的文件(gitbook)</title>
+    <link href="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/"/>
+    <id>http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/</id>
+    <published>2016-04-19T06:30:41.000Z</published>
+    <updated>2016-04-19T07:00:20.000Z</updated>
+    
+    <content type="html">&lt;p&gt;範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/19/build-docs-with-gitbook/gitbook.png&quot; alt=&quot;gitbook.png&quot; title=&quot;&quot;&gt;
+&lt;h2 id=&quot;與-Gitbook-相關&quot;&gt;&lt;a href=&quot;#與-Gitbook-相關&quot; class=&quot;headerlink&quot; title=&quot;與 Gitbook 相關&quot;&gt;&lt;/a&gt;與 Gitbook 相關&lt;/h2&gt;&lt;h3 id=&quot;安裝-Gitbook&quot;&gt;&lt;a href=&quot;#安裝-Gitbook&quot; class=&quot;headerlink&quot; title=&quot;安裝 Gitbook&quot;&gt;&lt;/a&gt;安裝 Gitbook&lt;/h3&gt;&lt;p&gt;&lt;code&gt;npm install gitbook -g&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;安裝-Nginx&quot;&gt;&lt;a href=&quot;#安裝-Nginx&quot; class=&quot;headerlink&quot; title=&quot;安裝 Nginx&quot;&gt;&lt;/a&gt;安裝 Nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;brew install nginx&lt;/code&gt;&lt;br&gt;or&lt;br&gt;&lt;code&gt;yum install nginx&lt;/code&gt;&lt;br&gt;or&lt;br&gt;請依照你的作業系統調整&lt;/p&gt;
+&lt;h3 id=&quot;編譯-gitbook-html-檔&quot;&gt;&lt;a href=&quot;#編譯-gitbook-html-檔&quot; class=&quot;headerlink&quot; title=&quot;編譯 gitbook html 檔&quot;&gt;&lt;/a&gt;編譯 gitbook html 檔&lt;/h3&gt;&lt;p&gt;&lt;code&gt;gitbook build your-document-folder&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;複製到指定的資料夾&quot;&gt;&lt;a href=&quot;#複製到指定的資料夾&quot; class=&quot;headerlink&quot; title=&quot;複製到指定的資料夾&quot;&gt;&lt;/a&gt;複製到指定的資料夾&lt;/h3&gt;&lt;p&gt;&lt;code&gt;cp -R your-document-folder/_book /srv/docs&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;更改資料夾權限&quot;&gt;&lt;a href=&quot;#更改資料夾權限&quot; class=&quot;headerlink&quot; title=&quot;更改資料夾權限&quot;&gt;&lt;/a&gt;更改資料夾權限&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod -R 755 /srv/docs/&amp;#10;sudo chown -R www-data:www-data /srv/docs/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;產生加密密碼&quot;&gt;&lt;a href=&quot;#產生加密密碼&quot; class=&quot;headerlink&quot; title=&quot;產生加密密碼&quot;&gt;&lt;/a&gt;產生加密密碼&lt;/h3&gt;&lt;p&gt;&lt;code&gt;openssl passwd&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。&lt;/p&gt;
+&lt;h3 id=&quot;建立密碼檔&quot;&gt;&lt;a href=&quot;#建立密碼檔&quot; class=&quot;headerlink&quot; title=&quot;建立密碼檔&quot;&gt;&lt;/a&gt;建立密碼檔&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/nginx/conf.d/your-passwd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;your-passwd&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;your-login-account:your-encode-password&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;編輯-nginx-設定檔&quot;&gt;&lt;a href=&quot;#編輯-nginx-設定檔&quot; class=&quot;headerlink&quot; title=&quot;編輯 nginx 設定檔&quot;&gt;&lt;/a&gt;編輯 nginx 設定檔&lt;/h3&gt;&lt;p&gt;&lt;code&gt;vi /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;default&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&amp;#10;  listen 80;&amp;#10;  server_name your.domain.name.com;&amp;#10;  auth_basic &amp;#34;docs website&amp;#34;;&amp;#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&amp;#10;&amp;#10;  location / &amp;#123;&amp;#10;    root /srv/docs;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;重啟-nginx&quot;&gt;&lt;a href=&quot;#重啟-nginx&quot; class=&quot;headerlink&quot; title=&quot;重啟 nginx&quot;&gt;&lt;/a&gt;重啟 nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;nginx -s reload&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/19/build-docs-with-gitbook/gitbook.png&quot; alt=&quot;gi
+    
+    </summary>
+    
+    
+      <category term="gitbook" scheme="http://alincode.github.io/blog/tags/gitbook/"/>
+    
+  </entry>
   
   <entry>
     <title>好書推薦 - 如何閱讀一本書</title>
@@ -870,35 +906,6 @@
     
     
       <category term="Flux" scheme="http://alincode.github.io/blog/tags/Flux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 防止連點</title>
-    <link href="http://alincode.github.io/blog/2016/03/30/react-disable-button/"/>
-    <id>http://alincode.github.io/blog/2016/03/30/react-disable-button/</id>
-    <published>2016-03-30T15:09:36.000Z</published>
-    <updated>2016-03-30T17:23:05.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;實作流程&quot;&gt;&lt;a href=&quot;#實作流程&quot; class=&quot;headerlink&quot; title=&quot;實作流程&quot;&gt;&lt;/a&gt;實作流程&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。&lt;/li&gt;
-&lt;li&gt;加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT&lt;/li&gt;
-&lt;li&gt;在 Store 的地方要更新 isSending 狀態&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Component-要做的事&quot;&gt;&lt;a href=&quot;#Component-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Component 要做的事&quot;&gt;&lt;/a&gt;Component 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;submit() &amp;#123;&amp;#10;  var email = this.state.email&amp;#10;  var password =  this.state.password&amp;#10;&amp;#10;  if (email &amp;#38;&amp;#38; password &amp;#38;&amp;#38; !this.state.isSending) &amp;#123;&amp;#10;    AuthActions.login(email, password);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Action-要做的事&quot;&gt;&lt;a href=&quot;#Action-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Action 要做的事&quot;&gt;&lt;/a&gt;Action 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports.login = function(email, password) &amp;#123;&amp;#10;&amp;#10;  AppDispatcher.dispatch(&amp;#123;&amp;#10;    action: AuthConstants.AUTH_SENDING,&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  var req = new XMLHttpRequest();&amp;#10;  ...&amp;#30053;...&amp;#10;  req.onreadystatechange = function() &amp;#123;&amp;#10;    if (req.readyState !== 4) return;&amp;#10;&amp;#10;    AppDispatcher.dispatch(&amp;#123;&amp;#10;      action: AuthConstants.AUTH_SENT,&amp;#10;    &amp;#125;);&amp;#10;&amp;#10;    switch (req.status) &amp;#123;&amp;#10;      case 200:&amp;#10;        AppDispatcher.dispatch(&amp;#123;&amp;#10;          action: AuthConstants.AUTH_LOGINED,&amp;#10;          ...&amp;#30053;...&amp;#10;        &amp;#125;);&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;;&amp;#10;  ...&amp;#30053;...&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Store-要做的事&quot;&gt;&lt;a href=&quot;#Store-要做的事&quot; class=&quot;headerlink&quot; title=&quot;Store 要做的事&quot;&gt;&lt;/a&gt;Store 要做的事&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;case AuthConstants.AUTH_SENDING:&amp;#10;  _isSending = true;&amp;#10;  AuthStore.emitChange();&amp;#10;  break;&amp;#10;&amp;#10;case AuthConstants.AUTH_SENT:&amp;#10;  _isSending = false;&amp;#10;  AuthStore.emitChange();&amp;#10;  break;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;實作流程&quot;&gt;&lt;a href=&quot;#實作流程&quot; class=&quot;headerlink&quot; title=&quot;實作流程&quot;&gt;&lt;/a&gt;實作流程&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。&lt;/l
-    
-    </summary>
-    
-    
-      <category term="React" scheme="http://alincode.github.io/blog/tags/React/"/>
     
   </entry>
   

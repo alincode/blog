@@ -230,6 +230,63 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/01/jwt-1/">
+                            JWT (1) - 為什麼我們要用 Access Token ?
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 01 2016 19:41:01 GMT+0800">
+	
+		    3月 01, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="為什麼我們要用-Access-Token"><a href="#為什麼我們要用-Access-Token" class="headerlink" title="為什麼我們要用 Access Token ?"></a>為什麼我們要用 Access Token ?</h3><p>SPA 與 Restful API 的盛行，我們現在的軟體架構都不止侷限一個主機或同個 domain，以往將資料存在 Session 已不可行。</p>
+<p>現在的網站常常會需要呼叫各式各樣的 API，以達到跨平整合，例如很多網站都會提供，你只要登入你的 Facebook 帳號，就不用再填註冊資料，直接授權網站跟 Facebook 要資料，幫你填好繁雜的註冊手續。</p>
+<p>那平台跟平台互相傳遞資料，最重要的一件事是什麼？那當然就是驗證身份了，有許多驗證機制，但目前最主流的是 Oauth2，Facebook、Youtube、Google 都是使用這種方式，但 Oauth2 不是此篇的重點，略…。</p>
+<p>其實不管是 Oauth2 或其他驗證機制，基本上就是與你做身份驗證，然後給你一個 Access Token (鑰匙)，然後就可以用這個 Access Token 有限制的跟其他平台要資料，這把 Access Token 不限本人使用，只是有這個 Access Token 的人，都可以取得你的資料。</p>
+<p>那不是很不安全？所以那是ㄧ把有限制的鑰匙。</p>
+<h3 id="限制："><a href="#限制：" class="headerlink" title="限制："></a>限制：</h3><ul>
+<li>時間限制：就像日租房，你付了錢拿到鑰匙，可以自由進出，但隔天即使你有鑰匙，也打不開門。</li>
+<li>權限限制：房東給你一把鑰匙，但只能開你的房間，甚至是會分等級，或許一般房客，不能去健身房，VIP房客則可以去。</li>
+<li>略….</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/01/jwt-1/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/02/27/set-hexo-tranquilpeak-theme/">
                             安裝 hexo tranquilpeak 佈景
                         </a>

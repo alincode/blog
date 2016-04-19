@@ -230,6 +230,62 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
+                            Buddy CI 踩雷心得
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Apr 09 2016 23:29:02 GMT+0800">
+	
+		    4月 09, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
+<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
+<h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
+<p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
+<p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
+<p><strong>小提醒</strong></p>
+<p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
+<h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
+<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/09/buddy-ci-3/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/08/buddy-ci-2/">
                             Buddy CI Pipelines 流程
                         </a>
@@ -896,55 +952,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/31/flux-life-cycle-demo/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/30/react-disable-button/">
-                            React 防止連點
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Mar 30 2016 23:09:36 GMT+0800">
-	
-		    3月 30, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h2><ul>
-<li>有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。</li>
-<li>加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT</li>
-<li>在 Store 的地方要更新 isSending 狀態</li>
-</ul>
-<h3 id="Component-要做的事"><a href="#Component-要做的事" class="headerlink" title="Component 要做的事"></a>Component 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">submit() &#123;&#10;  var email = this.state.email&#10;  var password =  this.state.password&#10;&#10;  if (email &#38;&#38; password &#38;&#38; !this.state.isSending) &#123;&#10;    AuthActions.login(email, password);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.login = function(email, password) &#123;&#10;&#10;  AppDispatcher.dispatch(&#123;&#10;    action: AuthConstants.AUTH_SENDING,&#10;  &#125;);&#10;&#10;  var req = new XMLHttpRequest();&#10;  ...&#30053;...&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState !== 4) return;&#10;&#10;    AppDispatcher.dispatch(&#123;&#10;      action: AuthConstants.AUTH_SENT,&#10;    &#125;);&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_LOGINED,&#10;          ...&#30053;...&#10;        &#125;);&#10;    &#125;&#10;  &#125;;&#10;  ...&#30053;...&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case AuthConstants.AUTH_SENDING:&#10;  _isSending = true;&#10;  AuthStore.emitChange();&#10;  break;&#10;&#10;case AuthConstants.AUTH_SENT:&#10;  _isSending = false;&#10;  AuthStore.emitChange();&#10;  break;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/30/react-disable-button/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
