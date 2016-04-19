@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-19T07:23:02.000Z</updated>
+  <updated>2016-04-19T07:24:04.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/"/>
     <id>http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/</id>
     <published>2016-04-19T06:30:41.000Z</published>
-    <updated>2016-04-19T07:23:02.000Z</updated>
+    <updated>2016-04-19T07:24:04.000Z</updated>
     
-    <content type="html">&lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。&lt;/p&gt;
+    <content type="html">&lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。&lt;/p&gt;
 &lt;p&gt;現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔），有些人說，那用 google drive，但其實對於一般的使用者友善度，還是有一段差距，而且我總覺得我的游標會一直亂跑。&lt;/p&gt;
 &lt;p&gt;gitbook 有提供一個圖形化工具，可以很容易的編輯 markdown 格式的文字檔，再結合一些 git commit 的概念，就可以更新。但這對於一般使用者還是太困難，這時放在 github 的好處就顯現了，他有網站編輯 markdown 檔的界面，弄得像留言板一樣，如果你說連留言板都不知道怎麼用，恩…那…你不要用好了。&lt;/p&gt;
 &lt;h2 id=&quot;整合方案&quot;&gt;&lt;a href=&quot;#整合方案&quot; class=&quot;headerlink&quot; title=&quot;整合方案&quot;&gt;&lt;/a&gt;整合方案&lt;/h2&gt;&lt;ul&gt;
@@ -50,7 +50,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。&lt;/
+      &lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式
     
     </summary>
     
