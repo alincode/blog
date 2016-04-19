@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-19T07:00:20.000Z</updated>
+  <updated>2016-04-19T07:02:49.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>建構一個漂亮的文件(gitbook)</title>
+    <title>建構一個漂亮的文件 with gitbook</title>
     <link href="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/"/>
     <id>http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/</id>
     <published>2016-04-19T06:30:41.000Z</published>
-    <updated>2016-04-19T07:00:20.000Z</updated>
+    <updated>2016-04-19T07:02:49.000Z</updated>
     
     <content type="html">&lt;p&gt;範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/04/19/build-docs-with-gitbook/gitbook.png&quot; alt=&quot;gitbook.png&quot; title=&quot;&quot;&gt;
