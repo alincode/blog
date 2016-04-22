@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-19T07:25:46.000Z</updated>
+  <updated>2016-04-22T09:48:39.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>selenium-with-nodejs</title>
+    <link href="http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/"/>
+    <id>http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/</id>
+    <published>2016-04-20T09:29:41.000Z</published>
+    <updated>2016-04-22T09:48:39.000Z</updated>
+    
+    <content type="html">
+&lt;h3 id=&quot;先決條件&quot;&gt;&lt;a href=&quot;#先決條件&quot; class=&quot;headerlink&quot; title=&quot;先決條件&quot;&gt;&lt;/a&gt;先決條件&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;有 firefox&lt;/li&gt;
+&lt;li&gt;有安裝好的 NodeJS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;三分鐘內，建一個自動化測試&quot;&gt;&lt;a href=&quot;#三分鐘內，建一個自動化測試&quot; class=&quot;headerlink&quot; title=&quot;三分鐘內，建一個自動化測試&quot;&gt;&lt;/a&gt;三分鐘內，建一個自動化測試&lt;/h3&gt;&lt;p&gt;託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建立測試專案資料夾&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir selenium-sendbox&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;建立 npm 來管理，測試專案&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd selenium-sendbox&amp;#10;npm init -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安裝 selenium-webdriver *&lt;/strong&gt;&lt;br&gt;&lt;code&gt;npm i selenium-webdriver -S&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建立一個基本測試script&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// test.js&amp;#10;var webdriver = require(&amp;#39;selenium-webdriver&amp;#39;),&amp;#10;    By = require(&amp;#39;selenium-webdriver&amp;#39;).By,&amp;#10;    until = require(&amp;#39;selenium-webdriver&amp;#39;).until;&amp;#10;&amp;#10;var driver = new webdriver.Builder()&amp;#10;    .forBrowser(&amp;#39;firefox&amp;#39;)&amp;#10;    .build();&amp;#10;&amp;#10;driver.get(&amp;#39;http://www.google.com/ncr&amp;#39;);&amp;#10;driver.findElement(By.name(&amp;#39;q&amp;#39;)).sendKeys(&amp;#39;&amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712;&amp;#39;);&amp;#10;driver.findElement(By.name(&amp;#39;btnG&amp;#39;)).click();&amp;#10;driver.wait(until.titleIs(&amp;#39;&amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712; - Google Search&amp;#39;), 3000);&amp;#10;driver.quit();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;執行&lt;/strong&gt;&lt;br&gt;&lt;code&gt;node test.js&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      
+&lt;h3 id=&quot;先決條件&quot;&gt;&lt;a href=&quot;#先決條件&quot; class=&quot;headerlink&quot; title=&quot;先決條件&quot;&gt;&lt;/a&gt;先決條件&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;有 firefox&lt;/li&gt;
+&lt;li&gt;有安裝好的 NodeJS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;三分鐘內
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>建構一個漂亮的文件 with gitbook</title>
@@ -868,52 +903,6 @@
     
     
       <category term="Geb" scheme="http://alincode.github.io/blog/tags/Geb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flux 生命週期範例</title>
-    <link href="http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/"/>
-    <id>http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/</id>
-    <published>2016-03-30T19:52:49.000Z</published>
-    <updated>2016-03-31T18:40:53.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整範例&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;第一次 Component 被載入時，會做哪些事？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;執行 getInitialState&lt;/li&gt;
-&lt;li&gt;getInitialState 去 Store 拿 state 第一次初始化需要載入的資料&lt;/li&gt;
-&lt;li&gt;執行 componentWillMount&lt;/li&gt;
-&lt;li&gt;執行 Component render&lt;/li&gt;
-&lt;li&gt;執行 componentDidMount&lt;/li&gt;
-&lt;li&gt;componentDidMount 會加入 store 的 addChangeListener&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;TestStore.addChangeListener(this.storeCallback);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;有值更動時&quot;&gt;&lt;a href=&quot;#有值更動時&quot; class=&quot;headerlink&quot; title=&quot;有值更動時&quot;&gt;&lt;/a&gt;有值更動時&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;執行被 bind 的 onChange&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#60;textarea rows=&amp;#34;4&amp;#34; cols=&amp;#34;50&amp;#34; onChange=&amp;#123;this._onChange&amp;#125; value=&amp;#123;this.state.text&amp;#125;/&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;onChange 取得值後傳給 action&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;_onChange: function(event) &amp;#123;&amp;#10;   TestAction.updateText(event.target.value);&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  updateText: function(text) &amp;#123;&amp;#10;    console.log(&amp;#39;=== action updateText ===&amp;#39;);&amp;#10;    AppDispatcher.dispatch(&amp;#123;&amp;#10;      type: ActionTypes.UPDATE_TEXT,&amp;#10;      text: text&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125;,&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;接著 Store 的 dispatcherIndex 被觸發&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dispatcherIndex: AppDispatcher.register(function(payload) &amp;#123;&amp;#10;    var action = payload.type;&amp;#10;    switch(action) &amp;#123;&amp;#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&amp;#10;        _text = payload.text;&amp;#10;        TestStore.emitChange();&amp;#10;        break;&amp;#10;      default:&amp;#10;        console.log(&amp;#39;=== store dispatcherIndex default ===&amp;#39;);&amp;#10;    &amp;#125;&amp;#10;    return true; // No errors. Needed by promise in Dispatcher.&amp;#10;  &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;storeCallback: function() &amp;#123;&amp;#10;  this.setState(getStateStores());&amp;#10;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;會接著執行 componentWillUpdate&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;然後會重新 render component&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;render 完後會，會執行 componentDidUpdate&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&quot;資料來源&quot;&gt;&lt;a href=&quot;#資料來源&quot; class=&quot;headerlink&quot; title=&quot;資料來源&quot;&gt;&lt;/a&gt;資料來源&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Component Lifecycle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;完整範例&lt;/a
-    
-    </summary>
-    
-    
-      <category term="Flux" scheme="http://alincode.github.io/blog/tags/Flux/"/>
     
   </entry>
   

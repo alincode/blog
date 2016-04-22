@@ -6,27 +6,47 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>建構一個漂亮的文件 with gitbook - alincode</title>
+    <title>selenium-with-nodejs - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。
-現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔">
+    <meta name="description" content="先決條件
+有 firefox
+有安裝好的 NodeJS
+
+三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
+建立測試專案資料夾
+1mkdir selenium-sendbox
+建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
+安裝 selenium-webdriver *npm i sel">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="建構一個漂亮的文件 with gitbook">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/index.html">
+<meta property="og:title" content="selenium-with-nodejs">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。
-現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/19/build-docs-with-gitbook/gitbook.png">
-<meta property="og:updated_time" content="2016-04-19T07:25:46.000Z">
+<meta property="og:description" content="先決條件
+有 firefox
+有安裝好的 NodeJS
+
+三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
+建立測試專案資料夾
+1mkdir selenium-sendbox
+建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
+安裝 selenium-webdriver *npm i sel">
+<meta property="og:updated_time" content="2016-04-22T09:48:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="建構一個漂亮的文件 with gitbook">
-<meta name="twitter:description" content="我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。
-現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔">
+<meta name="twitter:title" content="selenium-with-nodejs">
+<meta name="twitter:description" content="先決條件
+有 firefox
+有安裝好的 NodeJS
+
+三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
+建立測試專案資料夾
+1mkdir selenium-sendbox
+建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
+安裝 selenium-webdriver *npm i sel">
     
     
         
@@ -231,13 +251,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            建構一個漂亮的文件 with gitbook
+            selenium-with-nodejs
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Apr 19 2016 14:30:41 GMT+0800">
+    <time itemprop="datePublished" content="Wed Apr 20 2016 17:29:41 GMT+0800">
 	
-		    4月 19, 2016
+		    4月 20, 2016
     	
     </time>
     
@@ -246,30 +266,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。</p>
-<p>現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔），有些人說，那用 google drive，但其實對於一般的使用者友善度，還是有一段差距，而且我總覺得我的游標會一直亂跑。</p>
-<p>gitbook 有提供一個圖形化工具，可以很容易的編輯 markdown 格式的文字檔，再結合一些 git commit 的概念，就可以更新。但這對於一般使用者還是太困難，這時放在 github 的好處就顯現了，他有網站編輯 markdown 檔的界面，弄得像留言板一樣，如果你說連留言板都不知道怎麼用，恩…那…你不要用好了。</p>
-<h2 id="整合方案"><a href="#整合方案" class="headerlink" title="整合方案"></a>整合方案</h2><ul>
-<li>github</li>
-<li>gitbook for</li>
-<li>nginx for 靜態檔案伺服器</li>
-<li>cron for 自動排成更新</li>
+            
+<h3 id="先決條件"><a href="#先決條件" class="headerlink" title="先決條件"></a>先決條件</h3><ul>
+<li>有 firefox</li>
+<li>有安裝好的 NodeJS</li>
 </ul>
-<p>範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。</p>
-<img src="/blog/2016/04/19/build-docs-with-gitbook/gitbook.png" alt="gitbook.png" title="">
-<h2 id="與-Gitbook-相關"><a href="#與-Gitbook-相關" class="headerlink" title="與 Gitbook 相關"></a>與 Gitbook 相關</h2><h3 id="安裝-Gitbook"><a href="#安裝-Gitbook" class="headerlink" title="安裝 Gitbook"></a>安裝 Gitbook</h3><p><code>npm install gitbook -g</code></p>
-<h3 id="編譯-gitbook-html-檔"><a href="#編譯-gitbook-html-檔" class="headerlink" title="編譯 gitbook html 檔"></a>編譯 gitbook html 檔</h3><p><code>gitbook build your-document-folder</code></p>
-<h2 id="與-Nginx-相關"><a href="#與-Nginx-相關" class="headerlink" title="與 Nginx 相關"></a>與 Nginx 相關</h2><h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
-<h3 id="複製到指定的資料夾"><a href="#複製到指定的資料夾" class="headerlink" title="複製到指定的資料夾"></a>複製到指定的資料夾</h3><p><code>cp -R your-document-folder/_book /srv/docs</code></p>
-<h3 id="更改資料夾權限"><a href="#更改資料夾權限" class="headerlink" title="更改資料夾權限"></a>更改資料夾權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /srv/docs/&#10;sudo chown -R www-data:www-data /srv/docs/</span><br></pre></td></tr></table></figure>
-<h3 id="產生加密密碼"><a href="#產生加密密碼" class="headerlink" title="產生加密密碼"></a>產生加密密碼</h3><p><code>openssl passwd</code></p>
-<p>請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。</p>
-<h3 id="建立密碼檔"><a href="#建立密碼檔" class="headerlink" title="建立密碼檔"></a>建立密碼檔</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/conf.d/your-passwd</span><br></pre></td></tr></table></figure>
-<p><strong>your-passwd</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">your-login-account:your-encode-password</span><br></pre></td></tr></table></figure></p>
-<h3 id="編輯-nginx-設定檔"><a href="#編輯-nginx-設定檔" class="headerlink" title="編輯 nginx 設定檔"></a>編輯 nginx 設定檔</h3><p><code>vi /etc/nginx/sites-available/default</code></p>
-<p><strong>default</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;&#10;  listen 80;&#10;  server_name your.domain.name.com;&#10;  auth_basic &#34;docs website&#34;;&#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&#10;&#10;  location / &#123;&#10;    root /srv/docs;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="重啟-nginx"><a href="#重啟-nginx" class="headerlink" title="重啟 nginx"></a>重啟 nginx</h3><p><code>nginx -s reload</code></p>
+<h3 id="三分鐘內，建一個自動化測試"><a href="#三分鐘內，建一個自動化測試" class="headerlink" title="三分鐘內，建一個自動化測試"></a>三分鐘內，建一個自動化測試</h3><p>託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。</p>
+<p><strong>建立測試專案資料夾</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir selenium-sendbox</span><br></pre></td></tr></table></figure>
+<p><strong>建立 npm 來管理，測試專案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd selenium-sendbox&#10;npm init -y</span><br></pre></td></tr></table></figure></p>
+<p><strong>安裝 selenium-webdriver *</strong><br><code>npm i selenium-webdriver -S</code></p>
+<p><strong>建立一個基本測試script</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// test.js&#10;var webdriver = require(&#39;selenium-webdriver&#39;),&#10;    By = require(&#39;selenium-webdriver&#39;).By,&#10;    until = require(&#39;selenium-webdriver&#39;).until;&#10;&#10;var driver = new webdriver.Builder()&#10;    .forBrowser(&#39;firefox&#39;)&#10;    .build();&#10;&#10;driver.get(&#39;http://www.google.com/ncr&#39;);&#10;driver.findElement(By.name(&#39;q&#39;)).sendKeys(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712;&#39;);&#10;driver.findElement(By.name(&#39;btnG&#39;)).click();&#10;driver.wait(until.titleIs(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - Google Search&#39;), 3000);&#10;driver.quit();</span><br></pre></td></tr></table></figure></p>
+<p><strong>執行</strong><br><code>node test.js</code></p>
 
             
                 
@@ -279,19 +287,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/gitbook/">gitbook</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/20/selenium-with-nodejs/"  data-tooltip="selenium-with-nodejs">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -299,7 +300,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/18/how-to-read-a-book/" data-tooltip="好書推薦 - 如何閱讀一本書">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/build-docs-with-gitbook/" data-tooltip="建構一個漂亮的文件 with gitbook">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -314,17 +315,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -362,7 +363,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/20/selenium-with-nodejs/"  data-tooltip="selenium-with-nodejs">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -370,7 +371,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/18/how-to-read-a-book/" data-tooltip="好書推薦 - 如何閱讀一本書">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/build-docs-with-gitbook/" data-tooltip="建構一個漂亮的文件 with gitbook">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -385,17 +386,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -415,17 +416,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
