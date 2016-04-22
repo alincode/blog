@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-22T09:48:39.000Z</updated>
+  <updated>2016-04-22T09:53:10.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>selenium-with-nodejs</title>
+    <title>Selenium with Nodejs</title>
     <link href="http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/"/>
     <id>http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/</id>
     <published>2016-04-20T09:29:41.000Z</published>
-    <updated>2016-04-22T09:48:39.000Z</updated>
+    <updated>2016-04-22T09:53:10.000Z</updated>
     
-    <content type="html">
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://www.seleniumhq.org/images/big-logo.png&quot; alt=&quot;selenium&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;先決條件&quot;&gt;&lt;a href=&quot;#先決條件&quot; class=&quot;headerlink&quot; title=&quot;先決條件&quot;&gt;&lt;/a&gt;先決條件&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;有 firefox&lt;/li&gt;
 &lt;li&gt;有安裝好的 NodeJS&lt;/li&gt;
@@ -38,12 +38,8 @@
     
     <summary type="html">
     
-      
-&lt;h3 id=&quot;先決條件&quot;&gt;&lt;a href=&quot;#先決條件&quot; class=&quot;headerlink&quot; title=&quot;先決條件&quot;&gt;&lt;/a&gt;先決條件&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;有 firefox&lt;/li&gt;
-&lt;li&gt;有安裝好的 NodeJS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;三分鐘內
+      &lt;p&gt;&lt;img src=&quot;http://www.seleniumhq.org/images/big-logo.png&quot; alt=&quot;selenium&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;先決條件&quot;&gt;&lt;a href=&quot;#先決條件&quot; class=&quot;headerlink&quot; title=&quot;先決條件
     
     </summary>
     
