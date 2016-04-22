@@ -6,43 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>第一個 Nightwatch 自動化測試 - alincode</title>
+    <title>自動化測試框架比較 with NodeJS - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="安裝必要環境
-有 Firefox 或 Chrome
-有 NodeJS
-
-安裝必要 modulesnpm i selenium-server nightwatch chromedriver -S
-安裝 nightwatchnpm i nightwatch -g
-設定撰寫nightwatch環境設定1module.exports = &amp;#123;&amp;#10;  src_folders: [&amp;#39;./">
+    <meta name="description" content="資料來源：NPMCompare.com">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="第一個 Nightwatch 自動化測試">
-<meta property="og:url" content="http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/index.html">
+<meta property="og:title" content="自動化測試框架比較 with NodeJS">
+<meta property="og:url" content="http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="安裝必要環境
-有 Firefox 或 Chrome
-有 NodeJS
-
-安裝必要 modulesnpm i selenium-server nightwatch chromedriver -S
-安裝 nightwatchnpm i nightwatch -g
-設定撰寫nightwatch環境設定1module.exports = &amp;#123;&amp;#10;  src_folders: [&amp;#39;./">
-<meta property="og:image" content="http://nightwatchjs.org/img/logo-nightwatch.png">
-<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/21/start-with-nightwatch/console.png">
-<meta property="og:updated_time" content="2016-04-22T10:40:52.000Z">
+<meta property="og:description" content="資料來源：NPMCompare.com">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/22/front-test-framework-compare/comparing1.png">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/22/front-test-framework-compare/comparing2.png">
+<meta property="og:image" content="http://alincode.github.io/blog/blog/2016/04/22/front-test-framework-compare/comparing3.png">
+<meta property="og:updated_time" content="2016-04-22T19:01:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一個 Nightwatch 自動化測試">
-<meta name="twitter:description" content="安裝必要環境
-有 Firefox 或 Chrome
-有 NodeJS
-
-安裝必要 modulesnpm i selenium-server nightwatch chromedriver -S
-安裝 nightwatchnpm i nightwatch -g
-設定撰寫nightwatch環境設定1module.exports = &amp;#123;&amp;#10;  src_folders: [&amp;#39;./">
+<meta name="twitter:title" content="自動化測試框架比較 with NodeJS">
+<meta name="twitter:description" content="資料來源：NPMCompare.com">
     
     
         
@@ -247,13 +230,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            第一個 Nightwatch 自動化測試
+            自動化測試框架比較 with NodeJS
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Apr 21 2016 18:04:42 GMT+0800">
+    <time itemprop="datePublished" content="Fri Apr 22 2016 02:56:27 GMT+0800">
 	
-		    4月 21, 2016
+		    4月 22, 2016
     	
     </time>
     
@@ -262,18 +245,10 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><img src="http://nightwatchjs.org/img/logo-nightwatch.png" alt="nightwatch.js"></p>
-<h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><h4 id="必要環境"><a href="#必要環境" class="headerlink" title="必要環境"></a>必要環境</h4><ul>
-<li>有 Firefox 或 Chrome</li>
-<li>有 NodeJS</li>
-</ul>
-<h4 id="安裝必要-modules"><a href="#安裝必要-modules" class="headerlink" title="安裝必要 modules"></a>安裝必要 modules</h4><p><code>npm i selenium-server nightwatch chromedriver -S</code></p>
-<h4 id="安裝-nightwatch"><a href="#安裝-nightwatch" class="headerlink" title="安裝 nightwatch"></a>安裝 nightwatch</h4><p><code>npm i nightwatch -g</code></p>
-<h3 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h3><h4 id="撰寫nightwatch環境設定"><a href="#撰寫nightwatch環境設定" class="headerlink" title="撰寫nightwatch環境設定"></a>撰寫nightwatch環境設定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  src_folders: [&#39;./tests&#39;],&#10;  output_folder: &#39;./results&#39;,&#10;  live_output: true,&#10;&#10;  selenium: &#123;&#10;    start_process: true,&#10;    server_path: &#39;./node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar&#39;,&#10;    log_path: &#39;./results&#39;,&#10;    host: &#39;127.0.0.1&#39;,&#10;    port: 4444,&#10;    cli_args: &#123;&#10;      &#39;webdriver.chrome.driver&#39;: &#39;./node_modules/.bin/chromedriver&#39;&#10;    &#125;&#10;  &#125;,&#10;&#10;  test_settings: &#123;&#10;    default: &#123;&#10;      launch_url: &#39;http://localhost&#39;,&#10;      selenium_host: &#39;127.0.0.1&#39;,&#10;      selenium_port: 4444,&#10;      silent: true,&#10;      disable_colors: false,&#10;      screenshots: &#123;&#10;        enabled: true,&#10;        path: &#39;./results/screenshots&#39;&#10;      &#125;,&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;firefox&#39;,&#10;        javascriptEnabled: true,&#10;        acceptSslCerts: true&#10;      &#125;&#10;    &#125;,&#10;&#10;    chrome: &#123;&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;chrome&#39;,&#10;        javascriptEnabled: true&#10;      &#125;&#10;    &#125;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h3><img src="/blog/2016/04/21/start-with-nightwatch/console.png" alt="console.png" title="">
-<p><strong>撰寫一個簡單的自動化測試</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  &#39;&#36617;&#20837;Blog&#39;: function (client) &#123;&#10;    client&#10;      .url(&#39;http://blog.mokayo.com&#39;)&#10;      .waitForElementVisible(&#39;body&#39;, 1000)&#10;      .assert.title(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;)&#10;      .end();&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>執行</strong><br><code>nightwatch -c ./Nightwatch.js --env default</code></p>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/nightwatch-sandbox" target="_blank" rel="external">原始碼下載</a></p>
+            <p>資料來源：<code>NPMCompare.com</code></p>
+<img src="/blog/2016/04/22/front-test-framework-compare/comparing1.png" alt="comparing1.png" title="">
+<img src="/blog/2016/04/22/front-test-framework-compare/comparing2.png" alt="comparing2.png" title="">
+<img src="/blog/2016/04/22/front-test-framework-compare/comparing3.png" alt="comparing3.png" title="">
 
             
                 
@@ -286,7 +261,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/nightwatch/">nightwatch</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-testing/">auto testing</a>
 
             </div>
         
@@ -295,7 +270,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/"  data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -303,7 +278,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/20/selenium-with-nodejs/" data-tooltip="Selenium with Nodejs">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/21/start-with-nightwatch/" data-tooltip="第一個 Nightwatch 自動化測試">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -318,17 +293,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -366,7 +341,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/"  data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -374,7 +349,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/20/selenium-with-nodejs/" data-tooltip="Selenium with Nodejs">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/21/start-with-nightwatch/" data-tooltip="第一個 Nightwatch 自動化測試">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -389,17 +364,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -419,17 +394,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-22T10:40:52.000Z</updated>
+  <updated>2016-04-22T19:01:13.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自動化測試框架比較 with NodeJS</title>
+    <link href="http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/"/>
+    <id>http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/</id>
+    <published>2016-04-21T18:56:27.000Z</published>
+    <updated>2016-04-22T19:01:13.000Z</updated>
+    
+    <content type="html">&lt;p&gt;資料來源：&lt;code&gt;NPMCompare.com&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing1.png&quot; alt=&quot;comparing1.png&quot; title=&quot;&quot;&gt;
+&lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing2.png&quot; alt=&quot;comparing2.png&quot; title=&quot;&quot;&gt;
+&lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing3.png&quot; alt=&quot;comparing3.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;資料來源：&lt;code&gt;NPMCompare.com&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing1.png&quot; alt=&quot;comparing1.png&quot; title=&quot;
+    
+    </summary>
+    
+    
+      <category term="auto testing" scheme="http://alincode.github.io/blog/tags/auto-testing/"/>
+    
+  </entry>
   
   <entry>
     <title>第一個 Nightwatch 自動化測試</title>
@@ -828,73 +853,6 @@
     
     
       <category term="PM2" scheme="http://alincode.github.io/blog/tags/PM2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Geb 0.10.x ~ 0.12.x 更新重點</title>
-    <link href="http://alincode.github.io/blog/2016/04/02/geb-version-12-x/"/>
-    <id>http://alincode.github.io/blog/2016/04/02/geb-version-12-x/</id>
-    <published>2016-04-01T23:46:19.000Z</published>
-    <updated>2016-04-02T05:44:31.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;0-12-2&quot;&gt;&lt;a href=&quot;#0-12-2&quot; class=&quot;headerlink&quot; title=&quot;0.12.2&quot;&gt;&lt;/a&gt;0.12.2&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;改善對 Null 的驗證 &lt;a href=&quot;https://github.com/geb/issues/issues/398&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#398&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;0-12-1&quot;&gt;&lt;a href=&quot;#0-12-1&quot; class=&quot;headerlink&quot; title=&quot;0.12.1&quot;&gt;&lt;/a&gt;0.12.1&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;針對 Intellij 的抱怨修改 &lt;code&gt;waitFor()&lt;/code&gt; 使得 &lt;code&gt;waitFor()&lt;/code&gt; 可在 Intellij 被辨識 &lt;a href=&quot;https://github.com/geb/issues/issues/391&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#391&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;修正 class attribute selector 的錯誤，兩種寫法都應該可以正常執行。 &lt;a href=&quot;https://github.com/geb/issues/issues/390&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;390&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;寫法一&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  userMenuButton &amp;#123; $(&amp;#39;a.user-menu-button&amp;#39;) &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;寫法二&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  userMenuButton &amp;#123; $(&amp;#39;a&amp;#39;, class: &amp;#39;user-menu-button&amp;#39;) &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;0-12-0&quot;&gt;&lt;a href=&quot;#0-12-0&quot; class=&quot;headerlink&quot; title=&quot;0.12.0&quot;&gt;&lt;/a&gt;0.12.0&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;特別對 Page 和 module，有多項改善&lt;/li&gt;
-&lt;li&gt;改善錯誤訊息，讓開發者更容易除錯&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;新功能&quot;&gt;&lt;a href=&quot;#新功能&quot; class=&quot;headerlink&quot; title=&quot;新功能&quot;&gt;&lt;/a&gt;新功能&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;支援 page 的 title 可以帶變數，變成可動態的。&lt;a href=&quot;https://github.com/geb/issues/issues/310&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#310&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ProductPage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  String productId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ProductPage(String productId) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.productId = productId&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; at = &amp;#123; title == &lt;span class=&quot;string&quot;&gt;&quot;Product &#39;$productId&#39;&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;to &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ProductPage(&lt;span class=&quot;string&quot;&gt;&quot;myId&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;支援在 Page 內，也可以使用 click 方法，做頁面切換&lt;a href=&quot;https://github.com/geb/issues/issues/183&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#183&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ListPage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; content = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    movie(&lt;span class=&quot;string&quot;&gt;to:&lt;/span&gt; MoviePage) &amp;#123; $(&lt;span class=&quot;string&quot;&gt;&quot;a.movie&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;text:&lt;/span&gt; contains(it) &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MoviePage&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Page&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; at = &amp;#123; title == movieTitle &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  String movieTitle&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;at ListPage&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;movie.click &amp;#123; movieTitle = &lt;span class=&quot;string&quot;&gt;&quot;Jaws&quot;&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;at MoviePage&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;改善 WaitTimeoutException 的錯誤訊息 &lt;a href=&quot;https://github.com/geb/issues/issues/386&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#386&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;waitFor block exception message contains cause&quot;&lt;/span&gt;() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;  given:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; wait = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Wait(&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  when:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  wait.waitFor &amp;#123; &lt;span class=&quot;string&quot;&gt;&#39;not empty&#39;&lt;/span&gt;.empty &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;label&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  then:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  WaitTimeoutException exception = thrown()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  exception.message.contains(&lt;span class=&quot;string&quot;&gt;&quot;&#39;not empty&#39;.empty&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;test case&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/geb/geb/pull/103/commits/d1e19c8b552396621d80c34ba09a12b0a2a86a0d&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;改善 UnexpectedPageException 的錯誤訊息&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Deprecations&quot;&gt;&lt;a href=&quot;#Deprecations&quot; class=&quot;headerlink&quot; title=&quot;Deprecations&quot;&gt;&lt;/a&gt;Deprecations&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;module(Class&amp;lt;? extends Module&amp;gt;, Map args) 被 Navigator.module(Module) 取代&lt;a href=&quot;https://github.com/geb/issues/issues/311&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#311&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;module(Class&amp;lt;? extends Module&amp;gt;, Navigator base, Map args) 被 Navigable.module(Module) 取代&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;重大改變&quot;&gt;&lt;a href=&quot;#重大改變&quot; class=&quot;headerlink&quot; title=&quot;重大改變&quot;&gt;&lt;/a&gt;重大改變&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Page.toString() now returns full page class name instead of its simple name.&lt;/li&gt;
-&lt;li&gt;MissingPropertyException is thrown instead of UnresolvablePropertyException when content with a given name is not found on page or module.&lt;/li&gt;
-&lt;li&gt;建構在 Groovy 2.3.10 and Spock 1.0-groovy-2.3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;0-10-0&quot;&gt;&lt;a href=&quot;#0-10-0&quot; class=&quot;headerlink&quot; title=&quot;0.10.0&quot;&gt;&lt;/a&gt;0.10.0&lt;/h3&gt;&lt;p&gt;增加對 cloud browsers 的支援度&lt;/p&gt;
-&lt;h4 id=&quot;新功能-1&quot;&gt;&lt;a href=&quot;#新功能-1&quot; class=&quot;headerlink&quot; title=&quot;新功能&quot;&gt;&lt;/a&gt;新功能&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;Navigator 新增了一個 &lt;code&gt;css()&lt;/code&gt; &lt;a href=&quot;https://github.com/geb/issues/issues/141#event-279283375&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#141&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;在 content 定義的區塊，多了一個 &lt;code&gt;atWait&lt;/code&gt; 的屬性，以增加對 ajax 動態新增元素的支援度 &lt;a href=&quot;https://github.com/geb/issues/issues/134&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#134&lt;/a&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;  submitButton(to: SuccessPage, toWait: true) &amp;#123; send() &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;bugs-修復&quot;&gt;&lt;a href=&quot;#bugs-修復&quot; class=&quot;headerlink&quot; title=&quot;bugs 修復&quot;&gt;&lt;/a&gt;bugs 修復&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;修復 manipulating checkboxes 取值時的問題 &lt;a href=&quot;https://github.com/geb/issues/issues/268&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#268&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;修復 withNewWindow() 和 withWindow() 再切換頁面時的一個小問題 &lt;a href=&quot;https://github.com/geb/issues/issues/279&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;#279&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;0-12-2&quot;&gt;&lt;a href=&quot;#0-12-2&quot; class=&quot;headerlink&quot; title=&quot;0.12.2&quot;&gt;&lt;/a&gt;0.12.2&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;改善對 Null 的驗證 &lt;a href=&quot;https://github.com/geb/iss
-    
-    </summary>
-    
     
   </entry>
   
