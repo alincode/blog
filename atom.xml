@@ -4,9 +4,9 @@
   <subtitle>學無止境</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://alincode.github.io/blog/"/>
+  <link href="http://alincode.github.io/"/>
   <updated>2016-04-23T08:51:35.000Z</updated>
-  <id>http://alincode.github.io/blog/</id>
+  <id>http://alincode.github.io/</id>
   
   <author>
     <name>alincode</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>自動化測試框架比較 with NodeJS</title>
-    <link href="http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/"/>
-    <id>http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/</id>
+    <link href="http://alincode.github.io/2016/04/22/front-test-framework-compare/"/>
+    <id>http://alincode.github.io/2016/04/22/front-test-framework-compare/</id>
     <published>2016-04-21T18:56:27.000Z</published>
     <updated>2016-04-23T08:51:35.000Z</updated>
     
@@ -37,14 +37,14 @@
     </summary>
     
     
-      <category term="auto testing" scheme="http://alincode.github.io/blog/tags/auto-testing/"/>
+      <category term="auto testing" scheme="http://alincode.github.io/tags/auto-testing/"/>
     
   </entry>
   
   <entry>
     <title>第一個 Nightwatch 自動化測試</title>
-    <link href="http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/"/>
-    <id>http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/</id>
+    <link href="http://alincode.github.io/2016/04/21/start-with-nightwatch/"/>
+    <id>http://alincode.github.io/2016/04/21/start-with-nightwatch/</id>
     <published>2016-04-21T10:04:42.000Z</published>
     <updated>2016-04-22T10:40:52.000Z</updated>
     
@@ -70,14 +70,14 @@
     </summary>
     
     
-      <category term="nightwatch" scheme="http://alincode.github.io/blog/tags/nightwatch/"/>
+      <category term="nightwatch" scheme="http://alincode.github.io/tags/nightwatch/"/>
     
   </entry>
   
   <entry>
     <title>Selenium with Nodejs</title>
-    <link href="http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/"/>
-    <id>http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/</id>
+    <link href="http://alincode.github.io/2016/04/20/selenium-with-nodejs/"/>
+    <id>http://alincode.github.io/2016/04/20/selenium-with-nodejs/</id>
     <published>2016-04-20T09:29:41.000Z</published>
     <updated>2016-04-22T10:40:31.000Z</updated>
     
@@ -108,8 +108,8 @@
   
   <entry>
     <title>建構一個漂亮的文件 with gitbook</title>
-    <link href="http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/"/>
-    <id>http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/</id>
+    <link href="http://alincode.github.io/2016/04/19/build-docs-with-gitbook/"/>
+    <id>http://alincode.github.io/2016/04/19/build-docs-with-gitbook/</id>
     <published>2016-04-19T06:30:41.000Z</published>
     <updated>2016-04-23T10:52:26.000Z</updated>
     
@@ -147,14 +147,14 @@
     </summary>
     
     
-      <category term="gitbook" scheme="http://alincode.github.io/blog/tags/gitbook/"/>
+      <category term="gitbook" scheme="http://alincode.github.io/tags/gitbook/"/>
     
   </entry>
   
   <entry>
     <title>好書推薦 - 如何閱讀一本書</title>
-    <link href="http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/"/>
-    <id>http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/</id>
+    <link href="http://alincode.github.io/2016/04/18/how-to-read-a-book/"/>
+    <id>http://alincode.github.io/2016/04/18/how-to-read-a-book/</id>
     <published>2016-04-18T13:50:13.000Z</published>
     <updated>2016-04-18T15:18:16.000Z</updated>
     
@@ -207,8 +207,8 @@
   
   <entry>
     <title>Sequelize 一對多更新</title>
-    <link href="http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/"/>
-    <id>http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/</id>
+    <link href="http://alincode.github.io/2016/04/17/sequelize-one-to-many-update/"/>
+    <id>http://alincode.github.io/2016/04/17/sequelize-one-to-many-update/</id>
     <published>2016-04-17T06:03:02.000Z</published>
     <updated>2016-04-17T06:27:50.000Z</updated>
     
@@ -225,16 +225,16 @@
     </summary>
     
     
-      <category term="One to Many" scheme="http://alincode.github.io/blog/tags/One-to-Many/"/>
+      <category term="One to Many" scheme="http://alincode.github.io/tags/One-to-Many/"/>
     
-      <category term="Sequelize" scheme="http://alincode.github.io/blog/tags/Sequelize/"/>
+      <category term="Sequelize" scheme="http://alincode.github.io/tags/Sequelize/"/>
     
   </entry>
   
   <entry>
     <title>Promise Chaining</title>
-    <link href="http://alincode.github.io/blog/2016/04/16/promise-chaining/"/>
-    <id>http://alincode.github.io/blog/2016/04/16/promise-chaining/</id>
+    <link href="http://alincode.github.io/2016/04/16/promise-chaining/"/>
+    <id>http://alincode.github.io/2016/04/16/promise-chaining/</id>
     <published>2016-04-15T16:01:44.000Z</published>
     <updated>2016-04-17T16:24:18.000Z</updated>
     
@@ -252,16 +252,16 @@
     </summary>
     
     
-      <category term="Chain" scheme="http://alincode.github.io/blog/tags/Chain/"/>
+      <category term="Chain" scheme="http://alincode.github.io/tags/Chain/"/>
     
-      <category term="Promise" scheme="http://alincode.github.io/blog/tags/Promise/"/>
+      <category term="Promise" scheme="http://alincode.github.io/tags/Promise/"/>
     
   </entry>
   
   <entry>
     <title>Chain Of Responsibility Design Pattern (javascript)</title>
-    <link href="http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/"/>
-    <id>http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/</id>
+    <link href="http://alincode.github.io/2016/04/15/chain-of-responsibility/"/>
+    <id>http://alincode.github.io/2016/04/15/chain-of-responsibility/</id>
     <published>2016-04-15T15:59:01.000Z</published>
     <updated>2016-04-16T15:40:45.000Z</updated>
     
@@ -279,16 +279,16 @@
     </summary>
     
     
-      <category term="Chain Of Responsibility" scheme="http://alincode.github.io/blog/tags/Chain-Of-Responsibility/"/>
+      <category term="Chain Of Responsibility" scheme="http://alincode.github.io/tags/Chain-Of-Responsibility/"/>
     
-      <category term="design pattern" scheme="http://alincode.github.io/blog/tags/design-pattern/"/>
+      <category term="design pattern" scheme="http://alincode.github.io/tags/design-pattern/"/>
     
   </entry>
   
   <entry>
     <title>Buddy CI 與 PM2 的整合(踩雷)</title>
-    <link href="http://alincode.github.io/blog/2016/04/14/buddy-ci-5/"/>
-    <id>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</id>
+    <link href="http://alincode.github.io/2016/04/14/buddy-ci-5/"/>
+    <id>http://alincode.github.io/2016/04/14/buddy-ci-5/</id>
     <published>2016-04-14T12:18:37.000Z</published>
     <updated>2016-04-13T13:07:47.000Z</updated>
     
@@ -321,17 +321,17 @@
     
     </summary>
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
     
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
   <entry>
     <title>lodash - 必要值檢查</title>
-    <link href="http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/"/>
-    <id>http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/</id>
+    <link href="http://alincode.github.io/2016/04/13/lodash-require-key-check/"/>
+    <id>http://alincode.github.io/2016/04/13/lodash-require-key-check/</id>
     <published>2016-04-13T05:10:14.000Z</published>
     <updated>2016-04-13T06:20:21.000Z</updated>
     
@@ -349,14 +349,14 @@
     </summary>
     
     
-      <category term="lodash" scheme="http://alincode.github.io/blog/tags/lodash/"/>
+      <category term="lodash" scheme="http://alincode.github.io/tags/lodash/"/>
     
   </entry>
   
   <entry>
     <title>Vultr VPS</title>
-    <link href="http://alincode.github.io/blog/2016/04/12/vultr/"/>
-    <id>http://alincode.github.io/blog/2016/04/12/vultr/</id>
+    <link href="http://alincode.github.io/2016/04/12/vultr/"/>
+    <id>http://alincode.github.io/2016/04/12/vultr/</id>
     <published>2016-04-12T12:37:03.000Z</published>
     <updated>2016-04-12T13:46:43.000Z</updated>
     
@@ -382,16 +382,16 @@
     </summary>
     
     
-      <category term="VPS" scheme="http://alincode.github.io/blog/tags/VPS/"/>
+      <category term="VPS" scheme="http://alincode.github.io/tags/VPS/"/>
     
-      <category term="Vultr" scheme="http://alincode.github.io/blog/tags/Vultr/"/>
+      <category term="Vultr" scheme="http://alincode.github.io/tags/Vultr/"/>
     
   </entry>
   
   <entry>
     <title>Geb for functional testing of Grails app 重點整理</title>
-    <link href="http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/"/>
-    <id>http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/</id>
+    <link href="http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/"/>
+    <id>http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/</id>
     <published>2016-04-10T19:03:14.000Z</published>
     <updated>2016-04-10T19:17:13.000Z</updated>
     
@@ -457,14 +457,14 @@
     </summary>
     
     
-      <category term="Geb" scheme="http://alincode.github.io/blog/tags/Geb/"/>
+      <category term="Geb" scheme="http://alincode.github.io/tags/Geb/"/>
     
   </entry>
   
   <entry>
     <title>Buddy CI 與 Slack 整合</title>
-    <link href="http://alincode.github.io/blog/2016/04/10/buddy-ci-4/"/>
-    <id>http://alincode.github.io/blog/2016/04/10/buddy-ci-4/</id>
+    <link href="http://alincode.github.io/2016/04/10/buddy-ci-4/"/>
+    <id>http://alincode.github.io/2016/04/10/buddy-ci-4/</id>
     <published>2016-04-09T18:03:56.000Z</published>
     <updated>2016-04-13T13:07:41.000Z</updated>
     
@@ -479,17 +479,17 @@
     
     </summary>
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
     
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
   <entry>
     <title>Buddy CI 踩雷心得</title>
-    <link href="http://alincode.github.io/blog/2016/04/09/buddy-ci-3/"/>
-    <id>http://alincode.github.io/blog/2016/04/09/buddy-ci-3/</id>
+    <link href="http://alincode.github.io/2016/04/09/buddy-ci-3/"/>
+    <id>http://alincode.github.io/2016/04/09/buddy-ci-3/</id>
     <published>2016-04-09T15:29:02.000Z</published>
     <updated>2016-04-13T13:07:34.000Z</updated>
     
@@ -510,17 +510,17 @@
     
     </summary>
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
     
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
   <entry>
     <title>Buddy CI Pipelines 流程</title>
-    <link href="http://alincode.github.io/blog/2016/04/08/buddy-ci-2/"/>
-    <id>http://alincode.github.io/blog/2016/04/08/buddy-ci-2/</id>
+    <link href="http://alincode.github.io/2016/04/08/buddy-ci-2/"/>
+    <id>http://alincode.github.io/2016/04/08/buddy-ci-2/</id>
     <published>2016-04-08T15:48:35.000Z</published>
     <updated>2016-04-13T13:07:28.000Z</updated>
     
@@ -539,17 +539,17 @@
     
     </summary>
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
     
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
   <entry>
     <title>Buddy CI 介紹</title>
-    <link href="http://alincode.github.io/blog/2016/04/07/buddy-ci/"/>
-    <id>http://alincode.github.io/blog/2016/04/07/buddy-ci/</id>
+    <link href="http://alincode.github.io/2016/04/07/buddy-ci/"/>
+    <id>http://alincode.github.io/2016/04/07/buddy-ci/</id>
     <published>2016-04-07T15:14:39.000Z</published>
     <updated>2016-04-13T13:07:53.000Z</updated>
     
@@ -619,17 +619,17 @@
     
     </summary>
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
     
     
-      <category term="Buddy CI" scheme="http://alincode.github.io/blog/tags/Buddy-CI/"/>
+      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
   <entry>
     <title>Building Isomorphic Web Applications with React 重點整理</title>
-    <link href="http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/"/>
-    <id>http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/</id>
+    <link href="http://alincode.github.io/2016/04/06/Building-Isomorphic-Web-Applications-with-React/"/>
+    <id>http://alincode.github.io/2016/04/06/Building-Isomorphic-Web-Applications-with-React/</id>
     <published>2016-04-06T15:12:46.000Z</published>
     <updated>2016-04-10T19:21:35.000Z</updated>
     
@@ -678,8 +678,8 @@
   
   <entry>
     <title>github 快速鍵</title>
-    <link href="http://alincode.github.io/blog/2016/04/05/github-shortcut/"/>
-    <id>http://alincode.github.io/blog/2016/04/05/github-shortcut/</id>
+    <link href="http://alincode.github.io/2016/04/05/github-shortcut/"/>
+    <id>http://alincode.github.io/2016/04/05/github-shortcut/</id>
     <published>2016-04-05T14:18:54.000Z</published>
     <updated>2016-04-05T14:45:40.000Z</updated>
     
@@ -732,14 +732,14 @@
     </summary>
     
     
-      <category term="github" scheme="http://alincode.github.io/blog/tags/github/"/>
+      <category term="github" scheme="http://alincode.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>view model vs model</title>
-    <link href="http://alincode.github.io/blog/2016/04/04/view-model-vs-model/"/>
-    <id>http://alincode.github.io/blog/2016/04/04/view-model-vs-model/</id>
+    <link href="http://alincode.github.io/2016/04/04/view-model-vs-model/"/>
+    <id>http://alincode.github.io/2016/04/04/view-model-vs-model/</id>
     <published>2016-04-04T08:43:14.000Z</published>
     <updated>2016-04-06T05:43:15.000Z</updated>
     
@@ -766,14 +766,14 @@
     </summary>
     
     
-      <category term="view model" scheme="http://alincode.github.io/blog/tags/view-model/"/>
+      <category term="view model" scheme="http://alincode.github.io/tags/view-model/"/>
     
   </entry>
   
   <entry>
     <title>PM2 管理工具</title>
-    <link href="http://alincode.github.io/blog/2016/04/03/PM2/"/>
-    <id>http://alincode.github.io/blog/2016/04/03/PM2/</id>
+    <link href="http://alincode.github.io/2016/04/03/PM2/"/>
+    <id>http://alincode.github.io/2016/04/03/PM2/</id>
     <published>2016-04-02T18:30:15.000Z</published>
     <updated>2016-04-03T15:39:20.000Z</updated>
     
@@ -854,7 +854,7 @@
     </summary>
     
     
-      <category term="PM2" scheme="http://alincode.github.io/blog/tags/PM2/"/>
+      <category term="PM2" scheme="http://alincode.github.io/tags/PM2/"/>
     
   </entry>
   
