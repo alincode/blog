@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/blog/"/>
-  <updated>2016-04-23T08:50:23.000Z</updated>
+  <updated>2016-04-23T08:51:35.000Z</updated>
   <id>http://alincode.github.io/blog/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/"/>
     <id>http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/</id>
     <published>2016-04-21T18:56:27.000Z</published>
-    <updated>2016-04-23T08:50:23.000Z</updated>
+    <updated>2016-04-23T08:51:35.000Z</updated>
     
-    <content type="html">&lt;p&gt;資料來源：&lt;a href=&quot;https://npmcompare.com/compare/nightwatch,protractor,webdriverio&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NPMCompare&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://nightwatchjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nightwatch.js&lt;/a&gt;：走小版本策略，更新速度相當快，pr 也相當踴躍。&lt;br&gt;&lt;a href=&quot;http://angular.github.io/protractor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;protractor&lt;/a&gt;：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢。&lt;br&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webdriver.io&lt;/a&gt;：是最晚誕生的，所以數據上略輸一籌，但是有提供一些其他框架沒有的功能，例如整合 Jenkins、較豐富的測試報表。&lt;/p&gt;
-&lt;h4 id=&quot;小提醒&quot;&gt;&lt;a href=&quot;#小提醒&quot; class=&quot;headerlink&quot; title=&quot;小提醒&quot;&gt;&lt;/a&gt;小提醒&lt;/h4&gt;&lt;p&gt;&lt;code&gt;webdriver.io != selenium-webdriver 不要誤會了&lt;/code&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://nightwatchjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nightwatch.js&lt;/a&gt;：走小版本策略，更新速度相當快，pr 也相當踴躍。&lt;br&gt;&lt;a href=&quot;http://angular.github.io/protractor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;protractor&lt;/a&gt;：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢。&lt;br&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webdriver.io&lt;/a&gt;：是最晚誕生的，所以數據上略輸一籌，但是有提供一些其他框架沒有的功能，例如整合 Jenkins、較豐富的測試報表。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;小提醒&lt;/strong&gt;&lt;br&gt;&lt;code&gt;webdriver.io != selenium-webdriver 不要誤會了&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;比較表&quot;&gt;&lt;a href=&quot;#比較表&quot; class=&quot;headerlink&quot; title=&quot;比較表&quot;&gt;&lt;/a&gt;比較表&lt;/h3&gt;&lt;p&gt;資料來源：&lt;a href=&quot;https://npmcompare.com/compare/nightwatch,protractor,webdriverio&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NPMCompare&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing1.png&quot; alt=&quot;comparing1.png&quot; title=&quot;&quot;&gt;
 &lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing2.png&quot; alt=&quot;comparing2.png&quot; title=&quot;&quot;&gt;
 &lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing3.png&quot; alt=&quot;comparing3.png&quot; title=&quot;&quot;&gt;
@@ -32,8 +32,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;資料來源：&lt;a href=&quot;https://npmcompare.com/compare/nightwatch,protractor,webdriverio&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NPMCompare&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a h
+      &lt;p&gt;&lt;a href=&quot;http://nightwatchjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nightwatch.js&lt;/a&gt;：走小版本策略，更新速度相當快，pr 也相當踴躍。&lt;br&gt;&lt;a href=&quot;http://angular.g
     
     </summary>
     
