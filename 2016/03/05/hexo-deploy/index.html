@@ -24,7 +24,7 @@
 例如你開一個 yourname.github.io 的 repo，裡面所有東西都可以對應到 https://yourname.github.io/ 。
 但如果你想要放在 blog 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令">
 <meta property="og:image" content="http://alincode.github.io/blog/2016/03/05/hexo-deploy/github_page.png">
-<meta property="og:updated_time" content="2016-03-05T15:11:12.000Z">
+<meta property="og:updated_time" content="2016-04-23T11:24:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="將 hexo 部署到 github page">
 <meta name="twitter:description" content="常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。
@@ -247,7 +247,7 @@
 <p>原來 github page 還有其他用法，就是可以自由命名 repo 名稱，然後，branch 名字取 <strong>gh-pages</strong>，然後他就會對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 子目錄下。</p>
 <h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
 <p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/blog&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure>
+<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><p>(16/04/23 修正)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure></p>
 
             
                 
