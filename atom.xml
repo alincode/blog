@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-23T08:51:35.000Z</updated>
+  <updated>2016-04-23T16:18:53.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,13 +16,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>第一個 WebdriverIO 自動化測試</title>
+    <link href="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/"/>
+    <id>http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/</id>
+    <published>2016-04-23T15:25:27.000Z</published>
+    <updated>2016-04-23T16:18:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;請範例使用 selenium standalone，所以請先安裝並啟動它。&lt;/p&gt;
+&lt;h2 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 selenium standalone&quot;&gt;&lt;/a&gt;安裝 selenium standalone&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;實作&quot;&gt;&lt;a href=&quot;#實作&quot; class=&quot;headerlink&quot; title=&quot;實作&quot;&gt;&lt;/a&gt;實作&lt;/h2&gt;&lt;h3 id=&quot;建立自動化測試專案&quot;&gt;&lt;a href=&quot;#建立自動化測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立自動化測試專案&quot;&gt;&lt;/a&gt;建立自動化測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;安裝-WebdriverIO&quot;&gt;&lt;a href=&quot;#安裝-WebdriverIO&quot; class=&quot;headerlink&quot; title=&quot;安裝 WebdriverIO&quot;&gt;&lt;/a&gt;安裝 WebdriverIO&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install webdriverio -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;第一個測試&quot;&gt;&lt;a href=&quot;#第一個測試&quot; class=&quot;headerlink&quot; title=&quot;第一個測試&quot;&gt;&lt;/a&gt;第一個測試&lt;/h3&gt;&lt;p&gt;將直接把官網範例貼上去吧&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var webdriverio = require(&amp;#39;webdriverio&amp;#39;);&amp;#10;var options = &amp;#123; desiredCapabilities: &amp;#123; browserName: &amp;#39;chrome&amp;#39; &amp;#125; &amp;#125;;&amp;#10;var client = webdriverio.remote(options);&amp;#10;&amp;#10;client&amp;#10;    .init()&amp;#10;    .url(&amp;#39;https://duckduckgo.com/&amp;#39;)&amp;#10;    .setValue(&amp;#39;#search_form_input_homepage&amp;#39;, &amp;#39;WebdriverIO&amp;#39;)&amp;#10;    .click(&amp;#39;#search_button_homepage&amp;#39;)&amp;#10;    .getTitle().then(function(title) &amp;#123;&amp;#10;        console.log(&amp;#39;Title is: &amp;#39; + title);&amp;#10;&amp;#10;        // outputs:&amp;#10;        // &amp;#34;Title is: WebdriverIO (Software) at DuckDuckGo&amp;#34;&amp;#10;    &amp;#125;)&amp;#10;    .end();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;執行&quot;&gt;&lt;a href=&quot;#執行&quot; class=&quot;headerlink&quot; title=&quot;執行&quot;&gt;&lt;/a&gt;執行&lt;/h2&gt;&lt;h3 id=&quot;啟動-selenium-standalone&quot;&gt;&lt;a href=&quot;#啟動-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;啟動 selenium standalone&quot;&gt;&lt;/a&gt;啟動 selenium standalone&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;selenium-standalone start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;啟動自動測試程式&quot;&gt;&lt;a href=&quot;#啟動自動測試程式&quot; class=&quot;headerlink&quot; title=&quot;啟動自動測試程式&quot;&gt;&lt;/a&gt;啟動自動測試程式&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node test.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;相關資源&quot;&gt;&lt;a href=&quot;#相關資源&quot; class=&quot;headerlink&quot; title=&quot;相關資源&quot;&gt;&lt;/a&gt;相關資源&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO 官網&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.npmjs.com/package/selenium-standalone&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selenium standalone&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;請範例使用 selenium standalone，所以請先安裝並啟動它。&lt;/p&gt;
+&lt;h2 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 
+    
+    </summary>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+      <category term="auto testing" scheme="http://alincode.github.io/tags/auto-testing/"/>
+    
+  </entry>
+  
+  <entry>
     <title>自動化測試框架比較 with NodeJS</title>
     <link href="http://alincode.github.io/2016/04/22/front-test-framework-compare/"/>
     <id>http://alincode.github.io/2016/04/22/front-test-framework-compare/</id>
     <published>2016-04-21T18:56:27.000Z</published>
-    <updated>2016-04-23T08:51:35.000Z</updated>
+    <updated>2016-04-23T16:05:52.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://nightwatchjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nightwatch.js&lt;/a&gt;：走小版本策略，更新速度相當快，pr 也相當踴躍。&lt;br&gt;&lt;a href=&quot;http://angular.github.io/protractor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;protractor&lt;/a&gt;：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢。&lt;br&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webdriver.io&lt;/a&gt;：是最晚誕生的，所以數據上略輸一籌，但是有提供一些其他框架沒有的功能，例如整合 Jenkins、較豐富的測試報表。&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://nightwatchjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;nightwatch.js&lt;/a&gt;：走小版本策略，更新速度相當快，pr 也相當踴躍。&lt;br&gt;&lt;a href=&quot;http://angular.github.io/protractor&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;protractor&lt;/a&gt;：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢，完美的整合 Angular ，雖然除了 Angular 之外，其他框架也可以使用，但很肥大，尤其如果你沒碰過 Angular 的情況下，入門難。&lt;br&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webdriver.io&lt;/a&gt;：是最晚誕生的，所以數據上略輸一籌，但納入了許多新穎的功能，及積極其他框架密切整合，例如Jenkins、chimp…，並內建簡易建立設定檔的工具，所以根本不需要用 yo。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;小提醒&lt;/strong&gt;&lt;br&gt;&lt;code&gt;webdriver.io != selenium-webdriver 不要誤會了&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&quot;比較表&quot;&gt;&lt;a href=&quot;#比較表&quot; class=&quot;headerlink&quot; title=&quot;比較表&quot;&gt;&lt;/a&gt;比較表&lt;/h3&gt;&lt;p&gt;資料來源：&lt;a href=&quot;https://npmcompare.com/compare/nightwatch,protractor,webdriverio&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NPMCompare&lt;/a&gt;&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/04/22/front-test-framework-compare/comparing1.png&quot; alt=&quot;comparing1.png&quot; title=&quot;&quot;&gt;
@@ -46,7 +78,7 @@
     <link href="http://alincode.github.io/2016/04/21/start-with-nightwatch/"/>
     <id>http://alincode.github.io/2016/04/21/start-with-nightwatch/</id>
     <published>2016-04-21T10:04:42.000Z</published>
-    <updated>2016-04-22T10:40:52.000Z</updated>
+    <updated>2016-04-23T15:29:53.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://nightwatchjs.org/img/logo-nightwatch.png&quot; alt=&quot;nightwatch.js&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;h4 id=&quot;必要環境&quot;&gt;&lt;a href=&quot;#必要環境&quot; class=&quot;headerlink&quot; title=&quot;必要環境&quot;&gt;&lt;/a&gt;必要環境&lt;/h4&gt;&lt;ul&gt;
@@ -54,7 +86,7 @@
 &lt;li&gt;有 NodeJS&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&quot;安裝必要-modules&quot;&gt;&lt;a href=&quot;#安裝必要-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝必要 modules&quot;&gt;&lt;/a&gt;安裝必要 modules&lt;/h4&gt;&lt;p&gt;&lt;code&gt;npm i selenium-server nightwatch chromedriver -S&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;安裝-nightwatch&quot;&gt;&lt;a href=&quot;#安裝-nightwatch&quot; class=&quot;headerlink&quot; title=&quot;安裝 nightwatch&quot;&gt;&lt;/a&gt;安裝 nightwatch&lt;/h4&gt;&lt;p&gt;&lt;code&gt;npm i nightwatch -g&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;安裝-nightwatch&quot;&gt;&lt;a href=&quot;#安裝-nightwatch&quot; class=&quot;headerlink&quot; title=&quot;安裝 nightwatch&quot;&gt;&lt;/a&gt;安裝 nightwatch&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir nightwatch-sandbox &amp;#38;&amp;#38; cd nightwatch-sandbox&amp;#10;npm init -y&amp;#10;npm i nightwatch -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;設定&quot;&gt;&lt;a href=&quot;#設定&quot; class=&quot;headerlink&quot; title=&quot;設定&quot;&gt;&lt;/a&gt;設定&lt;/h3&gt;&lt;h4 id=&quot;撰寫nightwatch環境設定&quot;&gt;&lt;a href=&quot;#撰寫nightwatch環境設定&quot; class=&quot;headerlink&quot; title=&quot;撰寫nightwatch環境設定&quot;&gt;&lt;/a&gt;撰寫nightwatch環境設定&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  src_folders: [&amp;#39;./tests&amp;#39;],&amp;#10;  output_folder: &amp;#39;./results&amp;#39;,&amp;#10;  live_output: true,&amp;#10;&amp;#10;  selenium: &amp;#123;&amp;#10;    start_process: true,&amp;#10;    server_path: &amp;#39;./node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar&amp;#39;,&amp;#10;    log_path: &amp;#39;./results&amp;#39;,&amp;#10;    host: &amp;#39;127.0.0.1&amp;#39;,&amp;#10;    port: 4444,&amp;#10;    cli_args: &amp;#123;&amp;#10;      &amp;#39;webdriver.chrome.driver&amp;#39;: &amp;#39;./node_modules/.bin/chromedriver&amp;#39;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;,&amp;#10;&amp;#10;  test_settings: &amp;#123;&amp;#10;    default: &amp;#123;&amp;#10;      launch_url: &amp;#39;http://localhost&amp;#39;,&amp;#10;      selenium_host: &amp;#39;127.0.0.1&amp;#39;,&amp;#10;      selenium_port: 4444,&amp;#10;      silent: true,&amp;#10;      disable_colors: false,&amp;#10;      screenshots: &amp;#123;&amp;#10;        enabled: true,&amp;#10;        path: &amp;#39;./results/screenshots&amp;#39;&amp;#10;      &amp;#125;,&amp;#10;      desiredCapabilities: &amp;#123;&amp;#10;        browserName: &amp;#39;firefox&amp;#39;,&amp;#10;        javascriptEnabled: true,&amp;#10;        acceptSslCerts: true&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;,&amp;#10;&amp;#10;    chrome: &amp;#123;&amp;#10;      desiredCapabilities: &amp;#123;&amp;#10;        browserName: &amp;#39;chrome&amp;#39;,&amp;#10;        javascriptEnabled: true&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;實作&quot;&gt;&lt;a href=&quot;#實作&quot; class=&quot;headerlink&quot; title=&quot;實作&quot;&gt;&lt;/a&gt;實作&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/21/start-with-nightwatch/console.png&quot; alt=&quot;console.png&quot; title=&quot;&quot;&gt;
 &lt;p&gt;&lt;strong&gt;撰寫一個簡單的自動化測試&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  &amp;#39;&amp;#36617;&amp;#20837;Blog&amp;#39;: function (client) &amp;#123;&amp;#10;    client&amp;#10;      .url(&amp;#39;http://blog.mokayo.com&amp;#39;)&amp;#10;      .waitForElementVisible(&amp;#39;body&amp;#39;, 1000)&amp;#10;      .assert.title(&amp;#39;&amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712; - blog.mokayo.com&amp;#39;)&amp;#10;      .end();&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -767,94 +799,6 @@
     
     
       <category term="view model" scheme="http://alincode.github.io/tags/view-model/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PM2 管理工具</title>
-    <link href="http://alincode.github.io/2016/04/03/PM2/"/>
-    <id>http://alincode.github.io/2016/04/03/PM2/</id>
-    <published>2016-04-02T18:30:15.000Z</published>
-    <updated>2016-04-03T15:39:20.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;code&gt;PM2&lt;/code&gt; 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;提供的功能&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;內建簡易監控功能&lt;/li&gt;
-&lt;li&gt;Cluster Mode&lt;/li&gt;
-&lt;li&gt;記憶體管理，重新 reload&lt;/li&gt;
-&lt;li&gt;Hot reload&lt;/li&gt;
-&lt;li&gt;啟動參數設定檔化&lt;/li&gt;
-&lt;li&gt;Log 管理&lt;/li&gt;
-&lt;li&gt;支援啟動 Scripts&lt;/li&gt;
-&lt;li&gt;Keymetrics 監控&lt;/li&gt;
-&lt;li&gt;提供 API，你可以運用它，實做一些你自定的需求。&lt;/li&gt;
-&lt;li&gt;Deployment workflow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;安裝&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm install pm2@latest -g&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;常用指令&quot;&gt;&lt;a href=&quot;#常用指令&quot; class=&quot;headerlink&quot; title=&quot;常用指令&quot;&gt;&lt;/a&gt;常用指令&lt;/h2&gt;&lt;h3 id=&quot;基本程序操作&quot;&gt;&lt;a href=&quot;#基本程序操作&quot; class=&quot;headerlink&quot; title=&quot;基本程序操作&quot;&gt;&lt;/a&gt;基本程序操作&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;指令&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;說明&lt;/th&gt;
-&lt;th style=&quot;text-align:right&quot;&gt;備註&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;pm2 start app.js&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;啟動程序&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pm2 stop all&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;停止所有程序&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pm2 stop 0&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;停止單一程序&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;pm2 stop [pid]&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pm2 restart all&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;重啟所有程序&lt;/td&gt;
-&lt;td style=&quot;text-align:right&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pm2 delete 0&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;刪除單一程序&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&quot;進階啟動程序&quot;&gt;&lt;a href=&quot;#進階啟動程序&quot; class=&quot;headerlink&quot; title=&quot;進階啟動程序&quot;&gt;&lt;/a&gt;進階啟動程序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;啟動程序並指定名稱&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 start app.js --name my-api&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;啟動程序並帶變數&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;NODE_ENV=local pm2 start app.js --name my-api&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;查看程序&quot;&gt;&lt;a href=&quot;#查看程序&quot; class=&quot;headerlink&quot; title=&quot;查看程序&quot;&gt;&lt;/a&gt;查看程序&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;查看所有註冊的程序&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 list&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/03/PM2/pm2.png&quot; alt=&quot;pm2.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;&lt;strong&gt;查看程序內容&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 show 0&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;監看程序&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 monit&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/03/PM2/monit.png&quot; alt=&quot;monit.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;log-相關指令&quot;&gt;&lt;a href=&quot;#log-相關指令&quot; class=&quot;headerlink&quot; title=&quot;log 相關指令&quot;&gt;&lt;/a&gt;log 相關指令&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;查看log集合&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 logs&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/03/PM2/logs.png&quot; alt=&quot;logs.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;&lt;strong&gt;清空log&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pm2 flush&lt;/code&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;PM2&lt;/code&gt; 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開
-    
-    </summary>
-    
-    
-      <category term="PM2" scheme="http://alincode.github.io/tags/PM2/"/>
     
   </entry>
   

@@ -219,6 +219,56 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/23/getting-started-with-WebdriverIO/">
+                            第一個 WebdriverIO 自動化測試
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Apr 23 2016 23:25:27 GMT+0800">
+	
+		    4月 23, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>請範例使用 selenium standalone，所以請先安裝並啟動它。</p>
+<h2 id="安裝-selenium-standalone"><a href="#安裝-selenium-standalone" class="headerlink" title="安裝 selenium standalone"></a>安裝 selenium standalone</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
+<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h2><h3 id="建立自動化測試專案"><a href="#建立自動化測試專案" class="headerlink" title="建立自動化測試專案"></a>建立自動化測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init -y</span><br></pre></td></tr></table></figure>
+<h3 id="安裝-WebdriverIO"><a href="#安裝-WebdriverIO" class="headerlink" title="安裝 WebdriverIO"></a>安裝 WebdriverIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webdriverio -D</span><br></pre></td></tr></table></figure>
+<h3 id="第一個測試"><a href="#第一個測試" class="headerlink" title="第一個測試"></a>第一個測試</h3><p>將直接把官網範例貼上去吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webdriverio = require(&#39;webdriverio&#39;);&#10;var options = &#123; desiredCapabilities: &#123; browserName: &#39;chrome&#39; &#125; &#125;;&#10;var client = webdriverio.remote(options);&#10;&#10;client&#10;    .init()&#10;    .url(&#39;https://duckduckgo.com/&#39;)&#10;    .setValue(&#39;#search_form_input_homepage&#39;, &#39;WebdriverIO&#39;)&#10;    .click(&#39;#search_button_homepage&#39;)&#10;    .getTitle().then(function(title) &#123;&#10;        console.log(&#39;Title is: &#39; + title);&#10;&#10;        // outputs:&#10;        // &#34;Title is: WebdriverIO (Software) at DuckDuckGo&#34;&#10;    &#125;)&#10;    .end();</span><br></pre></td></tr></table></figure>
+<h2 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h2><h3 id="啟動-selenium-standalone"><a href="#啟動-selenium-standalone" class="headerlink" title="啟動 selenium standalone"></a>啟動 selenium standalone</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium-standalone start</span><br></pre></td></tr></table></figure>
+<h3 id="啟動自動測試程式"><a href="#啟動自動測試程式" class="headerlink" title="啟動自動測試程式"></a>啟動自動測試程式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node test.js</span><br></pre></td></tr></table></figure>
+<h3 id="相關資源"><a href="#相關資源" class="headerlink" title="相關資源"></a>相關資源</h3><p><a href="http://webdriver.io/" target="_blank" rel="external">WebdriverIO 官網</a><br><a href="https://www.npmjs.com/package/selenium-standalone" target="_blank" rel="external">Selenium standalone</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/23/getting-started-with-WebdriverIO/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/22/front-test-framework-compare/">
                             自動化測試框架比較 with NodeJS
                         </a>
@@ -236,7 +286,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="http://nightwatchjs.org/" target="_blank" rel="external">nightwatch.js</a>：走小版本策略，更新速度相當快，pr 也相當踴躍。<br><a href="http://angular.github.io/protractor" target="_blank" rel="external">protractor</a>：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢。<br><a href="http://webdriver.io/" target="_blank" rel="external">webdriver.io</a>：是最晚誕生的，所以數據上略輸一籌，但是有提供一些其他框架沒有的功能，例如整合 Jenkins、較豐富的測試報表。</p>
+                    <p><a href="http://nightwatchjs.org/" target="_blank" rel="external">nightwatch.js</a>：走小版本策略，更新速度相當快，pr 也相當踴躍。<br><a href="http://angular.github.io/protractor" target="_blank" rel="external">protractor</a>：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢，完美的整合 Angular ，雖然除了 Angular 之外，其他框架也可以使用，但很肥大，尤其如果你沒碰過 Angular 的情況下，入門難。<br><a href="http://webdriver.io/" target="_blank" rel="external">webdriver.io</a>：是最晚誕生的，所以數據上略輸一籌，但納入了許多新穎的功能，及積極其他框架密切整合，例如Jenkins、chimp…，並內建簡易建立設定檔的工具，所以根本不需要用 yo。</p>
 <p><strong>小提醒</strong><br><code>webdriver.io != selenium-webdriver 不要誤會了</code></p>
 <h3 id="比較表"><a href="#比較表" class="headerlink" title="比較表"></a>比較表</h3><p>資料來源：<a href="https://npmcompare.com/compare/nightwatch,protractor,webdriverio" target="_blank" rel="external">NPMCompare</a></p>
 <img src="/blog/2016/04/22/front-test-framework-compare/comparing1.png" alt="comparing1.png" title="">
@@ -289,7 +339,7 @@
 <li>有 NodeJS</li>
 </ul>
 <h4 id="安裝必要-modules"><a href="#安裝必要-modules" class="headerlink" title="安裝必要 modules"></a>安裝必要 modules</h4><p><code>npm i selenium-server nightwatch chromedriver -S</code></p>
-<h4 id="安裝-nightwatch"><a href="#安裝-nightwatch" class="headerlink" title="安裝 nightwatch"></a>安裝 nightwatch</h4><p><code>npm i nightwatch -g</code></p>
+<h4 id="安裝-nightwatch"><a href="#安裝-nightwatch" class="headerlink" title="安裝 nightwatch"></a>安裝 nightwatch</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir nightwatch-sandbox &#38;&#38; cd nightwatch-sandbox&#10;npm init -y&#10;npm i nightwatch -g</span><br></pre></td></tr></table></figure>
 <h3 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h3><h4 id="撰寫nightwatch環境設定"><a href="#撰寫nightwatch環境設定" class="headerlink" title="撰寫nightwatch環境設定"></a>撰寫nightwatch環境設定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  src_folders: [&#39;./tests&#39;],&#10;  output_folder: &#39;./results&#39;,&#10;  live_output: true,&#10;&#10;  selenium: &#123;&#10;    start_process: true,&#10;    server_path: &#39;./node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar&#39;,&#10;    log_path: &#39;./results&#39;,&#10;    host: &#39;127.0.0.1&#39;,&#10;    port: 4444,&#10;    cli_args: &#123;&#10;      &#39;webdriver.chrome.driver&#39;: &#39;./node_modules/.bin/chromedriver&#39;&#10;    &#125;&#10;  &#125;,&#10;&#10;  test_settings: &#123;&#10;    default: &#123;&#10;      launch_url: &#39;http://localhost&#39;,&#10;      selenium_host: &#39;127.0.0.1&#39;,&#10;      selenium_port: 4444,&#10;      silent: true,&#10;      disable_colors: false,&#10;      screenshots: &#123;&#10;        enabled: true,&#10;        path: &#39;./results/screenshots&#39;&#10;      &#125;,&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;firefox&#39;,&#10;        javascriptEnabled: true,&#10;        acceptSslCerts: true&#10;      &#125;&#10;    &#125;,&#10;&#10;    chrome: &#123;&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;chrome&#39;,&#10;        javascriptEnabled: true&#10;      &#125;&#10;    &#125;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h3><img src="/blog/2016/04/21/start-with-nightwatch/console.png" alt="console.png" title="">
 <p><strong>撰寫一個簡單的自動化測試</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  &#39;&#36617;&#20837;Blog&#39;: function (client) &#123;&#10;    client&#10;      .url(&#39;http://blog.mokayo.com&#39;)&#10;      .waitForElementVisible(&#39;body&#39;, 1000)&#10;      .assert.title(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;)&#10;      .end();&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
@@ -697,51 +747,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/14/buddy-ci-5/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/13/lodash-require-key-check/">
-                            lodash - 必要值檢查
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Apr 13 2016 13:10:14 GMT+0800">
-	
-		    4月 13, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://lodash.com/docs" target="_blank" rel="external">lodash</a> 是一個值得好好細細品嘗的模組，內含許多擴充的function去針對物件、字串、陣列處理。</p>
-<p><strong>必要值檢查</strong></p>
-<p><a href="https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js" target="_blank" rel="external">範例下載</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should();</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'require keys'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  it(<span class="string">'case 1:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">true</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'case 2:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>, <span class="string">'phone'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">false</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'case 3:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'email'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">true</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/13/lodash-require-key-check/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
