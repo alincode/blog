@@ -6,30 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>第一個 WebdriverIO 自動化測試 - alincode</title>
+    <title>被討厭的勇氣 (重點 2) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
+    <meta name="description" content="競爭
+一提到「追求卓越」，我們很容易誤以為它是「想比他人優秀」的欲望，或是為了飛黃騰達而不惜犧牲別人的行為，會有一種排擠他人、一步步往上爬的印象。
+阿德勒指的「追求卓越」是指，在同樣平坦的地面上，有人在前方一步步邁進，後面也有人跨步向前。不悍任何人競爭，只要向前跨步就行，健全的自卑感並不是和別人比較而產生的，是跟「理想中的自己」比較後的結果。大家雖然不同，卻是平等的。
+無法發自內心祝福那些看似幸福">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="第一個 WebdriverIO 自動化測試">
-<meta property="og:url" content="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/index.html">
+<meta property="og:title" content="被討厭的勇氣 (重點 2)">
+<meta property="og:url" content="http://alincode.github.io/2016/04/25/Hated-courage-part-2/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
-<meta property="og:image" content="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/console.png">
-<meta property="og:updated_time" content="2016-04-23T16:43:23.000Z">
+<meta property="og:description" content="競爭
+一提到「追求卓越」，我們很容易誤以為它是「想比他人優秀」的欲望，或是為了飛黃騰達而不惜犧牲別人的行為，會有一種排擠他人、一步步往上爬的印象。
+阿德勒指的「追求卓越」是指，在同樣平坦的地面上，有人在前方一步步邁進，後面也有人跨步向前。不悍任何人競爭，只要向前跨步就行，健全的自卑感並不是和別人比較而產生的，是跟「理想中的自己」比較後的結果。大家雖然不同，卻是平等的。
+無法發自內心祝福那些看似幸福">
+<meta property="og:updated_time" content="2016-04-26T08:37:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一個 WebdriverIO 自動化測試">
-<meta name="twitter:description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
+<meta name="twitter:title" content="被討厭的勇氣 (重點 2)">
+<meta name="twitter:description" content="競爭
+一提到「追求卓越」，我們很容易誤以為它是「想比他人優秀」的欲望，或是為了飛黃騰達而不惜犧牲別人的行為，會有一種排擠他人、一步步往上爬的印象。
+阿德勒指的「追求卓越」是指，在同樣平坦的地面上，有人在前方一步步邁進，後面也有人跨步向前。不悍任何人競爭，只要向前跨步就行，健全的自卑感並不是和別人比較而產生的，是跟「理想中的自己」比較後的結果。大家雖然不同，卻是平等的。
+無法發自內心祝福那些看似幸福">
     
     
         
@@ -223,31 +225,42 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            第一個 WebdriverIO 自動化測試
+            被討厭的勇氣 (重點 2)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Apr 23 2016 23:25:27 GMT+0800">
+    <time itemprop="datePublished" content="Mon Apr 25 2016 16:27:30 GMT+0800">
 	
-		    4月 23, 2016
+		    4月 25, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/非專業書閱讀/">非專業書閱讀</a>
+
+
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>請範例使用 selenium standalone，所以請先安裝並啟動它。</p>
-<h2 id="安裝-selenium-standalone"><a href="#安裝-selenium-standalone" class="headerlink" title="安裝 selenium standalone"></a>安裝 selenium standalone</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
-<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h2><h3 id="建立自動化測試專案"><a href="#建立自動化測試專案" class="headerlink" title="建立自動化測試專案"></a>建立自動化測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init -y</span><br></pre></td></tr></table></figure>
-<h3 id="安裝-WebdriverIO"><a href="#安裝-WebdriverIO" class="headerlink" title="安裝 WebdriverIO"></a>安裝 WebdriverIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webdriverio -D</span><br></pre></td></tr></table></figure>
-<h3 id="第一個測試"><a href="#第一個測試" class="headerlink" title="第一個測試"></a>第一個測試</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webdriverio = require(&#39;webdriverio&#39;);&#10;var options = &#123; desiredCapabilities: &#123; browserName: &#39;chrome&#39; &#125; &#125;;&#10;var client = webdriverio.remote(options);&#10;&#10;client&#10;    .init()&#10;    .url(&#39;http://blog.mokayo.com/&#39;)&#10;    .getTitle().then(function(title) &#123;&#10;        console.log(&#39;Title is: &#39; + title);&#10;        // Title is: &#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#10;    &#125;)&#10;    .end();</span><br></pre></td></tr></table></figure>
-<h2 id="如何執行"><a href="#如何執行" class="headerlink" title="如何執行"></a>如何執行</h2><img src="/blog/2016/04/23/getting-started-with-WebdriverIO/console.png" alt="console.png" title="">
-<h3 id="啟動-selenium-standalone"><a href="#啟動-selenium-standalone" class="headerlink" title="啟動 selenium standalone"></a>啟動 selenium standalone</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium-standalone start</span><br></pre></td></tr></table></figure>
-<h3 id="啟動自動測試程式"><a href="#啟動自動測試程式" class="headerlink" title="啟動自動測試程式"></a>啟動自動測試程式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node test.js</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始碼下載</a></p>
-<h3 id="相關資源"><a href="#相關資源" class="headerlink" title="相關資源"></a>相關資源</h3><p><a href="http://webdriver.io/" target="_blank" rel="external">WebdriverIO 官網</a><br><a href="https://www.npmjs.com/package/selenium-standalone" target="_blank" rel="external">Selenium standalone</a></p>
+            
+<h3 id="競爭"><a href="#競爭" class="headerlink" title="競爭"></a>競爭</h3><ul>
+<li>一提到「追求卓越」，我們很容易誤以為它是「想比他人優秀」的欲望，或是為了飛黃騰達而不惜犧牲別人的行為，會有一種排擠他人、一步步往上爬的印象。</li>
+<li>阿德勒指的「追求卓越」是指，在同樣平坦的地面上，有人在前方一步步邁進，後面也有人跨步向前。不悍任何人競爭，只要向前跨步就行，健全的自卑感並不是和別人比較而產生的，是跟「理想中的自己」比較後的結果。大家雖然不同，卻是平等的。</li>
+<li>無法發自內心祝福那些看似幸福的人，這就是因為你把人際關係當成是競爭，認定別人的幸福就像是「自己的挫敗」，才無法給予祝福。</li>
+<li>只要可以感受到「人人都是我的夥伴」，對世界的看法都會有所不同。</li>
+</ul>
+<h3 id="情緒控制"><a href="#情緒控制" class="headerlink" title="情緒控制"></a>情緒控制</h3><ul>
+<li>所謂的控制憤怒，指的就是「忍耐」吧？不是這樣的，可以學學不利用憤怒就能解決問題的方法。因為憤怒不過是一種為了達到目的而採取的手段，只是個工具而已。</li>
+<li>人啊，一旦在人際關係中確信「我是對的」，那一瞬間就已經一腳踏入了權力鬥爭。如果你認為自己是對的，那麼不管其他人的意見是什麼，都應該在這裡畫下句點。反之，承認錯誤、表達歉意的言辭，還有脫離權力鬥爭，這些都不是「挫敗」。</li>
+</ul>
+<h3 id="心靈"><a href="#心靈" class="headerlink" title="心靈"></a>心靈</h3><ul>
+<li>人只有在感覺「只要和這個人在一起，就可以自由盡情地展現自我」的時候，才能真正感受到愛。</li>
+<li>只要有那個心，人要找出對方的缺點或瑕疵都是輕而易舉的事，像這樣找出這種藉口來逃避人生任務的情況，稱為「人生的謊言」。</li>
+</ul>
 
             
                 
@@ -260,7 +273,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-testing/">auto testing</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/被討厭的勇氣/">被討厭的勇氣</a>
 
             </div>
         
@@ -269,7 +282,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/"  data-tooltip="被討厭的勇氣 (重點 1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -277,7 +290,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/" data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/" data-tooltip="被討厭的勇氣 (重點 1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -292,17 +305,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -340,7 +353,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/"  data-tooltip="被討厭的勇氣 (重點 1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -348,7 +361,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/" data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/" data-tooltip="被討厭的勇氣 (重點 1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -363,17 +376,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -393,17 +406,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/25/Hated-courage-part-2/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

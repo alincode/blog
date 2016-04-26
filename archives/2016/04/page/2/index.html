@@ -219,6 +219,118 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/15/chain-of-responsibility/">
+                            Chain Of Responsibility Design Pattern (javascript)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Apr 15 2016 23:59:01 GMT+0800">
+	
+		    4月 15, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="使用情境"><a href="#使用情境" class="headerlink" title="使用情境"></a>使用情境</h3><p>Chain Of Responsibility 主要用在順序可能會變換，甚至不確定要執行全部的步驟或只有部分的步驟。你會非常常見到它或許名稱不同，pipeline 或 middleware，都具有到這樣的概念。</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>在這個例子，主要是針對具有很多種類的促銷方案，你同時有多種折扣，你希望它的計算順序可以很輕易的更變。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = &#123;</span><br><span class="line">	order: <span class="literal">null</span>,</span><br><span class="line">  init:<span class="function"><span class="keyword">function</span> (<span class="params">order</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order = order;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 特定分類折扣</span></span><br><span class="line">	dptDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.9</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 滿額折扣</span></span><br><span class="line">	bigOrderDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.price &gt; <span class="number">6000</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price -= <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// VIP 折扣</span></span><br><span class="line">	vip:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.isVip)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.95</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = DiscountService;</span><br></pre></td></tr></table></figure>
+<h3 id="進入點"><a href="#進入點" class="headerlink" title="進入點"></a>進入點</h3><p><strong>main.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = <span class="built_in">require</span>(<span class="string">'./DiscountService.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">1000</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = DiscountService.init(order).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order2 = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">6600</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = DiscountService.init(order2).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result2.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result3 = DiscountService.init(order2).dptDiscount().vip().bigOrderDiscount();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result3.order.price);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result4 = DiscountService.init(order2).dptDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result4.order.price);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/15/chain-of-responsibility/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/14/buddy-ci-5/">
+                            Buddy CI 與 PM2 的整合(踩雷)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 14 2016 20:18:37 GMT+0800">
+	
+		    4月 14, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h3><ul>
+<li>undefined symbol: node_module_register</li>
+<li>bcrypt bindings problem</li>
+</ul>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p><code>ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node</code></p>
+<h3 id="實作-SSH-命令注意事項"><a href="#實作-SSH-命令注意事項" class="headerlink" title="實作 SSH 命令注意事項"></a>實作 SSH 命令注意事項</h3><ul>
+<li>每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。</li>
+<li>每行指令需獨立一行</li>
+<li>指令執行失敗，將會停止執行後面的指令。(除非你有設忽略 error)</li>
+<li>如果使用抽象路徑(cd /xxx/yyy)，命令將不會帶到下一行指令。</li>
+<li>如果你需要執行複雜的 script，建議將 script 檔放在 server side，再去呼叫它執行。</li>
+</ul>
+<blockquote>
+<p><a href="https://buddy.works/knowledge/deployments/how-use-ssh-scripts" target="_blank" rel="external">How to use SSH scripts?</a></p>
+</blockquote>
+<img src="/blog/2016/04/14/buddy-ci-5/execute_script.png" alt="execute_script.png" title="">
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://github.com/Unitech/pm2/issues/1477" target="_blank" rel="external">undefined symbol: node_module_register</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/14/buddy-ci-5/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/13/lodash-require-key-check/">
                             lodash - 必要值檢查
                         </a>
@@ -729,135 +841,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/05/github-shortcut/">
-                            github 快速鍵
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Apr 05 2016 22:18:54 GMT+0800">
-	
-		    4月 05, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>在一個 youtube 的教學影片看到，對方用快速搜尋檔案，才發現 github 有快速鍵，真是不錯。</p>
-<table>
-<thead>
-<tr>
-<th>快速鍵</th>
-<th style="text-align:left">說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>g + n</td>
-<td style="text-align:left">查看你的通知訊息</td>
-</tr>
-<tr>
-<td>g + i</td>
-<td style="text-align:left">查看你的 issue</td>
-</tr>
-<tr>
-<td>g + p</td>
-<td style="text-align:left">查看你的 pr</td>
-</tr>
-<tr>
-<td>l</td>
-<td style="text-align:left">在檢視原始碼時，快速跳行</td>
-</tr>
-<tr>
-<td>t</td>
-<td style="text-align:left">搜尋檔案</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://help.github.com/articles/using-keyboard-shortcuts/" target="_blank" rel="external">更多 Github 快速鍵</a></p>
-<img src="/blog/2016/04/05/github-shortcut/search-file.png" alt="search-file.png" title="">
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/05/github-shortcut/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/04/view-model-vs-model/">
-                            view model vs model
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Apr 04 2016 16:43:14 GMT+0800">
-	
-		    4月 04, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="View-Model"><a href="#View-Model" class="headerlink" title="View Model"></a>View Model</h3><p>除了 MVC 之外，後來 Microsoft 又提出一個 <code>model-view-view model (MVVM)</code>，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。</p>
-<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>不太嚴謹的說法，可以直接對照到資料庫的 table</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><p><strong>User.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    firstName: <span class="built_in">String</span>,</span><br><span class="line">    lastName: <span class="built_in">String</span>,</span><br><span class="line">    nickname: <span class="built_in">String</span>,</span><br><span class="line">    email: <span class="built_in">String</span>,</span><br><span class="line">    password: <span class="built_in">String</span>,</span><br><span class="line">    address: <span class="built_in">String</span>,</span><br><span class="line">    phone: <span class="built_in">String</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>Profile.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    image: <span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// ...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>UserController.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(req.userId);</span><br><span class="line">      <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(req.userId);</span><br><span class="line"></span><br><span class="line">      user.toJSON();</span><br><span class="line">      profile.toJSON();</span><br><span class="line"></span><br><span class="line">      res.view(<span class="string">'profile'</span>, &#123;</span><br><span class="line">          email: user.email,</span><br><span class="line">          nickname: user.nickname,</span><br><span class="line">          image: profile.image,</span><br><span class="line">          <span class="comment">//...略...</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><p><strong>UserController.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userViewModel = <span class="built_in">require</span>(<span class="string">'../viewModels/UserViewModel.js'</span>)</span><br><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      res.view(<span class="string">'profile'</span>, <span class="keyword">await</span> userViewModel(req.userId));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>UserViewModel.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (userId) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(userId);</span><br><span class="line">  <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(userId);</span><br><span class="line"></span><br><span class="line">  user.toJSON();</span><br><span class="line">  profile.toJSON();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    email: user.email,</span><br><span class="line">    nickname: user.nickname,</span><br><span class="line">    image: profile.image,</span><br><span class="line">    <span class="comment">//...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>主要是好處是把 ViewModel 封裝起來，在其他地方也可以被重複使用。</p>
-<h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>View：主要是將 model 呈現給使用者<br>Controller：會接收使用者輸入的資料，並決定要顯示哪個 view。</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/04/view-model-vs-model/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

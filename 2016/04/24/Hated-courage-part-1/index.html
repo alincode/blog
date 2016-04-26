@@ -6,30 +6,36 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>第一個 WebdriverIO 自動化測試 - alincode</title>
+    <title>被討厭的勇氣 (重點 1) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
+    <meta name="description" content="年紀的增長漸漸的發現很多問題，得靠哲學來解決。
+目的 &amp;gt; 原因
+應該追究的，不是過去的「原因」，而是現在的「目的」。
+無論任何經驗，它本身並不是成功也不是失敗的原因，我們不要因自身經驗所產生的衝擊而痛苦，而要由經驗中找出能夠達成目標的東西。不要由經驗決定自我，而是由我們賦予經驗的意義來決定。(例如：18度的井水)
+如果在感受不到幸福的狀態下，繼續做「現在的你」應該也不會好到哪裡去。不要停下來">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="第一個 WebdriverIO 自動化測試">
-<meta property="og:url" content="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/index.html">
+<meta property="og:title" content="被討厭的勇氣 (重點 1)">
+<meta property="og:url" content="http://alincode.github.io/2016/04/24/Hated-courage-part-1/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
-<meta property="og:image" content="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/console.png">
-<meta property="og:updated_time" content="2016-04-23T16:43:23.000Z">
+<meta property="og:description" content="年紀的增長漸漸的發現很多問題，得靠哲學來解決。
+目的 &amp;gt; 原因
+應該追究的，不是過去的「原因」，而是現在的「目的」。
+無論任何經驗，它本身並不是成功也不是失敗的原因，我們不要因自身經驗所產生的衝擊而痛苦，而要由經驗中找出能夠達成目標的東西。不要由經驗決定自我，而是由我們賦予經驗的意義來決定。(例如：18度的井水)
+如果在感受不到幸福的狀態下，繼續做「現在的你」應該也不會好到哪裡去。不要停下來">
+<meta property="og:image" content="http://alincode.github.io/blog/2016/04/24/Hated-courage-part-1/book.png">
+<meta property="og:updated_time" content="2016-04-26T08:37:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一個 WebdriverIO 自動化測試">
-<meta name="twitter:description" content="請範例使用 selenium standalone，所以請先安裝並啟動它。
-安裝 selenium standalone1npm install selenium-standalone -g&amp;#10;selenium-standalone install
-實作建立自動化測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;">
+<meta name="twitter:title" content="被討厭的勇氣 (重點 1)">
+<meta name="twitter:description" content="年紀的增長漸漸的發現很多問題，得靠哲學來解決。
+目的 &amp;gt; 原因
+應該追究的，不是過去的「原因」，而是現在的「目的」。
+無論任何經驗，它本身並不是成功也不是失敗的原因，我們不要因自身經驗所產生的衝擊而痛苦，而要由經驗中找出能夠達成目標的東西。不要由經驗決定自我，而是由我們賦予經驗的意義來決定。(例如：18度的井水)
+如果在感受不到幸福的狀態下，繼續做「現在的你」應該也不會好到哪裡去。不要停下來">
     
     
         
@@ -223,31 +229,47 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            第一個 WebdriverIO 自動化測試
+            被討厭的勇氣 (重點 1)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Apr 23 2016 23:25:27 GMT+0800">
+    <time itemprop="datePublished" content="Sun Apr 24 2016 16:27:30 GMT+0800">
 	
-		    4月 23, 2016
+		    4月 24, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/非專業書閱讀/">非專業書閱讀</a>
+
+
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>請範例使用 selenium standalone，所以請先安裝並啟動它。</p>
-<h2 id="安裝-selenium-standalone"><a href="#安裝-selenium-standalone" class="headerlink" title="安裝 selenium standalone"></a>安裝 selenium standalone</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
-<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h2><h3 id="建立自動化測試專案"><a href="#建立自動化測試專案" class="headerlink" title="建立自動化測試專案"></a>建立自動化測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init -y</span><br></pre></td></tr></table></figure>
-<h3 id="安裝-WebdriverIO"><a href="#安裝-WebdriverIO" class="headerlink" title="安裝 WebdriverIO"></a>安裝 WebdriverIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webdriverio -D</span><br></pre></td></tr></table></figure>
-<h3 id="第一個測試"><a href="#第一個測試" class="headerlink" title="第一個測試"></a>第一個測試</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webdriverio = require(&#39;webdriverio&#39;);&#10;var options = &#123; desiredCapabilities: &#123; browserName: &#39;chrome&#39; &#125; &#125;;&#10;var client = webdriverio.remote(options);&#10;&#10;client&#10;    .init()&#10;    .url(&#39;http://blog.mokayo.com/&#39;)&#10;    .getTitle().then(function(title) &#123;&#10;        console.log(&#39;Title is: &#39; + title);&#10;        // Title is: &#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#10;    &#125;)&#10;    .end();</span><br></pre></td></tr></table></figure>
-<h2 id="如何執行"><a href="#如何執行" class="headerlink" title="如何執行"></a>如何執行</h2><img src="/blog/2016/04/23/getting-started-with-WebdriverIO/console.png" alt="console.png" title="">
-<h3 id="啟動-selenium-standalone"><a href="#啟動-selenium-standalone" class="headerlink" title="啟動 selenium standalone"></a>啟動 selenium standalone</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium-standalone start</span><br></pre></td></tr></table></figure>
-<h3 id="啟動自動測試程式"><a href="#啟動自動測試程式" class="headerlink" title="啟動自動測試程式"></a>啟動自動測試程式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node test.js</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始碼下載</a></p>
-<h3 id="相關資源"><a href="#相關資源" class="headerlink" title="相關資源"></a>相關資源</h3><p><a href="http://webdriver.io/" target="_blank" rel="external">WebdriverIO 官網</a><br><a href="https://www.npmjs.com/package/selenium-standalone" target="_blank" rel="external">Selenium standalone</a></p>
+            <img src="/blog/2016/04/24/Hated-courage-part-1/book.png" alt="book.png" title="">
+<p>年紀的增長漸漸的發現很多問題，得靠哲學來解決。</p>
+<h3 id="目的-gt-原因"><a href="#目的-gt-原因" class="headerlink" title="目的 &gt; 原因"></a>目的 &gt; 原因</h3><ul>
+<li>應該追究的，不是過去的「原因」，而是現在的「目的」。</li>
+<li>無論任何經驗，它本身並不是成功也不是失敗的原因，我們不要因自身經驗所產生的衝擊而痛苦，而要由經驗中找出能夠達成目標的東西。不要由經驗決定自我，而是由我們賦予經驗的意義來決定。(例如：18度的井水)</li>
+<li>如果在感受不到幸福的狀態下，繼續做「現在的你」應該也不會好到哪裡去。不要停下來，要繼續前進才行。</li>
+<li>不管哪一種犯罪者，沒有人單純只為了做壞事而做壞事。所有犯罪的人都有讓他犯罪的內在「正當理由」。對方事人來說，他因為自以為的「正當理由」而採取行動。換句話說，是在執行「自以為好」的「善」事。當然，這裡所說的「善」並不是指道德上的良善，而是「</li>
+<li>為了自己」的善。</li>
+</ul>
+<h3 id="改變"><a href="#改變" class="headerlink" title="改變"></a>改變</h3><ul>
+<li>阿德勒心理學是以「生活形態」來說明人的性格或氣質。</li>
+<li>如果生活形態不是天生的，而是自己選的，應該就有重新選擇的可能性。</li>
+<li>只要你一直活在「如果怎麼樣的話…」的可能性中，就不可能改變。</li>
+</ul>
+<h3 id="自卑情結"><a href="#自卑情結" class="headerlink" title="自卑情結"></a>自卑情結</h3><ul>
+<li>為什麼讓自己只看得到缺點，變得不喜歡自己？那是因為你過份害怕被別人討厭，在人際關係中受傷所導致。</li>
+<li>孤立自己的「目的」是「不要在人際關係中受傷害」。</li>
+<li>自卑情結，是指開始把自卑感當成某種藉口使用的狀態。</li>
+<li>藉由自己的不幸，好變得「特別」。把自己的不幸當成武器，想要支配對方。</li>
+</ul>
 
             
                 
@@ -260,7 +282,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-testing/">auto testing</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/被討厭的勇氣/">被討厭的勇氣</a>
 
             </div>
         
@@ -269,7 +291,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/"  data-tooltip="被討厭的勇氣 (重點 1)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/25/Hated-courage-part-2/"  data-tooltip="被討厭的勇氣 (重點 2)">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -277,7 +299,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/" data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/23/getting-started-with-WebdriverIO/" data-tooltip="第一個 WebdriverIO 自動化測試">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -292,17 +314,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -340,7 +362,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/24/Hated-courage-part-1/"  data-tooltip="被討厭的勇氣 (重點 1)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/25/Hated-courage-part-2/"  data-tooltip="被討厭的勇氣 (重點 2)">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -348,7 +370,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/22/front-test-framework-compare/" data-tooltip="自動化測試框架比較 with NodeJS">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/23/getting-started-with-WebdriverIO/" data-tooltip="第一個 WebdriverIO 自動化測試">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -363,17 +385,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -393,17 +415,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/24/Hated-courage-part-1/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
