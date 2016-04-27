@@ -218,6 +218,110 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/07/buddy-ci/">
+                            Buddy CI 介紹
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 07 2016 23:14:39 GMT+0800">
+	
+		    4月 07, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="https://buddy.works" target="_blank" rel="external">Buddy CI / CD</a> 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。</p>
+<img src="/blog/2016/04/07/buddy-ci/pipelines.png" alt="pipelines.png" title="">
+<h3 id="收費方案"><a href="#收費方案" class="headerlink" title="收費方案"></a>收費方案</h3><p>只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。</p>
+<h3 id="支援的語言"><a href="#支援的語言" class="headerlink" title="支援的語言"></a>支援的語言</h3><ul>
+<li>Ruby</li>
+<li>Node.js</li>
+<li>C++</li>
+<li>Scala</li>
+<li>PHP</li>
+<li>Go</li>
+<li>Erlang</li>
+<li>Java</li>
+</ul>
+<h3 id="整合的的功能有"><a href="#整合的的功能有" class="headerlink" title="整合的的功能有"></a>整合的的功能有</h3><ul>
+<li>執行在 build 與 docker</li>
+<li>傳送檔案<ul>
+<li>FTP</li>
+<li>FTPS</li>
+<li>SFTP</li>
+</ul>
+</li>
+<li>支援部署到 IAAS<ul>
+<li>AMAZON S3</li>
+<li>HEROKU</li>
+<li>DIGITAL OCEAN</li>
+<li>MODULUS</li>
+<li>ELASTIC BEANSTALK</li>
+</ul>
+</li>
+<li>版本控制<ul>
+<li>WebDav</li>
+<li>Git push</li>
+</ul>
+</li>
+<li>DEVOPS<ul>
+<li>執行 SSH 命令指令</li>
+<li>在 HEROKU 上執行命令指令</li>
+</ul>
+</li>
+<li>訊息通知<ul>
+<li>傳送 HTTP POST</li>
+<li>Slack</li>
+<li>簡訊</li>
+<li>Email</li>
+</ul>
+</li>
+<li>監控的方式<ul>
+<li>Web</li>
+<li>Ping</li>
+<li>TCP</li>
+</ul>
+</li>
+</ul>
+<h3 id="核心架構"><a href="#核心架構" class="headerlink" title="核心架構"></a>核心架構</h3><blockquote>
+<p>What are pipelines?<br>A pipeline is a sequence of Continuous Delivery actions. For example, you can configure Buddy to upload files to the server and update assets on AWS on every push to branch, or create a pipeline that will build, test and deploy your mobile app.</p>
+</blockquote>
+<p>所有服務都圍繞在一個 pipeline 的觀念身上，這裡的 pipeline 是指一連串有順序的 Continuous Delivery 動作，例如你可以透過預先的設定，透過 Buddy 提供的自動化整合服務，當每次你的 source code repo 有更動時，可上傳檔案到你的 server 端，或建立一系列建構、測試、部署你的應用程式。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/07/buddy-ci/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/">
                             Building Isomorphic Web Applications with React 重點整理
                         </a>
@@ -838,60 +942,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/29/jade-mixins/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/28/sails-i18n-object-notation/">
-                            物件宣告 Sails 多國語系
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Mar 28 2016 17:12:56 GMT+0800">
-	
-		    3月 28, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用<a href="https://github.com/mashpie/i18n-node" target="_blank" rel="external">i18n-node</a>，所以基本 i18n-node 有提供的功能都可以使用。</p>
-<p>objectNotation 這個功能預設是 false，所以必須得先設定。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p><strong>修改多國語系設定檔</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/i18n.js&#10;&#10;module.exports.i18n = &#123;&#10;  updateFiles: true,&#10;  localesDirectory: &#39;/config/locales&#39;,&#10;  locales: [&#39;en&#39;, &#39;zh&#39;],&#10;  // &#21152;&#36889;&#34892;&#10;  objectNotation: true&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>支援物件式的寫法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/locales/zh.json&#10;&#123;&#10;  &#34;admin&#34;: &#123;&#10;    &#34;common&#34;: &#123;&#10;      &#34;createdAt&#34;: &#34;&#24314;&#31435;&#26085;&#26399;&#34;,&#10;      &#34;publishAt&#34;: &#34;&#30332;&#20296;&#26085;&#26399;&#34;,&#10;      &#34;title&#34;: &#34;&#27161;&#38988;&#34;,&#10;      &#34;content&#34;: &#34;&#20839;&#23481;&#34;,&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>修改 view 檔</strong></p>
-<p>此範例是針對 <code>Jade</code> 的寫法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;i18n(&#39;admin.common.createdAt&#39;)&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h3><ul>
-<li><a href="https://github.com/balderdashy/sails/issues/1878" target="_blank" rel="external">i18n does not support the objectNotation config option </a></li>
-<li><a href="http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n" target="_blank" rel="external">sails i18n</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/28/sails-i18n-object-notation/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
