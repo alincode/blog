@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-27T08:52:20.000Z</updated>
+  <updated>2016-04-28T10:28:09.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebdriverIO 快速建構設定檔</title>
+    <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
+    <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
+    <published>2016-04-28T08:49:54.000Z</published>
+    <updated>2016-04-28T10:28:09.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;啟動-webdriverio-內建的快速建構設定檔工具&quot;&gt;&lt;a href=&quot;#啟動-webdriverio-內建的快速建構設定檔工具&quot; class=&quot;headerlink&quot; title=&quot;啟動 webdriverio 內建的快速建構設定檔工具&quot;&gt;&lt;/a&gt;啟動 webdriverio 內建的快速建構設定檔工具&lt;/h3&gt;&lt;p&gt;&lt;code&gt;./node_modules/.bin/wdio config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;基本一直 enter，就可以完成了，但別忘了把最後一步換成真正你要測試的 domain url&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/webdriverio-build-config.png&quot; alt=&quot;webdriverio-build-config.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;因為放置測試 code 的資料夾，它不會自動建立，所以這部分還是要手動建立。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mkdir -p ./test/specs&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;這樣全部測試架構都設定完了，實在非常快吧。&lt;/p&gt;
+&lt;h3 id=&quot;執行測試專案&quot;&gt;&lt;a href=&quot;#執行測試專案&quot; class=&quot;headerlink&quot; title=&quot;執行測試專案&quot;&gt;&lt;/a&gt;執行測試專案&lt;/h3&gt;&lt;p&gt;&lt;code&gt;./node_modules/.bin/wdio wdio.conf.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;小提醒：selenium-standalone 也要啟動 &lt;code&gt;selenium-standalone start&lt;/code&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+    
+    </summary>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
   
   <entry>
     <title>被討厭的勇氣 (重點 4)</title>
@@ -696,35 +727,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;script-內的指令，一定要指定指令路徑。&quot;&gt;&lt;a href=&quot;#script-內的指令，一定要指定指令路徑。&quot; class=&quot;headerlink&quot; title=&quot;script 內的指令，一定要指定指令路徑。&quot;&gt;&lt;/a&gt;script 內的指令，一定要指定指令路
-    
-    </summary>
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
-    
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Buddy CI Pipelines 流程</title>
-    <link href="http://alincode.github.io/2016/04/08/buddy-ci-2/"/>
-    <id>http://alincode.github.io/2016/04/08/buddy-ci-2/</id>
-    <published>2016-04-08T15:48:35.000Z</published>
-    <updated>2016-04-13T13:07:28.000Z</updated>
-    
-    <content type="html">&lt;p&gt;每個帳號一開始進去，它就已經建好一個 sample project，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。&lt;/p&gt;
-&lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; class=&quot;headerlink&quot; title=&quot;Pipelines 的四個流程&quot;&gt;&lt;/a&gt;Pipelines 的四個流程&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/08/buddy-ci-2/4-step.png&quot; alt=&quot;4-step.png&quot; title=&quot;&quot;&gt;
-&lt;h4 id=&quot;On-Manual-Every-push-Recurrently-Run&quot;&gt;&lt;a href=&quot;#On-Manual-Every-push-Recurrently-Run&quot; class=&quot;headerlink&quot; title=&quot;On ( Manual / Every push / Recurrently ) Run&quot;&gt;&lt;/a&gt;On ( Manual / Every push / Recurrently ) Run&lt;/h4&gt;&lt;p&gt;觸發 build 的條件，對應到之前指定的 &lt;code&gt;Trigger Mode&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;On-Success&quot;&gt;&lt;a href=&quot;#On-Success&quot; class=&quot;headerlink&quot; title=&quot;On Success&quot;&gt;&lt;/a&gt;On Success&lt;/h4&gt;&lt;p&gt;指定 build 成功後，所觸發的一連串 Action&lt;/p&gt;
-&lt;h4 id=&quot;On-Failure&quot;&gt;&lt;a href=&quot;#On-Failure&quot; class=&quot;headerlink&quot; title=&quot;On Failure&quot;&gt;&lt;/a&gt;On Failure&lt;/h4&gt;&lt;p&gt;指定 build 失敗後，所觸發的一連串 Action&lt;/p&gt;
-&lt;h4 id=&quot;On-Back-To-Success&quot;&gt;&lt;a href=&quot;#On-Back-To-Success&quot; class=&quot;headerlink&quot; title=&quot;On Back To Success&quot;&gt;&lt;/a&gt;On Back To Success&lt;/h4&gt;&lt;p&gt;指定從 build 失敗恢復後，所觸發的一連串 Action&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;每個帳號一開始進去，它就已經建好一個 sample project，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。&lt;/p&gt;
-&lt;h3 id=&quot;Pipelines-的四個流程&quot;&gt;&lt;a href=&quot;#Pipelines-的四個流程&quot; clas
     
     </summary>
     

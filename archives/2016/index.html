@@ -219,6 +219,58 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+                            WebdriverIO 快速建構設定檔
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 28 2016 16:49:54 GMT+0800">
+	
+		    4月 28, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="建立測試專案"><a href="#建立測試專案" class="headerlink" title="建立測試專案"></a>建立測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init&#10;npm i webdriverio -S</span><br></pre></td></tr></table></figure>
+<h3 id="安裝其他相關的-modules"><a href="#安裝其他相關的-modules" class="headerlink" title="安裝其他相關的 modules"></a>安裝其他相關的 modules</h3><p>由於 <code>selenium-server</code> 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
+<h3 id="啟動-webdriverio-內建的快速建構設定檔工具"><a href="#啟動-webdriverio-內建的快速建構設定檔工具" class="headerlink" title="啟動 webdriverio 內建的快速建構設定檔工具"></a>啟動 webdriverio 內建的快速建構設定檔工具</h3><p><code>./node_modules/.bin/wdio config</code></p>
+<p>基本一直 enter，就可以完成了，但別忘了把最後一步換成真正你要測試的 domain url</p>
+<img src="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/webdriverio-build-config.png" alt="webdriverio-build-config.png" title="">
+<p>因為放置測試 code 的資料夾，它不會自動建立，所以這部分還是要手動建立。</p>
+<p><code>mkdir -p ./test/specs</code></p>
+<p>這樣全部測試架構都設定完了，實在非常快吧。</p>
+<h3 id="執行測試專案"><a href="#執行測試專案" class="headerlink" title="執行測試專案"></a>執行測試專案</h3><p><code>./node_modules/.bin/wdio wdio.conf.js</code></p>
+<p>小提醒：selenium-standalone 也要啟動 <code>selenium-standalone start</code></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/27/Hated-courage-part-4/">
                             被討厭的勇氣 (重點 4)
                         </a>
@@ -735,80 +787,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/18/how-to-read-a-book/">
-                            好書推薦 - 如何閱讀一本書
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Apr 18 2016 21:50:13 GMT+0800">
-	
-		    4月 18, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。</p>
-<p>本書的第一章即提到</p>
-<blockquote>
-<p>或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒性的氾濫資訊阻礙了我們的理解。</p>
-</blockquote>
-<p>因為這本書歷史悠久，所以他只提到傳統傳播媒體，但是我想大家也可以漸漸的發現到，網路文章也上充斥的懶人包，7天快速上手、15分鐘讀懂xxx，不用花很多時間就知道很多事，但卻容易忽略掉 <code>知道 != 懂</code>，然後新的技術又出來了，然後大家又一窩蜂沖上去，完全忘記有這回事。</p>
-<blockquote>
-<p>這些媒體，經過太精心的設計，使得思想形同沒有需要了(雖然只是表相如此)。…(略)…目的都在讓人不需要面對困難或努力，很容易就整理出自己的思緒，但這些精美包裝的資訊效率實在太高了，讓觀眾、聽眾、讀者根本用不著自己做結論。相反的，他們直接將包裝過後的觀點裝進自己的腦海中，就像錄影機願意接受錄影帶一樣自然。他只要按一個倒帶的鈕，就能找到他所需要的適當言論。他根本不用思考就能表現得宜。</p>
-</blockquote>
-<p>每個人都致力於 hacker way，不斷的挑戰如何讓自己更接近自己的理想，對我來說我知道我閱讀的速度很慢，這也是為什麼想讀這本書，就是想改善這部分。</p>
-<p>有些人提倡不讀書，因為他們覺得會寫在書上的資訊都很舊，先不論這部分的爭議，但即使是如此，此本書對你也有很大的幫助，因為即使不是實體的書，網路的文章也是可以運用到這些技巧。再說這本書，刷了這本多版，又被翻成各國語言，認真的讀完它，我想利多於弊。</p>
-<p>另一個會讀書的原因在於，身為 IT 工作者，我們用眼看螢幕的時間，比其他行業的人多很多，所以除了 coding、寫文章、搜尋資料之外，必須儘量的減少對眼睛的負擔，如果有長篇有價值的文章會乾脆印下來看。</p>
-<p><a href="http://www.storm.mg/lifestyle/38645" target="_blank" rel="external">雅虎百萬年薪新貴，29歲後失明之路</a></p>
-<h3 id="針對這本書吸引我的部分"><a href="#針對這本書吸引我的部分" class="headerlink" title="針對這本書吸引我的部分"></a>針對這本書吸引我的部分</h3><ul>
-<li>教你怎麼讀懂一本超過你知識程度的書</li>
-<li>如何精準的找到主旨跟重點</li>
-<li>針對不同類型的讀物，提供一些閱讀的技巧</li>
-</ul>
-<img src="/blog/2016/04/18/how-to-read-a-book/book.jpg" alt="book.jpg" title="">
-<h3 id="閱讀的層次"><a href="#閱讀的層次" class="headerlink" title="閱讀的層次"></a>閱讀的層次</h3><ul>
-<li>基礎閱讀</li>
-<li>檢視閱讀</li>
-<li>分析閱讀<ul>
-<li>第六章　一本書的分類</li>
-<li>第七章　透視一本書</li>
-<li>第八章　與作者找出共通的詞義</li>
-<li>第九章　判斷作者的主旨</li>
-<li>第十章　公正地評斷一本書</li>
-<li>第十一章　贊同或反對作者</li>
-<li>第十二章　輔助閱讀</li>
-</ul>
-</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/18/how-to-read-a-book/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -820,7 +798,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 1 頁 共 6 頁</li>
+        <li class="pagination-number">第 1 頁 共 7 頁</li>
     </ul>
 </div>
 

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>標籤: WebdriverIO - alincode</title>
+    <title>所有文章 - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="alincode">
-<meta property="og:url" content="http://alincode.github.io/tags/WebdriverIO/index.html">
+<meta property="og:url" content="http://alincode.github.io/archives/page/7/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
@@ -219,15 +219,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/">
-                            WebdriverIO 快速建構設定檔
+                        <a class="link-unstyled" href="/blog/2016/02/27/set-hexo-tranquilpeak-theme/">
+                            安裝 hexo tranquilpeak 佈景
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Apr 28 2016 16:49:54 GMT+0800">
+    <time itemprop="datePublished" content="Sat Feb 27 2016 19:40:19 GMT+0800">
 	
-		    4月 28, 2016
+		    2月 27, 2016
     	
     </time>
     
@@ -236,17 +236,23 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="建立測試專案"><a href="#建立測試專案" class="headerlink" title="建立測試專案"></a>建立測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init&#10;npm i webdriverio -S</span><br></pre></td></tr></table></figure>
-<h3 id="安裝其他相關的-modules"><a href="#安裝其他相關的-modules" class="headerlink" title="安裝其他相關的 modules"></a>安裝其他相關的 modules</h3><p>由於 <code>selenium-server</code> 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
-<h3 id="啟動-webdriverio-內建的快速建構設定檔工具"><a href="#啟動-webdriverio-內建的快速建構設定檔工具" class="headerlink" title="啟動 webdriverio 內建的快速建構設定檔工具"></a>啟動 webdriverio 內建的快速建構設定檔工具</h3><p><code>./node_modules/.bin/wdio config</code></p>
-<p>基本一直 enter，就可以完成了，但別忘了把最後一步換成真正你要測試的 domain url</p>
-<img src="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/webdriverio-build-config.png" alt="webdriverio-build-config.png" title="">
-<p>因為放置測試 code 的資料夾，它不會自動建立，所以這部分還是要手動建立。</p>
-<p><code>mkdir -p ./test/specs</code></p>
-<p>這樣全部測試架構都設定完了，實在非常快吧。</p>
-<h3 id="執行測試專案"><a href="#執行測試專案" class="headerlink" title="執行測試專案"></a>執行測試專案</h3><p><code>./node_modules/.bin/wdio wdio.conf.js</code></p>
-<p>小提醒：selenium-standalone 也要啟動 <code>selenium-standalone start</code></p>
+                    <p>因為一直找不到滿意的佈景，所以建 blog 的進度一直延宕，今天終於把它弄起來了。</p>
+<p>這個佈景有分兩種版本，跟對一般使用者或開發者。</p>
+<p><strong>使用者模式</strong></p>
+<p>下載文件中 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak#quick-start" target="_blank" rel="external">Quick Start</a> 章節的 hexo-theme-tranquilpeak-prod 連結，然後解壓縮，將目錄重新命名為 tranquilpeak 複製到 theme 資料夾下即可。</p>
+<p><strong>開發者模式</strong></p>
+<p>需先 clone 一份到本機</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git themes/tranquilpeak</span><br></pre></td></tr></table></figure>
+<p>在做一些 <strong>build</strong> 的動作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd theme/tranquilpeak&#10;npm install&#10;bower install&#10;grunt build</span><br></pre></td></tr></table></figure>
+<p>然後就完成了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><strong>其他相關資源</strong></p>
+<ul>
+<li><a href="http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/" target="_blank" rel="external">安裝Hexo (DMoon blog)</a></li>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="external">其他佈景</a></li>
+<li><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git" target="_blank" rel="external">hexo-theme-tranquilpeak</a></li>
+</ul>
 
                     
                         
@@ -254,58 +260,7 @@
                     
                     
                         <p>
-                            <a href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/23/getting-started-with-WebdriverIO/">
-                            第一個 WebdriverIO 自動化測試
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Apr 23 2016 23:25:27 GMT+0800">
-	
-		    4月 23, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>請範例使用 selenium standalone，所以請先安裝並啟動它。</p>
-<h2 id="安裝-selenium-standalone"><a href="#安裝-selenium-standalone" class="headerlink" title="安裝 selenium standalone"></a>安裝 selenium standalone</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
-<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h2><h3 id="建立自動化測試專案"><a href="#建立自動化測試專案" class="headerlink" title="建立自動化測試專案"></a>建立自動化測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init -y</span><br></pre></td></tr></table></figure>
-<h3 id="安裝-WebdriverIO"><a href="#安裝-WebdriverIO" class="headerlink" title="安裝 WebdriverIO"></a>安裝 WebdriverIO</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webdriverio -D</span><br></pre></td></tr></table></figure>
-<h3 id="第一個測試"><a href="#第一個測試" class="headerlink" title="第一個測試"></a>第一個測試</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var webdriverio = require(&#39;webdriverio&#39;);&#10;var options = &#123; desiredCapabilities: &#123; browserName: &#39;chrome&#39; &#125; &#125;;&#10;var client = webdriverio.remote(options);&#10;&#10;client&#10;    .init()&#10;    .url(&#39;http://blog.mokayo.com/&#39;)&#10;    .getTitle().then(function(title) &#123;&#10;        console.log(&#39;Title is: &#39; + title);&#10;        // Title is: &#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#10;    &#125;)&#10;    .end();</span><br></pre></td></tr></table></figure>
-<h2 id="如何執行"><a href="#如何執行" class="headerlink" title="如何執行"></a>如何執行</h2><img src="/blog/2016/04/23/getting-started-with-WebdriverIO/console.png" alt="console.png" title="">
-<h3 id="啟動-selenium-standalone"><a href="#啟動-selenium-standalone" class="headerlink" title="啟動 selenium standalone"></a>啟動 selenium standalone</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium-standalone start</span><br></pre></td></tr></table></figure>
-<h3 id="啟動自動測試程式"><a href="#啟動自動測試程式" class="headerlink" title="啟動自動測試程式"></a>啟動自動測試程式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node test.js</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始碼下載</a></p>
-<h3 id="相關資源"><a href="#相關資源" class="headerlink" title="相關資源"></a>相關資源</h3><p><a href="http://webdriver.io/" target="_blank" rel="external">WebdriverIO 官網</a><br><a href="https://www.npmjs.com/package/selenium-standalone" target="_blank" rel="external">Selenium standalone</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/23/getting-started-with-WebdriverIO/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/blog/2016/02/27/set-hexo-tranquilpeak-theme/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -319,12 +274,22 @@
     <div class="pagination-bar">
     <ul class="pagination">
         
+        <li class="pagination-prev">
+            
+                <a class="btn btn--default btn--small" href="/blog/archives/page/6/">
+            
+                <i class="fa fa-angle-left text-base icon-mr"></i>
+                    <span>上一頁</span>
+            </a>
+        </li>
         
-        <li class="pagination-number">第 1 頁 共 1 頁</li>
+        
+        <li class="pagination-number">第 7 頁 共 7 頁</li>
     </ul>
 </div>
 
 </section>
+
 
 
                 <footer id="footer" class="main-content-wrap">
