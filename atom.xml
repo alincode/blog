@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-28T10:28:09.000Z</updated>
+  <updated>2016-04-28T10:51:20.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
     <published>2016-04-28T08:49:54.000Z</published>
-    <updated>2016-04-28T10:28:09.000Z</updated>
+    <updated>2016-04-28T10:51:20.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
@@ -33,6 +33,7 @@
 &lt;p&gt;這樣全部測試架構都設定完了，實在非常快吧。&lt;/p&gt;
 &lt;h3 id=&quot;執行測試專案&quot;&gt;&lt;a href=&quot;#執行測試專案&quot; class=&quot;headerlink&quot; title=&quot;執行測試專案&quot;&gt;&lt;/a&gt;執行測試專案&lt;/h3&gt;&lt;p&gt;&lt;code&gt;./node_modules/.bin/wdio wdio.conf.js&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;小提醒：selenium-standalone 也要啟動 &lt;code&gt;selenium-standalone start&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原始碼下載&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
