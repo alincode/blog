@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-28T10:51:20.000Z</updated>
+  <updated>2016-04-28T11:01:24.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
     <published>2016-04-28T08:49:54.000Z</published>
-    <updated>2016-04-28T10:51:20.000Z</updated>
+    <updated>2016-04-28T11:01:24.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
@@ -41,6 +41,8 @@
       &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
     
     </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
     
     
       <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
@@ -210,7 +212,7 @@
     <link href="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/"/>
     <id>http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/</id>
     <published>2016-04-23T15:25:27.000Z</published>
-    <updated>2016-04-23T16:43:23.000Z</updated>
+    <updated>2016-04-28T11:02:56.000Z</updated>
     
     <content type="html">&lt;p&gt;請範例使用 selenium standalone，所以請先安裝並啟動它。&lt;/p&gt;
 &lt;h2 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 selenium standalone&quot;&gt;&lt;/a&gt;安裝 selenium standalone&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -230,6 +232,8 @@
 &lt;h2 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 
     
     </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
     
     
       <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
@@ -269,7 +273,7 @@
     <link href="http://alincode.github.io/2016/04/21/start-with-nightwatch/"/>
     <id>http://alincode.github.io/2016/04/21/start-with-nightwatch/</id>
     <published>2016-04-21T10:04:42.000Z</published>
-    <updated>2016-04-23T16:42:38.000Z</updated>
+    <updated>2016-04-28T11:01:41.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;h4 id=&quot;必要環境&quot;&gt;&lt;a href=&quot;#必要環境&quot; class=&quot;headerlink&quot; title=&quot;必要環境&quot;&gt;&lt;/a&gt;必要環境&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;有 Firefox 或 Chrome&lt;/li&gt;
@@ -289,6 +293,8 @@
       &lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;h4 id=&quot;必要環境&quot;&gt;&lt;a href=&quot;#必要環境&quot; class=&quot;headerlink&quot; title=&quot;必要環境&quot;&gt;&lt;/a&gt;必要環境&lt;/h
     
     </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
     
     
       <category term="nightwatch" scheme="http://alincode.github.io/tags/nightwatch/"/>
