@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-29T09:21:59.000Z</updated>
+  <updated>2016-04-29T09:25:44.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>WebdriverIO 與 Chimp 整合 與 Mocha</title>
+    <title>WebdriverIO 與 Chimp 和 Mocha 整合</title>
     <link href="http://alincode.github.io/2016/04/30/webdriverio-with-chimp-with-mocha/"/>
     <id>http://alincode.github.io/2016/04/30/webdriverio-with-chimp-with-mocha/</id>
     <published>2016-04-30T08:41:38.000Z</published>
-    <updated>2016-04-29T09:21:59.000Z</updated>
+    <updated>2016-04-29T09:25:44.000Z</updated>
     
     <content type="html">&lt;p&gt;此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。&lt;/p&gt;
 &lt;h3 id=&quot;安裝-Chimp&quot;&gt;&lt;a href=&quot;#安裝-Chimp&quot; class=&quot;headerlink&quot; title=&quot;安裝 Chimp&quot;&gt;&lt;/a&gt;安裝 Chimp&lt;/h3&gt;&lt;p&gt;&lt;code&gt;npm install -g chimp&lt;/code&gt;&lt;/p&gt;
