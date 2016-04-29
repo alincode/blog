@@ -25,7 +25,7 @@
 安裝 Chimpnpm install -g chimp
 撰寫一個自動化測試 script這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 @watch 才會被監聽。
 1describe(&amp;#39;Chimp Mocha&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;  describe(&amp;">
-<meta property="og:updated_time" content="2016-04-29T09:09:16.000Z">
+<meta property="og:updated_time" content="2016-04-29T09:16:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebdriverIO 與 Chimp 整合 與 Mocha">
 <meta name="twitter:description" content="此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。
@@ -255,6 +255,10 @@
 <h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
 <h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
 <h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://chimp.readme.io/" target="_blank" rel="external">chimp 官網</a></li>
+</ul>
+<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始範例下載</a></p>
 
             
                 
