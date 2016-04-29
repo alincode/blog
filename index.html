@@ -218,6 +218,70 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/30/webdriverio-with-chimp-with-mocha/">
+                            WebdriverIO 與 Chimp 整合 與 Mocha
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Apr 30 2016 16:41:38 GMT+0800">
+	
+		    4月 30, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。</p>
+<h3 id="安裝-Chimp"><a href="#安裝-Chimp" class="headerlink" title="安裝 Chimp"></a>安裝 Chimp</h3><p><code>npm install -g chimp</code></p>
+<h3 id="撰寫一個自動化測試-script"><a href="#撰寫一個自動化測試-script" class="headerlink" title="撰寫一個自動化測試 script"></a>撰寫一個自動化測試 script</h3><p><img src="https://github.com/xolvio/chimp/raw/master/images/realtime.gif?raw=true" alt="官方範例"></p>
+<blockquote>
+<p>圖片來自於官方網站</p>
+</blockquote>
+<p>這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 <code>@watch</code> 才會被監聽。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;Chimp Mocha&#39;, () =&#62; &#123;&#10;  describe(&#39;Page title&#39;, () =&#62; &#123;&#10;    it(&#39;should be set by the Meteor method @watch&#39;, () =&#62; &#123;&#10;      browser.url(&#39;http://google.com&#39;);&#10;      expect(browser.getTitle()).to.equal(&#39;Google&#39;);&#10;    &#125;);&#10;  &#125;);&#10;&#10;  describe(&#39;ES2015&#39;, function () &#123;&#10;    it(&#39;is supported&#39;, function () &#123;&#10;      const &#123;a, b&#125; = &#123;a: &#39;foo&#39;, b: &#39;bar&#39;&#125;;&#10;      const arrowFunc = (foo) =&#62; foo;&#10;      class Foo &#123;&#10;        constructor() &#123;&#125;&#10;        foo() &#123;&#125;&#10;      &#125;&#10;      var object = &#123;&#10;        foo() &#123;&#125;&#10;      &#125;;&#10;      const templateString = `Foo`;&#10;      const [c, ,d] = [1,2,3];&#10;    &#125;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h3><p><code>chimp --mocha --watch --path=test</code></p>
+<p>預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。</p>
+<h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
+<h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
+<h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://chimp.readme.io/" target="_blank" rel="external">chimp 官網</a></li>
+</ul>
+<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始範例下載</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/30/webdriverio-with-chimp-with-mocha/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/29/Hated-courage-part-5/">
                             被討厭的勇氣 (重點 5) - 認真活在當下
                         </a>
@@ -285,66 +349,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/29/Hated-courage-part-5/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/">
-                            WebdriverIO 與 Chimp 整合 與 Mocha
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 29 2016 16:41:38 GMT+0800">
-	
-		    4月 29, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。</p>
-<h3 id="安裝-Chimp"><a href="#安裝-Chimp" class="headerlink" title="安裝 Chimp"></a>安裝 Chimp</h3><p><code>npm install -g chimp</code></p>
-<h3 id="撰寫一個自動化測試-script"><a href="#撰寫一個自動化測試-script" class="headerlink" title="撰寫一個自動化測試 script"></a>撰寫一個自動化測試 script</h3><p>這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 <code>@watch</code> 才會被監聽。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;Chimp Mocha&#39;, () =&#62; &#123;&#10;  describe(&#39;Page title&#39;, () =&#62; &#123;&#10;    it(&#39;should be set by the Meteor method @watch&#39;, () =&#62; &#123;&#10;      browser.url(&#39;http://google.com&#39;);&#10;      expect(browser.getTitle()).to.equal(&#39;Google&#39;);&#10;    &#125;);&#10;  &#125;);&#10;&#10;  describe(&#39;ES2015&#39;, function () &#123;&#10;    it(&#39;is supported&#39;, function () &#123;&#10;      const &#123;a, b&#125; = &#123;a: &#39;foo&#39;, b: &#39;bar&#39;&#125;;&#10;      const arrowFunc = (foo) =&#62; foo;&#10;      class Foo &#123;&#10;        constructor() &#123;&#125;&#10;        foo() &#123;&#125;&#10;      &#125;&#10;      var object = &#123;&#10;        foo() &#123;&#125;&#10;      &#125;;&#10;      const templateString = `Foo`;&#10;      const [c, ,d] = [1,2,3];&#10;    &#125;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h3><p><code>chimp --mocha --watch --path=test</code></p>
-<p>預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。</p>
-<h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
-<h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
-<h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="https://chimp.readme.io/" target="_blank" rel="external">chimp 官網</a></li>
-</ul>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始範例下載</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
