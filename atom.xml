@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-04-29T09:25:44.000Z</updated>
+  <updated>2016-04-29T13:41:18.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebdriverIO 介紹</title>
+    <link href="http://alincode.github.io/2016/05/01/webdriverio-introduction/"/>
+    <id>http://alincode.github.io/2016/05/01/webdriverio-introduction/</id>
+    <published>2016-05-01T10:02:29.000Z</published>
+    <updated>2016-04-29T13:41:18.000Z</updated>
+    
+    <content type="html">&lt;p&gt;什麼是 WebdriverIO？&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/05/01/webdriverio-introduction/webdriverio.png&quot; alt=&quot;webdriverio.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;什麼是 WebdriverIO？&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/05/01/webdriverio-introduction/webdriverio.png&quot; alt=&quot;webdriverio.png&quot; title=&quot;&quot;&gt;
+
+    
+    </summary>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
   
   <entry>
     <title>WebdriverIO 與 Chimp 和 Mocha 整合</title>
@@ -123,7 +147,7 @@
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
     <published>2016-04-28T08:49:54.000Z</published>
-    <updated>2016-04-28T11:01:24.000Z</updated>
+    <updated>2016-04-29T09:53:18.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
@@ -315,7 +339,7 @@
     <link href="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/"/>
     <id>http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/</id>
     <published>2016-04-23T15:25:27.000Z</published>
-    <updated>2016-04-28T11:02:56.000Z</updated>
+    <updated>2016-04-29T09:55:53.000Z</updated>
     
     <content type="html">&lt;p&gt;請範例使用 selenium standalone，所以請先安裝並啟動它。&lt;/p&gt;
 &lt;h2 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 selenium standalone&quot;&gt;&lt;/a&gt;安裝 selenium standalone&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -715,79 +739,6 @@
       <category term="VPS" scheme="http://alincode.github.io/tags/VPS/"/>
     
       <category term="Vultr" scheme="http://alincode.github.io/tags/Vultr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Geb for functional testing of Grails app 重點整理</title>
-    <link href="http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/"/>
-    <id>http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/</id>
-    <published>2016-04-10T19:03:14.000Z</published>
-    <updated>2016-04-10T19:17:13.000Z</updated>
-    
-    <content type="html">&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/HkJQYapam_s&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;p&gt;Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016&lt;/p&gt;
-&lt;h3 id=&quot;為什麼我們要用Geb-06-04&quot;&gt;&lt;a href=&quot;#為什麼我們要用Geb-06-04&quot; class=&quot;headerlink&quot; title=&quot;為什麼我們要用Geb (06:04)&quot;&gt;&lt;/a&gt;為什麼我們要用Geb (06:04)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;類似於 JQuery 的語法&lt;/li&gt;
-&lt;li&gt;具有非常強大的 WebDriver，卻是使用非常簡單的 API&lt;/li&gt;
-&lt;li&gt;Robustness of Page Object Modeling&lt;/li&gt;
-&lt;li&gt;使用 Groovy 描述性語言&lt;/li&gt;
-&lt;li&gt;跟其他 build framework 整合得很好 (Gradle、Maven)&lt;/li&gt;
-&lt;li&gt;可做為傑出的使用者文件&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Geb-selectors-09-52&quot;&gt;&lt;a href=&quot;#Geb-selectors-09-52&quot; class=&quot;headerlink&quot; title=&quot;Geb selectors (09:52)&quot;&gt;&lt;/a&gt;Geb selectors (09:52)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;相似於 JQuery 的語法&lt;/li&gt;
-&lt;li&gt;支援 regex&lt;/li&gt;
-&lt;li&gt;選取後，會回傳一個 Navigator 物件&lt;/li&gt;
-&lt;li&gt;支援 CSS3 語法&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;取得資訊-12-30&quot;&gt;&lt;a href=&quot;#取得資訊-12-30&quot; class=&quot;headerlink&quot; title=&quot;取得資訊 (12:30)&quot;&gt;&lt;/a&gt;取得資訊 (12:30)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#39;p&amp;#39;).text() == &amp;#34;a&amp;#34;&amp;#10;$(&amp;#39;p&amp;#39;).tag() == &amp;#34;p&amp;#34;&amp;#10;$(&amp;#39;p&amp;#39;).@title == &amp;#34;a&amp;#34;&amp;#10;$(&amp;#39;p&amp;#39;).classes == [&amp;#34;a&amp;#8221;, &amp;#34;para&amp;#34;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;與內容相互作用-12-47&quot;&gt;&lt;a href=&quot;#與內容相互作用-12-47&quot; class=&quot;headerlink&quot; title=&quot;與內容相互作用 (12:47)&quot;&gt;&lt;/a&gt;與內容相互作用 (12:47)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#39;a&amp;#39;).click()&amp;#10;$(&amp;#39;div&amp;#39;).isDisplayed()&amp;#10;withConfirm &amp;#123;&amp;#10;  $(&amp;#39;button.delete&amp;#39;).click();&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;傳入-input-13-50&quot;&gt;&lt;a href=&quot;#傳入-input-13-50&quot; class=&quot;headerlink&quot; title=&quot;傳入 input (13:50)&quot;&gt;&lt;/a&gt;傳入 input (13:50)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$(&amp;#39;div&amp;#39;) &amp;#60;&amp;#60; &amp;#39;abc&amp;#39;&amp;#10;$(&amp;#39;input&amp;#39;, name: &amp;#39;foo&amp;#39;) &amp;#60;&amp;#60; Keys.chord(Keys.CONTROL, &amp;#39;c&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Interaction-14-25&quot;&gt;&lt;a href=&quot;#Interaction-14-25&quot; class=&quot;headerlink&quot; title=&quot;Interaction (14:25)&quot;&gt;&lt;/a&gt;Interaction (14:25)&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Using actions API from WebDriver is possible. But Geb provides the interact closure.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import org.openga.selenium.Keys&amp;#10;&amp;#10;interact &amp;#123;&amp;#10;     KeyDown Keys.CTRL&amp;#10;     click $(&amp;#39;a.myLink&amp;#39;)&amp;#10;     keyUp Keys.CTRL&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;可使用的變數-16-15&quot;&gt;&lt;a href=&quot;#可使用的變數-16-15&quot; class=&quot;headerlink&quot; title=&quot;可使用的變數 (16:15)&quot;&gt;&lt;/a&gt;可使用的變數 (16:15)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;title&lt;/li&gt;
-&lt;li&gt;browser&lt;/li&gt;
-&lt;li&gt;currentUrl&lt;/li&gt;
-&lt;li&gt;currentWindow&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;更多的可能-16-50&quot;&gt;&lt;a href=&quot;#更多的可能-16-50&quot; class=&quot;headerlink&quot; title=&quot;更多的可能 (16:50)&quot;&gt;&lt;/a&gt;更多的可能 (16:50)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;上傳檔案&lt;/li&gt;
-&lt;li&gt;下載檔案&lt;/li&gt;
-&lt;li&gt;與 js 互動&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;獨立的-Geb-script-17-10&quot;&gt;&lt;a href=&quot;#獨立的-Geb-script-17-10&quot; class=&quot;headerlink&quot; title=&quot;獨立的 Geb script (17:10)&quot;&gt;&lt;/a&gt;獨立的 Geb script (17:10)&lt;/h3&gt;&lt;h3 id=&quot;Geb-Spec-Basic-23-00&quot;&gt;&lt;a href=&quot;#Geb-Spec-Basic-23-00&quot; class=&quot;headerlink&quot; title=&quot;Geb Spec Basic (23:00)&quot;&gt;&lt;/a&gt;Geb Spec Basic (23:00)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.spock.GebSpec&amp;#10;&amp;#10;@Stepwise&amp;#10;class XXXFunctionalSpec extends GebSpec &amp;#123;&amp;#10;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Page-物件-描述一個頁面-23-50&quot;&gt;&lt;a href=&quot;#Page-物件-描述一個頁面-23-50&quot; class=&quot;headerlink&quot; title=&quot;Page 物件 - 描述一個頁面 (23:50)&quot;&gt;&lt;/a&gt;Page 物件 - 描述一個頁面 (23:50)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Url&lt;/li&gt;
-&lt;li&gt;如何檢查是否在對的地方&lt;/li&gt;
-&lt;li&gt;內容是否是我們要的跟如何找到它&lt;/li&gt;
-&lt;li&gt;Helper method&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;content-closure-25-35&quot;&gt;&lt;a href=&quot;#content-closure-25-35&quot; class=&quot;headerlink&quot; title=&quot;content closure (25:35)&quot;&gt;&lt;/a&gt;content closure (25:35)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;static content = &amp;#123;&amp;#10;     info(required: false) &amp;#123;$(&amp;#39;div.info&amp;#39;)&amp;#125;&amp;#10;     message(wait: false) &amp;#123;$(&amp;#39;div.message&amp;#39;)&amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Modules-描述重複的內容-26-10&quot;&gt;&lt;a href=&quot;#Modules-描述重複的內容-26-10&quot; class=&quot;headerlink&quot; title=&quot;Modules - 描述重複的內容 (26:10)&quot;&gt;&lt;/a&gt;Modules - 描述重複的內容 (26:10)&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;跨頁面&lt;/li&gt;
-&lt;li&gt;Within the same page&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Modules-for-repeated-content-in-a-page-27-00&quot;&gt;&lt;a href=&quot;#Modules-for-repeated-content-in-a-page-27-00&quot; class=&quot;headerlink&quot; title=&quot;Modules for repeated content in a page (27:00)&quot;&gt;&lt;/a&gt;Modules for repeated content in a page (27:00)&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Module&amp;#10;&amp;#10;class XXXListItemModules extends Module &amp;#123;&amp;#10;     data &amp;#123; $(&amp;#34;td&amp;#8221;, it) &amp;#125;&amp;#10;     name &amp;#123; data(0).text() &amp;#125;&amp;#10;     email &amp;#123; data(1).text() &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Waiting-36-00&quot;&gt;&lt;a href=&quot;#Waiting-36-00&quot; class=&quot;headerlink&quot; title=&quot;Waiting (36:00)&quot;&gt;&lt;/a&gt;Waiting (36:00)&lt;/h3&gt;&lt;p&gt;自定預設的 Waiting 設定值&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// GebConfig.groovy&amp;#10;waiting &amp;#123;&amp;#10;     timeout: 10&amp;#10;     retryInterval: 0.5&amp;#10;&amp;#125;&amp;#10;&amp;#10;baseNavigatorWaiting = true&amp;#10;atCheckWaiting = true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Pausing-Geb-36-55&quot;&gt;&lt;a href=&quot;#Pausing-Geb-36-55&quot; class=&quot;headerlink&quot; title=&quot;Pausing Geb (36:55)&quot;&gt;&lt;/a&gt;Pausing Geb (36:55)&lt;/h3&gt;&lt;p&gt;可做為 debug 用途&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;when:&amp;#10;pause() // for Pause Geb until button pressed&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/HkJQYapam_s&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;p&gt;Geb for fu
-    
-    </summary>
-    
-    
-      <category term="Geb" scheme="http://alincode.github.io/tags/Geb/"/>
     
   </entry>
   

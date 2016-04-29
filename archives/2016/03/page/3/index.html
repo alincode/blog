@@ -614,6 +614,53 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/04/npm-bin/">
+                            NPM bin 執行順序
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Mar 04 2016 22:00:12 GMT+0800">
+	
+		    3月 04, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
+<blockquote>
+<p>This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write “build”: “node_modules/.bin/webpack”, we can do just “build”: “webpack”. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</p>
+</blockquote>
+<p><a href="http://survivejs.com/webpack_react/developing_with_webpack/" target="_blank" rel="external">http://survivejs.com/webpack_react/developing_with_webpack/</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/04/npm-bin/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/03/jwt-4/">
                             JWT (4) Server Side 實作範例
                         </a>
@@ -666,53 +713,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/03/jwt-4/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/03/npm-bin/">
-                            NPM bin 執行順序
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 03 2016 22:00:12 GMT+0800">
-	
-		    3月 03, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
-<p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
-<blockquote>
-<p>This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write “build”: “node_modules/.bin/webpack”, we can do just “build”: “webpack”. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</p>
-</blockquote>
-<p><a href="http://survivejs.com/webpack_react/developing_with_webpack/" target="_blank" rel="external">http://survivejs.com/webpack_react/developing_with_webpack/</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/03/npm-bin/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
