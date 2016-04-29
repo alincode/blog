@@ -218,6 +218,56 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/10/buddy-ci-4/">
+                            Buddy CI 與 Slack 整合
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Apr 10 2016 02:03:56 GMT+0800">
+	
+		    4月 10, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="將-Slack-的訊息通知-Action-設上去"><a href="#將-Slack-的訊息通知-Action-設上去" class="headerlink" title="將 Slack 的訊息通知 Action 設上去"></a>將 Slack 的訊息通知 Action 設上去</h3><img src="/blog/2016/04/10/buddy-ci-4/on-failure.png" alt="on-failure.png" title="">
+<h3 id="Action-內可以自訂要傳送的文字"><a href="#Action-內可以自訂要傳送的文字" class="headerlink" title="Action 內可以自訂要傳送的文字"></a>Action 內可以自訂要傳送的文字</h3><img src="/blog/2016/04/10/buddy-ci-4/send-message-setting.png" alt="send-message-setting.png" title="">
+<h3 id="最後-Buddy-傳到-Slack-Channel-的結果"><a href="#最後-Buddy-傳到-Slack-Channel-的結果" class="headerlink" title="最後 Buddy 傳到 Slack Channel 的結果"></a>最後 Buddy 傳到 Slack Channel 的結果</h3><img src="/blog/2016/04/10/buddy-ci-4/slack.png" alt="slack.png" title="">
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/10/buddy-ci-4/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
                             Buddy CI 踩雷心得
                         </a>
@@ -873,73 +923,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/01/geb-version-13-x/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/31/flux-life-cycle-demo/">
-                            Flux 生命週期範例
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 31 2016 03:52:49 GMT+0800">
-	
-		    3月 31, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75" target="_blank" rel="external">完整範例</a></p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><strong>第一次 Component 被載入時，會做哪些事？</strong></p>
-<ul>
-<li>執行 getInitialState</li>
-<li>getInitialState 去 Store 拿 state 第一次初始化需要載入的資料</li>
-<li>執行 componentWillMount</li>
-<li>執行 Component render</li>
-<li>執行 componentDidMount</li>
-<li>componentDidMount 會加入 store 的 addChangeListener</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TestStore.addChangeListener(this.storeCallback);</span><br></pre></td></tr></table></figure>
-<h3 id="有值更動時"><a href="#有值更動時" class="headerlink" title="有值更動時"></a>有值更動時</h3><p><strong>執行被 bind 的 onChange</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea rows=&#34;4&#34; cols=&#34;50&#34; onChange=&#123;this._onChange&#125; value=&#123;this.state.text&#125;/&#62;</span><br></pre></td></tr></table></figure>
-<p><strong>onChange 取得值後傳給 action</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_onChange: function(event) &#123;&#10;   TestAction.updateText(event.target.value);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  updateText: function(text) &#123;&#10;    console.log(&#39;=== action updateText ===&#39;);&#10;    AppDispatcher.dispatch(&#123;&#10;      type: ActionTypes.UPDATE_TEXT,&#10;      text: text&#10;    &#125;);&#10;  &#125;,&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>接著 Store 的 dispatcherIndex 被觸發</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatcherIndex: AppDispatcher.register(function(payload) &#123;&#10;    var action = payload.type;&#10;    switch(action) &#123;&#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&#10;        _text = payload.text;&#10;        TestStore.emitChange();&#10;        break;&#10;      default:&#10;        console.log(&#39;=== store dispatcherIndex default ===&#39;);&#10;    &#125;&#10;    return true; // No errors. Needed by promise in Dispatcher.&#10;  &#125;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storeCallback: function() &#123;&#10;  this.setState(getStateStores());&#10;&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。</strong></p>
-<p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true</strong></p>
-<p><strong>會接著執行 componentWillUpdate</strong></p>
-<p><strong>然後會重新 render component</strong></p>
-<p><strong>render 完後會，會執行 componentDidUpdate</strong></p>
-<h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
-<li><a href="https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods" target="_blank" rel="external">Component Lifecycle</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/31/flux-life-cycle-demo/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

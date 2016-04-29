@@ -6,30 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>WebdriverIO 快速建構設定檔 - alincode</title>
+    <title>WebdriverIO 與 Chimp 整合 與 Mocha - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="建立測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S
-安裝其他相關的 modules由於 selenium-server 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。
-1npm install selenium-sta">
+    <meta name="description" content="此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。
+安裝 Chimpnpm install -g chimp
+撰寫一個自動化測試 script這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 @watch 才會被監聽。
+1describe(&amp;#39;Chimp Mocha&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;  describe(&amp;">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="WebdriverIO 快速建構設定檔">
-<meta property="og:url" content="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/index.html">
+<meta property="og:title" content="WebdriverIO 與 Chimp 整合 與 Mocha">
+<meta property="og:url" content="http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="建立測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S
-安裝其他相關的 modules由於 selenium-server 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。
-1npm install selenium-sta">
-<meta property="og:image" content="http://alincode.github.io/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/webdriverio-build-config.png">
-<meta property="og:updated_time" content="2016-04-28T11:01:24.000Z">
+<meta property="og:description" content="此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。
+安裝 Chimpnpm install -g chimp
+撰寫一個自動化測試 script這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 @watch 才會被監聽。
+1describe(&amp;#39;Chimp Mocha&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;  describe(&amp;">
+<meta property="og:updated_time" content="2016-04-29T09:09:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WebdriverIO 快速建構設定檔">
-<meta name="twitter:description" content="建立測試專案1mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S
-安裝其他相關的 modules由於 selenium-server 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。
-1npm install selenium-sta">
+<meta name="twitter:title" content="WebdriverIO 與 Chimp 整合 與 Mocha">
+<meta name="twitter:description" content="此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。
+安裝 Chimpnpm install -g chimp
+撰寫一個自動化測試 script這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 @watch 才會被監聽。
+1describe(&amp;#39;Chimp Mocha&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;  describe(&amp;">
     
     
         
@@ -223,13 +225,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            WebdriverIO 快速建構設定檔
+            WebdriverIO 與 Chimp 整合 與 Mocha
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Apr 28 2016 16:49:54 GMT+0800">
+    <time itemprop="datePublished" content="Fri Apr 29 2016 16:41:38 GMT+0800">
 	
-		    4月 28, 2016
+		    4月 29, 2016
     	
     </time>
     
@@ -244,18 +246,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="建立測試專案"><a href="#建立測試專案" class="headerlink" title="建立測試專案"></a>建立測試專案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir webdriverio-sandbox &#38;&#38; cd webdriverio-sandbox&#10;npm init&#10;npm i webdriverio -S</span><br></pre></td></tr></table></figure>
-<h3 id="安裝其他相關的-modules"><a href="#安裝其他相關的-modules" class="headerlink" title="安裝其他相關的 modules"></a>安裝其他相關的 modules</h3><p>由於 <code>selenium-server</code> 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install selenium-standalone -g&#10;selenium-standalone install</span><br></pre></td></tr></table></figure>
-<h3 id="啟動-webdriverio-內建的快速建構設定檔工具"><a href="#啟動-webdriverio-內建的快速建構設定檔工具" class="headerlink" title="啟動 webdriverio 內建的快速建構設定檔工具"></a>啟動 webdriverio 內建的快速建構設定檔工具</h3><p><code>./node_modules/.bin/wdio config</code></p>
-<p>基本一直 enter，就可以完成了，但別忘了把最後一步換成真正你要測試的 domain url</p>
-<img src="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/webdriverio-build-config.png" alt="webdriverio-build-config.png" title="">
-<p>因為放置測試 code 的資料夾，它不會自動建立，所以這部分還是要手動建立。</p>
-<p><code>mkdir -p ./test/specs</code></p>
-<p>這樣全部測試架構都設定完了，實在非常快吧。</p>
-<h3 id="執行測試專案"><a href="#執行測試專案" class="headerlink" title="執行測試專案"></a>執行測試專案</h3><p><code>./node_modules/.bin/wdio wdio.conf.js</code></p>
-<p>小提醒：selenium-standalone 也要啟動 <code>selenium-standalone start</code></p>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox" target="_blank" rel="external">原始碼下載</a></p>
+            <p>此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。</p>
+<h3 id="安裝-Chimp"><a href="#安裝-Chimp" class="headerlink" title="安裝 Chimp"></a>安裝 Chimp</h3><p><code>npm install -g chimp</code></p>
+<h3 id="撰寫一個自動化測試-script"><a href="#撰寫一個自動化測試-script" class="headerlink" title="撰寫一個自動化測試 script"></a>撰寫一個自動化測試 script</h3><p>這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 <code>@watch</code> 才會被監聽。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;Chimp Mocha&#39;, () =&#62; &#123;&#10;  describe(&#39;Page title&#39;, () =&#62; &#123;&#10;    it(&#39;should be set by the Meteor method @watch&#39;, () =&#62; &#123;&#10;      browser.url(&#39;http://google.com&#39;);&#10;      expect(browser.getTitle()).to.equal(&#39;Google&#39;);&#10;    &#125;);&#10;  &#125;);&#10;&#10;  describe(&#39;ES2015&#39;, function () &#123;&#10;    it(&#39;is supported&#39;, function () &#123;&#10;      const &#123;a, b&#125; = &#123;a: &#39;foo&#39;, b: &#39;bar&#39;&#125;;&#10;      const arrowFunc = (foo) =&#62; foo;&#10;      class Foo &#123;&#10;        constructor() &#123;&#125;&#10;        foo() &#123;&#125;&#10;      &#125;&#10;      var object = &#123;&#10;        foo() &#123;&#125;&#10;      &#125;;&#10;      const templateString = `Foo`;&#10;      const [c, ,d] = [1,2,3];&#10;    &#125;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h3><p><code>chimp --mocha --watch --path=test</code></p>
+<p>預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。</p>
+<h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
+<h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
+<h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -268,7 +267,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Chimp/">Chimp</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Mocha/">Mocha</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a>
 
             </div>
         
@@ -277,7 +276,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/"  data-tooltip="WebdriverIO 與 Chimp 整合 與 Mocha">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/29/Hated-courage-part-5/"  data-tooltip="被討厭的勇氣 (重點 5) - 認真活在當下">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -285,7 +284,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/27/Hated-courage-part-4/" data-tooltip="被討厭的勇氣 (重點 4)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/" data-tooltip="WebdriverIO 快速建構設定檔">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -300,17 +299,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -348,7 +347,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/"  data-tooltip="WebdriverIO 與 Chimp 整合 與 Mocha">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/29/Hated-courage-part-5/"  data-tooltip="被討厭的勇氣 (重點 5) - 認真活在當下">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -356,7 +355,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/27/Hated-courage-part-4/" data-tooltip="被討厭的勇氣 (重點 4)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/" data-tooltip="WebdriverIO 快速建構設定檔">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -371,17 +370,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -401,17 +400,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

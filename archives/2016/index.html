@@ -302,6 +302,62 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/">
+                            WebdriverIO 與 Chimp 整合 與 Mocha
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Apr 29 2016 16:41:38 GMT+0800">
+	
+		    4月 29, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。</p>
+<h3 id="安裝-Chimp"><a href="#安裝-Chimp" class="headerlink" title="安裝 Chimp"></a>安裝 Chimp</h3><p><code>npm install -g chimp</code></p>
+<h3 id="撰寫一個自動化測試-script"><a href="#撰寫一個自動化測試-script" class="headerlink" title="撰寫一個自動化測試 script"></a>撰寫一個自動化測試 script</h3><p>這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 <code>@watch</code> 才會被監聽。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;Chimp Mocha&#39;, () =&#62; &#123;&#10;  describe(&#39;Page title&#39;, () =&#62; &#123;&#10;    it(&#39;should be set by the Meteor method @watch&#39;, () =&#62; &#123;&#10;      browser.url(&#39;http://google.com&#39;);&#10;      expect(browser.getTitle()).to.equal(&#39;Google&#39;);&#10;    &#125;);&#10;  &#125;);&#10;&#10;  describe(&#39;ES2015&#39;, function () &#123;&#10;    it(&#39;is supported&#39;, function () &#123;&#10;      const &#123;a, b&#125; = &#123;a: &#39;foo&#39;, b: &#39;bar&#39;&#125;;&#10;      const arrowFunc = (foo) =&#62; foo;&#10;      class Foo &#123;&#10;        constructor() &#123;&#125;&#10;        foo() &#123;&#125;&#10;      &#125;&#10;      var object = &#123;&#10;        foo() &#123;&#125;&#10;      &#125;;&#10;      const templateString = `Foo`;&#10;      const [c, ,d] = [1,2,3];&#10;    &#125;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h3><p><code>chimp --mocha --watch --path=test</code></p>
+<p>預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。</p>
+<h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
+<h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
+<h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/29/webdriverio-with-chimp-with-mocha/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/">
                             WebdriverIO 快速建構設定檔
                         </a>
@@ -760,60 +816,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/21/start-with-nightwatch/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/20/selenium-with-nodejs/">
-                            Selenium with Nodejs
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Apr 20 2016 17:29:41 GMT+0800">
-	
-		    4月 20, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="http://www.seleniumhq.org/images/big-logo.png" alt="selenium"></p>
-<h3 id="先決條件"><a href="#先決條件" class="headerlink" title="先決條件"></a>先決條件</h3><ul>
-<li>有 firefox</li>
-<li>有安裝好的 NodeJS</li>
-</ul>
-<h3 id="三分鐘內，建一個自動化測試"><a href="#三分鐘內，建一個自動化測試" class="headerlink" title="三分鐘內，建一個自動化測試"></a>三分鐘內，建一個自動化測試</h3><p>託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。</p>
-<p><strong>建立測試專案資料夾</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir selenium-sendbox</span><br></pre></td></tr></table></figure>
-<p><strong>建立 npm 來管理，測試專案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd selenium-sendbox&#10;npm init -y</span><br></pre></td></tr></table></figure></p>
-<p><strong>安裝 selenium-webdriver</strong><br><code>npm i selenium-webdriver -S</code></p>
-<p><strong>建立一個基本測試script</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// test.js&#10;var webdriver = require(&#39;selenium-webdriver&#39;),&#10;    By = require(&#39;selenium-webdriver&#39;).By,&#10;    until = require(&#39;selenium-webdriver&#39;).until;&#10;&#10;var driver = new webdriver.Builder()&#10;    .forBrowser(&#39;firefox&#39;)&#10;    .build();&#10;&#10;driver.get(&#39;http://www.google.com/ncr&#39;);&#10;driver.findElement(By.name(&#39;q&#39;)).sendKeys(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712;&#39;);&#10;driver.findElement(By.name(&#39;btnG&#39;)).click();&#10;driver.wait(until.titleIs(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - Google Search&#39;), 3000);&#10;driver.quit();</span><br></pre></td></tr></table></figure></p>
-<p><strong>執行</strong><br><code>node test.js</code></p>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/selenium-webdriver-sandbox" target="_blank" rel="external">原始碼下載</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/20/selenium-with-nodejs/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

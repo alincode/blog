@@ -75,6 +75,42 @@
   </entry>
   
   <entry>
+    <title>WebdriverIO 與 Chimp 整合 與 Mocha</title>
+    <link href="http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/"/>
+    <id>http://alincode.github.io/2016/04/29/webdriverio-with-chimp-with-mocha/</id>
+    <published>2016-04-29T08:41:38.000Z</published>
+    <updated>2016-04-29T09:09:16.000Z</updated>
+    
+    <content type="html">&lt;p&gt;此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。&lt;/p&gt;
+&lt;h3 id=&quot;安裝-Chimp&quot;&gt;&lt;a href=&quot;#安裝-Chimp&quot; class=&quot;headerlink&quot; title=&quot;安裝 Chimp&quot;&gt;&lt;/a&gt;安裝 Chimp&lt;/h3&gt;&lt;p&gt;&lt;code&gt;npm install -g chimp&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;撰寫一個自動化測試-script&quot;&gt;&lt;a href=&quot;#撰寫一個自動化測試-script&quot; class=&quot;headerlink&quot; title=&quot;撰寫一個自動化測試 script&quot;&gt;&lt;/a&gt;撰寫一個自動化測試 script&lt;/h3&gt;&lt;p&gt;這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 &lt;code&gt;@watch&lt;/code&gt; 才會被監聽。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;describe(&amp;#39;Chimp Mocha&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;  describe(&amp;#39;Page title&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;    it(&amp;#39;should be set by the Meteor method @watch&amp;#39;, () =&amp;#62; &amp;#123;&amp;#10;      browser.url(&amp;#39;http://google.com&amp;#39;);&amp;#10;      expect(browser.getTitle()).to.equal(&amp;#39;Google&amp;#39;);&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  describe(&amp;#39;ES2015&amp;#39;, function () &amp;#123;&amp;#10;    it(&amp;#39;is supported&amp;#39;, function () &amp;#123;&amp;#10;      const &amp;#123;a, b&amp;#125; = &amp;#123;a: &amp;#39;foo&amp;#39;, b: &amp;#39;bar&amp;#39;&amp;#125;;&amp;#10;      const arrowFunc = (foo) =&amp;#62; foo;&amp;#10;      class Foo &amp;#123;&amp;#10;        constructor() &amp;#123;&amp;#125;&amp;#10;        foo() &amp;#123;&amp;#125;&amp;#10;      &amp;#125;&amp;#10;      var object = &amp;#123;&amp;#10;        foo() &amp;#123;&amp;#125;&amp;#10;      &amp;#125;;&amp;#10;      const templateString = `Foo`;&amp;#10;      const [c, ,d] = [1,2,3];&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;執行&quot;&gt;&lt;a href=&quot;#執行&quot; class=&quot;headerlink&quot; title=&quot;執行&quot;&gt;&lt;/a&gt;執行&lt;/h3&gt;&lt;p&gt;&lt;code&gt;chimp --mocha --watch --path=test&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。&lt;/p&gt;
+&lt;h3 id=&quot;問題排解&quot;&gt;&lt;a href=&quot;#問題排解&quot; class=&quot;headerlink&quot; title=&quot;問題排解&quot;&gt;&lt;/a&gt;問題排解&lt;/h3&gt;&lt;p&gt; Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets &lt;a href=&quot;http://babeljs.io/docs/plugins/#presets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://babeljs.io/docs/plugins/#presets&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;安裝-Babel&quot;&gt;&lt;a href=&quot;#安裝-Babel&quot; class=&quot;headerlink&quot; title=&quot;安裝 Babel&quot;&gt;&lt;/a&gt;安裝 Babel&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm i babel-preset-es2015 -S&amp;#10;npm i babel-preset-stage-2 -S&amp;#10;npm i babel-plugin-transform-runtime -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;建立-Babel-設定檔-babelrc&quot;&gt;&lt;a href=&quot;#建立-Babel-設定檔-babelrc&quot; class=&quot;headerlink&quot; title=&quot;建立 Babel 設定檔 .babelrc&quot;&gt;&lt;/a&gt;建立 Babel 設定檔 .babelrc&lt;/h4&gt; &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt; &amp;#123;&amp;#10;  &amp;#34;plugins&amp;#34;: [&amp;#34;transform-runtime&amp;#34;],&amp;#10;  &amp;#34;presets&amp;#34;: [&amp;#34;es2015&amp;#34;, &amp;#34;stage-2&amp;#34;]&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。&lt;/p&gt;
+&lt;h3 id=&quot;安裝-Chimp&quot;&gt;&lt;a href=&quot;#安裝-Chimp&quot; class=&quot;headerlink&quot; title=&quot;安裝 Chimp&quot;&gt;&lt;/a&gt;安裝 Chimp&lt;/h3&gt;&lt;p&gt;&lt;cod
+    
+    </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+    
+    
+      <category term="Chimp" scheme="http://alincode.github.io/tags/Chimp/"/>
+    
+      <category term="Mocha" scheme="http://alincode.github.io/tags/Mocha/"/>
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>WebdriverIO 快速建構設定檔</title>
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
@@ -744,31 +780,6 @@
     
     
       <category term="Geb" scheme="http://alincode.github.io/tags/Geb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Buddy CI 與 Slack 整合</title>
-    <link href="http://alincode.github.io/2016/04/10/buddy-ci-4/"/>
-    <id>http://alincode.github.io/2016/04/10/buddy-ci-4/</id>
-    <published>2016-04-09T18:03:56.000Z</published>
-    <updated>2016-04-13T13:07:41.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;將-Slack-的訊息通知-Action-設上去&quot;&gt;&lt;a href=&quot;#將-Slack-的訊息通知-Action-設上去&quot; class=&quot;headerlink&quot; title=&quot;將 Slack 的訊息通知 Action 設上去&quot;&gt;&lt;/a&gt;將 Slack 的訊息通知 Action 設上去&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/on-failure.png&quot; alt=&quot;on-failure.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;Action-內可以自訂要傳送的文字&quot;&gt;&lt;a href=&quot;#Action-內可以自訂要傳送的文字&quot; class=&quot;headerlink&quot; title=&quot;Action 內可以自訂要傳送的文字&quot;&gt;&lt;/a&gt;Action 內可以自訂要傳送的文字&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/send-message-setting.png&quot; alt=&quot;send-message-setting.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;最後-Buddy-傳到-Slack-Channel-的結果&quot;&gt;&lt;a href=&quot;#最後-Buddy-傳到-Slack-Channel-的結果&quot; class=&quot;headerlink&quot; title=&quot;最後 Buddy 傳到 Slack Channel 的結果&quot;&gt;&lt;/a&gt;最後 Buddy 傳到 Slack Channel 的結果&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/10/buddy-ci-4/slack.png&quot; alt=&quot;slack.png&quot; title=&quot;&quot;&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;將-Slack-的訊息通知-Action-設上去&quot;&gt;&lt;a href=&quot;#將-Slack-的訊息通知-Action-設上去&quot; class=&quot;headerlink&quot; title=&quot;將 Slack 的訊息通知 Action 設上去&quot;&gt;&lt;/a&gt;將 Slack 的訊息通知 
-    
-    </summary>
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
-    
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
