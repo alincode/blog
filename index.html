@@ -218,6 +218,50 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/">
+                            sequelizejs HasOne vs belongsTo
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon May 02 2016 22:37:24 GMT+0800">
+	
+		    5月 02, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://docs.sequelizejs.com/en/latest/images/logo-small.png" alt="sequelizejs"></p>
+<p>兩個語法相當容易混淆，都是設為一對一的關聯，並可以使用 Shipment.getOrder 和 Order.getShipment 取到關聯的物件值，唯一不同在於實際外來鍵會存在 Shipment table 裡面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shipment.belongsTo(models.Order);&#10;Order.hasOne(models.Shipment);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/01/webdriverio-introduction/">
                             WebdriverIO 介紹
                         </a>
@@ -780,53 +824,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/23/getting-started-with-WebdriverIO/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/22/front-test-framework-compare/">
-                            自動化測試框架比較 with NodeJS
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 22 2016 02:56:27 GMT+0800">
-	
-		    4月 22, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="http://nightwatchjs.org/" target="_blank" rel="external">nightwatch.js</a>：走小版本策略，更新速度相當快，pr 也相當踴躍。<br><a href="http://angular.github.io/protractor" target="_blank" rel="external">protractor</a>：由 Angular Team 所維護，推出的時間也比較早，有些先天優勢，完美的整合 Angular ，雖然除了 Angular 之外，其他框架也可以使用，但很肥大，尤其如果你沒碰過 Angular 的情況下，入門難。<br><a href="http://webdriver.io/" target="_blank" rel="external">webdriver.io</a>：是最晚誕生的，所以數據上略輸一籌，但納入了許多新穎的功能，及積極其他框架密切整合，例如Jenkins、chimp…，並內建簡易建立設定檔的工具，所以根本不需要用 yo。</p>
-<p><strong>小提醒</strong><br><code>webdriver.io != selenium-webdriver 不要誤會了</code></p>
-<h3 id="比較表"><a href="#比較表" class="headerlink" title="比較表"></a>比較表</h3><p>資料來源：<a href="https://npmcompare.com/compare/nightwatch,protractor,webdriverio" target="_blank" rel="external">NPMCompare</a></p>
-<img src="/blog/2016/04/22/front-test-framework-compare/comparing1.png" alt="comparing1.png" title="">
-<img src="/blog/2016/04/22/front-test-framework-compare/comparing2.png" alt="comparing2.png" title="">
-<img src="/blog/2016/04/22/front-test-framework-compare/comparing3.png" alt="comparing3.png" title="">
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/22/front-test-framework-compare/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
