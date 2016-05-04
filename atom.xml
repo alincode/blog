@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-04T15:27:22.000Z</updated>
+  <updated>2016-05-04T15:29:27.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,26 +20,15 @@
     <link href="http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/"/>
     <id>http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/</id>
     <published>2016-05-03T14:56:58.000Z</published>
-    <updated>2016-05-04T15:27:22.000Z</updated>
+    <updated>2016-05-04T15:29:27.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png&quot; alt=&quot;allpay&quot;&gt;&lt;/p&gt;
 &lt;p&gt;記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;訂單產生&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;時機發生在發出去的 request&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PaymentType = 交易類型&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;aio&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ChoosePayment = 付款方式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205;&amp;#27331;&amp;#21729;&amp;#27231;&amp;#10;CVS:&amp;#36229;&amp;#21830;&amp;#20195;&amp;#30908;&amp;#10;BARCODE:&amp;#36229;&amp;#21830;&amp;#26781;&amp;#30908;&amp;#10;Alipay:&amp;#25903;&amp;#20184;&amp;#23542;&amp;#10;Tenpay:&amp;#36001;&amp;#20184;&amp;#36890;&amp;#10;TopUpUsed:&amp;#20786;&amp;#20540;&amp;#28040;&amp;#36027;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;ATM、CVS 或 BARCODE 的取號結果通知&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;時機發生在被動收到的 response&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;PaymentType = 會員選擇的付款方式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ATM_TAISHIN&amp;#10;(...&amp;#30053;...&amp;#38750;&amp;#24120;&amp;#22810;&amp;#31278;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;訂單產生&quot;&gt;&lt;a href=&quot;#訂單產生&quot; class=&quot;headerlink&quot; title=&quot;訂單產生&quot;&gt;&lt;/a&gt;訂單產生&lt;/h3&gt;&lt;p&gt;時機發生在發出去的 request&lt;/p&gt;
+&lt;h4 id=&quot;PaymentType-交易類型&quot;&gt;&lt;a href=&quot;#PaymentType-交易類型&quot; class=&quot;headerlink&quot; title=&quot;PaymentType = 交易類型&quot;&gt;&lt;/a&gt;PaymentType = 交易類型&lt;/h4&gt;&lt;p&gt;&lt;code&gt;aio&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&quot;ChoosePayment-付款方式&quot;&gt;&lt;a href=&quot;#ChoosePayment-付款方式&quot; class=&quot;headerlink&quot; title=&quot;ChoosePayment = 付款方式&quot;&gt;&lt;/a&gt;ChoosePayment = 付款方式&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205;&amp;#27331;&amp;#21729;&amp;#27231;&amp;#10;CVS:&amp;#36229;&amp;#21830;&amp;#20195;&amp;#30908;&amp;#10;BARCODE:&amp;#36229;&amp;#21830;&amp;#26781;&amp;#30908;&amp;#10;Alipay:&amp;#25903;&amp;#20184;&amp;#23542;&amp;#10;Tenpay:&amp;#36001;&amp;#20184;&amp;#36890;&amp;#10;TopUpUsed:&amp;#20786;&amp;#20540;&amp;#28040;&amp;#36027;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;ATM、CVS-或-BARCODE-的取號結果通知&quot;&gt;&lt;a href=&quot;#ATM、CVS-或-BARCODE-的取號結果通知&quot; class=&quot;headerlink&quot; title=&quot;ATM、CVS 或 BARCODE 的取號結果通知&quot;&gt;&lt;/a&gt;ATM、CVS 或 BARCODE 的取號結果通知&lt;/h3&gt;&lt;p&gt;時機發生在被動收到的 response&lt;/p&gt;
+&lt;h4 id=&quot;PaymentType-會員選擇的付款方式&quot;&gt;&lt;a href=&quot;#PaymentType-會員選擇的付款方式&quot; class=&quot;headerlink&quot; title=&quot;PaymentType = 會員選擇的付款方式&quot;&gt;&lt;/a&gt;PaymentType = 會員選擇的付款方式&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ATM_TAISHIN&amp;#10;(...&amp;#30053;...&amp;#38750;&amp;#24120;&amp;#22810;&amp;#31278;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
