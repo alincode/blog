@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>分類: 前端測試 - alincode</title>
+    <title>標籤: chai - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="alincode">
-<meta property="og:url" content="http://alincode.github.io/categories/前端測試/index.html">
+<meta property="og:url" content="http://alincode.github.io/tags/chai/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
@@ -210,92 +210,68 @@
                         ">
                 
     
-<div id="archives" class="main-content-wrap">
-    <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="搜尋日期（YYYY/MM/DD）" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"></h5>
-    <section class="boxes">
+
+<section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/05/05/webdriverio-with-chai/">
+                            webdriverIO 與 Chai 整合
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu May 05 2016 23:01:49 GMT+0800">
+	
+		    5月 05, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
         
-            
-            
-            
-                
-                
-                <div class="archive archive-year box" data-date="2016">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016">2016</a>
-                    </h4>
-            
-            
-                
-                <ul class="archive-posts archive-month" data-date="201605">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/05">五月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160505">
-                <a class="archive-post-title" href="/blog/2016/05/05/webdriverio-with-chai/">webdriverIO 與 Chai 整合</a>
-                <span class="archive-post-date"> - 5月 05, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160501">
-                <a class="archive-post-title" href="/blog/2016/05/01/webdriverio-introduction/">WebdriverIO 介紹</a>
-                <span class="archive-post-date"> - 5月 01, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-                
-                    </ul>
-                
-                <ul class="archive-posts archive-month" data-date="201604">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/04">四月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160430">
-                <a class="archive-post-title" href="/blog/2016/04/30/webdriverio-with-chimp-with-mocha/">WebdriverIO 與 Chimp 和 Mocha 整合</a>
-                <span class="archive-post-date"> - 4月 30, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160428">
-                <a class="archive-post-title" href="/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/">WebdriverIO 快速建構設定檔</a>
-                <span class="archive-post-date"> - 4月 28, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160423">
-                <a class="archive-post-title" href="/blog/2016/04/23/getting-started-with-WebdriverIO/">第一個 WebdriverIO 自動化測試</a>
-                <span class="archive-post-date"> - 4月 23, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160421">
-                <a class="archive-post-title" href="/blog/2016/04/21/start-with-nightwatch/">第一個 Nightwatch 自動化測試</a>
-                <span class="archive-post-date"> - 4月 21, 2016</span>
-            </li>
-        
-    </section>
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
 </div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://chaijs.com/img/chai-logo-small.png" alt="chai"></p>
+<p>有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var chai = require(&#39;chai&#39;);&#10;global.should = chai.should();&#10;&#10;describe(&#39;mokayo&#39;, function() &#123;&#10;  it(&#39;check title&#39;, function() &#123;&#10;      browser.url(&#39;http://blog.mokayo.com/&#39;);&#10;      var title = browser.getTitle();&#10;      title.should.be.equal(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/05/webdriverio-with-chai/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
+    </ul>
+</div>
+
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">

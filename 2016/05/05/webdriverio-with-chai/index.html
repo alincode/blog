@@ -6,29 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>發散式變化 vs 霰彈式修改 - alincode</title>
+    <title>webdriverIO 與 Chai 整合 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
-改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
-toXml 似乎不">
+    <meta name="description" content="有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。
+1var chai = require(&amp;#39;chai&amp;#39;);&amp;#10;global.should = chai.should();&amp;#10;&amp;#10;describe(&amp;#39;mokayo&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;check">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="發散式變化 vs 霰彈式修改">
-<meta property="og:url" content="http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/index.html">
+<meta property="og:title" content="webdriverIO 與 Chai 整合">
+<meta property="og:url" content="http://alincode.github.io/2016/05/05/webdriverio-with-chai/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
-改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
-toXml 似乎不">
-<meta property="og:updated_time" content="2016-05-07T03:19:52.000Z">
+<meta property="og:description" content="有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。
+1var chai = require(&amp;#39;chai&amp;#39;);&amp;#10;global.should = chai.should();&amp;#10;&amp;#10;describe(&amp;#39;mokayo&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;check">
+<meta property="og:image" content="http://chaijs.com/img/chai-logo-small.png">
+<meta property="og:updated_time" content="2016-05-07T15:09:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="發散式變化 vs 霰彈式修改">
-<meta name="twitter:description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
-改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
-toXml 似乎不">
+<meta name="twitter:title" content="webdriverIO 與 Chai 整合">
+<meta name="twitter:description" content="有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。
+1var chai = require(&amp;#39;chai&amp;#39;);&amp;#10;global.should = chai.should();&amp;#10;&amp;#10;describe(&amp;#39;mokayo&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;check">
     
     
         
@@ -222,31 +220,30 @@ toXml 似乎不">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            發散式變化 vs 霰彈式修改
+            webdriverIO 與 Chai 整合
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed May 04 2016 10:22:22 GMT+0800">
+    <time itemprop="datePublished" content="Thu May 05 2016 23:01:49 GMT+0800">
 	
-		    5月 04, 2016
+		    5月 05, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <h3 id="發散式變化-Divergent-Change"><a href="#發散式變化-Divergent-Change" class="headerlink" title="發散式變化(Divergent Change)"></a>發散式變化(Divergent Change)</h3><p>一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。</p>
-<h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit&#10;function toXml</span><br></pre></td></tr></table></figure>
-<p>toXml 似乎不算 Account 的責任，而且 toXml 的邏輯，可以在其他地方也會用到，所以應該把它獨立出來一個類別或搬到它應該所屬的類別。</p>
-<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class XmlTool&#10;function toAccountXml(account)</span><br></pre></td></tr></table></figure>
-<h3 id="霰彈式修改-Shotgun-Surgery"><a href="#霰彈式修改-Shotgun-Surgery" class="headerlink" title="霰彈式修改(Shotgun Surgery)"></a>霰彈式修改(Shotgun Surgery)</h3><p>當你需要有一個邏輯更變，需要修改多個類別，那應該把這些更變，搬到同個類別，而不是多個類別同時承受同個責任。</p>
-<h4 id="改變前-1"><a href="#改變前-1" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class OrderService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PaymentService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class UserService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<h4 id="改變後-1"><a href="#改變後-1" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class MailerService&#10;function orderConfirmed&#10;function paymentConfirmed&#10;function registerConfirmd</span><br></pre></td></tr></table></figure>
+            <p><img src="http://chaijs.com/img/chai-logo-small.png" alt="chai"></p>
+<p>有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var chai = require(&#39;chai&#39;);&#10;global.should = chai.should();&#10;&#10;describe(&#39;mokayo&#39;, function() &#123;&#10;  it(&#39;check title&#39;, function() &#123;&#10;      browser.url(&#39;http://blog.mokayo.com/&#39;);&#10;      var title = browser.getTitle();&#10;      title.should.be.equal(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -256,12 +253,19 @@ toXml 似乎不">
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/chai/">chai</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/05/webdriverio-with-chai/"  data-tooltip="webdriverIO 與 Chai 整合">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -269,7 +273,7 @@ toXml 似乎不">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/" data-tooltip="歐付寶 ChoosePayment vs PaymentType">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/" data-tooltip="發散式變化 vs 霰彈式修改">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -284,17 +288,17 @@ toXml 似乎不">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -332,7 +336,7 @@ toXml 似乎不">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/05/webdriverio-with-chai/"  data-tooltip="webdriverIO 與 Chai 整合">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -340,7 +344,7 @@ toXml 似乎不">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/" data-tooltip="歐付寶 ChoosePayment vs PaymentType">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/" data-tooltip="發散式變化 vs 霰彈式修改">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -355,17 +359,17 @@ toXml 似乎不">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -385,17 +389,17 @@ toXml 似乎不">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/05/webdriverio-with-chai/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
