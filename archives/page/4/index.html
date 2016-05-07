@@ -219,6 +219,61 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/04/view-model-vs-model/">
+                            view model vs model
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Apr 04 2016 16:43:14 GMT+0800">
+	
+		    4月 04, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="View-Model"><a href="#View-Model" class="headerlink" title="View Model"></a>View Model</h3><p>除了 MVC 之外，後來 Microsoft 又提出一個 <code>model-view-view model (MVVM)</code>，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。</p>
+<h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>不太嚴謹的說法，可以直接對照到資料庫的 table</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><p><strong>User.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    firstName: <span class="built_in">String</span>,</span><br><span class="line">    lastName: <span class="built_in">String</span>,</span><br><span class="line">    nickname: <span class="built_in">String</span>,</span><br><span class="line">    email: <span class="built_in">String</span>,</span><br><span class="line">    password: <span class="built_in">String</span>,</span><br><span class="line">    address: <span class="built_in">String</span>,</span><br><span class="line">    phone: <span class="built_in">String</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Profile.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    image: <span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// ...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>UserController.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(req.userId);</span><br><span class="line">      <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(req.userId);</span><br><span class="line"></span><br><span class="line">      user.toJSON();</span><br><span class="line">      profile.toJSON();</span><br><span class="line"></span><br><span class="line">      res.view(<span class="string">'profile'</span>, &#123;</span><br><span class="line">          email: user.email,</span><br><span class="line">          nickname: user.nickname,</span><br><span class="line">          image: profile.image,</span><br><span class="line">          <span class="comment">//...略...</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><p><strong>UserController.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userViewModel = <span class="built_in">require</span>(<span class="string">'../viewModels/UserViewModel.js'</span>)</span><br><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      res.view(<span class="string">'profile'</span>, <span class="keyword">await</span> userViewModel(req.userId));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><strong>UserViewModel.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (userId) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(userId);</span><br><span class="line">  <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(userId);</span><br><span class="line"></span><br><span class="line">  user.toJSON();</span><br><span class="line">  profile.toJSON();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    email: user.email,</span><br><span class="line">    nickname: user.nickname,</span><br><span class="line">    image: profile.image,</span><br><span class="line">    <span class="comment">//...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>主要是好處是把 ViewModel 封裝起來，在其他地方也可以被重複使用。</p>
+<h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>View：主要是將 model 呈現給使用者<br>Controller：會接收使用者輸入的資料，並決定要顯示哪個 view。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/04/view-model-vs-model/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/03/PM2/">
                             PM2 管理工具
                         </a>
@@ -787,53 +842,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/26/react-debug-tip/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/25/git-branch/">
-                            取得其他 git remote branch
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Mar 25 2016 23:18:45 GMT+0800">
-	
-		    3月 25, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>如果 remote 上面有很分支，你在下 <code>git clone</code> 的時候，會發現它只有幫你建一個預設的分支。</p>
-<h3 id="查看-local-分支"><a href="#查看-local-分支" class="headerlink" title="查看 local 分支"></a>查看 local 分支</h3><p><code>git branch</code></p>
-<h3 id="checkout-origin-上其他分支"><a href="#checkout-origin-上其他分支" class="headerlink" title="checkout origin 上其他分支"></a>checkout origin 上其他分支</h3><p>如果你也需要 origin 上其他分支，你可以下 <code>git branch --all</code> 找到你要 checkout 的分支名稱。</p>
-<img src="/blog/2016/03/25/git-branch/git-branch.png" alt="git-branch.png" title="">
-<p>然後把分支 checkout 出來，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b master origin/master</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/25/git-branch/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

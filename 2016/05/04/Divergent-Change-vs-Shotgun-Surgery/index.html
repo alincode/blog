@@ -6,39 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>歐付寶 ChoosePayment vs PaymentType - alincode</title>
+    <title>發散式變化 vs 霰彈式修改 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。
-訂單產生時機發生在發出去的 request
-PaymentType = 交易類型
-aio
-ChoosePayment = 付款方式
-1Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205">
+    <meta name="description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
+改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
+toXml 似乎不">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="歐付寶 ChoosePayment vs PaymentType">
-<meta property="og:url" content="http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/index.html">
+<meta property="og:title" content="發散式變化 vs 霰彈式修改">
+<meta property="og:url" content="http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。
-訂單產生時機發生在發出去的 request
-PaymentType = 交易類型
-aio
-ChoosePayment = 付款方式
-1Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205">
-<meta property="og:image" content="https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png">
-<meta property="og:updated_time" content="2016-05-04T15:31:32.000Z">
+<meta property="og:description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
+改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
+toXml 似乎不">
+<meta property="og:updated_time" content="2016-05-07T03:19:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="歐付寶 ChoosePayment vs PaymentType">
-<meta name="twitter:description" content="記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。
-訂單產生時機發生在發出去的 request
-PaymentType = 交易類型
-aio
-ChoosePayment = 付款方式
-1Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205">
+<meta name="twitter:title" content="發散式變化 vs 霰彈式修改">
+<meta name="twitter:description" content="發散式變化(Divergent Change)一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。
+改變前1class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml
+toXml 似乎不">
     
     
         
@@ -232,13 +222,13 @@ ChoosePayment = 付款方式
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            歐付寶 ChoosePayment vs PaymentType
+            發散式變化 vs 霰彈式修改
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue May 03 2016 22:56:58 GMT+0800">
+    <time itemprop="datePublished" content="Wed May 04 2016 10:22:22 GMT+0800">
 	
-		    5月 03, 2016
+		    5月 04, 2016
     	
     </time>
     
@@ -247,16 +237,16 @@ ChoosePayment = 付款方式
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><img src="https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png" alt="allpay"></p>
-<p>記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。</p>
-<h3 id="訂單產生"><a href="#訂單產生" class="headerlink" title="訂單產生"></a>訂單產生</h3><p>時機發生在發出去的 request</p>
-<p><strong>PaymentType = 交易類型</strong></p>
-<p><code>aio</code></p>
-<p><strong>ChoosePayment = 付款方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Credit:&#20449;&#29992;&#21345;&#10;WebATM:&#32178;&#36335; ATM&#10;ATM:&#33258;&#21205;&#27331;&#21729;&#27231;&#10;CVS:&#36229;&#21830;&#20195;&#30908;&#10;BARCODE:&#36229;&#21830;&#26781;&#30908;&#10;Alipay:&#25903;&#20184;&#23542;&#10;Tenpay:&#36001;&#20184;&#36890;&#10;TopUpUsed:&#20786;&#20540;&#28040;&#36027;</span><br></pre></td></tr></table></figure>
-<h3 id="ATM、CVS-或-BARCODE-的取號結果通知"><a href="#ATM、CVS-或-BARCODE-的取號結果通知" class="headerlink" title="ATM、CVS 或 BARCODE 的取號結果通知"></a>ATM、CVS 或 BARCODE 的取號結果通知</h3><p>時機發生在被動收到的 response</p>
-<p><strong>PaymentType = 會員選擇的付款方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATM_TAISHIN&#10;(...&#30053;...&#38750;&#24120;&#22810;&#31278;)</span><br></pre></td></tr></table></figure>
+            <h3 id="發散式變化-Divergent-Change"><a href="#發散式變化-Divergent-Change" class="headerlink" title="發散式變化(Divergent Change)"></a>發散式變化(Divergent Change)</h3><p>一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。</p>
+<h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit&#10;function toXml</span><br></pre></td></tr></table></figure>
+<p>toXml 似乎不算 Account 的責任，而且 toXml 的邏輯，可以在其他地方也會用到，所以應該把它獨立出來一個類別或搬到它應該所屬的類別。</p>
+<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class XmlTool&#10;function toAccountXml(account)</span><br></pre></td></tr></table></figure>
+<h3 id="霰彈式修改-Shotgun-Surgery"><a href="#霰彈式修改-Shotgun-Surgery" class="headerlink" title="霰彈式修改(Shotgun Surgery)"></a>霰彈式修改(Shotgun Surgery)</h3><p>當你需要有一個邏輯更變，需要修改多個類別，那應該把這些更變，搬到同個類別，而不是多個類別同時承受同個責任。</p>
+<h4 id="改變前-1"><a href="#改變前-1" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class OrderService&#10;function sendMail</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PaymentService&#10;function sendMail</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class UserService&#10;function sendMail</span><br></pre></td></tr></table></figure>
+<h4 id="改變後-1"><a href="#改變後-1" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class MailerService&#10;function orderConfirmed&#10;function paymentConfirmed&#10;function registerConfirmd</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -271,7 +261,7 @@ ChoosePayment = 付款方式
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/"  data-tooltip="發散式變化 vs 霰彈式修改">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -279,7 +269,7 @@ ChoosePayment = 付款方式
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/" data-tooltip="sequelizejs HasOne vs belongsTo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/" data-tooltip="歐付寶 ChoosePayment vs PaymentType">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -294,17 +284,17 @@ ChoosePayment = 付款方式
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -342,7 +332,7 @@ ChoosePayment = 付款方式
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/"  data-tooltip="發散式變化 vs 霰彈式修改">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -350,7 +340,7 @@ ChoosePayment = 付款方式
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/" data-tooltip="sequelizejs HasOne vs belongsTo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/" data-tooltip="歐付寶 ChoosePayment vs PaymentType">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -365,17 +355,17 @@ ChoosePayment = 付款方式
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -395,17 +385,17 @@ ChoosePayment = 付款方式
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

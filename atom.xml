@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-04T15:31:32.000Z</updated>
+  <updated>2016-05-07T03:19:52.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>發散式變化 vs 霰彈式修改</title>
+    <link href="http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/"/>
+    <id>http://alincode.github.io/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/</id>
+    <published>2016-05-04T02:22:22.000Z</published>
+    <updated>2016-05-07T03:19:52.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;發散式變化-Divergent-Change&quot;&gt;&lt;a href=&quot;#發散式變化-Divergent-Change&quot; class=&quot;headerlink&quot; title=&quot;發散式變化(Divergent Change)&quot;&gt;&lt;/a&gt;發散式變化(Divergent Change)&lt;/h3&gt;&lt;p&gt;一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。&lt;/p&gt;
+&lt;h4 id=&quot;改變前&quot;&gt;&lt;a href=&quot;#改變前&quot; class=&quot;headerlink&quot; title=&quot;改變前&quot;&gt;&lt;/a&gt;改變前&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&amp;#10;function toXml&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;toXml 似乎不算 Account 的責任，而且 toXml 的邏輯，可以在其他地方也會用到，所以應該把它獨立出來一個類別或搬到它應該所屬的類別。&lt;/p&gt;
+&lt;h4 id=&quot;改變後&quot;&gt;&lt;a href=&quot;#改變後&quot; class=&quot;headerlink&quot; title=&quot;改變後&quot;&gt;&lt;/a&gt;改變後&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class Account&amp;#10;function getAccount&amp;#10;function getBalance&amp;#10;function credit&amp;#10;function debit&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class XmlTool&amp;#10;function toAccountXml(account)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;霰彈式修改-Shotgun-Surgery&quot;&gt;&lt;a href=&quot;#霰彈式修改-Shotgun-Surgery&quot; class=&quot;headerlink&quot; title=&quot;霰彈式修改(Shotgun Surgery)&quot;&gt;&lt;/a&gt;霰彈式修改(Shotgun Surgery)&lt;/h3&gt;&lt;p&gt;當你需要有一個邏輯更變，需要修改多個類別，那應該把這些更變，搬到同個類別，而不是多個類別同時承受同個責任。&lt;/p&gt;
+&lt;h4 id=&quot;改變前-1&quot;&gt;&lt;a href=&quot;#改變前-1&quot; class=&quot;headerlink&quot; title=&quot;改變前&quot;&gt;&lt;/a&gt;改變前&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class OrderService&amp;#10;function sendMail&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class PaymentService&amp;#10;function sendMail&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class UserService&amp;#10;function sendMail&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;改變後-1&quot;&gt;&lt;a href=&quot;#改變後-1&quot; class=&quot;headerlink&quot; title=&quot;改變後&quot;&gt;&lt;/a&gt;改變後&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class MailerService&amp;#10;function orderConfirmed&amp;#10;function paymentConfirmed&amp;#10;function registerConfirmd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;發散式變化-Divergent-Change&quot;&gt;&lt;a href=&quot;#發散式變化-Divergent-Change&quot; class=&quot;headerlink&quot; title=&quot;發散式變化(Divergent Change)&quot;&gt;&lt;/a&gt;發散式變化(Divergent Cha
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>歐付寶 ChoosePayment vs PaymentType</title>
@@ -701,49 +729,6 @@
       <category term="Chain Of Responsibility" scheme="http://alincode.github.io/tags/Chain-Of-Responsibility/"/>
     
       <category term="design pattern" scheme="http://alincode.github.io/tags/design-pattern/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Buddy CI 與 PM2 的整合(踩雷)</title>
-    <link href="http://alincode.github.io/2016/04/14/buddy-ci-5/"/>
-    <id>http://alincode.github.io/2016/04/14/buddy-ci-5/</id>
-    <published>2016-04-14T12:18:37.000Z</published>
-    <updated>2016-04-13T13:07:47.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;undefined symbol: node_module_register&lt;/li&gt;
-&lt;li&gt;bcrypt bindings problem&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;解法&quot;&gt;&lt;a href=&quot;#解法&quot; class=&quot;headerlink&quot; title=&quot;解法&quot;&gt;&lt;/a&gt;解法&lt;/h3&gt;&lt;p&gt;&lt;code&gt;ln -s /root/.nvm/versions/node/v4.4.1/bin/node /usr/bin/node&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;實作-SSH-命令注意事項&quot;&gt;&lt;a href=&quot;#實作-SSH-命令注意事項&quot; class=&quot;headerlink&quot; title=&quot;實作 SSH 命令注意事項&quot;&gt;&lt;/a&gt;實作 SSH 命令注意事項&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;每個指令 (command) 的工作目錄是預設的 user 的目錄，指令從上而下執行。&lt;/li&gt;
-&lt;li&gt;每行指令需獨立一行&lt;/li&gt;
-&lt;li&gt;指令執行失敗，將會停止執行後面的指令。(除非你有設忽略 error)&lt;/li&gt;
-&lt;li&gt;如果使用抽象路徑(cd /xxx/yyy)，命令將不會帶到下一行指令。&lt;/li&gt;
-&lt;li&gt;如果你需要執行複雜的 script，建議將 script 檔放在 server side，再去呼叫它執行。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://buddy.works/knowledge/deployments/how-use-ssh-scripts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;How to use SSH scripts?&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;img src=&quot;/blog/2016/04/14/buddy-ci-5/execute_script.png&quot; alt=&quot;execute_script.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;參考資料&quot;&gt;&lt;a href=&quot;#參考資料&quot; class=&quot;headerlink&quot; title=&quot;參考資料&quot;&gt;&lt;/a&gt;參考資料&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/Unitech/pm2/issues/1477&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;undefined symbol: node_module_register&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;問題&quot;&gt;&lt;a href=&quot;#問題&quot; class=&quot;headerlink&quot; title=&quot;問題&quot;&gt;&lt;/a&gt;問題&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;undefined symbol: node_module_register&lt;/li&gt;
-&lt;li&gt;bcrypt bindings 
-    
-    </summary>
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/categories/Buddy-CI/"/>
-    
-    
-      <category term="Buddy CI" scheme="http://alincode.github.io/tags/Buddy-CI/"/>
     
   </entry>
   
