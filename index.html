@@ -219,7 +219,7 @@
                 <h1 class="postShorten-title" itemprop="headline">
                     
                         <a class="link-unstyled" href="/blog/2016/05/05/webdriverio-with-chai/">
-                            webdriverIO 與 Chai 整合
+                            WebdriverIO 與 Chai 整合
                         </a>
                     
                 </h1>
@@ -244,6 +244,7 @@
                     <p><img src="http://chaijs.com/img/chai-logo-small.png" alt="chai"></p>
 <p>有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var chai = require(&#39;chai&#39;);&#10;global.should = chai.should();&#10;&#10;describe(&#39;mokayo&#39;, function() &#123;&#10;  it(&#39;check title&#39;, function() &#123;&#10;      browser.url(&#39;http://blog.mokayo.com/&#39;);&#10;      var title = browser.getTitle();&#10;      title.should.be.equal(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox2" target="_blank" rel="external">原始碼下載</a></p>
 
                     
                         

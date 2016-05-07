@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-07T15:09:09.000Z</updated>
+  <updated>2016-05-07T15:11:02.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,15 +16,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>webdriverIO 與 Chai 整合</title>
+    <title>WebdriverIO 與 Chai 整合</title>
     <link href="http://alincode.github.io/2016/05/05/webdriverio-with-chai/"/>
     <id>http://alincode.github.io/2016/05/05/webdriverio-with-chai/</id>
     <published>2016-05-05T15:01:49.000Z</published>
-    <updated>2016-05-07T15:09:09.000Z</updated>
+    <updated>2016-05-07T15:11:02.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://chaijs.com/img/chai-logo-small.png&quot; alt=&quot;chai&quot;&gt;&lt;/p&gt;
 &lt;p&gt;有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var chai = require(&amp;#39;chai&amp;#39;);&amp;#10;global.should = chai.should();&amp;#10;&amp;#10;describe(&amp;#39;mokayo&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;check title&amp;#39;, function() &amp;#123;&amp;#10;      browser.url(&amp;#39;http://blog.mokayo.com/&amp;#39;);&amp;#10;      var title = browser.getTitle();&amp;#10;      title.should.be.equal(&amp;#39;&amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712; - blog.mokayo.com&amp;#39;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原始碼下載&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
