@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-07T15:11:02.000Z</updated>
+  <updated>2016-05-08T02:10:56.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何閱讀一本書 - 如何做一個自我要求的讀者(重點整理)</title>
+    <link href="http://alincode.github.io/2016/05/06/How-to-be-a-self-demanding-readers/"/>
+    <id>http://alincode.github.io/2016/05/06/How-to-be-a-self-demanding-readers/</id>
+    <published>2016-05-06T01:48:30.000Z</published>
+    <updated>2016-05-08T02:10:56.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;主動閱讀者要提出四個基本問題&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;整理來說，這本書到底在談些什麼？&lt;/li&gt;
+&lt;li&gt;作者細部說了什麼？&lt;/li&gt;
+&lt;li&gt;這本書說得有道理嗎？是全部有道理？還是部分有道理？&lt;/li&gt;
+&lt;li&gt;這本書跟你有什麼關係？有哪些你可以運用到自己身上？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;為什麼對閱讀來說，做筆記是不可或缺的事？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;那會讓你保持清醒&lt;/li&gt;
+&lt;li&gt;閱讀，如果是主動的，就是一種思考。&lt;ul&gt;
+&lt;li&gt;思考傾向於用語言表達出來，不管是用講的還是用寫的。&lt;/li&gt;
+&lt;li&gt;一個人如果說他知道他在想些什麼，卻說不出來，通常是他其實並不知道自己在想些什麼。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;將你的感想寫下來，能幫助你記住作者的思想。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;什麼是一個有技術的人&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我們並不是在說他知道該如何去做那件事，而是他已經養成去做那件事的習慣了。&lt;/li&gt;
+&lt;li&gt;當然，對於規則是否了解得夠清楚，是能不能擁有技巧的關鍵。如果你不知道規則是什麼，就根本不可能照規則來行事，而你不能照規則來做，就不可能養成任何技能的習慣。&lt;/li&gt;
+&lt;li&gt;只要照著規則練習，就可以培養出習慣，也就可以成為一個有技術的人。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;如何成為一個專家&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;規則的多樣化，意味著要養成一個習慣的複雜度，而非表示要形成許多個不同的習慣。&lt;/li&gt;
+&lt;li&gt;在到達一個程度時，每個分開的動作自然就會壓縮、聯結起來，變成一個完整的動作。&lt;/li&gt;
+&lt;li&gt;所有相關的動作都能相當自然地做出來時，你就離成為一個專家不遠了。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;主動閱讀者要提出四個基本問題&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;整理來說，這本書到底在談些什麼？&lt;/li&gt;
+&lt;li&gt;作者細部說了什麼？&lt;/li&gt;
+&lt;li&gt;這本書說得有道理嗎？是全部有道理？還是部分有道理？&lt;/li&gt;
+&lt;li&gt;這本書跟你有什麼關係？有
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>WebdriverIO 與 Chai 整合</title>
@@ -705,33 +757,6 @@
       <category term="One to Many" scheme="http://alincode.github.io/tags/One-to-Many/"/>
     
       <category term="Sequelize" scheme="http://alincode.github.io/tags/Sequelize/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise Chaining</title>
-    <link href="http://alincode.github.io/2016/04/16/promise-chaining/"/>
-    <id>http://alincode.github.io/2016/04/16/promise-chaining/</id>
-    <published>2016-04-15T16:01:44.000Z</published>
-    <updated>2016-04-17T16:24:18.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Promise 似乎可以更簡單做到 Chain Of Responsibility&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://babeljs.io/repl/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;線上sandbox&lt;/a&gt; 你可以把 code 複製貼到這裡執行&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var discountService = new Promise(function(resolve, reject) &amp;#123;&amp;#10;  let orderPrice = 1000;&amp;#10;  resolve(orderPrice);&amp;#10;&amp;#125;);&amp;#10;&amp;#10;var dptDiscount = function(orderPrice)&amp;#123;&amp;#10;  orderPrice *= 0.9;&amp;#10;  return orderPrice;&amp;#10;&amp;#125;;&amp;#10;&amp;#10;var bigOrderDiscount = function(orderPrice)&amp;#123;&amp;#10;  orderPrice *= 0.95;&amp;#10;  return orderPrice;&amp;#10;&amp;#125;;&amp;#10;&amp;#10;var vipDiscount = function(orderPrice)&amp;#123;&amp;#10;  orderPrice -= 100;&amp;#10;  return orderPrice;&amp;#10;&amp;#125;;&amp;#10;&amp;#10;let result = discountService.then(function(orderPrice) &amp;#123;&amp;#10;  return dptDiscount(orderPrice);&amp;#10;&amp;#125;).then(function(orderPrice) &amp;#123;&amp;#10;  return bigOrderDiscount(orderPrice);&amp;#10;&amp;#125;).then(function(orderPrice) &amp;#123;&amp;#10;  console.log(vipDiscount(orderPrice));&amp;#10;&amp;#125;);&amp;#10;&amp;#10;let result2 = discountService.then(function(orderPrice) &amp;#123;&amp;#10;  return vipDiscount(orderPrice);&amp;#10;&amp;#125;).then(function(orderPrice) &amp;#123;&amp;#10;  return dptDiscount(orderPrice);&amp;#10;&amp;#125;).then(function(orderPrice) &amp;#123;&amp;#10;  console.log(bigOrderDiscount(orderPrice));&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;output&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;755&amp;#10;769.5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Promise 似乎可以更簡單做到 Chain Of Responsibility&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://babeljs.io/repl/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;
-    
-    </summary>
-    
-    
-      <category term="Chain" scheme="http://alincode.github.io/tags/Chain/"/>
-    
-      <category term="Promise" scheme="http://alincode.github.io/tags/Promise/"/>
     
   </entry>
   
