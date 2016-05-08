@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>分類: 非專業書閱讀 - alincode</title>
+    <title>標籤: bad smell - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="alincode">
-<meta property="og:url" content="http://alincode.github.io/categories/非專業書閱讀/index.html">
+<meta property="og:url" content="http://alincode.github.io/tags/bad-smell/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
@@ -210,92 +210,72 @@
                         ">
                 
     
-<div id="archives" class="main-content-wrap">
-    <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="搜尋日期（YYYY/MM/DD）" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"></h5>
-    <section class="boxes">
-        
-            
-            
-            
-                
-                
-                <div class="archive archive-year box" data-date="2016">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016">2016</a>
-                    </h4>
-            
-            
-                
-                <ul class="archive-posts archive-month" data-date="201605">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/05">五月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160506">
-                <a class="archive-post-title" href="/blog/2016/05/06/How-to-be-a-self-demanding-readers/">如何閱讀一本書 - 如何做一個自我要求的讀者(重點整理)</a>
-                <span class="archive-post-date"> - 5月 06, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-                
-                    </ul>
-                
-                <ul class="archive-posts archive-month" data-date="201604">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/04">四月</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160429">
-                <a class="archive-post-title" href="/blog/2016/04/29/Hated-courage-part-5/">被討厭的勇氣 (重點 5) - 認真活在當下</a>
-                <span class="archive-post-date"> - 4月 29, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160427">
-                <a class="archive-post-title" href="/blog/2016/04/27/Hated-courage-part-4/">被討厭的勇氣 (重點 4)</a>
-                <span class="archive-post-date"> - 4月 27, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160426">
-                <a class="archive-post-title" href="/blog/2016/04/26/Hated-courage-part-3/">被討厭的勇氣 (重點 3) - 課題分離</a>
-                <span class="archive-post-date"> - 4月 26, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160425">
-                <a class="archive-post-title" href="/blog/2016/04/25/Hated-courage-part-2/">被討厭的勇氣 (重點 2)</a>
-                <span class="archive-post-date"> - 4月 25, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160424">
-                <a class="archive-post-title" href="/blog/2016/04/24/Hated-courage-part-1/">被討厭的勇氣 (重點 1)</a>
-                <span class="archive-post-date"> - 4月 24, 2016</span>
-            </li>
-        
-    </section>
+
+<section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/05/07/overdesign/">
+                            過度設計
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat May 07 2016 10:14:34 GMT+0800">
+	
+		    5月 07, 2016
+    	
+    </time>
+    
 </div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>在一個目前維護的專案中，看到一個相依性很高的 code，似乎是一個很棒的例子說明過度設計這件事。</p>
+<p><strong>撰寫者的美意</strong></p>
+<p>是讓 controller 內，只有一行就可以發出不同狀態的通知信，但這樣的設計卻帶來更多的災難。一個好的設計是什麼？基本原則不外乎是，一次變動只需影響到一個地方，每個最小單元只做一件事，並可充分表態自己的意圖。</p>
+<p><strong>那這樣的設計問題在哪裡？</strong></p>
+<ul>
+<li>當 Order 的 Type 有更名的時候，如果不是原設計者，接手人並不會知道同步去更變 CustomMailerService 內的 function 名稱，基本上他也不應該需要去做這件事。</li>
+<li><code>CustomMailerService[status](order)</code> 隱含著，有可能會 <code>CustomMailerService.paymentConfirm</code> 只傳一個參數的意圖，另一個參數或許會是 null Code 這本書上有提到，不應該傳入 null 為參數。</li>
+<li>並不是每個 order.type 都需要發信，所以除非 OrderController 內有檢查需要發信的 type，否則也是一個隱性的 bug。</li>
+<li>如果有一天 CustomMailerService 的 function 名稱需要修改，接手人無法從搜尋工具找出，它與 OrderController 的連動關係。</li>
+</ul>
+<h3 id="簡略架構"><a href="#簡略架構" class="headerlink" title="簡略架構"></a>簡略架構</h3><p><strong>OrderController</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let messageConfig = await CustomMailerService[status](order);</span><br></pre></td></tr></table></figure></p>
+<p><strong>Order</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: DataTypes.ENUM(&#39;new&#39;, &#39;paymentConfirm&#39;, &#39;deliveryConfirm&#39;, &#39;orderCancel&#39;),</span><br></pre></td></tr></table></figure></p>
+<p><strong>CustomMailerService</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">orderConfirm: (result)&#10;paymentConfirm: (order, email)&#10;deliveryConfirm: (order)</span><br></pre></td></tr></table></figure></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/07/overdesign/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
+    </ul>
+</div>
+
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">
