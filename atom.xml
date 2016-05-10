@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-08T08:02:52.000Z</updated>
+  <updated>2016-05-10T03:46:39.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Story Points</title>
+    <link href="http://alincode.github.io/2016/05/08/estimating-with-story-points/"/>
+    <id>http://alincode.github.io/2016/05/08/estimating-with-story-points/</id>
+    <published>2016-05-08T02:41:17.000Z</published>
+    <updated>2016-05-10T03:46:39.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Story%20Points&quot; alt=&quot;Story Points&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近 Team 開始試 Story Points 來評估專案，所以稍微花了點時間了解一下。&lt;/p&gt;
+&lt;h3 id=&quot;預估&quot;&gt;&lt;a href=&quot;#預估&quot; class=&quot;headerlink&quot; title=&quot;預估&quot;&gt;&lt;/a&gt;預估&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;我想從事軟體業，最難的一項就是預估，為什麼呢？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;因為預估往往是針對從前的經驗，去推算出未來需要的時間，如果鋪一塊柏油需要2個小時，在相同大小的情況下，就可以很準確的預估出下一次所需要的時間，但是從事軟體業的技術日益更新，今年夯物聯網，明年又會有另一種題材竄起，即使每天使用的框架，一、兩年後又會有新的局面。所以永遠預估不準，索性乾脆不要預估，或業界常用的預估方式，抓三倍的時間，因為永遠會有意外發生。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;既然估不準，那還要不要預估？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;當我們去景點區的時候，第一件事會做什麼？通常會先看一下門口放置的觀光地圖，挑出想去的景點，規劃一下 Route，這個地圖非常的不精準，但卻不可或缺對吧。&lt;/p&gt;
+&lt;h3 id=&quot;什麼是-Story-Points？&quot;&gt;&lt;a href=&quot;#什麼是-Story-Points？&quot; class=&quot;headerlink&quot; title=&quot;什麼是 Story Points？&quot;&gt;&lt;/a&gt;什麼是 Story Points？&lt;/h3&gt;&lt;p&gt;既然估不準，那我們就不應該花太多時間預估，Story Points 就是一個提供&lt;code&gt;快速預估的方法論&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Story Points 採用需求複雜度所估算，不是針對小時估算。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;人很擅長比較大小，我們可以在一分鐘內說出，甲物比乙物大，但是如果你再追問，甲物比乙物大多少？1.5倍？2倍？1.8倍？那就會變成一個相當耗時的評估。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;優點&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Story Points 是一個客觀的估算基準點，它不牽扯到個人的經驗背景。如果用小時估算，有可能資深的只需要兩天，資淺的需要一周，但這個 Task 也還沒決定給誰，而且就算決定給誰了，人是會流動的，所以我們需要一個客觀的評估方式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在評估過程中，如果甲跟乙所估算的 Story Points 差異太大，可以趁這時間做交流，例如可能甲以前有做過類似的Task，所以他已經知道大概怎麼進行會比較快，或是甲沒預估到乙覺得可能會發生的一些問題。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Story%20Points&quot; alt=&quot;Story Points&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近 Team 開始試 Story Points 來評估專案，所以稍微花了點時間了解一下。&lt;/p&gt;
+&lt;h
+    
+    </summary>
+    
+    
+      <category term="Story Points" scheme="http://alincode.github.io/tags/Story-Points/"/>
+    
+      <category term="預估" scheme="http://alincode.github.io/tags/%E9%A0%90%E4%BC%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>過度設計</title>
@@ -716,60 +756,6 @@
     
     
       <category term="gitbook" scheme="http://alincode.github.io/tags/gitbook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好書推薦 - 如何閱讀一本書</title>
-    <link href="http://alincode.github.io/2016/04/18/how-to-read-a-book/"/>
-    <id>http://alincode.github.io/2016/04/18/how-to-read-a-book/</id>
-    <published>2016-04-18T13:50:13.000Z</published>
-    <updated>2016-04-18T15:18:16.000Z</updated>
-    
-    <content type="html">&lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
-&lt;p&gt;本書的第一章即提到&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒性的氾濫資訊阻礙了我們的理解。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因為這本書歷史悠久，所以他只提到傳統傳播媒體，但是我想大家也可以漸漸的發現到，網路文章也上充斥的懶人包，7天快速上手、15分鐘讀懂xxx，不用花很多時間就知道很多事，但卻容易忽略掉 &lt;code&gt;知道 != 懂&lt;/code&gt;，然後新的技術又出來了，然後大家又一窩蜂沖上去，完全忘記有這回事。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;這些媒體，經過太精心的設計，使得思想形同沒有需要了(雖然只是表相如此)。…(略)…目的都在讓人不需要面對困難或努力，很容易就整理出自己的思緒，但這些精美包裝的資訊效率實在太高了，讓觀眾、聽眾、讀者根本用不著自己做結論。相反的，他們直接將包裝過後的觀點裝進自己的腦海中，就像錄影機願意接受錄影帶一樣自然。他只要按一個倒帶的鈕，就能找到他所需要的適當言論。他根本不用思考就能表現得宜。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;每個人都致力於 hacker way，不斷的挑戰如何讓自己更接近自己的理想，對我來說我知道我閱讀的速度很慢，這也是為什麼想讀這本書，就是想改善這部分。&lt;/p&gt;
-&lt;p&gt;有些人提倡不讀書，因為他們覺得會寫在書上的資訊都很舊，先不論這部分的爭議，但即使是如此，此本書對你也有很大的幫助，因為即使不是實體的書，網路的文章也是可以運用到這些技巧。再說這本書，刷了這本多版，又被翻成各國語言，認真的讀完它，我想利多於弊。&lt;/p&gt;
-&lt;p&gt;另一個會讀書的原因在於，身為 IT 工作者，我們用眼看螢幕的時間，比其他行業的人多很多，所以除了 coding、寫文章、搜尋資料之外，必須儘量的減少對眼睛的負擔，如果有長篇有價值的文章會乾脆印下來看。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.storm.mg/lifestyle/38645&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;雅虎百萬年薪新貴，29歲後失明之路&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;針對這本書吸引我的部分&quot;&gt;&lt;a href=&quot;#針對這本書吸引我的部分&quot; class=&quot;headerlink&quot; title=&quot;針對這本書吸引我的部分&quot;&gt;&lt;/a&gt;針對這本書吸引我的部分&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;教你怎麼讀懂一本超過你知識程度的書&lt;/li&gt;
-&lt;li&gt;如何精準的找到主旨跟重點&lt;/li&gt;
-&lt;li&gt;針對不同類型的讀物，提供一些閱讀的技巧&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&quot;/blog/2016/04/18/how-to-read-a-book/book.jpg&quot; alt=&quot;book.jpg&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;閱讀的層次&quot;&gt;&lt;a href=&quot;#閱讀的層次&quot; class=&quot;headerlink&quot; title=&quot;閱讀的層次&quot;&gt;&lt;/a&gt;閱讀的層次&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;基礎閱讀&lt;/li&gt;
-&lt;li&gt;檢視閱讀&lt;/li&gt;
-&lt;li&gt;分析閱讀&lt;ul&gt;
-&lt;li&gt;第六章　一本書的分類&lt;/li&gt;
-&lt;li&gt;第七章　透視一本書&lt;/li&gt;
-&lt;li&gt;第八章　與作者找出共通的詞義&lt;/li&gt;
-&lt;li&gt;第九章　判斷作者的主旨&lt;/li&gt;
-&lt;li&gt;第十章　公正地評斷一本書&lt;/li&gt;
-&lt;li&gt;第十一章　贊同或反對作者&lt;/li&gt;
-&lt;li&gt;第十二章　輔助閱讀&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。&lt;/p&gt;
-&lt;p&gt;本書的第一章即提到&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決
-    
-    </summary>
-    
     
   </entry>
   
