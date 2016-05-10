@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-10T03:46:39.000Z</updated>
+  <updated>2016-05-10T04:34:56.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何開始使用 Story Points？</title>
+    <link href="http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/"/>
+    <id>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</id>
+    <published>2016-05-09T03:48:38.000Z</published>
+    <updated>2016-05-10T04:34:56.000Z</updated>
+    
+    <content type="html">&lt;img src=&quot;/blog/2016/05/09/how-to-getting-started-story-points/PlanningPoker.jpg&quot; alt=&quot;PlanningPoker.jpg&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;預估-Story-Points-單位&quot;&gt;&lt;a href=&quot;#預估-Story-Points-單位&quot; class=&quot;headerlink&quot; title=&quot;預估 Story Points 單位&quot;&gt;&lt;/a&gt;預估 Story Points 單位&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;衣服 Size 種類 (XS, S, M, L, XL…)&lt;/li&gt;
+&lt;li&gt;費氏數列卡片(Planning Poker)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;怎麼開始？&quot;&gt;&lt;a href=&quot;#怎麼開始？&quot; class=&quot;headerlink&quot; title=&quot;怎麼開始？&quot;&gt;&lt;/a&gt;怎麼開始？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先挑一個介於中間值的 Story，然後再逐一針對每個 Story 給 Point。&lt;/li&gt;
+&lt;li&gt;針對預估不一致的 Story 進行細部討論。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;補充&quot;&gt;&lt;a href=&quot;#補充&quot; class=&quot;headerlink&quot; title=&quot;補充&quot;&gt;&lt;/a&gt;補充&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.pointingpoker.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;線上版 Pointing Poker&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;此評估方式希望每個人都可以以客觀的方式預估不受別人影響，這個網站提供了這樣的小功能，在所有人都遞交評估後才顯示所有人的評估果。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;img src=&quot;/blog/2016/05/09/how-to-getting-started-story-points/PlanningPoker.jpg&quot; alt=&quot;PlanningPoker.jpg&quot; title=&quot;&quot;&gt;
+&lt;h3 id=&quot;預估-Story-Points-
+    
+    </summary>
+    
+    
+      <category term="Story Points" scheme="http://alincode.github.io/tags/Story-Points/"/>
+    
+      <category term="預估" scheme="http://alincode.github.io/tags/%E9%A0%90%E4%BC%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Story Points</title>
@@ -711,51 +745,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>建構一個漂亮的文件 with gitbook</title>
-    <link href="http://alincode.github.io/2016/04/19/build-docs-with-gitbook/"/>
-    <id>http://alincode.github.io/2016/04/19/build-docs-with-gitbook/</id>
-    <published>2016-04-19T06:30:41.000Z</published>
-    <updated>2016-04-23T10:52:26.000Z</updated>
-    
-    <content type="html">&lt;img src=&quot;/blog/2016/04/19/build-docs-with-gitbook/gitbook.png&quot; alt=&quot;gitbook.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。&lt;/p&gt;
-&lt;p&gt;現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔），有些人說，那用 google drive，但其實對於一般的使用者友善度，還是有一段差距，而且我總覺得我的游標會一直亂跑。&lt;/p&gt;
-&lt;p&gt;gitbook 有提供一個圖形化工具，可以很容易的編輯 markdown 格式的文字檔，再結合一些 git commit 的概念，就可以更新。但這對於一般使用者還是太困難，這時放在 github 的好處就顯現了，他有網站編輯 markdown 檔的界面，弄得像留言板一樣，如果你說連留言板都不知道怎麼用，恩…那…你不要用好了。&lt;/p&gt;
-&lt;h2 id=&quot;整合方案&quot;&gt;&lt;a href=&quot;#整合方案&quot; class=&quot;headerlink&quot; title=&quot;整合方案&quot;&gt;&lt;/a&gt;整合方案&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;github&lt;/li&gt;
-&lt;li&gt;gitbook for&lt;/li&gt;
-&lt;li&gt;nginx for 靜態檔案伺服器&lt;/li&gt;
-&lt;li&gt;cron for 自動排成更新&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。&lt;/p&gt;
-&lt;h2 id=&quot;與-Gitbook-相關&quot;&gt;&lt;a href=&quot;#與-Gitbook-相關&quot; class=&quot;headerlink&quot; title=&quot;與 Gitbook 相關&quot;&gt;&lt;/a&gt;與 Gitbook 相關&lt;/h2&gt;&lt;h3 id=&quot;安裝-Gitbook&quot;&gt;&lt;a href=&quot;#安裝-Gitbook&quot; class=&quot;headerlink&quot; title=&quot;安裝 Gitbook&quot;&gt;&lt;/a&gt;安裝 Gitbook&lt;/h3&gt;&lt;p&gt;&lt;code&gt;npm install gitbook -g&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;編譯-gitbook-html-檔&quot;&gt;&lt;a href=&quot;#編譯-gitbook-html-檔&quot; class=&quot;headerlink&quot; title=&quot;編譯 gitbook html 檔&quot;&gt;&lt;/a&gt;編譯 gitbook html 檔&lt;/h3&gt;&lt;p&gt;&lt;code&gt;gitbook build your-document-folder&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;與-Nginx-相關&quot;&gt;&lt;a href=&quot;#與-Nginx-相關&quot; class=&quot;headerlink&quot; title=&quot;與 Nginx 相關&quot;&gt;&lt;/a&gt;與 Nginx 相關&lt;/h2&gt;&lt;h3 id=&quot;安裝-Nginx&quot;&gt;&lt;a href=&quot;#安裝-Nginx&quot; class=&quot;headerlink&quot; title=&quot;安裝 Nginx&quot;&gt;&lt;/a&gt;安裝 Nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;brew install nginx&lt;/code&gt;&lt;br&gt;or&lt;br&gt;&lt;code&gt;yum install nginx&lt;/code&gt;&lt;br&gt;or&lt;br&gt;請依照你的作業系統調整&lt;/p&gt;
-&lt;h3 id=&quot;複製到指定的資料夾&quot;&gt;&lt;a href=&quot;#複製到指定的資料夾&quot; class=&quot;headerlink&quot; title=&quot;複製到指定的資料夾&quot;&gt;&lt;/a&gt;複製到指定的資料夾&lt;/h3&gt;&lt;p&gt;&lt;code&gt;cp -R your-document-folder/_book /srv/docs&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;更改資料夾權限&quot;&gt;&lt;a href=&quot;#更改資料夾權限&quot; class=&quot;headerlink&quot; title=&quot;更改資料夾權限&quot;&gt;&lt;/a&gt;更改資料夾權限&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo chmod -R 755 /srv/docs/&amp;#10;sudo chown -R www-data:www-data /srv/docs/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;產生加密密碼&quot;&gt;&lt;a href=&quot;#產生加密密碼&quot; class=&quot;headerlink&quot; title=&quot;產生加密密碼&quot;&gt;&lt;/a&gt;產生加密密碼&lt;/h3&gt;&lt;p&gt;&lt;code&gt;openssl passwd&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。&lt;/p&gt;
-&lt;h3 id=&quot;建立密碼檔&quot;&gt;&lt;a href=&quot;#建立密碼檔&quot; class=&quot;headerlink&quot; title=&quot;建立密碼檔&quot;&gt;&lt;/a&gt;建立密碼檔&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/nginx/conf.d/your-passwd&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;your-passwd&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;your-login-account:your-encode-password&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;編輯-nginx-設定檔&quot;&gt;&lt;a href=&quot;#編輯-nginx-設定檔&quot; class=&quot;headerlink&quot; title=&quot;編輯 nginx 設定檔&quot;&gt;&lt;/a&gt;編輯 nginx 設定檔&lt;/h3&gt;&lt;p&gt;&lt;code&gt;vi /etc/nginx/sites-available/default&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;default&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;server &amp;#123;&amp;#10;  listen 80;&amp;#10;  server_name your.domain.name.com;&amp;#10;  auth_basic &amp;#34;docs website&amp;#34;;&amp;#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&amp;#10;&amp;#10;  location / &amp;#123;&amp;#10;    root /srv/docs;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;重啟-nginx&quot;&gt;&lt;a href=&quot;#重啟-nginx&quot; class=&quot;headerlink&quot; title=&quot;重啟 nginx&quot;&gt;&lt;/a&gt;重啟 nginx&lt;/h3&gt;&lt;p&gt;&lt;code&gt;nginx -s reload&lt;/code&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/blog/2016/04/19/build-docs-with-gitbook/gitbook.png&quot; alt=&quot;gitbook.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面
-    
-    </summary>
-    
-    
-      <category term="gitbook" scheme="http://alincode.github.io/tags/gitbook/"/>
     
   </entry>
   
