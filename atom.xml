@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-11T04:11:49.000Z</updated>
+  <updated>2016-05-11T06:32:21.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>線上 JSON 產生器</title>
+    <link href="http://alincode.github.io/2016/05/11/json-generator/"/>
+    <id>http://alincode.github.io/2016/05/11/json-generator/</id>
+    <published>2016-05-11T05:53:31.000Z</published>
+    <updated>2016-05-11T06:32:21.000Z</updated>
+    
+    <content type="html">
+&lt;p&gt;在寫一些 demo sample 的時候，需要 json 資料，而且必須是 http url 的形式，自己弄靜態 server 只放假資料？似乎太麻煩了，或許你可以試試看這個免費的線上服務，它提供了一些 &lt;code&gt;template tags&lt;/code&gt; 讓你去建立這些假資料，而且還提供公開的 url。&lt;/p&gt;
+&lt;p&gt;有哪些 &lt;code&gt;template tags&lt;/code&gt; 可以使用，你可以按一些 Help 按鈕，就找的到所有值了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.json-generator.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Json Generator&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      
+&lt;p&gt;在寫一些 demo sample 的時候，需要 json 資料，而且必須是 http url 的形式，自己弄靜態 server 只放假資料？似乎太麻煩了，或許你可以試試看這個免費的線上服務，它提供了一些 &lt;code&gt;template tags&lt;/code&gt; 讓你去建立這些
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>如何時候該用 Promise？</title>
@@ -708,39 +731,6 @@
     
     
       <category term="auto testing" scheme="http://alincode.github.io/tags/auto-testing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一個 Nightwatch 自動化測試</title>
-    <link href="http://alincode.github.io/2016/04/21/start-with-nightwatch/"/>
-    <id>http://alincode.github.io/2016/04/21/start-with-nightwatch/</id>
-    <published>2016-04-21T10:04:42.000Z</published>
-    <updated>2016-04-28T11:01:41.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;h4 id=&quot;必要環境&quot;&gt;&lt;a href=&quot;#必要環境&quot; class=&quot;headerlink&quot; title=&quot;必要環境&quot;&gt;&lt;/a&gt;必要環境&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;有 Firefox 或 Chrome&lt;/li&gt;
-&lt;li&gt;有 NodeJS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;安裝必要-modules&quot;&gt;&lt;a href=&quot;#安裝必要-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝必要 modules&quot;&gt;&lt;/a&gt;安裝必要 modules&lt;/h4&gt;&lt;p&gt;&lt;code&gt;npm i selenium-server nightwatch chromedriver -S&lt;/code&gt;&lt;/p&gt;
-&lt;h4 id=&quot;安裝-nightwatch&quot;&gt;&lt;a href=&quot;#安裝-nightwatch&quot; class=&quot;headerlink&quot; title=&quot;安裝 nightwatch&quot;&gt;&lt;/a&gt;安裝 nightwatch&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir nightwatch-sandbox &amp;#38;&amp;#38; cd nightwatch-sandbox&amp;#10;npm init -y&amp;#10;npm i nightwatch -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;設定&quot;&gt;&lt;a href=&quot;#設定&quot; class=&quot;headerlink&quot; title=&quot;設定&quot;&gt;&lt;/a&gt;設定&lt;/h3&gt;&lt;h4 id=&quot;撰寫nightwatch環境設定&quot;&gt;&lt;a href=&quot;#撰寫nightwatch環境設定&quot; class=&quot;headerlink&quot; title=&quot;撰寫nightwatch環境設定&quot;&gt;&lt;/a&gt;撰寫nightwatch環境設定&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  src_folders: [&amp;#39;./tests&amp;#39;],&amp;#10;  output_folder: &amp;#39;./results&amp;#39;,&amp;#10;  live_output: true,&amp;#10;&amp;#10;  selenium: &amp;#123;&amp;#10;    start_process: true,&amp;#10;    server_path: &amp;#39;./node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar&amp;#39;,&amp;#10;    log_path: &amp;#39;./results&amp;#39;,&amp;#10;    host: &amp;#39;127.0.0.1&amp;#39;,&amp;#10;    port: 4444,&amp;#10;    cli_args: &amp;#123;&amp;#10;      &amp;#39;webdriver.chrome.driver&amp;#39;: &amp;#39;./node_modules/.bin/chromedriver&amp;#39;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;,&amp;#10;&amp;#10;  test_settings: &amp;#123;&amp;#10;    default: &amp;#123;&amp;#10;      launch_url: &amp;#39;http://localhost&amp;#39;,&amp;#10;      selenium_host: &amp;#39;127.0.0.1&amp;#39;,&amp;#10;      selenium_port: 4444,&amp;#10;      silent: true,&amp;#10;      disable_colors: false,&amp;#10;      screenshots: &amp;#123;&amp;#10;        enabled: true,&amp;#10;        path: &amp;#39;./results/screenshots&amp;#39;&amp;#10;      &amp;#125;,&amp;#10;      desiredCapabilities: &amp;#123;&amp;#10;        browserName: &amp;#39;firefox&amp;#39;,&amp;#10;        javascriptEnabled: true,&amp;#10;        acceptSslCerts: true&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;,&amp;#10;&amp;#10;    chrome: &amp;#123;&amp;#10;      desiredCapabilities: &amp;#123;&amp;#10;        browserName: &amp;#39;chrome&amp;#39;,&amp;#10;        javascriptEnabled: true&amp;#10;      &amp;#125;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;實作&quot;&gt;&lt;a href=&quot;#實作&quot; class=&quot;headerlink&quot; title=&quot;實作&quot;&gt;&lt;/a&gt;實作&lt;/h3&gt;&lt;img src=&quot;/blog/2016/04/21/start-with-nightwatch/console.png&quot; alt=&quot;console.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;&lt;strong&gt;撰寫一個簡單的自動化測試&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  &amp;#39;&amp;#36617;&amp;#20837;Blog&amp;#39;: function (client) &amp;#123;&amp;#10;    client&amp;#10;      .url(&amp;#39;http://blog.mokayo.com&amp;#39;)&amp;#10;      .waitForElementVisible(&amp;#39;body&amp;#39;, 1000)&amp;#10;      .assert.title(&amp;#39;&amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712; - blog.mokayo.com&amp;#39;)&amp;#10;      .end();&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;執行&lt;/strong&gt;&lt;br&gt;&lt;code&gt;nightwatch -c ./Nightwatch.js --env default&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/front-end-test-sandbox/tree/master/nightwatch-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原始碼下載&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;h4 id=&quot;必要環境&quot;&gt;&lt;a href=&quot;#必要環境&quot; class=&quot;headerlink&quot; title=&quot;必要環境&quot;&gt;&lt;/a&gt;必要環境&lt;/h
-    
-    </summary>
-    
-      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
-    
-    
-      <category term="nightwatch" scheme="http://alincode.github.io/tags/nightwatch/"/>
     
   </entry>
   
