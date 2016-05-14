@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-11T15:00:09.000Z</updated>
+  <updated>2016-05-14T14:33:48.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CDNJS - JavaScript CDN</title>
+    <link href="http://alincode.github.io/2016/05/13/CDNJS/"/>
+    <id>http://alincode.github.io/2016/05/13/CDNJS/</id>
+    <published>2016-05-13T14:22:28.000Z</published>
+    <updated>2016-05-14T14:33:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;這個網站提供了 &lt;code&gt;JavaScript Libraries CDN&lt;/code&gt;，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/05/13/CDNJS/CDNJS.png&quot; alt=&quot;CDNJS.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這個網站提供了 &lt;code&gt;JavaScript Libraries CDN&lt;/code&gt;，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Selenium 執行異常</title>
@@ -694,41 +714,6 @@
     
     
       <category term="被討厭的勇氣" scheme="http://alincode.github.io/tags/%E8%A2%AB%E8%A8%8E%E5%8E%AD%E7%9A%84%E5%8B%87%E6%B0%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一個 WebdriverIO 自動化測試</title>
-    <link href="http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/"/>
-    <id>http://alincode.github.io/2016/04/23/getting-started-with-WebdriverIO/</id>
-    <published>2016-04-23T15:25:27.000Z</published>
-    <updated>2016-05-11T14:51:29.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;實作&quot;&gt;&lt;a href=&quot;#實作&quot; class=&quot;headerlink&quot; title=&quot;實作&quot;&gt;&lt;/a&gt;實作&lt;/h2&gt;&lt;h3 id=&quot;建立自動化測試專案&quot;&gt;&lt;a href=&quot;#建立自動化測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立自動化測試專案&quot;&gt;&lt;/a&gt;建立自動化測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;安裝-WebdriverIO&quot;&gt;&lt;a href=&quot;#安裝-WebdriverIO&quot; class=&quot;headerlink&quot; title=&quot;安裝 WebdriverIO&quot;&gt;&lt;/a&gt;安裝 WebdriverIO&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install webdriverio -D&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;撰寫第一個測試&quot;&gt;&lt;a href=&quot;#撰寫第一個測試&quot; class=&quot;headerlink&quot; title=&quot;撰寫第一個測試&quot;&gt;&lt;/a&gt;撰寫第一個測試&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var webdriverio = require(&amp;#39;webdriverio&amp;#39;);&amp;#10;var options = &amp;#123; desiredCapabilities: &amp;#123; browserName: &amp;#39;chrome&amp;#39; &amp;#125; &amp;#125;;&amp;#10;var client = webdriverio.remote(options);&amp;#10;&amp;#10;client&amp;#10;    .init()&amp;#10;    .url(&amp;#39;http://blog.mokayo.com/&amp;#39;)&amp;#10;    .getTitle().then(function(title) &amp;#123;&amp;#10;        console.log(&amp;#39;Title is: &amp;#39; + title);&amp;#10;        // Title is: &amp;#25945;&amp;#20320;&amp;#25152;&amp;#24819;&amp;#23416;&amp;#30340;&amp;#65292;&amp;#29992;&amp;#30524;&amp;#27138;&amp;#35712; - blog.mokayo.com&amp;#10;    &amp;#125;)&amp;#10;    .end();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;安裝-selenium-standalone&quot;&gt;&lt;a href=&quot;#安裝-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;安裝 selenium standalone&quot;&gt;&lt;/a&gt;安裝 selenium standalone&lt;/h3&gt;&lt;p&gt;因為底層是透過與 selenium 溝通去操作瀏覽器，所以請先安裝 selenium 並啟動它。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;小提示&lt;/strong&gt;&lt;br&gt;Selenium 執行需要 JDK&lt;/p&gt;
-&lt;h2 id=&quot;如何執行&quot;&gt;&lt;a href=&quot;#如何執行&quot; class=&quot;headerlink&quot; title=&quot;如何執行&quot;&gt;&lt;/a&gt;如何執行&lt;/h2&gt;&lt;img src=&quot;/blog/2016/04/23/getting-started-with-WebdriverIO/console.png&quot; alt=&quot;console.png&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;啟動-selenium-standalone&quot;&gt;&lt;a href=&quot;#啟動-selenium-standalone&quot; class=&quot;headerlink&quot; title=&quot;啟動 selenium standalone&quot;&gt;&lt;/a&gt;啟動 selenium standalone&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;selenium-standalone start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;啟動自動測試程式&quot;&gt;&lt;a href=&quot;#啟動自動測試程式&quot; class=&quot;headerlink&quot; title=&quot;啟動自動測試程式&quot;&gt;&lt;/a&gt;啟動自動測試程式&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;node test.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;原始碼下載&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;相關資源&quot;&gt;&lt;a href=&quot;#相關資源&quot; class=&quot;headerlink&quot; title=&quot;相關資源&quot;&gt;&lt;/a&gt;相關資源&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://webdriver.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO 官網&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.npmjs.com/package/selenium-standalone&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selenium standalone&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;實作&quot;&gt;&lt;a href=&quot;#實作&quot; class=&quot;headerlink&quot; title=&quot;實作&quot;&gt;&lt;/a&gt;實作&lt;/h2&gt;&lt;h3 id=&quot;建立自動化測試專案&quot;&gt;&lt;a href=&quot;#建立自動化測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立自動化測試
-    
-    </summary>
-    
-      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
-    
-    
-      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
-    
-      <category term="auto testing" scheme="http://alincode.github.io/tags/auto-testing/"/>
     
   </entry>
   
