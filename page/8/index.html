@@ -218,6 +218,57 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/05/hexo-deploy/">
+                            將 hexo 部署到 github page
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Mar 05 2016 15:00:46 GMT+0800">
+	
+		    3月 05, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>常使用 github 的人都知道，開一個自己帳號 domain 的 repo，就可以對應到 github page，可當靜態網站部署。</p>
+<p>例如你開一個 <code>yourname.github.io</code> 的 repo，裡面所有東西都可以對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 。</p>
+<p>但如果你想要放在 <strong>blog</strong> 目錄下，直覺上就是在剛剛建立的 repo 中，建立一個 blog 資料夾，但是指令 <code>hexo generate</code>，它只會幫你所有檔案產在根目錄下。</p>
+<p>那該怎麼做？</p>
+<img src="/blog/2016/03/05/hexo-deploy/github_page.png" alt="github_page.png" title="">
+<p><a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages/</a></p>
+<p>原來 github page 還有其他用法，就是可以自由命名 repo 名稱，然後，branch 名字取 <strong>gh-pages</strong>，然後他就會對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 子目錄下。</p>
+<h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
+<p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><p>(16/04/23 修正)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/05/hexo-deploy/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/04/npm-bin/">
                             NPM bin 執行順序
                         </a>

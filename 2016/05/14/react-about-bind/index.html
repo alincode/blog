@@ -6,24 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>CDNJS - JavaScript CDN - alincode</title>
+    <title>React Bind - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="這個網站提供了 JavaScript Libraries CDN，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。">
+    <meta name="description" content="React on ES6 不再自動綁定，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。
+就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 this.handleOptionsButtonClick.bind(this)，它">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="CDNJS - JavaScript CDN">
-<meta property="og:url" content="http://alincode.github.io/2016/05/13/CDNJS/index.html">
+<meta property="og:title" content="React Bind">
+<meta property="og:url" content="http://alincode.github.io/2016/05/14/react-about-bind/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="這個網站提供了 JavaScript Libraries CDN，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。">
-<meta property="og:image" content="http://alincode.github.io/blog/2016/05/13/CDNJS/CDNJS.png">
-<meta property="og:updated_time" content="2016-05-14T14:33:48.000Z">
+<meta property="og:description" content="React on ES6 不再自動綁定，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。
+就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 this.handleOptionsButtonClick.bind(this)，它">
+<meta property="og:updated_time" content="2016-05-15T15:34:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CDNJS - JavaScript CDN">
-<meta name="twitter:description" content="這個網站提供了 JavaScript Libraries CDN，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。">
+<meta name="twitter:title" content="React Bind">
+<meta name="twitter:description" content="React on ES6 不再自動綁定，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。
+就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 this.handleOptionsButtonClick.bind(this)，它">
     
     
         
@@ -217,13 +219,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            CDNJS - JavaScript CDN
+            React Bind
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri May 13 2016 22:22:28 GMT+0800">
+    <time itemprop="datePublished" content="Sat May 14 2016 23:15:27 GMT+0800">
 	
-		    5月 13, 2016
+		    5月 14, 2016
     	
     </time>
     
@@ -232,8 +234,9 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>這個網站提供了 <code>JavaScript Libraries CDN</code>，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。</p>
-<img src="/blog/2016/05/13/CDNJS/CDNJS.png" alt="CDNJS.png" title="">
+            <p>React on ES6 不再自動綁定，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。</p>
+<p>就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 <code>this.handleOptionsButtonClick.bind(this)</code>，它才會將 handleOptionsButtonClick 內的 this 視為是 <code>component instance</code>，否則使用 component instance 的 method。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PostInfo extends React.Component &#123;&#10;  constructor(props) &#123;&#10;    super(props);&#10;    // Manually bind this method to the component instance...&#10;    // &#25163;&#21205;&#32129;&#23450;&#65292;&#36889;&#35041;&#30340; this &#25351;&#30340;&#26159; component instance&#10;    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);&#10;  &#125;&#10;  handleOptionsButtonClick(e) &#123;&#10;    // &#34987; bind &#20043;&#24460;&#65292;&#36889;&#35041;&#30340; this &#23559;&#25351;&#30340;&#26159; component instance&#12290;&#10;    this.setState(&#123;showOptionsModal: true&#125;);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -243,12 +246,19 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/React/">React</a>
+
+            </div>
+        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/14/react-about-bind/"  data-tooltip="React Bind">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -256,7 +266,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/12/execute-selenium-error/" data-tooltip="Selenium 執行異常">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/13/CDNJS/" data-tooltip="CDNJS - JavaScript CDN">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -271,17 +281,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -319,7 +329,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/14/react-about-bind/"  data-tooltip="React Bind">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -327,7 +337,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/12/execute-selenium-error/" data-tooltip="Selenium 執行異常">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/05/13/CDNJS/" data-tooltip="CDNJS - JavaScript CDN">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -342,17 +352,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -372,17 +382,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/13/CDNJS/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/05/14/react-about-bind/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
