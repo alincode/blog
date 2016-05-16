@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-16T05:02:12.000Z</updated>
+  <updated>2016-05-16T05:04:53.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,14 +20,12 @@
     <link href="http://alincode.github.io/2016/05/14/react-about-bind/"/>
     <id>http://alincode.github.io/2016/05/14/react-about-bind/</id>
     <published>2016-05-14T15:15:27.000Z</published>
-    <updated>2016-05-16T05:02:12.000Z</updated>
+    <updated>2016-05-16T05:04:53.000Z</updated>
     
     <content type="html">&lt;p&gt;React on ES6 不再 &lt;code&gt;自動綁定&lt;/code&gt;，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。&lt;/p&gt;
 &lt;p&gt;就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 &lt;code&gt;this.handleOptionsButtonClick.bind(this)&lt;/code&gt;，它才會將 handleOptionsButtonClick 內的 this 視為是 &lt;code&gt;component instance&lt;/code&gt;，否則無法使用 component instance 的 method。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;範例一&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class PostInfo extends React.Component &amp;#123;&amp;#10;  constructor(props) &amp;#123;&amp;#10;    super(props);&amp;#10;    // &amp;#25163;&amp;#21205;&amp;#32129;&amp;#23450;&amp;#65292;&amp;#36889;&amp;#35041;&amp;#30340; this &amp;#25351;&amp;#30340;&amp;#26159; component instance&amp;#10;    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);&amp;#10;  &amp;#125;&amp;#10;  handleOptionsButtonClick(e) &amp;#123;&amp;#10;    // &amp;#34987; bind &amp;#20043;&amp;#24460;&amp;#65292;&amp;#36889;&amp;#35041;&amp;#30340; this &amp;#23559;&amp;#25351;&amp;#30340;&amp;#26159; component instance&amp;#12290;&amp;#10;    this.setState(&amp;#123;showOptionsModal: true&amp;#125;);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例二&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;_checkShopCode() &amp;#123;&amp;#10;// &amp;#8230; &amp;#30053;...&amp;#10;&amp;#125;&amp;#10;&amp;#10;_changeDeliverZone(e) &amp;#123;&amp;#10;  CartActions.changeDeliverZone(e.target.value);&amp;#10;  this._updateCartSum();&amp;#10;&amp;#125;&amp;#10;&amp;#10;&amp;#60;select style=&amp;#123;styles.select&amp;#125; value=&amp;#123;this.props.selectedDeliverZone&amp;#125; onChange=&amp;#123;this._changeDeliverZone.bind(this)&amp;#125;&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;範例一&quot;&gt;&lt;a href=&quot;#範例一&quot; class=&quot;headerlink&quot; title=&quot;範例一&quot;&gt;&lt;/a&gt;範例一&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;class PostInfo extends React.Component &amp;#123;&amp;#10;  constructor(props) &amp;#123;&amp;#10;    super(props);&amp;#10;    // &amp;#25163;&amp;#21205;&amp;#32129;&amp;#23450;&amp;#65292;&amp;#36889;&amp;#35041;&amp;#30340; this &amp;#25351;&amp;#30340;&amp;#26159; component instance&amp;#10;    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);&amp;#10;  &amp;#125;&amp;#10;  handleOptionsButtonClick(e) &amp;#123;&amp;#10;    // &amp;#34987; bind &amp;#20043;&amp;#24460;&amp;#65292;&amp;#36889;&amp;#35041;&amp;#30340; this &amp;#23559;&amp;#25351;&amp;#30340;&amp;#26159; component instance&amp;#12290;&amp;#10;    this.setState(&amp;#123;showOptionsModal: true&amp;#125;);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;範例二&quot;&gt;&lt;a href=&quot;#範例二&quot; class=&quot;headerlink&quot; title=&quot;範例二&quot;&gt;&lt;/a&gt;範例二&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;_checkShopCode() &amp;#123;&amp;#10;// &amp;#8230; &amp;#30053;...&amp;#10;&amp;#125;&amp;#10;&amp;#10;_changeDeliverZone(e) &amp;#123;&amp;#10;  CartActions.changeDeliverZone(e.target.value);&amp;#10;  this._updateCartSum();&amp;#10;&amp;#125;&amp;#10;&amp;#10;&amp;#60;select style=&amp;#123;styles.select&amp;#125; value=&amp;#123;this.props.selectedDeliverZone&amp;#125; onChange=&amp;#123;this._changeDeliverZone.bind(this)&amp;#125;&amp;#62;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
