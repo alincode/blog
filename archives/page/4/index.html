@@ -219,6 +219,97 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/16/promise-chaining/">
+                            Promise Chaining
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Apr 16 2016 00:01:44 GMT+0800">
+	
+		    4月 16, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>Promise 似乎可以更簡單做到 Chain Of Responsibility</p>
+<p><strong>範例</strong><br><a href="https://babeljs.io/repl/" target="_blank" rel="external">線上sandbox</a> 你可以把 code 複製貼到這裡執行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var discountService = new Promise(function(resolve, reject) &#123;&#10;  let orderPrice = 1000;&#10;  resolve(orderPrice);&#10;&#125;);&#10;&#10;var dptDiscount = function(orderPrice)&#123;&#10;  orderPrice *= 0.9;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;var bigOrderDiscount = function(orderPrice)&#123;&#10;  orderPrice *= 0.95;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;var vipDiscount = function(orderPrice)&#123;&#10;  orderPrice -= 100;&#10;  return orderPrice;&#10;&#125;;&#10;&#10;let result = discountService.then(function(orderPrice) &#123;&#10;  return dptDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  return bigOrderDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  console.log(vipDiscount(orderPrice));&#10;&#125;);&#10;&#10;let result2 = discountService.then(function(orderPrice) &#123;&#10;  return vipDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  return dptDiscount(orderPrice);&#10;&#125;).then(function(orderPrice) &#123;&#10;  console.log(bigOrderDiscount(orderPrice));&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>output</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">755&#10;769.5</span><br></pre></td></tr></table></figure></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/16/promise-chaining/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/15/chain-of-responsibility/">
+                            Chain Of Responsibility Design Pattern (javascript)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Apr 15 2016 23:59:01 GMT+0800">
+	
+		    4月 15, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="使用情境"><a href="#使用情境" class="headerlink" title="使用情境"></a>使用情境</h3><p>Chain Of Responsibility 主要用在順序可能會變換，甚至不確定要執行全部的步驟或只有部分的步驟。你會非常常見到它或許名稱不同，pipeline 或 middleware，都具有到這樣的概念。</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>在這個例子，主要是針對具有很多種類的促銷方案，你同時有多種折扣，你希望它的計算順序可以很輕易的更變。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = &#123;</span><br><span class="line">	order: <span class="literal">null</span>,</span><br><span class="line">  init:<span class="function"><span class="keyword">function</span> (<span class="params">order</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order = order;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 特定分類折扣</span></span><br><span class="line">	dptDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.9</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 滿額折扣</span></span><br><span class="line">	bigOrderDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.price &gt; <span class="number">6000</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price -= <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// VIP 折扣</span></span><br><span class="line">	vip:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.isVip)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.95</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = DiscountService;</span><br></pre></td></tr></table></figure>
+<h3 id="進入點"><a href="#進入點" class="headerlink" title="進入點"></a>進入點</h3><p><strong>main.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = <span class="built_in">require</span>(<span class="string">'./DiscountService.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">1000</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = DiscountService.init(order).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order2 = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">6600</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = DiscountService.init(order2).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result2.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result3 = DiscountService.init(order2).dptDiscount().vip().bigOrderDiscount();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result3.order.price);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result4 = DiscountService.init(order2).dptDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result4.order.price);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/15/chain-of-responsibility/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/14/buddy-ci-5/">
                             Buddy CI 與 PM2 的整合(踩雷)
                         </a>
@@ -723,152 +814,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/07/buddy-ci/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/">
-                            Building Isomorphic Web Applications with React 重點整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Apr 06 2016 23:12:46 GMT+0800">
-	
-		    4月 06, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <div class="video-container"><iframe src="//www.youtube.com/embed/QPXNb6bl7hc" frameborder="0" allowfullscreen></iframe></div>
-<h3 id="為什麼我們要用-Isomorphic-1-50"><a href="#為什麼我們要用-Isomorphic-1-50" class="headerlink" title="為什麼我們要用 Isomorphic (1:50)"></a>為什麼我們要用 Isomorphic (1:50)</h3><ul>
-<li>SEO 爬蟲</li>
-<li>效能<br>server side 已經 build 好了 html，client 只需要 render html 的部分。</li>
-<li>dev 的好處</li>
-</ul>
-<h3 id="支援-React-Isomorphic-的框架-7-30"><a href="#支援-React-Isomorphic-的框架-7-30" class="headerlink" title="支援 React Isomorphic 的框架 (7:30)"></a>支援 React Isomorphic 的框架 (7:30)</h3><ul>
-<li>Pellet (Vevo)</li>
-<li>React Nexus</li>
-<li>Relay (Facebook)</li>
-</ul>
-<h3 id="React-讓-Isomorphic-架構變成可能-8-00"><a href="#React-讓-Isomorphic-架構變成可能-8-00" class="headerlink" title="React 讓 Isomorphic 架構變成可能 (8:00)"></a>React 讓 Isomorphic 架構變成可能 (8:00)</h3><ul>
-<li>Virtual DOM<br>Virtual DOM vs xxx DOM<br>Virtual DOM is small update</li>
-</ul>
-<h3 id="In-the-Browser"><a href="#In-the-Browser" class="headerlink" title="In the Browser"></a>In the Browser</h3><ul>
-<li>SPA</li>
-<li>React</li>
-<li>React Router</li>
-<li>Browser Sync to serve / update the file</li>
-</ul>
-<h3 id="Webpack-讓你做到了哪些事"><a href="#Webpack-讓你做到了哪些事" class="headerlink" title="Webpack 讓你做到了哪些事"></a>Webpack 讓你做到了哪些事</h3><ul>
-<li>不同的環境產生不同的 build</li>
-<li>specific code</li>
-<li>Chunk code into smaller downloadable files</li>
-</ul>
-<p>(….未完成…)</p>
-<ul>
-<li>Functional View</li>
-<li>renderToString</li>
-</ul>
-<p><a href="https://github.com/elyseko/iso-react-demo" target="_blank" rel="external">https://github.com/elyseko/iso-react-demo</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/05/github-shortcut/">
-                            github 快速鍵
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Apr 05 2016 22:18:54 GMT+0800">
-	
-		    4月 05, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>在一個 youtube 的教學影片看到，對方用快速搜尋檔案，才發現 github 有快速鍵，真是不錯。</p>
-<table>
-<thead>
-<tr>
-<th>快速鍵</th>
-<th style="text-align:left">說明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>g + n</td>
-<td style="text-align:left">查看你的通知訊息</td>
-</tr>
-<tr>
-<td>g + i</td>
-<td style="text-align:left">查看你的 issue</td>
-</tr>
-<tr>
-<td>g + p</td>
-<td style="text-align:left">查看你的 pr</td>
-</tr>
-<tr>
-<td>l</td>
-<td style="text-align:left">在檢視原始碼時，快速跳行</td>
-</tr>
-<tr>
-<td>t</td>
-<td style="text-align:left">搜尋檔案</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://help.github.com/articles/using-keyboard-shortcuts/" target="_blank" rel="external">更多 Github 快速鍵</a></p>
-<img src="/blog/2016/04/05/github-shortcut/search-file.png" alt="search-file.png" title="">
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/05/github-shortcut/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
