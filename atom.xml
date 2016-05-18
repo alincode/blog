@@ -700,9 +700,10 @@
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
     <published>2016-04-28T08:49:54.000Z</published>
-    <updated>2016-05-07T14:51:17.000Z</updated>
+    <updated>2016-05-18T15:28:38.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;啟動-webdriverio-內建的快速建構設定檔工具&quot;&gt;&lt;a href=&quot;#啟動-webdriverio-內建的快速建構設定檔工具&quot; class=&quot;headerlink&quot; title=&quot;啟動 webdriverio 內建的快速建構設定檔工具&quot;&gt;&lt;/a&gt;啟動 webdriverio 內建的快速建構設定檔工具&lt;/h3&gt;&lt;p&gt;&lt;code&gt;./node_modules/.bin/wdio config&lt;/code&gt;&lt;/p&gt;
@@ -718,7 +719,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+      &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
