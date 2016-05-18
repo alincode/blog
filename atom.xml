@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-17T16:18:01.000Z</updated>
+  <updated>2016-05-18T15:31:02.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/"/>
     <id>http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/</id>
     <published>2016-05-17T14:43:31.000Z</published>
-    <updated>2016-05-17T16:18:01.000Z</updated>
+    <updated>2016-05-18T15:31:02.000Z</updated>
     
     <content type="html">&lt;p&gt;去年在加拿大語言學校的時候，入學測驗會先考聽說讀寫，考試的方式基本上就是寫考卷，交卷後去另一個教室，隨機指派一個老師幫你面試，基本就是自我介紹，然後他會說三個題目，你可以挑任何一個你覺得比較好發揮的題目回答。如果是半天課程的人只有兩堂課，溝通課是必修，然後他會告訴你成績最差的一科，建議你選課方向。&lt;/p&gt;
 &lt;p&gt;通常台灣人最強的應該是讀，但讀卻是我最弱的一項，所以我被指派到了閱讀課，有些人會覺得閱讀課很浪費時間，不過之前已經在菲律賓上了 5 個月的一對一對話課程，閱讀課反而給我帶來一些新鮮感。在這個人人上大學的時代，閱讀有什麼困難呢？不就多花一點時間就好了？&lt;code&gt;但上了閱讀課之後，我才明白原來我真的不懂閱讀。&lt;/code&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;「如何閱讀一本書」這本書有提到，閱讀有三個層次基礎閱讀、檢視閱讀、分析閱讀，只要有國中畢業得人，都不需要在乎基本閱讀這個層級，甚至我們從不知道有發生過這個階段，除了國小老師誰會記得國小上課內容？但所有內容我們已經內化成內功了，根本不需要思考。但在接觸另一個語言的時候，並沒有意識到，原來閱讀能力被降級了，所以我們仍用了以往讀母語書的技巧去讀英文書，發現效果很差。&lt;/p&gt;
 &lt;p&gt;大概記錄一下，我自己體驗過覺得很重要的技能。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;如何知道這本書適不適合你閱讀？有兩件事必須要評估。&lt;/strong&gt;&lt;/p&gt;
@@ -60,7 +61,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;去年在加拿大語言學校的時候，入學測驗會先考聽說讀寫，考試的方式基本上就是寫考卷，交卷後去另一個教室，隨機指派一個老師幫你面試，基本就是自我介紹，然後他會說三個題目，你可以挑任何一個你覺得比較好發揮的題目回答。如果是半天課程的人只有兩堂課，溝通課是必修，然後他會告訴你成績最差
+      &lt;p&gt;去年在加拿大語言學校的時候，入學測驗會先考聽說讀寫，考試的方式基本上就是寫考卷，交卷後去另一個教室，隨機指派一個老師幫你面試，基本就是自我介紹，然後他會說三個題目，你可以挑任何一個你覺得比較好發揮的題目回答。如果是半天課程的人只有兩堂課，溝通課是必修，然後他會告訴你成績最差的一科，建議你選課方向。&lt;/p&gt;
+&lt;p&gt;通常台灣人最強的應該是讀，但讀卻是我最弱的一項，所以我被指派到了閱讀課，有些人會覺得閱讀課很浪費時間，不過之前已經在菲律賓上了 5 個月的一對一對話課程，閱讀課反而給我帶來一些新鮮感。在這個人人上大學的時代，閱讀有什麼困難呢？不就多花一點時間就好了？&lt;code&gt;但上了閱讀課之後，我才明白原來我真的不懂閱讀。&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -700,10 +702,9 @@
     <link href="http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/"/>
     <id>http://alincode.github.io/2016/04/28/WebdriverIO-Easy-Test-Setup/</id>
     <published>2016-04-28T08:49:54.000Z</published>
-    <updated>2016-05-18T15:28:38.000Z</updated>
+    <updated>2016-05-18T15:30:33.000Z</updated>
     
     <content type="html">&lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h3 id=&quot;安裝其他相關的-modules&quot;&gt;&lt;a href=&quot;#安裝其他相關的-modules&quot; class=&quot;headerlink&quot; title=&quot;安裝其他相關的 modules&quot;&gt;&lt;/a&gt;安裝其他相關的 modules&lt;/h3&gt;&lt;p&gt;由於 &lt;code&gt;selenium-server&lt;/code&gt; 幾乎是所有前端自動化測試框架的底層，WebdriverIO 也是如此。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install selenium-standalone -g&amp;#10;selenium-standalone install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;啟動-webdriverio-內建的快速建構設定檔工具&quot;&gt;&lt;a href=&quot;#啟動-webdriverio-內建的快速建構設定檔工具&quot; class=&quot;headerlink&quot; title=&quot;啟動 webdriverio 內建的快速建構設定檔工具&quot;&gt;&lt;/a&gt;啟動 webdriverio 內建的快速建構設定檔工具&lt;/h3&gt;&lt;p&gt;&lt;code&gt;./node_modules/.bin/wdio config&lt;/code&gt;&lt;/p&gt;
@@ -719,7 +720,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir webdriverio-sandbox &amp;#38;&amp;#38; cd webdriverio-sandbox&amp;#10;npm init&amp;#10;npm i webdriverio -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h3 id=&quot;建立測試專案&quot;&gt;&lt;a href=&quot;#建立測試專案&quot; class=&quot;headerlink&quot; title=&quot;建立測試專案&quot;&gt;&lt;/a&gt;建立測試專案&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
     
     </summary>
     
