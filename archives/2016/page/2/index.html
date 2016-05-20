@@ -219,6 +219,106 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/10/when-use-promise/">
+                            如何時候該用 Promise？
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue May 10 2016 08:59:58 GMT+0800">
+	
+		    5月 10, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="http://fakeimg.pl/350x200/?text=Promise" alt="Promise"></p>
+<h3 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h3><p>在寫 async function 時，最容易搞錯的就是執行順序，然而在寫 async function 時，可以用 <code>await</code> 去解掉層層的巢狀callback 結構，但如果 async 內使用到 sync function，那該怎麼做？</p>
+<h3 id="實作方式"><a href="#實作方式" class="headerlink" title="實作方式"></a>實作方式</h3><p>在 sync function 包一個 Promise</p>
+<p><strong>TokenAuth.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.getUser = (token) =&#62; &#123;&#10;  return new Promise((resolve, reject) =&#62; &#123;&#10;    // &#36889;&#20491;&#26159;&#19968;&#20491; sync function&#10;    TokenAuth.verifyToken(token, async(err, decodedToken) =&#62; &#123;&#10;      if (err) reject(err);&#10;      let user = await db.User.findById(decodedToken.sub);&#10;      resolve(user);&#10;    &#125;);&#10;  &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>CartAPIController</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Promise from &#34;bluebird&#34;;&#10;&#10;module.exports = &#123;&#10;  get: async(req, res) =&#62; &#123;&#10;    try &#123;&#10;      let promise = TokenAuth.getUser(req);&#10;      let loginUser = await promise.then();&#10;      let result = await CartService.getCartInfo(loginUser);&#10;      return res.ok(result);&#10;    &#125; catch (e) &#123;&#10;      return res.serverError(e);&#10;    &#125;&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/10/when-use-promise/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/05/09/how-to-getting-started-story-points/">
+                            如何開始使用 Story Points？
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon May 09 2016 11:48:38 GMT+0800">
+	
+		    5月 09, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <img src="/blog/2016/05/09/how-to-getting-started-story-points/PlanningPoker.jpg" alt="PlanningPoker.jpg" title="">
+<h3 id="預估-Story-Points-單位"><a href="#預估-Story-Points-單位" class="headerlink" title="預估 Story Points 單位"></a>預估 Story Points 單位</h3><ul>
+<li>衣服 Size 種類 (XS, S, M, L, XL…)</li>
+<li>費氏數列卡片(Planning Poker)</li>
+</ul>
+<h3 id="怎麼開始？"><a href="#怎麼開始？" class="headerlink" title="怎麼開始？"></a>怎麼開始？</h3><ul>
+<li>數字越大代表越複雜，可以從先挑一個介於中間值的 Story 開始，然後再逐一針對每個 Story 給 Point。</li>
+<li>針對預估不一致的 Story 進行細部討論。</li>
+</ul>
+<h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p><a href="https://www.pointingpoker.com" target="_blank" rel="external">線上版 Pointing Poker</a></p>
+<p>此評估方式希望每個人都可以以客觀的方式預估，不受別人影響，這個網站提供了這樣的小功能，在所有人都遞交評估後，才顯示所有人的評估果。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/09/how-to-getting-started-story-points/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/08/estimating-with-story-points/">
                             什麼是 Story Points
                         </a>
@@ -649,153 +749,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/01/webdriverio-introduction/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/30/webdriverio-with-chimp-with-mocha/">
-                            WebdriverIO 與 Chimp 和 Mocha 整合
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Apr 30 2016 16:41:38 GMT+0800">
-	
-		    4月 30, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>此篇與之前的教學延續，WebdriverIO 基礎的部分，請看舊文。</p>
-<h3 id="安裝-Chimp"><a href="#安裝-Chimp" class="headerlink" title="安裝 Chimp"></a>安裝 Chimp</h3><p><code>npm install -g chimp</code></p>
-<h3 id="撰寫一個自動化測試-script"><a href="#撰寫一個自動化測試-script" class="headerlink" title="撰寫一個自動化測試 script"></a>撰寫一個自動化測試 script</h3><p><img src="https://github.com/xolvio/chimp/raw/master/images/realtime.gif?raw=true" alt="官方範例"></p>
-<blockquote>
-<p>圖片來自於官方網站</p>
-</blockquote>
-<p>這邊就直接使用了官網上的範例。需要特別注意的一點是在測試描述的標題上，需要加入 <code>@watch</code> 才會被監聽。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;Chimp Mocha&#39;, () =&#62; &#123;&#10;  describe(&#39;Page title&#39;, () =&#62; &#123;&#10;    it(&#39;should be set by the Meteor method @watch&#39;, () =&#62; &#123;&#10;      browser.url(&#39;http://google.com&#39;);&#10;      expect(browser.getTitle()).to.equal(&#39;Google&#39;);&#10;    &#125;);&#10;  &#125;);&#10;&#10;  describe(&#39;ES2015&#39;, function () &#123;&#10;    it(&#39;is supported&#39;, function () &#123;&#10;      const &#123;a, b&#125; = &#123;a: &#39;foo&#39;, b: &#39;bar&#39;&#125;;&#10;      const arrowFunc = (foo) =&#62; foo;&#10;      class Foo &#123;&#10;        constructor() &#123;&#125;&#10;        foo() &#123;&#125;&#10;      &#125;&#10;      var object = &#123;&#10;        foo() &#123;&#125;&#10;      &#125;;&#10;      const templateString = `Foo`;&#10;      const [c, ,d] = [1,2,3];&#10;    &#125;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="執行"><a href="#執行" class="headerlink" title="執行"></a>執行</h3><p><code>chimp --mocha --watch --path=test</code></p>
-<p>預設的 path 是 features 資料夾，如果你的測試資料夾不在預設位置，則需另外指定 path 得值。</p>
-<h3 id="問題排解"><a href="#問題排解" class="headerlink" title="問題排解"></a>問題排解</h3><p> Using removed Babel 5 option: base.stage - Check out the corresponding stage-x presets <a href="http://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">http://babeljs.io/docs/plugins/#presets</a></p>
-<h4 id="安裝-Babel"><a href="#安裝-Babel" class="headerlink" title="安裝 Babel"></a>安裝 Babel</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-preset-es2015 -S&#10;npm i babel-preset-stage-2 -S&#10;npm i babel-plugin-transform-runtime -S</span><br></pre></td></tr></table></figure>
-<h4 id="建立-Babel-設定檔-babelrc"><a href="#建立-Babel-設定檔-babelrc" class="headerlink" title="建立 Babel 設定檔 .babelrc"></a>建立 Babel 設定檔 .babelrc</h4> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &#123;&#10;  &#34;plugins&#34;: [&#34;transform-runtime&#34;],&#10;  &#34;presets&#34;: [&#34;es2015&#34;, &#34;stage-2&#34;]&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
-<li><a href="https://chimp.readme.io/" target="_blank" rel="external">chimp 官網</a></li>
-</ul>
-<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox3" target="_blank" rel="external">原始範例下載</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/30/webdriverio-with-chimp-with-mocha/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/29/Hated-courage-part-5/">
-                            被討厭的勇氣 (重點 5) - 認真活在當下
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 29 2016 21:14:57 GMT+0800">
-	
-		    4月 29, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/非專業書閱讀/">非專業書閱讀</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <img src="/blog/2016/04/29/Hated-courage-part-5/book.png" alt="book.png" title="">
-<h3 id="接納自己-gt-肯定自己"><a href="#接納自己-gt-肯定自己" class="headerlink" title="接納自己 &gt; 肯定自己"></a>接納自己 &gt; 肯定自己</h3><ul>
-<li>怎麼擁有社會意識？其中需要的是「接納自我」「信任他人」「貢獻他人」。</li>
-<li>所謂的肯定自我，是明明做不到，卻要暗示自己「我可以」、「我很強」。這種想法也會<code>連結到優越情結上，算欺騙自己的一種生活方式。</code>另一方面，接納自我」是在自己無能為力的情況下，<code>坦然接受那個「辦不到的自己」，而且盡最大努力朝目標前進，不欺騙自己。</code></li>
-</ul>
-<h3 id="專注在可以改變"><a href="#專注在可以改變" class="headerlink" title="專注在可以改變"></a>專注在可以改變</h3><ul>
-<li>要分辨「可以改變」的，跟「不能改變的」。</li>
-<li>我們「經歷了什麼」，是無法改變的，但是「如何運用它」卻可以憑自己的力量去決定。既然如此，就<code>不要聚焦在無法改變的事，只關注在可以改變的事。</code></li>
-<li>請你給我平靜的心，去接納無法改變的事物；請給我勇氣，去改變可以改變的東西；並給我智慧，去分辨這兩者的差異。</li>
-</ul>
-<h3 id="信任"><a href="#信任" class="headerlink" title="信任"></a>信任</h3><ul>
-<li>在怎麼無條件信任他人，最後不過是遭到背叛而已？決定要不要背叛的並不是你，那是他人的課題。<code>你只需要考慮自己要怎麼做就行了。</code></li>
-<li>不斷擔心「遭到背叛」，只注意受傷時的痛苦，但是<code>只要你害怕信任，終將無法和任何人建立深厚的關係。</code></li>
-</ul>
-<h3 id="奉獻"><a href="#奉獻" class="headerlink" title="奉獻"></a>奉獻</h3><ul>
-<li>奉獻他人並不是自我犧牲。那些為別人犧牲自己人生的人，是「過度適應社會」，需要警惕。</li>
-<li>所謂的「貢獻他人」並不是捨棄「我」去為某人鞠躬盡瘁，說穿了，是<code>為了實際感受「我」的價值才做的。</code></li>
-<li>對人類而言，最大的不幸是不喜歡自己。只要認為「我對共同體有幫助」「我對某人有用處」，可以讓自己實際感受到自己的價值就對了。</li>
-<li>所謂的幸福，就是奉獻感。</li>
-</ul>
-<h3 id="缺乏人生協調"><a href="#缺乏人生協調" class="headerlink" title="缺乏人生協調"></a>缺乏人生協調</h3><ul>
-<li>的確，這世上並不全都是好人。但必須要搞清楚一個事實，那就是無論在哪種情況下，只有發動攻擊的「那個人」是有問題的，絕對不是「大家」都錯了。</li>
-<li>只看見事物的一小部分，就拿來當成整體的判斷依據，是一種缺乏「人生協調」的生活方式。</li>
-</ul>
-<h3 id="追求卓越的疑慮"><a href="#追求卓越的疑慮" class="headerlink" title="追求卓越的疑慮"></a>追求卓越的疑慮</h3><ul>
-<li>追求卓越容易遇到一種狀況，一旦達不到「特別好」的狀況，遇到一些挫折，就會轉變成為「特別差」。</li>
-<li>拒絕接受平凡的你，恐怕是把「平凡」和「無能」畫上了等號吧？平凡並不是沒有能力，而是我們<code>沒有必要刻意炫耀自己的優越性</code>。</li>
-</ul>
-<h3 id="人生是一連串的剎那"><a href="#人生是一連串的剎那" class="headerlink" title="人生是一連串的剎那"></a>人生是一連串的剎那</h3><ul>
-<li>人生如果就像一場登山攻頂的活動，那麼<code>人生將有一大半的時間都是在「半路上」</code>。也就是當你征服那座山後，「真正的人生」才開始，在那之前的上坡路只不過是「虛假的我」所度過的「虛假的人生」。</li>
-<li>那種「在半路上無法到達目的地」的人生，算是「變動式的人生」；相對的，我所說的舞動的人生，則可以稱為「實現式的人生」。</li>
-<li>旅行的目的是什麼？你會盡可能有效率地快點到達目的地，然後以最短距離的方式趕回家嗎？</li>
-<li>生活形態說的是「當下」，是可以依照自己的意願去改變。人生中看起來像是直線的過去，因為你一再決定「不要改變」，當然就只能是一條直線。</li>
-<li>不需要用直線去衡量自己已經到了哪裡，而是要看看每一個剎那是如何度過的。</li>
-<li>只要認真活在「當下」，它本身就已經是一段舞。沒有必要太過嚴肅；<code>不要把認真和嚴肅搞混了。</code></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/29/Hated-courage-part-5/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
