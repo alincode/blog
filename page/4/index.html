@@ -218,6 +218,64 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/21/start-with-nightwatch/">
+                            第一個 Nightwatch 自動化測試
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Apr 21 2016 18:04:42 GMT+0800">
+	
+		    4月 21, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h3><h4 id="必要環境"><a href="#必要環境" class="headerlink" title="必要環境"></a>必要環境</h4><ul>
+<li>有 Firefox 或 Chrome</li>
+<li>有 NodeJS</li>
+</ul>
+<h4 id="安裝必要-modules"><a href="#安裝必要-modules" class="headerlink" title="安裝必要 modules"></a>安裝必要 modules</h4><p><code>npm i selenium-server nightwatch chromedriver -S</code></p>
+<h4 id="安裝-nightwatch"><a href="#安裝-nightwatch" class="headerlink" title="安裝 nightwatch"></a>安裝 nightwatch</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir nightwatch-sandbox &#38;&#38; cd nightwatch-sandbox&#10;npm init -y&#10;npm i nightwatch -g</span><br></pre></td></tr></table></figure>
+<h3 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h3><h4 id="撰寫nightwatch環境設定"><a href="#撰寫nightwatch環境設定" class="headerlink" title="撰寫nightwatch環境設定"></a>撰寫nightwatch環境設定</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  src_folders: [&#39;./tests&#39;],&#10;  output_folder: &#39;./results&#39;,&#10;  live_output: true,&#10;&#10;  selenium: &#123;&#10;    start_process: true,&#10;    server_path: &#39;./node_modules/selenium-server/lib/runner/selenium-server-standalone-2.53.0.jar&#39;,&#10;    log_path: &#39;./results&#39;,&#10;    host: &#39;127.0.0.1&#39;,&#10;    port: 4444,&#10;    cli_args: &#123;&#10;      &#39;webdriver.chrome.driver&#39;: &#39;./node_modules/.bin/chromedriver&#39;&#10;    &#125;&#10;  &#125;,&#10;&#10;  test_settings: &#123;&#10;    default: &#123;&#10;      launch_url: &#39;http://localhost&#39;,&#10;      selenium_host: &#39;127.0.0.1&#39;,&#10;      selenium_port: 4444,&#10;      silent: true,&#10;      disable_colors: false,&#10;      screenshots: &#123;&#10;        enabled: true,&#10;        path: &#39;./results/screenshots&#39;&#10;      &#125;,&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;firefox&#39;,&#10;        javascriptEnabled: true,&#10;        acceptSslCerts: true&#10;      &#125;&#10;    &#125;,&#10;&#10;    chrome: &#123;&#10;      desiredCapabilities: &#123;&#10;        browserName: &#39;chrome&#39;,&#10;        javascriptEnabled: true&#10;      &#125;&#10;    &#125;&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h3><img src="/blog/2016/04/21/start-with-nightwatch/console.png" alt="console.png" title="">
+<p><strong>撰寫一個簡單的自動化測試</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  &#39;&#36617;&#20837;Blog&#39;: function (client) &#123;&#10;    client&#10;      .url(&#39;http://blog.mokayo.com&#39;)&#10;      .waitForElementVisible(&#39;body&#39;, 1000)&#10;      .assert.title(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;)&#10;      .end();&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>執行</strong><br><code>nightwatch -c ./Nightwatch.js --env default</code></p>
+<p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/nightwatch-sandbox" target="_blank" rel="external">原始碼下載</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/21/start-with-nightwatch/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/20/selenium-with-nodejs/">
                             Selenium with Nodejs
                         </a>
@@ -694,99 +752,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/12/vultr/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
-                            Geb for functional testing of Grails app 重點整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Apr 11 2016 03:03:14 GMT+0800">
-	
-		    4月 11, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <div class="video-container"><iframe src="//www.youtube.com/embed/HkJQYapam_s" frameborder="0" allowfullscreen></iframe></div>
-<p>Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016</p>
-<h3 id="為什麼我們要用Geb-06-04"><a href="#為什麼我們要用Geb-06-04" class="headerlink" title="為什麼我們要用Geb (06:04)"></a>為什麼我們要用Geb (06:04)</h3><ul>
-<li>類似於 JQuery 的語法</li>
-<li>具有非常強大的 WebDriver，卻是使用非常簡單的 API</li>
-<li>Robustness of Page Object Modeling</li>
-<li>使用 Groovy 描述性語言</li>
-<li>跟其他 build framework 整合得很好 (Gradle、Maven)</li>
-<li>可做為傑出的使用者文件</li>
-</ul>
-<h3 id="Geb-selectors-09-52"><a href="#Geb-selectors-09-52" class="headerlink" title="Geb selectors (09:52)"></a>Geb selectors (09:52)</h3><ul>
-<li>相似於 JQuery 的語法</li>
-<li>支援 regex</li>
-<li>選取後，會回傳一個 Navigator 物件</li>
-<li>支援 CSS3 語法</li>
-</ul>
-<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;p&#39;).text() == &#34;a&#34;&#10;$(&#39;p&#39;).tag() == &#34;p&#34;&#10;$(&#39;p&#39;).@title == &#34;a&#34;&#10;$(&#39;p&#39;).classes == [&#34;a&#8221;, &#34;para&#34;]</span><br></pre></td></tr></table></figure>
-<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;a&#39;).click()&#10;$(&#39;div&#39;).isDisplayed()&#10;withConfirm &#123;&#10;  $(&#39;button.delete&#39;).click();&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#60;&#60; &#39;abc&#39;&#10;$(&#39;input&#39;, name: &#39;foo&#39;) &#60;&#60; Keys.chord(Keys.CONTROL, &#39;c&#39;)</span><br></pre></td></tr></table></figure>
-<h3 id="Interaction-14-25"><a href="#Interaction-14-25" class="headerlink" title="Interaction (14:25)"></a>Interaction (14:25)</h3><blockquote>
-<p>Using actions API from WebDriver is possible. But Geb provides the interact closure.</p>
-</blockquote>
-<p>你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.openga.selenium.Keys&#10;&#10;interact &#123;&#10;     KeyDown Keys.CTRL&#10;     click $(&#39;a.myLink&#39;)&#10;     keyUp Keys.CTRL&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="可使用的變數-16-15"><a href="#可使用的變數-16-15" class="headerlink" title="可使用的變數 (16:15)"></a>可使用的變數 (16:15)</h3><ul>
-<li>title</li>
-<li>browser</li>
-<li>currentUrl</li>
-<li>currentWindow</li>
-</ul>
-<h3 id="更多的可能-16-50"><a href="#更多的可能-16-50" class="headerlink" title="更多的可能 (16:50)"></a>更多的可能 (16:50)</h3><ul>
-<li>上傳檔案</li>
-<li>下載檔案</li>
-<li>與 js 互動</li>
-</ul>
-<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.spock.GebSpec&#10;&#10;@Stepwise&#10;class XXXFunctionalSpec extends GebSpec &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Page-物件-描述一個頁面-23-50"><a href="#Page-物件-描述一個頁面-23-50" class="headerlink" title="Page 物件 - 描述一個頁面 (23:50)"></a>Page 物件 - 描述一個頁面 (23:50)</h3><ul>
-<li>Url</li>
-<li>如何檢查是否在對的地方</li>
-<li>內容是否是我們要的跟如何找到它</li>
-<li>Helper method</li>
-</ul>
-<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;     info(required: false) &#123;$(&#39;div.info&#39;)&#125;&#10;     message(wait: false) &#123;$(&#39;div.message&#39;)&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Modules-描述重複的內容-26-10"><a href="#Modules-描述重複的內容-26-10" class="headerlink" title="Modules - 描述重複的內容 (26:10)"></a>Modules - 描述重複的內容 (26:10)</h3><ul>
-<li>跨頁面</li>
-<li>Within the same page</li>
-</ul>
-<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Module&#10;&#10;class XXXListItemModules extends Module &#123;&#10;     data &#123; $(&#34;td&#8221;, it) &#125;&#10;     name &#123; data(0).text() &#125;&#10;     email &#123; data(1).text() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Waiting-36-00"><a href="#Waiting-36-00" class="headerlink" title="Waiting (36:00)"></a>Waiting (36:00)</h3><p>自定預設的 Waiting 設定值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// GebConfig.groovy&#10;waiting &#123;&#10;     timeout: 10&#10;     retryInterval: 0.5&#10;&#125;&#10;&#10;baseNavigatorWaiting = true&#10;atCheckWaiting = true</span><br></pre></td></tr></table></figure>
-<h3 id="Pausing-Geb-36-55"><a href="#Pausing-Geb-36-55" class="headerlink" title="Pausing Geb (36:55)"></a>Pausing Geb (36:55)</h3><p>可做為 debug 用途</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">when:&#10;pause() // for Pause Geb until button pressed</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

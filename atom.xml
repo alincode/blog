@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-20T14:20:03.000Z</updated>
+  <updated>2016-05-24T13:27:22.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>有效的時間管理 - 重點整理(4)</title>
+    <link href="http://alincode.github.io/2016/05/21/Effective-Time-Management-4/"/>
+    <id>http://alincode.github.io/2016/05/21/Effective-Time-Management-4/</id>
+    <published>2016-05-21T02:09:59.000Z</published>
+    <updated>2016-05-24T13:27:22.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;建立成功循環&quot;&gt;&lt;a href=&quot;#建立成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立成功循環&quot;&gt;&lt;/a&gt;建立成功循環&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;成功人士可以建立一年復一年地成功，是因為他們一日復一日都做成功的事。&lt;/li&gt;
+&lt;li&gt;他們將成功經驗建立一個習慣路徑，並很少改變這個路徑，尤其是那些帶來高收獲的事情。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;建立屬於你自己的成功循環&quot;&gt;&lt;a href=&quot;#建立屬於你自己的成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立屬於你自己的成功循環&quot;&gt;&lt;/a&gt;建立屬於你自己的成功循環&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;排進那些符合 80/20 法則的 TODO&lt;/li&gt;
+&lt;li&gt;重現最佳的練習&lt;/li&gt;
+&lt;li&gt;專注在改善跟自我發展&lt;/li&gt;
+&lt;li&gt;時常休息、為自己找樂子、陪伴家人，將自己重新充電。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;練習&quot;&gt;&lt;a href=&quot;#練習&quot; class=&quot;headerlink&quot; title=&quot;練習&quot;&gt;&lt;/a&gt;練習&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;寫下每天必定會做的事情，如果想不起來的話，就寫下昨天做的所有事情。&lt;/li&gt;
+&lt;li&gt;記下每件事情帶給你多少回報或未來可能帶給你的回報。&lt;/li&gt;
+&lt;li&gt;問問自己，如果每天都重複這樣的循環，一年後你會創造多少價值。&lt;/li&gt;
+&lt;li&gt;現在重新設計的你日程，讓所有你計劃每日要做的事情來自於四種成功類型。&lt;/li&gt;
+&lt;li&gt;重新計算新設計的日程，會帶給你多少回報。&lt;/li&gt;
+&lt;li&gt;問問自己，如果每天依照新日程重複循環，你會創造多少價值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/learn/v4/t/lecture/1107496&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.udemy.com/effective-time-management/learn/v4/t/lecture/1107496&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;建立成功循環&quot;&gt;&lt;a href=&quot;#建立成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立成功循環&quot;&gt;&lt;/a&gt;建立成功循環&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;成功人士可以建立一年復一年地成功，是因為他們一日復一日都做成功的事。&lt;/li&gt;
+&lt;li&gt;他們將成
+    
+    </summary>
+    
+      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>時間管理 ---&gt; 任務管理 ---&gt; 目標管理</title>
@@ -679,43 +725,6 @@
     
     
       <category term="sequelizejs" scheme="http://alincode.github.io/tags/sequelizejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebdriverIO 介紹</title>
-    <link href="http://alincode.github.io/2016/05/01/webdriverio-introduction/"/>
-    <id>http://alincode.github.io/2016/05/01/webdriverio-introduction/</id>
-    <published>2016-05-01T10:02:29.000Z</published>
-    <updated>2016-04-30T07:02:28.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;什麼是-WebdriverIO&quot;&gt;&lt;a href=&quot;#什麼是-WebdriverIO&quot; class=&quot;headerlink&quot; title=&quot;什麼是 WebdriverIO&quot;&gt;&lt;/a&gt;什麼是 WebdriverIO&lt;/h3&gt;&lt;img src=&quot;/blog/2016/05/01/webdriverio-introduction/webdriverio.png&quot; alt=&quot;webdriverio.png&quot; title=&quot;&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;WebdriverIO 是一個 open source 專案，用 NodeJS 語言所撰寫的測試工具，它讓你讓你只撰寫少許的 code，就能控制你的瀏覽器。&lt;/li&gt;
-&lt;li&gt;底層透過呼叫 selenium 去操縱瀏覽器行為&lt;/li&gt;
-&lt;li&gt;你的測試 code 將看起來簡單、清晰、易於閱讀，並可以整合 BDD 或 TDD 測試框架。&lt;/li&gt;
-&lt;li&gt;你也可以將測試程式，透過像 Sauce Labs or BrowserStack 的雲端服務，做到測試所有種類平台跟裝置的需求。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;WebdriverIO-的特色&quot;&gt;&lt;a href=&quot;#WebdriverIO-的特色&quot; class=&quot;headerlink&quot; title=&quot;WebdriverIO 的特色&quot;&gt;&lt;/a&gt;WebdriverIO 的特色&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;synchronous command handling&lt;/li&gt;
-&lt;li&gt;支援多種 hooks&lt;/li&gt;
-&lt;li&gt;支援命令式撰寫模式&lt;/li&gt;
-&lt;li&gt;Visual Regression Test Integration&lt;/li&gt;
-&lt;li&gt;支援 Gulp 和 Grunt&lt;/li&gt;
-&lt;li&gt;selector chaining&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;什麼是-WebdriverIO&quot;&gt;&lt;a href=&quot;#什麼是-WebdriverIO&quot; class=&quot;headerlink&quot; title=&quot;什麼是 WebdriverIO&quot;&gt;&lt;/a&gt;什麼是 WebdriverIO&lt;/h3&gt;&lt;img src=&quot;/blog/2016/
-    
-    </summary>
-    
-      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
-    
-    
-      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
     
   </entry>
   
