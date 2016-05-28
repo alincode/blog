@@ -219,6 +219,57 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
+                            歐付寶 ChoosePayment vs PaymentType
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue May 03 2016 22:56:58 GMT+0800">
+	
+		    5月 03, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png" alt="allpay"></p>
+<p>記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。</p>
+<h3 id="訂單產生"><a href="#訂單產生" class="headerlink" title="訂單產生"></a>訂單產生</h3><p>時機發生在發出去的 request</p>
+<p><strong>PaymentType = 交易類型</strong></p>
+<p><code>aio</code></p>
+<p><strong>ChoosePayment = 付款方式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Credit:&#20449;&#29992;&#21345;&#10;WebATM:&#32178;&#36335; ATM&#10;ATM:&#33258;&#21205;&#27331;&#21729;&#27231;&#10;CVS:&#36229;&#21830;&#20195;&#30908;&#10;BARCODE:&#36229;&#21830;&#26781;&#30908;&#10;Alipay:&#25903;&#20184;&#23542;&#10;Tenpay:&#36001;&#20184;&#36890;&#10;TopUpUsed:&#20786;&#20540;&#28040;&#36027;</span><br></pre></td></tr></table></figure>
+<h3 id="ATM、CVS-或-BARCODE-的取號結果通知"><a href="#ATM、CVS-或-BARCODE-的取號結果通知" class="headerlink" title="ATM、CVS 或 BARCODE 的取號結果通知"></a>ATM、CVS 或 BARCODE 的取號結果通知</h3><p>時機發生在被動收到的 response</p>
+<p><strong>PaymentType = 會員選擇的付款方式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATM_TAISHIN&#10;(...&#30053;...&#38750;&#24120;&#22810;&#31278;)</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/">
                             sequelizejs HasOne vs belongsTo
                         </a>

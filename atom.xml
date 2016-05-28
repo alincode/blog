@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-05-24T14:11:17.000Z</updated>
+  <updated>2016-05-28T02:59:42.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,13 +16,84 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>有效的時間管理 - 如何一周多擠出十個小時 重點整理(5)</title>
+    <link href="http://alincode.github.io/2016/05/23/Effective-Time-Management-6/"/>
+    <id>http://alincode.github.io/2016/05/23/Effective-Time-Management-6/</id>
+    <published>2016-05-23T14:14:29.000Z</published>
+    <updated>2016-05-28T02:59:42.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;辨識什麼是-Time-Killer-任務&quot;&gt;&lt;a href=&quot;#辨識什麼是-Time-Killer-任務&quot; class=&quot;headerlink&quot; title=&quot;辨識什麼是 Time Killer 任務&quot;&gt;&lt;/a&gt;辨識什麼是 Time Killer 任務&lt;/h3&gt;&lt;p&gt;你可以輕易地完成，但卻不會帶給你任何價值。&lt;/p&gt;
+&lt;h3 id=&quot;哪些方式可以讓你脫離-Time-Killer&quot;&gt;&lt;a href=&quot;#哪些方式可以讓你脫離-Time-Killer&quot; class=&quot;headerlink&quot; title=&quot;哪些方式可以讓你脫離 Time Killer&quot;&gt;&lt;/a&gt;哪些方式可以讓你脫離 Time Killer&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;減少 check and read Email 次數&lt;/li&gt;
+&lt;li&gt;檢查訊息(facebook, sms) 次數&lt;/li&gt;
+&lt;li&gt;減少通勤 - 改用 remote work 和 online meeting&lt;/li&gt;
+&lt;li&gt;減少重工&lt;/li&gt;
+&lt;li&gt;Repeatedly picking up paper or viewing an email&lt;/li&gt;
+&lt;li&gt;有技巧的性的多工&lt;ul&gt;
+&lt;li&gt;多工常常是一件令人詬病的事，常常有人認為在同時做多件事情，好像可以在短時間內完成很多事，但卻忽略了分心帶來的負面影響，例如你做了也完成了，但卻做錯了，下次又要在做一次，在無形中，其實增加了更多的重工。&lt;/li&gt;
+&lt;li&gt;比較好的方式，是專注做一件事，然後再進行下一件事&lt;/li&gt;
+&lt;li&gt;但建議技巧性的多工，例如你同時想專研某種技術，然後又想學英文，你可以強迫自己在一段時間內，只看英文的影片跟文章。這樣就達到專心做一件事時，卻帶來兩份收獲。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;讓自己一段時間離線&lt;ul&gt;
+&lt;li&gt;只專注在把某件 Task 完成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;避免過度使用社群工具，例如限制自己一天只花 15~30 分鐘瀏覽 Facebook&lt;/li&gt;
+&lt;li&gt;設定有限的時間&lt;ul&gt;
+&lt;li&gt;針對一個 Task 只給 25 分鐘，如果做不完再給 25 分鐘，時間到之後不管有沒有做完，都應該停止讓自己休息一下。&lt;/li&gt;
+&lt;li&gt;重新思考是否有其他方式可以進行這個 Task，或把這個 Task 搬到明天在進行，並避免一個 Task 綁住你所有的時間。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;設定有限的時間瀏覽網頁，一天 15 ~ 30 分鐘&lt;ul&gt;
+&lt;li&gt;在資訊爆炸的時候，人們總會花過多的時間在吸收新資訊而分心，忘了自己有其他更重要的目標。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;錯誤的開始&lt;ul&gt;
+&lt;li&gt;大多數的人都花 1 ~ 2 個小時，規劃自己一天的日程，可以減少至 15 ~ 20 分鐘比較理想。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;超長的 TODO LIST&lt;ul&gt;
+&lt;li&gt;只挑出三項高價值的 Task，跟其他兩項一定得做的 Task。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;在家工作&lt;ul&gt;
+&lt;li&gt;即使在家工作，你也必須設定工作時間，時間到了之後你就應該去做其他的事。&lt;/li&gt;
+&lt;li&gt;跟你的家人聊天、去健身、學習跟改善其他技能，重新充電之後，再回到一天的循環。&lt;/li&gt;
+&lt;li&gt;工作狂也是一種病，人生缺乏協調性，可參照「被討厭的勇氣」這本書，有更詳細的說明。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;娛樂管理&lt;ul&gt;
+&lt;li&gt;如果你一天花 1 ~ 2 小時看電視，那一周就是 14 個小時，這樣的 Task 建議設定一周只做一次。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;辨識什麼是-Time-Killer-任務&quot;&gt;&lt;a href=&quot;#辨識什麼是-Time-Killer-任務&quot; class=&quot;headerlink&quot; title=&quot;辨識什麼是 Time Killer 任務&quot;&gt;&lt;/a&gt;辨識什麼是 Time Killer 任務&lt;/h3&gt;&lt;
+    
+    </summary>
+    
+      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+    
+      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>有效的時間管理 - 重點整理(5)</title>
     <link href="http://alincode.github.io/2016/05/22/Effective-Time-Management-5/"/>
     <id>http://alincode.github.io/2016/05/22/Effective-Time-Management-5/</id>
     <published>2016-05-22T13:44:01.000Z</published>
-    <updated>2016-05-24T14:11:17.000Z</updated>
+    <updated>2016-05-24T14:13:50.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;七種方式把事情做完&quot;&gt;&lt;a href=&quot;#七種方式把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方式把事情做完&quot;&gt;&lt;/a&gt;七種方式把事情做完&lt;/h3&gt;&lt;ul&gt;
+    <content type="html">&lt;h3 id=&quot;七種方法把事情做完&quot;&gt;&lt;a href=&quot;#七種方法把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方法把事情做完&quot;&gt;&lt;/a&gt;七種方法把事情做完&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;將符合 80/20 法則高價值的事情標注起來，將所有時間專注在這些任務，將低回報的事情，委派、轉交、刪除或重新設計。&lt;/li&gt;
 &lt;li&gt;減少低回報的任務數量&lt;/li&gt;
 &lt;li&gt;因為一些外在因素，有時候你很難控制你的日程，但至少確保每日有兩、三件是屬於高價值的任務&lt;/li&gt;
@@ -36,7 +107,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;七種方式把事情做完&quot;&gt;&lt;a href=&quot;#七種方式把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方式把事情做完&quot;&gt;&lt;/a&gt;七種方式把事情做完&lt;/h3&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;七種方法把事情做完&quot;&gt;&lt;a href=&quot;#七種方法把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方法把事情做完&quot;&gt;&lt;/a&gt;七種方法把事情做完&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;將符合 80/20 法則高價值的事情標注起來，將所有時間專注在這些任務，
     
     </summary>
@@ -703,35 +774,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;發散式變化-Divergent-Change&quot;&gt;&lt;a href=&quot;#發散式變化-Divergent-Change&quot; class=&quot;headerlink&quot; title=&quot;發散式變化(Divergent Change)&quot;&gt;&lt;/a&gt;發散式變化(Divergent Cha
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>歐付寶 ChoosePayment vs PaymentType</title>
-    <link href="http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/"/>
-    <id>http://alincode.github.io/2016/05/03/allpay-ChoosePayment-vs-paymentType/</id>
-    <published>2016-05-03T14:56:58.000Z</published>
-    <updated>2016-05-04T15:31:32.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png&quot; alt=&quot;allpay&quot;&gt;&lt;/p&gt;
-&lt;p&gt;記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。&lt;/p&gt;
-&lt;h3 id=&quot;訂單產生&quot;&gt;&lt;a href=&quot;#訂單產生&quot; class=&quot;headerlink&quot; title=&quot;訂單產生&quot;&gt;&lt;/a&gt;訂單產生&lt;/h3&gt;&lt;p&gt;時機發生在發出去的 request&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PaymentType = 交易類型&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;aio&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;ChoosePayment = 付款方式&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Credit:&amp;#20449;&amp;#29992;&amp;#21345;&amp;#10;WebATM:&amp;#32178;&amp;#36335; ATM&amp;#10;ATM:&amp;#33258;&amp;#21205;&amp;#27331;&amp;#21729;&amp;#27231;&amp;#10;CVS:&amp;#36229;&amp;#21830;&amp;#20195;&amp;#30908;&amp;#10;BARCODE:&amp;#36229;&amp;#21830;&amp;#26781;&amp;#30908;&amp;#10;Alipay:&amp;#25903;&amp;#20184;&amp;#23542;&amp;#10;Tenpay:&amp;#36001;&amp;#20184;&amp;#36890;&amp;#10;TopUpUsed:&amp;#20786;&amp;#20540;&amp;#28040;&amp;#36027;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;ATM、CVS-或-BARCODE-的取號結果通知&quot;&gt;&lt;a href=&quot;#ATM、CVS-或-BARCODE-的取號結果通知&quot; class=&quot;headerlink&quot; title=&quot;ATM、CVS 或 BARCODE 的取號結果通知&quot;&gt;&lt;/a&gt;ATM、CVS 或 BARCODE 的取號結果通知&lt;/h3&gt;&lt;p&gt;時機發生在被動收到的 response&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PaymentType = 會員選擇的付款方式&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ATM_TAISHIN&amp;#10;(...&amp;#30053;...&amp;#38750;&amp;#24120;&amp;#22810;&amp;#31278;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png&quot; alt=&quot;allpay&quot;&gt;&lt;/p&gt;
-&lt;p&gt;記錄一下最近抓到前人留下來的 bug，這幾個值是
     
     </summary>
     
