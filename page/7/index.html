@@ -218,6 +218,171 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/30/react-disable-button/">
+                            React 防止連點
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Mar 30 2016 23:09:36 GMT+0800">
+	
+		    3月 30, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h2><ul>
+<li>有一個 isSending 狀態，記錄是否在之前已經送出 submit，只是 response 還沒回來。</li>
+<li>加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT</li>
+<li>在 Store 的地方要更新 isSending 狀態</li>
+</ul>
+<h3 id="Component-要做的事"><a href="#Component-要做的事" class="headerlink" title="Component 要做的事"></a>Component 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">submit() &#123;&#10;  var email = this.state.email&#10;  var password =  this.state.password&#10;&#10;  if (email &#38;&#38; password &#38;&#38; !this.state.isSending) &#123;&#10;    AuthActions.login(email, password);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.login = function(email, password) &#123;&#10;&#10;  AppDispatcher.dispatch(&#123;&#10;    action: AuthConstants.AUTH_SENDING,&#10;  &#125;);&#10;&#10;  var req = new XMLHttpRequest();&#10;  ...&#30053;...&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState !== 4) return;&#10;&#10;    AppDispatcher.dispatch(&#123;&#10;      action: AuthConstants.AUTH_SENT,&#10;    &#125;);&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_LOGINED,&#10;          ...&#30053;...&#10;        &#125;);&#10;    &#125;&#10;  &#125;;&#10;  ...&#30053;...&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case AuthConstants.AUTH_SENDING:&#10;  _isSending = true;&#10;  AuthStore.emitChange();&#10;  break;&#10;&#10;case AuthConstants.AUTH_SENT:&#10;  _isSending = false;&#10;  AuthStore.emitChange();&#10;  break;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/30/react-disable-button/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/29/jade-mixins/">
+                            Jade Mixins
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 29 2016 22:31:36 GMT+0800">
+	
+		    3月 29, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>一般在 <code>view engine</code> 中，要如何有效的控制重複的 code，就是把重複的 code 封裝到另一個檔案，需要的時候直接寫 include，<code>Jade</code> 也有提供這樣的功能。</p>
+<h3 id="安裝測試環境"><a href="#安裝測試環境" class="headerlink" title="安裝測試環境"></a>安裝測試環境</h3><p><code>sails new jade-sandbox --template=jade</code></p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p><a href="https://github.com/alincode/jade-sandbox" target="_blank" rel="external">完整範例</a></p>
+<h4 id="單純無變化的-template"><a href="#單純無變化的-template" class="headerlink" title="單純無變化的 template"></a>單純無變化的 template</h4><p><strong>static-list-page.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include ./mixins/static-list&#10;&#10;block body&#10;  +static-list</span><br></pre></td></tr></table></figure>
+<p><strong>mixin/static-list.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mixin static-list&#10;  ul&#10;    li AAA&#10;    li BBB&#10;    li CCC</span><br></pre></td></tr></table></figure>
+<p><strong>輸出格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul&#62;&#10;  &#60;li&#62;AAA&#60;/li&#62;&#10;  &#60;li&#62;BBB&#60;/li&#62;&#10;  &#60;li&#62;CCC&#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<h4 id="有帶參數的-template"><a href="#有帶參數的-template" class="headerlink" title="有帶參數的 template"></a>有帶參數的 template</h4><p><strong>color-page.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include ./mixins/color&#10;&#10;block body&#10;  ul&#10;    +color(&#39;yellow&#39;)&#10;    +color(&#39;red&#39;)&#10;    +color(&#39;blue&#39;)</span><br></pre></td></tr></table></figure>
+<p><strong>mixins/color.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mixin color(colorName)&#10;  li.color= colorName</span><br></pre></td></tr></table></figure>
+<p><strong>輸出格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul&#62;&#10;  &#60;li class=&#34;color&#34;&#62;yellow&#60;/li&#62;&#10;  &#60;li class=&#34;color&#34;&#62;red&#60;/li&#62;&#10;  &#60;li class=&#34;color&#34;&#62;blue&#60;/li&#62;&#10;&#60;/ul&#62;</span><br></pre></td></tr></table></figure>
+<h4 id="有帶屬性的-template"><a href="#有帶屬性的-template" class="headerlink" title="有帶屬性的 template"></a>有帶屬性的 template</h4><p><strong>person-page.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include ./mixins/person&#10;&#10;block body&#10;  ul&#10;    +person(&#34;Alin&#34;)#first&#10;    +person(&#34;John&#34;)(title=&#34;&#19968;&#20491;&#22909;&#20154;&#34;)&#10;    +person(&#34;Bill&#34;).last</span><br></pre></td></tr></table></figure>
+<p><strong>mixins/person.jade</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mixin person(name)&#10;  div&#38;attributes(attributes)= name</span><br></pre></td></tr></table></figure>
+<p><strong>輸出格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;ul&#62;&#10;  &#60;div id=&#34;first&#34;&#62;Alin&#60;/div&#62;&#10;  &#60;div title=&#34;&#19968;&#20491;&#22909;&#20154;&#34;&#62;John&#60;/div&#62;&#10;  &#60;div class=&#34;last&#34;&#62;Bill&#60;/div&#62;&#10;&#60;/ul</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/29/jade-mixins/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/28/sails-i18n-object-notation/">
+                            物件宣告 Sails 多國語系
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Mar 28 2016 17:12:56 GMT+0800">
+	
+		    3月 28, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>Sails 官方的文件，在於說明多國語系的部分非常簡略，請教 Google 大師之後，發現 Sails 多國語系的底層是使用<a href="https://github.com/mashpie/i18n-node" target="_blank" rel="external">i18n-node</a>，所以基本 i18n-node 有提供的功能都可以使用。</p>
+<p>objectNotation 這個功能預設是 false，所以必須得先設定。</p>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><p><strong>修改多國語系設定檔</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/i18n.js&#10;&#10;module.exports.i18n = &#123;&#10;  updateFiles: true,&#10;  localesDirectory: &#39;/config/locales&#39;,&#10;  locales: [&#39;en&#39;, &#39;zh&#39;],&#10;  // &#21152;&#36889;&#34892;&#10;  objectNotation: true&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>支援物件式的寫法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config/locales/zh.json&#10;&#123;&#10;  &#34;admin&#34;: &#123;&#10;    &#34;common&#34;: &#123;&#10;      &#34;createdAt&#34;: &#34;&#24314;&#31435;&#26085;&#26399;&#34;,&#10;      &#34;publishAt&#34;: &#34;&#30332;&#20296;&#26085;&#26399;&#34;,&#10;      &#34;title&#34;: &#34;&#27161;&#38988;&#34;,&#10;      &#34;content&#34;: &#34;&#20839;&#23481;&#34;,&#10;    &#125;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>修改 view 檔</strong></p>
+<p>此範例是針對 <code>Jade</code> 的寫法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&#123;i18n(&#39;admin.common.createdAt&#39;)&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="相關連結"><a href="#相關連結" class="headerlink" title="相關連結"></a>相關連結</h3><ul>
+<li><a href="https://github.com/balderdashy/sails/issues/1878" target="_blank" rel="external">i18n does not support the objectNotation config option </a></li>
+<li><a href="http://sailsjs.org/documentation/reference/configuration/sails-config-i-18-n" target="_blank" rel="external">sails i18n</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/28/sails-i18n-object-notation/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/27/sequelize-delete/">
                             sequelize delete
                         </a>
@@ -575,246 +740,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/">
-                            JWT Authentication with AngularJS 重點整理 (1)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Mar 20 2016 19:35:42 GMT+0800">
-	
-		    3月 20, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="一般-Session-的產生流程-3-10"><a href="#一般-Session-的產生流程-3-10" class="headerlink" title="一般 Session 的產生流程 (3:10)"></a>一般 Session 的產生流程 (3:10)</h3><ul>
-<li>瀏覽器發送一個 request 到 server，內含帳號跟密碼</li>
-<li>server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。</li>
-<li>將存有 Session ID 的 cookie，回傳給瀏覽器。</li>
-<li>瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server</li>
-</ul>
-<h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
-<li>難以理解，而且不含意義</li>
-<li>增加資料庫的負擔</li>
-<li>Perception that cookies are inherently insecure</li>
-</ul>
-<h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
-<li>Authentication (n.) 驗證</li>
-<li>Authorization (n.) 授權</li>
-<li>Token</li>
-<li>JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。</li>
-</ul>
-<h3 id="JWT-結構-6-55"><a href="#JWT-結構-6-55" class="headerlink" title="JWT 結構 (6:55)"></a>JWT 結構 (6:55)</h3><p>是一個經過 Base64-URL encoded 的字串</p>
-<p><strong>結構分三個部分</strong></p>
-<ul>
-<li>Header</li>
-<li>Body(Claims)</li>
-<li>Cryptographic Signature 加密簽證</li>
-</ul>
-<h4 id="解開後的內容"><a href="#解開後的內容" class="headerlink" title="解開後的內容"></a>解開後的內容</h4><p><strong>範例</strong></p>
-<ul>
-<li>iss: <a href="http://yourdomain.com" target="_blank" rel="external">http://yourdomain.com</a></li>
-<li>exp: 60000</li>
-<li>sub: userId</li>
-<li>scope: api/buy</li>
-</ul>
-<p><strong>意義</strong></p>
-<ul>
-<li>iss: 發佈者 (Issuer)</li>
-<li>exp: 效期，單位是毫秒 (Expiration Time)</li>
-<li>sub: 用戶 (Subject)</li>
-<li>scope: 作用域</li>
-</ul>
-<h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
-<li>使用者經過驗證後，取得 Token</li>
-<li>由你的 server 來製造 Token</li>
-<li>client 儲存 token，並在需要驗證的 request 使用它。</li>
-</ul>
-<h3 id="概述-JWT-12-15"><a href="#概述-JWT-12-15" class="headerlink" title="概述 JWT (12:15)"></a>概述 JWT (12:15)</h3><ul>
-<li>無狀態認證機制</li>
-<li>Token 具有作用域的概念</li>
-<li>產生授權</li>
-<li>決定區域性</li>
-</ul>
-<p>因為影片實在太長，後面有點不太好理解，分兩篇慢慢看</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/19/create-your-own-snippet/">
-                            建立自己的 ATOM snippet
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Mar 19 2016 20:59:46 GMT+0800">
-	
-		    3月 19, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>再 ATOM 上有蠻多 Snippet 的 package 可以安裝，不過有時候更新速度不夠快，你還是想要建立自己的，首先開啟 ATOM 然後工具列的地方，點一下 <code>Open Your Snippet</code>。</p>
-<img src="/blog/2016/03/19/create-your-own-snippet/tooltip.png" alt="tooltip.png" title="">
-<p>它會幫你開啟一個 <code>snippet.cson</code> 的文字檔</p>
-<h3 id="Snippet-格式"><a href="#Snippet-格式" class="headerlink" title="Snippet 格式"></a>Snippet 格式</h3><h4 id="簡單範例"><a href="#簡單範例" class="headerlink" title="簡單範例"></a>簡單範例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;.source.js&#39;:&#10;  &#39;print request body&#39;:&#10;    &#39;prefix&#39;: &#39;tb&#39;&#10;    &#39;body&#39;: &#39;console.log(&#34;=== res.body ==&#62;&#34;, res.body);$1&#39;&#10;  &#39;print arrow&#39;:&#10;    &#39;prefix&#39;: &#39;t&#39;&#10;    &#39;body&#39;: &#39;console.log(&#34;==========&#62; &#34;, $1);&#39;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>source.js 指的是哪種支援哪種副黨名的檔案</li>
-<li>prefix 是指快速鍵</li>
-<li>body 則是你自己指定的自動產生內容</li>
-<li>$1 則是內容產生後，你指標停留的位址，除了 $1 之外，你也可以取 $2，可用 tab 鍵依序切換。</li>
-</ul>
-<h4 id="更多範例"><a href="#更多範例" class="headerlink" title="更多範例"></a>更多範例</h4><ul>
-<li><a href="https://github.com/atom/language-html/blob/master/snippets/language-html.cson" target="_blank" rel="external">language-html.cson</a></li>
-<li><a href="https://github.com/atom/language-javascript/blob/master/snippets/language-javascript.cson" target="_blank" rel="external">language-javascript.cson</a></li>
-</ul>
-<h3 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h3><ul>
-<li><a href="https://atom.io/docs/latest/using-atom-snippets" target="_blank" rel="external">using-atom-snippets</a></li>
-<li><a href="https://atom.io/docs/latest/using-atom-basic-customization#cson" target="_blank" rel="external">Basic Customization</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/19/create-your-own-snippet/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/">
-                            Speed up Server Side Rendering 重點整理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Mar 18 2016 00:00:01 GMT+0800">
-	
-		    3月 18, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <div class="video-container"><iframe src="//www.youtube.com/embed/PnpfGy7q96U" frameborder="0" allowfullscreen></iframe></div>
-<p>Reactjs - Speed up Server Side Rendering - Sasha Aickin</p>
-<h3 id="為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00"><a href="#為什麼提升-Server-Side-Rendering-速度，這麼困難-3-00" class="headerlink" title="為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)"></a>為什麼提升 Server Side Rendering 速度，這麼困難? (3:00)</h3><ul>
-<li>renderToString 有單執行緒、同步、CPU 的限制</li>
-<li>server side 和 client side code 混在一起</li>
-<li>Facebook 並沒有在 production 做 Server Side Rendering，所以不是核心項目發展緩慢。</li>
-</ul>
-<h3 id="技巧一：production-mode-5-30"><a href="#技巧一：production-mode-5-30" class="headerlink" title="技巧一：production mode (5:30)"></a>技巧一：production mode (5:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NODE_ENV=production</span><br></pre></td></tr></table></figure>
-<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><p>dev mode 有開啟 error checking，使得速度變慢(幾乎三倍)。</p>
-<h4 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h4><p>無</p>
-<h3 id="技巧二：使用-React-mini版本-6-55"><a href="#技巧二：使用-React-mini版本-6-55" class="headerlink" title="技巧二：使用 React mini版本 (6:55)"></a>技巧二：使用 React mini版本 (6:55)</h3><p>從</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;</span><br></pre></td></tr></table></figure>
-<p>改為</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react/dist/react.min&#34;</span><br></pre></td></tr></table></figure>
-<h4 id="原因-8-15"><a href="#原因-8-15" class="headerlink" title="原因 (8:15)"></a>原因 (8:15)</h4><p>減少 NODE_ENV 檢查步驟</p>
-<h4 id="缺點-1"><a href="#缺點-1" class="headerlink" title="缺點"></a>缺點</h4><p>很難 debug</p>
-<h3 id="技巧三：babel-Transforms-9-05"><a href="#技巧三：babel-Transforms-9-05" class="headerlink" title="技巧三：babel Transforms (9:05)"></a>技巧三：babel Transforms (9:05)</h3><p>添加兩個 babel runtime plugin</p>
-<ul>
-<li><a href="https://babeljs.io/docs/plugins/transform-react-constant-elements/" target="_blank" rel="external">transforms-react-constant-elements</a></li>
-<li><a href="https://babeljs.io/docs/plugins/transform-react-inline-elements/" target="_blank" rel="external">transform-react-inline-elements</a></li>
-</ul>
-<h4 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h4><p>減少執行期的計算</p>
-<h4 id="缺點-2"><a href="#缺點-2" class="headerlink" title="缺點"></a>缺點</h4><p>必須增加 babel build 的步驟</p>
-<h3 id="技巧四：不使用-createClass-12-30"><a href="#技巧四：不使用-createClass-12-30" class="headerlink" title="技巧四：不使用 createClass (12:30)"></a>技巧四：不使用 createClass (12:30)</h3><p><a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d#.stpbbq76u" target="_blank" rel="external">stateless components</a></p>
-<blockquote>
-<p>if the components that we defined didn’t have any internal state, then we could just skip extending the base Component class (this is changed in 0.14). Instead, we were able to represent our components as plain classes.</p>
-</blockquote>
-<h4 id="demo-把-ES5-換成-ES6-寫法-12-40"><a href="#demo-把-ES5-換成-ES6-寫法-12-40" class="headerlink" title="demo 把 ES5 換成 ES6 寫法 (12:40)"></a>demo 把 ES5 換成 ES6 寫法 (12:40)</h4><h4 id="原因-2"><a href="#原因-2" class="headerlink" title="原因"></a>原因</h4><p>也許跟 auto binding 有關，但不確定。</p>
-<h4 id="缺點-3"><a href="#缺點-3" class="headerlink" title="缺點"></a>缺點</h4><p>需要把 ES5 轉換成 ES6 增加工作量，與不知道為什麼有人特別恨 ES6</p>
-<h3 id="技巧五：Streaming"><a href="#技巧五：Streaming" class="headerlink" title="技巧五：Streaming"></a>技巧五：Streaming</h3><p>使用講者開發的框架，不產html，直接換成串流下載。</p>
-<p>Chunked Encoding HTTP 1.1</p>
-<p>從</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom/server&#34;;&#10;&#10;res.send(ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;));</span><br></pre></td></tr></table></figure>
-<p>改為</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import ReactDOMSerer from &#34;react-dom-stream/server&#34;;&#10;&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;).pipe(res);</span><br></pre></td></tr></table></figure>
-<h4 id="缺點-4"><a href="#缺點-4" class="headerlink" title="缺點"></a>缺點</h4><p>還在 beta，需要小心 CDN 跟 Proxy 方面</p>
-<h3 id="技巧六：針對-component-做-cache-22-35"><a href="#技巧六：針對-component-做-cache-22-35" class="headerlink" title="技巧六：針對 component 做 cache (22:35)"></a>技巧六：針對 component 做 cache (22:35)</h3><p>使用講者開發的框架</p>
-<h4 id="Demo-Cache-Components-25-17"><a href="#Demo-Cache-Components-25-17" class="headerlink" title="Demo Cache Components (25:17)"></a>Demo Cache Components (25:17)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const cache = new LRURenderCache();&#10;ReactDOMSerer.renderToString(&#39;&#60;Root/&#62;&#39;, &#123;cache: cache&#125;).pipe(res);</span><br></pre></td></tr></table></figure>
-<p>增加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentCacheKey() &#123;&#10;  return JSON.st....&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="缺點：-27-30"><a href="#缺點：-27-30" class="headerlink" title="缺點：(27:30)"></a>缺點：(27:30)</h4><p>如果你的 cache key 有誤，可能會把資料傳送給錯的人。</p>
-<h3 id="總結-28-30"><a href="#總結-28-30" class="headerlink" title="總結 (28:30)"></a>總結 (28:30)</h3><p>你應該開始使用哪些技巧<br>技巧一：Yes<br>技巧二：Yes<br>技巧三：Yes<br>技巧四：Maybe<br>技巧五：Maybe<br>技巧六：Not yet</p>
-<p><strong>Vocabulary</strong><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/downside" target="_blank" rel="external">downside</a>: 缺點<br><a href="http://dictionary.cambridge.org/dictionary/english/suspect" target="_blank" rel="external">suspect</a>: 懷疑<br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/trick_1?q=tricks" target="_blank" rel="external">tricks</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/recap?q=Recap" target="_blank" rel="external">recap</a><br><a href="http://dictionary.cambridge.org/dictionary/english-chinese-traditional/coarse_1" target="_blank" rel="external">coarse</a><br><a href="http://dictionary.cambridge.org/dictionary/english/culprit" target="_blank" rel="external">culprit</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/18/Speed-up-Server-Side-Rendering/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -835,7 +760,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 7 頁 共 9 頁</li>
+        <li class="pagination-number">第 7 頁 共 10 頁</li>
     </ul>
 </div>
 

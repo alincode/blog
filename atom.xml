@@ -68,6 +68,140 @@
   </entry>
   
   <entry>
+    <title>WebdriverIO 常用語法(3)</title>
+    <link href="http://alincode.github.io/2016/06/12/webdriverio-common-syntax-3/"/>
+    <id>http://alincode.github.io/2016/06/12/webdriverio-common-syntax-3/</id>
+    <published>2016-06-12T13:35:19.000Z</published>
+    <updated>2016-06-13T14:29:00.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
+&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Protocol&quot;&gt;&lt;a href=&quot;#Protocol&quot; class=&quot;headerlink&quot; title=&quot;Protocol&quot;&gt;&lt;/a&gt;Protocol&lt;/h3&gt;&lt;h4 id=&quot;url&quot;&gt;&lt;a href=&quot;#url&quot; class=&quot;headerlink&quot; title=&quot;url&quot;&gt;&lt;/a&gt;url&lt;/h4&gt;&lt;p&gt;前往特定網址&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.url([url]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.url(&amp;#39;/login&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;實用工具-Utility&quot;&gt;&lt;a href=&quot;#實用工具-Utility&quot; class=&quot;headerlink&quot; title=&quot;實用工具(Utility)&quot;&gt;&lt;/a&gt;實用工具(Utility)&lt;/h3&gt;&lt;h4 id=&quot;waitForExist&quot;&gt;&lt;a href=&quot;#waitForExist&quot; class=&quot;headerlink&quot; title=&quot;waitForExist&quot;&gt;&lt;/a&gt;waitForExist&lt;/h4&gt;&lt;p&gt;等待一個特定元素出現，才進行下一步。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.waitForExist(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.waitForExist(&amp;#39;[name=identifier]&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;其他相關語法&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;waitForEnabled&amp;#10;waitForSelected&amp;#10;waitForText&amp;#10;waitForValue&amp;#10;waitForVisible&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;pause&quot;&gt;&lt;a href=&quot;#pause&quot; class=&quot;headerlink&quot; title=&quot;pause&quot;&gt;&lt;/a&gt;pause&lt;/h4&gt;&lt;p&gt;暫停一段時間，常用於模擬真人行為減緩測試速度，及方便肉眼檢視每個測試步驟。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.pause(milliseconds);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.pause(2000);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external
+    
+    </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebdriverIO 常用語法(2)</title>
+    <link href="http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/"/>
+    <id>http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/</id>
+    <published>2016-06-11T13:35:19.000Z</published>
+    <updated>2016-06-13T14:29:17.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
+&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;屬性-Property&quot;&gt;&lt;a href=&quot;#屬性-Property&quot; class=&quot;headerlink&quot; title=&quot;屬性(Property)&quot;&gt;&lt;/a&gt;屬性(Property)&lt;/h3&gt;&lt;h4 id=&quot;getTitle&quot;&gt;&lt;a href=&quot;#getTitle&quot; class=&quot;headerlink&quot; title=&quot;getTitle&quot;&gt;&lt;/a&gt;getTitle&lt;/h4&gt;&lt;p&gt;取得標題&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getTitle();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;getUrl&quot;&gt;&lt;a href=&quot;#getUrl&quot; class=&quot;headerlink&quot; title=&quot;getUrl&quot;&gt;&lt;/a&gt;getUrl&lt;/h4&gt;&lt;p&gt;取得網址&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getUrl();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;getValue&quot;&gt;&lt;a href=&quot;#getValue&quot; class=&quot;headerlink&quot; title=&quot;getValue&quot;&gt;&lt;/a&gt;getValue&lt;/h4&gt;&lt;p&gt;取得欄味值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getValue(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getValue(&amp;#39;[name=identifier]&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;getText&quot;&gt;&lt;a href=&quot;#getText&quot; class=&quot;headerlink&quot; title=&quot;getText&quot;&gt;&lt;/a&gt;getText&lt;/h4&gt;&lt;p&gt;取得文字&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getText(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getText(&amp;#39;.tip&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external
+    
+    </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebdriverIO 常用語法(1)</title>
+    <link href="http://alincode.github.io/2016/06/10/webdriverio-common-syntax/"/>
+    <id>http://alincode.github.io/2016/06/10/webdriverio-common-syntax/</id>
+    <published>2016-06-10T13:35:19.000Z</published>
+    <updated>2016-06-13T14:29:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
+&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;動作-Action&quot;&gt;&lt;a href=&quot;#動作-Action&quot; class=&quot;headerlink&quot; title=&quot;動作(Action)&quot;&gt;&lt;/a&gt;動作(Action)&lt;/h3&gt;&lt;h4 id=&quot;click&quot;&gt;&lt;a href=&quot;#click&quot; class=&quot;headerlink&quot; title=&quot;click&quot;&gt;&lt;/a&gt;click&lt;/h4&gt;&lt;p&gt;點擊元素(按鈕、連結、任何可被點擊的元素)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.click(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.click(&amp;#39;.open-panel&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;setValue&quot;&gt;&lt;a href=&quot;#setValue&quot; class=&quot;headerlink&quot; title=&quot;setValue&quot;&gt;&lt;/a&gt;setValue&lt;/h4&gt;&lt;p&gt;設定欄位值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.elements(selector).setValue(value);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.elements(&amp;#39;[name=identifier]&amp;#39;).setValue(&amp;#39;demo&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;submitForm&quot;&gt;&lt;a href=&quot;#submitForm&quot; class=&quot;headerlink&quot; title=&quot;submitForm&quot;&gt;&lt;/a&gt;submitForm&lt;/h4&gt;&lt;p&gt;送出表單&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.submitForm(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.submitForm(&amp;#39;#loginForm&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external
+    
+    </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Choice Theory - 重點整理(2)</title>
     <link href="http://alincode.github.io/2016/05/25/choice-theory-2/"/>
     <id>http://alincode.github.io/2016/05/25/choice-theory-2/</id>
@@ -656,115 +790,6 @@
     
     
       <category term="promise" scheme="http://alincode.github.io/tags/promise/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何開始使用 Story Points？</title>
-    <link href="http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/"/>
-    <id>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</id>
-    <published>2016-05-09T03:48:38.000Z</published>
-    <updated>2016-05-19T11:59:59.000Z</updated>
-    
-    <content type="html">&lt;img src=&quot;/blog/2016/05/09/how-to-getting-started-story-points/PlanningPoker.jpg&quot; alt=&quot;PlanningPoker.jpg&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;預估-Story-Points-單位&quot;&gt;&lt;a href=&quot;#預估-Story-Points-單位&quot; class=&quot;headerlink&quot; title=&quot;預估 Story Points 單位&quot;&gt;&lt;/a&gt;預估 Story Points 單位&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;衣服 Size 種類 (XS, S, M, L, XL…)&lt;/li&gt;
-&lt;li&gt;費氏數列卡片(Planning Poker)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;怎麼開始？&quot;&gt;&lt;a href=&quot;#怎麼開始？&quot; class=&quot;headerlink&quot; title=&quot;怎麼開始？&quot;&gt;&lt;/a&gt;怎麼開始？&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;數字越大代表越複雜，可以從先挑一個介於中間值的 Story 開始，然後再逐一針對每個 Story 給 Point。&lt;/li&gt;
-&lt;li&gt;針對預估不一致的 Story 進行細部討論。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;補充&quot;&gt;&lt;a href=&quot;#補充&quot; class=&quot;headerlink&quot; title=&quot;補充&quot;&gt;&lt;/a&gt;補充&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.pointingpoker.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;線上版 Pointing Poker&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;此評估方式希望每個人都可以以客觀的方式預估，不受別人影響，這個網站提供了這樣的小功能，在所有人都遞交評估後，才顯示所有人的評估果。&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/blog/2016/05/09/how-to-getting-started-story-points/PlanningPoker.jpg&quot; alt=&quot;PlanningPoker.jpg&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;預估-Story-Points-
-    
-    </summary>
-    
-    
-      <category term="Story Points" scheme="http://alincode.github.io/tags/Story-Points/"/>
-    
-      <category term="預估" scheme="http://alincode.github.io/tags/%E9%A0%90%E4%BC%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什麼是 Story Points</title>
-    <link href="http://alincode.github.io/2016/05/08/estimating-with-story-points/"/>
-    <id>http://alincode.github.io/2016/05/08/estimating-with-story-points/</id>
-    <published>2016-05-08T02:41:17.000Z</published>
-    <updated>2016-05-19T11:59:59.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Story%20Points&quot; alt=&quot;Story Points&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最近 Team 開始試 Story Points 來評估專案，所以稍微花了點時間了解一下。&lt;/p&gt;
-&lt;h3 id=&quot;預估&quot;&gt;&lt;a href=&quot;#預估&quot; class=&quot;headerlink&quot; title=&quot;預估&quot;&gt;&lt;/a&gt;預估&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;我想從事軟體業，最難的一項就是預估，為什麼呢？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;因為預估往往是針對從前的經驗，去推算出未來需要的時間，如果鋪一塊柏油需要2個小時，在相同大小的情況下，就可以很準確的預估出下一次所需要的時間，但是從事軟體業的技術日益更新，今年夯物聯網，明年又會有另一種題材竄起，即使每天使用的框架，一、兩年後又會有新的局面。所以永遠預估不準，索性乾脆不要預估，或業界常用的預估方式，抓三倍的時間，因為永遠會有意外發生。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;既然估不準，那還要不要預估？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;當我們去景點區的時候，第一件事會做什麼？通常會先看一下門口放置的觀光地圖，挑出想去的景點，規劃一下 Route，這個地圖非常的不精準，但卻不可或缺對吧。&lt;/p&gt;
-&lt;h3 id=&quot;什麼是-Story-Points？&quot;&gt;&lt;a href=&quot;#什麼是-Story-Points？&quot; class=&quot;headerlink&quot; title=&quot;什麼是 Story Points？&quot;&gt;&lt;/a&gt;什麼是 Story Points？&lt;/h3&gt;&lt;p&gt;既然估不準，那我們就不應該花太多時間預估，Story Points 就是一個提供&lt;code&gt;快速預估的方法論&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Story Points 採用需求複雜度所估算，不是針對小時估算。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;人很擅長比較大小，我們可以在一分鐘內說出，甲物比乙物大，但是如果你再追問，甲物比乙物大多少？1.5倍？2倍？1.8倍？那就會變成一個相當耗時的評估。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;優點&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Story Points 是一個客觀的估算基準點，它不牽扯到個人的經驗背景。如果用小時估算，有可能資深的只需要兩天，資淺的需要一周，但這個 Task 也還沒決定給誰，而且就算決定給誰了，人是會流動的，所以我們需要一個客觀的評估方式。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在評估過程中，如果甲跟乙所估算的 Story Points 差異太大，可以趁這時間做交流，例如可能甲以前有做過類似的Task，所以他已經知道大概怎麼進行會比較快，或是甲沒預估到乙覺得可能會發生的一些問題。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Story%20Points&quot; alt=&quot;Story Points&quot;&gt;&lt;/p&gt;
-&lt;p&gt;最近 Team 開始試 Story Points 來評估專案，所以稍微花了點時間了解一下。&lt;/p&gt;
-&lt;h
-    
-    </summary>
-    
-    
-      <category term="Story Points" scheme="http://alincode.github.io/tags/Story-Points/"/>
-    
-      <category term="預估" scheme="http://alincode.github.io/tags/%E9%A0%90%E4%BC%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>過度設計</title>
-    <link href="http://alincode.github.io/2016/05/07/overdesign/"/>
-    <id>http://alincode.github.io/2016/05/07/overdesign/</id>
-    <published>2016-05-07T02:14:34.000Z</published>
-    <updated>2016-05-08T08:02:52.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Overdesign&quot; alt=&quot;Overdesign&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在一個目前維護的專案中，看到一個相依性很高的 code，似乎是一個很棒的例子說明過度設計這件事。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;撰寫者的美意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;是讓 controller 內，只有一行就可以發出不同狀態的通知信，但這樣的設計卻帶來更多的災難。一個好的設計是什麼？基本原則不外乎是，一次變動只需影響到一個地方，每個最小單元只做一件事，並可充分表態自己的意圖。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;那這樣的設計問題在哪裡？&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;當 Order 的 Type 有更名的時候，如果不是原設計者，接手人並不會知道同步去更變 CustomMailerService 內的 function 名稱，基本上他也不應該需要去做這件事。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;CustomMailerService[status](order)&lt;/code&gt; 隱含著，有可能會 &lt;code&gt;CustomMailerService.paymentConfirm&lt;/code&gt; 只傳一個參數的意圖，另一個參數或許會是 null Code 這本書上有提到，不應該傳入 null 為參數。&lt;/li&gt;
-&lt;li&gt;如果有一天 CustomMailerService 的 function 名稱需要修改，接手人也不容易察覺與 Order.type 有相關聯。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;簡略架構&quot;&gt;&lt;a href=&quot;#簡略架構&quot; class=&quot;headerlink&quot; title=&quot;簡略架構&quot;&gt;&lt;/a&gt;簡略架構&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;OrderController&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let messageConfig = await CustomMailerService[status](order);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Order&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;type: DataTypes.ENUM(&amp;#39;new&amp;#39;, &amp;#39;paymentConfirm&amp;#39;, &amp;#39;deliveryConfirm&amp;#39;, &amp;#39;orderCancel&amp;#39;),&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;CustomMailerService&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;orderConfirm: (result)&amp;#10;paymentConfirm: (order, email)&amp;#10;deliveryConfirm: (order)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Overdesign&quot; alt=&quot;Overdesign&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在一個目前維護的專案中，看到一個相依性很高的 code，似乎是一個很棒的例子說明過度設計這件事。&lt;/p&gt;
-&lt;p&gt;&lt;s
-    
-    </summary>
-    
-    
-      <category term="bad smell" scheme="http://alincode.github.io/tags/bad-smell/"/>
     
   </entry>
   

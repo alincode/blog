@@ -219,6 +219,189 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/19/build-docs-with-gitbook/">
+                            建構一個漂亮的文件 with gitbook
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 14:30:41 GMT+0800">
+	
+		    4月 19, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <img src="/blog/2016/04/19/build-docs-with-gitbook/gitbook.png" alt="gitbook.png" title="">
+<p>我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。</p>
+<p>現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔），有些人說，那用 google drive，但其實對於一般的使用者友善度，還是有一段差距，而且我總覺得我的游標會一直亂跑。</p>
+<p>gitbook 有提供一個圖形化工具，可以很容易的編輯 markdown 格式的文字檔，再結合一些 git commit 的概念，就可以更新。但這對於一般使用者還是太困難，這時放在 github 的好處就顯現了，他有網站編輯 markdown 檔的界面，弄得像留言板一樣，如果你說連留言板都不知道怎麼用，恩…那…你不要用好了。</p>
+<h2 id="整合方案"><a href="#整合方案" class="headerlink" title="整合方案"></a>整合方案</h2><ul>
+<li>github</li>
+<li>gitbook for</li>
+<li>nginx for 靜態檔案伺服器</li>
+<li>cron for 自動排成更新</li>
+</ul>
+<p>範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。</p>
+<h2 id="與-Gitbook-相關"><a href="#與-Gitbook-相關" class="headerlink" title="與 Gitbook 相關"></a>與 Gitbook 相關</h2><h3 id="安裝-Gitbook"><a href="#安裝-Gitbook" class="headerlink" title="安裝 Gitbook"></a>安裝 Gitbook</h3><p><code>npm install gitbook -g</code></p>
+<h3 id="編譯-gitbook-html-檔"><a href="#編譯-gitbook-html-檔" class="headerlink" title="編譯 gitbook html 檔"></a>編譯 gitbook html 檔</h3><p><code>gitbook build your-document-folder</code></p>
+<h2 id="與-Nginx-相關"><a href="#與-Nginx-相關" class="headerlink" title="與 Nginx 相關"></a>與 Nginx 相關</h2><h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
+<h3 id="複製到指定的資料夾"><a href="#複製到指定的資料夾" class="headerlink" title="複製到指定的資料夾"></a>複製到指定的資料夾</h3><p><code>cp -R your-document-folder/_book /srv/docs</code></p>
+<h3 id="更改資料夾權限"><a href="#更改資料夾權限" class="headerlink" title="更改資料夾權限"></a>更改資料夾權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /srv/docs/&#10;sudo chown -R www-data:www-data /srv/docs/</span><br></pre></td></tr></table></figure>
+<h3 id="產生加密密碼"><a href="#產生加密密碼" class="headerlink" title="產生加密密碼"></a>產生加密密碼</h3><p><code>openssl passwd</code></p>
+<p>請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。</p>
+<h3 id="建立密碼檔"><a href="#建立密碼檔" class="headerlink" title="建立密碼檔"></a>建立密碼檔</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/conf.d/your-passwd</span><br></pre></td></tr></table></figure>
+<p><strong>your-passwd</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">your-login-account:your-encode-password</span><br></pre></td></tr></table></figure></p>
+<h3 id="編輯-nginx-設定檔"><a href="#編輯-nginx-設定檔" class="headerlink" title="編輯 nginx 設定檔"></a>編輯 nginx 設定檔</h3><p><code>vi /etc/nginx/sites-available/default</code></p>
+<p><strong>default</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;&#10;  listen 80;&#10;  server_name your.domain.name.com;&#10;  auth_basic &#34;docs website&#34;;&#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&#10;&#10;  location / &#123;&#10;    root /srv/docs;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重啟-nginx"><a href="#重啟-nginx" class="headerlink" title="重啟 nginx"></a>重啟 nginx</h3><p><code>nginx -s reload</code></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/19/build-docs-with-gitbook/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/18/how-to-read-a-book/">
+                            好書推薦 - 如何閱讀一本書
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Apr 18 2016 21:50:13 GMT+0800">
+	
+		    4月 18, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>在一個網路發達的世界，怎麼取得資訊早已不是問題，過度吸收反而是一個問題。</p>
+<p>本書的第一章即提到</p>
+<blockquote>
+<p>或許我們對於這個世界的了解比以前的人多了，在某種範圍內，知識也成了理解的先決條件。這些都是好事。但知識是否那麼必然是理解的先決條件，可能和一般人的以為有相當差距。我們為了理解一件事，並不需要知道和這件事相關的所有事情。太多的資訊，就如同太少的資訊一樣，都是一種對理解力的阻礙。換句話說，現代化的媒體以壓倒性的氾濫資訊阻礙了我們的理解。</p>
+</blockquote>
+<p>因為這本書歷史悠久，所以他只提到傳統傳播媒體，但是我想大家也可以漸漸的發現到，網路文章也上充斥的懶人包，7天快速上手、15分鐘讀懂xxx，不用花很多時間就知道很多事，但卻容易忽略掉 <code>知道 != 懂</code>，然後新的技術又出來了，然後大家又一窩蜂沖上去，完全忘記有這回事。</p>
+<blockquote>
+<p>這些媒體，經過太精心的設計，使得思想形同沒有需要了(雖然只是表相如此)。…(略)…目的都在讓人不需要面對困難或努力，很容易就整理出自己的思緒，但這些精美包裝的資訊效率實在太高了，讓觀眾、聽眾、讀者根本用不著自己做結論。相反的，他們直接將包裝過後的觀點裝進自己的腦海中，就像錄影機願意接受錄影帶一樣自然。他只要按一個倒帶的鈕，就能找到他所需要的適當言論。他根本不用思考就能表現得宜。</p>
+</blockquote>
+<p>每個人都致力於 hacker way，不斷的挑戰如何讓自己更接近自己的理想，對我來說我知道我閱讀的速度很慢，這也是為什麼想讀這本書，就是想改善這部分。</p>
+<p>有些人提倡不讀書，因為他們覺得會寫在書上的資訊都很舊，先不論這部分的爭議，但即使是如此，此本書對你也有很大的幫助，因為即使不是實體的書，網路的文章也是可以運用到這些技巧。再說這本書，刷了這本多版，又被翻成各國語言，認真的讀完它，我想利多於弊。</p>
+<p>另一個會讀書的原因在於，身為 IT 工作者，我們用眼看螢幕的時間，比其他行業的人多很多，所以除了 coding、寫文章、搜尋資料之外，必須儘量的減少對眼睛的負擔，如果有長篇有價值的文章會乾脆印下來看。</p>
+<p><a href="http://www.storm.mg/lifestyle/38645" target="_blank" rel="external">雅虎百萬年薪新貴，29歲後失明之路</a></p>
+<h3 id="針對這本書吸引我的部分"><a href="#針對這本書吸引我的部分" class="headerlink" title="針對這本書吸引我的部分"></a>針對這本書吸引我的部分</h3><ul>
+<li>教你怎麼讀懂一本超過你知識程度的書</li>
+<li>如何精準的找到主旨跟重點</li>
+<li>針對不同類型的讀物，提供一些閱讀的技巧</li>
+</ul>
+<img src="/blog/2016/04/18/how-to-read-a-book/book.jpg" alt="book.jpg" title="">
+<h3 id="閱讀的層次"><a href="#閱讀的層次" class="headerlink" title="閱讀的層次"></a>閱讀的層次</h3><ul>
+<li>基礎閱讀</li>
+<li>檢視閱讀</li>
+<li>分析閱讀<ul>
+<li>第六章　一本書的分類</li>
+<li>第七章　透視一本書</li>
+<li>第八章　與作者找出共通的詞義</li>
+<li>第九章　判斷作者的主旨</li>
+<li>第十章　公正地評斷一本書</li>
+<li>第十一章　贊同或反對作者</li>
+<li>第十二章　輔助閱讀</li>
+</ul>
+</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/18/how-to-read-a-book/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/17/sequelize-one-to-many-update/">
+                            Sequelize 一對多更新
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Apr 17 2016 14:03:02 GMT+0800">
+	
+		    4月 17, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>記錄一下自己犯的錯，因為 <code>promotion.setProducts</code> 已經算是另一個更新程序，所以需要另外加 await。</p>
+<h3 id="更新-1-M-片段"><a href="#更新-1-M-片段" class="headerlink" title="更新 1:M 片段"></a>更新 1:M 片段</h3><figure class="highlight javascript"><figcaption><span>PromotionService.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> productIds = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> products = <span class="keyword">await</span> db.Product.findAll(&#123;</span><br><span class="line">  where: &#123;</span><br><span class="line">      id: productIds</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">await</span> promotion.setProducts(products); <span class="comment">// 很重要</span></span><br><span class="line">promotion.save();</span><br></pre></td></tr></table></figure>
+<h3 id="db-schema-片段"><a href="#db-schema-片段" class="headerlink" title="db schema 片段"></a>db schema 片段</h3><figure class="highlight javascript"><figcaption><span>PromotionService.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">associate: <span class="function"><span class="keyword">function</span>(<span class="params">models</span>) </span>&#123;</span><br><span class="line">  Promotion.belongsToMany(models.Product, &#123;</span><br><span class="line">    through: <span class="string">'PromotionProduct'</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/17/sequelize-one-to-many-update/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/16/promise-chaining/">
                             Promise Chaining
                         </a>
@@ -611,219 +794,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
-                            Buddy CI 踩雷心得
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Apr 09 2016 23:29:02 GMT+0800">
-	
-		    4月 09, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
-<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
-<h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
-<p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
-<p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
-<p><strong>小提醒</strong></p>
-<p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
-<h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
-<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/09/buddy-ci-3/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/08/buddy-ci-2/">
-                            Buddy CI Pipelines 流程
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 08 2016 23:48:35 GMT+0800">
-	
-		    4月 08, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>每個帳號一開始進去，它就已經建好一個 sample project，基本每個 Pipeline 由四個步驟所組成。每個步驟中，可指定多個 Action。</p>
-<h3 id="Pipelines-的四個流程"><a href="#Pipelines-的四個流程" class="headerlink" title="Pipelines 的四個流程"></a>Pipelines 的四個流程</h3><img src="/blog/2016/04/08/buddy-ci-2/4-step.png" alt="4-step.png" title="">
-<h4 id="On-Manual-Every-push-Recurrently-Run"><a href="#On-Manual-Every-push-Recurrently-Run" class="headerlink" title="On ( Manual / Every push / Recurrently ) Run"></a>On ( Manual / Every push / Recurrently ) Run</h4><p>觸發 build 的條件，對應到之前指定的 <code>Trigger Mode</code></p>
-<h4 id="On-Success"><a href="#On-Success" class="headerlink" title="On Success"></a>On Success</h4><p>指定 build 成功後，所觸發的一連串 Action</p>
-<h4 id="On-Failure"><a href="#On-Failure" class="headerlink" title="On Failure"></a>On Failure</h4><p>指定 build 失敗後，所觸發的一連串 Action</p>
-<h4 id="On-Back-To-Success"><a href="#On-Back-To-Success" class="headerlink" title="On Back To Success"></a>On Back To Success</h4><p>指定從 build 失敗恢復後，所觸發的一連串 Action</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/08/buddy-ci-2/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/07/buddy-ci/">
-                            Buddy CI 介紹
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Apr 07 2016 23:14:39 GMT+0800">
-	
-		    4月 07, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://buddy.works" target="_blank" rel="external">Buddy CI / CD</a> 是一個挺新的 CI 雲端服務方案，推出於2015年中旬。</p>
-<img src="/blog/2016/04/07/buddy-ci/pipelines.png" alt="pipelines.png" title="">
-<h3 id="收費方案"><a href="#收費方案" class="headerlink" title="收費方案"></a>收費方案</h3><p>只使用一個專案的情況下免費，之後新增的每個專案每月 5 USD，每個專案有無限制的空間、使用者數、跟 pipelines。</p>
-<h3 id="支援的語言"><a href="#支援的語言" class="headerlink" title="支援的語言"></a>支援的語言</h3><ul>
-<li>Ruby</li>
-<li>Node.js</li>
-<li>C++</li>
-<li>Scala</li>
-<li>PHP</li>
-<li>Go</li>
-<li>Erlang</li>
-<li>Java</li>
-</ul>
-<h3 id="整合的的功能有"><a href="#整合的的功能有" class="headerlink" title="整合的的功能有"></a>整合的的功能有</h3><ul>
-<li>執行在 build 與 docker</li>
-<li>傳送檔案<ul>
-<li>FTP</li>
-<li>FTPS</li>
-<li>SFTP</li>
-</ul>
-</li>
-<li>支援部署到 IAAS<ul>
-<li>AMAZON S3</li>
-<li>HEROKU</li>
-<li>DIGITAL OCEAN</li>
-<li>MODULUS</li>
-<li>ELASTIC BEANSTALK</li>
-</ul>
-</li>
-<li>版本控制<ul>
-<li>WebDav</li>
-<li>Git push</li>
-</ul>
-</li>
-<li>DEVOPS<ul>
-<li>執行 SSH 命令指令</li>
-<li>在 HEROKU 上執行命令指令</li>
-</ul>
-</li>
-<li>訊息通知<ul>
-<li>傳送 HTTP POST</li>
-<li>Slack</li>
-<li>簡訊</li>
-<li>Email</li>
-</ul>
-</li>
-<li>監控的方式<ul>
-<li>Web</li>
-<li>Ping</li>
-<li>TCP</li>
-</ul>
-</li>
-</ul>
-<h3 id="核心架構"><a href="#核心架構" class="headerlink" title="核心架構"></a>核心架構</h3><blockquote>
-<p>What are pipelines?<br>A pipeline is a sequence of Continuous Delivery actions. For example, you can configure Buddy to upload files to the server and update assets on AWS on every push to branch, or create a pipeline that will build, test and deploy your mobile app.</p>
-</blockquote>
-<p>所有服務都圍繞在一個 pipeline 的觀念身上，這裡的 pipeline 是指一連串有順序的 Continuous Delivery 動作，例如你可以透過預先的設定，透過 Buddy 提供的自動化整合服務，當每次你的 source code repo 有更動時，可上傳檔案到你的 server 端，或建立一系列建構、測試、部署你的應用程式。</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/07/buddy-ci/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -844,7 +814,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 5 頁 共 9 頁</li>
+        <li class="pagination-number">第 5 頁 共 10 頁</li>
     </ul>
 </div>
 
