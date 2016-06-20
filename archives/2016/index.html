@@ -219,6 +219,58 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/06/20/wdio-selenium-standalone-service/">
+                            整合 wdio selenium standalone service
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Jun 20 2016 11:30:03 GMT+0800">
+	
+		    6月 20, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>最近 <code>WebdriverIO</code> 又 release 一個新的 service，這個 service 主要是整合 <code>selenium standalone</code> package，不需要另外執行 <code>selenium-standalone start</code>，它會在背後自動 hook 做這件事。</p>
+<p>使用上也非常的簡單，只要<a href="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/">原本的測試專案安裝</a>，新增的 service <code>npm i wdio-selenium-standalone-service -D</code>，並編輯 <code>wdio.conf.js</code> 加入 <code>services: [&#39;selenium-standalone&#39;],</code> 設定即可。</p>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="http://webdriver.io/guide/services/selenium-standalone.html" target="_blank" rel="external">SELENIUM STANDALONE SERVICE</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/06/20/wdio-selenium-standalone-service/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/06/13/webdriverio-realworld-test-case/">
                             用 WebdriverIO 寫一個真實世界的登入範例
                         </a>
@@ -391,7 +443,8 @@
 <li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
 <li>你已經讀過之前在此分享的所有相關文章</li>
 </ul>
-<h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
+<h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><p>當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。</p>
+<h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
 <p><strong>範例</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getTitle();</span><br></pre></td></tr></table></figure>
 <h4 id="getUrl"><a href="#getUrl" class="headerlink" title="getUrl"></a>getUrl</h4><p>取得網址</p>
@@ -459,7 +512,8 @@
 <li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
 <li>你已經讀過之前在此分享的所有相關文章</li>
 </ul>
-<h3 id="動作-Action"><a href="#動作-Action" class="headerlink" title="動作(Action)"></a>動作(Action)</h3><h4 id="click"><a href="#click" class="headerlink" title="click"></a>click</h4><p>點擊元素(按鈕、連結、任何可被點擊的元素)</p>
+<h3 id="動作-Action"><a href="#動作-Action" class="headerlink" title="動作(Action)"></a>動作(Action)</h3><p>模擬使用者操作行為</p>
+<h4 id="click"><a href="#click" class="headerlink" title="click"></a>click</h4><p>點擊元素(按鈕、連結、任何可被點擊的元素)</p>
 <p><strong>語法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.click(selector);</span><br></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
@@ -789,52 +843,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/21/Effective-Time-Management-4/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/20/evolution/">
-                            時間管理 ---&gt; 任務管理 ---&gt; 目標管理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri May 20 2016 22:18:59 GMT+0800">
-	
-		    5月 20, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <ul>
-<li>專科期間我曾沈迷在研究時間管理上，閱讀超過20本各種時間管理的理論，把自己當實驗品每種都試試看，但我漸漸的體認到時間管理無用論，因為真的照著規劃的時間管理走，必須要把其他所有變因都排除，在無人干擾的情況下，但這在現實生活中無法做到。</li>
-<li>後來我接觸到了任務管理的觀念，把每個想做的事，都切成一個小Task，接近強迫症的逼迫自己執行了一段時間，達成了許多之前我認為我自己無法達成的事情，但達成了之後，開始覺得精神疲乏，整天只想放空。</li>
-<li>後來又接觸了目標管理，是目前我覺得最好的做法，不需要做時間管理，先計劃中短期目標，針對這個目標須具備的人格特色或任務，設定一系列的養成計劃，透過神奇的21天效應，讓這件事變成一個習慣，每天就會不知覺的重複去執行，在不知不覺中達成目標。</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/20/evolution/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

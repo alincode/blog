@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-13T07:20:20.000Z</updated>
+  <updated>2016-06-20T03:45:35.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>整合 wdio selenium standalone service</title>
+    <link href="http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/"/>
+    <id>http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/</id>
+    <published>2016-06-20T03:30:03.000Z</published>
+    <updated>2016-06-20T03:45:35.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近 &lt;code&gt;WebdriverIO&lt;/code&gt; 又 release 一個新的 service，這個 service 主要是整合 &lt;code&gt;selenium standalone&lt;/code&gt; package，不需要另外執行 &lt;code&gt;selenium-standalone start&lt;/code&gt;，它會在背後自動 hook 做這件事。&lt;/p&gt;
+&lt;p&gt;使用上也非常的簡單，只要&lt;a href=&quot;http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/&quot;&gt;原本的測試專案安裝&lt;/a&gt;，新增的 service &lt;code&gt;npm i wdio-selenium-standalone-service -D&lt;/code&gt;，並編輯 &lt;code&gt;wdio.conf.js&lt;/code&gt; 加入 &lt;code&gt;services: [&amp;#39;selenium-standalone&amp;#39;],&lt;/code&gt; 設定即可。&lt;/p&gt;
+&lt;h3 id=&quot;Ref&quot;&gt;&lt;a href=&quot;#Ref&quot; class=&quot;headerlink&quot; title=&quot;Ref&quot;&gt;&lt;/a&gt;Ref&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://webdriver.io/guide/services/selenium-standalone.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SELENIUM STANDALONE SERVICE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近 &lt;code&gt;WebdriverIO&lt;/code&gt; 又 release 一個新的 service，這個 service 主要是整合 &lt;code&gt;selenium standalone&lt;/code&gt; package，不需要另外執行 &lt;code&gt;selenium-stand
+    
+    </summary>
+    
+      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+    
+    
+      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
+    
+  </entry>
   
   <entry>
     <title>用 WebdriverIO 寫一個真實世界的登入範例</title>
@@ -117,14 +144,15 @@
     <link href="http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/"/>
     <id>http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/</id>
     <published>2016-06-11T13:35:19.000Z</published>
-    <updated>2016-06-13T14:29:17.000Z</updated>
+    <updated>2016-06-13T14:34:16.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
 &lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;屬性-Property&quot;&gt;&lt;a href=&quot;#屬性-Property&quot; class=&quot;headerlink&quot; title=&quot;屬性(Property)&quot;&gt;&lt;/a&gt;屬性(Property)&lt;/h3&gt;&lt;h4 id=&quot;getTitle&quot;&gt;&lt;a href=&quot;#getTitle&quot; class=&quot;headerlink&quot; title=&quot;getTitle&quot;&gt;&lt;/a&gt;getTitle&lt;/h4&gt;&lt;p&gt;取得標題&lt;/p&gt;
+&lt;h3 id=&quot;屬性-Property&quot;&gt;&lt;a href=&quot;#屬性-Property&quot; class=&quot;headerlink&quot; title=&quot;屬性(Property)&quot;&gt;&lt;/a&gt;屬性(Property)&lt;/h3&gt;&lt;p&gt;當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。&lt;/p&gt;
+&lt;h4 id=&quot;getTitle&quot;&gt;&lt;a href=&quot;#getTitle&quot; class=&quot;headerlink&quot; title=&quot;getTitle&quot;&gt;&lt;/a&gt;getTitle&lt;/h4&gt;&lt;p&gt;取得標題&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getTitle();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;getUrl&quot;&gt;&lt;a href=&quot;#getUrl&quot; class=&quot;headerlink&quot; title=&quot;getUrl&quot;&gt;&lt;/a&gt;getUrl&lt;/h4&gt;&lt;p&gt;取得網址&lt;/p&gt;
@@ -162,14 +190,15 @@
     <link href="http://alincode.github.io/2016/06/10/webdriverio-common-syntax/"/>
     <id>http://alincode.github.io/2016/06/10/webdriverio-common-syntax/</id>
     <published>2016-06-10T13:35:19.000Z</published>
-    <updated>2016-06-13T14:29:21.000Z</updated>
+    <updated>2016-06-13T14:35:20.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
 &lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;動作-Action&quot;&gt;&lt;a href=&quot;#動作-Action&quot; class=&quot;headerlink&quot; title=&quot;動作(Action)&quot;&gt;&lt;/a&gt;動作(Action)&lt;/h3&gt;&lt;h4 id=&quot;click&quot;&gt;&lt;a href=&quot;#click&quot; class=&quot;headerlink&quot; title=&quot;click&quot;&gt;&lt;/a&gt;click&lt;/h4&gt;&lt;p&gt;點擊元素(按鈕、連結、任何可被點擊的元素)&lt;/p&gt;
+&lt;h3 id=&quot;動作-Action&quot;&gt;&lt;a href=&quot;#動作-Action&quot; class=&quot;headerlink&quot; title=&quot;動作(Action)&quot;&gt;&lt;/a&gt;動作(Action)&lt;/h3&gt;&lt;p&gt;模擬使用者操作行為&lt;/p&gt;
+&lt;h4 id=&quot;click&quot;&gt;&lt;a href=&quot;#click&quot; class=&quot;headerlink&quot; title=&quot;click&quot;&gt;&lt;/a&gt;click&lt;/h4&gt;&lt;p&gt;點擊元素(按鈕、連結、任何可被點擊的元素)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.click(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
@@ -762,34 +791,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>如何時候該用 Promise？</title>
-    <link href="http://alincode.github.io/2016/05/10/when-use-promise/"/>
-    <id>http://alincode.github.io/2016/05/10/when-use-promise/</id>
-    <published>2016-05-10T00:59:58.000Z</published>
-    <updated>2016-05-19T11:59:59.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Promise&quot; alt=&quot;Promise&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;使用時機&quot;&gt;&lt;a href=&quot;#使用時機&quot; class=&quot;headerlink&quot; title=&quot;使用時機&quot;&gt;&lt;/a&gt;使用時機&lt;/h3&gt;&lt;p&gt;在寫 async function 時，最容易搞錯的就是執行順序，然而在寫 async function 時，可以用 &lt;code&gt;await&lt;/code&gt; 去解掉層層的巢狀callback 結構，但如果 async 內使用到 sync function，那該怎麼做？&lt;/p&gt;
-&lt;h3 id=&quot;實作方式&quot;&gt;&lt;a href=&quot;#實作方式&quot; class=&quot;headerlink&quot; title=&quot;實作方式&quot;&gt;&lt;/a&gt;實作方式&lt;/h3&gt;&lt;p&gt;在 sync function 包一個 Promise&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;TokenAuth.js&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports.getUser = (token) =&amp;#62; &amp;#123;&amp;#10;  return new Promise((resolve, reject) =&amp;#62; &amp;#123;&amp;#10;    // &amp;#36889;&amp;#20491;&amp;#26159;&amp;#19968;&amp;#20491; sync function&amp;#10;    TokenAuth.verifyToken(token, async(err, decodedToken) =&amp;#62; &amp;#123;&amp;#10;      if (err) reject(err);&amp;#10;      let user = await db.User.findById(decodedToken.sub);&amp;#10;      resolve(user);&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;CartAPIController&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import Promise from &amp;#34;bluebird&amp;#34;;&amp;#10;&amp;#10;module.exports = &amp;#123;&amp;#10;  get: async(req, res) =&amp;#62; &amp;#123;&amp;#10;    try &amp;#123;&amp;#10;      let promise = TokenAuth.getUser(req);&amp;#10;      let loginUser = await promise.then();&amp;#10;      let result = await CartService.getCartInfo(loginUser);&amp;#10;      return res.ok(result);&amp;#10;    &amp;#125; catch (e) &amp;#123;&amp;#10;      return res.serverError(e);&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;&amp;#10;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://fakeimg.pl/350x200/?text=Promise&quot; alt=&quot;Promise&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;使用時機&quot;&gt;&lt;a href=&quot;#使用時機&quot; class=&quot;headerlink&quot; title=&quot;使用時機&quot;&gt;&lt;/a&gt;使
-    
-    </summary>
-    
-    
-      <category term="promise" scheme="http://alincode.github.io/tags/promise/"/>
     
   </entry>
   

@@ -218,6 +218,52 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/20/evolution/">
+                            時間管理 ---&gt; 任務管理 ---&gt; 目標管理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri May 20 2016 22:18:59 GMT+0800">
+	
+		    5月 20, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <ul>
+<li>專科期間我曾沈迷在研究時間管理上，閱讀超過20本各種時間管理的理論，把自己當實驗品每種都試試看，但我漸漸的體認到時間管理無用論，因為真的照著規劃的時間管理走，必須要把其他所有變因都排除，在無人干擾的情況下，但這在現實生活中無法做到。</li>
+<li>後來我接觸到了任務管理的觀念，把每個想做的事，都切成一個小Task，接近強迫症的逼迫自己執行了一段時間，達成了許多之前我認為我自己無法達成的事情，但達成了之後，開始覺得精神疲乏，整天只想放空。</li>
+<li>後來又接觸了目標管理，是目前我覺得最好的做法，不需要做時間管理，先計劃中短期目標，針對這個目標須具備的人格特色或任務，設定一系列的養成計劃，透過神奇的21天效應，讓這件事變成一個習慣，每天就會不知覺的重複去執行，在不知不覺中達成目標。</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/20/evolution/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/19/belief/">
                             信仰
                         </a>
@@ -726,54 +772,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/11/json-generator/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/10/when-use-promise/">
-                            如何時候該用 Promise？
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue May 10 2016 08:59:58 GMT+0800">
-	
-		    5月 10, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="http://fakeimg.pl/350x200/?text=Promise" alt="Promise"></p>
-<h3 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h3><p>在寫 async function 時，最容易搞錯的就是執行順序，然而在寫 async function 時，可以用 <code>await</code> 去解掉層層的巢狀callback 結構，但如果 async 內使用到 sync function，那該怎麼做？</p>
-<h3 id="實作方式"><a href="#實作方式" class="headerlink" title="實作方式"></a>實作方式</h3><p>在 sync function 包一個 Promise</p>
-<p><strong>TokenAuth.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.getUser = (token) =&#62; &#123;&#10;  return new Promise((resolve, reject) =&#62; &#123;&#10;    // &#36889;&#20491;&#26159;&#19968;&#20491; sync function&#10;    TokenAuth.verifyToken(token, async(err, decodedToken) =&#62; &#123;&#10;      if (err) reject(err);&#10;      let user = await db.User.findById(decodedToken.sub);&#10;      resolve(user);&#10;    &#125;);&#10;  &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>CartAPIController</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Promise from &#34;bluebird&#34;;&#10;&#10;module.exports = &#123;&#10;  get: async(req, res) =&#62; &#123;&#10;    try &#123;&#10;      let promise = TokenAuth.getUser(req);&#10;      let loginUser = await promise.then();&#10;      let result = await CartService.getCartInfo(loginUser);&#10;      return res.ok(result);&#10;    &#125; catch (e) &#123;&#10;      return res.serverError(e);&#10;    &#125;&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/10/when-use-promise/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
