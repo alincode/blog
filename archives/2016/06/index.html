@@ -219,6 +219,52 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/">
+                            WebdriverIO vs Protractor 架構(1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 29 2016 21:41:27 GMT+0800">
+	
+		    6月 29, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
+<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
+<img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title="">
+<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
+<img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/JsonWireProtocol.png" alt="JsonWireProtocol.png" title="">
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/06/20/wdio-selenium-standalone-service/">
                             整合 wdio selenium standalone service
                         </a>

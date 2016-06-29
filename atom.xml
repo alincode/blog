@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-20T03:45:35.000Z</updated>
+  <updated>2016-06-29T14:05:44.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebdriverIO vs Protractor 架構(1)</title>
+    <link href="http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/"/>
+    <id>http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/</id>
+    <published>2016-06-29T13:41:27.000Z</published>
+    <updated>2016-06-29T14:05:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。&lt;/p&gt;
+&lt;p&gt;你可以從 Protractor 的 &lt;a href=&quot;https://github.com/angular/protractor/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;package.json&lt;/a&gt; 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png&quot; alt=&quot;protractor.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 &lt;a href=&quot;https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JsonWireProtocol&lt;/a&gt; RESTful API。&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/JsonWireProtocol.png&quot; alt=&quot;JsonWireProtocol.png&quot; title=&quot;&quot;&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。&lt;/p&gt;
+&lt;p&gt;你可以從 Protractor 的 &lt;a href=&quot;https://github.com/angular/protra
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>整合 wdio selenium standalone service</title>
@@ -768,29 +792,6 @@
     
     
       <category term="Selenium" scheme="http://alincode.github.io/tags/Selenium/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>線上 JSON 產生器</title>
-    <link href="http://alincode.github.io/2016/05/11/json-generator/"/>
-    <id>http://alincode.github.io/2016/05/11/json-generator/</id>
-    <published>2016-05-11T05:53:31.000Z</published>
-    <updated>2016-05-11T06:35:03.000Z</updated>
-    
-    <content type="html">&lt;img src=&quot;/blog/2016/05/11/json-generator/json-generator.png&quot; alt=&quot;json-generator.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;在寫一些 demo sample 的時候，需要 json 資料，而且必須是 http url 的形式，自己弄靜態 server 來放假資料？似乎太麻煩了，或許你可以試試看這個免費的線上服務，它提供了一些 &lt;code&gt;template tags&lt;/code&gt; 讓你去建立這些假資料，而且還提供公開的 url。&lt;/p&gt;
-&lt;p&gt;有哪些 &lt;code&gt;template tags&lt;/code&gt; 可以使用，你可以按一些 Help 按鈕，就找的到所有值了。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.json-generator.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Json Generator&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/blog/2016/05/11/json-generator/json-generator.png&quot; alt=&quot;json-generator.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;在寫一些 demo sample 的時候，需要 json 資料，而且必須是 ht
-    
-    </summary>
-    
     
   </entry>
   

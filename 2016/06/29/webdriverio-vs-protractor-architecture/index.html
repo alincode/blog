@@ -6,26 +6,34 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>整合 wdio selenium standalone service - alincode</title>
+    <title>WebdriverIO vs Protractor 架構(1) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="最近 WebdriverIO 又 release 一個新的 service，這個 service 主要是整合 selenium standalone package，不需要另外執行 selenium-standalone start，它會在背後自動 hook 做這件事。
-使用上也非常的簡單，只要原本的測試專案安裝，新增的 service npm i wdio-selenium-standalone">
+    <meta name="description" content="兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
+你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
+
+而 WebdriverIO 你則">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="整合 wdio selenium standalone service">
-<meta property="og:url" content="http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/index.html">
+<meta property="og:title" content="WebdriverIO vs Protractor 架構(1)">
+<meta property="og:url" content="http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="最近 WebdriverIO 又 release 一個新的 service，這個 service 主要是整合 selenium standalone package，不需要另外執行 selenium-standalone start，它會在背後自動 hook 做這件事。
-使用上也非常的簡單，只要原本的測試專案安裝，新增的 service npm i wdio-selenium-standalone">
-<meta property="og:updated_time" content="2016-06-20T03:45:35.000Z">
+<meta property="og:description" content="兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
+你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
+
+而 WebdriverIO 你則">
+<meta property="og:image" content="http://alincode.github.io/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png">
+<meta property="og:image" content="http://alincode.github.io/blog/2016/06/29/webdriverio-vs-protractor-architecture/JsonWireProtocol.png">
+<meta property="og:updated_time" content="2016-06-29T14:05:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="整合 wdio selenium standalone service">
-<meta name="twitter:description" content="最近 WebdriverIO 又 release 一個新的 service，這個 service 主要是整合 selenium standalone package，不需要另外執行 selenium-standalone start，它會在背後自動 hook 做這件事。
-使用上也非常的簡單，只要原本的測試專案安裝，新增的 service npm i wdio-selenium-standalone">
+<meta name="twitter:title" content="WebdriverIO vs Protractor 架構(1)">
+<meta name="twitter:description" content="兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
+你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
+
+而 WebdriverIO 你則">
     
     
         
@@ -219,32 +227,26 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            整合 wdio selenium standalone service
+            WebdriverIO vs Protractor 架構(1)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Mon Jun 20 2016 11:30:03 GMT+0800">
+    <time itemprop="datePublished" content="Wed Jun 29 2016 21:41:27 GMT+0800">
 	
-		    6月 20, 2016
+		    6月 29, 2016
     	
     </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
-
-
     
 </div>
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>最近 <code>WebdriverIO</code> 又 release 一個新的 service，這個 service 主要是整合 <code>selenium standalone</code> package，不需要另外執行 <code>selenium-standalone start</code>，它會在背後自動 hook 做這件事。</p>
-<p>使用上也非常的簡單，只要<a href="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/">原本的測試專案安裝</a>，新增的 service <code>npm i wdio-selenium-standalone-service -D</code>，並編輯 <code>wdio.conf.js</code> 加入 <code>services: [&#39;selenium-standalone&#39;],</code> 設定即可。</p>
-<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
-<li><a href="http://webdriver.io/guide/services/selenium-standalone.html" target="_blank" rel="external">SELENIUM STANDALONE SERVICE</a></li>
-</ul>
+            <p>兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
+<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
+<img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title="">
+<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
+<img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/JsonWireProtocol.png" alt="JsonWireProtocol.png" title="">
 
             
                 
@@ -254,19 +256,12 @@
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/WebdriverIO/">WebdriverIO</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/"  data-tooltip="WebdriverIO vs Protractor 架構(1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -274,7 +269,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/13/webdriverio-realworld-test-case/" data-tooltip="用 WebdriverIO 寫一個真實世界的登入範例">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/20/wdio-selenium-standalone-service/" data-tooltip="整合 wdio selenium standalone service">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -289,17 +284,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -337,7 +332,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/"  data-tooltip="WebdriverIO vs Protractor 架構(1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -345,7 +340,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/13/webdriverio-realworld-test-case/" data-tooltip="用 WebdriverIO 寫一個真實世界的登入範例">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/20/wdio-selenium-standalone-service/" data-tooltip="整合 wdio selenium standalone service">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -360,17 +355,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -390,17 +385,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/20/wdio-selenium-standalone-service/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
