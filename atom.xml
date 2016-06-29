@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-29T14:05:44.000Z</updated>
+  <updated>2016-06-29T14:23:58.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,13 +20,18 @@
     <link href="http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/"/>
     <id>http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/</id>
     <published>2016-06-29T13:41:27.000Z</published>
-    <updated>2016-06-29T14:05:44.000Z</updated>
+    <updated>2016-06-29T14:23:58.000Z</updated>
     
     <content type="html">&lt;p&gt;兩個都是目前非常當紅的前端測試框架，隨然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。&lt;/p&gt;
 &lt;p&gt;你可以從 Protractor 的 &lt;a href=&quot;https://github.com/angular/protractor/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;package.json&lt;/a&gt; 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png&quot; alt=&quot;protractor.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;圖一&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png&quot; alt=&quot;protractor.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 &lt;a href=&quot;https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JsonWireProtocol&lt;/a&gt; RESTful API。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/JsonWireProtocol.png&quot; alt=&quot;JsonWireProtocol.png&quot; title=&quot;&quot;&gt;
+&lt;p&gt;Protractor 跟 selenium-webdriver API 的使用方式非常雷同。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://seleniumhq.github.io/selenium/docs/api/javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;selenium-webdriver API&lt;/a&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;driver.findElement(By.id(&amp;#39;dog_id&amp;#39;)).click();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.protractortest.org/#/api?view=webdriver.By.id&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor API&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// Protractor&amp;#10;var dog = browser.findElement(by.id(&amp;#39;dog_id&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但 WebdriverIO API 則友善一點，非常肯定作者在這方面的努力。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;client.element(&amp;#39;#dog_id&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
     
     <summary type="html">
