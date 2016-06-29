@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-29T14:27:51.000Z</updated>
+  <updated>2016-06-29T14:42:26.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>WebdriverIO VS Protractor 架構(2)</title>
+    <link href="http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/"/>
+    <id>http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/</id>
+    <published>2016-06-30T14:30:38.000Z</published>
+    <updated>2016-06-29T14:42:26.000Z</updated>
+    
+    <content type="html">&lt;p&gt;基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://webdriver.io/guide/testrunner/pageobjects.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function Page () &amp;#123;&amp;#10;    this.title = &amp;#39;My Page&amp;#39;;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Page.prototype.open = function (path) &amp;#123;&amp;#10;    browser.url(&amp;#39;/&amp;#39; + path)&amp;#10;&amp;#125;&amp;#10;&amp;#10;module.exports = new Page()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var Page = require(&amp;#39;./page&amp;#39;)&amp;#10;&amp;#10;var LoginPage = Object.create(Page, &amp;#123;&amp;#10;    /**&amp;#10;     * define elements&amp;#10;     */&amp;#10;    username: &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#username&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    password: &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#password&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    form:     &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#login&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    flash:    &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#flash&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;&amp;#10;    /**&amp;#10;     * define or overwrite page methods&amp;#10;     */&amp;#10;    open: &amp;#123; value: function() &amp;#123;&amp;#10;        Page.open.call(this, &amp;#39;login&amp;#39;);&amp;#10;    &amp;#125; &amp;#125;,&amp;#10;&amp;#10;    submit: &amp;#123; value: function() &amp;#123;&amp;#10;        this.form.submitForm();&amp;#10;    &amp;#125; &amp;#125;&amp;#10;&amp;#125;);&amp;#10;&amp;#10;module.exports = LoginPage&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var expect = require(&amp;#39;chai&amp;#39;).expect;&amp;#10;var LoginPage = require(&amp;#39;../pageobjects/login.page&amp;#39;);&amp;#10;&amp;#10;describe(&amp;#39;login form&amp;#39;, function () &amp;#123;&amp;#10;    it(&amp;#39;should deny access with wrong creds&amp;#39;, function () &amp;#123;&amp;#10;        LoginPage.open();&amp;#10;        LoginPage.username.setValue(&amp;#39;foo&amp;#39;);&amp;#10;        LoginPage.password.setValue(&amp;#39;bar&amp;#39;);&amp;#10;        LoginPage.submit();&amp;#10;&amp;#10;        expect(LoginPage.flash.getText()).to.contain(&amp;#39;Your username is invalid!&amp;#39;);&amp;#10;    &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/angular/protractor/blob/master/docs/page-objects.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var AngularHomepage = function() &amp;#123;&amp;#10;  var nameInput = element(by.model(&amp;#39;yourName&amp;#39;));&amp;#10;  var greeting = element(by.binding(&amp;#39;yourName&amp;#39;));&amp;#10;&amp;#10;  this.get = function() &amp;#123;&amp;#10;    browser.get(&amp;#39;http://www.angularjs.org&amp;#39;);&amp;#10;  &amp;#125;;&amp;#10;&amp;#10;  this.setName = function(name) &amp;#123;&amp;#10;    nameInput.sendKeys(name);&amp;#10;  &amp;#125;;&amp;#10;&amp;#10;  this.getGreeting = function() &amp;#123;&amp;#10;    return greeting.getText();&amp;#10;  &amp;#125;;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;describe(&amp;#39;angularjs homepage&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;should greet the named user&amp;#39;, function() &amp;#123;&amp;#10;    var angularHomepage = new AngularHomepage();&amp;#10;    angularHomepage.get();&amp;#10;    angularHomepage.setName(&amp;#39;Julie&amp;#39;);&amp;#10;    expect(angularHomepage.getGreeting()).toEqual(&amp;#39;Hello Julie!&amp;#39;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.gebish.org/pages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Page&amp;#10;&amp;#10;class LoginPage extends Page &amp;#123;&amp;#10;    static url = &amp;#34;http://myapp.com/login&amp;#34;&amp;#10;    static at = &amp;#123; heading.text() == &amp;#34;Please Login&amp;#34; &amp;#125;&amp;#10;    static content = &amp;#123;&amp;#10;        heading &amp;#123; $(&amp;#34;h1&amp;#34;) &amp;#125;&amp;#10;        loginForm &amp;#123; $(&amp;#34;form.login&amp;#34;) &amp;#125;&amp;#10;        loginButton(to: AdminPage) &amp;#123; loginForm.login() &amp;#125;&amp;#10;    &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Browser&amp;#10;&amp;#10;Browser.drive &amp;#123;&amp;#10;    to LoginPage&amp;#10;    assert at(LoginPage)&amp;#10;    loginForm.with &amp;#123;&amp;#10;        username = &amp;#34;admin&amp;#34;&amp;#10;        password = &amp;#34;password&amp;#34;&amp;#10;    &amp;#125;&amp;#10;    loginButton.click()&amp;#10;    assert at(AdminPage)&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://webdriver.io/guide/testrunner/pa
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>WebdriverIO vs Protractor 架構(1)</title>
     <link href="http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/"/>
     <id>http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/</id>
     <published>2016-06-29T13:41:27.000Z</published>
-    <updated>2016-06-29T14:27:51.000Z</updated>
+    <updated>2016-06-29T14:29:07.000Z</updated>
     
     <content type="html">&lt;p&gt;兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。&lt;/p&gt;
 &lt;p&gt;你可以從 Protractor 的 &lt;a href=&quot;https://github.com/angular/protractor/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;package.json&lt;/a&gt; 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。&lt;/p&gt;
@@ -29,7 +57,7 @@
 &lt;p&gt;Protractor 跟 selenium-webdriver API 的使用方式非常雷同。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://seleniumhq.github.io/selenium/docs/api/javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;selenium-webdriver API&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = driver.findElement(By.id(&amp;#39;dog_id&amp;#39;)).click();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.protractortest.org/#/api?view=webdriver.By.id&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor API&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;// Protractor&amp;#10;var dog = browser.findElement(by.id(&amp;#39;dog_id&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.protractortest.org/#/api?view=webdriver.By.id&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor API&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = browser.findElement(by.id(&amp;#39;dog_id&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;但 &lt;a href=&quot;http://webdriver.io/api/protocol/element.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO API&lt;/a&gt; 則更友善一點，非常肯定作者在這方面的努力。&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = client.element(&amp;#39;#dog_id&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 </content>
@@ -774,29 +802,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Selenium 執行異常</title>
-    <link href="http://alincode.github.io/2016/05/12/execute-selenium-error/"/>
-    <id>http://alincode.github.io/2016/05/12/execute-selenium-error/</id>
-    <published>2016-05-12T14:51:57.000Z</published>
-    <updated>2016-05-11T15:00:09.000Z</updated>
-    
-    <content type="html">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;No Java runtime present, requesting install.&amp;#10;/usr/local/lib/node_modules/selenium-standalone/bin/selenium-standalone:61&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;如果你看到此訊息，請先安裝 JDK，因為 Selenium 需要它。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/05/12/execute-selenium-error/error.png&quot; alt=&quot;error.png&quot; title=&quot;&quot;&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span cla
-    
-    </summary>
-    
-    
-      <category term="Selenium" scheme="http://alincode.github.io/tags/Selenium/"/>
     
   </entry>
   

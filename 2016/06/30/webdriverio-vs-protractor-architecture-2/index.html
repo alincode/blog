@@ -6,33 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>WebdriverIO vs Protractor 架構(1) - alincode</title>
+    <title>WebdriverIO VS Protractor 架構(2) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
-你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
-圖一
-而 WebdriverIO">
+    <meta name="description" content="基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。
+WebdriverIO Page Object Pattern
+1function Page () &amp;#123;&amp;#10;    this.title = &amp;#39;My Page&amp;#39;;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Page.prot">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="WebdriverIO vs Protractor 架構(1)">
-<meta property="og:url" content="http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/index.html">
+<meta property="og:title" content="WebdriverIO VS Protractor 架構(2)">
+<meta property="og:url" content="http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
-你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
-圖一
-而 WebdriverIO">
-<meta property="og:image" content="http://alincode.github.io/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png">
-<meta property="og:updated_time" content="2016-06-29T14:29:07.000Z">
+<meta property="og:description" content="基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。
+WebdriverIO Page Object Pattern
+1function Page () &amp;#123;&amp;#10;    this.title = &amp;#39;My Page&amp;#39;;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Page.prot">
+<meta property="og:updated_time" content="2016-06-29T14:42:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WebdriverIO vs Protractor 架構(1)">
-<meta name="twitter:description" content="兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。
-你可以從 Protractor 的 package.json 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。
-圖一
-而 WebdriverIO">
+<meta name="twitter:title" content="WebdriverIO VS Protractor 架構(2)">
+<meta name="twitter:description" content="基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。
+WebdriverIO Page Object Pattern
+1function Page () &amp;#123;&amp;#10;    this.title = &amp;#39;My Page&amp;#39;;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Page.prot">
     
     
         
@@ -226,13 +222,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            WebdriverIO vs Protractor 架構(1)
+            WebdriverIO VS Protractor 架構(2)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jun 29 2016 21:41:27 GMT+0800">
+    <time itemprop="datePublished" content="Thu Jun 30 2016 22:30:38 GMT+0800">
 	
-		    6月 29, 2016
+		    6月 30, 2016
     	
     </time>
     
@@ -241,16 +237,15 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
-<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
-<p><strong>圖一</strong><br><img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title=""></p>
-<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
-<p>Protractor 跟 selenium-webdriver API 的使用方式非常雷同。</p>
-<p><a href="http://seleniumhq.github.io/selenium/docs/api/javascript/" target="_blank" rel="external">selenium-webdriver API</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = driver.findElement(By.id(&#39;dog_id&#39;)).click();</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = browser.findElement(by.id(&#39;dog_id&#39;));</span><br></pre></td></tr></table></figure></p>
-<p>但 <a href="http://webdriver.io/api/protocol/element.html" target="_blank" rel="external">WebdriverIO API</a> 則更友善一點，非常肯定作者在這方面的努力。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = client.element(&#39;#dog_id&#39;);</span><br></pre></td></tr></table></figure>
+            <p>基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。</p>
+<p><strong><a href="http://webdriver.io/guide/testrunner/pageobjects.html" target="_blank" rel="external">WebdriverIO Page Object Pattern</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Page () &#123;&#10;    this.title = &#39;My Page&#39;;&#10;&#125;&#10;&#10;Page.prototype.open = function (path) &#123;&#10;    browser.url(&#39;/&#39; + path)&#10;&#125;&#10;&#10;module.exports = new Page()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Page = require(&#39;./page&#39;)&#10;&#10;var LoginPage = Object.create(Page, &#123;&#10;    /**&#10;     * define elements&#10;     */&#10;    username: &#123; get: function () &#123; return browser.element(&#39;#username&#39;); &#125; &#125;,&#10;    password: &#123; get: function () &#123; return browser.element(&#39;#password&#39;); &#125; &#125;,&#10;    form:     &#123; get: function () &#123; return browser.element(&#39;#login&#39;); &#125; &#125;,&#10;    flash:    &#123; get: function () &#123; return browser.element(&#39;#flash&#39;); &#125; &#125;,&#10;&#10;    /**&#10;     * define or overwrite page methods&#10;     */&#10;    open: &#123; value: function() &#123;&#10;        Page.open.call(this, &#39;login&#39;);&#10;    &#125; &#125;,&#10;&#10;    submit: &#123; value: function() &#123;&#10;        this.form.submitForm();&#10;    &#125; &#125;&#10;&#125;);&#10;&#10;module.exports = LoginPage</span><br></pre></td></tr></table></figure>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var expect = require(&#39;chai&#39;).expect;&#10;var LoginPage = require(&#39;../pageobjects/login.page&#39;);&#10;&#10;describe(&#39;login form&#39;, function () &#123;&#10;    it(&#39;should deny access with wrong creds&#39;, function () &#123;&#10;        LoginPage.open();&#10;        LoginPage.username.setValue(&#39;foo&#39;);&#10;        LoginPage.password.setValue(&#39;bar&#39;);&#10;        LoginPage.submit();&#10;&#10;        expect(LoginPage.flash.getText()).to.contain(&#39;Your username is invalid!&#39;);&#10;    &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong><a href="https://github.com/angular/protractor/blob/master/docs/page-objects.md" target="_blank" rel="external">Protractor Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var AngularHomepage = function() &#123;&#10;  var nameInput = element(by.model(&#39;yourName&#39;));&#10;  var greeting = element(by.binding(&#39;yourName&#39;));&#10;&#10;  this.get = function() &#123;&#10;    browser.get(&#39;http://www.angularjs.org&#39;);&#10;  &#125;;&#10;&#10;  this.setName = function(name) &#123;&#10;    nameInput.sendKeys(name);&#10;  &#125;;&#10;&#10;  this.getGreeting = function() &#123;&#10;    return greeting.getText();&#10;  &#125;;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;angularjs homepage&#39;, function() &#123;&#10;  it(&#39;should greet the named user&#39;, function() &#123;&#10;    var angularHomepage = new AngularHomepage();&#10;    angularHomepage.get();&#10;    angularHomepage.setName(&#39;Julie&#39;);&#10;    expect(angularHomepage.getGreeting()).toEqual(&#39;Hello Julie!&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong><a href="http://www.gebish.org/pages" target="_blank" rel="external">Geb Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Page&#10;&#10;class LoginPage extends Page &#123;&#10;    static url = &#34;http://myapp.com/login&#34;&#10;    static at = &#123; heading.text() == &#34;Please Login&#34; &#125;&#10;    static content = &#123;&#10;        heading &#123; $(&#34;h1&#34;) &#125;&#10;        loginForm &#123; $(&#34;form.login&#34;) &#125;&#10;        loginButton(to: AdminPage) &#123; loginForm.login() &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Browser&#10;&#10;Browser.drive &#123;&#10;    to LoginPage&#10;    assert at(LoginPage)&#10;    loginForm.with &#123;&#10;        username = &#34;admin&#34;&#10;        password = &#34;password&#34;&#10;    &#125;&#10;    loginButton.click()&#10;    assert at(AdminPage)&#10;&#125;</span><br></pre></td></tr></table></figure></p>
 
             
                 
@@ -265,7 +260,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/30/webdriverio-vs-protractor-architecture-2/"  data-tooltip="WebdriverIO VS Protractor 架構(2)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -273,7 +268,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/20/wdio-selenium-standalone-service/" data-tooltip="整合 wdio selenium standalone service">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/" data-tooltip="WebdriverIO vs Protractor 架構(1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -288,17 +283,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -336,7 +331,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/30/webdriverio-vs-protractor-architecture-2/"  data-tooltip="WebdriverIO VS Protractor 架構(2)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -344,7 +339,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/20/wdio-selenium-standalone-service/" data-tooltip="整合 wdio selenium standalone service">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/" data-tooltip="WebdriverIO vs Protractor 架構(1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -359,17 +354,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -389,17 +384,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/29/webdriverio-vs-protractor-architecture/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/06/30/webdriverio-vs-protractor-architecture-2/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

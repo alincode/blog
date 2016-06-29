@@ -219,6 +219,61 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/23/ckeditor-p/">
+                            ckeditor 換行語法調整
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Mar 23 2016 22:24:43 GMT+0800">
+	
+		    3月 23, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>你要先在 html 的地方，import plugin 檔案，此處不需要 import config 檔。</p>
+<p>特別注意 ckeditor.js 的目錄，會是 config.js 的根目錄，因為我第一次在試的時候，是直接設 ckeditor 的 CDN，然後有另一個獨立的 config 檔案，但這樣是不行的，如果 ckeditor.js 檔是 http url，那 customConfig 的地方，也會變成去抓 url，不是本機的位置。</p>
+<p><code>&lt;script src=&quot;./ckeditor.js&quot;&gt;&lt;/script&gt;</code></p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>在 html 檔案內，須有對應的 html 元素跟 JS</p>
+<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea name=&#34;editor1&#34; id=&#34;editor1&#34; rows=&#34;10&#34; cols=&#34;80&#34;&#62;&#10;    This is my textarea to be replaced with CKEditor.&#10;&#60;/textarea&#62;</span><br></pre></td></tr></table></figure>
+<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CKEDITOR.replace( &#39;editor1&#39;);</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<p>不使用預設的 config，另外獨立一個設定擋。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CKEDITOR.replace( &#39;editor1&#39;, &#123;&#10;  customConfig: &#39;./custom/ckeditor_config.js&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>改 config 設定內容，預設值是<code>P 元素</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.enterMode = CKEDITOR.ENTER_P;</span><br></pre></td></tr></table></figure>
+<p>但還有其他選項，例如 <code>DIV 元素</code> 或 <code>BR 元素</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config.enterMode = CKEDITOR.ENTER_DIV;&#10;// or&#10;config.enterMode = CKEDITOR.ENTER_BR;</span><br></pre></td></tr></table></figure>
+<h3 id="完整範例"><a href="#完整範例" class="headerlink" title="完整範例"></a>完整範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;!DOCTYPE html&#62;&#10;&#60;html&#62;&#10;    &#60;head&#62;&#10;        &#60;meta charset=&#34;utf-8&#34;&#62;&#10;        &#60;title&#62;A Simple Page with CKEditor&#60;/title&#62;&#10;        &#60;!-- Make sure the path to CKEditor is correct. --&#62;&#10;        &#60;script src=&#34;./ckeditor.js&#34;&#62;&#60;/script&#62;&#10;    &#60;/head&#62;&#10;    &#60;body&#62;&#10;        &#60;form&#62;&#10;            &#60;textarea name=&#34;editor1&#34; id=&#34;editor1&#34; rows=&#34;10&#34; cols=&#34;80&#34;&#62;&#10;                This is my textarea to be replaced with CKEditor.&#10;            &#60;/textarea&#62;&#10;            &#60;script&#62;&#10;&#10;                CKEDITOR.replace( &#39;editor1&#39;);&#10;&#10;&#10;                // CKEDITOR.replace( &#39;editor1&#39;, &#123;&#10;                //     customConfig: &#39;./custom/ckeditor_config.js&#39;&#10;                // &#125;);&#10;            &#60;/script&#62;&#10;        &#60;/form&#62;&#10;    &#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// config.js &#25110; ./custom/ckeditor_config.js&#10;CKEDITOR.editorConfig = function( config ) &#123;&#10;  config.enterMode = CKEDITOR.ENTER_DIV;&#10;  // config.enterMode = CKEDITOR.ENTER_BR;&#10;  // config.enterMode = CKEDITOR.ENTER_P;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/23/ckeditor-p/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
                             JWT Authentication with AngularJS Forward 4 Web Summit (2)
                         </a>
@@ -804,63 +859,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/14/Rethinking-Web-App-Development/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/13/spa-seo-2/">
-                            SPA SEO (2)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Mar 13 2016 22:55:08 GMT+0800">
-	
-		    3月 13, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="有實作-Isomorphic-的框架"><a href="#有實作-Isomorphic-的框架" class="headerlink" title="有實作 Isomorphic 的框架"></a>有實作 Isomorphic 的框架</h3><p>這裡只列出背後有知名組織支援的框架</p>
-<h4 id="Redux-來自-reactjs"><a href="#Redux-來自-reactjs" class="headerlink" title="Redux 來自 reactjs"></a>Redux 來自 reactjs</h4><ul>
-<li>Github : <a href="https://github.com/reactjs/redux" target="_blank" rel="external">https://github.com/reactjs/redux</a></li>
-</ul>
-<h4 id="Fluxible-來自-yahoo"><a href="#Fluxible-來自-yahoo" class="headerlink" title="Fluxible 來自 yahoo"></a>Fluxible 來自 yahoo</h4><ul>
-<li>Github : <a href="https://github.com/yahoo/fluxible" target="_blank" rel="external">https://github.com/yahoo/fluxible</a></li>
-<li>Website : <a href="http://fluxible.io/" target="_blank" rel="external">http://fluxible.io/</a></li>
-</ul>
-<h4 id="Relay-來自-facebook"><a href="#Relay-來自-facebook" class="headerlink" title="Relay 來自 facebook"></a>Relay 來自 facebook</h4><ul>
-<li>Github : <a href="https://github.com/facebook/relay/" target="_blank" rel="external">https://github.com/facebook/relay/</a></li>
-</ul>
-<h3 id="幫助你快速開始的工具"><a href="#幫助你快速開始的工具" class="headerlink" title="幫助你快速開始的工具"></a>幫助你快速開始的工具</h3><ul>
-<li><a href="https://github.com/webpack/react-starter" target="_blank" rel="external">React Starter</a></li>
-<li>generator-fluxible</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-fluxible</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/13/spa-seo-2/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
