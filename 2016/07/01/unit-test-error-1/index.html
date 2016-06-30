@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Supertest 陷阱 (1) - alincode</title>
+    <title>單元測試錯誤排解 (1) - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -17,15 +17,15 @@
 主程式
 1userlikes: async(req, res) =&amp;#62; &amp;#123;&amp;#10;  cons">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Supertest 陷阱 (1)">
+<meta property="og:title" content="單元測試錯誤排解 (1)">
 <meta property="og:url" content="http://alincode.github.io/2016/07/01/unit-test-error-1/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="今天踩到一個自己種的雷，使用 res.ok 的時候少了一個 { }，但其實如果你只傳一個物件，物件本身外層本來就有 { } 不需要再多一個 { }，但如果是傳基本型別，就一定得要有 { } 存在，缺少 { } 的時候，單元測試會抓到 res.statusCode == 1，還蠻神奇的。
 主程式
 1userlikes: async(req, res) =&amp;#62; &amp;#123;&amp;#10;  cons">
-<meta property="og:updated_time" content="2016-06-30T15:01:50.000Z">
+<meta property="og:updated_time" content="2016-06-30T15:03:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Supertest 陷阱 (1)">
+<meta name="twitter:title" content="單元測試錯誤排解 (1)">
 <meta name="twitter:description" content="今天踩到一個自己種的雷，使用 res.ok 的時候少了一個 { }，但其實如果你只傳一個物件，物件本身外層本來就有 { } 不需要再多一個 { }，但如果是傳基本型別，就一定得要有 { } 存在，缺少 { } 的時候，單元測試會抓到 res.statusCode == 1，還蠻神奇的。
 主程式
 1userlikes: async(req, res) =&amp;#62; &amp;#123;&amp;#10;  cons">
@@ -222,7 +222,7 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Supertest 陷阱 (1)
+            單元測試錯誤排解 (1)
         </h1>
     
     <div class="post-meta">

@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-30T15:01:50.000Z</updated>
+  <updated>2016-06-30T15:03:43.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Supertest 陷阱 (1)</title>
+    <title>單元測試錯誤排解 (1)</title>
     <link href="http://alincode.github.io/2016/07/01/unit-test-error-1/"/>
     <id>http://alincode.github.io/2016/07/01/unit-test-error-1/</id>
     <published>2016-07-01T14:45:30.000Z</published>
-    <updated>2016-06-30T15:01:50.000Z</updated>
+    <updated>2016-06-30T15:03:43.000Z</updated>
     
     <content type="html">&lt;p&gt;今天踩到一個自己種的雷，使用 &lt;a href=&quot;http://sailsjs.org/documentation/reference/response-res/res-ok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;res.ok&lt;/a&gt; 的時候少了一個 &lt;code&gt;{ }&lt;/code&gt;，但其實如果你只傳一個物件，物件本身外層本來就有 &lt;code&gt;{ }&lt;/code&gt; 不需要再多一個 &lt;code&gt;{ }&lt;/code&gt;，但如果是傳基本型別，就一定得要有 &lt;code&gt;{ }&lt;/code&gt; 存在，缺少 &lt;code&gt;{ }&lt;/code&gt; 的時候，單元測試會抓到 &lt;code&gt;res.statusCode == 1&lt;/code&gt;，還蠻神奇的。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主程式&lt;/strong&gt;&lt;/p&gt;
