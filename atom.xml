@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-06-29T14:42:26.000Z</updated>
+  <updated>2016-06-30T15:01:50.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Supertest 陷阱 (1)</title>
+    <link href="http://alincode.github.io/2016/07/01/unit-test-error-1/"/>
+    <id>http://alincode.github.io/2016/07/01/unit-test-error-1/</id>
+    <published>2016-07-01T14:45:30.000Z</published>
+    <updated>2016-06-30T15:01:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天踩到一個自己種的雷，使用 &lt;a href=&quot;http://sailsjs.org/documentation/reference/response-res/res-ok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;res.ok&lt;/a&gt; 的時候少了一個 &lt;code&gt;{ }&lt;/code&gt;，但其實如果你只傳一個物件，物件本身外層本來就有 &lt;code&gt;{ }&lt;/code&gt; 不需要再多一個 &lt;code&gt;{ }&lt;/code&gt;，但如果是傳基本型別，就一定得要有 &lt;code&gt;{ }&lt;/code&gt; 存在，缺少 &lt;code&gt;{ }&lt;/code&gt; 的時候，單元測試會抓到 &lt;code&gt;res.statusCode == 1&lt;/code&gt;，還蠻神奇的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主程式&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;userlikes: async(req, res) =&amp;#62; &amp;#123;&amp;#10;  const gamelistId = req.params.gamelistId;&amp;#10;  try &amp;#123;&amp;#10;    let user = UserService.getLoginUser(req);&amp;#10;    let likeCount = await UserLikeService.like(user.id, gamelistId);&amp;#10;    //return res.ok(&amp;#10;    //  likeCount&amp;#10;    //);&amp;#10;    return res.ok(&amp;#123;&amp;#10;      likeCount&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125; catch (e) &amp;#123;&amp;#10;    return res.serverError(e);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;測試程式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;it(&amp;#39;post /api/gamelists/:gamelistId/userlikes&amp;#39;, async(done) =&amp;#62; &amp;#123;&amp;#10; request(sails.hooks.http.app)&amp;#10;   .post(`/api/gamelists/$&amp;#123;gamelistId&amp;#125;/userlikes`)&amp;#10;   .end((err, res) =&amp;#62; &amp;#123;&amp;#10;     let result = res.body;&amp;#10;     // res.statusCode.should.be.equal(1);&amp;#10;     res.statusCode.should.be.equal(200);&amp;#10;     result.likeCount.should.be.equal(1);&amp;#10;     done(err);&amp;#10;   &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天踩到一個自己種的雷，使用 &lt;a href=&quot;http://sailsjs.org/documentation/reference/response-res/res-ok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;res.ok&lt;/a&gt; 的時候少了一個
+    
+    </summary>
+    
+    
+      <category term="Sails" scheme="http://alincode.github.io/tags/Sails/"/>
+    
+      <category term="Supertest" scheme="http://alincode.github.io/tags/Supertest/"/>
+    
+      <category term="Unit Test" scheme="http://alincode.github.io/tags/Unit-Test/"/>
+    
+  </entry>
   
   <entry>
     <title>WebdriverIO VS Protractor 架構(2)</title>
@@ -782,26 +810,6 @@
     
     
       <category term="React" scheme="http://alincode.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CDNJS - JavaScript CDN</title>
-    <link href="http://alincode.github.io/2016/05/13/CDNJS/"/>
-    <id>http://alincode.github.io/2016/05/13/CDNJS/</id>
-    <published>2016-05-13T14:22:28.000Z</published>
-    <updated>2016-05-14T14:33:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;這個網站提供了 &lt;code&gt;JavaScript Libraries CDN&lt;/code&gt;，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/05/13/CDNJS/CDNJS.png&quot; alt=&quot;CDNJS.png&quot; title=&quot;&quot;&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;這個網站提供了 &lt;code&gt;JavaScript Libraries CDN&lt;/code&gt;，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不
-    
-    </summary>
-    
     
   </entry>
   
