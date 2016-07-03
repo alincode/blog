@@ -219,6 +219,50 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/24/choice-theory-1/">
+                            Choice Theory - 重點整理(1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue May 24 2016 22:49:51 GMT+0800">
+	
+		    5月 24, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="完全行為"><a href="#完全行為" class="headerlink" title="完全行為"></a>完全行為</h3><p>動作 -&gt; 思考 -&gt; 感覺 -&gt; 生理機能</p>
+<h3 id="選擇焦慮-選擇恐懼"><a href="#選擇焦慮-選擇恐懼" class="headerlink" title="選擇焦慮 / 選擇恐懼"></a>選擇焦慮 / 選擇恐懼</h3><p>焦慮症會被稱為做正在焦慮或選擇焦慮，新的說法會比舊的說法來得精確，因為它們是活的、主動的說法。因為這些是選擇的結果，所以有希望。如果你能夠做一個選擇，自然就能做別的「更好的選擇」。你的選擇可能很痛苦，但不是不能取消的。感到憂慮是被動的做法，好像它發生在我們身上，我們是受害者，我們沒法控制它，這種名詞和形容詞的使用會誤導我們，使我們誤信我們不能為自己做些什麼。</p>
+<h3 id="成功人士的煩惱"><a href="#成功人士的煩惱" class="headerlink" title="成功人士的煩惱"></a>成功人士的煩惱</h3><p>他們傾向對不是朋友的人，特別是不比他們富有的人表示不信任。假使這些人管理他人的人，幾乎他們所有的人都對愛與歸屬感有正常或正常以上的需求，能夠學習選擇理論，並在他們個人的生活裡運用，他們可能就會和他們管理的人做更友善的接觸。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/24/choice-theory-1/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/23/Effective-Time-Management-6/">
                             有效的時間管理 - 如何一周多擠出十個小時 重點整理(6)
                         </a>
@@ -814,51 +858,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/15/Effective-Time-Management/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/14/react-about-bind/">
-                            React Bind
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat May 14 2016 23:15:27 GMT+0800">
-	
-		    5月 14, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>React on ES6 不再 <code>自動綁定</code>，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。</p>
-<p>就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 <code>this.handleOptionsButtonClick.bind(this)</code>，它才會將 handleOptionsButtonClick 內的 this 視為是 <code>component instance</code>，否則無法使用 component instance 的 method。</p>
-<h3 id="範例一"><a href="#範例一" class="headerlink" title="範例一"></a>範例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PostInfo extends React.Component &#123;&#10;  constructor(props) &#123;&#10;    super(props);&#10;    // &#25163;&#21205;&#32129;&#23450;&#65292;&#36889;&#35041;&#30340; this &#25351;&#30340;&#26159; component instance&#10;    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);&#10;  &#125;&#10;  handleOptionsButtonClick(e) &#123;&#10;    // &#34987; bind &#20043;&#24460;&#65292;&#36889;&#35041;&#30340; this &#23559;&#25351;&#30340;&#26159; component instance&#12290;&#10;    this.setState(&#123;showOptionsModal: true&#125;);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="範例二"><a href="#範例二" class="headerlink" title="範例二"></a>範例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_checkShopCode() &#123;&#10;// &#8230; &#30053;...&#10;&#125;&#10;&#10;_changeDeliverZone(e) &#123;&#10;  CartActions.changeDeliverZone(e.target.value);&#10;  this._updateCartSum();&#10;&#125;&#10;&#10;&#60;select style=&#123;styles.select&#125; value=&#123;this.props.selectedDeliverZone&#125; onChange=&#123;this._changeDeliverZone.bind(this)&#125;&#62;</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/14/react-about-bind/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
