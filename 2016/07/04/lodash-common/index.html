@@ -6,29 +6,23 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Sequelize belongsToMany - alincode</title>
+    <title>lodash 常見功能(1) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。
-GameList.js
-1module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    // &amp;#30053;&amp;#10;  &amp;#125;,&amp;#10;  associations: function()">
+    <meta name="description" content="uniqBy1let data = [&amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 13,&amp;#10;&amp;#125;];&amp;#10;let originSize = data.length;&amp;#10;data = _.uniqBy(data, &amp;#34;Game">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Sequelize belongsToMany">
-<meta property="og:url" content="http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/index.html">
+<meta property="og:title" content="lodash 常見功能(1)">
+<meta property="og:url" content="http://alincode.github.io/2016/07/04/lodash-common/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。
-GameList.js
-1module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    // &amp;#30053;&amp;#10;  &amp;#125;,&amp;#10;  associations: function()">
-<meta property="og:updated_time" content="2016-07-03T04:18:50.000Z">
+<meta property="og:description" content="uniqBy1let data = [&amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 13,&amp;#10;&amp;#125;];&amp;#10;let originSize = data.length;&amp;#10;data = _.uniqBy(data, &amp;#34;Game">
+<meta property="og:updated_time" content="2016-07-04T03:13:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sequelize belongsToMany">
-<meta name="twitter:description" content="當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。
-GameList.js
-1module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    // &amp;#30053;&amp;#10;  &amp;#125;,&amp;#10;  associations: function()">
+<meta name="twitter:title" content="lodash 常見功能(1)">
+<meta name="twitter:description" content="uniqBy1let data = [&amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 13,&amp;#10;&amp;#125;];&amp;#10;let originSize = data.length;&amp;#10;data = _.uniqBy(data, &amp;#34;Game">
     
     
         
@@ -222,13 +216,13 @@ GameList.js
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Sequelize belongsToMany
+            lodash 常見功能(1)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Jul 03 2016 10:12:31 GMT+0800">
+    <time itemprop="datePublished" content="Mon Jul 04 2016 11:07:14 GMT+0800">
 	
-		    7月 03, 2016
+		    7月 04, 2016
     	
     </time>
     
@@ -237,13 +231,7 @@ GameList.js
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。</p>
-<p><strong>GameList.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    // &#30053;&#10;  &#125;,&#10;  associations: function() &#123;&#10;    GameList.belongsTo(User);&#10;    GameList.belongsToMany(User, &#123;&#10;      through: &#39;game_list_userlike&#39;,&#10;      as: &#39;UserLike&#39;&#10;    &#125;);&#10;&#10;  &#125;,&#10;  options: &#123;&#10;    tableName: &#39;game_list&#39;,&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>User.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    // &#30053;&#10;  &#125;,&#10;  associations: function() &#123;&#10;    User.hasMany(GameList);&#10;    User.belongsToMany(GameList, &#123;&#10;      through: &#39;game_list_userlike&#39;,&#10;      as: &#39;UserLike&#39;&#10;    &#125;);&#10;&#10;  &#125;,&#10;  options: &#123;&#10;    tableName: &#39;user&#39;,&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<p><strong>取值方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let option = &#123;&#10;  include: [&#123;&#10;    model: User,&#10;    as: &#39;UserLike&#39;&#10;  &#125;]&#10;&#125;;&#10;let gamelists = await GameList.findAll(option);</span><br></pre></td></tr></table></figure>
+            <h3 id="uniqBy"><a href="#uniqBy" class="headerlink" title="uniqBy"></a>uniqBy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let data = [&#123;&#10;  GameId: 11,&#10;&#125;, &#123;&#10;  GameId: 11,&#10;&#125;, &#123;&#10;  GameId: 13,&#10;&#125;];&#10;let originSize = data.length;&#10;data = _.uniqBy(data, &#34;GameId&#34;);&#10;let newSize = data.length;</span><br></pre></td></tr></table></figure>
 
             
                 
@@ -253,19 +241,12 @@ GameList.js
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
-            <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
-                
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Sequelize/">Sequelize</a>
-
-            </div>
-        
         <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/04/lodash-common/"  data-tooltip="lodash 常見功能(1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -273,7 +254,7 @@ GameList.js
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/01/unit-test-error-1/" data-tooltip="單元測試錯誤排解 (1)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/03/Sequelize-belongsToMany/" data-tooltip="Sequelize belongsToMany">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -288,17 +269,17 @@ GameList.js
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -336,7 +317,7 @@ GameList.js
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/04/lodash-common/"  data-tooltip="lodash 常見功能(1)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -344,7 +325,7 @@ GameList.js
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/01/unit-test-error-1/" data-tooltip="單元測試錯誤排解 (1)">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/03/Sequelize-belongsToMany/" data-tooltip="Sequelize belongsToMany">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -359,17 +340,17 @@ GameList.js
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -389,17 +370,17 @@ GameList.js
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/03/Sequelize-belongsToMany/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/04/lodash-common/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

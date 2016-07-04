@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-03T04:18:50.000Z</updated>
+  <updated>2016-07-04T03:13:21.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lodash 常見功能(1)</title>
+    <link href="http://alincode.github.io/2016/07/04/lodash-common/"/>
+    <id>http://alincode.github.io/2016/07/04/lodash-common/</id>
+    <published>2016-07-04T03:07:14.000Z</published>
+    <updated>2016-07-04T03:13:21.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;uniqBy&quot;&gt;&lt;a href=&quot;#uniqBy&quot; class=&quot;headerlink&quot; title=&quot;uniqBy&quot;&gt;&lt;/a&gt;uniqBy&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let data = [&amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 13,&amp;#10;&amp;#125;];&amp;#10;let originSize = data.length;&amp;#10;data = _.uniqBy(data, &amp;#34;GameId&amp;#34;);&amp;#10;let newSize = data.length;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;uniqBy&quot;&gt;&lt;a href=&quot;#uniqBy&quot; class=&quot;headerlink&quot; title=&quot;uniqBy&quot;&gt;&lt;/a&gt;uniqBy&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Sequelize belongsToMany</title>
@@ -759,57 +778,6 @@
     
       <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
     
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 重點整理(1)</title>
-    <link href="http://alincode.github.io/2016/05/15/Effective-Time-Management/"/>
-    <id>http://alincode.github.io/2016/05/15/Effective-Time-Management/</id>
-    <published>2016-05-15T09:01:19.000Z</published>
-    <updated>2016-05-19T11:59:59.000Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;code&gt;如何用一半的時間，完成10倍的 Task Done。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;好聳動的口號，讓我決定開始看這篇線上教學。&lt;/p&gt;
-&lt;h3 id=&quot;有效的時間管理&quot;&gt;&lt;a href=&quot;#有效的時間管理&quot; class=&quot;headerlink&quot; title=&quot;有效的時間管理&quot;&gt;&lt;/a&gt;有效的時間管理&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;時間管理是一種數學&lt;ul&gt;
-&lt;li&gt;時間管理無用論，即使知道了時間怎麼使用，還是無法把事情做完。&lt;/li&gt;
-&lt;li&gt;原因是我們無法在擁有更多的時間，每個人都只有 24 小時。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;任務管理&lt;ul&gt;
-&lt;li&gt;任務管理更重要，因為你可以無限的增加價值。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;所有人都擁有相同的時間，但成功人士的差別在於他們將時間花在高價值，並會回饋到自己身上的事。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;最大的挑戰是什麼？&quot;&gt;&lt;a href=&quot;#最大的挑戰是什麼？&quot; class=&quot;headerlink&quot; title=&quot;最大的挑戰是什麼？&quot;&gt;&lt;/a&gt;最大的挑戰是什麼？&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;被 TODO List 淹沒&lt;/li&gt;
-&lt;li&gt;我們傾向做很多事情，但不幸的事，只有少部分的事情真正對我們有價值。&lt;/li&gt;
-&lt;li&gt;無論我們決定要做哪件事，我們都只有有限的時間。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;專注是關鍵&quot;&gt;&lt;a href=&quot;#專注是關鍵&quot; class=&quot;headerlink&quot; title=&quot;專注是關鍵&quot;&gt;&lt;/a&gt;專注是關鍵&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;只專注在最高價值的事情&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;如何用一半的時間，完成10倍的 Task Done。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;好聳動的口號，讓我決定開始看這篇線上教學。&lt;/p&gt;
-&lt;h3 id=&quot;有效的時間管理&quot;&gt;&lt;a href=&quot;#有效的時間管理&quot; class=&quot;headerlink&quot; title=&quot;有效
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="80/20 法則" scheme="http://alincode.github.io/tags/80-20-%E6%B3%95%E5%89%87/"/>
     
       <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
     
