@@ -1,0 +1,1843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/20/Sequelize-camelCased-to-underscored/</loc>
+    <lastmod>2016-07-21T14:50:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>把 Sequelize 預設的駝峰命名改成底線命名</title>
+        <pubTime>2016-07-20T14:46:21.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/</loc>
+    <lastmod>2016-07-21T14:42:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>Sequelize 多對多設定範例</title>
+        <pubTime>2016-07-21T14:36:36.000Z</pubTime>
+        
+        <tag>Sequelize</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/04/lodash-common/</loc>
+    <lastmod>2016-07-04T03:13:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>lodash 常見功能(1)</title>
+        <pubTime>2016-07-04T03:07:14.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/03/Sequelize-belongsToMany/</loc>
+    <lastmod>2016-07-03T04:18:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>Sequelize belongsToMany</title>
+        <pubTime>2016-07-03T02:12:31.000Z</pubTime>
+        
+        <tag>Sequelize</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/01/unit-test-error-1/</loc>
+    <lastmod>2016-06-30T15:03:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>單元測試錯誤排解 (1)</title>
+        <pubTime>2016-07-01T14:45:30.000Z</pubTime>
+        
+        <tag>Sails</tag>
+         
+        <tag>Supertest</tag>
+         
+        <tag>Unit Test</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/30/webdriverio-vs-protractor-architecture-2/</loc>
+    <lastmod>2016-06-29T14:42:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO VS Protractor 架構(2)</title>
+        <pubTime>2016-06-30T14:30:38.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/29/webdriverio-vs-protractor-architecture/</loc>
+    <lastmod>2016-06-29T14:29:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO vs Protractor 架構(1)</title>
+        <pubTime>2016-06-29T13:41:27.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/20/wdio-selenium-standalone-service/</loc>
+    <lastmod>2016-06-20T03:45:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>整合 wdio selenium standalone service</title>
+        <pubTime>2016-06-20T03:30:03.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/10/webdriverio-common-syntax/</loc>
+    <lastmod>2016-06-13T14:35:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 常用語法(1)</title>
+        <pubTime>2016-06-10T13:35:19.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/11/webdriverio-common-syntax-2/</loc>
+    <lastmod>2016-06-13T14:34:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 常用語法(2)</title>
+        <pubTime>2016-06-11T13:35:19.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/12/webdriverio-common-syntax-3/</loc>
+    <lastmod>2016-06-13T14:29:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 常用語法(3)</title>
+        <pubTime>2016-06-12T13:35:19.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/06/13/webdriverio-realworld-test-case/</loc>
+    <lastmod>2016-06-13T07:20:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>用 WebdriverIO 寫一個真實世界的登入範例</title>
+        <pubTime>2016-06-13T05:25:02.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/24/choice-theory-1/</loc>
+    <lastmod>2016-06-05T16:21:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>Choice Theory - 重點整理(1)</title>
+        <pubTime>2016-05-24T14:49:51.000Z</pubTime>
+        
+        <tag>Choice Theory</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/25/choice-theory-2/</loc>
+    <lastmod>2016-06-05T16:21:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Choice Theory - 重點整理(2)</title>
+        <pubTime>2016-05-24T16:19:22.000Z</pubTime>
+        
+        <tag>Choice Theory</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/23/Effective-Time-Management-6/</loc>
+    <lastmod>2016-05-28T03:08:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 如何一周多擠出十個小時 重點整理(6)</title>
+        <pubTime>2016-05-23T14:14:29.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/22/Effective-Time-Management-5/</loc>
+    <lastmod>2016-05-24T14:13:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(5)</title>
+        <pubTime>2016-05-22T13:44:01.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/21/Effective-Time-Management-4/</loc>
+    <lastmod>2016-05-24T13:32:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(4)</title>
+        <pubTime>2016-05-21T02:09:59.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/19/belief/</loc>
+    <lastmod>2016-05-20T14:20:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>信仰</title>
+        <pubTime>2016-05-19T00:35:14.000Z</pubTime>
+        
+        <tag>信仰</tag>
+         
+        <tag>價值觀</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/20/evolution/</loc>
+    <lastmod>2016-05-20T14:20:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>時間管理 ---> 任務管理 ---> 目標管理</title>
+        <pubTime>2016-05-20T14:18:59.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/18/Effective-Time-Management-3/</loc>
+    <lastmod>2016-05-19T12:02:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(3)</title>
+        <pubTime>2016-05-18T15:52:40.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/16/Effective-Time-Management-2/</loc>
+    <lastmod>2016-05-19T12:02:01.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(2)</title>
+        <pubTime>2016-05-16T10:29:09.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何改善英文閱讀能力 - 經驗分享</title>
+        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
+        
+        <tag>學英文</tag>
+         
+        <tag>經驗分享</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>什麼是 Story Points</title>
+        <pubTime>2016-05-08T02:41:17.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何時候該用 Promise？</title>
+        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
+        
+        <tag>promise</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(1)</title>
+        <pubTime>2016-05-15T09:01:19.000Z</pubTime>
+        
+        <tag>80/20 法則</tag>
+         
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Bind</title>
+        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/28/WebdriverIO-Easy-Test-Setup/</loc>
+    <lastmod>2016-05-18T15:30:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 快速建構設定檔</title>
+        <pubTime>2016-04-28T08:49:54.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/13/CDNJS/</loc>
+    <lastmod>2016-05-14T14:33:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>CDNJS - JavaScript CDN</title>
+        <pubTime>2016-05-13T14:22:28.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/12/execute-selenium-error/</loc>
+    <lastmod>2016-05-11T15:00:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>Selenium 執行異常</title>
+        <pubTime>2016-05-12T14:51:57.000Z</pubTime>
+        
+        <tag>Selenium</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/</loc>
+    <lastmod>2016-05-11T14:51:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>第一個 WebdriverIO 自動化測試</title>
+        <pubTime>2016-04-23T15:25:27.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+        <tag>auto testing</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/11/json-generator/</loc>
+    <lastmod>2016-05-11T06:35:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>線上 JSON 產生器</title>
+        <pubTime>2016-05-11T05:53:31.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/07/overdesign/</loc>
+    <lastmod>2016-05-08T08:02:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>過度設計</title>
+        <pubTime>2016-05-07T02:14:34.000Z</pubTime>
+        
+        <tag>bad smell</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/06/How-to-be-a-self-demanding-readers/</loc>
+    <lastmod>2016-05-08T02:13:22.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何閱讀一本書 - 如何做一個自我要求的讀者(重點整理)</title>
+        <pubTime>2016-05-06T01:48:30.000Z</pubTime>
+        
+        <tag>如何閱讀一本書</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/05/webdriverio-with-chai/</loc>
+    <lastmod>2016-05-07T15:11:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 與 Chai 整合</title>
+        <pubTime>2016-05-05T15:01:49.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+        <tag>chai</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/30/webdriverio-with-chimp-with-mocha/</loc>
+    <lastmod>2016-05-07T14:49:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 與 Chimp 和 Mocha 整合</title>
+        <pubTime>2016-04-30T08:41:38.000Z</pubTime>
+        
+        <tag>Chimp</tag>
+         
+        <tag>Mocha</tag>
+         
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/</loc>
+    <lastmod>2016-05-07T03:19:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>發散式變化 vs 霰彈式修改</title>
+        <pubTime>2016-05-04T02:22:22.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/</loc>
+    <lastmod>2016-05-04T15:31:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>歐付寶 ChoosePayment vs PaymentType</title>
+        <pubTime>2016-05-03T14:56:58.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/02/sequelizejs-HasOne-vs-belongsTo/</loc>
+    <lastmod>2016-05-04T14:47:44.000Z</lastmod>
+    <data>
+        <display>
+        <title>sequelizejs HasOne vs belongsTo</title>
+        <pubTime>2016-05-02T14:37:24.000Z</pubTime>
+        
+        <tag>sequelizejs</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/01/webdriverio-introduction/</loc>
+    <lastmod>2016-04-30T07:02:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>WebdriverIO 介紹</title>
+        <pubTime>2016-05-01T10:02:29.000Z</pubTime>
+        
+        <tag>WebdriverIO</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/04/npm-bin/</loc>
+    <lastmod>2016-04-29T14:07:12.000Z</lastmod>
+    <data>
+        <display>
+        <title>NPM bin 執行順序</title>
+        <pubTime>2016-03-04T14:00:12.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/29/Hated-courage-part-5/</loc>
+    <lastmod>2016-04-29T09:38:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>被討厭的勇氣 (重點 5) - 認真活在當下</title>
+        <pubTime>2016-04-29T13:14:57.000Z</pubTime>
+        
+        <tag>被討厭的勇氣</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/21/start-with-nightwatch/</loc>
+    <lastmod>2016-04-28T11:01:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>第一個 Nightwatch 自動化測試</title>
+        <pubTime>2016-04-21T10:04:42.000Z</pubTime>
+        
+        <tag>nightwatch</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端測試" url="http://alincode.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/27/Hated-courage-part-4/</loc>
+    <lastmod>2016-04-27T08:52:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>被討厭的勇氣 (重點 4)</title>
+        <pubTime>2016-04-27T04:33:41.000Z</pubTime>
+        
+        <tag>被討厭的勇氣</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/24/Hated-courage-part-1/</loc>
+    <lastmod>2016-04-26T09:36:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>被討厭的勇氣 (重點 1)</title>
+        <pubTime>2016-04-24T08:27:30.000Z</pubTime>
+        
+        <tag>被討厭的勇氣</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/26/Hated-courage-part-3/</loc>
+    <lastmod>2016-04-26T09:13:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>被討厭的勇氣 (重點 3) - 課題分離</title>
+        <pubTime>2016-04-26T08:27:30.000Z</pubTime>
+        
+        <tag>被討厭的勇氣</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/25/Hated-courage-part-2/</loc>
+    <lastmod>2016-04-26T08:37:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>被討厭的勇氣 (重點 2)</title>
+        <pubTime>2016-04-25T08:27:30.000Z</pubTime>
+        
+        <tag>被討厭的勇氣</tag>
+         
+         
+           
+             
+              <breadCrumb title="非專業書閱讀" url="http://alincode.github.io/blog/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/22/front-test-framework-compare/</loc>
+    <lastmod>2016-04-23T16:05:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>自動化測試框架比較 with NodeJS</title>
+        <pubTime>2016-04-21T18:56:27.000Z</pubTime>
+        
+        <tag>auto testing</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/05/hexo-deploy/</loc>
+    <lastmod>2016-04-23T11:24:17.000Z</lastmod>
+    <data>
+        <display>
+        <title>將 hexo 部署到 github page</title>
+        <pubTime>2016-03-05T07:00:46.000Z</pubTime>
+        
+        <tag>deploy</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/19/build-docs-with-gitbook/</loc>
+    <lastmod>2016-04-23T10:52:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>建構一個漂亮的文件 with gitbook</title>
+        <pubTime>2016-04-19T06:30:41.000Z</pubTime>
+        
+        <tag>gitbook</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/</loc>
+    <lastmod>2016-04-22T10:40:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>Selenium with Nodejs</title>
+        <pubTime>2016-04-20T09:29:41.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/18/how-to-read-a-book/</loc>
+    <lastmod>2016-04-18T15:18:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>好書推薦 - 如何閱讀一本書</title>
+        <pubTime>2016-04-18T13:50:13.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/16/promise-chaining/</loc>
+    <lastmod>2016-04-17T16:24:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>Promise Chaining</title>
+        <pubTime>2016-04-15T16:01:44.000Z</pubTime>
+        
+        <tag>Chain</tag>
+         
+        <tag>Promise</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/</loc>
+    <lastmod>2016-04-17T06:31:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT Authentication with AngularJS 重點整理 (1)</title>
+        <pubTime>2016-03-20T11:35:42.000Z</pubTime>
+        
+        <tag>jwt</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/</loc>
+    <lastmod>2016-04-17T06:31:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT Authentication with AngularJS Forward 4 Web Summit (2)</title>
+        <pubTime>2016-03-22T14:16:09.000Z</pubTime>
+        
+        <tag>JWT</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/07/jwt-5/</loc>
+    <lastmod>2016-04-17T06:31:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT (5) Client Side 實作範例</title>
+        <pubTime>2016-03-07T14:16:09.000Z</pubTime>
+        
+        <tag>jwt</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/03/jwt-4/</loc>
+    <lastmod>2016-04-17T06:31:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT (4) Server Side 實作範例</title>
+        <pubTime>2016-03-03T14:48:35.000Z</pubTime>
+        
+        <tag>jsonwebtoken</tag>
+         
+        <tag>jwt</tag>
+         
+        <tag>sails</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/03/jwt-3/</loc>
+    <lastmod>2016-04-17T06:30:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT (3) 什麼是 JWT</title>
+        <pubTime>2016-03-03T07:37:02.000Z</pubTime>
+        
+        <tag>jwt</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/02/jwt-2/</loc>
+    <lastmod>2016-04-17T06:30:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT (2) - 進化的 Token</title>
+        <pubTime>2016-03-02T04:17:14.000Z</pubTime>
+        
+        <tag>jwt</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/01/jwt-1/</loc>
+    <lastmod>2016-04-17T06:30:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>JWT (1) - 為什麼我們要用 Access Token ?</title>
+        <pubTime>2016-03-01T11:41:01.000Z</pubTime>
+        
+        <tag>jwt</tag>
+         
+         
+           
+             
+              <breadCrumb title="JWT" url="http://alincode.github.io/blog/categories/JWT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/17/sequelize-one-to-many-update/</loc>
+    <lastmod>2016-04-17T06:27:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>Sequelize 一對多更新</title>
+        <pubTime>2016-04-17T06:03:02.000Z</pubTime>
+        
+        <tag>One to Many</tag>
+         
+        <tag>Sequelize</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/</loc>
+    <lastmod>2016-04-16T15:40:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>Chain Of Responsibility Design Pattern (javascript)</title>
+        <pubTime>2016-04-15T15:59:01.000Z</pubTime>
+        
+        <tag>Chain Of Responsibility</tag>
+         
+        <tag>design pattern</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/07/buddy-ci/</loc>
+    <lastmod>2016-04-13T13:07:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Buddy CI 介紹</title>
+        <pubTime>2016-04-07T15:14:39.000Z</pubTime>
+        
+        <tag>Buddy CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Buddy CI" url="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/14/buddy-ci-5/</loc>
+    <lastmod>2016-04-13T13:07:47.000Z</lastmod>
+    <data>
+        <display>
+        <title>Buddy CI 與 PM2 的整合(踩雷)</title>
+        <pubTime>2016-04-14T12:18:37.000Z</pubTime>
+        
+        <tag>Buddy CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Buddy CI" url="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/10/buddy-ci-4/</loc>
+    <lastmod>2016-04-13T13:07:41.000Z</lastmod>
+    <data>
+        <display>
+        <title>Buddy CI 與 Slack 整合</title>
+        <pubTime>2016-04-09T18:03:56.000Z</pubTime>
+        
+        <tag>Buddy CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Buddy CI" url="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/09/buddy-ci-3/</loc>
+    <lastmod>2016-04-13T13:07:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>Buddy CI 踩雷心得</title>
+        <pubTime>2016-04-09T15:29:02.000Z</pubTime>
+        
+        <tag>Buddy CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Buddy CI" url="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/08/buddy-ci-2/</loc>
+    <lastmod>2016-04-13T13:07:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>Buddy CI Pipelines 流程</title>
+        <pubTime>2016-04-08T15:48:35.000Z</pubTime>
+        
+        <tag>Buddy CI</tag>
+         
+         
+           
+             
+              <breadCrumb title="Buddy CI" url="http://alincode.github.io/blog/categories/Buddy-CI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/13/lodash-require-key-check/</loc>
+    <lastmod>2016-04-13T06:20:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>lodash - 必要值檢查</title>
+        <pubTime>2016-04-13T05:10:14.000Z</pubTime>
+        
+        <tag>lodash</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/12/vultr/</loc>
+    <lastmod>2016-04-12T13:46:43.000Z</lastmod>
+    <data>
+        <display>
+        <title>Vultr VPS</title>
+        <pubTime>2016-04-12T12:37:03.000Z</pubTime>
+        
+        <tag>VPS</tag>
+         
+        <tag>Vultr</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/26/react-debug-tip/</loc>
+    <lastmod>2016-04-10T19:26:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Debug 小技巧</title>
+        <pubTime>2016-03-25T18:00:19.000Z</pubTime>
+        
+        <tag>debug</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/14/Rethinking-Web-App-Development/</loc>
+    <lastmod>2016-04-10T19:24:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>Rethinking Web App Development 重點整理</title>
+        <pubTime>2016-03-14T14:00:46.000Z</pubTime>
+        
+        <tag>web app Development</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/18/Speed-up-Server-Side-Rendering/</loc>
+    <lastmod>2016-04-10T19:23:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>Speed up Server Side Rendering 重點整理</title>
+        <pubTime>2016-03-17T16:00:01.000Z</pubTime>
+        
+        <tag>Server Side Rendering</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/15/Dan-Abramov-Live-React-Hot-Reloading/</loc>
+    <lastmod>2016-04-10T19:22:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>Dan Abramov - Live React Hot Reloading 重點整理</title>
+        <pubTime>2016-03-15T15:59:11.000Z</pubTime>
+        
+        <tag>redux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/06/Building-Isomorphic-Web-Applications-with-React/</loc>
+    <lastmod>2016-04-10T19:21:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>Building Isomorphic Web Applications with React 重點整理</title>
+        <pubTime>2016-04-06T15:12:46.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/</loc>
+    <lastmod>2016-04-10T19:17:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>Geb for functional testing of Grails app 重點整理</title>
+        <pubTime>2016-04-10T19:03:14.000Z</pubTime>
+        
+        <tag>Geb</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/04/view-model-vs-model/</loc>
+    <lastmod>2016-04-06T05:43:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>view model vs model</title>
+        <pubTime>2016-04-04T08:43:14.000Z</pubTime>
+        
+        <tag>view model</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/05/github-shortcut/</loc>
+    <lastmod>2016-04-05T14:45:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>github 快速鍵</title>
+        <pubTime>2016-04-05T14:18:54.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/03/PM2/</loc>
+    <lastmod>2016-04-03T15:39:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>PM2 管理工具</title>
+        <pubTime>2016-04-02T18:30:15.000Z</pubTime>
+        
+        <tag>PM2</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/02/geb-version-12-x/</loc>
+    <lastmod>2016-04-02T05:44:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>Geb 0.10.x ~ 0.12.x 更新重點</title>
+        <pubTime>2016-04-01T23:46:19.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/04/01/geb-version-13-x/</loc>
+    <lastmod>2016-04-01T23:51:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>Geb 0.13.x 更新重點</title>
+        <pubTime>2016-04-01T13:28:33.000Z</pubTime>
+        
+        <tag>Geb</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/31/flux-life-cycle-demo/</loc>
+    <lastmod>2016-03-31T18:40:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Flux 生命週期範例</title>
+        <pubTime>2016-03-30T19:52:49.000Z</pubTime>
+        
+        <tag>Flux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/30/react-disable-button/</loc>
+    <lastmod>2016-03-30T17:23:05.000Z</lastmod>
+    <data>
+        <display>
+        <title>React 防止連點</title>
+        <pubTime>2016-03-30T15:09:36.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/29/jade-mixins/</loc>
+    <lastmod>2016-03-29T17:13:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>Jade Mixins</title>
+        <pubTime>2016-03-29T14:31:36.000Z</pubTime>
+        
+        <tag>Jade</tag>
+         
+        <tag>Mixins</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/28/sails-i18n-object-notation/</loc>
+    <lastmod>2016-03-28T10:41:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>物件宣告 Sails 多國語系</title>
+        <pubTime>2016-03-28T09:12:56.000Z</pubTime>
+        
+        <tag>Sails</tag>
+         
+        <tag>i18n</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/27/sequelize-delete/</loc>
+    <lastmod>2016-03-27T13:47:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>sequelize delete</title>
+        <pubTime>2016-03-27T13:30:16.000Z</pubTime>
+        
+        <tag>sequelize</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/25/git-branch/</loc>
+    <lastmod>2016-03-25T15:34:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>取得其他 git remote branch</title>
+        <pubTime>2016-03-25T15:18:45.000Z</pubTime>
+        
+        <tag>git branch</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/24/JQuery-Module-Pattern/</loc>
+    <lastmod>2016-03-24T18:11:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery Module Pattern</title>
+        <pubTime>2016-03-24T13:36:33.000Z</pubTime>
+        
+        <tag>JQuery</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/23/ckeditor-p/</loc>
+    <lastmod>2016-03-23T19:22:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>ckeditor 換行語法調整</title>
+        <pubTime>2016-03-23T14:24:43.000Z</pubTime>
+        
+        <tag>ckeditor</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/21/chrome-debug-rendering/</loc>
+    <lastmod>2016-03-21T15:35:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>chrome debug rendering</title>
+        <pubTime>2016-03-21T13:53:18.000Z</pubTime>
+        
+        <tag>chrome</tag>
+         
+        <tag>debug</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/19/create-your-own-snippet/</loc>
+    <lastmod>2016-03-21T15:10:39.000Z</lastmod>
+    <data>
+        <display>
+        <title>建立自己的 ATOM snippet</title>
+        <pubTime>2016-03-19T12:59:46.000Z</pubTime>
+        
+        <tag>ATOM</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/17/git-flow-request-pull/</loc>
+    <lastmod>2016-03-16T17:51:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>git flow request pull</title>
+        <pubTime>2016-03-16T16:26:31.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/16/Request-Entity-Too-Large/</loc>
+    <lastmod>2016-03-16T15:42:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>Request Entity Too Large</title>
+        <pubTime>2016-03-16T15:18:23.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/13/spa-seo-2/</loc>
+    <lastmod>2016-03-13T15:01:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>SPA SEO (2)</title>
+        <pubTime>2016-03-13T14:55:08.000Z</pubTime>
+        
+        <tag>SEO</tag>
+         
+        <tag>SPA</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/12/spa-seo/</loc>
+    <lastmod>2016-03-12T16:42:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>SPA SEO (1)</title>
+        <pubTime>2016-03-12T14:38:24.000Z</pubTime>
+        
+        <tag>SEO</tag>
+         
+        <tag>SPA</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/11/controller-vs-service/</loc>
+    <lastmod>2016-03-12T14:40:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>controller vs service</title>
+        <pubTime>2016-03-11T13:17:33.000Z</pubTime>
+        
+        <tag>pattern</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/09/git-format-patch/</loc>
+    <lastmod>2016-03-11T12:59:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>git format-patch</title>
+        <pubTime>2016-03-09T15:31:33.000Z</pubTime>
+        
+        <tag>git format-patch</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/10/js-var/</loc>
+    <lastmod>2016-03-10T15:46:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>javascript var 作用域</title>
+        <pubTime>2016-03-10T15:12:10.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/08/fb-share/</loc>
+    <lastmod>2016-03-09T04:06:29.000Z</lastmod>
+    <data>
+        <display>
+        <title>Facebook Share vs Feed</title>
+        <pubTime>2016-03-08T15:47:35.000Z</pubTime>
+        
+        <tag>facebook</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/03/06/git-stash/</loc>
+    <lastmod>2016-03-05T16:09:30.000Z</lastmod>
+    <data>
+        <display>
+        <title>使用 git stash</title>
+        <pubTime>2016-03-05T16:09:30.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/02/27/set-hexo-tranquilpeak-theme/</loc>
+    <lastmod>2016-03-05T15:12:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>安裝 hexo tranquilpeak 佈景</title>
+        <pubTime>2016-02-27T11:40:19.000Z</pubTime>
+        
+        <tag>hexo theme</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+</urlset>

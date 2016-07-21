@@ -218,6 +218,110 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/08/fb-share/">
+                            Facebook Share vs Feed
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 23:47:35 GMT+0800">
+	
+		    3月 08, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Share-Dialog"><a href="#Share-Dialog" class="headerlink" title="Share Dialog"></a>Share Dialog</h3><img src="/blog/2016/03/08/fb-share/share.png" alt="share.png" title="">
+<p>The Share dialog gives <strong>people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger.</strong> This does not require Facebook Login or any extended permissions, so it is the easiest way to enable sharing on the web.</p>
+<p>不需取得額外授權，並可選擇分佈在自己或朋友或群組的 Timeline，或將信息私訊給朋友。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;share&#39;,&#10;  href: &#39;https://developers.facebook.com/docs/&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Feed-Dialog"><a href="#Feed-Dialog" class="headerlink" title="Feed Dialog"></a>Feed Dialog</h2><img src="/blog/2016/03/08/fb-share/feed.png" alt="feed.png" title="">
+<p>You can add the feed dialog to your app so <strong>people can publish individual stories to their timeline.</strong> This includes captions that your app manages and a personal comment from the person sharing the content.</p>
+<p>只能發佈在在自己的 Timeline，並可以指定附加訊息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;feed&#39;,&#10;  link: &#39;https://developers.facebook.com/docs/&#39;,&#10;  caption: &#39;An example caption&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/08/fb-share/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/07/jwt-5/">
+                            JWT (5) Client Side 實作範例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Mar 07 2016 22:16:09 GMT+0800">
+	
+		    3月 07, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20358;&#22312; request response&#10;var token = &#39;xxxxxxx&#39;;&#10;localStorage.setItem(&#39;accessToken&#39;, token);</span><br></pre></td></tr></table></figure>
+<p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
+<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure>
+<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt_decode = require(&#39;jwt-decode&#39;);&#10;&#10;var decoded = jwt_decode(_token)&#10;&#10;if ((decoded.exp * 1000) &#60; new Date().getTime()) &#123;&#10;  // token &#36942;&#26399;&#10;&#125; else &#123;&#10;  // token &#26377;&#25928;&#10;&#125;</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/07/jwt-5/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/06/git-stash/">
                             使用 git stash
                         </a>

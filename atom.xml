@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-04T03:13:21.000Z</updated>
+  <updated>2016-07-21T14:42:05.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sequelize 多對多設定範例</title>
+    <link href="http://alincode.github.io/2016/07/21/Sequelize-many-to-many/"/>
+    <id>http://alincode.github.io/2016/07/21/Sequelize-many-to-many/</id>
+    <published>2016-07-21T14:36:36.000Z</published>
+    <updated>2016-07-21T14:42:05.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;belongsToMany&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;User.belongsToMany(GameList, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GameList&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Favorite&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    id: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      autoIncrement: true,&amp;#10;      primaryKey: true&amp;#10;    &amp;#125;,&amp;#10;    gameListId: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      name: &amp;#39;gameListId&amp;#39;,&amp;#10;      field: &amp;#39;game_list_id&amp;#39;&amp;#10;    &amp;#125;,&amp;#10;    userId: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      name: &amp;#39;userId&amp;#39;,&amp;#10;      field: &amp;#39;user_id&amp;#39;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;,&amp;#10;  associations: function() &amp;#123;&amp;#125;,&amp;#10;  options: &amp;#123;&amp;#10;    tableName: &amp;#39;favorites&amp;#39;,&amp;#10;    classMethods: &amp;#123;&amp;#125;,&amp;#10;    instanceMethods: &amp;#123;&amp;#125;,&amp;#10;    hooks: &amp;#123;&amp;#125;,&amp;#10;    underscored: true&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;belongsToMany&lt;/a&gt;&lt;/p&gt;
+&lt;p
+    
+    </summary>
+    
+    
+      <category term="Sequelize" scheme="http://alincode.github.io/tags/Sequelize/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>把 Sequelize 預設的駝峰命名改成底線命名</title>
+    <link href="http://alincode.github.io/2016/07/20/Sequelize-camelCased-to-underscored/"/>
+    <id>http://alincode.github.io/2016/07/20/Sequelize-camelCased-to-underscored/</id>
+    <published>2016-07-20T14:46:21.000Z</published>
+    <updated>2016-07-21T14:50:59.000Z</updated>
+    
+    <content type="html">&lt;p&gt;camelCased：駝峰命名&lt;br&gt;underscored：底線命名&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;options: &amp;#123;&amp;#10;  tableName: &amp;#39;your_table_name&amp;#39;,&amp;#10;  classMethods: &amp;#123;&amp;#125;,&amp;#10;  instanceMethods: &amp;#123;&amp;#125;,&amp;#10;  hooks: &amp;#123;&amp;#125;,&amp;#10;  paranoid: true,&amp;#10;  underscored: true // ===&amp;#62; &amp;#36889;&amp;#34892;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;camelCased：駝峰命名&lt;br&gt;underscored：底線命名&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>lodash 常見功能(1)</title>
@@ -675,104 +721,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;a href=&quot;#有三件事情可以幫助你，把高價值的事情做完&quot; class=&quot;headerlink&quot; title=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;/a&gt;有三件事情可以幫助你，把高價值的事情做完&lt;/h3&gt;&lt;
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何改善英文閱讀能力 - 經驗分享</title>
-    <link href="http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/"/>
-    <id>http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/</id>
-    <published>2016-05-17T14:43:31.000Z</published>
-    <updated>2016-05-19T11:59:59.000Z</updated>
-    
-    <content type="html">&lt;p&gt;去年在加拿大語言學校的時候，入學測驗會先考聽說讀寫，考試的方式基本上就是寫考卷，交卷後去另一個教室，隨機指派一個老師幫你面試，基本就是自我介紹，然後他會說三個題目，你可以挑任何一個你覺得比較好發揮的題目回答。如果是半天課程的人只有兩堂課，溝通課是必修，然後他會告訴你成績最差的一科，建議你選課方向。&lt;/p&gt;
-&lt;p&gt;通常台灣人最強的應該是讀，但讀卻是我最弱的一項，所以我被指派到了閱讀課，有些人會覺得閱讀課很浪費時間，不過之前已經在菲律賓上了 5 個月的一對一對話課程，閱讀課反而給我帶來一些新鮮感。在這個人人上大學的時代，閱讀有什麼困難呢？不就多花一點時間就好了？&lt;code&gt;但上了閱讀課之後，我才明白原來我真的不懂閱讀。&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;「如何閱讀一本書」這本書有提到，閱讀有三個層次基礎閱讀、檢視閱讀、分析閱讀，只要有國中畢業得人，都不需要在乎基本閱讀這個層級，甚至我們從不知道有發生過這個階段，除了國小老師誰會記得國小上課內容？但所有內容我們已經內化成內功了，根本不需要思考。但在接觸另一個語言的時候，並沒有意識到，原來閱讀能力被降級了，所以我們仍用了以往讀母語書的技巧去讀英文書，發現效果很差。&lt;/p&gt;
-&lt;p&gt;大概記錄一下，我自己體驗過覺得很重要的技能。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;如何知道這本書適不適合你閱讀？有兩件事必須要評估。&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;你有沒有興趣&lt;/li&gt;
-&lt;li&gt;你能不能看懂&lt;ul&gt;
-&lt;li&gt;如果一頁有超過十個單字你看不懂，那這本書遠遠超過你目前的閱讀能力，你應該換更簡單的書籍。&lt;/li&gt;
-&lt;li&gt;有些人會選擇硬 K 它，通常最後會轉變成直接放棄。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;同個內容分三種技巧閱讀&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;第一遍&lt;ul&gt;
-&lt;li&gt;用極快的速度用跳躍的方式閱讀&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;挑出三個一直重複出現的關鍵字&lt;/code&gt;，如果這三個字不懂，試著從前後文推敲，真的不行在查字典。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;第二遍&lt;ul&gt;
-&lt;li&gt;用中等速度閱讀&lt;/li&gt;
-&lt;li&gt;每個段落挑出最重要的一行句子，然後把被挑句子&lt;code&gt;濃縮成一段話&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;第三遍&lt;ul&gt;
-&lt;li&gt;細讀&lt;/li&gt;
-&lt;li&gt;如果不知道這個字就不知道整句句子的意思的字，特別挑出來嘗試 &lt;code&gt;猜測&lt;/code&gt; 單字的意思。&lt;/li&gt;
-&lt;li&gt;通常八成不懂的單字，都可以靠從句子中推測，抓出大概的意思，可以逐漸磨練出猜測的準度提升閱讀技巧。&lt;/li&gt;
-&lt;li&gt;如果每個不懂的單字都查，很快就破壞你閱讀的興致而放棄閱讀。&lt;/li&gt;
-&lt;li&gt;有些單字會依照情境不同而有不同意義，所以有時候查了也沒用。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;去年在加拿大語言學校的時候，入學測驗會先考聽說讀寫，考試的方式基本上就是寫考卷，交卷後去另一個教室，隨機指派一個老師幫你面試，基本就是自我介紹，然後他會說三個題目，你可以挑任何一個你覺得比較好發揮的題目回答。如果是半天課程的人只有兩堂課，溝通課是必修，然後他會告訴你成績最差
-    
-    </summary>
-    
-    
-      <category term="學英文" scheme="http://alincode.github.io/tags/%E5%AD%B8%E8%8B%B1%E6%96%87/"/>
-    
-      <category term="經驗分享" scheme="http://alincode.github.io/tags/%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 重點整理(2)</title>
-    <link href="http://alincode.github.io/2016/05/16/Effective-Time-Management-2/"/>
-    <id>http://alincode.github.io/2016/05/16/Effective-Time-Management-2/</id>
-    <published>2016-05-16T10:29:09.000Z</published>
-    <updated>2016-05-19T12:02:01.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;什麼是高價值的事情&quot;&gt;&lt;a href=&quot;#什麼是高價值的事情&quot; class=&quot;headerlink&quot; title=&quot;什麼是高價值的事情&quot;&gt;&lt;/a&gt;什麼是高價值的事情&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;相對於其他事情，它可以帶給你更高的報酬。&lt;/li&gt;
-&lt;li&gt;這項活動將帶你更趨近於你的願景。&lt;/li&gt;
-&lt;li&gt;這項活動將帶你領你，跳到更高一層的階段。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;找出過去你專注的事情？&quot;&gt;&lt;a href=&quot;#找出過去你專注的事情？&quot; class=&quot;headerlink&quot; title=&quot;找出過去你專注的事情？&quot;&gt;&lt;/a&gt;找出過去你專注的事情？&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;列出你昨天做的每件事&lt;/li&gt;
-&lt;li&gt;接著寫下你預期會從這些事情回報到你自己身上價值的數值。&lt;/li&gt;
-&lt;li&gt;回顧你的列表，你到底得到多少回報？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;80-20法則&quot;&gt;&lt;a href=&quot;#80-20法則&quot; class=&quot;headerlink&quot; title=&quot;80 / 20法則&quot;&gt;&lt;/a&gt;80 / 20法則&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;80% 的收獲，來自於 20% 的付出。&lt;/li&gt;
-&lt;li&gt;80% 的結果，來自於 20% 的原因。&lt;/li&gt;
-&lt;li&gt;反過來說，在我們所做的全部努力之中，有 80% 的付出只能帶來 20% 的結果。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;什麼是高價值的事情&quot;&gt;&lt;a href=&quot;#什麼是高價值的事情&quot; class=&quot;headerlink&quot; title=&quot;什麼是高價值的事情&quot;&gt;&lt;/a&gt;什麼是高價值的事情&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;相對於其他事情，它可以帶給你更高的報酬。&lt;/li&gt;
-&lt;li&gt;這項活動將帶
     
     </summary>
     
