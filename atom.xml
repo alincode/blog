@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-21T14:42:05.000Z</updated>
+  <updated>2016-07-24T03:28:07.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ATOM 心智圖外掛</title>
+    <link href="http://alincode.github.io/2016/07/24/atom-markdown-mindmap-plugin/"/>
+    <id>http://alincode.github.io/2016/07/24/atom-markdown-mindmap-plugin/</id>
+    <published>2016-07-24T03:22:28.000Z</published>
+    <updated>2016-07-24T03:28:07.000Z</updated>
+    
+    <content type="html">&lt;p&gt;今天發現一個蠻有趣的 ATOM plugin 叫 &lt;a href=&quot;https://atom.io/packages/markdown-mindmap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown mindmap&lt;/a&gt;，它可以將 Markdown 裡格式的標題，直接轉成心智圖。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/07/24/atom-markdown-mindmap-plugin/markdown.png&quot; alt=&quot;markdown.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;心智圖&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/07/24/atom-markdown-mindmap-plugin/mindmap.png&quot; alt=&quot;mindmap.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天發現一個蠻有趣的 ATOM plugin 叫 &lt;a href=&quot;https://atom.io/packages/markdown-mindmap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown mindmap&lt;/a&gt;，它可以將 Mar
+    
+    </summary>
+    
+    
+      <category term="ATOM" scheme="http://alincode.github.io/tags/ATOM/"/>
+    
+      <category term="markdown mindmap" scheme="http://alincode.github.io/tags/markdown-mindmap/"/>
+    
+  </entry>
   
   <entry>
     <title>Sequelize 多對多設定範例</title>
@@ -668,68 +693,6 @@
       <category term="信仰" scheme="http://alincode.github.io/tags/%E4%BF%A1%E4%BB%B0/"/>
     
       <category term="價值觀" scheme="http://alincode.github.io/tags/%E5%83%B9%E5%80%BC%E8%A7%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 重點整理(3)</title>
-    <link href="http://alincode.github.io/2016/05/18/Effective-Time-Management-3/"/>
-    <id>http://alincode.github.io/2016/05/18/Effective-Time-Management-3/</id>
-    <published>2016-05-18T15:52:40.000Z</published>
-    <updated>2016-05-19T12:02:18.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;a href=&quot;#有三件事情可以幫助你，把高價值的事情做完&quot; class=&quot;headerlink&quot; title=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;/a&gt;有三件事情可以幫助你，把高價值的事情做完&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;識別真正的高價值的任務&lt;/li&gt;
-&lt;li&gt;擴大規模&lt;/li&gt;
-&lt;li&gt;確認它們真的被完成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;識別真正的高價值的任務&quot;&gt;&lt;a href=&quot;#識別真正的高價值的任務&quot; class=&quot;headerlink&quot; title=&quot;識別真正的高價值的任務&quot;&gt;&lt;/a&gt;識別真正的高價值的任務&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;常見高價值任務&lt;ul&gt;
-&lt;li&gt;高獲利的 idea&lt;/li&gt;
-&lt;li&gt;高價值的人際關係&lt;/li&gt;
-&lt;li&gt;建立強大的團隊&lt;/li&gt;
-&lt;li&gt;建立高收益系統機制&lt;/li&gt;
-&lt;li&gt;可讓成果翻倍突破性的任務&lt;/li&gt;
-&lt;li&gt;找尋可以提供產能的機會&lt;/li&gt;
-&lt;li&gt;Making profitable offers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;特別高價值任務&lt;ul&gt;
-&lt;li&gt;花一分鐘的時間，寫下你認為目前帶給你高價值的任務&lt;/li&gt;
-&lt;li&gt;寫下這些任務帶來的回饋價值，或未來預估會帶來的價值&lt;/li&gt;
-&lt;li&gt;建立一個循環機制，讓它比以前更頻繁地被發生。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;擴大規模&quot;&gt;&lt;a href=&quot;#擴大規模&quot; class=&quot;headerlink&quot; title=&quot;擴大規模&quot;&gt;&lt;/a&gt;擴大規模&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;重新設計任務讓它可以用更少的資源，產生更高的價值。&lt;/li&gt;
-&lt;li&gt;規模化之後，哪些價值會被倍增。&lt;/li&gt;
-&lt;li&gt;如果你確定用更少的資源，無止境的提升產能，你會去做的？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;擴大規模常見高價值任務&quot;&gt;&lt;a href=&quot;#擴大規模常見高價值任務&quot; class=&quot;headerlink&quot; title=&quot;擴大規模常見高價值任務&quot;&gt;&lt;/a&gt;擴大規模常見高價值任務&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;高獲利的 idea —&amp;gt; 建立智囊團可以提供給你 ideas&lt;/li&gt;
-&lt;li&gt;高價值的人際關係 —&amp;gt; 找尋可以幫你介紹給別人的高價值人際關係&lt;/li&gt;
-&lt;li&gt;建立強大的團隊 —&amp;gt; 找個 CEO 幫你訓練你的團隊&lt;/li&gt;
-&lt;li&gt;建立高收益系統 —&amp;gt; 直接購買一個別人建立好的高收益系統&lt;/li&gt;
-&lt;li&gt;可讓成果翻倍突破性的任務 —&amp;gt; 建立突破性的團隊&lt;/li&gt;
-&lt;li&gt;找尋可以提供產能的機會 —&amp;gt; 建立強大的團隊，幫助你找機會&lt;/li&gt;
-&lt;li&gt;Making profitable offers —&amp;gt; Get offer making team&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;a href=&quot;#有三件事情可以幫助你，把高價值的事情做完&quot; class=&quot;headerlink&quot; title=&quot;有三件事情可以幫助你，把高價值的事情做完&quot;&gt;&lt;/a&gt;有三件事情可以幫助你，把高價值的事情做完&lt;/h3&gt;&lt;
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   

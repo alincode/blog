@@ -218,6 +218,74 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/06/12/webdriverio-common-syntax-3/">
+                            WebdriverIO 常用語法(3)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Jun 12 2016 21:35:19 GMT+0800">
+	
+		    6月 12, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>基本條件</strong></p>
+<ul>
+<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
+<li>你已經讀過之前在此分享的所有相關文章</li>
+</ul>
+<h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><p>前往特定網址</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.url([url]);</span><br></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.url(&#39;/login&#39;);</span><br></pre></td></tr></table></figure>
+<h3 id="實用工具-Utility"><a href="#實用工具-Utility" class="headerlink" title="實用工具(Utility)"></a>實用工具(Utility)</h3><h4 id="waitForExist"><a href="#waitForExist" class="headerlink" title="waitForExist"></a>waitForExist</h4><p>等待一個特定元素出現，才進行下一步。</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.waitForExist(selector);</span><br></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.waitForExist(&#39;[name=identifier]&#39;);</span><br></pre></td></tr></table></figure>
+<p><strong>其他相關語法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">waitForEnabled&#10;waitForSelected&#10;waitForText&#10;waitForValue&#10;waitForVisible</span><br></pre></td></tr></table></figure></p>
+<h4 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h4><p>暫停一段時間，常用於模擬真人行為減緩測試速度，及方便肉眼檢視每個測試步驟。</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.pause(milliseconds);</span><br></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.pause(2000);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/06/12/webdriverio-common-syntax-3/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/06/11/webdriverio-common-syntax-2/">
                             WebdriverIO 常用語法(2)
                         </a>
@@ -756,91 +824,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/18/Effective-Time-Management-3/">
-                            有效的時間管理 - 重點整理(3)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed May 18 2016 23:52:40 GMT+0800">
-	
-		    5月 18, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/時間管理/">時間管理</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="有三件事情可以幫助你，把高價值的事情做完"><a href="#有三件事情可以幫助你，把高價值的事情做完" class="headerlink" title="有三件事情可以幫助你，把高價值的事情做完"></a>有三件事情可以幫助你，把高價值的事情做完</h3><ul>
-<li>識別真正的高價值的任務</li>
-<li>擴大規模</li>
-<li>確認它們真的被完成</li>
-</ul>
-<h3 id="識別真正的高價值的任務"><a href="#識別真正的高價值的任務" class="headerlink" title="識別真正的高價值的任務"></a>識別真正的高價值的任務</h3><ul>
-<li>常見高價值任務<ul>
-<li>高獲利的 idea</li>
-<li>高價值的人際關係</li>
-<li>建立強大的團隊</li>
-<li>建立高收益系統機制</li>
-<li>可讓成果翻倍突破性的任務</li>
-<li>找尋可以提供產能的機會</li>
-<li>Making profitable offers</li>
-</ul>
-</li>
-<li>特別高價值任務<ul>
-<li>花一分鐘的時間，寫下你認為目前帶給你高價值的任務</li>
-<li>寫下這些任務帶來的回饋價值，或未來預估會帶來的價值</li>
-<li>建立一個循環機制，讓它比以前更頻繁地被發生。</li>
-</ul>
-</li>
-</ul>
-<h3 id="擴大規模"><a href="#擴大規模" class="headerlink" title="擴大規模"></a>擴大規模</h3><ul>
-<li>重新設計任務讓它可以用更少的資源，產生更高的價值。</li>
-<li>規模化之後，哪些價值會被倍增。</li>
-<li>如果你確定用更少的資源，無止境的提升產能，你會去做的？</li>
-</ul>
-<h3 id="擴大規模常見高價值任務"><a href="#擴大規模常見高價值任務" class="headerlink" title="擴大規模常見高價值任務"></a>擴大規模常見高價值任務</h3><ul>
-<li>高獲利的 idea —&gt; 建立智囊團可以提供給你 ideas</li>
-<li>高價值的人際關係 —&gt; 找尋可以幫你介紹給別人的高價值人際關係</li>
-<li>建立強大的團隊 —&gt; 找個 CEO 幫你訓練你的團隊</li>
-<li>建立高收益系統 —&gt; 直接購買一個別人建立好的高收益系統</li>
-<li>可讓成果翻倍突破性的任務 —&gt; 建立突破性的團隊</li>
-<li>找尋可以提供產能的機會 —&gt; 建立強大的團隊，幫助你找機會</li>
-<li>Making profitable offers —&gt; Get offer making team</li>
-</ul>
-<p><a href="https://www.udemy.com/effective-time-management/" target="_blank" rel="external">Udemy 免費線上課程網址</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/18/Effective-Time-Management-3/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -861,7 +844,7 @@
             </a>
         </li>
         
-        <li class="pagination-number">第 2 頁 共 10 頁</li>
+        <li class="pagination-number">第 2 頁 共 11 頁</li>
     </ul>
 </div>
 

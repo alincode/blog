@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/07/24/atom-markdown-mindmap-plugin/</loc>
+    <lastmod>2016-07-24T03:28:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>ATOM 心智圖外掛</title>
+        <pubTime>2016-07-24T03:22:28.000Z</pubTime>
+        
+        <tag>ATOM</tag>
+         
+        <tag>markdown mindmap</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/07/20/Sequelize-camelCased-to-underscored/</loc>
     <lastmod>2016-07-21T14:50:59.000Z</lastmod>
     <data>
@@ -397,6 +416,25 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -407,6 +445,23 @@
         <tag>學英文</tag>
          
         <tag>經驗分享</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Bind</title>
+        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
+        
+        <tag>React</tag>
          
          
            
@@ -470,42 +525,6 @@
              
               <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何開始使用 Story Points？</title>
-        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
-        
-        <tag>Story Points</tag>
-         
-        <tag>預估</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>React Bind</title>
-        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
-        
-        <tag>React</tag>
-         
-         
-           
         </display>
     </data>
     </url>

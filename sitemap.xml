@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alincode.github.io/2016/07/24/atom-markdown-mindmap-plugin/</loc>
+    
+    <lastmod>2016-07-24T03:28:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/2016/07/20/Sequelize-camelCased-to-underscored/</loc>
     
     <lastmod>2016-07-21T14:50:59.000Z</lastmod>
@@ -149,7 +156,21 @@
   </url>
   
   <url>
+    <loc>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/2016/05/14/react-about-bind/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -171,20 +192,6 @@
   
   <url>
     <loc>http://alincode.github.io/2016/05/15/Effective-Time-Management/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/2016/05/14/react-about-bind/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
