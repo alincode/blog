@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-24T03:31:13.000Z</updated>
+  <updated>2016-07-27T01:43:35.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>octotree 在瀏覽器上顯示 code tree</title>
+    <link href="http://alincode.github.io/2016/07/27/octotree-chrome-plugin/"/>
+    <id>http://alincode.github.io/2016/07/27/octotree-chrome-plugin/</id>
+    <published>2016-07-27T01:30:09.000Z</published>
+    <updated>2016-07-27T01:43:35.000Z</updated>
+    
+    <content type="html">&lt;p&gt;你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。&lt;/p&gt;
+&lt;p&gt;Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵，縮放 Tree View。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;外掛安裝傳送門&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png&quot; alt=&quot;octotree&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。&lt;/p&gt;
+&lt;p&gt;Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵，縮放 Tree View
+    
+    </summary>
+    
+    
+      <category term="chrome plugin" scheme="http://alincode.github.io/tags/chrome-plugin/"/>
+    
+      <category term="code tree" scheme="http://alincode.github.io/tags/code-tree/"/>
+    
+      <category term="github" scheme="http://alincode.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>ATOM 心智圖外掛</title>
@@ -657,42 +686,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>信仰</title>
-    <link href="http://alincode.github.io/2016/05/19/belief/"/>
-    <id>http://alincode.github.io/2016/05/19/belief/</id>
-    <published>2016-05-19T00:35:14.000Z</published>
-    <updated>2016-05-20T14:20:20.000Z</updated>
-    
-    <content type="html">&lt;p&gt;我是一個沒有特定信仰的人，唯一的信仰就是，每個人生來這世上都有一個專屬於自己的目的，你完成你的目的，儘量帶來一些改變，越深遠越好，然後離開這個世界。離開之後，什麼都會漸漸地消失，除了那些你帶來的那些改變。&lt;/p&gt;
-&lt;p&gt;雖然我沒有特定信仰，但我有許多不容動搖的價值觀。&lt;/p&gt;
-&lt;h3 id=&quot;道德觀&quot;&gt;&lt;a href=&quot;#道德觀&quot; class=&quot;headerlink&quot; title=&quot;道德觀&quot;&gt;&lt;/a&gt;道德觀&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;我相信人是一致性的慣性動物，當你容許自己有灰色地帶，那個灰色地帶會漸漸就會把你吞噬。&lt;/li&gt;
-&lt;li&gt;蝴蝶效應即使微小的不誠實，將蔓延到整個人生。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;專注&quot;&gt;&lt;a href=&quot;#專注&quot; class=&quot;headerlink&quot; title=&quot;專注&quot;&gt;&lt;/a&gt;專注&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;一次，只專注一件事&lt;/li&gt;
-&lt;li&gt;人們總是忽略多工帶來的影響，如果你說你多工也沒差，某種程度是在對自己說謊，因為如果你改成只做一件事，肯定比你多工時更快更好。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;人生需要多方面發展&quot;&gt;&lt;a href=&quot;#人生需要多方面發展&quot; class=&quot;headerlink&quot; title=&quot;人生需要多方面發展&quot;&gt;&lt;/a&gt;人生需要多方面發展&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;就算你很愛吃Pizza，但你也不會想一輩子都只吃Pizza，所以我們總要穿插一點其他選擇。&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我是一個沒有特定信仰的人，唯一的信仰就是，每個人生來這世上都有一個專屬於自己的目的，你完成你的目的，儘量帶來一些改變，越深遠越好，然後離開這個世界。離開之後，什麼都會漸漸地消失，除了那些你帶來的那些改變。&lt;/p&gt;
-&lt;p&gt;雖然我沒有特定信仰，但我有許多不容動搖的價值觀。&lt;/p
-    
-    </summary>
-    
-    
-      <category term="信仰" scheme="http://alincode.github.io/tags/%E4%BF%A1%E4%BB%B0/"/>
-    
-      <category term="價值觀" scheme="http://alincode.github.io/tags/%E5%83%B9%E5%80%BC%E8%A7%80/"/>
     
   </entry>
   

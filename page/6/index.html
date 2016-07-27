@@ -218,6 +218,71 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/19/build-docs-with-gitbook/">
+                            建構一個漂亮的文件 with gitbook
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 14:30:41 GMT+0800">
+	
+		    4月 19, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <img src="/blog/2016/04/19/build-docs-with-gitbook/gitbook.png" alt="gitbook.png" title="">
+<p>我想大家都很可以認同文件很重要，而且一定要有歷史記錄，但如果沒有一個很容易開啓並美觀的界面與環境，大家都會懶得看文件跟編寫文件，文件寫得再好都沒用，因為我們每天要開這麼多資料夾，這麼多視窗，如果不方便，哪輪到打開你，那最方便的方式是什麼？文字檔 + 網頁是我認為最方便的方式。</p>
+<p>現在 Mac 的使用者漸多，並不是每個人都有 Microsoft Office（小的我買不起，所以我最討厭人家給我doc檔），有些人說，那用 google drive，但其實對於一般的使用者友善度，還是有一段差距，而且我總覺得我的游標會一直亂跑。</p>
+<p>gitbook 有提供一個圖形化工具，可以很容易的編輯 markdown 格式的文字檔，再結合一些 git commit 的概念，就可以更新。但這對於一般使用者還是太困難，這時放在 github 的好處就顯現了，他有網站編輯 markdown 檔的界面，弄得像留言板一樣，如果你說連留言板都不知道怎麼用，恩…那…你不要用好了。</p>
+<h2 id="整合方案"><a href="#整合方案" class="headerlink" title="整合方案"></a>整合方案</h2><ul>
+<li>github</li>
+<li>gitbook for</li>
+<li>nginx for 靜態檔案伺服器</li>
+<li>cron for 自動排成更新</li>
+</ul>
+<p>範例使用 nginx 與 gitbook 整合，實際情況會寫成 bash script 加 cron 每日自動執行與部署。</p>
+<h2 id="與-Gitbook-相關"><a href="#與-Gitbook-相關" class="headerlink" title="與 Gitbook 相關"></a>與 Gitbook 相關</h2><h3 id="安裝-Gitbook"><a href="#安裝-Gitbook" class="headerlink" title="安裝 Gitbook"></a>安裝 Gitbook</h3><p><code>npm install gitbook -g</code></p>
+<h3 id="編譯-gitbook-html-檔"><a href="#編譯-gitbook-html-檔" class="headerlink" title="編譯 gitbook html 檔"></a>編譯 gitbook html 檔</h3><p><code>gitbook build your-document-folder</code></p>
+<h2 id="與-Nginx-相關"><a href="#與-Nginx-相關" class="headerlink" title="與 Nginx 相關"></a>與 Nginx 相關</h2><h3 id="安裝-Nginx"><a href="#安裝-Nginx" class="headerlink" title="安裝 Nginx"></a>安裝 Nginx</h3><p><code>brew install nginx</code><br>or<br><code>yum install nginx</code><br>or<br>請依照你的作業系統調整</p>
+<h3 id="複製到指定的資料夾"><a href="#複製到指定的資料夾" class="headerlink" title="複製到指定的資料夾"></a>複製到指定的資料夾</h3><p><code>cp -R your-document-folder/_book /srv/docs</code></p>
+<h3 id="更改資料夾權限"><a href="#更改資料夾權限" class="headerlink" title="更改資料夾權限"></a>更改資料夾權限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 755 /srv/docs/&#10;sudo chown -R www-data:www-data /srv/docs/</span><br></pre></td></tr></table></figure>
+<h3 id="產生加密密碼"><a href="#產生加密密碼" class="headerlink" title="產生加密密碼"></a>產生加密密碼</h3><p><code>openssl passwd</code></p>
+<p>請一定要在 nginx 處在 server 機執行此指令，否則產出的密碼是無法正常解碼的。</p>
+<h3 id="建立密碼檔"><a href="#建立密碼檔" class="headerlink" title="建立密碼檔"></a>建立密碼檔</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nginx/conf.d/your-passwd</span><br></pre></td></tr></table></figure>
+<p><strong>your-passwd</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">your-login-account:your-encode-password</span><br></pre></td></tr></table></figure></p>
+<h3 id="編輯-nginx-設定檔"><a href="#編輯-nginx-設定檔" class="headerlink" title="編輯 nginx 設定檔"></a>編輯 nginx 設定檔</h3><p><code>vi /etc/nginx/sites-available/default</code></p>
+<p><strong>default</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server &#123;&#10;  listen 80;&#10;  server_name your.domain.name.com;&#10;  auth_basic &#34;docs website&#34;;&#10;  auth_basic_user_file /etc/nginx/conf.d/your-passwd;&#10;&#10;  location / &#123;&#10;    root /srv/docs;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="重啟-nginx"><a href="#重啟-nginx" class="headerlink" title="重啟 nginx"></a>重啟 nginx</h3><p><code>nginx -s reload</code></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/19/build-docs-with-gitbook/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/18/how-to-read-a-book/">
                             好書推薦 - 如何閱讀一本書
                         </a>
@@ -718,62 +783,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/10/buddy-ci-4/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
-                            Buddy CI 踩雷心得
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Apr 09 2016 23:29:02 GMT+0800">
-	
-		    4月 09, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
-<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
-<h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
-<p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
-<p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
-<p><strong>小提醒</strong></p>
-<p>設定完，別忘了改 <code>.git/config</code> 裡的 url，要變成 ssh 格式的，例如 <code>git@github.com:yourname/xxxxx.git</code></p>
-<h3 id="設定-node-的-path"><a href="#設定-node-的-path" class="headerlink" title="設定 node 的 path"></a>設定 node 的 path</h3><p><a href="https://github.com/nodejs/node-v0.x-archive/issues/3911" target="_blank" rel="external">run npm command gives error “/usr/bin/env: node: No such file or directory</a></p>
-<h4 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h4><p><code>ln -s /usr/bin/nodejs /usr/bin/node</code></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/09/buddy-ci-3/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

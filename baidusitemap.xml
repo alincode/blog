@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/07/27/octotree-chrome-plugin/</loc>
+    <lastmod>2016-07-27T01:43:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>octotree 在瀏覽器上顯示 code tree</title>
+        <pubTime>2016-07-27T01:30:09.000Z</pubTime>
+        
+        <tag>chrome plugin</tag>
+         
+        <tag>code tree</tag>
+         
+        <tag>github</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/07/24/atom-markdown-mindmap-plugin/</loc>
     <lastmod>2016-07-24T03:31:13.000Z</lastmod>
     <data>
@@ -416,44 +437,6 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何開始使用 Story Points？</title>
-        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
-        
-        <tag>Story Points</tag>
-         
-        <tag>預估</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何改善英文閱讀能力 - 經驗分享</title>
-        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
-        
-        <tag>學英文</tag>
-         
-        <tag>經驗分享</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -490,23 +473,6 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何時候該用 Promise？</title>
-        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
-        
-        <tag>promise</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -525,6 +491,61 @@
              
               <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何改善英文閱讀能力 - 經驗分享</title>
+        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
+        
+        <tag>學英文</tag>
+         
+        <tag>經驗分享</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何時候該用 Promise？</title>
+        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
+        
+        <tag>promise</tag>
+         
+         
+           
         </display>
     </data>
     </url>
