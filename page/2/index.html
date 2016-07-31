@@ -218,6 +218,109 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/">
+                            WebdriverIO vs Protractor 架構(1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Jun 29 2016 21:41:27 GMT+0800">
+	
+		    6月 29, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
+<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
+<p><strong>圖一</strong><br><img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title=""></p>
+<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
+<p>Protractor 跟 selenium-webdriver API 的使用方式非常雷同。</p>
+<p><a href="http://seleniumhq.github.io/selenium/docs/api/javascript/" target="_blank" rel="external">selenium-webdriver API</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = driver.findElement(By.id(&#39;dog_id&#39;)).click();</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = browser.findElement(by.id(&#39;dog_id&#39;));</span><br></pre></td></tr></table></figure></p>
+<p>但 <a href="http://webdriver.io/api/protocol/element.html" target="_blank" rel="external">WebdriverIO API</a> 則更友善一點，非常肯定作者在這方面的努力。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = client.element(&#39;#dog_id&#39;);</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/06/20/wdio-selenium-standalone-service/">
+                            整合 wdio selenium standalone service
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Jun 20 2016 11:30:03 GMT+0800">
+	
+		    6月 20, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>最近 <code>WebdriverIO</code> 又 release 一個新的 service，這個 service 主要是整合 <code>selenium standalone</code> package，不需要另外執行 <code>selenium-standalone start</code>，它會在背後自動 hook 做這件事。</p>
+<p>使用上也非常的簡單，只要<a href="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/">原本的測試專案安裝</a>，新增的 service <code>npm i wdio-selenium-standalone-service -D</code>，並編輯 <code>wdio.conf.js</code> 加入 <code>services: [&#39;selenium-standalone&#39;],</code> 設定即可。</p>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="http://webdriver.io/guide/services/selenium-standalone.html" target="_blank" rel="external">SELENIUM STANDALONE SERVICE</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/06/20/wdio-selenium-standalone-service/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/06/13/webdriverio-realworld-test-case/">
                             用 WebdriverIO 寫一個真實世界的登入範例
                         </a>
@@ -724,118 +827,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/22/Effective-Time-Management-5/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/21/Effective-Time-Management-4/">
-                            有效的時間管理 - 重點整理(4)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat May 21 2016 10:09:59 GMT+0800">
-	
-		    5月 21, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/時間管理/">時間管理</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="建立成功循環"><a href="#建立成功循環" class="headerlink" title="建立成功循環"></a>建立成功循環</h3><ul>
-<li>成功人士可以建立一年復一年地成功，是因為他們一日復一日都做成功的事。</li>
-<li>他們將成功經驗建立一個習慣路徑，並很少改變這個路徑，尤其是那些帶來高收獲的事情。</li>
-</ul>
-<h3 id="建立屬於你自己的成功循環"><a href="#建立屬於你自己的成功循環" class="headerlink" title="建立屬於你自己的成功循環"></a>建立屬於你自己的成功循環</h3><ul>
-<li>排進那些符合 80/20 法則的 TODO</li>
-<li>重現最佳的練習</li>
-<li>專注在改善跟自我發展</li>
-<li>時常休息、為自己找樂子、陪伴家人，將自己重新充電。</li>
-</ul>
-<h3 id="練習"><a href="#練習" class="headerlink" title="練習"></a>練習</h3><ul>
-<li>寫下每天必定會做的事情，如果想不起來的話，就寫下昨天做的所有事情。</li>
-<li>記下每件事情帶給你多少回報或未來可能帶給你的回報。</li>
-<li>問問自己，如果每天都重複這樣的循環，一年後你會創造多少價值。</li>
-<li>現在重新設計的你日程，讓所有你計劃每日要做的事情來自於四種成功類型。</li>
-<li>重新計算新設計的日程，會帶給你多少回報。</li>
-<li>問問自己，如果每天依照新日程重複循環，你會創造多少價值。</li>
-</ul>
-<p><a href="https://www.udemy.com/effective-time-management/" target="_blank" rel="external">Udemy 免費線上課程網址</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/21/Effective-Time-Management-4/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/20/evolution/">
-                            時間管理 ---&gt; 任務管理 ---&gt; 目標管理
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri May 20 2016 22:18:59 GMT+0800">
-	
-		    5月 20, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <ul>
-<li>專科期間我曾沈迷在研究時間管理上，閱讀超過20本各種時間管理的理論，把自己當實驗品每種都試試看，但我漸漸的體認到時間管理無用論，因為真的照著規劃的時間管理走，必須要把其他所有變因都排除，在無人干擾的情況下，但這在現實生活中無法做到。</li>
-<li>後來我接觸到了任務管理的觀念，把每個想做的事，都切成一個小Task，接近強迫症的逼迫自己執行了一段時間，達成了許多之前我認為我自己無法達成的事情，但達成了之後，開始覺得精神疲乏，整天只想放空。</li>
-<li>後來又接觸了目標管理，是目前我覺得最好的做法，不需要做時間管理，先計劃中短期目標，針對這個目標須具備的人格特色或任務，設定一系列的養成計劃，透過神奇的21天效應，讓這件事變成一個習慣，每天就會不知覺的重複去執行，在不知不覺中達成目標。</li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/20/evolution/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

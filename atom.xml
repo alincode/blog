@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-27T01:45:55.000Z</updated>
+  <updated>2016-07-31T11:30:32.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,126 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自動部署三兩事(1)</title>
+    <link href="http://alincode.github.io/2016/07/30/auto-deploy/"/>
+    <id>http://alincode.github.io/2016/07/30/auto-deploy/</id>
+    <published>2016-07-30T06:06:05.000Z</published>
+    <updated>2016-07-31T11:30:32.000Z</updated>
+    
+    <content type="html">&lt;p&gt;在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重新部署要做的事&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;備份資料庫&lt;/li&gt;
+&lt;li&gt;更新程式碼&lt;/li&gt;
+&lt;li&gt;更新設定檔&lt;/li&gt;
+&lt;li&gt;更新資料庫&lt;/li&gt;
+&lt;li&gt;例行性指令&lt;ul&gt;
+&lt;li&gt;重啟 service&lt;/li&gt;
+&lt;li&gt;清除 cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;etc…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。&lt;/p&gt;
+&lt;h3 id=&quot;相關的工具類型&quot;&gt;&lt;a href=&quot;#相關的工具類型&quot; class=&quot;headerlink&quot; title=&quot;相關的工具類型&quot;&gt;&lt;/a&gt;相關的工具類型&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;資料庫遷移工具 (Migration tools)&lt;/li&gt;
+&lt;li&gt;自動部署工具 (automated configuration manage tool)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;自動部署工具&quot;&gt;&lt;a href=&quot;#自動部署工具&quot; class=&quot;headerlink&quot; title=&quot;自動部署工具&quot;&gt;&lt;/a&gt;自動部署工具&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Ansible&lt;/li&gt;
+&lt;li&gt;Chef&lt;/li&gt;
+&lt;li&gt;Capistrano&lt;/li&gt;
+&lt;li&gt;etc…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;以-Capistrano-為例來說明&quot;&gt;&lt;a href=&quot;#以-Capistrano-為例來說明&quot; class=&quot;headerlink&quot; title=&quot;以 Capistrano 為例來說明&quot;&gt;&lt;/a&gt;以 Capistrano 為例來說明&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;require &amp;#39;capistrano/setup&amp;#39;&amp;#10;require &amp;#39;capistrano/deploy&amp;#39;&amp;#10;require &amp;#39;capistrano/bundler&amp;#39;&amp;#10;require &amp;#39;capistrano/rails/migrations&amp;#39;&amp;#10;require &amp;#39;capistrano/rails/assets&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重新部署要
+    
+    </summary>
+    
+    
+      <category term="auto deploy" scheme="http://alincode.github.io/tags/auto-deploy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>關於自動部署 rollback</title>
+    <link href="http://alincode.github.io/2016/07/29/deploy-rollback/"/>
+    <id>http://alincode.github.io/2016/07/29/deploy-rollback/</id>
+    <published>2016-07-29T06:00:06.000Z</published>
+    <updated>2016-07-31T11:33:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;還原回舊的程式碼&lt;/li&gt;
+&lt;li&gt;還原資料庫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;還原回舊的程式碼&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;待捕…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;資料庫rollback&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;資料庫層級的 rollback&lt;ul&gt;
+&lt;li&gt;使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;框架層級的 rollback&lt;ul&gt;
+&lt;li&gt;但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。&lt;/li&gt;
+&lt;li&gt;例如 &lt;code&gt;rake db:migrate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/ruby_rollback.png&quot; alt=&quot;ruby_rollback.png&quot; title=&quot;&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;那到底怎麼收拾失敗的殘局？&lt;ul&gt;
+&lt;li&gt;答案就是在寫一個 migration script 去修正問題&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;db migration tools&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/sequelize/cli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize-cli&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.liquibase.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;liquibase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/flyway/flyway&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;flyway&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://guides.rubyonrails.org/v3.2/migrations.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ruby migrate&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Sandbox&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/rails-migration-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rails migration sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/sequelize-merged-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize migration sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;相關文章&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Usefulness of db migrations rollback&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ihower.tw/rails4/migrations.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Active Record - 資料庫遷移&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;還原回舊的程式碼&lt;/li&gt;
+&lt;li&gt;還原資料庫&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;str
+    
+    </summary>
+    
+    
+      <category term="rollback" scheme="http://alincode.github.io/tags/rollback/"/>
+    
+  </entry>
   
   <entry>
     <title>octotree 在瀏覽器上顯示 code tree</title>
@@ -616,76 +736,6 @@
       <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
     
       <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 重點整理(4)</title>
-    <link href="http://alincode.github.io/2016/05/21/Effective-Time-Management-4/"/>
-    <id>http://alincode.github.io/2016/05/21/Effective-Time-Management-4/</id>
-    <published>2016-05-21T02:09:59.000Z</published>
-    <updated>2016-05-24T13:32:03.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;建立成功循環&quot;&gt;&lt;a href=&quot;#建立成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立成功循環&quot;&gt;&lt;/a&gt;建立成功循環&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;成功人士可以建立一年復一年地成功，是因為他們一日復一日都做成功的事。&lt;/li&gt;
-&lt;li&gt;他們將成功經驗建立一個習慣路徑，並很少改變這個路徑，尤其是那些帶來高收獲的事情。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;建立屬於你自己的成功循環&quot;&gt;&lt;a href=&quot;#建立屬於你自己的成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立屬於你自己的成功循環&quot;&gt;&lt;/a&gt;建立屬於你自己的成功循環&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;排進那些符合 80/20 法則的 TODO&lt;/li&gt;
-&lt;li&gt;重現最佳的練習&lt;/li&gt;
-&lt;li&gt;專注在改善跟自我發展&lt;/li&gt;
-&lt;li&gt;時常休息、為自己找樂子、陪伴家人，將自己重新充電。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;練習&quot;&gt;&lt;a href=&quot;#練習&quot; class=&quot;headerlink&quot; title=&quot;練習&quot;&gt;&lt;/a&gt;練習&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;寫下每天必定會做的事情，如果想不起來的話，就寫下昨天做的所有事情。&lt;/li&gt;
-&lt;li&gt;記下每件事情帶給你多少回報或未來可能帶給你的回報。&lt;/li&gt;
-&lt;li&gt;問問自己，如果每天都重複這樣的循環，一年後你會創造多少價值。&lt;/li&gt;
-&lt;li&gt;現在重新設計的你日程，讓所有你計劃每日要做的事情來自於四種成功類型。&lt;/li&gt;
-&lt;li&gt;重新計算新設計的日程，會帶給你多少回報。&lt;/li&gt;
-&lt;li&gt;問問自己，如果每天依照新日程重複循環，你會創造多少價值。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;建立成功循環&quot;&gt;&lt;a href=&quot;#建立成功循環&quot; class=&quot;headerlink&quot; title=&quot;建立成功循環&quot;&gt;&lt;/a&gt;建立成功循環&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;成功人士可以建立一年復一年地成功，是因為他們一日復一日都做成功的事。&lt;/li&gt;
-&lt;li&gt;他們將成
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>時間管理 ---&gt; 任務管理 ---&gt; 目標管理</title>
-    <link href="http://alincode.github.io/2016/05/20/evolution/"/>
-    <id>http://alincode.github.io/2016/05/20/evolution/</id>
-    <published>2016-05-20T14:18:59.000Z</published>
-    <updated>2016-05-20T14:20:03.000Z</updated>
-    
-    <content type="html">&lt;ul&gt;
-&lt;li&gt;專科期間我曾沈迷在研究時間管理上，閱讀超過20本各種時間管理的理論，把自己當實驗品每種都試試看，但我漸漸的體認到時間管理無用論，因為真的照著規劃的時間管理走，必須要把其他所有變因都排除，在無人干擾的情況下，但這在現實生活中無法做到。&lt;/li&gt;
-&lt;li&gt;後來我接觸到了任務管理的觀念，把每個想做的事，都切成一個小Task，接近強迫症的逼迫自己執行了一段時間，達成了許多之前我認為我自己無法達成的事情，但達成了之後，開始覺得精神疲乏，整天只想放空。&lt;/li&gt;
-&lt;li&gt;後來又接觸了目標管理，是目前我覺得最好的做法，不需要做時間管理，先計劃中短期目標，針對這個目標須具備的人格特色或任務，設定一系列的養成計劃，透過神奇的21天效應，讓這件事變成一個習慣，每天就會不知覺的重複去執行，在不知不覺中達成目標。&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;專科期間我曾沈迷在研究時間管理上，閱讀超過20本各種時間管理的理論，把自己當實驗品每種都試試看，但我漸漸的體認到時間管理無用論，因為真的照著規劃的時間管理走，必須要把其他所有變因都排除，在無人干擾的情況下，但這在現實生活中無法做到。&lt;/li&gt;
-&lt;li&gt;後來我接觸
-    
-    </summary>
-    
     
   </entry>
   

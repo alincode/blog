@@ -218,6 +218,149 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+                            Geb for functional testing of Grails app 重點整理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Apr 11 2016 03:03:14 GMT+0800">
+	
+		    4月 11, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <div class="video-container"><iframe src="//www.youtube.com/embed/HkJQYapam_s" frameborder="0" allowfullscreen></iframe></div>
+<p>Geb for functional testing of Grails app | Jacob Aae Mikkelsen | GR8Conf India 2016</p>
+<h3 id="為什麼我們要用Geb-06-04"><a href="#為什麼我們要用Geb-06-04" class="headerlink" title="為什麼我們要用Geb (06:04)"></a>為什麼我們要用Geb (06:04)</h3><ul>
+<li>類似於 JQuery 的語法</li>
+<li>具有非常強大的 WebDriver，卻是使用非常簡單的 API</li>
+<li>Robustness of Page Object Modeling</li>
+<li>使用 Groovy 描述性語言</li>
+<li>跟其他 build framework 整合得很好 (Gradle、Maven)</li>
+<li>可做為傑出的使用者文件</li>
+</ul>
+<h3 id="Geb-selectors-09-52"><a href="#Geb-selectors-09-52" class="headerlink" title="Geb selectors (09:52)"></a>Geb selectors (09:52)</h3><ul>
+<li>相似於 JQuery 的語法</li>
+<li>支援 regex</li>
+<li>選取後，會回傳一個 Navigator 物件</li>
+<li>支援 CSS3 語法</li>
+</ul>
+<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;p&#39;).text() == &#34;a&#34;&#10;$(&#39;p&#39;).tag() == &#34;p&#34;&#10;$(&#39;p&#39;).@title == &#34;a&#34;&#10;$(&#39;p&#39;).classes == [&#34;a&#8221;, &#34;para&#34;]</span><br></pre></td></tr></table></figure>
+<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;a&#39;).click()&#10;$(&#39;div&#39;).isDisplayed()&#10;withConfirm &#123;&#10;  $(&#39;button.delete&#39;).click();&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#60;&#60; &#39;abc&#39;&#10;$(&#39;input&#39;, name: &#39;foo&#39;) &#60;&#60; Keys.chord(Keys.CONTROL, &#39;c&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="Interaction-14-25"><a href="#Interaction-14-25" class="headerlink" title="Interaction (14:25)"></a>Interaction (14:25)</h3><blockquote>
+<p>Using actions API from WebDriver is possible. But Geb provides the interact closure.</p>
+</blockquote>
+<p>你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.openga.selenium.Keys&#10;&#10;interact &#123;&#10;     KeyDown Keys.CTRL&#10;     click $(&#39;a.myLink&#39;)&#10;     keyUp Keys.CTRL&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="可使用的變數-16-15"><a href="#可使用的變數-16-15" class="headerlink" title="可使用的變數 (16:15)"></a>可使用的變數 (16:15)</h3><ul>
+<li>title</li>
+<li>browser</li>
+<li>currentUrl</li>
+<li>currentWindow</li>
+</ul>
+<h3 id="更多的可能-16-50"><a href="#更多的可能-16-50" class="headerlink" title="更多的可能 (16:50)"></a>更多的可能 (16:50)</h3><ul>
+<li>上傳檔案</li>
+<li>下載檔案</li>
+<li>與 js 互動</li>
+</ul>
+<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.spock.GebSpec&#10;&#10;@Stepwise&#10;class XXXFunctionalSpec extends GebSpec &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Page-物件-描述一個頁面-23-50"><a href="#Page-物件-描述一個頁面-23-50" class="headerlink" title="Page 物件 - 描述一個頁面 (23:50)"></a>Page 物件 - 描述一個頁面 (23:50)</h3><ul>
+<li>Url</li>
+<li>如何檢查是否在對的地方</li>
+<li>內容是否是我們要的跟如何找到它</li>
+<li>Helper method</li>
+</ul>
+<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;     info(required: false) &#123;$(&#39;div.info&#39;)&#125;&#10;     message(wait: false) &#123;$(&#39;div.message&#39;)&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Modules-描述重複的內容-26-10"><a href="#Modules-描述重複的內容-26-10" class="headerlink" title="Modules - 描述重複的內容 (26:10)"></a>Modules - 描述重複的內容 (26:10)</h3><ul>
+<li>跨頁面</li>
+<li>Within the same page</li>
+</ul>
+<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Module&#10;&#10;class XXXListItemModules extends Module &#123;&#10;     data &#123; $(&#34;td&#8221;, it) &#125;&#10;     name &#123; data(0).text() &#125;&#10;     email &#123; data(1).text() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Waiting-36-00"><a href="#Waiting-36-00" class="headerlink" title="Waiting (36:00)"></a>Waiting (36:00)</h3><p>自定預設的 Waiting 設定值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// GebConfig.groovy&#10;waiting &#123;&#10;     timeout: 10&#10;     retryInterval: 0.5&#10;&#125;&#10;&#10;baseNavigatorWaiting = true&#10;atCheckWaiting = true</span><br></pre></td></tr></table></figure>
+<h3 id="Pausing-Geb-36-55"><a href="#Pausing-Geb-36-55" class="headerlink" title="Pausing Geb (36:55)"></a>Pausing Geb (36:55)</h3><p>可做為 debug 用途</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">when:&#10;pause() // for Pause Geb until button pressed</span><br></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/10/buddy-ci-4/">
+                            Buddy CI 與 Slack 整合
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Apr 10 2016 02:03:56 GMT+0800">
+	
+		    4月 10, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Buddy-CI/">Buddy CI</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="將-Slack-的訊息通知-Action-設上去"><a href="#將-Slack-的訊息通知-Action-設上去" class="headerlink" title="將 Slack 的訊息通知 Action 設上去"></a>將 Slack 的訊息通知 Action 設上去</h3><img src="/blog/2016/04/10/buddy-ci-4/on-failure.png" alt="on-failure.png" title="">
+<h3 id="Action-內可以自訂要傳送的文字"><a href="#Action-內可以自訂要傳送的文字" class="headerlink" title="Action 內可以自訂要傳送的文字"></a>Action 內可以自訂要傳送的文字</h3><img src="/blog/2016/04/10/buddy-ci-4/send-message-setting.png" alt="send-message-setting.png" title="">
+<h3 id="最後-Buddy-傳到-Slack-Channel-的結果"><a href="#最後-Buddy-傳到-Slack-Channel-的結果" class="headerlink" title="最後 Buddy 傳到 Slack Channel 的結果"></a>最後 Buddy 傳到 Slack Channel 的結果</h3><img src="/blog/2016/04/10/buddy-ci-4/slack.png" alt="slack.png" title="">
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/10/buddy-ci-4/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/09/buddy-ci-3/">
                             Buddy CI 踩雷心得
                         </a>
@@ -814,132 +957,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/02/geb-version-12-x/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/01/geb-version-13-x/">
-                            Geb 0.13.x 更新重點
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Apr 01 2016 21:28:33 GMT+0800">
-	
-		    4月 01, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="0-13-0"><a href="#0-13-0" class="headerlink" title="0.13.0"></a>0.13.0</h3><h4 id="新功能"><a href="#新功能" class="headerlink" title="新功能"></a>新功能</h4><ul>
-<li>對 Spock 和 Junit4 支援 config.reportOnTestFailureOnly<a href="https://github.com/geb/issues/issues/92" target="_blank" rel="external">#92</a></li>
-<li>新增 navigator 的 isFocused 方法<a href="https://github.com/geb/issues/issues/208" target="_blank" rel="external">#208</a></li>
-<li>提供更多的 InvalidPageContent exception，易於 debug <a href="https://github.com/geb/issues/issues/109" target="_blank" rel="external">#109</a> <a href="https://github.com/geb/issues/issues/122" target="_blank" rel="external">#122</a></li>
-</ul>
-<h4 id="bugs-修復"><a href="#bugs-修復" class="headerlink" title="bugs 修復"></a>bugs 修復</h4><ul>
-<li>修正與 TestNG 整合時，報表的 bug</li>
-</ul>
-<p>…(待補)…</p>
-<h4 id="Deprecations"><a href="#Deprecations" class="headerlink" title="Deprecations"></a>Deprecations</h4><ul>
-<li>geb.testng.GebTest 被 geb.testng.GebTestTrait 取代</li>
-<li>geb.testng.GebReportingTest 被 geb.testng.GebReportingTestTrait 取代</li>
-</ul>
-<h4 id="重大改變"><a href="#重大改變" class="headerlink" title="重大改變"></a>重大改變</h4><ul>
-<li>Geb 0.13.0 相依在 Groovy 2.4.5 和 Spock 1.0-groovy-2.4</li>
-<li>在操作 Navigator 時，若選取多個元素，卻又呼叫只支援單元素 method 的時候，會拋出 SingleElementNavigatorOnlyMethodException <a href="https://github.com/geb/issues/issues/284" target="_blank" rel="external">#284</a></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hasClass(java.lang.String),&#10;is(java.lang.String),&#10;isDisplayed(),&#10;isDisabled(),&#10;isEnabled(),&#10;isReadOnly(),&#10;isEditable(),&#10;tag(),&#10;text(),&#10;getAttribute(java.lang.String),&#10;attr(java.lang.String),&#10;classes(),&#10;value(),&#10;click(),&#10;getHeight(),&#10;getWidth(),&#10;getX(),&#10;getY(),&#10;css(java.lang.String),&#10;isFocused().</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/01/geb-version-13-x/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/31/flux-life-cycle-demo/">
-                            Flux 生命週期範例
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Mar 31 2016 03:52:49 GMT+0800">
-	
-		    3月 31, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://github.com/alincode/flux-sandbox/commit/6183e66dac79317f5e0b457a3e489e4de6abaf75" target="_blank" rel="external">完整範例</a></p>
-<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p><strong>第一次 Component 被載入時，會做哪些事？</strong></p>
-<ul>
-<li>執行 getInitialState</li>
-<li>getInitialState 去 Store 拿 state 第一次初始化需要載入的資料</li>
-<li>執行 componentWillMount</li>
-<li>執行 Component render</li>
-<li>執行 componentDidMount</li>
-<li>componentDidMount 會加入 store 的 addChangeListener</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TestStore.addChangeListener(this.storeCallback);</span><br></pre></td></tr></table></figure>
-<h3 id="有值更動時"><a href="#有值更動時" class="headerlink" title="有值更動時"></a>有值更動時</h3><p><strong>執行被 bind 的 onChange</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea rows=&#34;4&#34; cols=&#34;50&#34; onChange=&#123;this._onChange&#125; value=&#123;this.state.text&#125;/&#62;</span><br></pre></td></tr></table></figure>
-<p><strong>onChange 取得值後傳給 action</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_onChange: function(event) &#123;&#10;   TestAction.updateText(event.target.value);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  updateText: function(text) &#123;&#10;    console.log(&#39;=== action updateText ===&#39;);&#10;    AppDispatcher.dispatch(&#123;&#10;      type: ActionTypes.UPDATE_TEXT,&#10;      text: text&#10;    &#125;);&#10;  &#125;,&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>接著 Store 的 dispatcherIndex 被觸發</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatcherIndex: AppDispatcher.register(function(payload) &#123;&#10;    var action = payload.type;&#10;    switch(action) &#123;&#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&#10;        _text = payload.text;&#10;        TestStore.emitChange();&#10;        break;&#10;      default:&#10;        console.log(&#39;=== store dispatcherIndex default ===&#39;);&#10;    &#125;&#10;    return true; // No errors. Needed by promise in Dispatcher.&#10;  &#125;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storeCallback: function() &#123;&#10;  this.setState(getStateStores());&#10;&#125;,</span><br></pre></td></tr></table></figure>
-<p><strong>callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。</strong></p>
-<p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true</strong></p>
-<p><strong>會接著執行 componentWillUpdate</strong></p>
-<p><strong>然後會重新 render component</strong></p>
-<p><strong>render 完後會，會執行 componentDidUpdate</strong></p>
-<h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
-<li><a href="https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods" target="_blank" rel="external">Component Lifecycle</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/31/flux-life-cycle-demo/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

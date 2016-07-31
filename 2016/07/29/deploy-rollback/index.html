@@ -6,30 +6,63 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>octotree 在瀏覽器上顯示 code tree - alincode</title>
+    <title>關於自動部署 rollback - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
+    <meta name="description" content="關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。
+首先必須了解，我們需要 rollback 什麼
+
+還原回舊的程式碼
+還原資料庫
+
+還原回舊的程式碼
+
+待捕…
+
+資料庫rollback
+
+資料庫層級的 rollback
+使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="octotree 在瀏覽器上顯示 code tree">
-<meta property="og:url" content="http://alincode.github.io/2016/07/27/octotree-chrome-plugin/index.html">
+<meta property="og:title" content="關於自動部署 rollback">
+<meta property="og:url" content="http://alincode.github.io/2016/07/29/deploy-rollback/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
-<meta property="og:image" content="https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png">
-<meta property="og:updated_time" content="2016-07-27T01:45:55.000Z">
+<meta property="og:description" content="關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。
+首先必須了解，我們需要 rollback 什麼
+
+還原回舊的程式碼
+還原資料庫
+
+還原回舊的程式碼
+
+待捕…
+
+資料庫rollback
+
+資料庫層級的 rollback
+使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫">
+<meta property="og:image" content="http://alincode.github.io/blog/2016/07/29/deploy-rollback/ruby_rollback.png">
+<meta property="og:updated_time" content="2016-07-31T11:33:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octotree 在瀏覽器上顯示 code tree">
-<meta name="twitter:description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
+<meta name="twitter:title" content="關於自動部署 rollback">
+<meta name="twitter:description" content="關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。
+首先必須了解，我們需要 rollback 什麼
+
+還原回舊的程式碼
+還原資料庫
+
+還原回舊的程式碼
+
+待捕…
+
+資料庫rollback
+
+資料庫層級的 rollback
+使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫">
     
     
         
@@ -223,13 +256,13 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            octotree 在瀏覽器上顯示 code tree
+            關於自動部署 rollback
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 27 2016 09:30:09 GMT+0800">
+    <time itemprop="datePublished" content="Fri Jul 29 2016 14:00:06 GMT+0800">
 	
-		    7月 27, 2016
+		    7月 29, 2016
     	
     </time>
     
@@ -238,10 +271,52 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。</p>
-<p>Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。</p>
-<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">外掛安裝傳送門</a></p>
-<p><img src="https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png" alt="octotree"></p>
+            <p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
+<p><strong>首先必須了解，我們需要 rollback 什麼</strong></p>
+<ul>
+<li>還原回舊的程式碼</li>
+<li>還原資料庫</li>
+</ul>
+<p><strong>還原回舊的程式碼</strong></p>
+<ul>
+<li>待捕…</li>
+</ul>
+<p><strong>資料庫rollback</strong></p>
+<ul>
+<li>資料庫層級的 rollback<ul>
+<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
+</ul>
+</li>
+<li>框架層級的 rollback<ul>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
+<li>例如 <code>rake db:migrate</code></li>
+</ul>
+</li>
+</ul>
+<img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
+<ul>
+<li>那到底怎麼收拾失敗的殘局？<ul>
+<li>答案就是在寫一個 migration script 去修正問題</li>
+</ul>
+</li>
+</ul>
+<p><strong>db migration tools</strong></p>
+<ul>
+<li><a href="https://github.com/sequelize/cli" target="_blank" rel="external">sequelize-cli</a></li>
+<li><a href="http://www.liquibase.org/" target="_blank" rel="external">liquibase</a></li>
+<li><a href="https://github.com/flyway/flyway" target="_blank" rel="external">flyway</a></li>
+<li><a href="http://guides.rubyonrails.org/v3.2/migrations.html" target="_blank" rel="external">ruby migrate</a></li>
+</ul>
+<p><strong>Sandbox</strong></p>
+<ul>
+<li><a href="https://github.com/alincode/rails-migration-sandbox" target="_blank" rel="external">rails migration sandbox</a></li>
+<li><a href="https://github.com/alincode/sequelize-merged-sandbox" target="_blank" rel="external">sequelize migration sandbox</a></li>
+</ul>
+<p><strong>相關文章</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback" target="_blank" rel="external">Usefulness of db migrations rollback</a></li>
+<li><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">Active Record - 資料庫遷移</a></li>
+</ul>
 
             
                 
@@ -254,7 +329,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/chrome-plugin/">chrome plugin</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/code-tree/">code tree</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/github/">github</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/rollback/">rollback</a>
 
             </div>
         
@@ -263,7 +338,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/"  data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/30/auto-deploy/"  data-tooltip="自動部署三兩事(1)">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -271,7 +346,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/24/atom-markdown-mindmap-plugin/" data-tooltip="ATOM 心智圖外掛">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/27/octotree-chrome-plugin/" data-tooltip="octotree 在瀏覽器上顯示 code tree">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -286,17 +361,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -334,7 +409,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/"  data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/30/auto-deploy/"  data-tooltip="自動部署三兩事(1)">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -342,7 +417,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/24/atom-markdown-mindmap-plugin/" data-tooltip="ATOM 心智圖外掛">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/27/octotree-chrome-plugin/" data-tooltip="octotree 在瀏覽器上顯示 code tree">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -357,17 +432,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -387,17 +462,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/29/deploy-rollback/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

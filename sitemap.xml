@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alincode.github.io/2016/07/29/deploy-rollback/</loc>
+    
+    <lastmod>2016-07-31T11:33:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/2016/07/30/auto-deploy/</loc>
+    
+    <lastmod>2016-07-31T11:30:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/2016/07/27/octotree-chrome-plugin/</loc>
     
     <lastmod>2016-07-27T01:45:55.000Z</lastmod>
@@ -163,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/14/react-about-bind/</loc>
+    <loc>http://alincode.github.io/2016/05/15/Effective-Time-Management/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -177,7 +191,7 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/15/Effective-Time-Management/</loc>
+    <loc>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -191,7 +205,7 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</loc>
+    <loc>http://alincode.github.io/2016/05/14/react-about-bind/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     

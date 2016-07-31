@@ -6,30 +6,65 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>octotree 在瀏覽器上顯示 code tree - alincode</title>
+    <title>自動部署三兩事(1) - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
+    <meta name="description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
+重新部署要做的事
+
+備份資料庫
+更新程式碼
+更新設定檔
+更新資料庫
+例行性指令
+重啟 service
+清除 cache
+
+
+etc…
+
+以往，我們要做上述的這些事，我">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="octotree 在瀏覽器上顯示 code tree">
-<meta property="og:url" content="http://alincode.github.io/2016/07/27/octotree-chrome-plugin/index.html">
+<meta property="og:title" content="自動部署三兩事(1)">
+<meta property="og:url" content="http://alincode.github.io/2016/07/30/auto-deploy/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
-<meta property="og:image" content="https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png">
-<meta property="og:updated_time" content="2016-07-27T01:45:55.000Z">
+<meta property="og:description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
+重新部署要做的事
+
+備份資料庫
+更新程式碼
+更新設定檔
+更新資料庫
+例行性指令
+重啟 service
+清除 cache
+
+
+etc…
+
+以往，我們要做上述的這些事，我">
+<meta property="og:updated_time" content="2016-07-31T11:30:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="octotree 在瀏覽器上顯示 code tree">
-<meta name="twitter:description" content="你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。
-Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。
-外掛安裝傳送門">
+<meta name="twitter:title" content="自動部署三兩事(1)">
+<meta name="twitter:description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
+重新部署要做的事
+
+備份資料庫
+更新程式碼
+更新設定檔
+更新資料庫
+例行性指令
+重啟 service
+清除 cache
+
+
+etc…
+
+以往，我們要做上述的這些事，我">
     
     
         
@@ -223,13 +258,13 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            octotree 在瀏覽器上顯示 code tree
+            自動部署三兩事(1)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Jul 27 2016 09:30:09 GMT+0800">
+    <time itemprop="datePublished" content="Sat Jul 30 2016 14:06:05 GMT+0800">
 	
-		    7月 27, 2016
+		    7月 30, 2016
     	
     </time>
     
@@ -238,10 +273,33 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。</p>
-<p>Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。</p>
-<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">外掛安裝傳送門</a></p>
-<p><img src="https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png" alt="octotree"></p>
+            <p>在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？</p>
+<p><strong>重新部署要做的事</strong></p>
+<ul>
+<li>備份資料庫</li>
+<li>更新程式碼</li>
+<li>更新設定檔</li>
+<li>更新資料庫</li>
+<li>例行性指令<ul>
+<li>重啟 service</li>
+<li>清除 cache</li>
+</ul>
+</li>
+<li>etc…</li>
+</ul>
+<p>以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。</p>
+<h3 id="相關的工具類型"><a href="#相關的工具類型" class="headerlink" title="相關的工具類型"></a>相關的工具類型</h3><ul>
+<li>資料庫遷移工具 (Migration tools)</li>
+<li>自動部署工具 (automated configuration manage tool)</li>
+</ul>
+<h3 id="自動部署工具"><a href="#自動部署工具" class="headerlink" title="自動部署工具"></a>自動部署工具</h3><ul>
+<li>Ansible</li>
+<li>Chef</li>
+<li>Capistrano</li>
+<li>etc…</li>
+</ul>
+<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require &#39;capistrano/setup&#39;&#10;require &#39;capistrano/deploy&#39;&#10;require &#39;capistrano/bundler&#39;&#10;require &#39;capistrano/rails/migrations&#39;&#10;require &#39;capistrano/rails/assets&#39;</span><br></pre></td></tr></table></figure>
+<p>Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。</p>
 
             
                 
@@ -254,7 +312,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/chrome-plugin/">chrome plugin</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/code-tree/">code tree</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/github/">github</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-deploy/">auto deploy</a>
 
             </div>
         
@@ -263,7 +321,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/"  data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -271,7 +329,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/24/atom-markdown-mindmap-plugin/" data-tooltip="ATOM 心智圖外掛">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/" data-tooltip="關於自動部署 rollback">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -286,17 +344,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -334,7 +392,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/"  data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -342,7 +400,7 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/24/atom-markdown-mindmap-plugin/" data-tooltip="ATOM 心智圖外掛">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/" data-tooltip="關於自動部署 rollback">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -357,17 +415,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -387,17 +445,17 @@ Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE �
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/27/octotree-chrome-plugin/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

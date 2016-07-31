@@ -219,6 +219,161 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/07/30/auto-deploy/">
+                            自動部署三兩事(1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Jul 30 2016 14:06:05 GMT+0800">
+	
+		    7月 30, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？</p>
+<p><strong>重新部署要做的事</strong></p>
+<ul>
+<li>備份資料庫</li>
+<li>更新程式碼</li>
+<li>更新設定檔</li>
+<li>更新資料庫</li>
+<li>例行性指令<ul>
+<li>重啟 service</li>
+<li>清除 cache</li>
+</ul>
+</li>
+<li>etc…</li>
+</ul>
+<p>以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。</p>
+<h3 id="相關的工具類型"><a href="#相關的工具類型" class="headerlink" title="相關的工具類型"></a>相關的工具類型</h3><ul>
+<li>資料庫遷移工具 (Migration tools)</li>
+<li>自動部署工具 (automated configuration manage tool)</li>
+</ul>
+<h3 id="自動部署工具"><a href="#自動部署工具" class="headerlink" title="自動部署工具"></a>自動部署工具</h3><ul>
+<li>Ansible</li>
+<li>Chef</li>
+<li>Capistrano</li>
+<li>etc…</li>
+</ul>
+<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require &#39;capistrano/setup&#39;&#10;require &#39;capistrano/deploy&#39;&#10;require &#39;capistrano/bundler&#39;&#10;require &#39;capistrano/rails/migrations&#39;&#10;require &#39;capistrano/rails/assets&#39;</span><br></pre></td></tr></table></figure>
+<p>Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/07/30/auto-deploy/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/07/29/deploy-rollback/">
+                            關於自動部署 rollback
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Jul 29 2016 14:00:06 GMT+0800">
+	
+		    7月 29, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
+<p><strong>首先必須了解，我們需要 rollback 什麼</strong></p>
+<ul>
+<li>還原回舊的程式碼</li>
+<li>還原資料庫</li>
+</ul>
+<p><strong>還原回舊的程式碼</strong></p>
+<ul>
+<li>待捕…</li>
+</ul>
+<p><strong>資料庫rollback</strong></p>
+<ul>
+<li>資料庫層級的 rollback<ul>
+<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
+</ul>
+</li>
+<li>框架層級的 rollback<ul>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
+<li>例如 <code>rake db:migrate</code></li>
+</ul>
+</li>
+</ul>
+<img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
+<ul>
+<li>那到底怎麼收拾失敗的殘局？<ul>
+<li>答案就是在寫一個 migration script 去修正問題</li>
+</ul>
+</li>
+</ul>
+<p><strong>db migration tools</strong></p>
+<ul>
+<li><a href="https://github.com/sequelize/cli" target="_blank" rel="external">sequelize-cli</a></li>
+<li><a href="http://www.liquibase.org/" target="_blank" rel="external">liquibase</a></li>
+<li><a href="https://github.com/flyway/flyway" target="_blank" rel="external">flyway</a></li>
+<li><a href="http://guides.rubyonrails.org/v3.2/migrations.html" target="_blank" rel="external">ruby migrate</a></li>
+</ul>
+<p><strong>Sandbox</strong></p>
+<ul>
+<li><a href="https://github.com/alincode/rails-migration-sandbox" target="_blank" rel="external">rails migration sandbox</a></li>
+<li><a href="https://github.com/alincode/sequelize-merged-sandbox" target="_blank" rel="external">sequelize migration sandbox</a></li>
+</ul>
+<p><strong>相關文章</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback" target="_blank" rel="external">Usefulness of db migrations rollback</a></li>
+<li><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">Active Record - 資料庫遷移</a></li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/07/29/deploy-rollback/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/07/27/octotree-chrome-plugin/">
                             octotree 在瀏覽器上顯示 code tree
                         </a>
@@ -565,109 +720,6 @@
                     
                         <p>
                             <a href="/blog/2016/06/30/webdriverio-vs-protractor-architecture-2/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/">
-                            WebdriverIO vs Protractor 架構(1)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jun 29 2016 21:41:27 GMT+0800">
-	
-		    6月 29, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
-<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
-<p><strong>圖一</strong><br><img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title=""></p>
-<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
-<p>Protractor 跟 selenium-webdriver API 的使用方式非常雷同。</p>
-<p><a href="http://seleniumhq.github.io/selenium/docs/api/javascript/" target="_blank" rel="external">selenium-webdriver API</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = driver.findElement(By.id(&#39;dog_id&#39;)).click();</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = browser.findElement(by.id(&#39;dog_id&#39;));</span><br></pre></td></tr></table></figure></p>
-<p>但 <a href="http://webdriver.io/api/protocol/element.html" target="_blank" rel="external">WebdriverIO API</a> 則更友善一點，非常肯定作者在這方面的努力。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = client.element(&#39;#dog_id&#39;);</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/06/29/webdriverio-vs-protractor-architecture/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/06/20/wdio-selenium-standalone-service/">
-                            整合 wdio selenium standalone service
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Jun 20 2016 11:30:03 GMT+0800">
-	
-		    6月 20, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近 <code>WebdriverIO</code> 又 release 一個新的 service，這個 service 主要是整合 <code>selenium standalone</code> package，不需要另外執行 <code>selenium-standalone start</code>，它會在背後自動 hook 做這件事。</p>
-<p>使用上也非常的簡單，只要<a href="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/">原本的測試專案安裝</a>，新增的 service <code>npm i wdio-selenium-standalone-service -D</code>，並編輯 <code>wdio.conf.js</code> 加入 <code>services: [&#39;selenium-standalone&#39;],</code> 設定即可。</p>
-<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
-<li><a href="http://webdriver.io/guide/services/selenium-standalone.html" target="_blank" rel="external">SELENIUM STANDALONE SERVICE</a></li>
-</ul>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/06/20/wdio-selenium-standalone-service/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

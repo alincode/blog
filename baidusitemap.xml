@@ -4,6 +4,40 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/07/29/deploy-rollback/</loc>
+    <lastmod>2016-07-31T11:33:50.000Z</lastmod>
+    <data>
+        <display>
+        <title>關於自動部署 rollback</title>
+        <pubTime>2016-07-29T06:00:06.000Z</pubTime>
+        
+        <tag>rollback</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/07/30/auto-deploy/</loc>
+    <lastmod>2016-07-31T11:30:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>自動部署三兩事(1)</title>
+        <pubTime>2016-07-30T06:06:05.000Z</pubTime>
+        
+        <tag>auto deploy</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/07/27/octotree-chrome-plugin/</loc>
     <lastmod>2016-07-27T01:45:55.000Z</lastmod>
     <data>
@@ -437,17 +471,24 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>React Bind</title>
-        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
+        <title>有效的時間管理 - 重點整理(1)</title>
+        <pubTime>2016-05-15T09:01:19.000Z</pubTime>
         
-        <tag>React</tag>
+        <tag>80/20 法則</tag>
+         
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
          
          
            
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
         </display>
     </data>
     </url>
@@ -473,24 +514,19 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>有效的時間管理 - 重點整理(1)</title>
-        <pubTime>2016-05-15T09:01:19.000Z</pubTime>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
         
-        <tag>80/20 法則</tag>
+        <tag>Story Points</tag>
          
-        <tag>時間管理</tag>
-         
-        <tag>有效的時間管理</tag>
+        <tag>預估</tag>
          
          
            
-             
-              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-          
         </display>
     </data>
     </url>
@@ -516,16 +552,14 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>如何開始使用 Story Points？</title>
-        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        <title>React Bind</title>
+        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
         
-        <tag>Story Points</tag>
-         
-        <tag>預估</tag>
+        <tag>React</tag>
          
          
            
