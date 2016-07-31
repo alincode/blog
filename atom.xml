@@ -68,7 +68,7 @@
     <link href="http://alincode.github.io/2016/07/29/deploy-rollback/"/>
     <id>http://alincode.github.io/2016/07/29/deploy-rollback/</id>
     <published>2016-07-29T06:00:06.000Z</published>
-    <updated>2016-07-31T11:58:08.000Z</updated>
+    <updated>2016-07-31T12:00:24.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://i-msdn.sec.s-msft.com/dynimg/IC721395.png&quot; alt=&quot;Release Management&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-tw/library/dn217874.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;圖片來源 - msdn&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
@@ -92,7 +92,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;框架層級的 rollback&lt;ul&gt;
-&lt;li&gt;但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。&lt;/li&gt;
+&lt;li&gt;但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。&lt;/li&gt;
 &lt;li&gt;例如若你在 migration script 中，新增了一個欄位，當你做 &lt;code&gt;rake db:rollback STEP=1&lt;/code&gt; 後，它會將欄位移除。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;

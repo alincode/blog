@@ -44,7 +44,7 @@ cap staging deploy:roll">
 <meta property="og:image" content="https://i-msdn.sec.s-msft.com/dynimg/IC721395.png">
 <meta property="og:image" content="http://alincode.github.io/blog/2016/07/29/deploy-rollback/structure.png">
 <meta property="og:image" content="http://alincode.github.io/blog/2016/07/29/deploy-rollback/ruby_rollback.png">
-<meta property="og:updated_time" content="2016-07-31T11:58:08.000Z">
+<meta property="og:updated_time" content="2016-07-31T12:00:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="關於自動部署 rollback">
 <meta name="twitter:description" content="圖片來源 - msdn
@@ -289,7 +289,7 @@ cap staging deploy:roll">
 </ul>
 </li>
 <li>框架層級的 rollback<ul>
-<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
 <li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會將欄位移除。</li>
 </ul>
 </li>

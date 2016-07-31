@@ -326,7 +326,7 @@
 </ul>
 </li>
 <li>框架層級的 rollback<ul>
-<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
 <li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會將欄位移除。</li>
 </ul>
 </li>
