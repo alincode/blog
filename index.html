@@ -314,6 +314,7 @@
 <li>待捕…</li>
 </ul>
 <p><strong>資料庫rollback</strong></p>
+<img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
 <ul>
 <li>資料庫層級的 rollback<ul>
 <li>使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
@@ -321,12 +322,9 @@
 </li>
 <li>框架層級的 rollback<ul>
 <li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
-<li>例如 <code>rake db:migrate</code></li>
+<li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會將欄位移除。</li>
 </ul>
 </li>
-</ul>
-<img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
-<ul>
 <li>那到底怎麼收拾失敗的殘局？<ul>
 <li>答案就是在寫一個 migration script 去修正問題</li>
 </ul>

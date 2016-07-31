@@ -68,7 +68,7 @@
     <link href="http://alincode.github.io/2016/07/29/deploy-rollback/"/>
     <id>http://alincode.github.io/2016/07/29/deploy-rollback/</id>
     <published>2016-07-29T06:00:06.000Z</published>
-    <updated>2016-07-31T11:33:50.000Z</updated>
+    <updated>2016-07-31T11:39:52.000Z</updated>
     
     <content type="html">&lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
@@ -81,6 +81,7 @@
 &lt;li&gt;待捕…&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;資料庫rollback&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/ruby_rollback.png&quot; alt=&quot;ruby_rollback.png&quot; title=&quot;&quot;&gt;
 &lt;ul&gt;
 &lt;li&gt;資料庫層級的 rollback&lt;ul&gt;
 &lt;li&gt;使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。&lt;/li&gt;
@@ -88,12 +89,9 @@
 &lt;/li&gt;
 &lt;li&gt;框架層級的 rollback&lt;ul&gt;
 &lt;li&gt;但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。&lt;/li&gt;
-&lt;li&gt;例如 &lt;code&gt;rake db:migrate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;例如若你在 migration script 中，新增了一個欄位，當你做 &lt;code&gt;rake db:rollback STEP=1&lt;/code&gt; 後，它會將欄位移除。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/ruby_rollback.png&quot; alt=&quot;ruby_rollback.png&quot; title=&quot;&quot;&gt;
-&lt;ul&gt;
 &lt;li&gt;那到底怎麼收拾失敗的殘局？&lt;ul&gt;
 &lt;li&gt;答案就是在寫一個 migration script 去修正問題&lt;/li&gt;
 &lt;/ul&gt;
