@@ -236,15 +236,19 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
+                    <p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC721395.png" alt="Release Management"><br><a href="https://msdn.microsoft.com/zh-tw/library/dn217874.aspx" target="_blank" rel="external">圖片來源 - msdn</a></p>
+<p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
 <p><strong>首先必須了解，我們需要 rollback 什麼</strong></p>
 <ul>
 <li>還原回舊的程式碼</li>
 <li>還原資料庫</li>
 </ul>
 <p><strong>還原回舊的程式碼</strong></p>
+<img src="/blog/2016/07/29/deploy-rollback/structure.png" alt="structure.png" title="">
 <ul>
-<li>待捕…</li>
+<li>以 capistrano 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。</li>
+<li><code>cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327</code></li>
+<li><a href="http://capistranorb.com/documentation/getting-started/structure/" target="_blank" rel="external">capistranorb structure</a></li>
 </ul>
 <p><strong>資料庫rollback</strong></p>
 <img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
@@ -279,6 +283,7 @@
 <ul>
 <li><a href="http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback" target="_blank" rel="external">Usefulness of db migrations rollback</a></li>
 <li><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">Active Record - 資料庫遷移</a></li>
+<li><a href="http://capistranorb.com/documentation/getting-started/rollbacks/" target="_blank" rel="external">capistranorb rollbacks</a></li>
 </ul>
 
                     

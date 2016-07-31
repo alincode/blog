@@ -68,17 +68,21 @@
     <link href="http://alincode.github.io/2016/07/29/deploy-rollback/"/>
     <id>http://alincode.github.io/2016/07/29/deploy-rollback/</id>
     <published>2016-07-29T06:00:06.000Z</published>
-    <updated>2016-07-31T11:39:52.000Z</updated>
+    <updated>2016-07-31T11:58:08.000Z</updated>
     
-    <content type="html">&lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://i-msdn.sec.s-msft.com/dynimg/IC721395.png&quot; alt=&quot;Release Management&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-tw/library/dn217874.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;圖片來源 - msdn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;還原回舊的程式碼&lt;/li&gt;
 &lt;li&gt;還原資料庫&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;還原回舊的程式碼&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/structure.png&quot; alt=&quot;structure.png&quot; title=&quot;&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;待捕…&lt;/li&gt;
+&lt;li&gt;以 capistrano 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://capistranorb.com/documentation/getting-started/structure/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;capistranorb structure&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;資料庫rollback&lt;/strong&gt;&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/07/29/deploy-rollback/ruby_rollback.png&quot; alt=&quot;ruby_rollback.png&quot; title=&quot;&quot;&gt;
@@ -113,18 +117,13 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Usefulness of db migrations rollback&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://ihower.tw/rails4/migrations.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Active Record - 資料庫遷移&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://capistranorb.com/documentation/getting-started/rollbacks/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;capistranorb rollbacks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;還原回舊的程式碼&lt;/li&gt;
-&lt;li&gt;還原資料庫&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;str
+      &lt;p&gt;&lt;img src=&quot;https://i-msdn.sec.s-msft.com/dynimg/IC721395.png&quot; alt=&quot;Release Management&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-tw/libra
     
     </summary>
     
