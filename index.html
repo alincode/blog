@@ -313,7 +313,7 @@
 <p><strong>還原回舊的程式碼</strong></p>
 <img src="/blog/2016/07/29/deploy-rollback/structure.png" alt="structure.png" title="">
 <ul>
-<li>以 <code>capistrano</code> 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。</li>
+<li>以 <code>capistrano</code> 為例，每次透過工具執行 release 指令之後，在 releases 資料夾下，就會有當下時間戳記資料夾，工具會更新軟連結 (current) 指向的新的時間戳記的資料夾，以達到可以還原的目的。</li>
 <li><code>cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327</code></li>
 <li><a href="http://capistranorb.com/documentation/getting-started/structure/" target="_blank" rel="external">capistranorb structure</a></li>
 </ul>
@@ -335,9 +335,11 @@
 </li>
 </ul>
 <p><strong>完整範例程式</strong></p>
-<pre><code>* [rails migration sandbox](https://github.com/alincode/rails-migration-sandbox)
-* [sequelize migration sandbox](https://github.com/alincode/sequelize-merged-sandbox)
-</code></pre><p><strong>database migration tools</strong></p>
+<ul>
+<li><a href="https://github.com/alincode/rails-migration-sandbox" target="_blank" rel="external">rails migration sandbox</a></li>
+<li><a href="https://github.com/alincode/sequelize-merged-sandbox" target="_blank" rel="external">sequelize migration sandbox</a></li>
+</ul>
+<p><strong>database migration tools</strong></p>
 <ul>
 <li><a href="https://github.com/sequelize/cli" target="_blank" rel="external">sequelize-cli</a></li>
 <li><a href="http://www.liquibase.org/" target="_blank" rel="external">liquibase</a></li>

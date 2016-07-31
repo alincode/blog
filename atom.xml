@@ -68,7 +68,7 @@
     <link href="http://alincode.github.io/2016/07/29/deploy-rollback/"/>
     <id>http://alincode.github.io/2016/07/29/deploy-rollback/</id>
     <published>2016-07-29T06:00:06.000Z</published>
-    <updated>2016-07-31T14:57:31.000Z</updated>
+    <updated>2016-07-31T15:10:40.000Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://i-msdn.sec.s-msft.com/dynimg/IC721395.png&quot; alt=&quot;Release Management&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-tw/library/dn217874.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;圖片來源 - msdn&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
@@ -80,7 +80,7 @@
 &lt;p&gt;&lt;strong&gt;還原回舊的程式碼&lt;/strong&gt;&lt;/p&gt;
 &lt;img src=&quot;/blog/2016/07/29/deploy-rollback/structure.png&quot; alt=&quot;structure.png&quot; title=&quot;&quot;&gt;
 &lt;ul&gt;
-&lt;li&gt;以 &lt;code&gt;capistrano&lt;/code&gt; 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。&lt;/li&gt;
+&lt;li&gt;以 &lt;code&gt;capistrano&lt;/code&gt; 為例，每次透過工具執行 release 指令之後，在 releases 資料夾下，就會有當下時間戳記資料夾，工具會更新軟連結 (current) 指向的新的時間戳記的資料夾，以達到可以還原的目的。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://capistranorb.com/documentation/getting-started/structure/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;capistranorb structure&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -102,9 +102,11 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;完整範例程式&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;* [rails migration sandbox](https://github.com/alincode/rails-migration-sandbox)
-* [sequelize migration sandbox](https://github.com/alincode/sequelize-merged-sandbox)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;database migration tools&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/rails-migration-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rails migration sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/sequelize-merged-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize migration sandbox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;database migration tools&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/sequelize/cli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize-cli&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://www.liquibase.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;liquibase&lt;/a&gt;&lt;/li&gt;
