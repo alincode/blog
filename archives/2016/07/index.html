@@ -314,7 +314,7 @@
 <p><strong>還原回舊的程式碼</strong></p>
 <img src="/blog/2016/07/29/deploy-rollback/structure.png" alt="structure.png" title="">
 <ul>
-<li>以 capistrano 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。</li>
+<li>以 <code>capistrano</code> 為例，每次透過工具 release 之後，工具會將舊的程式碼，搬到 release 資料夾下，並給一個時間戳記，以便之後可以還原。</li>
 <li><code>cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327</code></li>
 <li><a href="http://capistranorb.com/documentation/getting-started/structure/" target="_blank" rel="external">capistranorb structure</a></li>
 </ul>
@@ -322,12 +322,12 @@
 <img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
 <ul>
 <li>資料庫層級的 rollback<ul>
-<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作是包在同一個 transaction 的，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
+<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作包在同一個 transaction，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
 </ul>
 </li>
 <li>框架層級的 rollback<ul>
-<li>但如果 migration script 執行完成後，結果不如預期，基本上是不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致衝突其他已經執行這段 migration 的人會發生不預期的衝突，所以功能最好只使用在位 push 出 code 之前使用。</li>
-<li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會將欄位移除。</li>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致其他已經 pull 的人發生衝突，所以功能最好只使用在未 push code 出去之前使用。</li>
+<li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會自動將新增的欄位移除。</li>
 </ul>
 </li>
 <li>那到底怎麼收拾失敗的殘局？<ul>
@@ -335,17 +335,15 @@
 </ul>
 </li>
 </ul>
-<p><strong>db migration tools</strong></p>
+<p><strong>完整範例程式</strong></p>
+<pre><code>* [rails migration sandbox](https://github.com/alincode/rails-migration-sandbox)
+* [sequelize migration sandbox](https://github.com/alincode/sequelize-merged-sandbox)
+</code></pre><p><strong>database migration tools</strong></p>
 <ul>
 <li><a href="https://github.com/sequelize/cli" target="_blank" rel="external">sequelize-cli</a></li>
 <li><a href="http://www.liquibase.org/" target="_blank" rel="external">liquibase</a></li>
 <li><a href="https://github.com/flyway/flyway" target="_blank" rel="external">flyway</a></li>
 <li><a href="http://guides.rubyonrails.org/v3.2/migrations.html" target="_blank" rel="external">ruby migrate</a></li>
-</ul>
-<p><strong>Sandbox</strong></p>
-<ul>
-<li><a href="https://github.com/alincode/rails-migration-sandbox" target="_blank" rel="external">rails migration sandbox</a></li>
-<li><a href="https://github.com/alincode/sequelize-merged-sandbox" target="_blank" rel="external">sequelize migration sandbox</a></li>
 </ul>
 <p><strong>相關文章</strong></p>
 <ul>
