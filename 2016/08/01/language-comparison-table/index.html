@@ -6,65 +6,137 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>自動部署三兩事(1) - alincode</title>
+    <title>程式語言常用框架對照表 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
-重新部署要做的事
-
-備份資料庫
-更新程式碼
-更新設定檔
-更新資料庫
-例行性指令
-重啟 service
-清除 cache
+    <meta name="description" content="language
+Node
+Ruby
+Groovy
+Java
 
 
-etc…
 
-以往，我們要做上述的這些事，我">
+
+Version Manager
+NVM
+RVM
+gvm
+
+
+
+Package manager
+NPM
+Bundler
+Gradle
+Maven
+
+
+Task Runner
+Grunt
+Rake
+Gradle
+Maven
+
+
+Build tool
+Webpack
+
+Gradle
+Maven
+
+
+Web framework
+Sail">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="自動部署三兩事(1)">
-<meta property="og:url" content="http://alincode.github.io/2016/07/30/auto-deploy/index.html">
+<meta property="og:title" content="程式語言常用框架對照表">
+<meta property="og:url" content="http://alincode.github.io/2016/08/01/language-comparison-table/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
-重新部署要做的事
-
-備份資料庫
-更新程式碼
-更新設定檔
-更新資料庫
-例行性指令
-重啟 service
-清除 cache
+<meta property="og:description" content="language
+Node
+Ruby
+Groovy
+Java
 
 
-etc…
 
-以往，我們要做上述的這些事，我">
-<meta property="og:updated_time" content="2016-07-31T11:30:32.000Z">
+
+Version Manager
+NVM
+RVM
+gvm
+
+
+
+Package manager
+NPM
+Bundler
+Gradle
+Maven
+
+
+Task Runner
+Grunt
+Rake
+Gradle
+Maven
+
+
+Build tool
+Webpack
+
+Gradle
+Maven
+
+
+Web framework
+Sail">
+<meta property="og:updated_time" content="2016-08-01T00:12:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自動部署三兩事(1)">
-<meta name="twitter:description" content="在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？
-重新部署要做的事
-
-備份資料庫
-更新程式碼
-更新設定檔
-更新資料庫
-例行性指令
-重啟 service
-清除 cache
+<meta name="twitter:title" content="程式語言常用框架對照表">
+<meta name="twitter:description" content="language
+Node
+Ruby
+Groovy
+Java
 
 
-etc…
 
-以往，我們要做上述的這些事，我">
+
+Version Manager
+NVM
+RVM
+gvm
+
+
+
+Package manager
+NPM
+Bundler
+Gradle
+Maven
+
+
+Task Runner
+Grunt
+Rake
+Gradle
+Maven
+
+
+Build tool
+Webpack
+
+Gradle
+Maven
+
+
+Web framework
+Sail">
     
     
         
@@ -258,13 +330,13 @@ etc…
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            自動部署三兩事(1)
+            程式語言常用框架對照表
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Jul 30 2016 14:06:05 GMT+0800">
+    <time itemprop="datePublished" content="Mon Aug 01 2016 07:36:43 GMT+0800">
 	
-		    7月 30, 2016
+		    8月 01, 2016
     	
     </time>
     
@@ -273,33 +345,96 @@ etc…
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？</p>
-<p><strong>重新部署要做的事</strong></p>
-<ul>
-<li>備份資料庫</li>
-<li>更新程式碼</li>
-<li>更新設定檔</li>
-<li>更新資料庫</li>
-<li>例行性指令<ul>
-<li>重啟 service</li>
-<li>清除 cache</li>
-</ul>
-</li>
-<li>etc…</li>
-</ul>
-<p>以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。</p>
-<h3 id="相關的工具類型"><a href="#相關的工具類型" class="headerlink" title="相關的工具類型"></a>相關的工具類型</h3><ul>
-<li>資料庫遷移工具 (Migration tools)</li>
-<li>自動部署工具 (automated configuration manage tool)</li>
-</ul>
-<h3 id="自動部署工具"><a href="#自動部署工具" class="headerlink" title="自動部署工具"></a>自動部署工具</h3><ul>
-<li>Ansible</li>
-<li>Chef</li>
-<li>Capistrano</li>
-<li>etc…</li>
-</ul>
-<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require &#39;capistrano/setup&#39;&#10;require &#39;capistrano/deploy&#39;&#10;require &#39;capistrano/bundler&#39;&#10;require &#39;capistrano/rails/migrations&#39;&#10;require &#39;capistrano/rails/assets&#39;</span><br></pre></td></tr></table></figure>
-<p>Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。</p>
+            <table>
+<thead>
+<tr>
+<th>language</th>
+<th style="text-align:left">Node</th>
+<th style="text-align:left">Ruby</th>
+<th style="text-align:left">Groovy</th>
+<th style="text-align:left">Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version Manager</td>
+<td style="text-align:left">NVM</td>
+<td style="text-align:left">RVM</td>
+<td style="text-align:left">gvm</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Package manager</td>
+<td style="text-align:left">NPM</td>
+<td style="text-align:left">Bundler</td>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">Maven</td>
+</tr>
+<tr>
+<td>Task Runner</td>
+<td style="text-align:left">Grunt</td>
+<td style="text-align:left">Rake</td>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">Maven</td>
+</tr>
+<tr>
+<td>Build tool</td>
+<td style="text-align:left">Webpack</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">Maven</td>
+</tr>
+<tr>
+<td>Web framework</td>
+<td style="text-align:left">Sails</td>
+<td style="text-align:left">Rails</td>
+<td style="text-align:left">Grails</td>
+<td style="text-align:left">Strust</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left">Express</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Spring MVC</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left">Koa</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Web server</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Tomcat</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Nginx</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Apache</td>
+</tr>
+<tr>
+<td>Desktop application</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Griffon</td>
+<td style="text-align:left">Swing</td>
+</tr>
+</tbody>
+</table>
 
             
                 
@@ -312,7 +447,7 @@ etc…
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-deploy/">auto deploy</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Groovy/">Groovy</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Java/">Java</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/NodeJS/">NodeJS</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Ruby/">Ruby</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/framework/">framework</a>
 
             </div>
         
@@ -321,7 +456,7 @@ etc…
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/01/language-comparison-table/"  data-tooltip="程式語言常用框架對照表">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -329,7 +464,7 @@ etc…
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/" data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/30/auto-deploy/" data-tooltip="自動部署三兩事(1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -344,17 +479,17 @@ etc…
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -392,7 +527,7 @@ etc…
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/01/language-comparison-table/"  data-tooltip="程式語言常用框架對照表">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -400,7 +535,7 @@ etc…
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/29/deploy-rollback/" data-tooltip="關於自動部署 rollback">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/07/30/auto-deploy/" data-tooltip="自動部署三兩事(1)">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -415,17 +550,17 @@ etc…
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -445,17 +580,17 @@ etc…
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/30/auto-deploy/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/08/01/language-comparison-table/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

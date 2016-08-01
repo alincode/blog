@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alincode.github.io/2016/08/01/language-comparison-table/</loc>
+    
+    <lastmod>2016-08-01T00:12:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/2016/07/29/deploy-rollback/</loc>
     
     <lastmod>2016-07-31T15:10:40.000Z</lastmod>
@@ -177,20 +184,6 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/15/Effective-Time-Management/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/2016/05/08/estimating-with-story-points/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://alincode.github.io/2016/05/09/how-to-getting-started-story-points/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
@@ -198,7 +191,14 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    <loc>http://alincode.github.io/2016/05/10/when-use-promise/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/2016/05/15/Effective-Time-Management/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -212,7 +212,14 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/2016/05/10/when-use-promise/</loc>
+    <loc>http://alincode.github.io/2016/05/08/estimating-with-story-points/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/2016/05/17/how-to-improve-english-reading-skills/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     

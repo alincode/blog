@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-07-31T11:30:32.000Z</updated>
+  <updated>2016-08-01T00:12:35.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,130 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>程式語言常用框架對照表</title>
+    <link href="http://alincode.github.io/2016/08/01/language-comparison-table/"/>
+    <id>http://alincode.github.io/2016/08/01/language-comparison-table/</id>
+    <published>2016-07-31T23:36:43.000Z</published>
+    <updated>2016-08-01T00:12:35.000Z</updated>
+    
+    <content type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;language&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Node&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Ruby&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Groovy&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Java&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Version Manager&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;NVM&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;RVM&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;gvm&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Package manager&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;NPM&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bundler&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Gradle&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Maven&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Task Runner&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Grunt&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Rake&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Gradle&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Maven&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Build tool&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Webpack&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Gradle&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Maven&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Web framework&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Sails&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Rails&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Grails&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Strust&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Express&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Spring MVC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Koa&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Web server&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Tomcat&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Nginx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Apache&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Desktop application&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Griffon&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Swing&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;language&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Node&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Ruby&lt;/th&gt;
+&lt;th style=&quot;text-align:lef
+    
+    </summary>
+    
+    
+      <category term="Groovy" scheme="http://alincode.github.io/tags/Groovy/"/>
+    
+      <category term="Java" scheme="http://alincode.github.io/tags/Java/"/>
+    
+      <category term="NodeJS" scheme="http://alincode.github.io/tags/NodeJS/"/>
+    
+      <category term="Ruby" scheme="http://alincode.github.io/tags/Ruby/"/>
+    
+      <category term="framework" scheme="http://alincode.github.io/tags/framework/"/>
+    
+  </entry>
   
   <entry>
     <title>自動部署三兩事(1)</title>
@@ -689,41 +813,6 @@
     
       &lt;img src=&quot;/blog/2016/05/23/Effective-Time-Management-6/time.jpg&quot; alt=&quot;time.jpg&quot; title=&quot;&quot;&gt;
 &lt;h3 id=&quot;辨識什麼是-Time-Killer-任務&quot;&gt;&lt;a href=&quot;#辨識什麼是-Time
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 重點整理(5)</title>
-    <link href="http://alincode.github.io/2016/05/22/Effective-Time-Management-5/"/>
-    <id>http://alincode.github.io/2016/05/22/Effective-Time-Management-5/</id>
-    <published>2016-05-22T13:44:01.000Z</published>
-    <updated>2016-05-24T14:13:50.000Z</updated>
-    
-    <content type="html">&lt;h3 id=&quot;七種方法把事情做完&quot;&gt;&lt;a href=&quot;#七種方法把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方法把事情做完&quot;&gt;&lt;/a&gt;七種方法把事情做完&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;將符合 80/20 法則高價值的事情標注起來，將所有時間專注在這些任務，將低回報的事情，委派、轉交、刪除或重新設計。&lt;/li&gt;
-&lt;li&gt;減少低回報的任務數量&lt;/li&gt;
-&lt;li&gt;因為一些外在因素，有時候你很難控制你的日程，但至少確保每日有兩、三件是屬於高價值的任務&lt;/li&gt;
-&lt;li&gt;選一天(或幾個小時)只專注在完成高價值的任務&lt;/li&gt;
-&lt;li&gt;再早上十點半時間，將高價值的事情做完。&lt;/li&gt;
-&lt;li&gt;將高價值的任務，排在你每日效率最高的時間。&lt;/li&gt;
-&lt;li&gt;建立一個 Stop Doing 列表，將意識到那些事無意義的事。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;七種方法把事情做完&quot;&gt;&lt;a href=&quot;#七種方法把事情做完&quot; class=&quot;headerlink&quot; title=&quot;七種方法把事情做完&quot;&gt;&lt;/a&gt;七種方法把事情做完&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;將符合 80/20 法則高價值的事情標注起來，將所有時間專注在這些任務，
     
     </summary>
     
