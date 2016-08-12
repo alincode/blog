@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alincode.github.io/blog/2016/08/11/mysql-remote-connect/</loc>
+    
+    <lastmod>2016-08-12T14:04:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/</loc>
     
     <lastmod>2016-08-12T02:04:27.000Z</lastmod>
@@ -191,14 +198,7 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -219,6 +219,13 @@
   </url>
   
   <url>
+    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
@@ -226,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     

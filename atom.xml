@@ -45,6 +45,39 @@
   </entry>
   
   <entry>
+    <title>MySQL 設定遠端連線</title>
+    <link href="http://alincode.github.io/2016/08/11/mysql-remote-connect/"/>
+    <id>http://alincode.github.io/2016/08/11/mysql-remote-connect/</id>
+    <published>2016-08-11T13:56:36.000Z</published>
+    <updated>2016-08-12T14:04:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>設定 MySQL 設定檔</strong></p>
+<p><code>vi /etc/mysql/mysql.conf.d/mysqld.cnf</code></p>
+<p>註解掉 bind-address = 127.0.0.1</p>
+<p>mysql&gt; <code>grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;root&#39; with grant option;</code><br>mysql&gt; <code>flush privileges;</code></p>
+<p><strong>設定防火牆</strong></p>
+<p><code>iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 3306 -j ACCEPT</code></p>
+<p><strong>查詢防火牆</strong></p>
+<p><code>iptables -L -n</code></p>
+<p><strong>連線</strong></p>
+<p><code>mysql -h dev.domain.com -u root -p</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;設定 MySQL 設定檔&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vi /etc/mysql/mysql.conf.d/mysqld.cnf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;註解掉 bind-address = 127.0.0.1&lt;/p&gt;
+&lt;p&gt;mysql&amp;
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://alincode.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>程式語言常用框架對照表</title>
     <link href="http://alincode.github.io/2016/08/01/language-comparison-table/"/>
     <id>http://alincode.github.io/2016/08/01/language-comparison-table/</id>
@@ -749,30 +782,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;領導管理-vs-指揮管理&quot;&gt;&lt;a href=&quot;#領導管理-vs-指揮管理&quot; class=&quot;headerlink&quot; title=&quot;領導管理 vs 指揮管理&quot;&gt;&lt;/a&gt;領導管理 vs 指揮管理&lt;/h3&gt;&lt;p&gt;使指揮管理俱有破壞性的原因是它強調個人並讓員工互相為敵，使領
-    
-    </summary>
-    
-    
-      <category term="Choice Theory" scheme="http://alincode.github.io/tags/Choice-Theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Choice Theory - 重點整理(1)</title>
-    <link href="http://alincode.github.io/2016/05/24/choice-theory-1/"/>
-    <id>http://alincode.github.io/2016/05/24/choice-theory-1/</id>
-    <published>2016-05-24T14:49:51.000Z</published>
-    <updated>2016-06-05T16:21:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="完全行為"><a href="#完全行為" class="headerlink" title="完全行為"></a>完全行為</h3><p>動作 -&gt; 思考 -&gt; 感覺 -&gt; 生理機能</p>
-<h3 id="選擇焦慮-選擇恐懼"><a href="#選擇焦慮-選擇恐懼" class="headerlink" title="選擇焦慮 / 選擇恐懼"></a>選擇焦慮 / 選擇恐懼</h3><p>焦慮症會被稱為做正在焦慮或選擇焦慮，新的說法會比舊的說法來得精確，因為它們是活的、主動的說法。因為這些是選擇的結果，所以有希望。如果你能夠做一個選擇，自然就能做別的「更好的選擇」。你的選擇可能很痛苦，但不是不能取消的。感到憂慮是被動的做法，好像它發生在我們身上，我們是受害者，我們沒法控制它，這種名詞和形容詞的使用會誤導我們，使我們誤信我們不能為自己做些什麼。</p>
-<h3 id="成功人士的煩惱"><a href="#成功人士的煩惱" class="headerlink" title="成功人士的煩惱"></a>成功人士的煩惱</h3><p>他們傾向對不是朋友的人，特別是不比他們富有的人表示不信任。假使這些人管理他人的人，幾乎他們所有的人都對愛與歸屬感有正常或正常以上的需求，能夠學習選擇理論，並在他們個人的生活裡運用，他們可能就會和他們管理的人做更友善的接觸。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;完全行為&quot;&gt;&lt;a href=&quot;#完全行為&quot; class=&quot;headerlink&quot; title=&quot;完全行為&quot;&gt;&lt;/a&gt;完全行為&lt;/h3&gt;&lt;p&gt;動作 -&amp;gt; 思考 -&amp;gt; 感覺 -&amp;gt; 生理機能&lt;/p&gt;
-&lt;h3 id=&quot;選擇焦慮-選擇恐懼&quot;&gt;&lt;a href
     
     </summary>
     
