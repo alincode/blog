@@ -18,7 +18,7 @@
 類似於 JQuery 的語法
 具有非常強大的 WebDriver，卻是使用非常簡單的 API
 Robustness of Page Object Modeling
-使用 Groovy 描述性語言">
+使用 Groovy 描述性語">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Geb for functional testing of Grails app 重點整理">
 <meta property="og:url" content="http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/index.html">
@@ -28,7 +28,7 @@ Robustness of Page Object Modeling
 類似於 JQuery 的語法
 具有非常強大的 WebDriver，卻是使用非常簡單的 API
 Robustness of Page Object Modeling
-使用 Groovy 描述性語言">
+使用 Groovy 描述性語">
 <meta property="og:updated_time" content="2016-04-10T19:17:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Geb for functional testing of Grails app 重點整理">
@@ -37,7 +37,7 @@ Robustness of Page Object Modeling
 類似於 JQuery 的語法
 具有非常強大的 WebDriver，卻是使用非常簡單的 API
 Robustness of Page Object Modeling
-使用 Groovy 描述性語言">
+使用 Groovy 描述性語">
     
     
         
@@ -50,10 +50,10 @@ Robustness of Page Object Modeling
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -89,7 +89,7 @@ Robustness of Page Object Modeling
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -108,7 +108,7 @@ Robustness of Page Object Modeling
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -168,7 +168,7 @@ Robustness of Page Object Modeling
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -262,14 +262,14 @@ Robustness of Page Object Modeling
 <li>選取後，會回傳一個 Navigator 物件</li>
 <li>支援 CSS3 語法</li>
 </ul>
-<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;p&#39;).text() == &#34;a&#34;&#10;$(&#39;p&#39;).tag() == &#34;p&#34;&#10;$(&#39;p&#39;).@title == &#34;a&#34;&#10;$(&#39;p&#39;).classes == [&#34;a&#8221;, &#34;para&#34;]</span><br></pre></td></tr></table></figure>
-<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;a&#39;).click()&#10;$(&#39;div&#39;).isDisplayed()&#10;withConfirm &#123;&#10;  $(&#39;button.delete&#39;).click();&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#60;&#60; &#39;abc&#39;&#10;$(&#39;input&#39;, name: &#39;foo&#39;) &#60;&#60; Keys.chord(Keys.CONTROL, &#39;c&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;p&apos;).text() == &quot;a&quot;</div><div class="line">$(&apos;p&apos;).tag() == &quot;p&quot;</div><div class="line">$(&apos;p&apos;).@title == &quot;a&quot;</div><div class="line">$(&apos;p&apos;).classes == [&quot;a”, &quot;para&quot;]</div></pre></td></tr></table></figure>
+<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;a&apos;).click()</div><div class="line">$(&apos;div&apos;).isDisplayed()</div><div class="line">withConfirm &#123;</div><div class="line">  $(&apos;button.delete&apos;).click();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&apos;div&apos;) &lt;&lt; &apos;abc&apos;</div><div class="line">$(&apos;input&apos;, name: &apos;foo&apos;) &lt;&lt; Keys.chord(Keys.CONTROL, &apos;c&apos;)</div></pre></td></tr></table></figure>
 <h3 id="Interaction-14-25"><a href="#Interaction-14-25" class="headerlink" title="Interaction (14:25)"></a>Interaction (14:25)</h3><blockquote>
 <p>Using actions API from WebDriver is possible. But Geb provides the interact closure.</p>
 </blockquote>
 <p>你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.openga.selenium.Keys&#10;&#10;interact &#123;&#10;     KeyDown Keys.CTRL&#10;     click $(&#39;a.myLink&#39;)&#10;     keyUp Keys.CTRL&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import org.openga.selenium.Keys</div><div class="line"></div><div class="line">interact &#123;</div><div class="line">     KeyDown Keys.CTRL</div><div class="line">     click $(&apos;a.myLink&apos;)</div><div class="line">     keyUp Keys.CTRL</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="可使用的變數-16-15"><a href="#可使用的變數-16-15" class="headerlink" title="可使用的變數 (16:15)"></a>可使用的變數 (16:15)</h3><ul>
 <li>title</li>
 <li>browser</li>
@@ -281,23 +281,23 @@ Robustness of Page Object Modeling
 <li>下載檔案</li>
 <li>與 js 互動</li>
 </ul>
-<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.spock.GebSpec&#10;&#10;@Stepwise&#10;class XXXFunctionalSpec extends GebSpec &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import geb.spock.GebSpec</div><div class="line"></div><div class="line">@Stepwise</div><div class="line">class XXXFunctionalSpec extends GebSpec &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Page-物件-描述一個頁面-23-50"><a href="#Page-物件-描述一個頁面-23-50" class="headerlink" title="Page 物件 - 描述一個頁面 (23:50)"></a>Page 物件 - 描述一個頁面 (23:50)</h3><ul>
 <li>Url</li>
 <li>如何檢查是否在對的地方</li>
 <li>內容是否是我們要的跟如何找到它</li>
 <li>Helper method</li>
 </ul>
-<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;     info(required: false) &#123;$(&#39;div.info&#39;)&#125;&#10;     message(wait: false) &#123;$(&#39;div.message&#39;)&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">static content = &#123;</div><div class="line">     info(required: false) &#123;$(&apos;div.info&apos;)&#125;</div><div class="line">     message(wait: false) &#123;$(&apos;div.message&apos;)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Modules-描述重複的內容-26-10"><a href="#Modules-描述重複的內容-26-10" class="headerlink" title="Modules - 描述重複的內容 (26:10)"></a>Modules - 描述重複的內容 (26:10)</h3><ul>
 <li>跨頁面</li>
 <li>Within the same page</li>
 </ul>
-<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Module&#10;&#10;class XXXListItemModules extends Module &#123;&#10;     data &#123; $(&#34;td&#8221;, it) &#125;&#10;     name &#123; data(0).text() &#125;&#10;     email &#123; data(1).text() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import geb.Module</div><div class="line"></div><div class="line">class XXXListItemModules extends Module &#123;</div><div class="line">     data &#123; $(&quot;td”, it) &#125;</div><div class="line">     name &#123; data(0).text() &#125;</div><div class="line">     email &#123; data(1).text() &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Waiting-36-00"><a href="#Waiting-36-00" class="headerlink" title="Waiting (36:00)"></a>Waiting (36:00)</h3><p>自定預設的 Waiting 設定值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// GebConfig.groovy&#10;waiting &#123;&#10;     timeout: 10&#10;     retryInterval: 0.5&#10;&#125;&#10;&#10;baseNavigatorWaiting = true&#10;atCheckWaiting = true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// GebConfig.groovy</div><div class="line">waiting &#123;</div><div class="line">     timeout: 10</div><div class="line">     retryInterval: 0.5</div><div class="line">&#125;</div><div class="line"></div><div class="line">baseNavigatorWaiting = true</div><div class="line">atCheckWaiting = true</div></pre></td></tr></table></figure>
 <h3 id="Pausing-Geb-36-55"><a href="#Pausing-Geb-36-55" class="headerlink" title="Pausing Geb (36:55)"></a>Pausing Geb (36:55)</h3><p>可做為 debug 用途</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">when:&#10;pause() // for Pause Geb until button pressed</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">when:</div><div class="line">pause() // for Pause Geb until button pressed</div></pre></td></tr></table></figure>
 
             
                 
@@ -342,17 +342,17 @@ Robustness of Page Object Modeling
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -413,17 +413,17 @@ Robustness of Page Object Modeling
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -443,17 +443,17 @@ Robustness of Page Object Modeling
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/11/Geb-for-functional-testing-of-Grails-app/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -504,10 +504,10 @@ Robustness of Page Object Modeling
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     

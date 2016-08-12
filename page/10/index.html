@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -218,6 +218,66 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/14/Rethinking-Web-App-Development/">
+                            Rethinking Web App Development 重點整理
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Mar 14 2016 22:00:46 GMT+0800">
+	
+		    3月 14, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <div class="video-container"><iframe src="//www.youtube.com/embed/nYkdrAPrdcw" frameborder="0" allowfullscreen></iframe></div>
+<p>Hacker Way: Rethinking Web App Development at Facebook</p>
+<p>這個影片解釋的非常清楚，為什麼要用 Flux 架構。</p>
+<p>另提，我一直誤會 Flux 跟 Redux 是兩個派流，但其實 Flux 是在講一個架構(雖然它也真的有一個框架叫 Flux)，又被騙到了，囧</p>
+<p>React : Declarative Views</p>
+<p>Flux : 單向資料流(Single directional data flow)</p>
+<p>Redux : 有實作 Flux 架構的框架，並增加了 Flux 不足的部分。</p>
+<h3 id="MVC-gt-Flux-10-32"><a href="#MVC-gt-Flux-10-32" class="headerlink" title="MVC -&gt; Flux (10:32)"></a>MVC -&gt; Flux (10:32)</h3><h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h4><p><code>Action -&gt; Controller -&gt; Model &lt;-&gt; View</code></p>
+<h4 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h4><p>Flux 架構的出現，是為了解決 MVC 架構所遇到的困難，Model 與 View 的互相關聯，太過複雜。</p>
+<p>初步的構想為 Action -&gt; Store -&gt; View，最後 Flux 架構為 <code>Action -&gt; Dispatcher -&gt; Store -&gt; View -&gt; Action</code></p>
+<h3 id="case-study-12-38"><a href="#case-study-12-38" class="headerlink" title="case study (12:38)"></a>case study (12:38)</h3><p>聊天功能所遇到的問題，兩個區塊的狀態，同時都有 Chat 的 stat 需要同步。</p>
+<h3 id="implement-render-22-30"><a href="#implement-render-22-30" class="headerlink" title="implement render (22:30)"></a>implement render (22:30)</h3><p>實作 render 所遇到的困難，傳統做法是用 append 增加新的元素，但這樣要維護 stat 很困難，所以改為 Model 一次 render。</p>
+<h3 id="Virtual-DOM-29-40"><a href="#Virtual-DOM-29-40" class="headerlink" title="Virtual DOM (29:40)"></a>Virtual DOM (29:40)</h3><p>為了做到區塊 render 又不損失效率，所以有一個虛擬(Virtual) DOM，可只 render 變動的部分。</p>
+<h3 id="Flux-vs-JQuery-41-45"><a href="#Flux-vs-JQuery-41-45" class="headerlink" title="Flux vs JQuery (41:45)"></a>Flux vs JQuery (41:45)</h3><p>Flux 幫你維護了 Stat，在 Flux 只需要考慮 Current Stat，而 JQuery 你需要自己維護每個 Stat。</p>
+<p><strong>JQuery render</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;model&quot;&gt;</div><div class="line">  &lt;div&gt;1&lt;/div&gt;</div><div class="line">  &lt;div&gt;2&lt;/div&gt;</div><div class="line">  &lt;div&gt;3&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">$(&apos;.model&apos;).append(&apos;&lt;div&gt;4&lt;/div&gt;&apos;);</div></pre></td></tr></table></figure>
+<p><strong>Flux render</strong></p>
+<p>Flux 的做法是更新 stat，然後 render 整個 model，但有 Virtual DOM，所以實際還是只 render 變動的部分，但我們實作可以更新 Model，其他麻煩事 Flux 會處理好。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;model&quot;&gt;</div><div class="line">  &lt;div&gt;1&lt;/div&gt;</div><div class="line">  &lt;div&gt;2&lt;/div&gt;</div><div class="line">  &lt;div&gt;3&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/14/Rethinking-Web-App-Development/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/13/spa-seo-2/">
                             SPA SEO (2)
                         </a>
@@ -250,7 +310,7 @@
 <li><a href="https://github.com/webpack/react-starter" target="_blank" rel="external">React Starter</a></li>
 <li>generator-fluxible</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-fluxible</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g yo generator-fluxible</div></pre></td></tr></table></figure>
 
                     
                         
@@ -355,12 +415,12 @@
 <li>xxx != null</li>
 <li>xxx &gt; 0</li>
 </ul>
-<h3 id="決定走哪個-view-或-response-http-code，接-Error"><a href="#決定走哪個-view-或-response-http-code，接-Error" class="headerlink" title="決定走哪個 view 或 response http code，接 Error"></a>決定走哪個 view 或 response http code，接 Error</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create : async(req,res) =&#62; &#123;&#10;  try&#123;&#10;    // &#30053;...&#10;    if(product)&#123;&#10;      return res.view(&#34;success_view&#34;);&#10;    &#125;else&#123;&#10;      return res.view(&#34;fail_view&#34;);&#10;    &#125;&#10;  &#125; catch(e)&#123;&#10;    return res.serverError(e);&#10;  &#125;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="決定走哪個-view-或-response-http-code，接-Error"><a href="#決定走哪個-view-或-response-http-code，接-Error" class="headerlink" title="決定走哪個 view 或 response http code，接 Error"></a>決定走哪個 view 或 response http code，接 Error</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">create : async(req,res) =&gt; &#123;</div><div class="line">  try&#123;</div><div class="line">    // 略...</div><div class="line">    if(product)&#123;</div><div class="line">      return res.view(&quot;success_view&quot;);</div><div class="line">    &#125;else&#123;</div><div class="line">      return res.view(&quot;fail_view&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125; catch(e)&#123;</div><div class="line">    return res.serverError(e);</div><div class="line">  &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 <h3 id="呼叫-service"><a href="#呼叫-service" class="headerlink" title="呼叫 service"></a>呼叫 service</h3><p>並只傳內容物(Object Data 或 簡單型別值) 給 service。除了一些特例，牽涉到 session、cookie、request header 特定的邏輯，但大多遇到的情況都不需要，誤用居多。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OrderService.create(req); // (X)&#10;OrderService.create(req.order); // (O)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">OrderService.create(req); // (X)</div><div class="line">OrderService.create(req.order); // (O)</div></pre></td></tr></table></figure>
 <h2 id="service-的責任"><a href="#service-的責任" class="headerlink" title="service 的責任"></a>service 的責任</h2><h3 id="商業邏輯"><a href="#商業邏輯" class="headerlink" title="商業邏輯"></a>商業邏輯</h3><p>(e.g. 寄信、訂單計算、與第三方平台溝通…)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getServiceFee : async(user, order) =&#62; &#123;&#10;  let isVip = UserService.isVip(user);&#10;  if(order.paymentTotalAmount &#62; 1000 || isVip )&#123;&#10;    return 0; // &#20813;&#36939;&#10;  &#125;else&#123;&#10;    return 70;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="複雜的物件生成"><a href="#複雜的物件生成" class="headerlink" title="複雜的物件生成"></a>複雜的物件生成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getNewUser : async(...&#30053;...) =&#62; &#123;&#10;  let newUser = &#123;&#10;    username: newUserParams.username || email,&#10;    email: email,&#10;    fullName: newUserParams.fullName,&#10;    gender: newUserParams.gender || &#39;none&#39;,&#10;    RoleId: role.id,&#10;    mobile: newUserParams.mobile,&#10;    city: newUserParams.city,&#10;    region: newUserParams.region,&#10;    zipcode: newUserParams.zipcode,&#10;    address: newUserParams.address,&#10;    privacyTermsAgree: newUserParams.privacyTermsAgree || false,&#10;    subscription: newUserParams.subscription || false,&#10;  &#125;&#10;  return newUser;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">getServiceFee : async(user, order) =&gt; &#123;</div><div class="line">  let isVip = UserService.isVip(user);</div><div class="line">  if(order.paymentTotalAmount &gt; 1000 || isVip )&#123;</div><div class="line">    return 0; // 免運</div><div class="line">  &#125;else&#123;</div><div class="line">    return 70;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="複雜的物件生成"><a href="#複雜的物件生成" class="headerlink" title="複雜的物件生成"></a>複雜的物件生成</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">getNewUser : async(...略...) =&gt; &#123;</div><div class="line">  let newUser = &#123;</div><div class="line">    username: newUserParams.username || email,</div><div class="line">    email: email,</div><div class="line">    fullName: newUserParams.fullName,</div><div class="line">    gender: newUserParams.gender || &apos;none&apos;,</div><div class="line">    RoleId: role.id,</div><div class="line">    mobile: newUserParams.mobile,</div><div class="line">    city: newUserParams.city,</div><div class="line">    region: newUserParams.region,</div><div class="line">    zipcode: newUserParams.zipcode,</div><div class="line">    address: newUserParams.address,</div><div class="line">    privacyTermsAgree: newUserParams.privacyTermsAgree || false,</div><div class="line">    subscription: newUserParams.subscription || false,</div><div class="line">  &#125;</div><div class="line">  return newUser;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="與資料庫溝通"><a href="#與資料庫溝通" class="headerlink" title="與資料庫溝通"></a>與資料庫溝通</h3><p>如果有 Dao 的架構的話，可以呼叫 Dao 的 method，如果沒有 Dao 的架構，那 Dao 所做的事，就可以在這裡做。</p>
 <h3 id="略…"><a href="#略…" class="headerlink" title="略…"></a>略…</h3><h2 id="這樣做的好處是什麼？"><a href="#這樣做的好處是什麼？" class="headerlink" title="這樣做的好處是什麼？"></a>這樣做的好處是什麼？</h2><h3 id="職責分明，減少重複的code"><a href="#職責分明，減少重複的code" class="headerlink" title="職責分明，減少重複的code"></a>職責分明，減少重複的code</h3><p>如果 controller 跟 service 都要做值的檢查，那不是重工？如果有時候把檢查放在 controller，有時候放在 service，那有沒有哪一天，根本忘了做值的檢查，所以遊戲規則要先講好。</p>
 <p>減少重工的部分，可以看看 <a href="http://www.books.com.tw/products/0010579897" target="_blank" rel="external">Clean Code</a> 這本書，如果沒看過 Clean code，可以先看看 <a href="http://www.books.com.tw/products/0010611737" target="_blank" rel="external">Kent Beck的實作模式</a>，比較薄，而且談的東西，好像都可以馬上運用在工作中，Clean Code 有些例子真的有點太極端，即使了解了，也很難完全實行，而且看完後，你會覺得兩本書提到的理論，有會相衝突的地方很有趣。</p>
@@ -409,9 +469,9 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>最近開始看 <a href="http://www.books.com.tw/products/0010538538" target="_blank" rel="external">JavaScript 設計模式</a> 這本書，裡面有一段說到，JS 只有函式變數跟全域變數，沒有我們平常認知的區域變數，JS 真的跟其他語言不太一樣。</p>
 <p>以下面這面這個例子，在 Java 的話，name 應該是區域變數，後面的 function 呼叫 name 應該會有 error，但在 javascript 而言，它卻是全域變數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;&#10;  var name = &#39;alincode&#39;;&#10;&#125;&#10;console.log(name);&#10;&#10;function test() &#123;&#10;  console.log(&#39;=== function start ===&#39;);&#10;  var othername = &#39;ali&#39;;&#10;  console.log(&#39;global var:&#39;, name);&#10;  console.log(&#39;function var:&#39;, othername);&#10;  console.log(&#39;=== function end ===&#39;);&#10;&#125;&#10;test();&#10;&#10;// console.log(&#39;othername:&#39;, othername);&#10;// output: ReferenceError: othername is not defined</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">if(true)&#123;</div><div class="line">  var name = &apos;alincode&apos;;</div><div class="line">&#125;</div><div class="line">console.log(name);</div><div class="line"></div><div class="line">function test() &#123;</div><div class="line">  console.log(&apos;=== function start ===&apos;);</div><div class="line">  var othername = &apos;ali&apos;;</div><div class="line">  console.log(&apos;global var:&apos;, name);</div><div class="line">  console.log(&apos;function var:&apos;, othername);</div><div class="line">  console.log(&apos;=== function end ===&apos;);</div><div class="line">&#125;</div><div class="line">test();</div><div class="line"></div><div class="line">// console.log(&apos;othername:&apos;, othername);</div><div class="line">// output: ReferenceError: othername is not defined</div></pre></td></tr></table></figure>
 <p><strong>output</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alincode&#10;=== function start ===&#10;global var: alincode&#10;function var: ali&#10;=== function end ===</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">alincode</div><div class="line">=== function start ===</div><div class="line">global var: alincode</div><div class="line">function var: ali</div><div class="line">=== function end ===</div></pre></td></tr></table></figure>
 
                     
                         
@@ -458,18 +518,18 @@
 <p>一個是 <code>git cherry-pick</code>，另一個則是 <code>git format-patch</code>。</p>
 <p>我兩個都試過，但我實在覺得 cherry-pick 對於跨 repo 的指令太繁雜了，所以在這裡介紹 format-patch 的用法。</p>
 <h3 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h3><p><strong>產最後一個 commit 的 patch 出來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git format-patch -1</div></pre></td></tr></table></figure>
 <p>0001-hide-some-menu-for-admin.patch</p>
 <p><strong>產指定的patch出來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -1 &#60;sha&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git format-patch -1 &lt;sha&gt;</div></pre></td></tr></table></figure>
 <p><strong>產最後三個 commit 的 patch 出來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git format-patch -3</div></pre></td></tr></table></figure>
 <p>0001-fixed-reset-password.patch<br>0002-update-src-from-https.patch<br>0003-hide-some-menu-for-admin.patch</p>
 <p>要記得這部分跟我們平常看 <code>git log --oneline</code> 順序不一樣，0001 是最舊的，0003 是最後一筆 commit。</p>
 <p>接下來只有把 xxx.patch 檔，複製到你另一個 repo 的資料夾下。</p>
 <p><strong>一次匯入一個patch</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git am 0001-fixed-reset-password.patch</span><br></pre></td></tr></table></figure>
-<p><strong>一次匯入所有patch</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git am *.patch</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git am 0001-fixed-reset-password.patch</div></pre></td></tr></table></figure>
+<p><strong>一次匯入所有patch</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git am *.patch</div></pre></td></tr></table></figure></p>
 <h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>由於自動產的 patch 檔名會帶 commit 內容，所以不像用 cherry-pick 用 sha 編號難以辨別，一個不專心就撿錯包了，我通常直接用 <code>format-patch</code> 幾筆一次拉出來，然後再看檔名，把不需要的 patch 砍掉方便又快速。</p>
 <p>不過這時候就會對於那種 log 內只寫 0001_fix_bug.patch 的情況，非常感冒…，都不能理解 merge code 人的心酸。</p>
 <h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>如果想嘗試 git cherry-pick 的話，要先把另一個 repo 加進去，然後做 git fetch other_repo，然後另一個repo東西，就會變成分支，然後你就可以用 cherry-pick 指令去撿了。</p>
@@ -517,11 +577,11 @@
                     <h3 id="Share-Dialog"><a href="#Share-Dialog" class="headerlink" title="Share Dialog"></a>Share Dialog</h3><img src="/blog/2016/03/08/fb-share/share.png" alt="share.png" title="">
 <p>The Share dialog gives <strong>people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger.</strong> This does not require Facebook Login or any extended permissions, so it is the easiest way to enable sharing on the web.</p>
 <p>不需取得額外授權，並可選擇分佈在自己或朋友或群組的 Timeline，或將信息私訊給朋友。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;share&#39;,&#10;  href: &#39;https://developers.facebook.com/docs/&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">FB.ui(&#123;</div><div class="line">  method: &apos;share&apos;,</div><div class="line">  href: &apos;https://developers.facebook.com/docs/&apos;,</div><div class="line">&#125;, function(response)&#123;&#125;);</div></pre></td></tr></table></figure>
 <h2 id="Feed-Dialog"><a href="#Feed-Dialog" class="headerlink" title="Feed Dialog"></a>Feed Dialog</h2><img src="/blog/2016/03/08/fb-share/feed.png" alt="feed.png" title="">
 <p>You can add the feed dialog to your app so <strong>people can publish individual stories to their timeline.</strong> This includes captions that your app manages and a personal comment from the person sharing the content.</p>
 <p>只能發佈在在自己的 Timeline，並可以指定附加訊息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FB.ui(&#123;&#10;  method: &#39;feed&#39;,&#10;  link: &#39;https://developers.facebook.com/docs/&#39;,&#10;  caption: &#39;An example caption&#39;,&#10;&#125;, function(response)&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">FB.ui(&#123;</div><div class="line">  method: &apos;feed&apos;,</div><div class="line">  link: &apos;https://developers.facebook.com/docs/&apos;,</div><div class="line">  caption: &apos;An example caption&apos;,</div><div class="line">&#125;, function(response)&#123;&#125;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -570,13 +630,13 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// &#20358;&#22312; request response&#10;var token = &#39;xxxxxxx&#39;;&#10;localStorage.setItem(&#39;accessToken&#39;, token);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 來在 request response</div><div class="line">var token = &apos;xxxxxxx&apos;;</div><div class="line">localStorage.setItem(&apos;accessToken&apos;, token);</div></pre></td></tr></table></figure>
 <p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/orders`, true);&#10;req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + accessToken);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var req = new XMLHttpRequest();</div><div class="line">req.open(&apos;GET&apos;, `$&#123;API_HOST&#125;/orders`, true);</div><div class="line">req.setRequestHeader(&apos;Authorization&apos;, &apos;Bearer &apos; + accessToken);</div></pre></td></tr></table></figure>
 <p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var req = new XMLHttpRequest();&#10;req.open(&#39;GET&#39;, `$&#123;API_HOST&#125;/me`, true);&#10;  req.setRequestHeader(&#39;Authorization&#39;, &#39;Bearer &#39; + token);&#10;  req.responseType = &#39;json&#39;;&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState != 4) return;&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        // &#27491;&#24120;&#27969;&#31243;&#10;        break;&#10;      case 401:&#10;        // &#28165;&#38500; Token&#65292;&#20006;&#20570;&#20351;&#29992;&#32773;&#30331;&#20986;&#26178;&#65292;UI&#25511;&#21046;&#38656;&#30456;&#23565;&#25033;&#30340;&#21453;&#25033;&#12290;&#10;        localStorage.removeItem(&#39;accessToken&#39;);&#10;        break;&#10;    &#125;&#10;  &#125;;&#10;  req.send();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var req = new XMLHttpRequest();</div><div class="line">req.open(&apos;GET&apos;, `$&#123;API_HOST&#125;/me`, true);</div><div class="line">  req.setRequestHeader(&apos;Authorization&apos;, &apos;Bearer &apos; + token);</div><div class="line">  req.responseType = &apos;json&apos;;</div><div class="line">  req.onreadystatechange = function() &#123;</div><div class="line">    if (req.readyState != 4) return;</div><div class="line"></div><div class="line">    switch (req.status) &#123;</div><div class="line">      case 200:</div><div class="line">        // 正常流程</div><div class="line">        break;</div><div class="line">      case 401:</div><div class="line">        // 清除 Token，並做使用者登出時，UI控制需相對應的反應。</div><div class="line">        localStorage.removeItem(&apos;accessToken&apos;);</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  req.send();</div></pre></td></tr></table></figure>
 <h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jwt_decode = require(&#39;jwt-decode&#39;);&#10;&#10;var decoded = jwt_decode(_token)&#10;&#10;if ((decoded.exp * 1000) &#60; new Date().getTime()) &#123;&#10;  // token &#36942;&#26399;&#10;&#125; else &#123;&#10;  // token &#26377;&#25928;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var jwt_decode = require(&apos;jwt-decode&apos;);</div><div class="line"></div><div class="line">var decoded = jwt_decode(_token)</div><div class="line"></div><div class="line">if ((decoded.exp * 1000) &lt; new Date().getTime()) &#123;</div><div class="line">  // token 過期</div><div class="line">&#125; else &#123;</div><div class="line">  // token 有效</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -625,11 +685,11 @@
 <h2 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h2><p>主要是使用在一個很尷尬的狀態，就是你已經改了一些東西，還不能 comment 進去，你又想切去其他分支，但切去其他分支前提是 <code>git status</code> 已經沒有東西。</p>
 <p>這時你就可以 <code>git stash</code> 把改過的東西先丟進 stash 中，等你處理完其他事情，再切回你剛剛中斷的分支，把放進 stash 的東西再拿出來。</p>
 <h3 id="需要用到的指令"><a href="#需要用到的指令" class="headerlink" title="需要用到的指令"></a>需要用到的指令</h3><p><strong>將改到一半的 code ，放到stash</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .&#10;git stash</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git stash</div></pre></td></tr></table></figure>
 <p><strong>查看有多少 stash</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash list</div></pre></td></tr></table></figure>
 <p><strong>取出最後一個 stash 的 code</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash pop</div></pre></td></tr></table></figure>
 <h2 id="GIT-觀念"><a href="#GIT-觀念" class="headerlink" title="GIT 觀念"></a>GIT 觀念</h2><h2 id="基本觀念"><a href="#基本觀念" class="headerlink" title="基本觀念"></a>基本觀念</h2><ul>
 <li>log</li>
 <li>add / rm</li>
@@ -700,9 +760,9 @@
 <img src="/blog/2016/03/05/hexo-deploy/github_page.png" alt="github_page.png" title="">
 <p><a href="https://help.github.com/articles/user-organization-and-project-pages/" target="_blank" rel="external">https://help.github.com/articles/user-organization-and-project-pages/</a></p>
 <p>原來 github page 還有其他用法，就是可以自由命名 repo 名稱，然後，branch 名字取 <strong>gh-pages</strong>，然後他就會對應到 <strong><a href="https://yourname.github.io/" target="_blank" rel="external">https://yourname.github.io/</a></strong> 子目錄下。</p>
-<h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></p>
-<p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><p>(16/04/23 修正)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml&#10;&#10;url: http://yourname.github.io/&#10;root: /blog&#10;&#10;deploy:&#10;  type: git&#10;  repo: https://github.com/yourname/blog.git&#10;  branch: gh-pages</span><br></pre></td></tr></table></figure></p>
+<h3 id="Hexo-命令"><a href="#Hexo-命令" class="headerlink" title="Hexo 命令"></a>Hexo 命令</h3><p><strong>產出檔案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g</div></pre></td></tr></table></figure></p>
+<p><strong>將檔案 deploy 到 github page </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<h3 id="需修改的設定部分"><a href="#需修改的設定部分" class="headerlink" title="需修改的設定部分"></a>需修改的設定部分</h3><p>(16/04/23 修正)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># _config.yml</div><div class="line"></div><div class="line">url: http://yourname.github.io/</div><div class="line">root: /blog</div><div class="line"></div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/yourname/blog.git</div><div class="line">  branch: gh-pages</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -711,53 +771,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/05/hexo-deploy/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/04/npm-bin/">
-                            NPM bin 執行順序
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Mar 04 2016 22:00:12 GMT+0800">
-	
-		    3月 04, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
-<p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
-<blockquote>
-<p>This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write “build”: “node_modules/.bin/webpack”, we can do just “build”: “webpack”. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</p>
-</blockquote>
-<p><a href="http://survivejs.com/webpack_react/developing_with_webpack/" target="_blank" rel="external">http://survivejs.com/webpack_react/developing_with_webpack/</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/04/npm-bin/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -846,10 +859,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -238,8 +238,8 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>React on ES6 不再 <code>自動綁定</code>，這是在很多網路文章都會提到的事，但總是覺得矇矇懂，今天看到一個範例終於比較有感了。</p>
 <p>就是在之前 handleOptionsButtonClick 內的 this 不需要綁定，就會預設為 this 是一個 component instance，但是在 ES6 的寫法，你需要加 <code>this.handleOptionsButtonClick.bind(this)</code>，它才會將 handleOptionsButtonClick 內的 this 視為是 <code>component instance</code>，否則無法使用 component instance 的 method。</p>
-<h3 id="範例一"><a href="#範例一" class="headerlink" title="範例一"></a>範例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PostInfo extends React.Component &#123;&#10;  constructor(props) &#123;&#10;    super(props);&#10;    // &#25163;&#21205;&#32129;&#23450;&#65292;&#36889;&#35041;&#30340; this &#25351;&#30340;&#26159; component instance&#10;    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);&#10;  &#125;&#10;  handleOptionsButtonClick(e) &#123;&#10;    // &#34987; bind &#20043;&#24460;&#65292;&#36889;&#35041;&#30340; this &#23559;&#25351;&#30340;&#26159; component instance&#12290;&#10;    this.setState(&#123;showOptionsModal: true&#125;);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="範例二"><a href="#範例二" class="headerlink" title="範例二"></a>範例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_checkShopCode() &#123;&#10;// &#8230; &#30053;...&#10;&#125;&#10;&#10;_changeDeliverZone(e) &#123;&#10;  CartActions.changeDeliverZone(e.target.value);&#10;  this._updateCartSum();&#10;&#125;&#10;&#10;&#60;select style=&#123;styles.select&#125; value=&#123;this.props.selectedDeliverZone&#125; onChange=&#123;this._changeDeliverZone.bind(this)&#125;&#62;</span><br></pre></td></tr></table></figure>
+<h3 id="範例一"><a href="#範例一" class="headerlink" title="範例一"></a>範例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class PostInfo extends React.Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    // 手動綁定，這裡的 this 指的是 component instance</div><div class="line">    this.handleOptionsButtonClick = this.handleOptionsButtonClick.bind(this);</div><div class="line">  &#125;</div><div class="line">  handleOptionsButtonClick(e) &#123;</div><div class="line">    // 被 bind 之後，這裡的 this 將指的是 component instance。</div><div class="line">    this.setState(&#123;showOptionsModal: true&#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="範例二"><a href="#範例二" class="headerlink" title="範例二"></a>範例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">_checkShopCode() &#123;</div><div class="line">// … 略...</div><div class="line">&#125;</div><div class="line"></div><div class="line">_changeDeliverZone(e) &#123;</div><div class="line">  CartActions.changeDeliverZone(e.target.value);</div><div class="line">  this._updateCartSum();</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;select style=&#123;styles.select&#125; value=&#123;this.props.selectedDeliverZone&#125; onChange=&#123;this._changeDeliverZone.bind(this)&#125;&gt;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -286,9 +286,9 @@
 <li>加兩個 Action Type，AUTH_SENDING 和 AUTH_SENT</li>
 <li>在 Store 的地方要更新 isSending 狀態</li>
 </ul>
-<h3 id="Component-要做的事"><a href="#Component-要做的事" class="headerlink" title="Component 要做的事"></a>Component 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">submit() &#123;&#10;  var email = this.state.email&#10;  var password =  this.state.password&#10;&#10;  if (email &#38;&#38; password &#38;&#38; !this.state.isSending) &#123;&#10;    AuthActions.login(email, password);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.login = function(email, password) &#123;&#10;&#10;  AppDispatcher.dispatch(&#123;&#10;    action: AuthConstants.AUTH_SENDING,&#10;  &#125;);&#10;&#10;  var req = new XMLHttpRequest();&#10;  ...&#30053;...&#10;  req.onreadystatechange = function() &#123;&#10;    if (req.readyState !== 4) return;&#10;&#10;    AppDispatcher.dispatch(&#123;&#10;      action: AuthConstants.AUTH_SENT,&#10;    &#125;);&#10;&#10;    switch (req.status) &#123;&#10;      case 200:&#10;        AppDispatcher.dispatch(&#123;&#10;          action: AuthConstants.AUTH_LOGINED,&#10;          ...&#30053;...&#10;        &#125;);&#10;    &#125;&#10;  &#125;;&#10;  ...&#30053;...&#10;&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">case AuthConstants.AUTH_SENDING:&#10;  _isSending = true;&#10;  AuthStore.emitChange();&#10;  break;&#10;&#10;case AuthConstants.AUTH_SENT:&#10;  _isSending = false;&#10;  AuthStore.emitChange();&#10;  break;</span><br></pre></td></tr></table></figure>
+<h3 id="Component-要做的事"><a href="#Component-要做的事" class="headerlink" title="Component 要做的事"></a>Component 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">submit() &#123;</div><div class="line">  var email = this.state.email</div><div class="line">  var password =  this.state.password</div><div class="line"></div><div class="line">  if (email &amp;&amp; password &amp;&amp; !this.state.isSending) &#123;</div><div class="line">    AuthActions.login(email, password);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Action-要做的事"><a href="#Action-要做的事" class="headerlink" title="Action 要做的事"></a>Action 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">module.exports.login = function(email, password) &#123;</div><div class="line"></div><div class="line">  AppDispatcher.dispatch(&#123;</div><div class="line">    action: AuthConstants.AUTH_SENDING,</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  var req = new XMLHttpRequest();</div><div class="line">  ...略...</div><div class="line">  req.onreadystatechange = function() &#123;</div><div class="line">    if (req.readyState !== 4) return;</div><div class="line"></div><div class="line">    AppDispatcher.dispatch(&#123;</div><div class="line">      action: AuthConstants.AUTH_SENT,</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    switch (req.status) &#123;</div><div class="line">      case 200:</div><div class="line">        AppDispatcher.dispatch(&#123;</div><div class="line">          action: AuthConstants.AUTH_LOGINED,</div><div class="line">          ...略...</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  ...略...</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="Store-要做的事"><a href="#Store-要做的事" class="headerlink" title="Store 要做的事"></a>Store 要做的事</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">case AuthConstants.AUTH_SENDING:</div><div class="line">  _isSending = true;</div><div class="line">  AuthStore.emitChange();</div><div class="line">  break;</div><div class="line"></div><div class="line">case AuthConstants.AUTH_SENT:</div><div class="line">  _isSending = false;</div><div class="line">  AuthStore.emitChange();</div><div class="line">  break;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -369,10 +369,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

@@ -13,19 +13,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
-npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
+    <meta name="description" content="123&amp;quot;scripts&amp;quot;: &amp;#123;  &amp;quot;build&amp;quot;: &amp;quot;webpack&amp;quot;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="NPM bin 執行順序">
 <meta property="og:url" content="http://alincode.github.io/2016/03/04/npm-bin/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
-npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
+<meta property="og:description" content="123&amp;quot;scripts&amp;quot;: &amp;#123;  &amp;quot;build&amp;quot;: &amp;quot;webpack&amp;quot;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔">
 <meta property="og:updated_time" content="2016-04-29T14:07:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NPM bin 執行順序">
-<meta name="twitter:description" content="1&amp;#34;scripts&amp;#34;: &amp;#123;&amp;#10;  &amp;#34;build&amp;#34;: &amp;#34;webpack&amp;#34;&amp;#10;&amp;#125;,
-npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這">
+<meta name="twitter:description" content="123&amp;quot;scripts&amp;quot;: &amp;#123;  &amp;quot;build&amp;quot;: &amp;quot;webpack&amp;quot;&amp;#125;,
+npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔">
     
     
         
@@ -38,10 +38,10 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -77,7 +77,7 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -96,7 +96,7 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -156,7 +156,7 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -234,7 +234,7 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34;scripts&#34;: &#123;&#10;  &#34;build&#34;: &#34;webpack&#34;&#10;&#125;,</span><br></pre></td></tr></table></figure>
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">  &quot;build&quot;: &quot;webpack&quot;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 <p>npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 path，所以在執行 npm run build 得時候，等同於 npm run node_modules/.bin/webpack，如果沒有這個檔案的時候，才會執行 global webpack。</p>
 <blockquote>
 <p>This works because npm adds node_modules/.bin temporarily to the path. As a result, rather than having to write “build”: “node_modules/.bin/webpack”, we can do just “build”: “webpack”. Unless Webpack is installed to the project, this can point to a possible global install. That can be potentially confusing. Prefer local installs over global for this reason.</p>
@@ -277,17 +277,17 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -348,17 +348,17 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -378,17 +378,17 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/03/04/npm-bin/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/03/04/npm-bin/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -439,10 +439,10 @@ npm 在執行 scripts 的時候，會將 node_modules/.bin 加入暫時性的 pa
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     

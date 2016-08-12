@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -212,6 +212,51 @@
     
 
 <section class="postShorten-group main-content-wrap">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/04/13/lodash-require-key-check/">
+                            lodash - 必要值檢查
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Apr 13 2016 13:10:14 GMT+0800">
+	
+		    4月 13, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="https://lodash.com/docs" target="_blank" rel="external">lodash</a> 是一個值得好好細細品嘗的模組，內含許多擴充的function去針對物件、字串、陣列處理。</p>
+<p><strong>必要值檢查</strong></p>
+<p><a href="https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js" target="_blank" rel="external">範例下載</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should();</div><div class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'require keys'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  it(<span class="string">'case 1:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">true</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">'case 2:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>, <span class="string">'phone'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">false</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">'case 3:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'email'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">true</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/13/lodash-require-key-check/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
     
     
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
@@ -305,14 +350,14 @@
 <li>選取後，會回傳一個 Navigator 物件</li>
 <li>支援 CSS3 語法</li>
 </ul>
-<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;p&#39;).text() == &#34;a&#34;&#10;$(&#39;p&#39;).tag() == &#34;p&#34;&#10;$(&#39;p&#39;).@title == &#34;a&#34;&#10;$(&#39;p&#39;).classes == [&#34;a&#8221;, &#34;para&#34;]</span><br></pre></td></tr></table></figure>
-<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;a&#39;).click()&#10;$(&#39;div&#39;).isDisplayed()&#10;withConfirm &#123;&#10;  $(&#39;button.delete&#39;).click();&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;div&#39;) &#60;&#60; &#39;abc&#39;&#10;$(&#39;input&#39;, name: &#39;foo&#39;) &#60;&#60; Keys.chord(Keys.CONTROL, &#39;c&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="取得資訊-12-30"><a href="#取得資訊-12-30" class="headerlink" title="取得資訊 (12:30)"></a>取得資訊 (12:30)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(&apos;p&apos;).text() == &quot;a&quot;</div><div class="line">$(&apos;p&apos;).tag() == &quot;p&quot;</div><div class="line">$(&apos;p&apos;).@title == &quot;a&quot;</div><div class="line">$(&apos;p&apos;).classes == [&quot;a”, &quot;para&quot;]</div></pre></td></tr></table></figure>
+<h3 id="與內容相互作用-12-47"><a href="#與內容相互作用-12-47" class="headerlink" title="與內容相互作用 (12:47)"></a>與內容相互作用 (12:47)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&apos;a&apos;).click()</div><div class="line">$(&apos;div&apos;).isDisplayed()</div><div class="line">withConfirm &#123;</div><div class="line">  $(&apos;button.delete&apos;).click();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="傳入-input-13-50"><a href="#傳入-input-13-50" class="headerlink" title="傳入 input (13:50)"></a>傳入 input (13:50)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&apos;div&apos;) &lt;&lt; &apos;abc&apos;</div><div class="line">$(&apos;input&apos;, name: &apos;foo&apos;) &lt;&lt; Keys.chord(Keys.CONTROL, &apos;c&apos;)</div></pre></td></tr></table></figure>
 <h3 id="Interaction-14-25"><a href="#Interaction-14-25" class="headerlink" title="Interaction (14:25)"></a>Interaction (14:25)</h3><blockquote>
 <p>Using actions API from WebDriver is possible. But Geb provides the interact closure.</p>
 </blockquote>
 <p>你也許可以使用 WebDriver 的 action API，但 Geb 提供更互動式的 closure。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import org.openga.selenium.Keys&#10;&#10;interact &#123;&#10;     KeyDown Keys.CTRL&#10;     click $(&#39;a.myLink&#39;)&#10;     keyUp Keys.CTRL&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import org.openga.selenium.Keys</div><div class="line"></div><div class="line">interact &#123;</div><div class="line">     KeyDown Keys.CTRL</div><div class="line">     click $(&apos;a.myLink&apos;)</div><div class="line">     keyUp Keys.CTRL</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="可使用的變數-16-15"><a href="#可使用的變數-16-15" class="headerlink" title="可使用的變數 (16:15)"></a>可使用的變數 (16:15)</h3><ul>
 <li>title</li>
 <li>browser</li>
@@ -324,23 +369,23 @@
 <li>下載檔案</li>
 <li>與 js 互動</li>
 </ul>
-<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.spock.GebSpec&#10;&#10;@Stepwise&#10;class XXXFunctionalSpec extends GebSpec &#123;&#10;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="獨立的-Geb-script-17-10"><a href="#獨立的-Geb-script-17-10" class="headerlink" title="獨立的 Geb script (17:10)"></a>獨立的 Geb script (17:10)</h3><h3 id="Geb-Spec-Basic-23-00"><a href="#Geb-Spec-Basic-23-00" class="headerlink" title="Geb Spec Basic (23:00)"></a>Geb Spec Basic (23:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import geb.spock.GebSpec</div><div class="line"></div><div class="line">@Stepwise</div><div class="line">class XXXFunctionalSpec extends GebSpec &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Page-物件-描述一個頁面-23-50"><a href="#Page-物件-描述一個頁面-23-50" class="headerlink" title="Page 物件 - 描述一個頁面 (23:50)"></a>Page 物件 - 描述一個頁面 (23:50)</h3><ul>
 <li>Url</li>
 <li>如何檢查是否在對的地方</li>
 <li>內容是否是我們要的跟如何找到它</li>
 <li>Helper method</li>
 </ul>
-<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static content = &#123;&#10;     info(required: false) &#123;$(&#39;div.info&#39;)&#125;&#10;     message(wait: false) &#123;$(&#39;div.message&#39;)&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="content-closure-25-35"><a href="#content-closure-25-35" class="headerlink" title="content closure (25:35)"></a>content closure (25:35)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">static content = &#123;</div><div class="line">     info(required: false) &#123;$(&apos;div.info&apos;)&#125;</div><div class="line">     message(wait: false) &#123;$(&apos;div.message&apos;)&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Modules-描述重複的內容-26-10"><a href="#Modules-描述重複的內容-26-10" class="headerlink" title="Modules - 描述重複的內容 (26:10)"></a>Modules - 描述重複的內容 (26:10)</h3><ul>
 <li>跨頁面</li>
 <li>Within the same page</li>
 </ul>
-<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Module&#10;&#10;class XXXListItemModules extends Module &#123;&#10;     data &#123; $(&#34;td&#8221;, it) &#125;&#10;     name &#123; data(0).text() &#125;&#10;     email &#123; data(1).text() &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Modules-for-repeated-content-in-a-page-27-00"><a href="#Modules-for-repeated-content-in-a-page-27-00" class="headerlink" title="Modules for repeated content in a page (27:00)"></a>Modules for repeated content in a page (27:00)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">import geb.Module</div><div class="line"></div><div class="line">class XXXListItemModules extends Module &#123;</div><div class="line">     data &#123; $(&quot;td”, it) &#125;</div><div class="line">     name &#123; data(0).text() &#125;</div><div class="line">     email &#123; data(1).text() &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="Waiting-36-00"><a href="#Waiting-36-00" class="headerlink" title="Waiting (36:00)"></a>Waiting (36:00)</h3><p>自定預設的 Waiting 設定值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// GebConfig.groovy&#10;waiting &#123;&#10;     timeout: 10&#10;     retryInterval: 0.5&#10;&#125;&#10;&#10;baseNavigatorWaiting = true&#10;atCheckWaiting = true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// GebConfig.groovy</div><div class="line">waiting &#123;</div><div class="line">     timeout: 10</div><div class="line">     retryInterval: 0.5</div><div class="line">&#125;</div><div class="line"></div><div class="line">baseNavigatorWaiting = true</div><div class="line">atCheckWaiting = true</div></pre></td></tr></table></figure>
 <h3 id="Pausing-Geb-36-55"><a href="#Pausing-Geb-36-55" class="headerlink" title="Pausing Geb (36:55)"></a>Pausing Geb (36:55)</h3><p>可做為 debug 用途</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">when:&#10;pause() // for Pause Geb until button pressed</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">when:</div><div class="line">pause() // for Pause Geb until button pressed</div></pre></td></tr></table></figure>
 
                     
                         
@@ -438,8 +483,8 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt build</span><br></pre></td></tr></table></figure></p>
-<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node_modules/.bin/grunt build</span><br></pre></td></tr></table></figure></p>
+                    <h3 id="script-內的指令，一定要指定指令路徑。"><a href="#script-內的指令，一定要指定指令路徑。" class="headerlink" title="script 內的指令，一定要指定指令路徑。"></a>script 內的指令，一定要指定指令路徑。</h3><p><strong>錯</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grunt build</div></pre></td></tr></table></figure></p>
+<p><strong>對</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node_modules/.bin/grunt build</div></pre></td></tr></table></figure></p>
 <h3 id="免輸入github帳密"><a href="#免輸入github帳密" class="headerlink" title="免輸入github帳密"></a>免輸入github帳密</h3><img src="/blog/2016/04/09/buddy-ci-3/git_pull_error.png" alt="git_pull_error.png" title="">
 <p>因為是透過 Buddy robot 去執行 script，所以當 script 有用到 git pull 指令，就一定得設 github 的免密碼 ssh。</p>
 <p><a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">Github - Generating an SSH key</a></p>
@@ -794,15 +839,15 @@
                     <h3 id="View-Model"><a href="#View-Model" class="headerlink" title="View Model"></a>View Model</h3><p>除了 MVC 之外，後來 Microsoft 又提出一個 <code>model-view-view model (MVVM)</code>，view model 是一種 model 的變形，有時候你 view 需要的資料，不只會包含一個 model，又或者它僅需要部分的資料，因為有部分不能傳給使用者，例如資料庫中記錄的密碼或一些對使用者無意義的資料，但對系統有意義的資料。</p>
 <h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><p>不太嚴謹的說法，可以直接對照到資料庫的 table</p>
 <h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><p><strong>User.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    firstName: <span class="built_in">String</span>,</span><br><span class="line">    lastName: <span class="built_in">String</span>,</span><br><span class="line">    nickname: <span class="built_in">String</span>,</span><br><span class="line">    email: <span class="built_in">String</span>,</span><br><span class="line">    password: <span class="built_in">String</span>,</span><br><span class="line">    address: <span class="built_in">String</span>,</span><br><span class="line">    phone: <span class="built_in">String</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    firstName: <span class="built_in">String</span>,</div><div class="line">    lastName: <span class="built_in">String</span>,</div><div class="line">    nickname: <span class="built_in">String</span>,</div><div class="line">    email: <span class="built_in">String</span>,</div><div class="line">    password: <span class="built_in">String</span>,</div><div class="line">    address: <span class="built_in">String</span>,</div><div class="line">    phone: <span class="built_in">String</span>,</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>Profile.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  attributes: &#123;</span><br><span class="line">    image: <span class="built_in">String</span>,</span><br><span class="line">    <span class="comment">// ...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    image: <span class="built_in">String</span>,</div><div class="line">    <span class="comment">// ...略...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>UserController.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(req.userId);</span><br><span class="line">      <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(req.userId);</span><br><span class="line"></span><br><span class="line">      user.toJSON();</span><br><span class="line">      profile.toJSON();</span><br><span class="line"></span><br><span class="line">      res.view(<span class="string">'profile'</span>, &#123;</span><br><span class="line">          email: user.email,</span><br><span class="line">          nickname: user.nickname,</span><br><span class="line">          image: profile.image,</span><br><span class="line">          <span class="comment">//...略...</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="keyword">if</span>(!req.userId)&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(req.userId);</div><div class="line">      <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(req.userId);</div><div class="line"></div><div class="line">      user.toJSON();</div><div class="line">      profile.toJSON();</div><div class="line"></div><div class="line">      res.view(<span class="string">'profile'</span>, &#123;</div><div class="line">          email: user.email,</div><div class="line">          nickname: user.nickname,</div><div class="line">          image: profile.image,</div><div class="line">          <span class="comment">//...略...</span></div><div class="line">      &#125;);</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">      <span class="keyword">return</span> res.serverError(e);</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 <h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><p><strong>UserController.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userViewModel = <span class="built_in">require</span>(<span class="string">'../viewModels/UserViewModel.js'</span>)</span><br><span class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">if</span>(!req.userId)&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      res.view(<span class="string">'profile'</span>, <span class="keyword">await</span> userViewModel(req.userId));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      <span class="keyword">return</span> res.serverError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> userViewModel = <span class="built_in">require</span>(<span class="string">'../viewModels/UserViewModel.js'</span>)</div><div class="line">apiMe: <span class="keyword">async</span>(req, res) =&gt; &#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">      <span class="keyword">if</span>(!req.userId)&#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'userId is null'</span>);</div><div class="line">      &#125;</div><div class="line">      res.view(<span class="string">'profile'</span>, <span class="keyword">await</span> userViewModel(req.userId));</div><div class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</div><div class="line">      <span class="keyword">return</span> res.serverError(e);</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 <p><strong>UserViewModel.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (userId) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(userId);</span><br><span class="line">  <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(userId);</span><br><span class="line"></span><br><span class="line">  user.toJSON();</span><br><span class="line">  profile.toJSON();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    email: user.email,</span><br><span class="line">    nickname: user.nickname,</span><br><span class="line">    image: profile.image,</span><br><span class="line">    <span class="comment">//...略...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = <span class="keyword">async</span> (userId) =&gt; &#123;</div><div class="line">  <span class="keyword">let</span> user = <span class="keyword">await</span> UserService.findById(userId);</div><div class="line">  <span class="keyword">let</span> profile = <span class="keyword">await</span> ProfileService.findByUesrId(userId);</div><div class="line"></div><div class="line">  user.toJSON();</div><div class="line">  profile.toJSON();</div><div class="line"></div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    email: user.email,</div><div class="line">    nickname: user.nickname,</div><div class="line">    image: profile.image,</div><div class="line">    <span class="comment">//...略...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h3><p>主要是好處是把 ViewModel 封裝起來，在其他地方也可以被重複使用。</p>
 <h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>View：主要是將 model 呈現給使用者<br>Controller：會接收使用者輸入的資料，並決定要顯示哪個 view。</p>
 
@@ -813,115 +858,6 @@
                     
                         <p>
                             <a href="/blog/2016/04/04/view-model-vs-model/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/04/03/PM2/">
-                            PM2 管理工具
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Apr 03 2016 02:30:15 GMT+0800">
-	
-		    4月 03, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><code>PM2</code> 主要的功能是保證你的 process 永遠活著，如果你的程序發生意外關閉，它會自動幫你重開。如果你同時要開多個程序，又帶了一堆參數，PM2 可以提供更簡易的管理，即使只用到你的開發主機，也可以避免不小心把 terminal 關掉，一直要重開它。</p>
-<p><strong>提供的功能</strong></p>
-<ul>
-<li>內建簡易監控功能</li>
-<li>Cluster Mode</li>
-<li>記憶體管理，重新 reload</li>
-<li>Hot reload</li>
-<li>啟動參數設定檔化</li>
-<li>Log 管理</li>
-<li>支援啟動 Scripts</li>
-<li>Keymetrics 監控</li>
-<li>提供 API，你可以運用它，實做一些你自定的需求。</li>
-<li>Deployment workflow</li>
-</ul>
-<p><strong>安裝</strong></p>
-<p><code>npm install pm2@latest -g</code></p>
-<h2 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h2><h3 id="基本程序操作"><a href="#基本程序操作" class="headerlink" title="基本程序操作"></a>基本程序操作</h3><table>
-<thead>
-<tr>
-<th>指令</th>
-<th style="text-align:center">說明</th>
-<th style="text-align:right">備註</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pm2 start app.js</td>
-<td style="text-align:center">啟動程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 stop all</td>
-<td style="text-align:center">停止所有程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 stop 0</td>
-<td style="text-align:center">停止單一程序</td>
-<td style="text-align:right">pm2 stop [pid]</td>
-</tr>
-<tr>
-<td>pm2 restart all</td>
-<td style="text-align:center">重啟所有程序</td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td>pm2 delete 0</td>
-<td style="text-align:center">刪除單一程序</td>
-</tr>
-</tbody>
-</table>
-<h3 id="進階啟動程序"><a href="#進階啟動程序" class="headerlink" title="進階啟動程序"></a>進階啟動程序</h3><p><strong>啟動程序並指定名稱</strong></p>
-<p><code>pm2 start app.js --name my-api</code></p>
-<p><strong>啟動程序並帶變數</strong></p>
-<p><code>NODE_ENV=local pm2 start app.js --name my-api</code></p>
-<h3 id="查看程序"><a href="#查看程序" class="headerlink" title="查看程序"></a>查看程序</h3><p><strong>查看所有註冊的程序</strong></p>
-<p><code>pm2 list</code></p>
-<img src="/blog/2016/04/03/PM2/pm2.png" alt="pm2.png" title="">
-<p><strong>查看程序內容</strong></p>
-<p><code>pm2 show 0</code></p>
-<p><strong>監看程序</strong></p>
-<p><code>pm2 monit</code></p>
-<img src="/blog/2016/04/03/PM2/monit.png" alt="monit.png" title="">
-<h3 id="log-相關指令"><a href="#log-相關指令" class="headerlink" title="log 相關指令"></a>log 相關指令</h3><p><strong>查看log集合</strong></p>
-<p><code>pm2 logs</code></p>
-<img src="/blog/2016/04/03/PM2/logs.png" alt="logs.png" title="">
-<p><strong>清空log</strong></p>
-<p><code>pm2 flush</code></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/04/03/PM2/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -1011,10 +947,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

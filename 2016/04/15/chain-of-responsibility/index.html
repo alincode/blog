@@ -41,10 +41,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -80,7 +80,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -99,7 +99,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -159,7 +159,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -239,9 +239,9 @@
         <div class="main-content-wrap">
             <h3 id="使用情境"><a href="#使用情境" class="headerlink" title="使用情境"></a>使用情境</h3><p>Chain Of Responsibility 主要用在順序可能會變換，甚至不確定要執行全部的步驟或只有部分的步驟。你會非常常見到它或許名稱不同，pipeline 或 middleware，都具有到這樣的概念。</p>
 <h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>在這個例子，主要是針對具有很多種類的促銷方案，你同時有多種折扣，你希望它的計算順序可以很輕易的更變。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = &#123;</span><br><span class="line">	order: <span class="literal">null</span>,</span><br><span class="line">  init:<span class="function"><span class="keyword">function</span> (<span class="params">order</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order = order;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 特定分類折扣</span></span><br><span class="line">	dptDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.9</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// 滿額折扣</span></span><br><span class="line">	bigOrderDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.price &gt; <span class="number">6000</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price -= <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;,</span><br><span class="line">  <span class="comment">// VIP 折扣</span></span><br><span class="line">	vip:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.isVip)&#123;</span><br><span class="line">      <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.95</span>);</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = DiscountService;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> DiscountService = &#123;</div><div class="line">	order: <span class="literal">null</span>,</div><div class="line">  init:<span class="function"><span class="keyword">function</span> (<span class="params">order</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.order = order;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">	&#125;,</div><div class="line">  <span class="comment">// 特定分類折扣</span></div><div class="line">	dptDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.9</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">	&#125;,</div><div class="line">  <span class="comment">// 滿額折扣</span></div><div class="line">	bigOrderDiscount:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.price &gt; <span class="number">6000</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.order.price -= <span class="number">100</span>;</div><div class="line">    &#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">	&#125;,</div><div class="line">  <span class="comment">// VIP 折扣</span></div><div class="line">	vip:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.order.isVip)&#123;</div><div class="line">      <span class="keyword">this</span>.order.price = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.order.price * <span class="number">0.95</span>);</div><div class="line">    &#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = DiscountService;</div></pre></td></tr></table></figure>
 <h3 id="進入點"><a href="#進入點" class="headerlink" title="進入點"></a>進入點</h3><p><strong>main.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> DiscountService = <span class="built_in">require</span>(<span class="string">'./DiscountService.js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">1000</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = DiscountService.init(order).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> order2 = &#123;</span><br><span class="line">  isVip: <span class="literal">true</span>,</span><br><span class="line">  price: <span class="number">6600</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result2 = DiscountService.init(order2).dptDiscount().bigOrderDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result2.order.price);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result3 = DiscountService.init(order2).dptDiscount().vip().bigOrderDiscount();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result3.order.price);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result4 = DiscountService.init(order2).dptDiscount().vip();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result4.order.price);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> DiscountService = <span class="built_in">require</span>(<span class="string">'./DiscountService.js'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> order = &#123;</div><div class="line">  isVip: <span class="literal">true</span>,</div><div class="line">  price: <span class="number">1000</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = DiscountService.init(order).dptDiscount().bigOrderDiscount().vip();</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result.order.price);</div><div class="line"></div><div class="line"><span class="keyword">var</span> order2 = &#123;</div><div class="line">  isVip: <span class="literal">true</span>,</div><div class="line">  price: <span class="number">6600</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result2 = DiscountService.init(order2).dptDiscount().bigOrderDiscount().vip();</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result2.order.price);</div><div class="line"></div><div class="line"><span class="keyword">var</span> result3 = DiscountService.init(order2).dptDiscount().vip().bigOrderDiscount();</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result3.order.price);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> result4 = DiscountService.init(order2).dptDiscount().vip();</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'price is $'</span>, result4.order.price);</div><div class="line"></div></pre></td></tr></table></figure>
 
             
                 
@@ -286,17 +286,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -357,17 +357,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -387,17 +387,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/15/chain-of-responsibility/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/15/chain-of-responsibility/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -448,10 +448,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     

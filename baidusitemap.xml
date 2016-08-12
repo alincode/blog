@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/</loc>
+    <lastmod>2016-08-12T02:04:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>更新 geoip lite module 的 IP 對應表</title>
+        <pubTime>2016-08-12T01:53:24.000Z</pubTime>
+        
+        <tag>geoip</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/08/01/language-comparison-table/</loc>
     <lastmod>2016-08-01T00:15:37.000Z</lastmod>
     <data>
@@ -11,7 +28,7 @@
         <title>程式語言常用框架對照表</title>
         <pubTime>2016-07-31T23:36:43.000Z</pubTime>
         
-        <tag>Groovy</tag>
+        <tag>framework</tag>
          
         <tag>Java</tag>
          
@@ -19,7 +36,7 @@
          
         <tag>Ruby</tag>
          
-        <tag>framework</tag>
+        <tag>Groovy</tag>
          
          
            
@@ -70,11 +87,11 @@
         <title>octotree 在瀏覽器上顯示 code tree</title>
         <pubTime>2016-07-27T01:30:09.000Z</pubTime>
         
+        <tag>github</tag>
+         
         <tag>chrome plugin</tag>
          
         <tag>code tree</tag>
-         
-        <tag>github</tag>
          
          
            
@@ -496,25 +513,6 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何開始使用 Story Points？</title>
-        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
-        
-        <tag>Story Points</tag>
-         
-        <tag>預估</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -539,17 +537,36 @@
         <title>有效的時間管理 - 重點整理(1)</title>
         <pubTime>2016-05-15T09:01:19.000Z</pubTime>
         
-        <tag>80/20 法則</tag>
-         
         <tag>時間管理</tag>
          
         <tag>有效的時間管理</tag>
+         
+        <tag>80/20 法則</tag>
          
          
            
              
               <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
+         
+         
+           
         </display>
     </data>
     </url>
@@ -573,25 +590,6 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>什麼是 Story Points</title>
-        <pubTime>2016-05-08T02:41:17.000Z</pubTime>
-        
-        <tag>Story Points</tag>
-         
-        <tag>預估</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -602,6 +600,25 @@
         <tag>學英文</tag>
          
         <tag>經驗分享</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>什麼是 Story Points</title>
+        <pubTime>2016-05-08T02:41:17.000Z</pubTime>
+        
+        <tag>Story Points</tag>
+         
+        <tag>預估</tag>
          
          
            
@@ -766,11 +783,11 @@
         <title>WebdriverIO 與 Chimp 和 Mocha 整合</title>
         <pubTime>2016-04-30T08:41:38.000Z</pubTime>
         
+        <tag>WebdriverIO</tag>
+         
         <tag>Chimp</tag>
          
         <tag>Mocha</tag>
-         
-        <tag>WebdriverIO</tag>
          
          
            
@@ -1009,9 +1026,9 @@
         <title>將 hexo 部署到 github page</title>
         <pubTime>2016-03-05T07:00:46.000Z</pubTime>
         
-        <tag>deploy</tag>
-         
         <tag>hexo</tag>
+         
+        <tag>deploy</tag>
          
          
            
@@ -1075,9 +1092,9 @@
         <title>Promise Chaining</title>
         <pubTime>2016-04-15T16:01:44.000Z</pubTime>
         
-        <tag>Chain</tag>
-         
         <tag>Promise</tag>
+         
+        <tag>Chain</tag>
          
          
            
@@ -1154,11 +1171,11 @@
         <title>JWT (4) Server Side 實作範例</title>
         <pubTime>2016-03-03T14:48:35.000Z</pubTime>
         
-        <tag>jsonwebtoken</tag>
-         
         <tag>jwt</tag>
          
         <tag>sails</tag>
+         
+        <tag>jsonwebtoken</tag>
          
          
            
@@ -1238,9 +1255,9 @@
         <title>Sequelize 一對多更新</title>
         <pubTime>2016-04-17T06:03:02.000Z</pubTime>
         
-        <tag>One to Many</tag>
-         
         <tag>Sequelize</tag>
+         
+        <tag>One to Many</tag>
          
          
            
@@ -1393,9 +1410,9 @@
         <title>Vultr VPS</title>
         <pubTime>2016-04-12T12:37:03.000Z</pubTime>
         
-        <tag>VPS</tag>
-         
         <tag>Vultr</tag>
+         
+        <tag>VPS</tag>
          
          
            

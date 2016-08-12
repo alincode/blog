@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-08-01T00:15:37.000Z</updated>
+  <updated>2016-08-12T02:04:27.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -16,103 +16,132 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>更新 geoip lite module 的 IP 對應表</title>
+    <link href="http://alincode.github.io/2016/08/12/geoip-lite-update-ip-table/"/>
+    <id>http://alincode.github.io/2016/08/12/geoip-lite-update-ip-table/</id>
+    <published>2016-08-12T01:53:24.000Z</published>
+    <updated>2016-08-12T02:04:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>安裝</strong></p>
+<p><code>npm install geoip-lite</code></p>
+<p><strong>使用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var geoip = require(&apos;geoip-lite&apos;);</div><div class="line"></div><div class="line">var ip = &quot;207.97.227.239&quot;;</div><div class="line">var geo = geoip.lookup(ip);</div><div class="line"></div><div class="line">console.log(geo);</div><div class="line">&#123; range: [ 3479299040, 3479299071 ],</div><div class="line">  country: &apos;US&apos;,</div><div class="line">  region: &apos;CA&apos;,</div><div class="line">  city: &apos;San Francisco&apos;,</div><div class="line">  ll: [37.7484, -122.4156] &#125;</div></pre></td></tr></table></figure>
+<p><strong>定期更新 IP 對照表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./node_modules/geoip-lite</div><div class="line">npm run-script updatedb</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;安裝&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm install geoip-lite&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
+    
+    </summary>
+    
+    
+      <category term="geoip" scheme="http://alincode.github.io/tags/geoip/"/>
+    
+  </entry>
+  
+  <entry>
     <title>程式語言常用框架對照表</title>
     <link href="http://alincode.github.io/2016/08/01/language-comparison-table/"/>
     <id>http://alincode.github.io/2016/08/01/language-comparison-table/</id>
     <published>2016-07-31T23:36:43.000Z</published>
     <updated>2016-08-01T00:15:37.000Z</updated>
     
-    <content type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;language&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;Node&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;Ruby&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;Groovy&lt;/th&gt;
-&lt;th style=&quot;text-align:left&quot;&gt;Java&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Version Manager&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;NVM&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;RVM&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;GVM&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Package manager&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;NPM&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Bundler&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Gradle&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Maven&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Task Runner&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Grunt&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Rake&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Gradle&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Maven&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;module bundler&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Webpack&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Web framework&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Sails&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Rails&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Grails&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Strust&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Express&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Spring MVC&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Koa&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Web server&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Tomcat&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Nginx&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Apache&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Desktop application&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Griffon&lt;/td&gt;
-&lt;td style=&quot;text-align:left&quot;&gt;Swing&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</content>
+    <content type="html"><![CDATA[<table>
+<thead>
+<tr>
+<th>language</th>
+<th style="text-align:left">Node</th>
+<th style="text-align:left">Ruby</th>
+<th style="text-align:left">Groovy</th>
+<th style="text-align:left">Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version Manager</td>
+<td style="text-align:left">NVM</td>
+<td style="text-align:left">RVM</td>
+<td style="text-align:left">GVM</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Package manager</td>
+<td style="text-align:left">NPM</td>
+<td style="text-align:left">Bundler</td>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">Maven</td>
+</tr>
+<tr>
+<td>Task Runner</td>
+<td style="text-align:left">Grunt</td>
+<td style="text-align:left">Rake</td>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">Maven</td>
+</tr>
+<tr>
+<td>module bundler</td>
+<td style="text-align:left">Webpack</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Web framework</td>
+<td style="text-align:left">Sails</td>
+<td style="text-align:left">Rails</td>
+<td style="text-align:left">Grails</td>
+<td style="text-align:left">Strust</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left">Express</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Spring MVC</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left">Koa</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td>Web server</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Tomcat</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Nginx</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Apache</td>
+</tr>
+<tr>
+<td>Desktop application</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Griffon</td>
+<td style="text-align:left">Swing</td>
+</tr>
+</tbody>
+</table>
+]]></content>
     
     <summary type="html">
     
@@ -127,7 +156,7 @@
     </summary>
     
     
-      <category term="Groovy" scheme="http://alincode.github.io/tags/Groovy/"/>
+      <category term="framework" scheme="http://alincode.github.io/tags/framework/"/>
     
       <category term="Java" scheme="http://alincode.github.io/tags/Java/"/>
     
@@ -135,7 +164,7 @@
     
       <category term="Ruby" scheme="http://alincode.github.io/tags/Ruby/"/>
     
-      <category term="framework" scheme="http://alincode.github.io/tags/framework/"/>
+      <category term="Groovy" scheme="http://alincode.github.io/tags/Groovy/"/>
     
   </entry>
   
@@ -146,34 +175,34 @@
     <published>2016-07-30T06:06:05.000Z</published>
     <updated>2016-07-31T11:30:32.000Z</updated>
     
-    <content type="html">&lt;p&gt;在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;重新部署要做的事&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;備份資料庫&lt;/li&gt;
-&lt;li&gt;更新程式碼&lt;/li&gt;
-&lt;li&gt;更新設定檔&lt;/li&gt;
-&lt;li&gt;更新資料庫&lt;/li&gt;
-&lt;li&gt;例行性指令&lt;ul&gt;
-&lt;li&gt;重啟 service&lt;/li&gt;
-&lt;li&gt;清除 cache&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;etc…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。&lt;/p&gt;
-&lt;h3 id=&quot;相關的工具類型&quot;&gt;&lt;a href=&quot;#相關的工具類型&quot; class=&quot;headerlink&quot; title=&quot;相關的工具類型&quot;&gt;&lt;/a&gt;相關的工具類型&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;資料庫遷移工具 (Migration tools)&lt;/li&gt;
-&lt;li&gt;自動部署工具 (automated configuration manage tool)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;自動部署工具&quot;&gt;&lt;a href=&quot;#自動部署工具&quot; class=&quot;headerlink&quot; title=&quot;自動部署工具&quot;&gt;&lt;/a&gt;自動部署工具&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Ansible&lt;/li&gt;
-&lt;li&gt;Chef&lt;/li&gt;
-&lt;li&gt;Capistrano&lt;/li&gt;
-&lt;li&gt;etc…&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;以-Capistrano-為例來說明&quot;&gt;&lt;a href=&quot;#以-Capistrano-為例來說明&quot; class=&quot;headerlink&quot; title=&quot;以 Capistrano 為例來說明&quot;&gt;&lt;/a&gt;以 Capistrano 為例來說明&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;require &amp;#39;capistrano/setup&amp;#39;&amp;#10;require &amp;#39;capistrano/deploy&amp;#39;&amp;#10;require &amp;#39;capistrano/bundler&amp;#39;&amp;#10;require &amp;#39;capistrano/rails/migrations&amp;#39;&amp;#10;require &amp;#39;capistrano/rails/assets&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>在沒有自動部署的世代，基本上重新部署就等同於，把舊的程式碼刪掉，再把新版的程式碼上傳到 FTP 同個位置，接著手動重啟伺服器。但由於現在講究雲端架構要彈性，伺服器要可以無限開 N 台的情況，所有步驟都要改成自動化，那到底要做哪些事？</p>
+<p><strong>重新部署要做的事</strong></p>
+<ul>
+<li>備份資料庫</li>
+<li>更新程式碼</li>
+<li>更新設定檔</li>
+<li>更新資料庫</li>
+<li>例行性指令<ul>
+<li>重啟 service</li>
+<li>清除 cache</li>
+</ul>
+</li>
+<li>etc…</li>
+</ul>
+<p>以往，我們要做上述的這些事，我們要組合非常多的 plugin 組合技去達成，帶隨著時代在進步，漸漸出現一套就可以涵蓋這些範圍的工具，並發展出一套架構。</p>
+<h3 id="相關的工具類型"><a href="#相關的工具類型" class="headerlink" title="相關的工具類型"></a>相關的工具類型</h3><ul>
+<li>資料庫遷移工具 (Migration tools)</li>
+<li>自動部署工具 (automated configuration manage tool)</li>
+</ul>
+<h3 id="自動部署工具"><a href="#自動部署工具" class="headerlink" title="自動部署工具"></a>自動部署工具</h3><ul>
+<li>Ansible</li>
+<li>Chef</li>
+<li>Capistrano</li>
+<li>etc…</li>
+</ul>
+<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">require &apos;capistrano/setup&apos;</div><div class="line">require &apos;capistrano/deploy&apos;</div><div class="line">require &apos;capistrano/bundler&apos;</div><div class="line">require &apos;capistrano/rails/migrations&apos;</div><div class="line">require &apos;capistrano/rails/assets&apos;</div></pre></td></tr></table></figure>
+<p>Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。</p>
+]]></content>
     
     <summary type="html">
     
@@ -194,56 +223,56 @@
     <published>2016-07-29T06:00:06.000Z</published>
     <updated>2016-07-31T15:10:40.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://i-msdn.sec.s-msft.com/dynimg/IC721395.png&quot; alt=&quot;Release Management&quot;&gt;&lt;br&gt;&lt;a href=&quot;https://msdn.microsoft.com/zh-tw/library/dn217874.aspx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;圖片來源 - msdn&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;首先必須了解，我們需要 rollback 什麼&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;還原回舊的程式碼&lt;/li&gt;
-&lt;li&gt;還原資料庫&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;還原回舊的程式碼&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/structure.png&quot; alt=&quot;structure.png&quot; title=&quot;&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;以 &lt;code&gt;capistrano&lt;/code&gt; 為例，每次透過工具執行 release 指令之後，在 releases 資料夾下，就會有當下時間戳記資料夾，工具會更新軟連結 (current) 指向的新的時間戳記的資料夾，以達到可以還原的目的。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://capistranorb.com/documentation/getting-started/structure/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;capistranorb structure&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;資料庫rollback&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/07/29/deploy-rollback/ruby_rollback.png&quot; alt=&quot;ruby_rollback.png&quot; title=&quot;&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;資料庫層級的 rollback&lt;ul&gt;
-&lt;li&gt;使用一些 tool 所寫出來的 migrations script，自動將執行動作包在同一個 transaction，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;框架層級的 rollback&lt;ul&gt;
-&lt;li&gt;但如果 migration script 執行完成後，結果不如預期，基本上不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致其他已經 pull 的人發生衝突，所以功能最好只使用在未 push code 出去之前使用。&lt;/li&gt;
-&lt;li&gt;例如若你在 migration script 中，新增了一個欄位，當你做 &lt;code&gt;rake db:rollback STEP=1&lt;/code&gt; 後，它會自動將新增的欄位移除。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;那到底怎麼收拾失敗的殘局？&lt;ul&gt;
-&lt;li&gt;答案就是在寫一個 migration script 去修正問題&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;完整範例程式&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/rails-migration-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rails migration sandbox&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/alincode/sequelize-merged-sandbox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize migration sandbox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;database migration tools&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sequelize/cli&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;sequelize-cli&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.liquibase.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;liquibase&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/flyway/flyway&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;flyway&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://guides.rubyonrails.org/v3.2/migrations.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ruby migrate&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;相關文章&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Usefulness of db migrations rollback&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://ihower.tw/rails4/migrations.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Active Record - 資料庫遷移&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://capistranorb.com/documentation/getting-started/rollbacks/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;capistranorb rollbacks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+    <content type="html"><![CDATA[<p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC721395.png" alt="Release Management"><br><a href="https://msdn.microsoft.com/zh-tw/library/dn217874.aspx" target="_blank" rel="external">圖片來源 - msdn</a></p>
+<p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
+<p><strong>首先必須了解，我們需要 rollback 什麼</strong></p>
+<ul>
+<li>還原回舊的程式碼</li>
+<li>還原資料庫</li>
+</ul>
+<p><strong>還原回舊的程式碼</strong></p>
+<img src="/blog/2016/07/29/deploy-rollback/structure.png" alt="structure.png" title="">
+<ul>
+<li>以 <code>capistrano</code> 為例，每次透過工具執行 release 指令之後，在 releases 資料夾下，就會有當下時間戳記資料夾，工具會更新軟連結 (current) 指向的新的時間戳記的資料夾，以達到可以還原的目的。</li>
+<li><code>cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327</code></li>
+<li><a href="http://capistranorb.com/documentation/getting-started/structure/" target="_blank" rel="external">capistranorb structure</a></li>
+</ul>
+<p><strong>資料庫rollback</strong></p>
+<img src="/blog/2016/07/29/deploy-rollback/ruby_rollback.png" alt="ruby_rollback.png" title="">
+<ul>
+<li>資料庫層級的 rollback<ul>
+<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作包在同一個 transaction，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
+</ul>
+</li>
+<li>框架層級的 rollback<ul>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致其他已經 pull 的人發生衝突，所以功能最好只使用在未 push code 出去之前使用。</li>
+<li>例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會自動將新增的欄位移除。</li>
+</ul>
+</li>
+<li>那到底怎麼收拾失敗的殘局？<ul>
+<li>答案就是在寫一個 migration script 去修正問題</li>
+</ul>
+</li>
+</ul>
+<p><strong>完整範例程式</strong></p>
+<ul>
+<li><a href="https://github.com/alincode/rails-migration-sandbox" target="_blank" rel="external">rails migration sandbox</a></li>
+<li><a href="https://github.com/alincode/sequelize-merged-sandbox" target="_blank" rel="external">sequelize migration sandbox</a></li>
+</ul>
+<p><strong>database migration tools</strong></p>
+<ul>
+<li><a href="https://github.com/sequelize/cli" target="_blank" rel="external">sequelize-cli</a></li>
+<li><a href="http://www.liquibase.org/" target="_blank" rel="external">liquibase</a></li>
+<li><a href="https://github.com/flyway/flyway" target="_blank" rel="external">flyway</a></li>
+<li><a href="http://guides.rubyonrails.org/v3.2/migrations.html" target="_blank" rel="external">ruby migrate</a></li>
+</ul>
+<p><strong>相關文章</strong></p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback" target="_blank" rel="external">Usefulness of db migrations rollback</a></li>
+<li><a href="https://ihower.tw/rails4/migrations.html" target="_blank" rel="external">Active Record - 資料庫遷移</a></li>
+<li><a href="http://capistranorb.com/documentation/getting-started/rollbacks/" target="_blank" rel="external">capistranorb rollbacks</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -263,11 +292,11 @@
     <published>2016-07-27T01:30:09.000Z</published>
     <updated>2016-07-27T01:45:55.000Z</updated>
     
-    <content type="html">&lt;p&gt;你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。&lt;/p&gt;
-&lt;p&gt;Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;外掛安裝傳送門&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png&quot; alt=&quot;octotree&quot;&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>你是否像我一樣，把 github 當 yahoo 新聞一樣瀏覽，那你也應該喜歡這個。</p>
+<p>Octotree 的主要功能是將  GitHub 或 GitLab 的 code，以類似於 IDE 的 Tree View 顯示，並貼心的提供快捷鍵縮放 Tree View。</p>
+<p><a href="https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc" target="_blank" rel="external">外掛安裝傳送門</a></p>
+<p><img src="https://raw.githubusercontent.com/buunguyen/octotree/master/docs/chrome-github.png" alt="octotree"></p>
+]]></content>
     
     <summary type="html">
     
@@ -277,11 +306,11 @@
     </summary>
     
     
+      <category term="github" scheme="http://alincode.github.io/tags/github/"/>
+    
       <category term="chrome plugin" scheme="http://alincode.github.io/tags/chrome-plugin/"/>
     
       <category term="code tree" scheme="http://alincode.github.io/tags/code-tree/"/>
-    
-      <category term="github" scheme="http://alincode.github.io/tags/github/"/>
     
   </entry>
   
@@ -292,10 +321,10 @@
     <published>2016-07-24T03:22:28.000Z</published>
     <updated>2016-07-24T03:31:13.000Z</updated>
     
-    <content type="html">&lt;p&gt;發現一個蠻有趣的 ATOM plugin 叫 &lt;a href=&quot;https://atom.io/packages/markdown-mindmap&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown mindmap&lt;/a&gt;，它可以將 Markdown 裡格式的標題，直接轉成心智圖。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/07/24/atom-markdown-mindmap-plugin/markdown.png&quot; alt=&quot;markdown.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;心智圖&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/07/24/atom-markdown-mindmap-plugin/mindmap.png&quot; alt=&quot;mindmap.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>發現一個蠻有趣的 ATOM plugin 叫 <a href="https://atom.io/packages/markdown-mindmap" target="_blank" rel="external">markdown mindmap</a>，它可以將 Markdown 裡格式的標題，直接轉成心智圖。</p>
+<p><strong>Markdown</strong><br><img src="/blog/2016/07/24/atom-markdown-mindmap-plugin/markdown.png" alt="markdown.png" title=""></p>
+<p><strong>心智圖</strong><br><img src="/blog/2016/07/24/atom-markdown-mindmap-plugin/mindmap.png" alt="mindmap.png" title=""></p>
+]]></content>
     
     <summary type="html">
     
@@ -317,11 +346,11 @@
     <published>2016-07-21T14:36:36.000Z</published>
     <updated>2016-07-21T14:42:05.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;belongsToMany&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;User&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;User.belongsToMany(GameList, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;GameList&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Favorite&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    id: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      autoIncrement: true,&amp;#10;      primaryKey: true&amp;#10;    &amp;#125;,&amp;#10;    gameListId: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      name: &amp;#39;gameListId&amp;#39;,&amp;#10;      field: &amp;#39;game_list_id&amp;#39;&amp;#10;    &amp;#125;,&amp;#10;    userId: &amp;#123;&amp;#10;      type: Sequelize.INTEGER,&amp;#10;      name: &amp;#39;userId&amp;#39;,&amp;#10;      field: &amp;#39;user_id&amp;#39;&amp;#10;    &amp;#125;&amp;#10;  &amp;#125;,&amp;#10;  associations: function() &amp;#123;&amp;#125;,&amp;#10;  options: &amp;#123;&amp;#10;    tableName: &amp;#39;favorites&amp;#39;,&amp;#10;    classMethods: &amp;#123;&amp;#125;,&amp;#10;    instanceMethods: &amp;#123;&amp;#125;,&amp;#10;    hooks: &amp;#123;&amp;#125;,&amp;#10;    underscored: true&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p><a href="http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/" target="_blank" rel="external">belongsToMany</a></p>
+<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User.belongsToMany(GameList, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GameList.belongsToMany(User, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    id: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      autoIncrement: true,</div><div class="line">      primaryKey: true</div><div class="line">    &#125;,</div><div class="line">    gameListId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;gameListId&apos;,</div><div class="line">      field: &apos;game_list_id&apos;</div><div class="line">    &#125;,</div><div class="line">    userId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;userId&apos;,</div><div class="line">      field: &apos;user_id&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;&#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;favorites&apos;,</div><div class="line">    classMethods: &#123;&#125;,</div><div class="line">    instanceMethods: &#123;&#125;,</div><div class="line">    hooks: &#123;&#125;,</div><div class="line">    underscored: true</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
@@ -342,14 +371,14 @@
     <published>2016-07-20T14:46:21.000Z</published>
     <updated>2016-07-21T14:50:59.000Z</updated>
     
-    <content type="html">&lt;p&gt;camelCased：駝峰命名&lt;br&gt;underscored：底線命名&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;options: &amp;#123;&amp;#10;  tableName: &amp;#39;your_table_name&amp;#39;,&amp;#10;  classMethods: &amp;#123;&amp;#125;,&amp;#10;  instanceMethods: &amp;#123;&amp;#125;,&amp;#10;  hooks: &amp;#123;&amp;#125;,&amp;#10;  paranoid: true,&amp;#10;  underscored: true // ===&amp;#62; &amp;#36889;&amp;#34892;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p>camelCased：駝峰命名<br>underscored：底線命名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">options: &#123;</div><div class="line">  tableName: &apos;your_table_name&apos;,</div><div class="line">  classMethods: &#123;&#125;,</div><div class="line">  instanceMethods: &#123;&#125;,</div><div class="line">  hooks: &#123;&#125;,</div><div class="line">  paranoid: true,</div><div class="line">  underscored: true // ===&gt; 這行</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
       &lt;p&gt;camelCased：駝峰命名&lt;br&gt;underscored：底線命名&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div 
     
     </summary>
     
@@ -363,8 +392,8 @@
     <published>2016-07-04T03:07:14.000Z</published>
     <updated>2016-07-04T03:13:21.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;uniqBy&quot;&gt;&lt;a href=&quot;#uniqBy&quot; class=&quot;headerlink&quot; title=&quot;uniqBy&quot;&gt;&lt;/a&gt;uniqBy&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let data = [&amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 11,&amp;#10;&amp;#125;, &amp;#123;&amp;#10;  GameId: 13,&amp;#10;&amp;#125;];&amp;#10;let originSize = data.length;&amp;#10;data = _.uniqBy(data, &amp;#34;GameId&amp;#34;);&amp;#10;let newSize = data.length;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<h3 id="uniqBy"><a href="#uniqBy" class="headerlink" title="uniqBy"></a>uniqBy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let data = [&#123;</div><div class="line">  GameId: 11,</div><div class="line">&#125;, &#123;</div><div class="line">  GameId: 11,</div><div class="line">&#125;, &#123;</div><div class="line">  GameId: 13,</div><div class="line">&#125;];</div><div class="line">let originSize = data.length;</div><div class="line">data = _.uniqBy(data, &quot;GameId&quot;);</div><div class="line">let newSize = data.length;</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -382,14 +411,14 @@
     <published>2016-07-03T02:12:31.000Z</published>
     <updated>2016-07-03T04:18:50.000Z</updated>
     
-    <content type="html">&lt;p&gt;當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;GameList.js&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    // &amp;#30053;&amp;#10;  &amp;#125;,&amp;#10;  associations: function() &amp;#123;&amp;#10;    GameList.belongsTo(User);&amp;#10;    GameList.belongsToMany(User, &amp;#123;&amp;#10;      through: &amp;#39;game_list_userlike&amp;#39;,&amp;#10;      as: &amp;#39;UserLike&amp;#39;&amp;#10;    &amp;#125;);&amp;#10;&amp;#10;  &amp;#125;,&amp;#10;  options: &amp;#123;&amp;#10;    tableName: &amp;#39;game_list&amp;#39;,&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;User.js&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;module.exports = &amp;#123;&amp;#10;  attributes: &amp;#123;&amp;#10;    // &amp;#30053;&amp;#10;  &amp;#125;,&amp;#10;  associations: function() &amp;#123;&amp;#10;    User.hasMany(GameList);&amp;#10;    User.belongsToMany(GameList, &amp;#123;&amp;#10;      through: &amp;#39;game_list_userlike&amp;#39;,&amp;#10;      as: &amp;#39;UserLike&amp;#39;&amp;#10;    &amp;#125;);&amp;#10;&amp;#10;  &amp;#125;,&amp;#10;  options: &amp;#123;&amp;#10;    tableName: &amp;#39;user&amp;#39;,&amp;#10;  &amp;#125;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;取值方式&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let option = &amp;#123;&amp;#10;  include: [&amp;#123;&amp;#10;    model: User,&amp;#10;    as: &amp;#39;UserLike&amp;#39;&amp;#10;  &amp;#125;]&amp;#10;&amp;#125;;&amp;#10;let gamelists = await GameList.findAll(option);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p>當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。</p>
+<p><strong>GameList.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    // 略</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;</div><div class="line">    GameList.belongsTo(User);</div><div class="line">    GameList.belongsToMany(User, &#123;</div><div class="line">      through: &apos;game_list_userlike&apos;,</div><div class="line">      as: &apos;UserLike&apos;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">  &#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;game_list&apos;,</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>User.js</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    // 略</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;</div><div class="line">    User.hasMany(GameList);</div><div class="line">    User.belongsToMany(GameList, &#123;</div><div class="line">      through: &apos;game_list_userlike&apos;,</div><div class="line">      as: &apos;UserLike&apos;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">  &#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;user&apos;,</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>取值方式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let option = &#123;</div><div class="line">  include: [&#123;</div><div class="line">    model: User,</div><div class="line">    as: &apos;UserLike&apos;</div><div class="line">  &#125;]</div><div class="line">&#125;;</div><div class="line">let gamelists = await GameList.findAll(option);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -411,11 +440,11 @@
     <published>2016-07-01T14:45:30.000Z</published>
     <updated>2016-06-30T15:03:43.000Z</updated>
     
-    <content type="html">&lt;p&gt;今天踩到一個自己種的雷，使用 &lt;a href=&quot;http://sailsjs.org/documentation/reference/response-res/res-ok&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;res.ok&lt;/a&gt; 的時候少了一個 &lt;code&gt;{ }&lt;/code&gt;，但其實如果你只傳一個物件，物件本身外層本來就有 &lt;code&gt;{ }&lt;/code&gt; 不需要再多一個 &lt;code&gt;{ }&lt;/code&gt;，但如果是傳基本型別，就一定得要有 &lt;code&gt;{ }&lt;/code&gt; 存在，缺少 &lt;code&gt;{ }&lt;/code&gt; 的時候，單元測試會抓到 &lt;code&gt;res.statusCode == 1&lt;/code&gt;，還蠻神奇的。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;主程式&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;userlikes: async(req, res) =&amp;#62; &amp;#123;&amp;#10;  const gamelistId = req.params.gamelistId;&amp;#10;  try &amp;#123;&amp;#10;    let user = UserService.getLoginUser(req);&amp;#10;    let likeCount = await UserLikeService.like(user.id, gamelistId);&amp;#10;    //return res.ok(&amp;#10;    //  likeCount&amp;#10;    //);&amp;#10;    return res.ok(&amp;#123;&amp;#10;      likeCount&amp;#10;    &amp;#125;);&amp;#10;  &amp;#125; catch (e) &amp;#123;&amp;#10;    return res.serverError(e);&amp;#10;  &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;測試程式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;it(&amp;#39;post /api/gamelists/:gamelistId/userlikes&amp;#39;, async(done) =&amp;#62; &amp;#123;&amp;#10; request(sails.hooks.http.app)&amp;#10;   .post(`/api/gamelists/$&amp;#123;gamelistId&amp;#125;/userlikes`)&amp;#10;   .end((err, res) =&amp;#62; &amp;#123;&amp;#10;     let result = res.body;&amp;#10;     // res.statusCode.should.be.equal(1);&amp;#10;     res.statusCode.should.be.equal(200);&amp;#10;     result.likeCount.should.be.equal(1);&amp;#10;     done(err);&amp;#10;   &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>今天踩到一個自己種的雷，使用 <a href="http://sailsjs.org/documentation/reference/response-res/res-ok" target="_blank" rel="external">res.ok</a> 的時候少了一個 <code>{ }</code>，但其實如果你只傳一個物件，物件本身外層本來就有 <code>{ }</code> 不需要再多一個 <code>{ }</code>，但如果是傳基本型別，就一定得要有 <code>{ }</code> 存在，缺少 <code>{ }</code> 的時候，單元測試會抓到 <code>res.statusCode == 1</code>，還蠻神奇的。</p>
+<p><strong>主程式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">userlikes: async(req, res) =&gt; &#123;</div><div class="line">  const gamelistId = req.params.gamelistId;</div><div class="line">  try &#123;</div><div class="line">    let user = UserService.getLoginUser(req);</div><div class="line">    let likeCount = await UserLikeService.like(user.id, gamelistId);</div><div class="line">    //return res.ok(</div><div class="line">    //  likeCount</div><div class="line">    //);</div><div class="line">    return res.ok(&#123;</div><div class="line">      likeCount</div><div class="line">    &#125;);</div><div class="line">  &#125; catch (e) &#123;</div><div class="line">    return res.serverError(e);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>測試程式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">it(&apos;post /api/gamelists/:gamelistId/userlikes&apos;, async(done) =&gt; &#123;</div><div class="line"> request(sails.hooks.http.app)</div><div class="line">   .post(`/api/gamelists/$&#123;gamelistId&#125;/userlikes`)</div><div class="line">   .end((err, res) =&gt; &#123;</div><div class="line">     let result = res.body;</div><div class="line">     // res.statusCode.should.be.equal(1);</div><div class="line">     res.statusCode.should.be.equal(200);</div><div class="line">     result.likeCount.should.be.equal(1);</div><div class="line">     done(err);</div><div class="line">   &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
@@ -439,16 +468,16 @@
     <published>2016-06-30T14:30:38.000Z</published>
     <updated>2016-06-29T14:42:26.000Z</updated>
     
-    <content type="html">&lt;p&gt;基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://webdriver.io/guide/testrunner/pageobjects.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;function Page () &amp;#123;&amp;#10;    this.title = &amp;#39;My Page&amp;#39;;&amp;#10;&amp;#125;&amp;#10;&amp;#10;Page.prototype.open = function (path) &amp;#123;&amp;#10;    browser.url(&amp;#39;/&amp;#39; + path)&amp;#10;&amp;#125;&amp;#10;&amp;#10;module.exports = new Page()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var Page = require(&amp;#39;./page&amp;#39;)&amp;#10;&amp;#10;var LoginPage = Object.create(Page, &amp;#123;&amp;#10;    /**&amp;#10;     * define elements&amp;#10;     */&amp;#10;    username: &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#username&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    password: &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#password&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    form:     &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#login&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;    flash:    &amp;#123; get: function () &amp;#123; return browser.element(&amp;#39;#flash&amp;#39;); &amp;#125; &amp;#125;,&amp;#10;&amp;#10;    /**&amp;#10;     * define or overwrite page methods&amp;#10;     */&amp;#10;    open: &amp;#123; value: function() &amp;#123;&amp;#10;        Page.open.call(this, &amp;#39;login&amp;#39;);&amp;#10;    &amp;#125; &amp;#125;,&amp;#10;&amp;#10;    submit: &amp;#123; value: function() &amp;#123;&amp;#10;        this.form.submitForm();&amp;#10;    &amp;#125; &amp;#125;&amp;#10;&amp;#125;);&amp;#10;&amp;#10;module.exports = LoginPage&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var expect = require(&amp;#39;chai&amp;#39;).expect;&amp;#10;var LoginPage = require(&amp;#39;../pageobjects/login.page&amp;#39;);&amp;#10;&amp;#10;describe(&amp;#39;login form&amp;#39;, function () &amp;#123;&amp;#10;    it(&amp;#39;should deny access with wrong creds&amp;#39;, function () &amp;#123;&amp;#10;        LoginPage.open();&amp;#10;        LoginPage.username.setValue(&amp;#39;foo&amp;#39;);&amp;#10;        LoginPage.password.setValue(&amp;#39;bar&amp;#39;);&amp;#10;        LoginPage.submit();&amp;#10;&amp;#10;        expect(LoginPage.flash.getText()).to.contain(&amp;#39;Your username is invalid!&amp;#39;);&amp;#10;    &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/angular/protractor/blob/master/docs/page-objects.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var AngularHomepage = function() &amp;#123;&amp;#10;  var nameInput = element(by.model(&amp;#39;yourName&amp;#39;));&amp;#10;  var greeting = element(by.binding(&amp;#39;yourName&amp;#39;));&amp;#10;&amp;#10;  this.get = function() &amp;#123;&amp;#10;    browser.get(&amp;#39;http://www.angularjs.org&amp;#39;);&amp;#10;  &amp;#125;;&amp;#10;&amp;#10;  this.setName = function(name) &amp;#123;&amp;#10;    nameInput.sendKeys(name);&amp;#10;  &amp;#125;;&amp;#10;&amp;#10;  this.getGreeting = function() &amp;#123;&amp;#10;    return greeting.getText();&amp;#10;  &amp;#125;;&amp;#10;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;describe(&amp;#39;angularjs homepage&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;should greet the named user&amp;#39;, function() &amp;#123;&amp;#10;    var angularHomepage = new AngularHomepage();&amp;#10;    angularHomepage.get();&amp;#10;    angularHomepage.setName(&amp;#39;Julie&amp;#39;);&amp;#10;    expect(angularHomepage.getGreeting()).toEqual(&amp;#39;Hello Julie!&amp;#39;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.gebish.org/pages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Geb Page Object Pattern&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Page&amp;#10;&amp;#10;class LoginPage extends Page &amp;#123;&amp;#10;    static url = &amp;#34;http://myapp.com/login&amp;#34;&amp;#10;    static at = &amp;#123; heading.text() == &amp;#34;Please Login&amp;#34; &amp;#125;&amp;#10;    static content = &amp;#123;&amp;#10;        heading &amp;#123; $(&amp;#34;h1&amp;#34;) &amp;#125;&amp;#10;        loginForm &amp;#123; $(&amp;#34;form.login&amp;#34;) &amp;#125;&amp;#10;        loginButton(to: AdminPage) &amp;#123; loginForm.login() &amp;#125;&amp;#10;    &amp;#125;&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;呼叫 Page Object 使用方式&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import geb.Browser&amp;#10;&amp;#10;Browser.drive &amp;#123;&amp;#10;    to LoginPage&amp;#10;    assert at(LoginPage)&amp;#10;    loginForm.with &amp;#123;&amp;#10;        username = &amp;#34;admin&amp;#34;&amp;#10;        password = &amp;#34;password&amp;#34;&amp;#10;    &amp;#125;&amp;#10;    loginButton.click()&amp;#10;    assert at(AdminPage)&amp;#10;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。</p>
+<p><strong><a href="http://webdriver.io/guide/testrunner/pageobjects.html" target="_blank" rel="external">WebdriverIO Page Object Pattern</a></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Page () &#123;</div><div class="line">    this.title = &apos;My Page&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Page.prototype.open = function (path) &#123;</div><div class="line">    browser.url(&apos;/&apos; + path)</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = new Page()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var Page = require(&apos;./page&apos;)</div><div class="line"></div><div class="line">var LoginPage = Object.create(Page, &#123;</div><div class="line">    /**</div><div class="line">     * define elements</div><div class="line">     */</div><div class="line">    username: &#123; get: function () &#123; return browser.element(&apos;#username&apos;); &#125; &#125;,</div><div class="line">    password: &#123; get: function () &#123; return browser.element(&apos;#password&apos;); &#125; &#125;,</div><div class="line">    form:     &#123; get: function () &#123; return browser.element(&apos;#login&apos;); &#125; &#125;,</div><div class="line">    flash:    &#123; get: function () &#123; return browser.element(&apos;#flash&apos;); &#125; &#125;,</div><div class="line"></div><div class="line">    /**</div><div class="line">     * define or overwrite page methods</div><div class="line">     */</div><div class="line">    open: &#123; value: function() &#123;</div><div class="line">        Page.open.call(this, &apos;login&apos;);</div><div class="line">    &#125; &#125;,</div><div class="line"></div><div class="line">    submit: &#123; value: function() &#123;</div><div class="line">        this.form.submitForm();</div><div class="line">    &#125; &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = LoginPage</div></pre></td></tr></table></figure>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var expect = require(&apos;chai&apos;).expect;</div><div class="line">var LoginPage = require(&apos;../pageobjects/login.page&apos;);</div><div class="line"></div><div class="line">describe(&apos;login form&apos;, function () &#123;</div><div class="line">    it(&apos;should deny access with wrong creds&apos;, function () &#123;</div><div class="line">        LoginPage.open();</div><div class="line">        LoginPage.username.setValue(&apos;foo&apos;);</div><div class="line">        LoginPage.password.setValue(&apos;bar&apos;);</div><div class="line">        LoginPage.submit();</div><div class="line"></div><div class="line">        expect(LoginPage.flash.getText()).to.contain(&apos;Your username is invalid!&apos;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong><a href="https://github.com/angular/protractor/blob/master/docs/page-objects.md" target="_blank" rel="external">Protractor Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var AngularHomepage = function() &#123;</div><div class="line">  var nameInput = element(by.model(&apos;yourName&apos;));</div><div class="line">  var greeting = element(by.binding(&apos;yourName&apos;));</div><div class="line"></div><div class="line">  this.get = function() &#123;</div><div class="line">    browser.get(&apos;http://www.angularjs.org&apos;);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  this.setName = function(name) &#123;</div><div class="line">    nameInput.sendKeys(name);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  this.getGreeting = function() &#123;</div><div class="line">    return greeting.getText();</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">describe(&apos;angularjs homepage&apos;, function() &#123;</div><div class="line">  it(&apos;should greet the named user&apos;, function() &#123;</div><div class="line">    var angularHomepage = new AngularHomepage();</div><div class="line">    angularHomepage.get();</div><div class="line">    angularHomepage.setName(&apos;Julie&apos;);</div><div class="line">    expect(angularHomepage.getGreeting()).toEqual(&apos;Hello Julie!&apos;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong><a href="http://www.gebish.org/pages" target="_blank" rel="external">Geb Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import geb.Page</div><div class="line"></div><div class="line">class LoginPage extends Page &#123;</div><div class="line">    static url = &quot;http://myapp.com/login&quot;</div><div class="line">    static at = &#123; heading.text() == &quot;Please Login&quot; &#125;</div><div class="line">    static content = &#123;</div><div class="line">        heading &#123; $(&quot;h1&quot;) &#125;</div><div class="line">        loginForm &#123; $(&quot;form.login&quot;) &#125;</div><div class="line">        loginButton(to: AdminPage) &#123; loginForm.login() &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import geb.Browser</div><div class="line"></div><div class="line">Browser.drive &#123;</div><div class="line">    to LoginPage</div><div class="line">    assert at(LoginPage)</div><div class="line">    loginForm.with &#123;</div><div class="line">        username = &quot;admin&quot;</div><div class="line">        password = &quot;password&quot;</div><div class="line">    &#125;</div><div class="line">    loginButton.click()</div><div class="line">    assert at(AdminPage)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
@@ -467,17 +496,17 @@
     <published>2016-06-29T13:41:27.000Z</published>
     <updated>2016-06-29T14:29:07.000Z</updated>
     
-    <content type="html">&lt;p&gt;兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。&lt;/p&gt;
-&lt;p&gt;你可以從 Protractor 的 &lt;a href=&quot;https://github.com/angular/protractor/blob/master/package.json&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;package.json&lt;/a&gt; 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;圖一&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png&quot; alt=&quot;protractor.png&quot; title=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 &lt;a href=&quot;https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;JsonWireProtocol&lt;/a&gt; RESTful API。&lt;/p&gt;
-&lt;p&gt;Protractor 跟 selenium-webdriver API 的使用方式非常雷同。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://seleniumhq.github.io/selenium/docs/api/javascript/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;selenium-webdriver API&lt;/a&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = driver.findElement(By.id(&amp;#39;dog_id&amp;#39;)).click();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.protractortest.org/#/api?view=webdriver.By.id&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Protractor API&lt;/a&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = browser.findElement(by.id(&amp;#39;dog_id&amp;#39;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;但 &lt;a href=&quot;http://webdriver.io/api/protocol/element.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebdriverIO API&lt;/a&gt; 則更友善一點，非常肯定作者在這方面的努力。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var dog = client.element(&amp;#39;#dog_id&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p>兩個都是目前非常當紅的前端測試框架，雖然他們都是透過呼叫 selenium server 去幫他們做一些事，但實際上從底層就有很大的不同。</p>
+<p>你可以從 Protractor 的 <a href="https://github.com/angular/protractor/blob/master/package.json" target="_blank" rel="external">package.json</a> 中，可以找到 selenium-webdriver 的身影，所以基本上 Protractor 是針對 selenium-webdriver 做了一層更友善的界面。</p>
+<p><strong>圖一</strong><br><img src="/blog/2016/06/29/webdriverio-vs-protractor-architecture/protractor.png" alt="protractor.png" title=""></p>
+<p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
+<p>Protractor 跟 selenium-webdriver API 的使用方式非常雷同。</p>
+<p><a href="http://seleniumhq.github.io/selenium/docs/api/javascript/" target="_blank" rel="external">selenium-webdriver API</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = driver.findElement(By.id(&apos;dog_id&apos;)).click();</div></pre></td></tr></table></figure>
+<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = browser.findElement(by.id(&apos;dog_id&apos;));</div></pre></td></tr></table></figure></p>
+<p>但 <a href="http://webdriver.io/api/protocol/element.html" target="_blank" rel="external">WebdriverIO API</a> 則更友善一點，非常肯定作者在這方面的努力。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = client.element(&apos;#dog_id&apos;);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -496,12 +525,12 @@
     <published>2016-06-20T03:30:03.000Z</published>
     <updated>2016-06-20T03:45:35.000Z</updated>
     
-    <content type="html">&lt;p&gt;最近 &lt;code&gt;WebdriverIO&lt;/code&gt; 又 release 一個新的 service，這個 service 主要是整合 &lt;code&gt;selenium standalone&lt;/code&gt; package，不需要另外執行 &lt;code&gt;selenium-standalone start&lt;/code&gt;，它會在背後自動 hook 做這件事。&lt;/p&gt;
-&lt;p&gt;使用上也非常的簡單，只要&lt;a href=&quot;http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/&quot;&gt;原本的測試專案安裝&lt;/a&gt;，新增的 service &lt;code&gt;npm i wdio-selenium-standalone-service -D&lt;/code&gt;，並編輯 &lt;code&gt;wdio.conf.js&lt;/code&gt; 加入 &lt;code&gt;services: [&amp;#39;selenium-standalone&amp;#39;],&lt;/code&gt; 設定即可。&lt;/p&gt;
-&lt;h3 id=&quot;Ref&quot;&gt;&lt;a href=&quot;#Ref&quot; class=&quot;headerlink&quot; title=&quot;Ref&quot;&gt;&lt;/a&gt;Ref&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://webdriver.io/guide/services/selenium-standalone.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SELENIUM STANDALONE SERVICE&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+    <content type="html"><![CDATA[<p>最近 <code>WebdriverIO</code> 又 release 一個新的 service，這個 service 主要是整合 <code>selenium standalone</code> package，不需要另外執行 <code>selenium-standalone start</code>，它會在背後自動 hook 做這件事。</p>
+<p>使用上也非常的簡單，只要<a href="http://alincode.github.io/blog/2016/04/23/getting-started-with-WebdriverIO/">原本的測試專案安裝</a>，新增的 service <code>npm i wdio-selenium-standalone-service -D</code>，並編輯 <code>wdio.conf.js</code> 加入 <code>services: [&#39;selenium-standalone&#39;],</code> 設定即可。</p>
+<h3 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h3><ul>
+<li><a href="http://webdriver.io/guide/services/selenium-standalone.html" target="_blank" rel="external">SELENIUM STANDALONE SERVICE</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -523,36 +552,36 @@
     <published>2016-06-13T05:25:02.000Z</published>
     <updated>2016-06-13T07:20:20.000Z</updated>
     
-    <content type="html">&lt;p&gt;此篇會先以最基本的方式去撰寫，下一篇會將此篇相同的程式改寫成 Page Object Pattern。&lt;/p&gt;
-&lt;h2 id=&quot;步驟解說&quot;&gt;&lt;a href=&quot;#步驟解說&quot; class=&quot;headerlink&quot; title=&quot;步驟解說&quot;&gt;&lt;/a&gt;步驟解說&lt;/h2&gt;&lt;p&gt;這是一個真實世界測試案例，針對正常登入流程進行測試，基本流程就是前往登入頁，並填入帳號密碼後，按登入按鈕，確認是否登入成功。現在我們一步一步去看，它到底做了什麼。&lt;/p&gt;
-&lt;h3 id=&quot;步驟一&quot;&gt;&lt;a href=&quot;#步驟一&quot; class=&quot;headerlink&quot; title=&quot;步驟一&quot;&gt;&lt;/a&gt;步驟一&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;圖一&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/13/webdriverio-realworld-test-case/step1.png&quot; alt=&quot;step1.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;因為前端測試是模擬使用者的行為，所以它只能點選使用者可視範圍，登入頁的連結是被隱藏在左側，所以需要先把側欄畫面點開來。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;圖二&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/13/webdriverio-realworld-test-case/step2.png&quot; alt=&quot;step2.png&quot; title=&quot;&quot;&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;it(&amp;#39;&amp;#21069;&amp;#24448;&amp;#30331;&amp;#20837;&amp;#38913;&amp;#39;, function(done) &amp;#123;&amp;#10;  browser.url(&amp;#39;/&amp;#39;);&amp;#10;  browser.click(&amp;#39;.open-panel&amp;#39;); // &amp;#22294;&amp;#19968;&amp;#10;  browser.click(&amp;#39;[href*=login]&amp;#39;); // &amp;#22294;&amp;#20108;&amp;#10;  browser.waitForExist(&amp;#39;[name=identifier]&amp;#39;);&amp;#10;  browser.getText(&amp;#39;.login-screen-title&amp;#39;).should.be.equal(&amp;#10;    &amp;#39;Login&amp;#39;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;點擊登入連結&lt;/li&gt;
-&lt;li&gt;確認已經被轉到登入頁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;步驟二&quot;&gt;&lt;a href=&quot;#步驟二&quot; class=&quot;headerlink&quot; title=&quot;步驟二&quot;&gt;&lt;/a&gt;步驟二&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;圖三&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/13/webdriverio-realworld-test-case/step3.png&quot; alt=&quot;step3.png&quot; title=&quot;&quot;&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;it(&amp;#39;&amp;#22635;&amp;#23531;&amp;#30331;&amp;#20837;&amp;#36039;&amp;#26009;&amp;#20006;&amp;#36865;&amp;#20986;&amp;#39;, function(done) &amp;#123;&amp;#10;  browser.elements(&amp;#39;[name=identifier]&amp;#39;).setValue(&amp;#39;demo&amp;#39;);&amp;#10;  browser.elements(&amp;#39;[name=password]&amp;#39;).setValue(&amp;#39;11111111&amp;#39;);&amp;#10;  browser.click(&amp;#39;[type=submit]&amp;#39;);&amp;#10;  browser.isExisting(&amp;#39;[name=identifier]&amp;#39;, false).should.be.equal(&amp;#10;    true);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;填入帳號&lt;/li&gt;
-&lt;li&gt;填入密碼&lt;/li&gt;
-&lt;li&gt;按送出&lt;/li&gt;
-&lt;li&gt;確定已經不在登入頁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;步驟三&quot;&gt;&lt;a href=&quot;#步驟三&quot; class=&quot;headerlink&quot; title=&quot;步驟三&quot;&gt;&lt;/a&gt;步驟三&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;圖四&lt;/strong&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/06/13/webdriverio-realworld-test-case/step4.png&quot; alt=&quot;step4.png&quot; title=&quot;&quot;&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;it(&amp;#39;&amp;#30331;&amp;#20837;&amp;#25104;&amp;#21151;&amp;#39;, function(done) &amp;#123;&amp;#10;  browser.pause(2000);&amp;#10;  browser.click(&amp;#39;.open-panel&amp;#39;);&amp;#10;  browser.waitForExist(&amp;#39;[href*=logout]&amp;#39;);&amp;#10;  browser.isExisting(&amp;#39;[href*=logout]&amp;#39;).should.be.equal(true);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;展開側欄&lt;/li&gt;
-&lt;li&gt;確認有登出連結在畫面中&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;完整測試程式碼&quot;&gt;&lt;a href=&quot;#完整測試程式碼&quot; class=&quot;headerlink&quot; title=&quot;完整測試程式碼&quot;&gt;&lt;/a&gt;完整測試程式碼&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;describe(&amp;#39;&amp;#27491;&amp;#24120;&amp;#30331;&amp;#20837;&amp;#27969;&amp;#31243;&amp;#39;, function() &amp;#123;&amp;#10;  it(&amp;#39;&amp;#21069;&amp;#24448;&amp;#30331;&amp;#20837;&amp;#38913;&amp;#39;, function(done) &amp;#123;&amp;#10;    browser.url(&amp;#39;/&amp;#39;);&amp;#10;    browser.click(&amp;#39;.open-panel&amp;#39;); // &amp;#22294;&amp;#19968;&amp;#10;    browser.click(&amp;#39;[href*=login]&amp;#39;); // &amp;#22294;&amp;#20108;&amp;#10;    browser.waitForExist(&amp;#39;[name=identifier]&amp;#39;);&amp;#10;    browser.getText(&amp;#39;.login-screen-title&amp;#39;).should.be.equal(&amp;#10;      &amp;#39;Login&amp;#39;);&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  it(&amp;#39;&amp;#22635;&amp;#23531;&amp;#30331;&amp;#20837;&amp;#36039;&amp;#26009;&amp;#20006;&amp;#36865;&amp;#20986;&amp;#39;, function(done) &amp;#123;&amp;#10;    browser.elements(&amp;#39;[name=identifier]&amp;#39;).setValue(&amp;#39;demo&amp;#39;);&amp;#10;    browser.elements(&amp;#39;[name=password]&amp;#39;).setValue(&amp;#39;11111111&amp;#39;);&amp;#10;    browser.click(&amp;#39;[type=submit]&amp;#39;);&amp;#10;    browser.isExisting(&amp;#39;[name=identifier]&amp;#39;, false).should.be.equal(&amp;#10;      true);&amp;#10;  &amp;#125;);&amp;#10;&amp;#10;  it(&amp;#39;&amp;#30331;&amp;#20837;&amp;#25104;&amp;#21151;&amp;#39;, function(done) &amp;#123;&amp;#10;    browser.pause(2000);&amp;#10;    browser.click(&amp;#39;.open-panel&amp;#39;);&amp;#10;    browser.waitForExist(&amp;#39;[href*=logout]&amp;#39;);&amp;#10;    browser.isExisting(&amp;#39;[href*=logout]&amp;#39;).should.be.equal(true);&amp;#10;  &amp;#125;);&amp;#10;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p>此篇會先以最基本的方式去撰寫，下一篇會將此篇相同的程式改寫成 Page Object Pattern。</p>
+<h2 id="步驟解說"><a href="#步驟解說" class="headerlink" title="步驟解說"></a>步驟解說</h2><p>這是一個真實世界測試案例，針對正常登入流程進行測試，基本流程就是前往登入頁，並填入帳號密碼後，按登入按鈕，確認是否登入成功。現在我們一步一步去看，它到底做了什麼。</p>
+<h3 id="步驟一"><a href="#步驟一" class="headerlink" title="步驟一"></a>步驟一</h3><p><strong>圖一</strong></p>
+<img src="/blog/2016/06/13/webdriverio-realworld-test-case/step1.png" alt="step1.png" title="">
+<p>因為前端測試是模擬使用者的行為，所以它只能點選使用者可視範圍，登入頁的連結是被隱藏在左側，所以需要先把側欄畫面點開來。</p>
+<p><strong>圖二</strong></p>
+<img src="/blog/2016/06/13/webdriverio-realworld-test-case/step2.png" alt="step2.png" title="">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">it(&apos;前往登入頁&apos;, function(done) &#123;</div><div class="line">  browser.url(&apos;/&apos;);</div><div class="line">  browser.click(&apos;.open-panel&apos;); // 圖一</div><div class="line">  browser.click(&apos;[href*=login]&apos;); // 圖二</div><div class="line">  browser.waitForExist(&apos;[name=identifier]&apos;);</div><div class="line">  browser.getText(&apos;.login-screen-title&apos;).should.be.equal(</div><div class="line">    &apos;Login&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>點擊登入連結</li>
+<li>確認已經被轉到登入頁</li>
+</ul>
+<h3 id="步驟二"><a href="#步驟二" class="headerlink" title="步驟二"></a>步驟二</h3><p><strong>圖三</strong></p>
+<img src="/blog/2016/06/13/webdriverio-realworld-test-case/step3.png" alt="step3.png" title="">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it(&apos;填寫登入資料並送出&apos;, function(done) &#123;</div><div class="line">  browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div><div class="line">  browser.elements(&apos;[name=password]&apos;).setValue(&apos;11111111&apos;);</div><div class="line">  browser.click(&apos;[type=submit]&apos;);</div><div class="line">  browser.isExisting(&apos;[name=identifier]&apos;, false).should.be.equal(</div><div class="line">    true);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>填入帳號</li>
+<li>填入密碼</li>
+<li>按送出</li>
+<li>確定已經不在登入頁</li>
+</ul>
+<h3 id="步驟三"><a href="#步驟三" class="headerlink" title="步驟三"></a>步驟三</h3><p><strong>圖四</strong></p>
+<img src="/blog/2016/06/13/webdriverio-realworld-test-case/step4.png" alt="step4.png" title="">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(&apos;登入成功&apos;, function(done) &#123;</div><div class="line">  browser.pause(2000);</div><div class="line">  browser.click(&apos;.open-panel&apos;);</div><div class="line">  browser.waitForExist(&apos;[href*=logout]&apos;);</div><div class="line">  browser.isExisting(&apos;[href*=logout]&apos;).should.be.equal(true);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>展開側欄</li>
+<li>確認有登出連結在畫面中</li>
+</ul>
+<h3 id="完整測試程式碼"><a href="#完整測試程式碼" class="headerlink" title="完整測試程式碼"></a>完整測試程式碼</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">describe(&apos;正常登入流程&apos;, function() &#123;</div><div class="line">  it(&apos;前往登入頁&apos;, function(done) &#123;</div><div class="line">    browser.url(&apos;/&apos;);</div><div class="line">    browser.click(&apos;.open-panel&apos;); // 圖一</div><div class="line">    browser.click(&apos;[href*=login]&apos;); // 圖二</div><div class="line">    browser.waitForExist(&apos;[name=identifier]&apos;);</div><div class="line">    browser.getText(&apos;.login-screen-title&apos;).should.be.equal(</div><div class="line">      &apos;Login&apos;);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(&apos;填寫登入資料並送出&apos;, function(done) &#123;</div><div class="line">    browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div><div class="line">    browser.elements(&apos;[name=password]&apos;).setValue(&apos;11111111&apos;);</div><div class="line">    browser.click(&apos;[type=submit]&apos;);</div><div class="line">    browser.isExisting(&apos;[name=identifier]&apos;, false).should.be.equal(</div><div class="line">      true);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(&apos;登入成功&apos;, function(done) &#123;</div><div class="line">    browser.pause(2000);</div><div class="line">    browser.click(&apos;.open-panel&apos;);</div><div class="line">    browser.waitForExist(&apos;[href*=logout]&apos;);</div><div class="line">    browser.isExisting(&apos;[href*=logout]&apos;).should.be.equal(true);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -575,28 +604,28 @@
     <published>2016-06-12T13:35:19.000Z</published>
     <updated>2016-06-13T14:29:00.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
-&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Protocol&quot;&gt;&lt;a href=&quot;#Protocol&quot; class=&quot;headerlink&quot; title=&quot;Protocol&quot;&gt;&lt;/a&gt;Protocol&lt;/h3&gt;&lt;h4 id=&quot;url&quot;&gt;&lt;a href=&quot;#url&quot; class=&quot;headerlink&quot; title=&quot;url&quot;&gt;&lt;/a&gt;url&lt;/h4&gt;&lt;p&gt;前往特定網址&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.url([url]);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.url(&amp;#39;/login&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;實用工具-Utility&quot;&gt;&lt;a href=&quot;#實用工具-Utility&quot; class=&quot;headerlink&quot; title=&quot;實用工具(Utility)&quot;&gt;&lt;/a&gt;實用工具(Utility)&lt;/h3&gt;&lt;h4 id=&quot;waitForExist&quot;&gt;&lt;a href=&quot;#waitForExist&quot; class=&quot;headerlink&quot; title=&quot;waitForExist&quot;&gt;&lt;/a&gt;waitForExist&lt;/h4&gt;&lt;p&gt;等待一個特定元素出現，才進行下一步。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.waitForExist(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.waitForExist(&amp;#39;[name=identifier]&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;其他相關語法&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;waitForEnabled&amp;#10;waitForSelected&amp;#10;waitForText&amp;#10;waitForValue&amp;#10;waitForVisible&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&quot;pause&quot;&gt;&lt;a href=&quot;#pause&quot; class=&quot;headerlink&quot; title=&quot;pause&quot;&gt;&lt;/a&gt;pause&lt;/h4&gt;&lt;p&gt;暫停一段時間，常用於模擬真人行為減緩測試速度，及方便肉眼檢視每個測試步驟。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.pause(milliseconds);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.pause(2000);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p><strong>基本條件</strong></p>
+<ul>
+<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
+<li>你已經讀過之前在此分享的所有相關文章</li>
+</ul>
+<h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><p>前往特定網址</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.url([url]);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.url(&apos;/login&apos;);</div></pre></td></tr></table></figure>
+<h3 id="實用工具-Utility"><a href="#實用工具-Utility" class="headerlink" title="實用工具(Utility)"></a>實用工具(Utility)</h3><h4 id="waitForExist"><a href="#waitForExist" class="headerlink" title="waitForExist"></a>waitForExist</h4><p>等待一個特定元素出現，才進行下一步。</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.waitForExist(selector);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.waitForExist(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
+<p><strong>其他相關語法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">waitForEnabled</div><div class="line">waitForSelected</div><div class="line">waitForText</div><div class="line">waitForValue</div><div class="line">waitForVisible</div></pre></td></tr></table></figure></p>
+<h4 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h4><p>暫停一段時間，常用於模擬真人行為減緩測試速度，及方便肉眼檢視每個測試步驟。</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(milliseconds);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(2000);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -620,29 +649,29 @@
     <published>2016-06-11T13:35:19.000Z</published>
     <updated>2016-06-13T14:34:16.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
-&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;屬性-Property&quot;&gt;&lt;a href=&quot;#屬性-Property&quot; class=&quot;headerlink&quot; title=&quot;屬性(Property)&quot;&gt;&lt;/a&gt;屬性(Property)&lt;/h3&gt;&lt;p&gt;當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。&lt;/p&gt;
-&lt;h4 id=&quot;getTitle&quot;&gt;&lt;a href=&quot;#getTitle&quot; class=&quot;headerlink&quot; title=&quot;getTitle&quot;&gt;&lt;/a&gt;getTitle&lt;/h4&gt;&lt;p&gt;取得標題&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getTitle();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;getUrl&quot;&gt;&lt;a href=&quot;#getUrl&quot; class=&quot;headerlink&quot; title=&quot;getUrl&quot;&gt;&lt;/a&gt;getUrl&lt;/h4&gt;&lt;p&gt;取得網址&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getUrl();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;getValue&quot;&gt;&lt;a href=&quot;#getValue&quot; class=&quot;headerlink&quot; title=&quot;getValue&quot;&gt;&lt;/a&gt;getValue&lt;/h4&gt;&lt;p&gt;取得欄味值&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getValue(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getValue(&amp;#39;[name=identifier]&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;getText&quot;&gt;&lt;a href=&quot;#getText&quot; class=&quot;headerlink&quot; title=&quot;getText&quot;&gt;&lt;/a&gt;getText&lt;/h4&gt;&lt;p&gt;取得文字&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getText(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.getText(&amp;#39;.tip&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p><strong>基本條件</strong></p>
+<ul>
+<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
+<li>你已經讀過之前在此分享的所有相關文章</li>
+</ul>
+<h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><p>當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。</p>
+<h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getTitle();</div></pre></td></tr></table></figure>
+<h4 id="getUrl"><a href="#getUrl" class="headerlink" title="getUrl"></a>getUrl</h4><p>取得網址</p>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getUrl();</div></pre></td></tr></table></figure>
+<h4 id="getValue"><a href="#getValue" class="headerlink" title="getValue"></a>getValue</h4><p>取得欄味值</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(selector);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
+<h4 id="getText"><a href="#getText" class="headerlink" title="getText"></a>getText</h4><p>取得文字</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(selector);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(&apos;.tip&apos;);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -666,28 +695,28 @@
     <published>2016-06-10T13:35:19.000Z</published>
     <updated>2016-06-13T14:35:20.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Selector&lt;/a&gt; 的基本知識&lt;/li&gt;
-&lt;li&gt;你已經讀過之前在此分享的所有相關文章&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;動作-Action&quot;&gt;&lt;a href=&quot;#動作-Action&quot; class=&quot;headerlink&quot; title=&quot;動作(Action)&quot;&gt;&lt;/a&gt;動作(Action)&lt;/h3&gt;&lt;p&gt;模擬使用者操作行為&lt;/p&gt;
-&lt;h4 id=&quot;click&quot;&gt;&lt;a href=&quot;#click&quot; class=&quot;headerlink&quot; title=&quot;click&quot;&gt;&lt;/a&gt;click&lt;/h4&gt;&lt;p&gt;點擊元素(按鈕、連結、任何可被點擊的元素)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.click(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.click(&amp;#39;.open-panel&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;setValue&quot;&gt;&lt;a href=&quot;#setValue&quot; class=&quot;headerlink&quot; title=&quot;setValue&quot;&gt;&lt;/a&gt;setValue&lt;/h4&gt;&lt;p&gt;設定欄位值&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.elements(selector).setValue(value);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.elements(&amp;#39;[name=identifier]&amp;#39;).setValue(&amp;#39;demo&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h4 id=&quot;submitForm&quot;&gt;&lt;a href=&quot;#submitForm&quot; class=&quot;headerlink&quot; title=&quot;submitForm&quot;&gt;&lt;/a&gt;submitForm&lt;/h4&gt;&lt;p&gt;送出表單&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;語法&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.submitForm(selector);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;strong&gt;範例&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;browser.submitForm(&amp;#39;#loginForm&amp;#39;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+    <content type="html"><![CDATA[<p><strong>基本條件</strong></p>
+<ul>
+<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
+<li>你已經讀過之前在此分享的所有相關文章</li>
+</ul>
+<h3 id="動作-Action"><a href="#動作-Action" class="headerlink" title="動作(Action)"></a>動作(Action)</h3><p>模擬使用者操作行為</p>
+<h4 id="click"><a href="#click" class="headerlink" title="click"></a>click</h4><p>點擊元素(按鈕、連結、任何可被點擊的元素)</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.click(selector);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.click(&apos;.open-panel&apos;);</div></pre></td></tr></table></figure>
+<h4 id="setValue"><a href="#setValue" class="headerlink" title="setValue"></a>setValue</h4><p>設定欄位值</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.elements(selector).setValue(value);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div></pre></td></tr></table></figure>
+<h4 id="submitForm"><a href="#submitForm" class="headerlink" title="submitForm"></a>submitForm</h4><p>送出表單</p>
+<p><strong>語法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.submitForm(selector);</div></pre></td></tr></table></figure>
+<p><strong>範例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.submitForm(&apos;#loginForm&apos;);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -711,11 +740,11 @@
     <published>2016-05-24T16:19:22.000Z</published>
     <updated>2016-06-05T16:21:46.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;領導管理-vs-指揮管理&quot;&gt;&lt;a href=&quot;#領導管理-vs-指揮管理&quot; class=&quot;headerlink&quot; title=&quot;領導管理 vs 指揮管理&quot;&gt;&lt;/a&gt;領導管理 vs 指揮管理&lt;/h3&gt;&lt;p&gt;使指揮管理俱有破壞性的原因是它強調個人並讓員工互相為敵，使領導管理成功的原因是它強調創造一個互助合作的系統，並且相信只要你善待他人並向他們解釋你想要他們做的，你能夠信任他們會把工作做好。&lt;/p&gt;
-&lt;p&gt;領導管理在職場上最強烈的論點是因為，它較有生產力而且使工作品質提高，它使企業減少花費。這種花費是指揮管理無法避免的，對兩個同行的企業來說，實際的勞動成本和物料成本並不造成競爭力的差距。造成競爭實力有差距的實際成本之外的管理成本，而這種管理成本總是運用領導管理比指揮管理節省許多。&lt;/p&gt;
-&lt;p&gt;指揮管理導致員工薪資不滿的申訴案件增加、內部竊盜、無故請假、遲到早退、與工會關係緊張、暴力事件等問題層出不窮。即使指揮管理可以做到節省成本，但像推阻這種問題，還是實施指揮管理的職場常見到的問題。&lt;/p&gt;
-&lt;h3 id=&quot;推阻&quot;&gt;&lt;a href=&quot;#推阻&quot; class=&quot;headerlink&quot; title=&quot;推阻&quot;&gt;&lt;/a&gt;推阻&lt;/h3&gt;&lt;p&gt;員工越是受指揮，或是因為他們習慣受指揮，所以把每一項要求都當做指揮，他們越是喜歡利用自己有的一點小小的權力來故意推阻。例如：「我很抱歉，我不能那麼做，那違反公司政策，我沒有那個權利。」&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h3 id="領導管理-vs-指揮管理"><a href="#領導管理-vs-指揮管理" class="headerlink" title="領導管理 vs 指揮管理"></a>領導管理 vs 指揮管理</h3><p>使指揮管理俱有破壞性的原因是它強調個人並讓員工互相為敵，使領導管理成功的原因是它強調創造一個互助合作的系統，並且相信只要你善待他人並向他們解釋你想要他們做的，你能夠信任他們會把工作做好。</p>
+<p>領導管理在職場上最強烈的論點是因為，它較有生產力而且使工作品質提高，它使企業減少花費。這種花費是指揮管理無法避免的，對兩個同行的企業來說，實際的勞動成本和物料成本並不造成競爭力的差距。造成競爭實力有差距的實際成本之外的管理成本，而這種管理成本總是運用領導管理比指揮管理節省許多。</p>
+<p>指揮管理導致員工薪資不滿的申訴案件增加、內部竊盜、無故請假、遲到早退、與工會關係緊張、暴力事件等問題層出不窮。即使指揮管理可以做到節省成本，但像推阻這種問題，還是實施指揮管理的職場常見到的問題。</p>
+<h3 id="推阻"><a href="#推阻" class="headerlink" title="推阻"></a>推阻</h3><p>員工越是受指揮，或是因為他們習慣受指揮，所以把每一項要求都當做指揮，他們越是喜歡利用自己有的一點小小的權力來故意推阻。例如：「我很抱歉，我不能那麼做，那違反公司政策，我沒有那個權利。」</p>
+]]></content>
     
     <summary type="html">
     
@@ -735,10 +764,10 @@
     <published>2016-05-24T14:49:51.000Z</published>
     <updated>2016-06-05T16:21:56.000Z</updated>
     
-    <content type="html">&lt;h3 id=&quot;完全行為&quot;&gt;&lt;a href=&quot;#完全行為&quot; class=&quot;headerlink&quot; title=&quot;完全行為&quot;&gt;&lt;/a&gt;完全行為&lt;/h3&gt;&lt;p&gt;動作 -&amp;gt; 思考 -&amp;gt; 感覺 -&amp;gt; 生理機能&lt;/p&gt;
-&lt;h3 id=&quot;選擇焦慮-選擇恐懼&quot;&gt;&lt;a href=&quot;#選擇焦慮-選擇恐懼&quot; class=&quot;headerlink&quot; title=&quot;選擇焦慮 / 選擇恐懼&quot;&gt;&lt;/a&gt;選擇焦慮 / 選擇恐懼&lt;/h3&gt;&lt;p&gt;焦慮症會被稱為做正在焦慮或選擇焦慮，新的說法會比舊的說法來得精確，因為它們是活的、主動的說法。因為這些是選擇的結果，所以有希望。如果你能夠做一個選擇，自然就能做別的「更好的選擇」。你的選擇可能很痛苦，但不是不能取消的。感到憂慮是被動的做法，好像它發生在我們身上，我們是受害者，我們沒法控制它，這種名詞和形容詞的使用會誤導我們，使我們誤信我們不能為自己做些什麼。&lt;/p&gt;
-&lt;h3 id=&quot;成功人士的煩惱&quot;&gt;&lt;a href=&quot;#成功人士的煩惱&quot; class=&quot;headerlink&quot; title=&quot;成功人士的煩惱&quot;&gt;&lt;/a&gt;成功人士的煩惱&lt;/h3&gt;&lt;p&gt;他們傾向對不是朋友的人，特別是不比他們富有的人表示不信任。假使這些人管理他人的人，幾乎他們所有的人都對愛與歸屬感有正常或正常以上的需求，能夠學習選擇理論，並在他們個人的生活裡運用，他們可能就會和他們管理的人做更友善的接觸。&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h3 id="完全行為"><a href="#完全行為" class="headerlink" title="完全行為"></a>完全行為</h3><p>動作 -&gt; 思考 -&gt; 感覺 -&gt; 生理機能</p>
+<h3 id="選擇焦慮-選擇恐懼"><a href="#選擇焦慮-選擇恐懼" class="headerlink" title="選擇焦慮 / 選擇恐懼"></a>選擇焦慮 / 選擇恐懼</h3><p>焦慮症會被稱為做正在焦慮或選擇焦慮，新的說法會比舊的說法來得精確，因為它們是活的、主動的說法。因為這些是選擇的結果，所以有希望。如果你能夠做一個選擇，自然就能做別的「更好的選擇」。你的選擇可能很痛苦，但不是不能取消的。感到憂慮是被動的做法，好像它發生在我們身上，我們是受害者，我們沒法控制它，這種名詞和形容詞的使用會誤導我們，使我們誤信我們不能為自己做些什麼。</p>
+<h3 id="成功人士的煩惱"><a href="#成功人士的煩惱" class="headerlink" title="成功人士的煩惱"></a>成功人士的煩惱</h3><p>他們傾向對不是朋友的人，特別是不比他們富有的人表示不信任。假使這些人管理他人的人，幾乎他們所有的人都對愛與歸屬感有正常或正常以上的需求，能夠學習選擇理論，並在他們個人的生活裡運用，他們可能就會和他們管理的人做更友善的接觸。</p>
+]]></content>
     
     <summary type="html">
     
@@ -749,79 +778,6 @@
     
     
       <category term="Choice Theory" scheme="http://alincode.github.io/tags/Choice-Theory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有效的時間管理 - 如何一周多擠出十個小時 重點整理(6)</title>
-    <link href="http://alincode.github.io/2016/05/23/Effective-Time-Management-6/"/>
-    <id>http://alincode.github.io/2016/05/23/Effective-Time-Management-6/</id>
-    <published>2016-05-23T14:14:29.000Z</published>
-    <updated>2016-05-28T03:08:25.000Z</updated>
-    
-    <content type="html">&lt;img src=&quot;/blog/2016/05/23/Effective-Time-Management-6/time.jpg&quot; alt=&quot;time.jpg&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;辨識什麼是-Time-Killer-任務&quot;&gt;&lt;a href=&quot;#辨識什麼是-Time-Killer-任務&quot; class=&quot;headerlink&quot; title=&quot;辨識什麼是 Time Killer 任務&quot;&gt;&lt;/a&gt;辨識什麼是 Time Killer 任務&lt;/h3&gt;&lt;p&gt;你可以輕易地完成，但卻不會帶給你任何價值。&lt;/p&gt;
-&lt;h3 id=&quot;哪些方式可以讓你脫離-Time-Killer&quot;&gt;&lt;a href=&quot;#哪些方式可以讓你脫離-Time-Killer&quot; class=&quot;headerlink&quot; title=&quot;哪些方式可以讓你脫離 Time Killer&quot;&gt;&lt;/a&gt;哪些方式可以讓你脫離 Time Killer&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;減少 check and read Email 次數&lt;/li&gt;
-&lt;li&gt;檢查訊息(facebook, sms) 次數&lt;/li&gt;
-&lt;li&gt;減少通勤 - 改用 remote work 和 online meeting&lt;/li&gt;
-&lt;li&gt;減少重工&lt;/li&gt;
-&lt;li&gt;Repeatedly picking up paper or viewing an email&lt;/li&gt;
-&lt;li&gt;有技巧的性的多工&lt;ul&gt;
-&lt;li&gt;多工常常是一件令人詬病的事，常常有人認為在同時做多件事情，好像可以在短時間內完成很多事，但卻忽略了分心帶來的負面影響，例如你做了也完成了，但卻做錯了，下次又要在做一次，在無形中，其實增加了更多的重工。&lt;/li&gt;
-&lt;li&gt;比較好的方式，是專注做一件事，然後再進行下一件事&lt;/li&gt;
-&lt;li&gt;但建議技巧性的多工，例如你同時想專研某種技術，然後又想學英文，你可以強迫自己在一段時間內，只看英文的影片跟文章。這樣就達到專心做一件事時，卻帶來兩份收獲。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;讓自己一段時間離線&lt;ul&gt;
-&lt;li&gt;只專注在把某件 Task 完成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;避免過度使用社群工具，例如限制自己一天只花 15~30 分鐘瀏覽 Facebook&lt;/li&gt;
-&lt;li&gt;設定有限的時間&lt;ul&gt;
-&lt;li&gt;針對一個 Task 只給 25 分鐘，如果做不完再給 25 分鐘，時間到之後不管有沒有做完，都應該停止讓自己休息一下。&lt;/li&gt;
-&lt;li&gt;重新思考是否有其他方式可以進行這個 Task，或把這個 Task 搬到明天在進行，並避免一個 Task 綁住你所有的時間。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;設定有限的時間瀏覽網頁，一天 15 ~ 30 分鐘&lt;ul&gt;
-&lt;li&gt;在資訊爆炸的時候，人們總會花過多的時間在吸收新資訊而分心，忘了自己有其他更重要的目標。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;錯誤的開始&lt;ul&gt;
-&lt;li&gt;大多數的人都花 1 ~ 2 個小時，規劃自己一天的日程，可以減少至 15 ~ 20 分鐘比較理想。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;超長的 TODO LIST&lt;ul&gt;
-&lt;li&gt;只挑出三項高價值的 Task，跟其他兩項一定得做的 Task。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;在家工作&lt;ul&gt;
-&lt;li&gt;即使在家工作，你也必須設定工作時間，時間到了之後你就應該去做其他的事。&lt;/li&gt;
-&lt;li&gt;跟你的家人聊天、去健身、學習跟改善其他技能，重新充電之後，再回到一天的循環。&lt;/li&gt;
-&lt;li&gt;工作狂也是一種病，人生缺乏協調性，可參照「被討厭的勇氣」這本書，有更詳細的說明。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;娛樂管理&lt;ul&gt;
-&lt;li&gt;如果你一天花 1 ~ 2 小時看電視，那一周就是 14 個小時，這樣的 Task 建議設定一周只做一次。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/effective-time-management/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Udemy 免費線上課程網址&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;img src=&quot;/blog/2016/05/23/Effective-Time-Management-6/time.jpg&quot; alt=&quot;time.jpg&quot; title=&quot;&quot;&gt;
-&lt;h3 id=&quot;辨識什麼是-Time-Killer-任務&quot;&gt;&lt;a href=&quot;#辨識什麼是-Time
-    
-    </summary>
-    
-      <category term="時間管理" scheme="http://alincode.github.io/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-    
-      <category term="時間管理" scheme="http://alincode.github.io/tags/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="有效的時間管理" scheme="http://alincode.github.io/tags/%E6%9C%89%E6%95%88%E7%9A%84%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
     
   </entry>
   

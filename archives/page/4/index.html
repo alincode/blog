@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -219,6 +219,49 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/05/13/CDNJS/">
+                            CDNJS - JavaScript CDN
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri May 13 2016 22:22:28 GMT+0800">
+	
+		    5月 13, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>這個網站提供了 <code>JavaScript Libraries CDN</code>，大多數的 JavaScript Libraries 都可以在這裡找到，例如 JQuery, Babel, React 等等，如果你的網站並沒有自己的 CDN 供應商，這似乎也是一個不錯的替代方案。</p>
+<img src="/blog/2016/05/13/CDNJS/CDNJS.png" alt="CDNJS.png" title="">
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/05/13/CDNJS/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/05/12/execute-selenium-error/">
                             Selenium 執行異常
                         </a>
@@ -236,7 +279,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No Java runtime present, requesting install.&#10;/usr/local/lib/node_modules/selenium-standalone/bin/selenium-standalone:61</span><br></pre></td></tr></table></figure>
+                    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">No Java runtime present, requesting install.</div><div class="line">/usr/local/lib/node_modules/selenium-standalone/bin/selenium-standalone:61</div></pre></td></tr></table></figure>
 <p>如果你看到此訊息，請先安裝 JDK，因為 Selenium 需要它。</p>
 <img src="/blog/2016/05/12/execute-selenium-error/error.png" alt="error.png" title="">
 
@@ -329,9 +372,9 @@
 <h3 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h3><p>在寫 async function 時，最容易搞錯的就是執行順序，然而在寫 async function 時，可以用 <code>await</code> 去解掉層層的巢狀callback 結構，但如果 async 內使用到 sync function，那該怎麼做？</p>
 <h3 id="實作方式"><a href="#實作方式" class="headerlink" title="實作方式"></a>實作方式</h3><p>在 sync function 包一個 Promise</p>
 <p><strong>TokenAuth.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports.getUser = (token) =&#62; &#123;&#10;  return new Promise((resolve, reject) =&#62; &#123;&#10;    // &#36889;&#20491;&#26159;&#19968;&#20491; sync function&#10;    TokenAuth.verifyToken(token, async(err, decodedToken) =&#62; &#123;&#10;      if (err) reject(err);&#10;      let user = await db.User.findById(decodedToken.sub);&#10;      resolve(user);&#10;    &#125;);&#10;  &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">module.exports.getUser = (token) =&gt; &#123;</div><div class="line">  return new Promise((resolve, reject) =&gt; &#123;</div><div class="line">    // 這個是一個 sync function</div><div class="line">    TokenAuth.verifyToken(token, async(err, decodedToken) =&gt; &#123;</div><div class="line">      if (err) reject(err);</div><div class="line">      let user = await db.User.findById(decodedToken.sub);</div><div class="line">      resolve(user);</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>CartAPIController</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Promise from &#34;bluebird&#34;;&#10;&#10;module.exports = &#123;&#10;  get: async(req, res) =&#62; &#123;&#10;    try &#123;&#10;      let promise = TokenAuth.getUser(req);&#10;      let loginUser = await promise.then();&#10;      let result = await CartService.getCartInfo(loginUser);&#10;      return res.ok(result);&#10;    &#125; catch (e) &#123;&#10;      return res.serverError(e);&#10;    &#125;&#10;  &#125;&#10;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import Promise from &quot;bluebird&quot;;</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">  get: async(req, res) =&gt; &#123;</div><div class="line">    try &#123;</div><div class="line">      let promise = TokenAuth.getUser(req);</div><div class="line">      let loginUser = await promise.then();</div><div class="line">      let result = await CartService.getCartInfo(loginUser);</div><div class="line">      return res.ok(result);</div><div class="line">    &#125; catch (e) &#123;</div><div class="line">      return res.serverError(e);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -492,9 +535,9 @@
 <li><code>CustomMailerService[status](order)</code> 隱含著，有可能會 <code>CustomMailerService.paymentConfirm</code> 只傳一個參數的意圖，另一個參數或許會是 null Code 這本書上有提到，不應該傳入 null 為參數。</li>
 <li>如果有一天 CustomMailerService 的 function 名稱需要修改，接手人也不容易察覺與 Order.type 有相關聯。</li>
 </ul>
-<h3 id="簡略架構"><a href="#簡略架構" class="headerlink" title="簡略架構"></a>簡略架構</h3><p><strong>OrderController</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let messageConfig = await CustomMailerService[status](order);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Order</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type: DataTypes.ENUM(&#39;new&#39;, &#39;paymentConfirm&#39;, &#39;deliveryConfirm&#39;, &#39;orderCancel&#39;),</span><br></pre></td></tr></table></figure></p>
-<p><strong>CustomMailerService</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">orderConfirm: (result)&#10;paymentConfirm: (order, email)&#10;deliveryConfirm: (order)</span><br></pre></td></tr></table></figure></p>
+<h3 id="簡略架構"><a href="#簡略架構" class="headerlink" title="簡略架構"></a>簡略架構</h3><p><strong>OrderController</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let messageConfig = await CustomMailerService[status](order);</div></pre></td></tr></table></figure></p>
+<p><strong>Order</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">type: DataTypes.ENUM(&apos;new&apos;, &apos;paymentConfirm&apos;, &apos;deliveryConfirm&apos;, &apos;orderCancel&apos;),</div></pre></td></tr></table></figure></p>
+<p><strong>CustomMailerService</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">orderConfirm: (result)</div><div class="line">paymentConfirm: (order, email)</div><div class="line">deliveryConfirm: (order)</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -620,7 +663,7 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p><img src="http://chaijs.com/img/chai-logo-small.png" alt="chai"></p>
 <p>有了 Mocha 之後，那也少不了要引入 assertion library，這裡就用 Chai 當範例。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var chai = require(&#39;chai&#39;);&#10;global.should = chai.should();&#10;&#10;describe(&#39;mokayo&#39;, function() &#123;&#10;  it(&#39;check title&#39;, function() &#123;&#10;      browser.url(&#39;http://blog.mokayo.com/&#39;);&#10;      var title = browser.getTitle();&#10;      title.should.be.equal(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - blog.mokayo.com&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var chai = require(&apos;chai&apos;);</div><div class="line">global.should = chai.should();</div><div class="line"></div><div class="line">describe(&apos;mokayo&apos;, function() &#123;</div><div class="line">  it(&apos;check title&apos;, function() &#123;</div><div class="line">      browser.url(&apos;http://blog.mokayo.com/&apos;);</div><div class="line">      var title = browser.getTitle();</div><div class="line">      title.should.be.equal(&apos;教你所想學的，用眼樂讀 - blog.mokayo.com&apos;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/webdriverio-sandbox2" target="_blank" rel="external">原始碼下載</a></p>
 
                     
@@ -664,15 +707,15 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <h3 id="發散式變化-Divergent-Change"><a href="#發散式變化-Divergent-Change" class="headerlink" title="發散式變化(Divergent Change)"></a>發散式變化(Divergent Change)</h3><p>一個類別做了多於它責任的事，應該把這個 function 搬到其他類別或獨立一個類別。</p>
-<h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit&#10;function toXml</span><br></pre></td></tr></table></figure>
+<h4 id="改變前"><a href="#改變前" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Account</div><div class="line">function getAccount</div><div class="line">function getBalance</div><div class="line">function credit</div><div class="line">function debit</div><div class="line">function toXml</div></pre></td></tr></table></figure>
 <p>toXml 似乎不算 Account 的責任，而且 toXml 的邏輯，可以在其他地方也會用到，所以應該把它獨立出來一個類別或搬到它應該所屬的類別。</p>
-<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Account&#10;function getAccount&#10;function getBalance&#10;function credit&#10;function debit</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class XmlTool&#10;function toAccountXml(account)</span><br></pre></td></tr></table></figure>
+<h4 id="改變後"><a href="#改變後" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Account</div><div class="line">function getAccount</div><div class="line">function getBalance</div><div class="line">function credit</div><div class="line">function debit</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class XmlTool</div><div class="line">function toAccountXml(account)</div></pre></td></tr></table></figure>
 <h3 id="霰彈式修改-Shotgun-Surgery"><a href="#霰彈式修改-Shotgun-Surgery" class="headerlink" title="霰彈式修改(Shotgun Surgery)"></a>霰彈式修改(Shotgun Surgery)</h3><p>當你需要有一個邏輯更變，需要修改多個類別，那應該把這些更變，搬到同個類別，而不是多個類別同時承受同個責任。</p>
-<h4 id="改變前-1"><a href="#改變前-1" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class OrderService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class PaymentService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class UserService&#10;function sendMail</span><br></pre></td></tr></table></figure>
-<h4 id="改變後-1"><a href="#改變後-1" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class MailerService&#10;function orderConfirmed&#10;function paymentConfirmed&#10;function registerConfirmd</span><br></pre></td></tr></table></figure>
+<h4 id="改變前-1"><a href="#改變前-1" class="headerlink" title="改變前"></a>改變前</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class OrderService</div><div class="line">function sendMail</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class PaymentService</div><div class="line">function sendMail</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class UserService</div><div class="line">function sendMail</div></pre></td></tr></table></figure>
+<h4 id="改變後-1"><a href="#改變後-1" class="headerlink" title="改變後"></a>改變後</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class MailerService</div><div class="line">function orderConfirmed</div><div class="line">function paymentConfirmed</div><div class="line">function registerConfirmd</div></pre></td></tr></table></figure>
 
                     
                         
@@ -681,57 +724,6 @@
                     
                         <p>
                             <a href="/blog/2016/05/04/Divergent-Change-vs-Shotgun-Surgery/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/">
-                            歐付寶 ChoosePayment vs PaymentType
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue May 03 2016 22:56:58 GMT+0800">
-	
-		    5月 03, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="https://www.allpay.com.tw/Content/Themes/WebStyle20131201/images/header_logo.png" alt="allpay"></p>
-<p>記錄一下最近抓到前人留下來的 bug，這幾個值是完全不一樣的東西，但在名字或值上非常相似。</p>
-<h3 id="訂單產生"><a href="#訂單產生" class="headerlink" title="訂單產生"></a>訂單產生</h3><p>時機發生在發出去的 request</p>
-<p><strong>PaymentType = 交易類型</strong></p>
-<p><code>aio</code></p>
-<p><strong>ChoosePayment = 付款方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Credit:&#20449;&#29992;&#21345;&#10;WebATM:&#32178;&#36335; ATM&#10;ATM:&#33258;&#21205;&#27331;&#21729;&#27231;&#10;CVS:&#36229;&#21830;&#20195;&#30908;&#10;BARCODE:&#36229;&#21830;&#26781;&#30908;&#10;Alipay:&#25903;&#20184;&#23542;&#10;Tenpay:&#36001;&#20184;&#36890;&#10;TopUpUsed:&#20786;&#20540;&#28040;&#36027;</span><br></pre></td></tr></table></figure>
-<h3 id="ATM、CVS-或-BARCODE-的取號結果通知"><a href="#ATM、CVS-或-BARCODE-的取號結果通知" class="headerlink" title="ATM、CVS 或 BARCODE 的取號結果通知"></a>ATM、CVS 或 BARCODE 的取號結果通知</h3><p>時機發生在被動收到的 response</p>
-<p><strong>PaymentType = 會員選擇的付款方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ATM_TAISHIN&#10;(...&#30053;...&#38750;&#24120;&#22810;&#31278;)</span><br></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/05/03/allpay-ChoosePayment-vs-paymentType/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -821,10 +813,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

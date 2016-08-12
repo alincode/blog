@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -261,7 +261,7 @@
 <li>Capistrano</li>
 <li>etc…</li>
 </ul>
-<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require &#39;capistrano/setup&#39;&#10;require &#39;capistrano/deploy&#39;&#10;require &#39;capistrano/bundler&#39;&#10;require &#39;capistrano/rails/migrations&#39;&#10;require &#39;capistrano/rails/assets&#39;</span><br></pre></td></tr></table></figure>
+<h3 id="以-Capistrano-為例來說明"><a href="#以-Capistrano-為例來說明" class="headerlink" title="以 Capistrano 為例來說明"></a>以 Capistrano 為例來說明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">require &apos;capistrano/setup&apos;</div><div class="line">require &apos;capistrano/deploy&apos;</div><div class="line">require &apos;capistrano/bundler&apos;</div><div class="line">require &apos;capistrano/rails/migrations&apos;</div><div class="line">require &apos;capistrano/rails/assets&apos;</div></pre></td></tr></table></figure>
 <p>Capistrano 下有非常多的 sub module，這些 sub module 是實際去執行動作的模組，Capistrano 的責任在至於制定一個架構，讓大家依照這個架構下，只需針對設定檔調整，就可以輕鬆達到自動部署及版本控制。</p>
 
                     
@@ -484,9 +484,9 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <p><a href="http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/" target="_blank" rel="external">belongsToMany</a></p>
-<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.belongsToMany(GameList, &#123;&#10;  through: &#39;Favorite&#39;,&#10;  as: &#39;UserLike&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameList.belongsToMany(User, &#123;&#10;  through: &#39;Favorite&#39;,&#10;  as: &#39;UserLike&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    id: &#123;&#10;      type: Sequelize.INTEGER,&#10;      autoIncrement: true,&#10;      primaryKey: true&#10;    &#125;,&#10;    gameListId: &#123;&#10;      type: Sequelize.INTEGER,&#10;      name: &#39;gameListId&#39;,&#10;      field: &#39;game_list_id&#39;&#10;    &#125;,&#10;    userId: &#123;&#10;      type: Sequelize.INTEGER,&#10;      name: &#39;userId&#39;,&#10;      field: &#39;user_id&#39;&#10;    &#125;&#10;  &#125;,&#10;  associations: function() &#123;&#125;,&#10;  options: &#123;&#10;    tableName: &#39;favorites&#39;,&#10;    classMethods: &#123;&#125;,&#10;    instanceMethods: &#123;&#125;,&#10;    hooks: &#123;&#125;,&#10;    underscored: true&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User.belongsToMany(GameList, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GameList.belongsToMany(User, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    id: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      autoIncrement: true,</div><div class="line">      primaryKey: true</div><div class="line">    &#125;,</div><div class="line">    gameListId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;gameListId&apos;,</div><div class="line">      field: &apos;game_list_id&apos;</div><div class="line">    &#125;,</div><div class="line">    userId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;userId&apos;,</div><div class="line">      field: &apos;user_id&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;&#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;favorites&apos;,</div><div class="line">    classMethods: &#123;&#125;,</div><div class="line">    instanceMethods: &#123;&#125;,</div><div class="line">    hooks: &#123;&#125;,</div><div class="line">    underscored: true</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -529,7 +529,7 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>camelCased：駝峰命名<br>underscored：底線命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">options: &#123;&#10;  tableName: &#39;your_table_name&#39;,&#10;  classMethods: &#123;&#125;,&#10;  instanceMethods: &#123;&#125;,&#10;  hooks: &#123;&#125;,&#10;  paranoid: true,&#10;  underscored: true // ===&#62; &#36889;&#34892;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">options: &#123;</div><div class="line">  tableName: &apos;your_table_name&apos;,</div><div class="line">  classMethods: &#123;&#125;,</div><div class="line">  instanceMethods: &#123;&#125;,</div><div class="line">  hooks: &#123;&#125;,</div><div class="line">  paranoid: true,</div><div class="line">  underscored: true // ===&gt; 這行</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -571,7 +571,7 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="uniqBy"><a href="#uniqBy" class="headerlink" title="uniqBy"></a>uniqBy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let data = [&#123;&#10;  GameId: 11,&#10;&#125;, &#123;&#10;  GameId: 11,&#10;&#125;, &#123;&#10;  GameId: 13,&#10;&#125;];&#10;let originSize = data.length;&#10;data = _.uniqBy(data, &#34;GameId&#34;);&#10;let newSize = data.length;</span><br></pre></td></tr></table></figure>
+                    <h3 id="uniqBy"><a href="#uniqBy" class="headerlink" title="uniqBy"></a>uniqBy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">let data = [&#123;</div><div class="line">  GameId: 11,</div><div class="line">&#125;, &#123;</div><div class="line">  GameId: 11,</div><div class="line">&#125;, &#123;</div><div class="line">  GameId: 13,</div><div class="line">&#125;];</div><div class="line">let originSize = data.length;</div><div class="line">data = _.uniqBy(data, &quot;GameId&quot;);</div><div class="line">let newSize = data.length;</div></pre></td></tr></table></figure>
 
                     
                         
@@ -615,11 +615,11 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>當同個 table 有兩個同樣的關聯名稱的時候，需要將其中一個設別名，使用方式如下，網路上的資料不太多，文件也不太容易找，所以特別在此記錄一下。</p>
 <p><strong>GameList.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    // &#30053;&#10;  &#125;,&#10;  associations: function() &#123;&#10;    GameList.belongsTo(User);&#10;    GameList.belongsToMany(User, &#123;&#10;      through: &#39;game_list_userlike&#39;,&#10;      as: &#39;UserLike&#39;&#10;    &#125;);&#10;&#10;  &#125;,&#10;  options: &#123;&#10;    tableName: &#39;game_list&#39;,&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    // 略</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;</div><div class="line">    GameList.belongsTo(User);</div><div class="line">    GameList.belongsToMany(User, &#123;</div><div class="line">      through: &apos;game_list_userlike&apos;,</div><div class="line">      as: &apos;UserLike&apos;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">  &#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;game_list&apos;,</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p><strong>User.js</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    // &#30053;&#10;  &#125;,&#10;  associations: function() &#123;&#10;    User.hasMany(GameList);&#10;    User.belongsToMany(GameList, &#123;&#10;      through: &#39;game_list_userlike&#39;,&#10;      as: &#39;UserLike&#39;&#10;    &#125;);&#10;&#10;  &#125;,&#10;  options: &#123;&#10;    tableName: &#39;user&#39;,&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    // 略</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;</div><div class="line">    User.hasMany(GameList);</div><div class="line">    User.belongsToMany(GameList, &#123;</div><div class="line">      through: &apos;game_list_userlike&apos;,</div><div class="line">      as: &apos;UserLike&apos;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">  &#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;user&apos;,</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p><strong>取值方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let option = &#123;&#10;  include: [&#123;&#10;    model: User,&#10;    as: &#39;UserLike&#39;&#10;  &#125;]&#10;&#125;;&#10;let gamelists = await GameList.findAll(option);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">let option = &#123;</div><div class="line">  include: [&#123;</div><div class="line">    model: User,</div><div class="line">    as: &apos;UserLike&apos;</div><div class="line">  &#125;]</div><div class="line">&#125;;</div><div class="line">let gamelists = await GameList.findAll(option);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -663,8 +663,8 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>今天踩到一個自己種的雷，使用 <a href="http://sailsjs.org/documentation/reference/response-res/res-ok" target="_blank" rel="external">res.ok</a> 的時候少了一個 <code>{ }</code>，但其實如果你只傳一個物件，物件本身外層本來就有 <code>{ }</code> 不需要再多一個 <code>{ }</code>，但如果是傳基本型別，就一定得要有 <code>{ }</code> 存在，缺少 <code>{ }</code> 的時候，單元測試會抓到 <code>res.statusCode == 1</code>，還蠻神奇的。</p>
 <p><strong>主程式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">userlikes: async(req, res) =&#62; &#123;&#10;  const gamelistId = req.params.gamelistId;&#10;  try &#123;&#10;    let user = UserService.getLoginUser(req);&#10;    let likeCount = await UserLikeService.like(user.id, gamelistId);&#10;    //return res.ok(&#10;    //  likeCount&#10;    //);&#10;    return res.ok(&#123;&#10;      likeCount&#10;    &#125;);&#10;  &#125; catch (e) &#123;&#10;    return res.serverError(e);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>測試程式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it(&#39;post /api/gamelists/:gamelistId/userlikes&#39;, async(done) =&#62; &#123;&#10; request(sails.hooks.http.app)&#10;   .post(`/api/gamelists/$&#123;gamelistId&#125;/userlikes`)&#10;   .end((err, res) =&#62; &#123;&#10;     let result = res.body;&#10;     // res.statusCode.should.be.equal(1);&#10;     res.statusCode.should.be.equal(200);&#10;     result.likeCount.should.be.equal(1);&#10;     done(err);&#10;   &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">userlikes: async(req, res) =&gt; &#123;</div><div class="line">  const gamelistId = req.params.gamelistId;</div><div class="line">  try &#123;</div><div class="line">    let user = UserService.getLoginUser(req);</div><div class="line">    let likeCount = await UserLikeService.like(user.id, gamelistId);</div><div class="line">    //return res.ok(</div><div class="line">    //  likeCount</div><div class="line">    //);</div><div class="line">    return res.ok(&#123;</div><div class="line">      likeCount</div><div class="line">    &#125;);</div><div class="line">  &#125; catch (e) &#123;</div><div class="line">    return res.serverError(e);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>測試程式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">it(&apos;post /api/gamelists/:gamelistId/userlikes&apos;, async(done) =&gt; &#123;</div><div class="line"> request(sails.hooks.http.app)</div><div class="line">   .post(`/api/gamelists/$&#123;gamelistId&#125;/userlikes`)</div><div class="line">   .end((err, res) =&gt; &#123;</div><div class="line">     let result = res.body;</div><div class="line">     // res.statusCode.should.be.equal(1);</div><div class="line">     res.statusCode.should.be.equal(200);</div><div class="line">     result.likeCount.should.be.equal(1);</div><div class="line">     done(err);</div><div class="line">   &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -746,10 +746,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -239,7 +239,7 @@
                     <p><a href="https://lodash.com/docs" target="_blank" rel="external">lodash</a> 是一個值得好好細細品嘗的模組，內含許多擴充的function去針對物件、字串、陣列處理。</p>
 <p><strong>必要值檢查</strong></p>
 <p><a href="https://github.com/alincode/nodejs-sandbox/blob/master/lodash-sandbox/requiredKeys.js" target="_blank" rel="external">範例下載</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should();</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'require keys'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  it(<span class="string">'case 1:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">true</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'case 2:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>, <span class="string">'phone'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">false</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  it(<span class="string">'case 3:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'email'</span>],</span><br><span class="line">    params = &#123;</span><br><span class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</span><br><span class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</span><br><span class="line">    result.should.be.equal(<span class="literal">true</span>);</span><br><span class="line">    done();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> should = <span class="built_in">require</span>(<span class="string">'chai'</span>).should();</div><div class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</div><div class="line"></div><div class="line">describe(<span class="string">'require keys'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  it(<span class="string">'case 1:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">true</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">'case 2:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'lastname'</span>, <span class="string">'email'</span>, <span class="string">'phone'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">false</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(<span class="string">'case 3:'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> requiredKeys = [<span class="string">'firstname'</span>, <span class="string">'email'</span>],</div><div class="line">    params = &#123;</div><div class="line">      <span class="string">"firstname"</span>: <span class="string">"ailin"</span>,</div><div class="line">      <span class="string">"lastname"</span>: <span class="string">"liou"</span>,</div><div class="line">      <span class="string">"email"</span>: <span class="string">"NONE"</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> result = _.every(requiredKeys, _.partial(_.has, params));</div><div class="line">    result.should.be.equal(<span class="literal">true</span>);</div><div class="line">    done();</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -320,10 +320,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

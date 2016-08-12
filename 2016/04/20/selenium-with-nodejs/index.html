@@ -20,8 +20,8 @@
 三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
 建立測試專案資料夾
 1mkdir selenium-sendbox
-建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
-安裝 selenium-webdrivernpm i selen">
+建立 npm 來管理，測試專案12cd selenium-sendboxnpm init -y
+安裝 selenium-webdrivernpm i selenium">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Selenium with Nodejs">
 <meta property="og:url" content="http://alincode.github.io/2016/04/20/selenium-with-nodejs/index.html">
@@ -33,8 +33,8 @@
 三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
 建立測試專案資料夾
 1mkdir selenium-sendbox
-建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
-安裝 selenium-webdrivernpm i selen">
+建立 npm 來管理，測試專案12cd selenium-sendboxnpm init -y
+安裝 selenium-webdrivernpm i selenium">
 <meta property="og:image" content="http://www.seleniumhq.org/images/big-logo.png">
 <meta property="og:updated_time" content="2016-04-22T10:40:31.000Z">
 <meta name="twitter:card" content="summary">
@@ -46,8 +46,9 @@
 三分鐘內，建一個自動化測試託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。
 建立測試專案資料夾
 1mkdir selenium-sendbox
-建立 npm 來管理，測試專案1cd selenium-sendbox&amp;#10;npm init -y
-安裝 selenium-webdrivernpm i selen">
+建立 npm 來管理，測試專案12cd selenium-sendboxnpm init -y
+安裝 selenium-webdrivernpm i selenium">
+<meta name="twitter:image" content="http://www.seleniumhq.org/images/big-logo.png">
     
     
         
@@ -60,10 +61,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -99,7 +100,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -118,7 +119,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -178,7 +179,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -263,10 +264,10 @@
 </ul>
 <h3 id="三分鐘內，建一個自動化測試"><a href="#三分鐘內，建一個自動化測試" class="headerlink" title="三分鐘內，建一個自動化測試"></a>三分鐘內，建一個自動化測試</h3><p>託 NPM 的福，要在 nodejs 上撰寫一個自動化測試程式，實在非常簡單。</p>
 <p><strong>建立測試專案資料夾</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir selenium-sendbox</span><br></pre></td></tr></table></figure>
-<p><strong>建立 npm 來管理，測試專案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd selenium-sendbox&#10;npm init -y</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir selenium-sendbox</div></pre></td></tr></table></figure>
+<p><strong>建立 npm 來管理，測試專案</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd selenium-sendbox</div><div class="line">npm init -y</div></pre></td></tr></table></figure></p>
 <p><strong>安裝 selenium-webdriver</strong><br><code>npm i selenium-webdriver -S</code></p>
-<p><strong>建立一個基本測試script</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// test.js&#10;var webdriver = require(&#39;selenium-webdriver&#39;),&#10;    By = require(&#39;selenium-webdriver&#39;).By,&#10;    until = require(&#39;selenium-webdriver&#39;).until;&#10;&#10;var driver = new webdriver.Builder()&#10;    .forBrowser(&#39;firefox&#39;)&#10;    .build();&#10;&#10;driver.get(&#39;http://www.google.com/ncr&#39;);&#10;driver.findElement(By.name(&#39;q&#39;)).sendKeys(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712;&#39;);&#10;driver.findElement(By.name(&#39;btnG&#39;)).click();&#10;driver.wait(until.titleIs(&#39;&#25945;&#20320;&#25152;&#24819;&#23416;&#30340;&#65292;&#29992;&#30524;&#27138;&#35712; - Google Search&#39;), 3000);&#10;driver.quit();</span><br></pre></td></tr></table></figure></p>
+<p><strong>建立一個基本測試script</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// test.js</div><div class="line">var webdriver = require(&apos;selenium-webdriver&apos;),</div><div class="line">    By = require(&apos;selenium-webdriver&apos;).By,</div><div class="line">    until = require(&apos;selenium-webdriver&apos;).until;</div><div class="line"></div><div class="line">var driver = new webdriver.Builder()</div><div class="line">    .forBrowser(&apos;firefox&apos;)</div><div class="line">    .build();</div><div class="line"></div><div class="line">driver.get(&apos;http://www.google.com/ncr&apos;);</div><div class="line">driver.findElement(By.name(&apos;q&apos;)).sendKeys(&apos;教你所想學的，用眼樂讀&apos;);</div><div class="line">driver.findElement(By.name(&apos;btnG&apos;)).click();</div><div class="line">driver.wait(until.titleIs(&apos;教你所想學的，用眼樂讀 - Google Search&apos;), 3000);</div><div class="line">driver.quit();</div></pre></td></tr></table></figure></p>
 <p><strong>執行</strong><br><code>node test.js</code></p>
 <p><a href="https://github.com/alincode/front-end-test-sandbox/tree/master/selenium-webdriver-sandbox" target="_blank" rel="external">原始碼下載</a></p>
 
@@ -306,17 +307,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -377,17 +378,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -407,17 +408,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/04/20/selenium-with-nodejs/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/04/20/selenium-with-nodejs/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -468,10 +469,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     

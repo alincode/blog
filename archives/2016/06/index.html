@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -238,13 +238,13 @@
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>基本上 WebdriverIO 跟 Protractor 的 Page Object Pattern 都一樣的醜陋，這時候才會發現 Geb 的美。</p>
 <p><strong><a href="http://webdriver.io/guide/testrunner/pageobjects.html" target="_blank" rel="external">WebdriverIO Page Object Pattern</a></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Page () &#123;&#10;    this.title = &#39;My Page&#39;;&#10;&#125;&#10;&#10;Page.prototype.open = function (path) &#123;&#10;    browser.url(&#39;/&#39; + path)&#10;&#125;&#10;&#10;module.exports = new Page()</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var Page = require(&#39;./page&#39;)&#10;&#10;var LoginPage = Object.create(Page, &#123;&#10;    /**&#10;     * define elements&#10;     */&#10;    username: &#123; get: function () &#123; return browser.element(&#39;#username&#39;); &#125; &#125;,&#10;    password: &#123; get: function () &#123; return browser.element(&#39;#password&#39;); &#125; &#125;,&#10;    form:     &#123; get: function () &#123; return browser.element(&#39;#login&#39;); &#125; &#125;,&#10;    flash:    &#123; get: function () &#123; return browser.element(&#39;#flash&#39;); &#125; &#125;,&#10;&#10;    /**&#10;     * define or overwrite page methods&#10;     */&#10;    open: &#123; value: function() &#123;&#10;        Page.open.call(this, &#39;login&#39;);&#10;    &#125; &#125;,&#10;&#10;    submit: &#123; value: function() &#123;&#10;        this.form.submitForm();&#10;    &#125; &#125;&#10;&#125;);&#10;&#10;module.exports = LoginPage</span><br></pre></td></tr></table></figure>
-<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var expect = require(&#39;chai&#39;).expect;&#10;var LoginPage = require(&#39;../pageobjects/login.page&#39;);&#10;&#10;describe(&#39;login form&#39;, function () &#123;&#10;    it(&#39;should deny access with wrong creds&#39;, function () &#123;&#10;        LoginPage.open();&#10;        LoginPage.username.setValue(&#39;foo&#39;);&#10;        LoginPage.password.setValue(&#39;bar&#39;);&#10;        LoginPage.submit();&#10;&#10;        expect(LoginPage.flash.getText()).to.contain(&#39;Your username is invalid!&#39;);&#10;    &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="https://github.com/angular/protractor/blob/master/docs/page-objects.md" target="_blank" rel="external">Protractor Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var AngularHomepage = function() &#123;&#10;  var nameInput = element(by.model(&#39;yourName&#39;));&#10;  var greeting = element(by.binding(&#39;yourName&#39;));&#10;&#10;  this.get = function() &#123;&#10;    browser.get(&#39;http://www.angularjs.org&#39;);&#10;  &#125;;&#10;&#10;  this.setName = function(name) &#123;&#10;    nameInput.sendKeys(name);&#10;  &#125;;&#10;&#10;  this.getGreeting = function() &#123;&#10;    return greeting.getText();&#10;  &#125;;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;angularjs homepage&#39;, function() &#123;&#10;  it(&#39;should greet the named user&#39;, function() &#123;&#10;    var angularHomepage = new AngularHomepage();&#10;    angularHomepage.get();&#10;    angularHomepage.setName(&#39;Julie&#39;);&#10;    expect(angularHomepage.getGreeting()).toEqual(&#39;Hello Julie!&#39;);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong><a href="http://www.gebish.org/pages" target="_blank" rel="external">Geb Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Page&#10;&#10;class LoginPage extends Page &#123;&#10;    static url = &#34;http://myapp.com/login&#34;&#10;    static at = &#123; heading.text() == &#34;Please Login&#34; &#125;&#10;    static content = &#123;&#10;        heading &#123; $(&#34;h1&#34;) &#125;&#10;        loginForm &#123; $(&#34;form.login&#34;) &#125;&#10;        loginButton(to: AdminPage) &#123; loginForm.login() &#125;&#10;    &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import geb.Browser&#10;&#10;Browser.drive &#123;&#10;    to LoginPage&#10;    assert at(LoginPage)&#10;    loginForm.with &#123;&#10;        username = &#34;admin&#34;&#10;        password = &#34;password&#34;&#10;    &#125;&#10;    loginButton.click()&#10;    assert at(AdminPage)&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function Page () &#123;</div><div class="line">    this.title = &apos;My Page&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Page.prototype.open = function (path) &#123;</div><div class="line">    browser.url(&apos;/&apos; + path)</div><div class="line">&#125;</div><div class="line"></div><div class="line">module.exports = new Page()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var Page = require(&apos;./page&apos;)</div><div class="line"></div><div class="line">var LoginPage = Object.create(Page, &#123;</div><div class="line">    /**</div><div class="line">     * define elements</div><div class="line">     */</div><div class="line">    username: &#123; get: function () &#123; return browser.element(&apos;#username&apos;); &#125; &#125;,</div><div class="line">    password: &#123; get: function () &#123; return browser.element(&apos;#password&apos;); &#125; &#125;,</div><div class="line">    form:     &#123; get: function () &#123; return browser.element(&apos;#login&apos;); &#125; &#125;,</div><div class="line">    flash:    &#123; get: function () &#123; return browser.element(&apos;#flash&apos;); &#125; &#125;,</div><div class="line"></div><div class="line">    /**</div><div class="line">     * define or overwrite page methods</div><div class="line">     */</div><div class="line">    open: &#123; value: function() &#123;</div><div class="line">        Page.open.call(this, &apos;login&apos;);</div><div class="line">    &#125; &#125;,</div><div class="line"></div><div class="line">    submit: &#123; value: function() &#123;</div><div class="line">        this.form.submitForm();</div><div class="line">    &#125; &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">module.exports = LoginPage</div></pre></td></tr></table></figure>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var expect = require(&apos;chai&apos;).expect;</div><div class="line">var LoginPage = require(&apos;../pageobjects/login.page&apos;);</div><div class="line"></div><div class="line">describe(&apos;login form&apos;, function () &#123;</div><div class="line">    it(&apos;should deny access with wrong creds&apos;, function () &#123;</div><div class="line">        LoginPage.open();</div><div class="line">        LoginPage.username.setValue(&apos;foo&apos;);</div><div class="line">        LoginPage.password.setValue(&apos;bar&apos;);</div><div class="line">        LoginPage.submit();</div><div class="line"></div><div class="line">        expect(LoginPage.flash.getText()).to.contain(&apos;Your username is invalid!&apos;);</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong><a href="https://github.com/angular/protractor/blob/master/docs/page-objects.md" target="_blank" rel="external">Protractor Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var AngularHomepage = function() &#123;</div><div class="line">  var nameInput = element(by.model(&apos;yourName&apos;));</div><div class="line">  var greeting = element(by.binding(&apos;yourName&apos;));</div><div class="line"></div><div class="line">  this.get = function() &#123;</div><div class="line">    browser.get(&apos;http://www.angularjs.org&apos;);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  this.setName = function(name) &#123;</div><div class="line">    nameInput.sendKeys(name);</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  this.getGreeting = function() &#123;</div><div class="line">    return greeting.getText();</div><div class="line">  &#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">describe(&apos;angularjs homepage&apos;, function() &#123;</div><div class="line">  it(&apos;should greet the named user&apos;, function() &#123;</div><div class="line">    var angularHomepage = new AngularHomepage();</div><div class="line">    angularHomepage.get();</div><div class="line">    angularHomepage.setName(&apos;Julie&apos;);</div><div class="line">    expect(angularHomepage.getGreeting()).toEqual(&apos;Hello Julie!&apos;);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong><a href="http://www.gebish.org/pages" target="_blank" rel="external">Geb Page Object Pattern</a></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">import geb.Page</div><div class="line"></div><div class="line">class LoginPage extends Page &#123;</div><div class="line">    static url = &quot;http://myapp.com/login&quot;</div><div class="line">    static at = &#123; heading.text() == &quot;Please Login&quot; &#125;</div><div class="line">    static content = &#123;</div><div class="line">        heading &#123; $(&quot;h1&quot;) &#125;</div><div class="line">        loginForm &#123; $(&quot;form.login&quot;) &#125;</div><div class="line">        loginButton(to: AdminPage) &#123; loginForm.login() &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>呼叫 Page Object 使用方式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">import geb.Browser</div><div class="line"></div><div class="line">Browser.drive &#123;</div><div class="line">    to LoginPage</div><div class="line">    assert at(LoginPage)</div><div class="line">    loginForm.with &#123;</div><div class="line">        username = &quot;admin&quot;</div><div class="line">        password = &quot;password&quot;</div><div class="line">    &#125;</div><div class="line">    loginButton.click()</div><div class="line">    assert at(AdminPage)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
                     
                         
@@ -292,10 +292,10 @@
 <p>而 WebdriverIO 你則無法從 package.json 找到相同的模組，原因是 WebdriverIO 的實作方式，並不直接長在 selenium-webdriver 之上，而是直接呼叫 selenium 的 <a href="https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol" target="_blank" rel="external">JsonWireProtocol</a> RESTful API。</p>
 <p>Protractor 跟 selenium-webdriver API 的使用方式非常雷同。</p>
 <p><a href="http://seleniumhq.github.io/selenium/docs/api/javascript/" target="_blank" rel="external">selenium-webdriver API</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = driver.findElement(By.id(&#39;dog_id&#39;)).click();</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = browser.findElement(by.id(&#39;dog_id&#39;));</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = driver.findElement(By.id(&apos;dog_id&apos;)).click();</div></pre></td></tr></table></figure>
+<p><a href="http://www.protractortest.org/#/api?view=webdriver.By.id" target="_blank" rel="external">Protractor API</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = browser.findElement(by.id(&apos;dog_id&apos;));</div></pre></td></tr></table></figure></p>
 <p>但 <a href="http://webdriver.io/api/protocol/element.html" target="_blank" rel="external">WebdriverIO API</a> 則更友善一點，非常肯定作者在這方面的努力。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var dog = client.element(&#39;#dog_id&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dog = client.element(&apos;#dog_id&apos;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -402,14 +402,14 @@
 <p>因為前端測試是模擬使用者的行為，所以它只能點選使用者可視範圍，登入頁的連結是被隱藏在左側，所以需要先把側欄畫面點開來。</p>
 <p><strong>圖二</strong></p>
 <img src="/blog/2016/06/13/webdriverio-realworld-test-case/step2.png" alt="step2.png" title="">
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it(&#39;&#21069;&#24448;&#30331;&#20837;&#38913;&#39;, function(done) &#123;&#10;  browser.url(&#39;/&#39;);&#10;  browser.click(&#39;.open-panel&#39;); // &#22294;&#19968;&#10;  browser.click(&#39;[href*=login]&#39;); // &#22294;&#20108;&#10;  browser.waitForExist(&#39;[name=identifier]&#39;);&#10;  browser.getText(&#39;.login-screen-title&#39;).should.be.equal(&#10;    &#39;Login&#39;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">it(&apos;前往登入頁&apos;, function(done) &#123;</div><div class="line">  browser.url(&apos;/&apos;);</div><div class="line">  browser.click(&apos;.open-panel&apos;); // 圖一</div><div class="line">  browser.click(&apos;[href*=login]&apos;); // 圖二</div><div class="line">  browser.waitForExist(&apos;[name=identifier]&apos;);</div><div class="line">  browser.getText(&apos;.login-screen-title&apos;).should.be.equal(</div><div class="line">    &apos;Login&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
 <li>點擊登入連結</li>
 <li>確認已經被轉到登入頁</li>
 </ul>
 <h3 id="步驟二"><a href="#步驟二" class="headerlink" title="步驟二"></a>步驟二</h3><p><strong>圖三</strong></p>
 <img src="/blog/2016/06/13/webdriverio-realworld-test-case/step3.png" alt="step3.png" title="">
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it(&#39;&#22635;&#23531;&#30331;&#20837;&#36039;&#26009;&#20006;&#36865;&#20986;&#39;, function(done) &#123;&#10;  browser.elements(&#39;[name=identifier]&#39;).setValue(&#39;demo&#39;);&#10;  browser.elements(&#39;[name=password]&#39;).setValue(&#39;11111111&#39;);&#10;  browser.click(&#39;[type=submit]&#39;);&#10;  browser.isExisting(&#39;[name=identifier]&#39;, false).should.be.equal(&#10;    true);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">it(&apos;填寫登入資料並送出&apos;, function(done) &#123;</div><div class="line">  browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div><div class="line">  browser.elements(&apos;[name=password]&apos;).setValue(&apos;11111111&apos;);</div><div class="line">  browser.click(&apos;[type=submit]&apos;);</div><div class="line">  browser.isExisting(&apos;[name=identifier]&apos;, false).should.be.equal(</div><div class="line">    true);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
 <li>填入帳號</li>
 <li>填入密碼</li>
@@ -418,12 +418,12 @@
 </ul>
 <h3 id="步驟三"><a href="#步驟三" class="headerlink" title="步驟三"></a>步驟三</h3><p><strong>圖四</strong></p>
 <img src="/blog/2016/06/13/webdriverio-realworld-test-case/step4.png" alt="step4.png" title="">
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">it(&#39;&#30331;&#20837;&#25104;&#21151;&#39;, function(done) &#123;&#10;  browser.pause(2000);&#10;  browser.click(&#39;.open-panel&#39;);&#10;  browser.waitForExist(&#39;[href*=logout]&#39;);&#10;  browser.isExisting(&#39;[href*=logout]&#39;).should.be.equal(true);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">it(&apos;登入成功&apos;, function(done) &#123;</div><div class="line">  browser.pause(2000);</div><div class="line">  browser.click(&apos;.open-panel&apos;);</div><div class="line">  browser.waitForExist(&apos;[href*=logout]&apos;);</div><div class="line">  browser.isExisting(&apos;[href*=logout]&apos;).should.be.equal(true);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ul>
 <li>展開側欄</li>
 <li>確認有登出連結在畫面中</li>
 </ul>
-<h3 id="完整測試程式碼"><a href="#完整測試程式碼" class="headerlink" title="完整測試程式碼"></a>完整測試程式碼</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">describe(&#39;&#27491;&#24120;&#30331;&#20837;&#27969;&#31243;&#39;, function() &#123;&#10;  it(&#39;&#21069;&#24448;&#30331;&#20837;&#38913;&#39;, function(done) &#123;&#10;    browser.url(&#39;/&#39;);&#10;    browser.click(&#39;.open-panel&#39;); // &#22294;&#19968;&#10;    browser.click(&#39;[href*=login]&#39;); // &#22294;&#20108;&#10;    browser.waitForExist(&#39;[name=identifier]&#39;);&#10;    browser.getText(&#39;.login-screen-title&#39;).should.be.equal(&#10;      &#39;Login&#39;);&#10;  &#125;);&#10;&#10;  it(&#39;&#22635;&#23531;&#30331;&#20837;&#36039;&#26009;&#20006;&#36865;&#20986;&#39;, function(done) &#123;&#10;    browser.elements(&#39;[name=identifier]&#39;).setValue(&#39;demo&#39;);&#10;    browser.elements(&#39;[name=password]&#39;).setValue(&#39;11111111&#39;);&#10;    browser.click(&#39;[type=submit]&#39;);&#10;    browser.isExisting(&#39;[name=identifier]&#39;, false).should.be.equal(&#10;      true);&#10;  &#125;);&#10;&#10;  it(&#39;&#30331;&#20837;&#25104;&#21151;&#39;, function(done) &#123;&#10;    browser.pause(2000);&#10;    browser.click(&#39;.open-panel&#39;);&#10;    browser.waitForExist(&#39;[href*=logout]&#39;);&#10;    browser.isExisting(&#39;[href*=logout]&#39;).should.be.equal(true);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="完整測試程式碼"><a href="#完整測試程式碼" class="headerlink" title="完整測試程式碼"></a>完整測試程式碼</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">describe(&apos;正常登入流程&apos;, function() &#123;</div><div class="line">  it(&apos;前往登入頁&apos;, function(done) &#123;</div><div class="line">    browser.url(&apos;/&apos;);</div><div class="line">    browser.click(&apos;.open-panel&apos;); // 圖一</div><div class="line">    browser.click(&apos;[href*=login]&apos;); // 圖二</div><div class="line">    browser.waitForExist(&apos;[name=identifier]&apos;);</div><div class="line">    browser.getText(&apos;.login-screen-title&apos;).should.be.equal(</div><div class="line">      &apos;Login&apos;);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(&apos;填寫登入資料並送出&apos;, function(done) &#123;</div><div class="line">    browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div><div class="line">    browser.elements(&apos;[name=password]&apos;).setValue(&apos;11111111&apos;);</div><div class="line">    browser.click(&apos;[type=submit]&apos;);</div><div class="line">    browser.isExisting(&apos;[name=identifier]&apos;, false).should.be.equal(</div><div class="line">      true);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  it(&apos;登入成功&apos;, function(done) &#123;</div><div class="line">    browser.pause(2000);</div><div class="line">    browser.click(&apos;.open-panel&apos;);</div><div class="line">    browser.waitForExist(&apos;[href*=logout]&apos;);</div><div class="line">    browser.isExisting(&apos;[href*=logout]&apos;).should.be.equal(true);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -478,20 +478,20 @@
 </ul>
 <h3 id="Protocol"><a href="#Protocol" class="headerlink" title="Protocol"></a>Protocol</h3><h4 id="url"><a href="#url" class="headerlink" title="url"></a>url</h4><p>前往特定網址</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.url([url]);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.url([url]);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.url(&#39;/login&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.url(&apos;/login&apos;);</div></pre></td></tr></table></figure>
 <h3 id="實用工具-Utility"><a href="#實用工具-Utility" class="headerlink" title="實用工具(Utility)"></a>實用工具(Utility)</h3><h4 id="waitForExist"><a href="#waitForExist" class="headerlink" title="waitForExist"></a>waitForExist</h4><p>等待一個特定元素出現，才進行下一步。</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.waitForExist(selector);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.waitForExist(selector);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.waitForExist(&#39;[name=identifier]&#39;);</span><br></pre></td></tr></table></figure>
-<p><strong>其他相關語法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">waitForEnabled&#10;waitForSelected&#10;waitForText&#10;waitForValue&#10;waitForVisible</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.waitForExist(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
+<p><strong>其他相關語法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">waitForEnabled</div><div class="line">waitForSelected</div><div class="line">waitForText</div><div class="line">waitForValue</div><div class="line">waitForVisible</div></pre></td></tr></table></figure></p>
 <h4 id="pause"><a href="#pause" class="headerlink" title="pause"></a>pause</h4><p>暫停一段時間，常用於模擬真人行為減緩測試速度，及方便肉眼檢視每個測試步驟。</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.pause(milliseconds);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(milliseconds);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.pause(2000);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(2000);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -547,20 +547,20 @@
 <h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><p>當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。</p>
 <h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getTitle();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getTitle();</div></pre></td></tr></table></figure>
 <h4 id="getUrl"><a href="#getUrl" class="headerlink" title="getUrl"></a>getUrl</h4><p>取得網址</p>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getUrl();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getUrl();</div></pre></td></tr></table></figure>
 <h4 id="getValue"><a href="#getValue" class="headerlink" title="getValue"></a>getValue</h4><p>取得欄味值</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getValue(selector);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(selector);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getValue(&#39;[name=identifier]&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
 <h4 id="getText"><a href="#getText" class="headerlink" title="getText"></a>getText</h4><p>取得文字</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getText(selector);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(selector);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.getText(&#39;.tip&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(&apos;.tip&apos;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -616,19 +616,19 @@
 <h3 id="動作-Action"><a href="#動作-Action" class="headerlink" title="動作(Action)"></a>動作(Action)</h3><p>模擬使用者操作行為</p>
 <h4 id="click"><a href="#click" class="headerlink" title="click"></a>click</h4><p>點擊元素(按鈕、連結、任何可被點擊的元素)</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.click(selector);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.click(selector);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.click(&#39;.open-panel&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.click(&apos;.open-panel&apos;);</div></pre></td></tr></table></figure>
 <h4 id="setValue"><a href="#setValue" class="headerlink" title="setValue"></a>setValue</h4><p>設定欄位值</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.elements(selector).setValue(value);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.elements(selector).setValue(value);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.elements(&#39;[name=identifier]&#39;).setValue(&#39;demo&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.elements(&apos;[name=identifier]&apos;).setValue(&apos;demo&apos;);</div></pre></td></tr></table></figure>
 <h4 id="submitForm"><a href="#submitForm" class="headerlink" title="submitForm"></a>submitForm</h4><p>送出表單</p>
 <p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.submitForm(selector);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.submitForm(selector);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.submitForm(&#39;#loginForm&#39;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.submitForm(&apos;#loginForm&apos;);</div></pre></td></tr></table></figure>
 
                     
                         
@@ -710,10 +710,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

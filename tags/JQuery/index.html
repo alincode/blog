@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -237,7 +237,7 @@
             
                 <div class="postShorten-content" itemprop="articleBody">
                     <p>這個 Pattern 主要是可以區別出 Private 跟 Public 的變數跟函式，把不需要對外的資料封裝起來。</p>
-<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(function($) &#123;&#10;&#10;  // link The Module Pattern&#10;  // https://learn.jquery.com/code-organization/concepts/&#10;  var member = (function() &#123;&#10;&#10;    // &#31169;&#26377;&#35722;&#25976;&#10;    var deleteMemberElement = &#39;#deleteMember&#39;;&#10;    var memberNoElement = &#39;input[name=memberNo]&#39;;&#10;    var memberTypeElement = &#39;#memberDetail select[name=memberType]&#39;;&#10;    var memberTypeSelectedElement = memberTypeElement + &#39; :selected&#39;;&#10;&#10;    // &#31169;&#26377;&#20989;&#24335;&#10;    var deleteMember = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var checkMemberID = function(e) &#123;&#10;      e.preventDefault();&#10;    &#125;&#10;&#10;    var hello = function() &#123;&#10;      alert(&#39;hello&#39;);&#10;    &#125;&#10;&#10;    // &#20844;&#38283;&#30340; API&#10;    return &#123;&#10;      init: function() &#123;&#10;        $(deleteMemberElement).on(&#39;click&#39;, deleteMember);&#10;        $(memberNoElement).on(&#39;change&#39;, checkMemberID);&#10;      &#125;,&#10;      otherAPI: function() &#123;&#10;        hello();&#10;      &#125;&#10;    &#125;;&#10;  &#125;)();&#10;&#10;  member.init();&#10;  member.otherAPI();&#10;&#10;&#125;(jQuery));</span><br></pre></td></tr></table></figure>
+<h3 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">(function($) &#123;</div><div class="line"></div><div class="line">  // link The Module Pattern</div><div class="line">  // https://learn.jquery.com/code-organization/concepts/</div><div class="line">  var member = (function() &#123;</div><div class="line"></div><div class="line">    // 私有變數</div><div class="line">    var deleteMemberElement = &apos;#deleteMember&apos;;</div><div class="line">    var memberNoElement = &apos;input[name=memberNo]&apos;;</div><div class="line">    var memberTypeElement = &apos;#memberDetail select[name=memberType]&apos;;</div><div class="line">    var memberTypeSelectedElement = memberTypeElement + &apos; :selected&apos;;</div><div class="line"></div><div class="line">    // 私有函式</div><div class="line">    var deleteMember = function(e) &#123;</div><div class="line">      e.preventDefault();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var checkMemberID = function(e) &#123;</div><div class="line">      e.preventDefault();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var hello = function() &#123;</div><div class="line">      alert(&apos;hello&apos;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 公開的 API</div><div class="line">    return &#123;</div><div class="line">      init: function() &#123;</div><div class="line">        $(deleteMemberElement).on(&apos;click&apos;, deleteMember);</div><div class="line">        $(memberNoElement).on(&apos;change&apos;, checkMemberID);</div><div class="line">      &#125;,</div><div class="line">      otherAPI: function() &#123;</div><div class="line">        hello();</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">  &#125;)();</div><div class="line"></div><div class="line">  member.init();</div><div class="line">  member.otherAPI();</div><div class="line"></div><div class="line">&#125;(jQuery));</div></pre></td></tr></table></figure>
 <h3 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h3><ul>
 <li><a href="https://learn.jquery.com/code-organization/concepts/" target="_blank" rel="external">Code Organization Concepts</a></li>
 </ul>
@@ -321,10 +321,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

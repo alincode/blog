@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -246,14 +246,14 @@
 <li>執行 componentDidMount</li>
 <li>componentDidMount 會加入 store 的 addChangeListener</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TestStore.addChangeListener(this.storeCallback);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TestStore.addChangeListener(this.storeCallback);</div></pre></td></tr></table></figure>
 <h3 id="有值更動時"><a href="#有值更動時" class="headerlink" title="有值更動時"></a>有值更動時</h3><p><strong>執行被 bind 的 onChange</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;textarea rows=&#34;4&#34; cols=&#34;50&#34; onChange=&#123;this._onChange&#125; value=&#123;this.state.text&#125;/&#62;</span><br></pre></td></tr></table></figure>
-<p><strong>onChange 取得值後傳給 action</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_onChange: function(event) &#123;&#10;   TestAction.updateText(event.target.value);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  updateText: function(text) &#123;&#10;    console.log(&#39;=== action updateText ===&#39;);&#10;    AppDispatcher.dispatch(&#123;&#10;      type: ActionTypes.UPDATE_TEXT,&#10;      text: text&#10;    &#125;);&#10;  &#125;,&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><strong>接著 Store 的 dispatcherIndex 被觸發</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dispatcherIndex: AppDispatcher.register(function(payload) &#123;&#10;    var action = payload.type;&#10;    switch(action) &#123;&#10;      case TestConstants.ActionTypes.UPDATE_TEXT:&#10;        _text = payload.text;&#10;        TestStore.emitChange();&#10;        break;&#10;      default:&#10;        console.log(&#39;=== store dispatcherIndex default ===&#39;);&#10;    &#125;&#10;    return true; // No errors. Needed by promise in Dispatcher.&#10;  &#125;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;textarea rows=&quot;4&quot; cols=&quot;50&quot; onChange=&#123;this._onChange&#125; value=&#123;this.state.text&#125;/&gt;</div></pre></td></tr></table></figure>
+<p><strong>onChange 取得值後傳給 action</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">_onChange: function(event) &#123;</div><div class="line">   TestAction.updateText(event.target.value);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>Action 呼叫 AppDispatcher，並告訴它要做什麼事(ActionTypes)，跟把要更新的值傳給它。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  updateText: function(text) &#123;</div><div class="line">    console.log(&apos;=== action updateText ===&apos;);</div><div class="line">    AppDispatcher.dispatch(&#123;</div><div class="line">      type: ActionTypes.UPDATE_TEXT,</div><div class="line">      text: text</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><strong>接著 Store 的 dispatcherIndex 被觸發</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">dispatcherIndex: AppDispatcher.register(function(payload) &#123;</div><div class="line">    var action = payload.type;</div><div class="line">    switch(action) &#123;</div><div class="line">      case TestConstants.ActionTypes.UPDATE_TEXT:</div><div class="line">        _text = payload.text;</div><div class="line">        TestStore.emitChange();</div><div class="line">        break;</div><div class="line">      default:</div><div class="line">        console.log(&apos;=== store dispatcherIndex default ===&apos;);</div><div class="line">    &#125;</div><div class="line">    return true; // No errors. Needed by promise in Dispatcher.</div><div class="line">  &#125;)</div></pre></td></tr></table></figure></p>
 <p><strong>emitChange 被呼叫後，會通知所有 listen 這個 Store 的 Component，Component 的 callback 會收到通知。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">storeCallback: function() &#123;&#10;  this.setState(getStateStores());&#10;&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">storeCallback: function() &#123;</div><div class="line">  this.setState(getStateStores());</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 <p><strong>callback 要做的事，就是重新去 Store 拿新的值，並把自己更新(this.setState)。</strong></p>
 <p><strong>當 callback 做 setState 的時候，會觸發 shouldComponentUpdate，如果回傳值是 true</strong></p>
 <p><strong>會接著執行 componentWillUpdate</strong></p>
@@ -342,10 +342,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 

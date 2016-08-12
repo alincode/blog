@@ -14,21 +14,21 @@
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
     <meta name="description" content="belongsToMany
-User1User.belongsToMany(GameList, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);
-GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav">
+User1234User.belongsToMany(GameList, &amp;#123;  through: &amp;apos;Favorite&amp;apos;,  as: &amp;apos;UserLike&amp;apos;&amp;#125;);
+GameList1234GameList.belongsToMany(User, &amp;#123;  through: &amp;apos;Favorite&amp;apo">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Sequelize 多對多設定範例">
 <meta property="og:url" content="http://alincode.github.io/2016/07/21/Sequelize-many-to-many/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="belongsToMany
-User1User.belongsToMany(GameList, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);
-GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav">
+User1234User.belongsToMany(GameList, &amp;#123;  through: &amp;apos;Favorite&amp;apos;,  as: &amp;apos;UserLike&amp;apos;&amp;#125;);
+GameList1234GameList.belongsToMany(User, &amp;#123;  through: &amp;apos;Favorite&amp;apo">
 <meta property="og:updated_time" content="2016-07-21T14:42:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sequelize 多對多設定範例">
 <meta name="twitter:description" content="belongsToMany
-User1User.belongsToMany(GameList, &amp;#123;&amp;#10;  through: &amp;#39;Favorite&amp;#39;,&amp;#10;  as: &amp;#39;UserLike&amp;#39;&amp;#10;&amp;#125;);
-GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav">
+User1234User.belongsToMany(GameList, &amp;#123;  through: &amp;apos;Favorite&amp;apos;,  as: &amp;apos;UserLike&amp;apos;&amp;#125;);
+GameList1234GameList.belongsToMany(User, &amp;#123;  through: &amp;apos;Favorite&amp;apo">
     
     
         
@@ -41,10 +41,10 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -80,7 +80,7 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -99,7 +99,7 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -159,7 +159,7 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -238,9 +238,9 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p><a href="http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/" target="_blank" rel="external">belongsToMany</a></p>
-<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User.belongsToMany(GameList, &#123;&#10;  through: &#39;Favorite&#39;,&#10;  as: &#39;UserLike&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GameList.belongsToMany(User, &#123;&#10;  through: &#39;Favorite&#39;,&#10;  as: &#39;UserLike&#39;&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;&#10;  attributes: &#123;&#10;    id: &#123;&#10;      type: Sequelize.INTEGER,&#10;      autoIncrement: true,&#10;      primaryKey: true&#10;    &#125;,&#10;    gameListId: &#123;&#10;      type: Sequelize.INTEGER,&#10;      name: &#39;gameListId&#39;,&#10;      field: &#39;game_list_id&#39;&#10;    &#125;,&#10;    userId: &#123;&#10;      type: Sequelize.INTEGER,&#10;      name: &#39;userId&#39;,&#10;      field: &#39;user_id&#39;&#10;    &#125;&#10;  &#125;,&#10;  associations: function() &#123;&#125;,&#10;  options: &#123;&#10;    tableName: &#39;favorites&#39;,&#10;    classMethods: &#123;&#125;,&#10;    instanceMethods: &#123;&#125;,&#10;    hooks: &#123;&#125;,&#10;    underscored: true&#10;  &#125;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User.belongsToMany(GameList, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GameList.belongsToMany(User, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    id: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      autoIncrement: true,</div><div class="line">      primaryKey: true</div><div class="line">    &#125;,</div><div class="line">    gameListId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;gameListId&apos;,</div><div class="line">      field: &apos;game_list_id&apos;</div><div class="line">    &#125;,</div><div class="line">    userId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;userId&apos;,</div><div class="line">      field: &apos;user_id&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;&#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;favorites&apos;,</div><div class="line">    classMethods: &#123;&#125;,</div><div class="line">    instanceMethods: &#123;&#125;,</div><div class="line">    hooks: &#123;&#125;,</div><div class="line">    underscored: true</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
             
                 
@@ -285,17 +285,17 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -356,17 +356,17 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -386,17 +386,17 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/2016/07/21/Sequelize-many-to-many/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/07/21/Sequelize-many-to-many/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -447,10 +447,10 @@ GameList1GameList.belongsToMany(User, &amp;#123;&amp;#10;  through: &amp;#39;Fav
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     

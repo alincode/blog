@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>標籤: JWT - alincode</title>
+    <title>標籤: jwt - alincode</title>
     <meta name="author" content="alincode">
     
     
@@ -16,7 +16,7 @@
     <meta name="description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="alincode">
-<meta property="og:url" content="http://alincode.github.io/tags/JWT/index.html">
+<meta property="og:url" content="http://alincode.github.io/tags/jwt/index.html">
 <meta property="og:site_name" content="alincode">
 <meta property="og:description" content="當你的才華還撐不起你的野心時，你就應該靜下心來學習">
 <meta name="twitter:card" content="summary">
@@ -34,10 +34,10 @@
     
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css" type="text/css">
-    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="/blog/assets/images/profile.jpg"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="/blog/assets/images/profile.jpg"/>
             </a>
             <span class="sidebar-profile-name">alincode</span>
@@ -152,7 +152,7 @@
             <li class="sidebar-button">
                 
                     <a  class="sidebar-button-link "
-                         href="/blog/#about"
+                         href="#about"
                         
                     >
                 
@@ -219,15 +219,15 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/">
-                            JWT Authentication with AngularJS Forward 4 Web Summit (2)
+                        <a class="link-unstyled" href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/">
+                            JWT Authentication with AngularJS 重點整理 (1)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Mar 22 2016 22:16:09 GMT+0800">
+    <time itemprop="datePublished" content="Sun Mar 20 2016 19:35:42 GMT+0800">
 	
-		    3月 22, 2016
+		    3月 20, 2016
     	
     </time>
     
@@ -242,35 +242,300 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <h3 id="Access-and-Refresh-Token-14-00"><a href="#Access-and-Refresh-Token-14-00" class="headerlink" title="Access and Refresh Token (14:00)"></a>Access and Refresh Token (14:00)</h3><ul>
-<li>給 client access token 和 refresh token</li>
-<li>access token 的效期要比 refresh token 短</li>
-<li>refresh token 用來取得 access token</li>
-<li>access token 來自於可靠的簽證機制</li>
-<li>refresh token check for revocations</li>
-<li>解除驗證的方式為否決 refresh token</li>
+                    <h3 id="一般-Session-的產生流程-3-10"><a href="#一般-Session-的產生流程-3-10" class="headerlink" title="一般 Session 的產生流程 (3:10)"></a>一般 Session 的產生流程 (3:10)</h3><ul>
+<li>瀏覽器發送一個 request 到 server，內含帳號跟密碼</li>
+<li>server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。</li>
+<li>將存有 Session ID 的 cookie，回傳給瀏覽器。</li>
+<li>瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server</li>
 </ul>
-<h3 id="Access-Token-黑名單-18-00"><a href="#Access-Token-黑名單-18-00" class="headerlink" title="Access Token 黑名單 (18:00)"></a>Access Token 黑名單 (18:00)</h3><ul>
-<li>維護 refresh token 與 access token 的關聯</li>
-<li>當 refresh token 被註銷的時候，把所有相關聯的 access token 放置黑名單</li>
-<li>blacklists TTL is the expiration of the access token</li>
+<h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
+<li>難以理解，而且不含意義</li>
+<li>增加資料庫的負擔</li>
+<li>Perception that cookies are inherently insecure</li>
 </ul>
-<p>e.g. redis (21:30)</p>
-<h3 id="Storing-and-Transmitting-JWTs-22-20"><a href="#Storing-and-Transmitting-JWTs-22-20" class="headerlink" title="Storing and Transmitting JWTs (22:20)"></a>Storing and Transmitting JWTs (22:20)</h3><h4 id="Tradeoffs-and-Concerns"><a href="#Tradeoffs-and-Concerns" class="headerlink" title="Tradeoffs and Concerns"></a>Tradeoffs and Concerns</h4><ul>
-<li>Local Storage is not secure (XSS vulnerable)</li>
-<li>在 HTTPS 下使用 Cookie 是安全的<br>HttpOnly</li>
+<h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
+<li>Authentication (n.) 驗證</li>
+<li>Authorization (n.) 授權</li>
+<li>Token</li>
+<li>JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。</li>
 </ul>
-<h4 id="Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20"><a href="#Secure-and-Painless-Tradeoffs-IMO-YMMV-27-20" class="headerlink" title="Secure and Painless Tradeoffs (IMO, YMMV) (27:20)"></a>Secure and Painless Tradeoffs (IMO, YMMV) (27:20)</h4><h3 id="使用-Cookie-的登入驗證-28-20"><a href="#使用-Cookie-的登入驗證-28-20" class="headerlink" title="使用 Cookie 的登入驗證 (28:20)"></a>使用 Cookie 的登入驗證 (28:20)</h3><h3 id="CSRF-38-00"><a href="#CSRF-38-00" class="headerlink" title="CSRF (38:00)"></a>CSRF (38:00)</h3><p>Cross Site Request Forgery</p>
-<h4 id="解決方案-39-10"><a href="#解決方案-39-10" class="headerlink" title="解決方案 (39:10)"></a>解決方案 (39:10)</h4><ul>
-<li>同步 token</li>
-<li>送兩個 cookie</li>
-<li>檢查 header origin</li>
+<h3 id="JWT-結構-6-55"><a href="#JWT-結構-6-55" class="headerlink" title="JWT 結構 (6:55)"></a>JWT 結構 (6:55)</h3><p>是一個經過 Base64-URL encoded 的字串</p>
+<p><strong>結構分三個部分</strong></p>
+<ul>
+<li>Header</li>
+<li>Body(Claims)</li>
+<li>Cryptographic Signature 加密簽證</li>
 </ul>
-<p><a href="https://www.youtube.com/watch?v=WzfJgCOMIsU" target="_blank" rel="external">https://www.youtube.com/watch?v=WzfJgCOMIsU</a></p>
-<h3 id="vocabulary"><a href="#vocabulary" class="headerlink" title="vocabulary"></a>vocabulary</h3><ul>
-<li>opaque (adj.)</li>
-<li>revoke (v.) / revocation (n.)</li>
-<li>blacklists</li>
+<h4 id="解開後的內容"><a href="#解開後的內容" class="headerlink" title="解開後的內容"></a>解開後的內容</h4><p><strong>範例</strong></p>
+<ul>
+<li>iss: <a href="http://yourdomain.com" target="_blank" rel="external">http://yourdomain.com</a></li>
+<li>exp: 60000</li>
+<li>sub: userId</li>
+<li>scope: api/buy</li>
+</ul>
+<p><strong>意義</strong></p>
+<ul>
+<li>iss: 發佈者 (Issuer)</li>
+<li>exp: 效期，單位是毫秒 (Expiration Time)</li>
+<li>sub: 用戶 (Subject)</li>
+<li>scope: 作用域</li>
+</ul>
+<h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
+<li>使用者經過驗證後，取得 Token</li>
+<li>由你的 server 來製造 Token</li>
+<li>client 儲存 token，並在需要驗證的 request 使用它。</li>
+</ul>
+<h3 id="概述-JWT-12-15"><a href="#概述-JWT-12-15" class="headerlink" title="概述 JWT (12:15)"></a>概述 JWT (12:15)</h3><ul>
+<li>無狀態認證機制</li>
+<li>Token 具有作用域的概念</li>
+<li>產生授權</li>
+<li>決定區域性</li>
+</ul>
+<p>因為影片實在太長，後面有點不太好理解，分兩篇慢慢看</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/07/jwt-5/">
+                            JWT (5) Client Side 實作範例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Mar 07 2016 22:16:09 GMT+0800">
+	
+		    3月 07, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Client-Side-基本只需要做三件事"><a href="#Client-Side-基本只需要做三件事" class="headerlink" title="Client Side 基本只需要做三件事"></a>Client Side 基本只需要做三件事</h3><p><strong>把 Server Side 傳過來的 Token 存下來</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 來在 request response</div><div class="line">var token = &apos;xxxxxxx&apos;;</div><div class="line">localStorage.setItem(&apos;accessToken&apos;, token);</div></pre></td></tr></table></figure>
+<p><strong>在需要權限驗證才能使用的 API，改用有帶 Token 的 HTTP Header。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var req = new XMLHttpRequest();</div><div class="line">req.open(&apos;GET&apos;, `$&#123;API_HOST&#125;/orders`, true);</div><div class="line">req.setRequestHeader(&apos;Authorization&apos;, &apos;Bearer &apos; + accessToken);</div></pre></td></tr></table></figure>
+<p><strong>在 Server 告知 Token 過期的時候，把 Token 丟掉，並將使用者狀態變成登出。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var req = new XMLHttpRequest();</div><div class="line">req.open(&apos;GET&apos;, `$&#123;API_HOST&#125;/me`, true);</div><div class="line">  req.setRequestHeader(&apos;Authorization&apos;, &apos;Bearer &apos; + token);</div><div class="line">  req.responseType = &apos;json&apos;;</div><div class="line">  req.onreadystatechange = function() &#123;</div><div class="line">    if (req.readyState != 4) return;</div><div class="line"></div><div class="line">    switch (req.status) &#123;</div><div class="line">      case 200:</div><div class="line">        // 正常流程</div><div class="line">        break;</div><div class="line">      case 401:</div><div class="line">        // 清除 Token，並做使用者登出時，UI控制需相對應的反應。</div><div class="line">        localStorage.removeItem(&apos;accessToken&apos;);</div><div class="line">        break;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  req.send();</div></pre></td></tr></table></figure>
+<h2 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h2><p><strong>client 驗證 token 是否過期</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var jwt_decode = require(&apos;jwt-decode&apos;);</div><div class="line"></div><div class="line">var decoded = jwt_decode(_token)</div><div class="line"></div><div class="line">if ((decoded.exp * 1000) &lt; new Date().getTime()) &#123;</div><div class="line">  // token 過期</div><div class="line">&#125; else &#123;</div><div class="line">  // token 有效</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/07/jwt-5/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/03/jwt-4/">
+                            JWT (4) Server Side 實作範例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Mar 03 2016 22:48:35 GMT+0800">
+	
+		    3月 03, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>Server Side 使用架構 Sails</p>
+<h3 id="Server-Side-需要做的事"><a href="#Server-Side-需要做的事" class="headerlink" title="Server Side 需要做的事"></a>Server Side 需要做的事</h3><p><strong>第一步</strong></p>
+<p>安裝支援 JWT 的 library</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jsonwebtoken -save</div></pre></td></tr></table></figure>
+<p><strong>第二步</strong></p>
+<p>新增一個 JWT 的 Service，例如 api/services/JWTService.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var jwt = require(&apos;jsonwebtoken&apos;);</div><div class="line"></div><div class="line">// 建立 Token</div><div class="line">module.exports.issueToken = function(payload, options) &#123;</div><div class="line">  if(!options)&#123;</div><div class="line">    options = &#123;&#125;;</div><div class="line">    options.expiresIn = &apos;3h&apos;;</div><div class="line">  &#125;</div><div class="line">  try &#123;</div><div class="line">    var token = jwt.sign(payload, sails.config.jwt.token_secret, options);</div><div class="line">    return token;</div><div class="line">  &#125; catch (e) &#123;</div><div class="line">    throw e;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">// 驗證 Token</div><div class="line">module.exports.verifyToken = function(token, callback) &#123;</div><div class="line">  try &#123;</div><div class="line">    return jwt.verify(token, sails.config.jwt.token_secret, &#123;&#125;, callback);</div><div class="line">  &#125; catch (e) &#123;</div><div class="line">    throw e;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>第三步</strong></p>
+<p>在回傳登入成功 responses 的地方，多新增回傳 Token 這個值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// payload 有很多變數，sub 只是其中一個，詳情請看 JWT 官方文件。</div><div class="line">var token = JWTService.issueToken(&#123;</div><div class="line">  sub: user.id</div><div class="line">&#125;);</div><div class="line"></div><div class="line">res.ok(&#123;</div><div class="line">  nikename: user.nickname, // 可有可無，但登入成功，通常會顯示暱稱，對吧。</div><div class="line">  token: token</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><strong>第四步</strong></p>
+<p>在 api/responses 目錄下，新增一個 unauthorized.js，status code 為 401。</p>
+<p><strong>第五步</strong></p>
+<p>新增一個 policies，api/policies/authToken.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">module.exports = function(req, res, next) &#123;</div><div class="line">  var token;</div><div class="line"></div><div class="line">  //  驗證  Header 格式</div><div class="line">  if (req.headers &amp;&amp; req.headers.authorization) &#123;</div><div class="line">    var parts = req.headers.authorization.split(&apos; &apos;);</div><div class="line">    if (parts.length == 2) &#123;</div><div class="line">      var scheme = parts[0],</div><div class="line">        credentials = parts[1];</div><div class="line"></div><div class="line">      if (/^Bearer$/i.test(scheme)) &#123;</div><div class="line">        token = credentials;</div><div class="line">      &#125;</div><div class="line">    &#125; else &#123;</div><div class="line">      return res.unauthorized(&apos;wrongFormat&apos;);</div><div class="line">    &#125;</div><div class="line">  &#125; else if (req.param(&apos;token&apos;)) &#123;</div><div class="line">    token = req.param(&apos;token&apos;);</div><div class="line">    // We delete the token from param to not mess with blueprints</div><div class="line">    delete req.query.token;</div><div class="line">  &#125; else &#123;</div><div class="line">    return res.unauthorized(&apos;noAuthorizationHeaderFound&apos;);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  // 驗證 Token 真偽及效期</div><div class="line">  JWTService.verifyToken(token, function(err, decodedToken) &#123;</div><div class="line">    if (err) return res.unauthorized(&apos;invalidToken&apos;);</div><div class="line">    sails.log.verbose(&apos;decodedToken.sub:&apos;, decodedToken.sub);</div><div class="line"></div><div class="line">    // decodedToken，就是 payload 資料。</div><div class="line">    db.User.findById(decodedToken.sub).then(function(user)&#123;</div><div class="line">      if(user)&#123;</div><div class="line">        req.user = user;</div><div class="line">        next();</div><div class="line">      &#125;else&#123;</div><div class="line">        return res.unauthorized(&apos;noAuthorizationHeaderFound&apos;);</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>第六步</strong></p>
+<p>config/policies.js 依照 Controller method 需要權限驗證的地方，加入設定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">module.exports.policies = &#123;</div><div class="line"></div><div class="line">  UserController: &#123;</div><div class="line">    apiGetMe: [&apos;authToken&apos;]</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>第七步</strong></p>
+<p>api/controllers/UserController.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apiGetMe: async(req, res) =&gt; &#123;</div><div class="line">  // 因為 policies 已經做過權限檢查，並把 user 資料塞好了，這邊就直接拿來用囉，開心 ^_^。</div><div class="line">  var user = req.user;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/03/jwt-4/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/03/jwt-3/">
+                            JWT (3) 什麼是 JWT
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Mar 03 2016 15:37:02 GMT+0800">
+	
+		    3月 03, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>那接下來，我們就來談談這進化的 Token。</p>
+<h3 id="什麼是-JWT"><a href="#什麼是-JWT" class="headerlink" title="什麼是 JWT"></a>什麼是 JWT</h3><p>JWT 全名是 JSON Web Tokens，它提供強大的加密演算法並可內含資訊，做為安全資訊傳輸，解碼後的資料是以JSON作為資料讀取。因為資料透過了數位簽證處理，所以可以被信任跟驗證。</p>
+<p>官網上 <a href="https://jwt.io/" target="_blank" rel="external">JWT</a> 清楚的列出，各個語言支援 JWT 的 library，甚至特別標出還不支援的部分及線上Debugger工具，從小地方就可以看出他們對於 JWT 的重視。</p>
+<img src="/blog/2016/03/03/jwt-3/jwt_module.png" alt="jwt_module.png" title="">
+<h3 id="進一步定義"><a href="#進一步定義" class="headerlink" title="進一步定義"></a>進一步定義</h3><ul>
+<li>因為它 szie 很小，所以可以很輕易的被附加在 URL 參數、HTTP header 裡。</li>
+<li>它內附基本資訊，並可內嵌其他自定資訊，</li>
+</ul>
+<h3 id="它可以應用在哪裡？"><a href="#它可以應用在哪裡？" class="headerlink" title="它可以應用在哪裡？"></a>它可以應用在哪裡？</h3><ul>
+<li>登入驗證</li>
+<li>資訊交換</li>
+</ul>
+<h3 id="常見實作方式"><a href="#常見實作方式" class="headerlink" title="常見實作方式"></a>常見實作方式</h3><img src="/blog/2016/03/03/jwt-3/jwt_request_flow.png" alt="jwt_request_flow.png" title="">
+<p>使用者輸入帳號密碼，然後傳給 Server，對賬戶密碼驗證無誤後，Server 通常會把 UserId，塞在 Claims (Payload) 裡作為識別，然後用使用一組私密碼，產出一個 JWT 格式的 Token 回傳給前台，此時前台需要把這組 Token 記起來，可能用 Web Storage 或 cookie，但一般是 Web Storage。</p>
+<p>下次要跟 Server 要資料的時候，將 Token 取出，透過 HTTP Authorization header 或 URL 參數傳遞給 Server。Server 因為有私密碼，可以直接呼叫有實作 JWT 的 library，可得知 Token 是否過期，或 Token 真偽的資訊。</p>
+<p><a href="https://tools.ietf.org/html/rfc7519" target="_blank" rel="external">JWT - RTC 7519</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/03/jwt-3/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/02/jwt-2/">
+                            JWT (2) - 進化的 Token
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Mar 02 2016 12:17:14 GMT+0800">
+	
+		    3月 02, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>上一篇，講到 Access Token ，那接下來說說，建立 Token 的原理。</p>
+<h3 id="建立-Token"><a href="#建立-Token" class="headerlink" title="建立 Token"></a>建立 Token</h3><p>基本原理就是將資料先用 base64_encode 做加密後，再用指定的演算法跟密碼(e.g. sha256)，去產出一個固定長度的加密 (Encrypt) 字串，取得加密字串的人，以再依照相同的規則跟密碼將資料還原。</p>
+<h3 id="一般加密規則"><a href="#一般加密規則" class="headerlink" title="一般加密規則"></a>一般加密規則</h3><p>主要是需要這三個參數 algorithm、mode、padding 去運算，看起來大家都講好規則了，應該溝通沒問題了吧？</p>
+<p>沒想到是災難的開始，因為並沒有一個審核機制，各家 Open source 就開始照著自己詮釋去做，結果無法正常解密的問題，尤其發生跨語言之間，例如 PHP 用的 library 跟 Java 用的 library 肯定不一樣，PHP 對於實作 Padding 差異上，幾乎是所有開發者必踩的雷。<br><a href="http://php.net/manual/en/ref.mcrypt.php" target="_blank" rel="external">http://php.net/manual/en/ref.mcrypt.php</a></p>
+<h3 id="進化的-Token"><a href="#進化的-Token" class="headerlink" title="進化的 Token"></a>進化的 Token</h3><p>時代的進化，這麼漸漸單純的 Token 已經不符使用，我們有更多的需求：</p>
+<ul>
+<li>要有期限</li>
+<li>要可以被驗證</li>
+<li>要傳遞附加公開資訊</li>
+<li>我們要說共同的語言</li>
+<li>略…</li>
 </ul>
 
                     
@@ -279,7 +544,64 @@
                     
                     
                         <p>
-                            <a href="/blog/2016/03/22/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit-2/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/blog/2016/03/02/jwt-2/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/01/jwt-1/">
+                            JWT (1) - 為什麼我們要用 Access Token ?
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 01 2016 19:41:01 GMT+0800">
+	
+		    3月 01, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/JWT/">JWT</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="為什麼我們要用-Access-Token"><a href="#為什麼我們要用-Access-Token" class="headerlink" title="為什麼我們要用 Access Token ?"></a>為什麼我們要用 Access Token ?</h3><p>SPA 與 Restful API 的盛行，我們現在的軟體架構都不止侷限一個主機或同個 domain，以往將資料存在 Session 已不可行。</p>
+<p>現在的網站常常會需要呼叫各式各樣的 API，以達到跨平整合，例如很多網站都會提供，你只要登入你的 Facebook 帳號，就不用再填註冊資料，直接授權網站跟 Facebook 要資料，幫你填好繁雜的註冊手續。</p>
+<p>那平台跟平台互相傳遞資料，最重要的一件事是什麼？那當然就是驗證身份了，有許多驗證機制，但目前最主流的是 Oauth2，Facebook、Youtube、Google 都是使用這種方式，但 Oauth2 不是此篇的重點，略…。</p>
+<p>其實不管是 Oauth2 或其他驗證機制，基本上就是與你做身份驗證，然後給你一個 Access Token (鑰匙)，然後就可以用這個 Access Token 有限制的跟其他平台要資料，這把 Access Token 不限本人使用，只是有這個 Access Token 的人，都可以取得你的資料。</p>
+<p>那不是很不安全？所以那是ㄧ把有限制的鑰匙。</p>
+<h3 id="限制："><a href="#限制：" class="headerlink" title="限制："></a>限制：</h3><ul>
+<li>時間限制：就像日租房，你付了錢拿到鑰匙，可以自由進出，但隔天即使你有鑰匙，也打不開門。</li>
+<li>權限限制：房東給你一把鑰匙，但只能開你的房間，甚至是會分等級，或許一般房客，不能去健身房，VIP房客則可以去。</li>
+<li>略….</li>
+</ul>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/01/jwt-1/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -352,10 +674,10 @@
 <div id="cover" style="background-image:url('/blog/assets/images/cover.jpg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/jquery.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox.js" type="text/javascript"></script>
-<script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
-<script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
 
