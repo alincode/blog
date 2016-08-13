@@ -78,6 +78,28 @@
   </entry>
   
   <entry>
+    <title>設定 MYSQL 5.7 密碼</title>
+    <link href="http://alincode.github.io/2016/08/10/mysql-set-password/"/>
+    <id>http://alincode.github.io/2016/08/10/mysql-set-password/</id>
+    <published>2016-08-10T05:30:00.000Z</published>
+    <updated>2016-08-13T05:35:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt; SET GLOBAL  validate_password_policy=&apos;LOW&apos;;</div><div class="line">mysql&gt; SHOW VARIABLES LIKE &apos;validate_password%&apos;;</div><div class="line">mysql&gt; ALTER USER USER() IDENTIFIED BY &apos;root&apos;;</div><div class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;rootroot&apos;;</div><div class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; PASSWORD EXPIRE NEVER;</div></pre></td></tr></table></figure>
+<p><a href="http://dev.mysql.com/doc/refman/5.7/en/set-password.html" target="_blank" rel="external">官方文件</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
+    
+    </summary>
+    
+    
+      <category term="MySQL" scheme="http://alincode.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>程式語言常用框架對照表</title>
     <link href="http://alincode.github.io/2016/08/01/language-comparison-table/"/>
     <id>http://alincode.github.io/2016/08/01/language-comparison-table/</id>
@@ -763,30 +785,6 @@
     
     
       <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Choice Theory - 重點整理(2)</title>
-    <link href="http://alincode.github.io/2016/05/25/choice-theory-2/"/>
-    <id>http://alincode.github.io/2016/05/25/choice-theory-2/</id>
-    <published>2016-05-24T16:19:22.000Z</published>
-    <updated>2016-06-05T16:21:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="領導管理-vs-指揮管理"><a href="#領導管理-vs-指揮管理" class="headerlink" title="領導管理 vs 指揮管理"></a>領導管理 vs 指揮管理</h3><p>使指揮管理俱有破壞性的原因是它強調個人並讓員工互相為敵，使領導管理成功的原因是它強調創造一個互助合作的系統，並且相信只要你善待他人並向他們解釋你想要他們做的，你能夠信任他們會把工作做好。</p>
-<p>領導管理在職場上最強烈的論點是因為，它較有生產力而且使工作品質提高，它使企業減少花費。這種花費是指揮管理無法避免的，對兩個同行的企業來說，實際的勞動成本和物料成本並不造成競爭力的差距。造成競爭實力有差距的實際成本之外的管理成本，而這種管理成本總是運用領導管理比指揮管理節省許多。</p>
-<p>指揮管理導致員工薪資不滿的申訴案件增加、內部竊盜、無故請假、遲到早退、與工會關係緊張、暴力事件等問題層出不窮。即使指揮管理可以做到節省成本，但像推阻這種問題，還是實施指揮管理的職場常見到的問題。</p>
-<h3 id="推阻"><a href="#推阻" class="headerlink" title="推阻"></a>推阻</h3><p>員工越是受指揮，或是因為他們習慣受指揮，所以把每一項要求都當做指揮，他們越是喜歡利用自己有的一點小小的權力來故意推阻。例如：「我很抱歉，我不能那麼做，那違反公司政策，我沒有那個權利。」</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;領導管理-vs-指揮管理&quot;&gt;&lt;a href=&quot;#領導管理-vs-指揮管理&quot; class=&quot;headerlink&quot; title=&quot;領導管理 vs 指揮管理&quot;&gt;&lt;/a&gt;領導管理 vs 指揮管理&lt;/h3&gt;&lt;p&gt;使指揮管理俱有破壞性的原因是它強調個人並讓員工互相為敵，使領
-    
-    </summary>
-    
-    
-      <category term="Choice Theory" scheme="http://alincode.github.io/tags/Choice-Theory/"/>
     
   </entry>
   

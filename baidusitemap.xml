@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/08/10/mysql-set-password/</loc>
+    <lastmod>2016-08-13T05:35:18.000Z</lastmod>
+    <data>
+        <display>
+        <title>設定 MYSQL 5.7 密碼</title>
+        <pubTime>2016-08-10T05:30:00.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/08/11/mysql-remote-connect/</loc>
     <lastmod>2016-08-12T14:04:31.000Z</lastmod>
     <data>
@@ -530,6 +547,23 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何時候該用 Promise？</title>
+        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
+        
+        <tag>promise</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -540,6 +574,42 @@
         <tag>Story Points</tag>
          
         <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何改善英文閱讀能力 - 經驗分享</title>
+        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
+        
+        <tag>學英文</tag>
+         
+        <tag>經驗分享</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>React Bind</title>
+        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
+        
+        <tag>React</tag>
          
          
            
@@ -568,23 +638,6 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>React Bind</title>
-        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
-        
-        <tag>React</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -603,42 +656,6 @@
              
               <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何改善英文閱讀能力 - 經驗分享</title>
-        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
-        
-        <tag>學英文</tag>
-         
-        <tag>經驗分享</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何時候該用 Promise？</title>
-        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
-        
-        <tag>promise</tag>
-         
-         
-           
         </display>
     </data>
     </url>

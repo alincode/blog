@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://alincode.github.io/blog/2016/08/10/mysql-set-password/</loc>
+    
+    <lastmod>2016-08-13T05:35:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/blog/2016/08/11/mysql-remote-connect/</loc>
     
     <lastmod>2016-08-12T14:04:31.000Z</lastmod>
@@ -198,28 +205,14 @@
   </url>
   
   <url>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
-    
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
@@ -233,7 +226,21 @@
   </url>
   
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
     
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     
