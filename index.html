@@ -218,6 +218,50 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/08/16/bluebird-concurrency-map/">
+                            Promise map 並發
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Aug 16 2016 21:45:44 GMT+0800">
+	
+		    8月 16, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>如果控制非同步並發，可以設定 concurrency 參數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">async function syncSomething(datas) &#123;</div><div class="line">  return Promise.map(datas, async(data) =&gt; &#123;</div><div class="line">    return data;</div><div class="line">  &#125;, &#123;</div><div class="line">    concurrency: 1</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://bluebirdjs.com/docs/api/promise.map.html" target="_blank" rel="external">Promise.map</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/08/16/bluebird-concurrency-map/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/08/12/geoip-lite-update-ip-table/">
                             更新 geoip lite module 的 IP 對應表
                         </a>
@@ -766,49 +810,6 @@
                     
                         <p>
                             <a href="/blog/2016/07/21/Sequelize-many-to-many/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/07/20/Sequelize-camelCased-to-underscored/">
-                            把 Sequelize 預設的駝峰命名改成底線命名
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Jul 20 2016 22:46:21 GMT+0800">
-	
-		    7月 20, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>camelCased：駝峰命名<br>underscored：底線命名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">options: &#123;</div><div class="line">  tableName: &apos;your_table_name&apos;,</div><div class="line">  classMethods: &#123;&#125;,</div><div class="line">  instanceMethods: &#123;&#125;,</div><div class="line">  hooks: &#123;&#125;,</div><div class="line">  paranoid: true,</div><div class="line">  underscored: true // ===&gt; 這行</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/07/20/Sequelize-camelCased-to-underscored/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

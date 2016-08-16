@@ -6,32 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>更新 geoip lite module 的 IP 對應表 - alincode</title>
+    <title>Promise map 並發 - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="安裝
-npm install geoip-lite
-使用
-1234567891011var geoip = require(&amp;apos;geoip-lite&amp;apos;);var ip = &amp;quot;207.97.227.239&amp;quot;;var geo = geoip.lookup(ip);console.log(geo);&amp;#123; range: [ 3479299040, 347929">
+    <meta name="description" content="如果控制非同步並發，可以設定 concurrency 參數。
+1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
+P">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="更新 geoip lite module 的 IP 對應表">
-<meta property="og:url" content="http://alincode.github.io/2016/08/12/geoip-lite-update-ip-table/index.html">
+<meta property="og:title" content="Promise map 並發">
+<meta property="og:url" content="http://alincode.github.io/2016/08/16/bluebird-concurrency-map/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="安裝
-npm install geoip-lite
-使用
-1234567891011var geoip = require(&amp;apos;geoip-lite&amp;apos;);var ip = &amp;quot;207.97.227.239&amp;quot;;var geo = geoip.lookup(ip);console.log(geo);&amp;#123; range: [ 3479299040, 347929">
-<meta property="og:updated_time" content="2016-08-12T02:04:27.000Z">
+<meta property="og:description" content="如果控制非同步並發，可以設定 concurrency 參數。
+1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
+P">
+<meta property="og:updated_time" content="2016-08-16T13:57:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="更新 geoip lite module 的 IP 對應表">
-<meta name="twitter:description" content="安裝
-npm install geoip-lite
-使用
-1234567891011var geoip = require(&amp;apos;geoip-lite&amp;apos;);var ip = &amp;quot;207.97.227.239&amp;quot;;var geo = geoip.lookup(ip);console.log(geo);&amp;#123; range: [ 3479299040, 347929">
+<meta name="twitter:title" content="Promise map 並發">
+<meta name="twitter:description" content="如果控制非同步並發，可以設定 concurrency 參數。
+1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
+P">
     
     
         
@@ -225,13 +222,13 @@ npm install geoip-lite
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            更新 geoip lite module 的 IP 對應表
+            Promise map 並發
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Aug 12 2016 09:53:24 GMT+0800">
+    <time itemprop="datePublished" content="Tue Aug 16 2016 21:45:44 GMT+0800">
 	
-		    8月 12, 2016
+		    8月 16, 2016
     	
     </time>
     
@@ -240,12 +237,9 @@ npm install geoip-lite
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><strong>安裝</strong></p>
-<p><code>npm install geoip-lite</code></p>
-<p><strong>使用</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var geoip = require(&apos;geoip-lite&apos;);</div><div class="line"></div><div class="line">var ip = &quot;207.97.227.239&quot;;</div><div class="line">var geo = geoip.lookup(ip);</div><div class="line"></div><div class="line">console.log(geo);</div><div class="line">&#123; range: [ 3479299040, 3479299071 ],</div><div class="line">  country: &apos;US&apos;,</div><div class="line">  region: &apos;CA&apos;,</div><div class="line">  city: &apos;San Francisco&apos;,</div><div class="line">  ll: [37.7484, -122.4156] &#125;</div></pre></td></tr></table></figure>
-<p><strong>定期更新 IP 對照表</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ./node_modules/geoip-lite</div><div class="line">npm run-script updatedb</div></pre></td></tr></table></figure>
+            <p>如果控制非同步並發，可以設定 concurrency 參數。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">async function syncSomething(datas) &#123;</div><div class="line">  return Promise.map(datas, async(data) =&gt; &#123;</div><div class="line">    return data;</div><div class="line">  &#125;, &#123;</div><div class="line">    concurrency: 1</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="http://bluebirdjs.com/docs/api/promise.map.html" target="_blank" rel="external">Promise.map</a></p>
 
             
                 
@@ -258,7 +252,7 @@ npm install geoip-lite
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/geoip/">geoip</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Promise/">Promise</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/bluebird/">bluebird</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/concurrency/">concurrency</a>
 
             </div>
         
@@ -267,7 +261,7 @@ npm install geoip-lite
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/16/bluebird-concurrency-map/"  data-tooltip="Promise map 並發">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -275,7 +269,7 @@ npm install geoip-lite
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/11/mysql-remote-connect/" data-tooltip="MySQL 設定遠端連線">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/12/geoip-lite-update-ip-table/" data-tooltip="更新 geoip lite module 的 IP 對應表">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -290,17 +284,17 @@ npm install geoip-lite
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -338,7 +332,7 @@ npm install geoip-lite
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/16/bluebird-concurrency-map/"  data-tooltip="Promise map 並發">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -346,7 +340,7 @@ npm install geoip-lite
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/11/mysql-remote-connect/" data-tooltip="MySQL 設定遠端連線">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/12/geoip-lite-update-ip-table/" data-tooltip="更新 geoip lite module 的 IP 對應表">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -361,17 +355,17 @@ npm install geoip-lite
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -391,17 +385,17 @@ npm install geoip-lite
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/12/geoip-lite-update-ip-table/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
