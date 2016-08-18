@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-08-16T13:57:10.000Z</updated>
+  <updated>2016-08-18T13:52:13.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自動部署三兩事(2) - 客製化 Task</title>
+    <link href="http://alincode.github.io/2016/08/18/auto-deploy-2/"/>
+    <id>http://alincode.github.io/2016/08/18/auto-deploy-2/</id>
+    <published>2016-08-18T13:37:16.000Z</published>
+    <updated>2016-08-18T13:52:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>執行</strong></p>
+<p><code>cap dev deploy:update_ip</code></p>
+<p><strong>客製化任務</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">namespace :deploy do</div><div class="line"></div><div class="line">  desc &quot;update geo ip map&quot;</div><div class="line">  task :update_ip do</div><div class="line">    on roles(:web) do</div><div class="line">      geoip_dir = &quot;#&#123;current_path&#125;/node_modules/geoip-lite&quot;;</div><div class="line">      within geoip_dir do</div><div class="line">        puts capture(:npm, &apos;run&apos;, &apos;updatedb&apos;);</div><div class="line">      end</div><div class="line">    end</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;執行&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cap dev deploy:update_ip&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;客製化任務&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table
+    
+    </summary>
+    
+    
+      <category term="auto deploy" scheme="http://alincode.github.io/tags/auto-deploy/"/>
+    
+      <category term="Capistrano" scheme="http://alincode.github.io/tags/Capistrano/"/>
+    
+  </entry>
   
   <entry>
     <title>Promise map 並發</title>
@@ -708,52 +737,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(milliseconds);</div></pre></td></tr></table></figure>
 <p><strong>範例</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.pause(2000);</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;基本條件&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;已假設你有 &lt;a href=&quot;http://www.w3schools.com/jquery/jquery_ref_selectors.asp&quot; target=&quot;_blank&quot; rel=&quot;external
-    
-    </summary>
-    
-      <category term="前端測試" scheme="http://alincode.github.io/categories/%E5%89%8D%E7%AB%AF%E6%B8%AC%E8%A9%A6/"/>
-    
-    
-      <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebdriverIO 常用語法(2)</title>
-    <link href="http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/"/>
-    <id>http://alincode.github.io/2016/06/11/webdriverio-common-syntax-2/</id>
-    <published>2016-06-11T13:35:19.000Z</published>
-    <updated>2016-06-13T14:34:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>基本條件</strong></p>
-<ul>
-<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
-<li>你已經讀過之前在此分享的所有相關文章</li>
-</ul>
-<h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><p>當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。</p>
-<h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getTitle();</div></pre></td></tr></table></figure>
-<h4 id="getUrl"><a href="#getUrl" class="headerlink" title="getUrl"></a>getUrl</h4><p>取得網址</p>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getUrl();</div></pre></td></tr></table></figure>
-<h4 id="getValue"><a href="#getValue" class="headerlink" title="getValue"></a>getValue</h4><p>取得欄味值</p>
-<p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(selector);</div></pre></td></tr></table></figure>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
-<h4 id="getText"><a href="#getText" class="headerlink" title="getText"></a>getText</h4><p>取得文字</p>
-<p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(selector);</div></pre></td></tr></table></figure>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(&apos;.tip&apos;);</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">

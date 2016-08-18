@@ -6,29 +6,32 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="alincode">
-    <title>Promise map 並發 - alincode</title>
+    <title>自動部署三兩事(2) - 客製化 Task - alincode</title>
     <meta name="author" content="alincode">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="如果控制非同步並發，可以設定 concurrency 參數。
-1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
-P">
+    <meta name="description" content="執行
+cap dev deploy:update_ip
+客製化任務
+12345678910111213namespace :deploy do  desc &amp;quot;update geo ip map&amp;quot;  task :update_ip do    on roles(:web) do      geoip_dir = &amp;quot;#&amp;#123;current_path&amp;#125;/no">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Promise map 並發">
-<meta property="og:url" content="http://alincode.github.io/2016/08/16/bluebird-concurrency-map/index.html">
+<meta property="og:title" content="自動部署三兩事(2) - 客製化 Task">
+<meta property="og:url" content="http://alincode.github.io/2016/08/18/auto-deploy-2/index.html">
 <meta property="og:site_name" content="alincode">
-<meta property="og:description" content="如果控制非同步並發，可以設定 concurrency 參數。
-1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
-P">
-<meta property="og:updated_time" content="2016-08-16T13:57:10.000Z">
+<meta property="og:description" content="執行
+cap dev deploy:update_ip
+客製化任務
+12345678910111213namespace :deploy do  desc &amp;quot;update geo ip map&amp;quot;  task :update_ip do    on roles(:web) do      geoip_dir = &amp;quot;#&amp;#123;current_path&amp;#125;/no">
+<meta property="og:updated_time" content="2016-08-18T13:52:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Promise map 並發">
-<meta name="twitter:description" content="如果控制非同步並發，可以設定 concurrency 參數。
-1234567async function syncSomething(datas) &amp;#123;  return Promise.map(datas, async(data) =&amp;gt; &amp;#123;    return data;  &amp;#125;, &amp;#123;    concurrency: 1  &amp;#125;);&amp;#125;
-P">
+<meta name="twitter:title" content="自動部署三兩事(2) - 客製化 Task">
+<meta name="twitter:description" content="執行
+cap dev deploy:update_ip
+客製化任務
+12345678910111213namespace :deploy do  desc &amp;quot;update geo ip map&amp;quot;  task :update_ip do    on roles(:web) do      geoip_dir = &amp;quot;#&amp;#123;current_path&amp;#125;/no">
     
     
         
@@ -222,13 +225,13 @@ P">
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Promise map 並發
+            自動部署三兩事(2) - 客製化 Task
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Aug 16 2016 21:45:44 GMT+0800">
+    <time itemprop="datePublished" content="Thu Aug 18 2016 21:37:16 GMT+0800">
 	
-		    8月 16, 2016
+		    8月 18, 2016
     	
     </time>
     
@@ -237,9 +240,10 @@ P">
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>如果控制非同步並發，可以設定 concurrency 參數。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">async function syncSomething(datas) &#123;</div><div class="line">  return Promise.map(datas, async(data) =&gt; &#123;</div><div class="line">    return data;</div><div class="line">  &#125;, &#123;</div><div class="line">    concurrency: 1</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><a href="http://bluebirdjs.com/docs/api/promise.map.html" target="_blank" rel="external">Promise.map</a></p>
+            <p><strong>執行</strong></p>
+<p><code>cap dev deploy:update_ip</code></p>
+<p><strong>客製化任務</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">namespace :deploy do</div><div class="line"></div><div class="line">  desc &quot;update geo ip map&quot;</div><div class="line">  task :update_ip do</div><div class="line">    on roles(:web) do</div><div class="line">      geoip_dir = &quot;#&#123;current_path&#125;/node_modules/geoip-lite&quot;;</div><div class="line">      within geoip_dir do</div><div class="line">        puts capture(:npm, &apos;run&apos;, &apos;updatedb&apos;);</div><div class="line">      end</div><div class="line">    end</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
 
             
                 
@@ -252,7 +256,7 @@ P">
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Promise/">Promise</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/bluebird/">bluebird</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/concurrency/">concurrency</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Capistrano/">Capistrano</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/auto-deploy/">auto deploy</a>
 
             </div>
         
@@ -261,7 +265,7 @@ P">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/18/auto-deploy-2/"  data-tooltip="自動部署三兩事(2) - 客製化 Task">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -269,7 +273,7 @@ P">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/12/geoip-lite-update-ip-table/" data-tooltip="更新 geoip lite module 的 IP 對應表">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/16/bluebird-concurrency-map/" data-tooltip="Promise map 並發">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -284,17 +288,17 @@ P">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -332,7 +336,7 @@ P">
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/18/auto-deploy-2/"  data-tooltip="自動部署三兩事(2) - 客製化 Task">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -340,7 +344,7 @@ P">
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/12/geoip-lite-update-ip-table/" data-tooltip="更新 geoip lite module 的 IP 對應表">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/08/16/bluebird-concurrency-map/" data-tooltip="Promise map 並發">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -355,17 +359,17 @@ P">
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -385,17 +389,17 @@ P">
                 <div id="share-options-bar" class="share-options-bar" data-behavior="1">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://alincode.github.io/blog/2016/08/18/auto-deploy-2/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>

@@ -218,6 +218,55 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/08/fb-share/">
+                            Facebook Share vs Feed
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 23:47:35 GMT+0800">
+	
+		    3月 08, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h3 id="Share-Dialog"><a href="#Share-Dialog" class="headerlink" title="Share Dialog"></a>Share Dialog</h3><img src="/blog/2016/03/08/fb-share/share.png" alt="share.png" title="">
+<p>The Share dialog gives <strong>people the ability to publish an individual story to their timeline, a friend’s timeline, a group, or in a private message on Messenger.</strong> This does not require Facebook Login or any extended permissions, so it is the easiest way to enable sharing on the web.</p>
+<p>不需取得額外授權，並可選擇分佈在自己或朋友或群組的 Timeline，或將信息私訊給朋友。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">FB.ui(&#123;</div><div class="line">  method: &apos;share&apos;,</div><div class="line">  href: &apos;https://developers.facebook.com/docs/&apos;,</div><div class="line">&#125;, function(response)&#123;&#125;);</div></pre></td></tr></table></figure>
+<h2 id="Feed-Dialog"><a href="#Feed-Dialog" class="headerlink" title="Feed Dialog"></a>Feed Dialog</h2><img src="/blog/2016/03/08/fb-share/feed.png" alt="feed.png" title="">
+<p>You can add the feed dialog to your app so <strong>people can publish individual stories to their timeline.</strong> This includes captions that your app manages and a personal comment from the person sharing the content.</p>
+<p>只能發佈在在自己的 Timeline，並可以指定附加訊息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">FB.ui(&#123;</div><div class="line">  method: &apos;feed&apos;,</div><div class="line">  link: &apos;https://developers.facebook.com/docs/&apos;,</div><div class="line">  caption: &apos;An example caption&apos;,</div><div class="line">&#125;, function(response)&#123;&#125;);</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/08/fb-share/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/07/jwt-5/">
                             JWT (5) Client Side 實作範例
                         </a>

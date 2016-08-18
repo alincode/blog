@@ -219,6 +219,51 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/08/18/auto-deploy-2/">
+                            自動部署三兩事(2) - 客製化 Task
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Aug 18 2016 21:37:16 GMT+0800">
+	
+		    8月 18, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><strong>執行</strong></p>
+<p><code>cap dev deploy:update_ip</code></p>
+<p><strong>客製化任務</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">namespace :deploy do</div><div class="line"></div><div class="line">  desc &quot;update geo ip map&quot;</div><div class="line">  task :update_ip do</div><div class="line">    on roles(:web) do</div><div class="line">      geoip_dir = &quot;#&#123;current_path&#125;/node_modules/geoip-lite&quot;;</div><div class="line">      within geoip_dir do</div><div class="line">        puts capture(:npm, &apos;run&apos;, &apos;updatedb&apos;);</div><div class="line">      end</div><div class="line">    end</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/08/18/auto-deploy-2/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/08/16/bluebird-concurrency-map/">
                             Promise map 並發
                         </a>
@@ -766,51 +811,6 @@
                     
                         <p>
                             <a href="/blog/2016/07/24/atom-markdown-mindmap-plugin/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/07/21/Sequelize-many-to-many/">
-                            Sequelize 多對多設定範例
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Thu Jul 21 2016 22:36:36 GMT+0800">
-	
-		    7月 21, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/" target="_blank" rel="external">belongsToMany</a></p>
-<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User.belongsToMany(GameList, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GameList.belongsToMany(User, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    id: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      autoIncrement: true,</div><div class="line">      primaryKey: true</div><div class="line">    &#125;,</div><div class="line">    gameListId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;gameListId&apos;,</div><div class="line">      field: &apos;game_list_id&apos;</div><div class="line">    &#125;,</div><div class="line">    userId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;userId&apos;,</div><div class="line">      field: &apos;user_id&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;&#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;favorites&apos;,</div><div class="line">    classMethods: &#123;&#125;,</div><div class="line">    instanceMethods: &#123;&#125;,</div><div class="line">    hooks: &#123;&#125;,</div><div class="line">    underscored: true</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/07/21/Sequelize-many-to-many/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

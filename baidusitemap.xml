@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/08/18/auto-deploy-2/</loc>
+    <lastmod>2016-08-18T13:52:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>自動部署三兩事(2) - 客製化 Task</title>
+        <pubTime>2016-08-18T13:37:16.000Z</pubTime>
+        
+        <tag>auto deploy</tag>
+         
+        <tag>Capistrano</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/08/16/bluebird-concurrency-map/</loc>
     <lastmod>2016-08-16T13:57:10.000Z</lastmod>
     <data>
@@ -568,16 +587,35 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>如何開始使用 Story Points？</title>
-        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
+        <title>什麼是 Story Points</title>
+        <pubTime>2016-05-08T02:41:17.000Z</pubTime>
         
         <tag>Story Points</tag>
          
         <tag>預估</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>如何改善英文閱讀能力 - 經驗分享</title>
+        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
+        
+        <tag>學英文</tag>
+         
+        <tag>經驗分享</tag>
          
          
            
@@ -628,35 +666,16 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/08/estimating-with-story-points/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/09/how-to-getting-started-story-points/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>什麼是 Story Points</title>
-        <pubTime>2016-05-08T02:41:17.000Z</pubTime>
+        <title>如何開始使用 Story Points？</title>
+        <pubTime>2016-05-09T03:48:38.000Z</pubTime>
         
         <tag>Story Points</tag>
          
         <tag>預估</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何改善英文閱讀能力 - 經驗分享</title>
-        <pubTime>2016-05-17T14:43:31.000Z</pubTime>
-        
-        <tag>學英文</tag>
-         
-        <tag>經驗分享</tag>
          
          
            

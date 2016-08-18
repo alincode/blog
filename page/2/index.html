@@ -218,6 +218,51 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/07/21/Sequelize-many-to-many/">
+                            Sequelize 多對多設定範例
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Thu Jul 21 2016 22:36:36 GMT+0800">
+	
+		    7月 21, 2016
+    	
+    </time>
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><a href="http://docs.sequelizejs.com/en/latest/api/associations/belongs-to-many/" target="_blank" rel="external">belongsToMany</a></p>
+<p><strong>User</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">User.belongsToMany(GameList, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>GameList</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">GameList.belongsToMany(User, &#123;</div><div class="line">  through: &apos;Favorite&apos;,</div><div class="line">  as: &apos;UserLike&apos;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><strong>Favorite</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  attributes: &#123;</div><div class="line">    id: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      autoIncrement: true,</div><div class="line">      primaryKey: true</div><div class="line">    &#125;,</div><div class="line">    gameListId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;gameListId&apos;,</div><div class="line">      field: &apos;game_list_id&apos;</div><div class="line">    &#125;,</div><div class="line">    userId: &#123;</div><div class="line">      type: Sequelize.INTEGER,</div><div class="line">      name: &apos;userId&apos;,</div><div class="line">      field: &apos;user_id&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  associations: function() &#123;&#125;,</div><div class="line">  options: &#123;</div><div class="line">    tableName: &apos;favorites&apos;,</div><div class="line">    classMethods: &#123;&#125;,</div><div class="line">    instanceMethods: &#123;&#125;,</div><div class="line">    hooks: &#123;&#125;,</div><div class="line">    underscored: true</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/07/21/Sequelize-many-to-many/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/07/20/Sequelize-camelCased-to-underscored/">
                             把 Sequelize 預設的駝峰命名改成底線命名
                         </a>
@@ -677,75 +722,6 @@
                     
                         <p>
                             <a href="/blog/2016/06/12/webdriverio-common-syntax-3/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/06/11/webdriverio-common-syntax-2/">
-                            WebdriverIO 常用語法(2)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Jun 11 2016 21:35:19 GMT+0800">
-	
-		    6月 11, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/前端測試/">前端測試</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><strong>基本條件</strong></p>
-<ul>
-<li>已假設你有 <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Selector</a> 的基本知識</li>
-<li>你已經讀過之前在此分享的所有相關文章</li>
-</ul>
-<h3 id="屬性-Property"><a href="#屬性-Property" class="headerlink" title="屬性(Property)"></a>屬性(Property)</h3><p>當你需要驗證測試結果時，常需要取得屬性值做為客觀條件判斷。</p>
-<h4 id="getTitle"><a href="#getTitle" class="headerlink" title="getTitle"></a>getTitle</h4><p>取得標題</p>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getTitle();</div></pre></td></tr></table></figure>
-<h4 id="getUrl"><a href="#getUrl" class="headerlink" title="getUrl"></a>getUrl</h4><p>取得網址</p>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getUrl();</div></pre></td></tr></table></figure>
-<h4 id="getValue"><a href="#getValue" class="headerlink" title="getValue"></a>getValue</h4><p>取得欄味值</p>
-<p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(selector);</div></pre></td></tr></table></figure>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getValue(&apos;[name=identifier]&apos;);</div></pre></td></tr></table></figure>
-<h4 id="getText"><a href="#getText" class="headerlink" title="getText"></a>getText</h4><p>取得文字</p>
-<p><strong>語法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(selector);</div></pre></td></tr></table></figure>
-<p><strong>範例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">browser.getText(&apos;.tip&apos;);</div></pre></td></tr></table></figure>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/06/11/webdriverio-common-syntax-2/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
