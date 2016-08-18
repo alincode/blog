@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://alincode.github.io/"/>
-  <updated>2016-08-18T13:52:13.000Z</updated>
+  <updated>2016-08-18T14:07:38.000Z</updated>
   <id>http://alincode.github.io/</id>
   
   <author>
@@ -20,12 +20,16 @@
     <link href="http://alincode.github.io/2016/08/18/auto-deploy-2/"/>
     <id>http://alincode.github.io/2016/08/18/auto-deploy-2/</id>
     <published>2016-08-18T13:37:16.000Z</published>
-    <updated>2016-08-18T13:52:13.000Z</updated>
+    <updated>2016-08-18T14:07:38.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>執行</strong></p>
 <p><code>cap dev deploy:update_ip</code></p>
 <p><strong>客製化任務</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">namespace :deploy do</div><div class="line"></div><div class="line">  desc &quot;update geo ip map&quot;</div><div class="line">  task :update_ip do</div><div class="line">    on roles(:web) do</div><div class="line">      geoip_dir = &quot;#&#123;current_path&#125;/node_modules/geoip-lite&quot;;</div><div class="line">      within geoip_dir do</div><div class="line">        puts capture(:npm, &apos;run&apos;, &apos;updatedb&apos;);</div><div class="line">      end</div><div class="line">    end</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+<p><strong>參考資料</strong></p>
+<ul>
+<li><a href="https://github.com/capistrano/sshkit" target="_blank" rel="external">SSH-Kit</a></li>
+</ul>
 ]]></content>
     
     <summary type="html">

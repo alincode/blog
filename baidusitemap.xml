@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://alincode.github.io/blog/2016/08/18/auto-deploy-2/</loc>
-    <lastmod>2016-08-18T13:52:13.000Z</lastmod>
+    <lastmod>2016-08-18T14:07:38.000Z</lastmod>
     <data>
         <display>
         <title>自動部署三兩事(2) - 客製化 Task</title>
@@ -606,6 +606,30 @@
 
     
   <url>
+    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
+    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>有效的時間管理 - 重點整理(1)</title>
+        <pubTime>2016-05-15T09:01:19.000Z</pubTime>
+        
+        <tag>時間管理</tag>
+         
+        <tag>有效的時間管理</tag>
+         
+        <tag>80/20 法則</tag>
+         
+         
+           
+             
+              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alincode.github.io/blog/2016/05/17/how-to-improve-english-reading-skills/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
@@ -625,41 +649,17 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>如何時候該用 Promise？</title>
-        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
+        <title>React Bind</title>
+        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
         
-        <tag>promise</tag>
+        <tag>React</tag>
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://alincode.github.io/blog/2016/05/15/Effective-Time-Management/</loc>
-    <lastmod>2016-05-19T11:59:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>有效的時間管理 - 重點整理(1)</title>
-        <pubTime>2016-05-15T09:01:19.000Z</pubTime>
-        
-        <tag>時間管理</tag>
-         
-        <tag>有效的時間管理</tag>
-         
-        <tag>80/20 法則</tag>
-         
-         
-           
-             
-              <breadCrumb title="時間管理" url="http://alincode.github.io/blog/categories/%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86/"/>
-          
         </display>
     </data>
     </url>
@@ -685,14 +685,14 @@
 
     
   <url>
-    <loc>http://alincode.github.io/blog/2016/05/14/react-about-bind/</loc>
+    <loc>http://alincode.github.io/blog/2016/05/10/when-use-promise/</loc>
     <lastmod>2016-05-19T11:59:59.000Z</lastmod>
     <data>
         <display>
-        <title>React Bind</title>
-        <pubTime>2016-05-14T15:15:27.000Z</pubTime>
+        <title>如何時候該用 Promise？</title>
+        <pubTime>2016-05-10T00:59:58.000Z</pubTime>
         
-        <tag>React</tag>
+        <tag>promise</tag>
          
          
            

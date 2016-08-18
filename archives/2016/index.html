@@ -240,6 +240,10 @@
 <p><code>cap dev deploy:update_ip</code></p>
 <p><strong>客製化任務</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">namespace :deploy do</div><div class="line"></div><div class="line">  desc &quot;update geo ip map&quot;</div><div class="line">  task :update_ip do</div><div class="line">    on roles(:web) do</div><div class="line">      geoip_dir = &quot;#&#123;current_path&#125;/node_modules/geoip-lite&quot;;</div><div class="line">      within geoip_dir do</div><div class="line">        puts capture(:npm, &apos;run&apos;, &apos;updatedb&apos;);</div><div class="line">      end</div><div class="line">    end</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+<p><strong>參考資料</strong></p>
+<ul>
+<li><a href="https://github.com/capistrano/sshkit" target="_blank" rel="external">SSH-Kit</a></li>
+</ul>
 
                     
                         
