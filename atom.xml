@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>alincode&#39;s blog</title>
   
+  <subtitle>學無止境</subtitle>
+  <link href="http://alincode.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
+  <link href="http://alincode.github.io/"/>
   <updated>2020-12-31T01:33:34.940Z</updated>
-  <id>http://example.com/</id>
+  <id>http://alincode.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>alincode</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Modern Web 2018 - 使用 Swagger 協助你設計出更好的 API</title>
-    <link href="http://example.com/2018/07/23/modern-web-2018/"/>
-    <id>http://example.com/2018/07/23/modern-web-2018/</id>
+    <link href="http://alincode.github.io/2018/07/23/modern-web-2018/"/>
+    <id>http://alincode.github.io/2018/07/23/modern-web-2018/</id>
     <published>2018-07-22T16:50:11.000Z</published>
     <updated>2020-12-31T01:33:34.940Z</updated>
     
@@ -37,16 +37,16 @@
     
     
     
-    <category term="swagger" scheme="http://example.com/tags/swagger/"/>
+    <category term="swagger" scheme="http://alincode.github.io/tags/swagger/"/>
     
-    <category term="Modern Web" scheme="http://example.com/tags/Modern-Web/"/>
+    <category term="Modern Web" scheme="http://alincode.github.io/tags/Modern-Web/"/>
     
   </entry>
   
   <entry>
     <title>cloneDeep</title>
-    <link href="http://example.com/2017/11/09/cloneDeep/"/>
-    <id>http://example.com/2017/11/09/cloneDeep/</id>
+    <link href="http://alincode.github.io/2017/11/09/cloneDeep/"/>
+    <id>http://alincode.github.io/2017/11/09/cloneDeep/</id>
     <published>2017-11-09T12:53:03.000Z</published>
     <updated>2020-12-31T01:33:34.863Z</updated>
     
@@ -62,14 +62,14 @@
     
     
     
-    <category term="lodash" scheme="http://example.com/tags/lodash/"/>
+    <category term="lodash" scheme="http://alincode.github.io/tags/lodash/"/>
     
   </entry>
   
   <entry>
     <title>蓋伊‧川崎的創業教練課 - 提案</title>
-    <link href="http://example.com/2017/10/28/pitch-tips/"/>
-    <id>http://example.com/2017/10/28/pitch-tips/</id>
+    <link href="http://alincode.github.io/2017/10/28/pitch-tips/"/>
+    <id>http://alincode.github.io/2017/10/28/pitch-tips/</id>
     <published>2017-10-28T04:13:05.000Z</published>
     <updated>2020-12-31T01:33:34.953Z</updated>
     
@@ -87,14 +87,14 @@
     
     
     
-    <category term="提案" scheme="http://example.com/tags/%E6%8F%90%E6%A1%88/"/>
+    <category term="提案" scheme="http://alincode.github.io/tags/%E6%8F%90%E6%A1%88/"/>
     
   </entry>
   
   <entry>
     <title>Laravel 整合 JWT</title>
-    <link href="http://example.com/2017/09/24/laravel-with-jwt/"/>
-    <id>http://example.com/2017/09/24/laravel-with-jwt/</id>
+    <link href="http://alincode.github.io/2017/09/24/laravel-with-jwt/"/>
+    <id>http://alincode.github.io/2017/09/24/laravel-with-jwt/</id>
     <published>2017-09-24T08:47:13.000Z</published>
     <updated>2020-12-31T01:33:34.932Z</updated>
     
@@ -110,16 +110,16 @@
     
     
     
-    <category term="JWT" scheme="http://example.com/tags/JWT/"/>
+    <category term="JWT" scheme="http://alincode.github.io/tags/JWT/"/>
     
-    <category term="Laravel" scheme="http://example.com/tags/Laravel/"/>
+    <category term="Laravel" scheme="http://alincode.github.io/tags/Laravel/"/>
     
   </entry>
   
   <entry>
     <title>小技巧 - Promise 與 lodash.map 結合運用</title>
-    <link href="http://example.com/2017/09/05/promise-all-with-lodash-map/"/>
-    <id>http://example.com/2017/09/05/promise-all-with-lodash-map/</id>
+    <link href="http://alincode.github.io/2017/09/05/promise-all-with-lodash-map/"/>
+    <id>http://alincode.github.io/2017/09/05/promise-all-with-lodash-map/</id>
     <published>2017-09-05T02:51:25.000Z</published>
     <updated>2020-12-31T01:33:34.954Z</updated>
     
@@ -135,18 +135,18 @@
     
     
     
-    <category term="lodash" scheme="http://example.com/tags/lodash/"/>
+    <category term="lodash" scheme="http://alincode.github.io/tags/lodash/"/>
     
-    <category term="Promise.all" scheme="http://example.com/tags/Promise-all/"/>
+    <category term="Promise.all" scheme="http://alincode.github.io/tags/Promise-all/"/>
     
-    <category term="map" scheme="http://example.com/tags/map/"/>
+    <category term="map" scheme="http://alincode.github.io/tags/map/"/>
     
   </entry>
   
   <entry>
     <title>複製 UAT 的資料庫，並還原到 Local 中</title>
-    <link href="http://example.com/2017/08/29/mongo-export-import/"/>
-    <id>http://example.com/2017/08/29/mongo-export-import/</id>
+    <link href="http://alincode.github.io/2017/08/29/mongo-export-import/"/>
+    <id>http://alincode.github.io/2017/08/29/mongo-export-import/</id>
     <published>2017-08-29T12:24:23.000Z</published>
     <updated>2020-12-31T01:33:34.944Z</updated>
     
@@ -162,14 +162,14 @@
     
     
     
-    <category term="mongodb" scheme="http://example.com/tags/mongodb/"/>
+    <category term="mongodb" scheme="http://alincode.github.io/tags/mongodb/"/>
     
   </entry>
   
   <entry>
     <title>在 C9 上建立 laravel 專案</title>
-    <link href="http://example.com/2017/07/02/create-laravel-in-the-c9/"/>
-    <id>http://example.com/2017/07/02/create-laravel-in-the-c9/</id>
+    <link href="http://alincode.github.io/2017/07/02/create-laravel-in-the-c9/"/>
+    <id>http://alincode.github.io/2017/07/02/create-laravel-in-the-c9/</id>
     <published>2017-07-02T12:29:00.000Z</published>
     <updated>2020-12-31T01:33:34.865Z</updated>
     
@@ -192,8 +192,8 @@
   
   <entry>
     <title>推薦用 webdriver manager</title>
-    <link href="http://example.com/2017/05/30/webdriver-manager/"/>
-    <id>http://example.com/2017/05/30/webdriver-manager/</id>
+    <link href="http://alincode.github.io/2017/05/30/webdriver-manager/"/>
+    <id>http://alincode.github.io/2017/05/30/webdriver-manager/</id>
     <published>2017-05-30T06:19:05.000Z</published>
     <updated>2020-12-31T01:33:34.997Z</updated>
     
@@ -209,14 +209,14 @@
     
     
     
-    <category term="webdriver-manager" scheme="http://example.com/tags/webdriver-manager/"/>
+    <category term="webdriver-manager" scheme="http://alincode.github.io/tags/webdriver-manager/"/>
     
   </entry>
   
   <entry>
     <title>Testing Day</title>
-    <link href="http://example.com/2017/04/30/testing-day/"/>
-    <id>http://example.com/2017/04/30/testing-day/</id>
+    <link href="http://alincode.github.io/2017/04/30/testing-day/"/>
+    <id>http://alincode.github.io/2017/04/30/testing-day/</id>
     <published>2017-04-30T13:06:49.000Z</published>
     <updated>2020-12-31T01:33:34.973Z</updated>
     
@@ -236,8 +236,8 @@
   
   <entry>
     <title>WebdriverIO 近期更新資訊</title>
-    <link href="http://example.com/2016/12/11/webdriverio-update-info-4-5-0/"/>
-    <id>http://example.com/2016/12/11/webdriverio-update-info-4-5-0/</id>
+    <link href="http://alincode.github.io/2016/12/11/webdriverio-update-info-4-5-0/"/>
+    <id>http://alincode.github.io/2016/12/11/webdriverio-update-info-4-5-0/</id>
     <published>2016-12-11T07:03:15.000Z</published>
     <updated>2020-12-31T01:33:35.007Z</updated>
     
@@ -255,14 +255,14 @@
     
     
     
-    <category term="WebdriverIO" scheme="http://example.com/tags/WebdriverIO/"/>
+    <category term="WebdriverIO" scheme="http://alincode.github.io/tags/WebdriverIO/"/>
     
   </entry>
   
   <entry>
     <title>IT 鐵人賽 - 遠距工作者在台灣</title>
-    <link href="http://example.com/2016/12/10/ironman2016/"/>
-    <id>http://example.com/2016/12/10/ironman2016/</id>
+    <link href="http://alincode.github.io/2016/12/10/ironman2016/"/>
+    <id>http://alincode.github.io/2016/12/10/ironman2016/</id>
     <published>2016-12-10T14:26:20.000Z</published>
     <updated>2020-12-31T01:33:34.912Z</updated>
     
@@ -278,14 +278,14 @@
     
     
     
-    <category term="遠距工作者" scheme="http://example.com/tags/%E9%81%A0%E8%B7%9D%E5%B7%A5%E4%BD%9C%E8%80%85/"/>
+    <category term="遠距工作者" scheme="http://alincode.github.io/tags/%E9%81%A0%E8%B7%9D%E5%B7%A5%E4%BD%9C%E8%80%85/"/>
     
   </entry>
   
   <entry>
     <title>ATOM 使用的一些小技巧</title>
-    <link href="http://example.com/2016/12/09/markdown-preview/"/>
-    <id>http://example.com/2016/12/09/markdown-preview/</id>
+    <link href="http://alincode.github.io/2016/12/09/markdown-preview/"/>
+    <id>http://alincode.github.io/2016/12/09/markdown-preview/</id>
     <published>2016-12-09T14:48:31.000Z</published>
     <updated>2020-12-31T01:33:34.939Z</updated>
     
@@ -301,14 +301,14 @@
     
     
     
-    <category term="markdown-preview" scheme="http://example.com/tags/markdown-preview/"/>
+    <category term="markdown-preview" scheme="http://alincode.github.io/tags/markdown-preview/"/>
     
   </entry>
   
   <entry>
     <title>就業的終結 - 重點整理(4)</title>
-    <link href="http://example.com/2016/11/28/the-end-of-jobs-4/"/>
-    <id>http://example.com/2016/11/28/the-end-of-jobs-4/</id>
+    <link href="http://alincode.github.io/2016/11/28/the-end-of-jobs-4/"/>
+    <id>http://alincode.github.io/2016/11/28/the-end-of-jobs-4/</id>
     <published>2016-11-28T12:47:15.000Z</published>
     <updated>2020-12-31T01:33:34.984Z</updated>
     
@@ -323,17 +323,17 @@
     
     
     
-    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    <category term="非專業書閱讀" scheme="http://alincode.github.io/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
     
     
-    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    <category term="就業的終結" scheme="http://alincode.github.io/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
     
   </entry>
   
   <entry>
     <title>五種自由工作者的類型 - 摘要</title>
-    <link href="http://example.com/2016/11/27/5-kinds-of-freelancing/"/>
-    <id>http://example.com/2016/11/27/5-kinds-of-freelancing/</id>
+    <link href="http://alincode.github.io/2016/11/27/5-kinds-of-freelancing/"/>
+    <id>http://alincode.github.io/2016/11/27/5-kinds-of-freelancing/</id>
     <published>2016-11-27T12:19:50.000Z</published>
     <updated>2020-12-31T01:33:34.714Z</updated>
     
@@ -357,8 +357,8 @@
   
   <entry>
     <title>就業的終結 - 重點整理(3)</title>
-    <link href="http://example.com/2016/11/24/the-end-of-jobs-3/"/>
-    <id>http://example.com/2016/11/24/the-end-of-jobs-3/</id>
+    <link href="http://alincode.github.io/2016/11/24/the-end-of-jobs-3/"/>
+    <id>http://alincode.github.io/2016/11/24/the-end-of-jobs-3/</id>
     <published>2016-11-24T13:47:59.000Z</published>
     <updated>2020-12-31T01:33:34.980Z</updated>
     
@@ -373,17 +373,17 @@
     
     
     
-    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    <category term="非專業書閱讀" scheme="http://alincode.github.io/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
     
     
-    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    <category term="就業的終結" scheme="http://alincode.github.io/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
     
   </entry>
   
   <entry>
     <title>就業的終結 - 重點整理(2)</title>
-    <link href="http://example.com/2016/11/20/the-end-of-jobs-2/"/>
-    <id>http://example.com/2016/11/20/the-end-of-jobs-2/</id>
+    <link href="http://alincode.github.io/2016/11/20/the-end-of-jobs-2/"/>
+    <id>http://alincode.github.io/2016/11/20/the-end-of-jobs-2/</id>
     <published>2016-11-20T13:58:50.000Z</published>
     <updated>2020-12-31T01:33:34.976Z</updated>
     
@@ -398,17 +398,17 @@
     
     
     
-    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    <category term="非專業書閱讀" scheme="http://alincode.github.io/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
     
     
-    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    <category term="就業的終結" scheme="http://alincode.github.io/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
     
   </entry>
   
   <entry>
     <title>就業的終結 - 重點整理(1)</title>
-    <link href="http://example.com/2016/11/17/the-end-of-jobs-1/"/>
-    <id>http://example.com/2016/11/17/the-end-of-jobs-1/</id>
+    <link href="http://alincode.github.io/2016/11/17/the-end-of-jobs-1/"/>
+    <id>http://alincode.github.io/2016/11/17/the-end-of-jobs-1/</id>
     <published>2016-11-17T09:07:11.000Z</published>
     <updated>2020-12-31T01:33:34.974Z</updated>
     
@@ -423,17 +423,17 @@
     
     
     
-    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    <category term="非專業書閱讀" scheme="http://alincode.github.io/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
     
     
-    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    <category term="就業的終結" scheme="http://alincode.github.io/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
     
   </entry>
   
   <entry>
     <title>Swagger 自動產生 html 文件</title>
-    <link href="http://example.com/2016/11/11/swagger/"/>
-    <id>http://example.com/2016/11/11/swagger/</id>
+    <link href="http://alincode.github.io/2016/11/11/swagger/"/>
+    <id>http://alincode.github.io/2016/11/11/swagger/</id>
     <published>2016-11-11T13:04:52.000Z</published>
     <updated>2020-12-31T01:33:34.967Z</updated>
     
@@ -452,16 +452,16 @@
     
     
     
-    <category term="swagger" scheme="http://example.com/tags/swagger/"/>
+    <category term="swagger" scheme="http://alincode.github.io/tags/swagger/"/>
     
-    <category term="API" scheme="http://example.com/tags/API/"/>
+    <category term="API" scheme="http://alincode.github.io/tags/API/"/>
     
   </entry>
   
   <entry>
     <title>github hotkey</title>
-    <link href="http://example.com/2016/11/08/github-hotkey/"/>
-    <id>http://example.com/2016/11/08/github-hotkey/</id>
+    <link href="http://alincode.github.io/2016/11/08/github-hotkey/"/>
+    <id>http://alincode.github.io/2016/11/08/github-hotkey/</id>
     <published>2016-11-08T02:33:41.000Z</published>
     <updated>2020-12-31T01:33:34.899Z</updated>
     
@@ -477,14 +477,14 @@
     
     
     
-    <category term="github" scheme="http://example.com/tags/github/"/>
+    <category term="github" scheme="http://alincode.github.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>我們辦公室沒有人 - 重點摘要(2)</title>
-    <link href="http://example.com/2016/11/06/nobody-in-the-office-1/"/>
-    <id>http://example.com/2016/11/06/nobody-in-the-office-1/</id>
+    <link href="http://alincode.github.io/2016/11/06/nobody-in-the-office-1/"/>
+    <id>http://alincode.github.io/2016/11/06/nobody-in-the-office-1/</id>
     <published>2016-11-06T14:38:31.000Z</published>
     <updated>2020-12-31T01:33:34.946Z</updated>
     
@@ -499,10 +499,10 @@
     
     
     
-    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    <category term="非專業書閱讀" scheme="http://alincode.github.io/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
     
     
-    <category term="我們辦公室沒有人" scheme="http://example.com/tags/%E6%88%91%E5%80%91%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%B2%92%E6%9C%89%E4%BA%BA/"/>
+    <category term="我們辦公室沒有人" scheme="http://alincode.github.io/tags/%E6%88%91%E5%80%91%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%B2%92%E6%9C%89%E4%BA%BA/"/>
     
   </entry>
   
