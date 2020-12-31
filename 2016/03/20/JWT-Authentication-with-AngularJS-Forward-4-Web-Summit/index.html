@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>JWT Authentication with AngularJS 重點整理 (1) · Hexo</title><meta name="description" content="一般 Session 的產生流程 (3:10)
+瀏覽器發送一個 request 到 server，內含帳號跟密碼
+server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。
+將存有 Session ID 的 cookie，回傳給瀏覽器。
+瀏覽器在下次與 server 傳遞訊息"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Typography</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">活版印字</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li class="soc"><a href="http://example.com/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">John Doe</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>JWT Authentication with AngularJS 重點整理 (1)</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2016-03-20</span><span class="meta-item"><i class="fa fa-folder"></i><span>&nbsp;</span><a href="/categories/JWT/" title="JWT" class="a-tag">JWT</a><span>&nbsp;</span></span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/jwt/" title="jwt" class="a-tag">jwt</a><span>&nbsp;</span></span></p><p class="post-abstract"><h3 id="一般-Session-的產生流程-3-10"><a href="#一般-Session-的產生流程-3-10" class="headerlink" title="一般 Session 的產生流程 (3:10)"></a>一般 Session 的產生流程 (3:10)</h3><ul>
+<li>瀏覽器發送一個 request 到 server，內含帳號跟密碼</li>
+<li>server 驗證帳密後，產生一組 Session ID，存在 Cookie 裡。</li>
+<li>將存有 Session ID 的 cookie，回傳給瀏覽器。</li>
+<li>瀏覽器在下次與 server 傳遞訊息時，每次都要帶這個 Cookie 給 server</li>
+</ul>
+<h3 id="Session-識別的問題-3-50"><a href="#Session-識別的問題-3-50" class="headerlink" title="Session 識別的問題(3:50)"></a>Session 識別的問題(3:50)</h3><ul>
+<li>難以理解，而且不含意義</li>
+<li>增加資料庫的負擔</li>
+<li>Perception that cookies are inherently insecure</li>
+</ul>
+<h3 id="專有名詞介紹-5-10"><a href="#專有名詞介紹-5-10" class="headerlink" title="專有名詞介紹 (5:10)"></a>專有名詞介紹 (5:10)</h3><ul>
+<li>Authentication (n.) 驗證</li>
+<li>Authorization (n.) 授權</li>
+<li>Token</li>
+<li>JWT: 是一種 token 格式，常使用在 Outh2 協定的 access token 和 refresh token 流程。</li>
+</ul>
+<h3 id="JWT-結構-6-55"><a href="#JWT-結構-6-55" class="headerlink" title="JWT 結構 (6:55)"></a>JWT 結構 (6:55)</h3><p>是一個經過 Base64-URL encoded 的字串</p>
+<p><strong>結構分三個部分</strong></p>
+<ul>
+<li>Header</li>
+<li>Body(Claims)</li>
+<li>Cryptographic Signature 加密簽證</li>
+</ul>
+<h4 id="解開後的內容"><a href="#解開後的內容" class="headerlink" title="解開後的內容"></a>解開後的內容</h4><p><strong>範例</strong></p>
+<ul>
+<li>iss: <a target="_blank" rel="noopener" href="http://yourdomain.com/">http://yourdomain.com</a></li>
+<li>exp: 60000</li>
+<li>sub: userId</li>
+<li>scope: api/buy</li>
+</ul>
+<p><strong>意義</strong></p>
+<ul>
+<li>iss: 發佈者 (Issuer)</li>
+<li>exp: 效期，單位是毫秒 (Expiration Time)</li>
+<li>sub: 用戶 (Subject)</li>
+<li>scope: 作用域</li>
+</ul>
+<h3 id="發佈-JWT-流程-11-05"><a href="#發佈-JWT-流程-11-05" class="headerlink" title="發佈 JWT 流程 (11:05)"></a>發佈 JWT 流程 (11:05)</h3><ul>
+<li>使用者經過驗證後，取得 Token</li>
+<li>由你的 server 來製造 Token</li>
+<li>client 儲存 token，並在需要驗證的 request 使用它。</li>
+</ul>
+<h3 id="概述-JWT-12-15"><a href="#概述-JWT-12-15" class="headerlink" title="概述 JWT (12:15)"></a>概述 JWT (12:15)</h3><ul>
+<li>無狀態認證機制</li>
+<li>Token 具有作用域的概念</li>
+<li>產生授權</li>
+<li>決定區域性</li>
+</ul>
+<p>因為影片實在太長，後面有點不太好理解，分兩篇慢慢看</p>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=http://example.com/2016/03/20/JWT-Authentication-with-AngularJS-Forward-4-Web-Summit/%20Hexo%20JWT Authentication with AngularJS 重點整理 (1)" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2016/03/21/chrome-debug-rendering/" title="chrome debug rendering"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: chrome debug rendering</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2016/03/19/create-your-own-snippet/" title="建立自己的 ATOM snippet">Next post: 建立自己的 ATOM snippet&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">John Doe</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>關於自動部署 rollback · Hexo</title><meta name="description" content="圖片來源 - msdn
+關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。
+首先必須了解，我們需要 rollback 什麼
+
+還原回舊的程式碼
+還原資料庫
+
+還原回舊的程式碼
+
+
+
+以 capistrano 為例，每次透過工具執行 release 指令之後，在 releases 資料"><meta name="keywords" content=""><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Typography</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">活版印字</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/categories">Categories</a></li><li><a href="/tags">Tags</a></li><li class="soc"><a href="http://example.com/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">John Doe</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>關於自動部署 rollback</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2016-07-29</span><span class="meta-item"><i class="fa fa-tag"></i><span>&nbsp;</span><a href="/tags/rollback/" title="rollback" class="a-tag">rollback</a><span>&nbsp;</span></span></p><p class="post-abstract"><p><img src="https://i-msdn.sec.s-msft.com/dynimg/IC721395.png" alt="Release Management"><br><a target="_blank" rel="noopener" href="https://msdn.microsoft.com/zh-tw/library/dn217874.aspx">圖片來源 - msdn</a></p>
+<p>關於自動部署後延伸的議題，若部署失敗後的 rollback 處理。</p>
+<p><strong>首先必須了解，我們需要 rollback 什麼</strong></p>
+<ul>
+<li>還原回舊的程式碼</li>
+<li>還原資料庫</li>
+</ul>
+<p><strong>還原回舊的程式碼</strong></p>
+
+
+<ul>
+<li>以 <code>capistrano</code> 為例，每次透過工具執行 release 指令之後，在 releases 資料夾下，就會有當下時間戳記資料夾，工具會更新軟連結 (current) 指向的新的時間戳記的資料夾，以達到可以還原的目的。</li>
+<li><code>cap staging deploy:rollback ROLLBACK_RELEASE=20160614133327</code></li>
+<li><a target="_blank" rel="noopener" href="http://capistranorb.com/documentation/getting-started/structure/">capistranorb structure</a></li>
+</ul>
+<p><strong>資料庫rollback</strong></p>
+
+
+<ul>
+<li>資料庫層級的 rollback<ul>
+<li>使用一些 tool 所寫出來的 migrations script，自動將執行動作包在同一個 transaction，如果中間有一個步驟失敗，會直接做資料庫層級的 rollback。</li>
+</ul>
+</li>
+<li>框架層級的 rollback<ul>
+<li>但如果 migration script 執行完成後，結果不如預期，基本上不建議做資料庫的資料跟結構 rollback 的，就如何你 push 出的 code 一樣，你如果做 git rebase，將導致其他已經 pull 的人發生衝突，所以功能最好只使用在未 push code 出去之前使用。</li>
+<li> 例如若你在 migration script 中，新增了一個欄位，當你做 <code>rake db:rollback STEP=1</code> 後，它會自動將新增的欄位移除。</li>
+</ul>
+</li>
+<li>那到底怎麼收拾失敗的殘局？<ul>
+<li>答案就是在寫一個 migration script 去修正問題</li>
+</ul>
+</li>
+</ul>
+<p><strong>完整範例程式</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/alincode/rails-migration-sandbox">rails migration sandbox</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/alincode/sequelize-merged-sandbox">sequelize migration sandbox</a></li>
+</ul>
+<p><strong>database migration tools</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/sequelize/cli">sequelize-cli</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.liquibase.org/">liquibase</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/flyway/flyway">flyway</a></li>
+<li><a target="_blank" rel="noopener" href="http://guides.rubyonrails.org/v3.2/migrations.html">ruby migrate</a></li>
+</ul>
+<p><strong>相關文章</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/3801965/usefulness-of-db-migrations-rollback">Usefulness of db migrations rollback</a></li>
+<li><a target="_blank" rel="noopener" href="https://ihower.tw/rails4/migrations.html">Active Record - 資料庫遷移</a></li>
+<li><a target="_blank" rel="noopener" href="http://capistranorb.com/documentation/getting-started/rollbacks/">capistranorb rollbacks</a></li>
+</ul>
+</p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a target="_blank" rel="noopener" href="http://twitter.com/home?status=http://example.com/2016/07/29/deploy-rollback/%20Hexo%20關於自動部署 rollback" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2016/07/30/auto-deploy/" title="自動部署三兩事(1)"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 自動部署三兩事(1)</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2016/07/27/octotree-chrome-plugin/" title="octotree 在瀏覽器上顯示 code tree">Next post: octotree 在瀏覽器上顯示 code tree&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2020&nbsp;<a target="_blank" href="http://example.com" rel="noopener noreferrer">John Doe</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>

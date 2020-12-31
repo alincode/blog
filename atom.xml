@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2020-12-31T01:33:34.940Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Modern Web 2018 - 使用 Swagger 協助你設計出更好的 API</title>
+    <link href="http://example.com/2018/07/23/modern-web-2018/"/>
+    <id>http://example.com/2018/07/23/modern-web-2018/</id>
+    <published>2018-07-22T16:50:11.000Z</published>
+    <updated>2020-12-31T01:33:34.940Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://hackmd.io/c/MW18/%2Fl25UxWMCSVGDCJEQmPjZEA&quot;&gt;活動筆記&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="swagger" scheme="http://example.com/tags/swagger/"/>
+    
+    <category term="Modern Web" scheme="http://example.com/tags/Modern-Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cloneDeep</title>
+    <link href="http://example.com/2017/11/09/cloneDeep/"/>
+    <id>http://example.com/2017/11/09/cloneDeep/</id>
+    <published>2017-11-09T12:53:03.000Z</published>
+    <updated>2020-12-31T01:33:34.863Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="lodash" scheme="http://example.com/tags/lodash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蓋伊‧川崎的創業教練課 - 提案</title>
+    <link href="http://example.com/2017/10/28/pitch-tips/"/>
+    <id>http://example.com/2017/10/28/pitch-tips/</id>
+    <published>2017-10-28T04:13:05.000Z</published>
+    <updated>2020-12-31T01:33:34.953Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.udemy.com/hlczgafh/&quot;&gt;蓋伊‧川崎的創業教練課 (繁體中文) | Udemy&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;講座</summary>
+        
+      
+    
+    
+    
+    
+    <category term="提案" scheme="http://example.com/tags/%E6%8F%90%E6%A1%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Laravel 整合 JWT</title>
+    <link href="http://example.com/2017/09/24/laravel-with-jwt/"/>
+    <id>http://example.com/2017/09/24/laravel-with-jwt/</id>
+    <published>2017-09-24T08:47:13.000Z</published>
+    <updated>2020-12-31T01:33:34.932Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;安裝&quot;&gt;&lt;a href=&quot;#安裝&quot; class=&quot;headerlink&quot; title=&quot;安裝&quot;&gt;&lt;/a&gt;安裝&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="JWT" scheme="http://example.com/tags/JWT/"/>
+    
+    <category term="Laravel" scheme="http://example.com/tags/Laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小技巧 - Promise 與 lodash.map 結合運用</title>
+    <link href="http://example.com/2017/09/05/promise-all-with-lodash-map/"/>
+    <id>http://example.com/2017/09/05/promise-all-with-lodash-map/</id>
+    <published>2017-09-05T02:51:25.000Z</published>
+    <updated>2020-12-31T01:33:34.954Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="lodash" scheme="http://example.com/tags/lodash/"/>
+    
+    <category term="Promise.all" scheme="http://example.com/tags/Promise-all/"/>
+    
+    <category term="map" scheme="http://example.com/tags/map/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>複製 UAT 的資料庫，並還原到 Local 中</title>
+    <link href="http://example.com/2017/08/29/mongo-export-import/"/>
+    <id>http://example.com/2017/08/29/mongo-export-import/</id>
+    <published>2017-08-29T12:24:23.000Z</published>
+    <updated>2020-12-31T01:33:34.944Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mongodb" scheme="http://example.com/tags/mongodb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在 C9 上建立 laravel 專案</title>
+    <link href="http://example.com/2017/07/02/create-laravel-in-the-c9/"/>
+    <id>http://example.com/2017/07/02/create-laravel-in-the-c9/</id>
+    <published>2017-07-02T12:29:00.000Z</published>
+    <updated>2020-12-31T01:33:34.865Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://c9.io/&quot;&gt;https://c9.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;在 C9 上初始化專案&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;–prefer-dist :</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>推薦用 webdriver manager</title>
+    <link href="http://example.com/2017/05/30/webdriver-manager/"/>
+    <id>http://example.com/2017/05/30/webdriver-manager/</id>
+    <published>2017-05-30T06:19:05.000Z</published>
+    <updated>2020-12-31T01:33:34.997Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近踩到一個 selenium-standalone 的雷，似乎 selenium-standalone 沒有及時 Sync 到最新版的 driver，Selenium 官網已經有新版的 Driver release，用 selenium-standalone</summary>
+        
+      
+    
+    
+    
+    
+    <category term="webdriver-manager" scheme="http://example.com/tags/webdriver-manager/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Testing Day</title>
+    <link href="http://example.com/2017/04/30/testing-day/"/>
+    <id>http://example.com/2017/04/30/testing-day/</id>
+    <published>2017-04-30T13:06:49.000Z</published>
+    <updated>2020-12-31T01:33:34.973Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近跟 iThome 有一些合作機會，整個場子都是講測試歐。&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>WebdriverIO 近期更新資訊</title>
+    <link href="http://example.com/2016/12/11/webdriverio-update-info-4-5-0/"/>
+    <id>http://example.com/2016/12/11/webdriverio-update-info-4-5-0/</id>
+    <published>2016-12-11T07:03:15.000Z</published>
+    <updated>2020-12-31T01:33:35.007Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有兩個月的時間沒更新 WebdriverIO 資訊了，今天看了一下 Github log，發現多了一些新玩意。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;REPL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="WebdriverIO" scheme="http://example.com/tags/WebdriverIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IT 鐵人賽 - 遠距工作者在台灣</title>
+    <link href="http://example.com/2016/12/10/ironman2016/"/>
+    <id>http://example.com/2016/12/10/ironman2016/</id>
+    <published>2016-12-10T14:26:20.000Z</published>
+    <updated>2020-12-31T01:33:34.912Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因為開始寫了之後，就要連續 30 天不中斷，所以拖了很才開始寫，一點點心得分享，有興趣的人可以&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="遠距工作者" scheme="http://example.com/tags/%E9%81%A0%E8%B7%9D%E5%B7%A5%E4%BD%9C%E8%80%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ATOM 使用的一些小技巧</title>
+    <link href="http://example.com/2016/12/09/markdown-preview/"/>
+    <id>http://example.com/2016/12/09/markdown-preview/</id>
+    <published>2016-12-09T14:48:31.000Z</published>
+    <updated>2020-12-31T01:33:34.939Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;設定-markdown-preview&quot;&gt;&lt;a href=&quot;#設定-markdown-preview&quot; class=&quot;headerlink&quot; title=&quot;設定 markdown-preview&quot;&gt;&lt;/a&gt;設定</summary>
+        
+      
+    
+    
+    
+    
+    <category term="markdown-preview" scheme="http://example.com/tags/markdown-preview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就業的終結 - 重點整理(4)</title>
+    <link href="http://example.com/2016/11/28/the-end-of-jobs-4/"/>
+    <id>http://example.com/2016/11/28/the-end-of-jobs-4/</id>
+    <published>2016-11-28T12:47:15.000Z</published>
+    <updated>2020-12-31T01:33:34.984Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;書名：就業的終結&lt;br&gt;作者：Taylor Pearson&lt;br&gt;出版日期：2016/11/04&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    
+    
+    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>五種自由工作者的類型 - 摘要</title>
+    <link href="http://example.com/2016/11/27/5-kinds-of-freelancing/"/>
+    <id>http://example.com/2016/11/27/5-kinds-of-freelancing/</id>
+    <published>2016-11-27T12:19:50.000Z</published>
+    <updated>2020-12-31T01:33:34.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+
+&lt;p&gt;&lt;strong&gt;五種自由工作者的類型&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mechanical</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>就業的終結 - 重點整理(3)</title>
+    <link href="http://example.com/2016/11/24/the-end-of-jobs-3/"/>
+    <id>http://example.com/2016/11/24/the-end-of-jobs-3/</id>
+    <published>2016-11-24T13:47:59.000Z</published>
+    <updated>2020-12-31T01:33:34.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;書名：就業的終結&lt;br&gt;作者：Taylor Pearson&lt;br&gt;出版日期：2016/11/04&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    
+    
+    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就業的終結 - 重點整理(2)</title>
+    <link href="http://example.com/2016/11/20/the-end-of-jobs-2/"/>
+    <id>http://example.com/2016/11/20/the-end-of-jobs-2/</id>
+    <published>2016-11-20T13:58:50.000Z</published>
+    <updated>2020-12-31T01:33:34.976Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;書名：就業的終結&lt;br&gt;作者：Taylor Pearson&lt;br&gt;出版日期：2016/11/04&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    
+    
+    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>就業的終結 - 重點整理(1)</title>
+    <link href="http://example.com/2016/11/17/the-end-of-jobs-1/"/>
+    <id>http://example.com/2016/11/17/the-end-of-jobs-1/</id>
+    <published>2016-11-17T09:07:11.000Z</published>
+    <updated>2020-12-31T01:33:34.974Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;書名：就業的終結&lt;br&gt;作者：Taylor Pearson&lt;br&gt;出版日期：2016/11/04&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    
+    
+    <category term="就業的終結" scheme="http://example.com/tags/%E5%B0%B1%E6%A5%AD%E7%9A%84%E7%B5%82%E7%B5%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Swagger 自動產生 html 文件</title>
+    <link href="http://example.com/2016/11/11/swagger/"/>
+    <id>http://example.com/2016/11/11/swagger/</id>
+    <published>2016-11-11T13:04:52.000Z</published>
+    <updated>2020-12-31T01:33:34.967Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">
+
+&lt;h3 id=&quot;簡易版&quot;&gt;&lt;a href=&quot;#簡易版&quot; class=&quot;headerlink&quot; title=&quot;簡易版&quot;&gt;&lt;/a&gt;簡易版&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;編輯API內容&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="swagger" scheme="http://example.com/tags/swagger/"/>
+    
+    <category term="API" scheme="http://example.com/tags/API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github hotkey</title>
+    <link href="http://example.com/2016/11/08/github-hotkey/"/>
+    <id>http://example.com/2016/11/08/github-hotkey/</id>
+    <published>2016-11-08T02:33:41.000Z</published>
+    <updated>2020-12-31T01:33:34.899Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;雖然 Github 有 &lt;a href=&quot;https://help.github.com/articles/using-keyboard-shortcuts/&quot;&gt;keyboard shortcuts 文件&lt;/a&gt;，但功能有點少，本來想自己寫一個 chrome plugin</summary>
+        
+      
+    
+    
+    
+    
+    <category term="github" scheme="http://example.com/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我們辦公室沒有人 - 重點摘要(2)</title>
+    <link href="http://example.com/2016/11/06/nobody-in-the-office-1/"/>
+    <id>http://example.com/2016/11/06/nobody-in-the-office-1/</id>
+    <published>2016-11-06T14:38:31.000Z</published>
+    <updated>2020-12-31T01:33:34.946Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;書名：我們辦公室沒有人！管理大解放，自由工作團隊如何創造更高績效&lt;br&gt;作者：權自強&lt;br&gt;出版日期：2015/01/08&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="非專業書閱讀" scheme="http://example.com/categories/%E9%9D%9E%E5%B0%88%E6%A5%AD%E6%9B%B8%E9%96%B1%E8%AE%80/"/>
+    
+    
+    <category term="我們辦公室沒有人" scheme="http://example.com/tags/%E6%88%91%E5%80%91%E8%BE%A6%E5%85%AC%E5%AE%A4%E6%B2%92%E6%9C%89%E4%BA%BA/"/>
+    
+  </entry>
+  
+</feed>
